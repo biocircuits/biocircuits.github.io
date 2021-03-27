@@ -1,0 +1,68 @@
+Lectures
+--------
+
+Lectures are Mondays, Wednesdays, and Fridays 11 am–noon PDT. They are conducted over Zoom, accessible via `this Zoom link <http://be150.caltech.edu/2021/zoom/>`_. Attendance at lecture is required. In the event you cannot make it to a lecture, and also for reference, lectures are recorded and available via `this Google Drive link <http://be150.caltech.edu/2021/videos/>`_.
+
+
+
+Homework
+--------
+
+We will have weekly homeworks, typically due at noon on Wednesdays. Homework must be submitted electronically by emailing them to ``caltech.be150@gmail.com``. All individual homework *problems* must be submitted as a Jupyter notebook and also an HTML conversion of the notebook. They should be named ``lastname_firstname_#.#.ipynb`` and ``lastname_firstname_#.#.html``. For example, homework problem 4.2 would have a notebook titled ``turing_alan_4.2.iypnb``. You may hand-write and scan portions of these homeworks and include the scans in your Jupyter notebook. To include a scanned image in a Jupyter notebook, you can do the following in a Markdown cell.
+
+   .. code-block::
+
+      ![alt text for image](my_image.png)
+
+Naturally, everything must be legible. If a homework problem is entirely hand-written (meaning no coding or plotting was is necessary), you may submit the problem as a PDF named ``lastname_firstname_#.#.pdf``. 
+
+For homework problems that need a lot of code, your notebook cannot consist of giant code blocks and plots. You must have markdown cells that clearly explain all of your reasoning and results to get full credit.
+
+
+Grace days
+^^^^^^^^^^
+
+You have six grace days for the term. Grace days are spent as you submit late homework. For example, if you submit a homework within 24 hours of the due time, you spend one grace day, between 24 and 48 hours, you spend two, etc. Late homework will no longer be accepted after you spend your grace days. If you have legitimate reasons for homework extensions, you may write the course staff and we will grant them at our discretion. Homework extensions do not result in spent grace days.
+
+
+Collaboration and reference materials
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Unless otherwise noted on a particular problem set, you may discuss homework with other students in the course. In fact, you are strongly encouraged to do so. Naturally, the submitted homework must be your own original work. You should indicate on your homework with whom you have collaborated.
+
+Of course, you may not refer to homework materials from previous editions of this course. If you happen to find the solution to a very similar problem online or elsewhere, you may not refer to it.
+
+
+Grading
+-------
+
+You grade will be determined entirely from your homework.
+
+
+Extensions
+-------------------------------
+
+Extensions for homework are granted for extenuating circumstances, such as health issues. To get extensions, please email the course instructors. Extensions do not count against your grace day allotment.
+
+
+Course communications
+---------------------
+
+For anything relating to the content of the course, you should use the `class Ed page <https://us.edstem.org/courses/5128/>`_ to communicate with the course staff and with your classmates. Furthermore, all mass communication with you will
+be through Ed, so be sure to set your Ed account to give you email
+alerts if necessary.
+
+If you need to discuss anything of a more personal nature, such as extension requests, you may contact the course instructors directly via email.
+
+
+"Ediquette"
+-----------
+
+When posting on Ed, please follow these guidelines:
+
+- Appropriately tag your question or comment with the appropriate category (e.g., "Lesson12" or "HW5").
+- If you have a question about a coding bug make every attempt to provide a *minimal* example that demonstrates the problem. A minimal example strips out all other details beyond what is necessary to reproduce the problem or bug. Posting error messages without code is seldom helpful.
+- If you feel that posting a minimal example will result in showing too much of your answer to your classmates, you can post your question on Ed privately so that only the course staff can see it.
+- While you are free to post anonymously to your classmates (course staff will always know who posts), we encourage you to post with your real name. This can spur discussions among students, which can be productive.
+- Course staff strives to answer questions quickly, but students should answer when they can. This also spurs more conversation and results in faster answers to questions.
+

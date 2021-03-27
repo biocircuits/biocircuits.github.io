@@ -1,0 +1,10 @@
+****************
+Homework 1
+****************
+
+.. toctree::
+   :maxdepth: 1
+
+   hw1.1.ipynb
+   hw1.2.ipynb
+

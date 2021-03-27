@@ -1,0 +1,14 @@
+.. _Resources:
+
+Books
+-----
+
+We have one strongly suggested textbook for the course:
+
+- Alon, *An Introduction to Systems Biology: Design Principles of Biological Circuits*, 2nd Ed., CRC Press, 2020.
+
+The following books are also useful.
+
+- Del Vecchio and Murray, *Biomolecular Feedback Systems*. This book is also a great resource. You can get PDFs from the `book wiki <http://www.cds.caltech.edu/~murray/BFSwiki/index.php/Main_Page>`_.
+- Phillips, Kondev, Theriot, and Garcia, *Physical Biology of the Cell*, 2nd Ed., Garland Scientific, 2012. This book has good analysis of physical bases for the regulation of gene expression.
+- Strogatz, *Nonlinear Dynamics And Chaos: With Applications To Physics, Biology, Chemistry, And Engineering*, 2nd Ed., Westview Press, 2014. This book gives a good pedagogical background on the analysis of dynamical systems.

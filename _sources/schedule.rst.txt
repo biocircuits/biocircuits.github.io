@@ -1,0 +1,52 @@
+Schedule overview
+-----------------
+
+The weekly schedule is below. All sessions are accessed via the `course Zoom link <http://be150.caltech.edu/2021/zoom/>`_.
+
+- Lecture: Mondays, Wednesdays, Fridays 11–11:50 am PDT
+- TA homework help sessions
+	+ John: Mondays 7–8 pm PDT
+	+ Ankita: Tuesdays 11 am–noon PDT
+- TA-led discussion: Thursdays, 11 am-noon PDT
+- Instructor office hours
+	+ Justin: Fridays 2:30-3:30 PDT
+	+ Michael: By appointment
+
+Lectures are recorded and posted on `Google Drive <http://be150.caltech.edu/2021/videos/>`_.
+
+
+----
+
+
+Homework due dates
+------------------
+
+Below are tentative homework due dates.
+
+- Homework 1: due 11 am PDT, April 7
+- Homework 2: due 11 am PDT, April 14
+- Homework 3: due 11 am PDT, April 21
+- Homework 4: due 11 am PDT, April 28
+- Homework 5: due 11 am PDT, May 5
+- Homework 6: due 11 am PDT, May 12
+- Homework 7: due 11 am PDT, May 19
+- Homework 8: due 11 am PDT, May 26
+- Homework 9: due 11 am PDT, June 2
+
+
+----
+
+
+Weekly schedule
+---------------
+
+Lectures will roughly cover one lesson in the posted materials and will proceed in order. The schedule will be expanded in coming weeks.
+
+- Before class: :ref:`Lesson 00<0. Configuring your computer to use Python for scientific computing>`: Configuring your computer to use Python for scientific computing
+- M 03/29: :ref:`Lesson 01 <1. Introduction to Biological Circuit Design>`: Introduction to biological circuit design (ME)
+- W 03/31: Lesson 02: Introduction to Python for biological circuits (JB)
+- F 04/02: Lesson 03: Big functions from small circuits (ME)
+- M 04/05: Lesson 04: Motifs in biological circuits (ME)
+- W 04/07: Lesson 05: Analyzing circuits: The feed-forward loop (JB)
+- F 04/09: Lesson 06: IFFLs allow for dosage compensation (JB)
+
