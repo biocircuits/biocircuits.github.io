@@ -196,7 +196,7 @@
     
         
         
-            <a href="https://colab.research.google.com/github/biocircuits/biocircuits.github.io/blob/master/lessons/01_intro_to_circuit_design.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/bebi103b/bebi103b.github.io/master/lessons/01_intro_to_circuit_design.ipynb" download> Download notebook</a>
+            <a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/lessons/01_intro_to_circuit_design.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biocircuits/biocircuits.github.io/master/lessons/01_intro_to_circuit_design.ipynb" download> Download notebook</a>
         
       
     
@@ -496,7 +496,15 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span></span><span class="c1"># Colab setup ------------------</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">subprocess</span>
+<span class="k">if</span> <span class="s2">&quot;google.colab&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;pip install --upgrade watermark&quot;</span>
+    <span class="n">process</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
+    <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
+<span class="c1"># ------------------------------</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">bokeh.io</span>
 <span class="kn">import</span> <span class="nn">bokeh.plotting</span>
 
@@ -946,8 +954,8 @@ for lactose utilization in <em>E. coli</em>. However, in the presence of lactose
 D + R \rightleftharpoons D_{occ}
 \end{align}</span></p>
 <p>Within the cell, the repressor binds and unbinds its target site. We assume that the expression level of the gene is lower when the repressor is bound and higher when it is unbound. The mean expression level of the gene is then proportional to the fraction of time that the repressor is unbound.</p>
-<p>We therefore compute the “concentration” of DNA sites in occupied or unoccupied states. (Within a single cell an individual site on the DNA is either bound or unbound, but averaged over a population of cells, we can talk about the mean occupancy of the site). Let <span class="math notranslate nohighlight">\(D\)</span> be the concentration of unoccupied promoter, <span class="math notranslate nohighlight">\(D_\mathrm{occ}\)</span> be the concentration of occupied promoter, and <span class="math notranslate nohighlight">\(D_\mathrm{tot}\)</span> be the total concentration of promoter, with $ D_:nbsphinx-math:<cite>mathrm{tot}</cite> = D +
-D_:nbsphinx-math:<cite>mathrm{occ}</cite> $, as required by conservation of mass.</p>
+<p>We therefore compute the “concentration” of DNA sites in occupied or unoccupied states. (Within a single cell an individual site on the DNA is either bound or unbound, but averaged over a population of cells, we can talk about the mean occupancy of the site). Let <span class="math notranslate nohighlight">\(D\)</span> be the concentration of unoccupied promoter, <span class="math notranslate nohighlight">\(D_\mathrm{occ}\)</span> be the concentration of occupied promoter, and <span class="math notranslate nohighlight">\(D_\mathrm{tot}\)</span> be the total concentration of promoter, with
+<span class="math notranslate nohighlight">\(D_\mathrm{tot} = D + D_\mathrm{occ}\)</span>, as required by conservation of mass.</p>
 <p>We can also assume a <strong>separation of timescales</strong> between the rates of binding and unbinding of the repressor to the DNA binding site are both often fast compared to the timescales over which mRNA and protein concentrations vary. (Careful, however, in some contexts, such as mammalian cells, this is not true.)</p>
 <p>All we need to know is the mean concentration of unoccupied binding sites, <span class="math notranslate nohighlight">\(D/D_\mathrm{tot}\)</span>.</p>
 <p><span class="math">\begin{align}
@@ -1252,7 +1260,7 @@ jupyterlab: 3.0.11
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7f924d2eec70> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fd96d1c5b50> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
