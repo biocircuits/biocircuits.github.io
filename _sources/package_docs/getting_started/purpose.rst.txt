@@ -1,0 +1,18 @@
+.. _purpose:
+
+
+Purpose and contents
+====================
+
+This package contains convenient functions for learners of analysis and design of biological circuits. It is meant to complement the book *Biological Circuit Design* by `Michael Elowitz <https://www.elowitz.caltech.edu>`_ and `Justin Bois <http://bois.caltech.edu/>`_ and the associate courses at `Caltech <http://caltech.edu/>`_.
+
+The package consists of a set of separate functions, most of which are developed and described in the *Biological Circuit Design* book. Nearly every function in the package is developed and described in the book. As such, the package consists of a set of functions meant to do specific tasks in analysis of biological circuits. The structure of the package is simple; few if any classes are defined and the functions are fairly isolated from each other. The code is structured to be instructional, as opposed to optimized for speed. For example, the stochastic simulation algorithms employ a straightforward implementation of Gillespie's original formulation and do not use more modern speed-ups. Nonetheless, former students have found the package to use useful in real research contexts.
+
+The main functionality afforded by the package includes:
+
+- Numerical solution of delay differential equations
+- Numerical solution of reaction-diffusion equations
+- Performance of stochastic simulation (Gillespie) algorithms 
+- Visualizations, for example of phase portraits
+- Common regulatory functions
+- Vignettes demonstrating interactive dashboards

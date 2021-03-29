@@ -32,8 +32,7 @@ People
 
    lessons/00_setting_up_python_computing_environment
    lessons/01_intro_to_circuit_design
-
-   .. lessons/02_intro_to_python_for_biological_circuits
+   lessons/02_intro_to_python_for_biological_circuits
    .. lessons/03_small_circuits
    .. lessons/04_finding_motifs
    .. lessons/05_ffls
@@ -80,3 +79,9 @@ People
    :caption: Resources
 
    resources
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Package docs 
+
+   package_docs/index

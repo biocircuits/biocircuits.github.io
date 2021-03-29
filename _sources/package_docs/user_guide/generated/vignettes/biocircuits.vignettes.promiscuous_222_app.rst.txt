@@ -1,0 +1,6 @@
+﻿biocircuits.vignettes.promiscuous\_222\_app
+===========================================
+
+.. currentmodule:: biocircuits.vignettes
+
+.. autofunction:: promiscuous_222_app

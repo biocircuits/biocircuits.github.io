@@ -1,0 +1,79 @@
+.. _API:
+
+API Reference
+=============
+
+Delay differential equations
+----------------------------
+.. currentmodule:: biocircuits
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   ddeint
+
+
+Reaction diffusion equations
+----------------------------
+.. currentmodule:: biocircuits
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   rd_solve
+   constant_diff_coeffs
+
+
+Stochastic simulation algorithms
+--------------------------------
+.. currentmodule:: biocircuits
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   gillespie_ssa
+
+
+Visualization functions
+----------------------------
+.. currentmodule:: biocircuits
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   phase_portrait
+   streamplot
+   xyt_plot
+   interactive_xy_plot
+
+
+Regulatory functions
+----------------------------
+.. currentmodule:: biocircuits
+
+.. autosummary::
+   :toctree: generated
+   :nosignatures:
+
+   aa_and
+   aa_or
+   rr_and
+   rr_or
+   ar_and
+   ar_or
+
+
+
+Interactive vignettes
+----------------------------
+.. currentmodule:: biocircuits.vignettes
+
+.. autosummary::
+   :toctree: generated/vignettes
+   :nosignatures:
+
+   promiscuous_222_app
