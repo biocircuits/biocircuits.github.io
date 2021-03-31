@@ -154,6 +154,6 @@ Lectures will roughly cover one lesson in the posted materials and will proceed 
 
 - W 05/25 - Lesson 23: TBD
 
-- F 05/28 - Lesson 24: Course recap and the future of understanding and programming genetic circuitry
+- F 05/28 - Lesson 24: Course recap and the future of understanding and programming genetic circuitry (ME)
 
 

@@ -866,7 +866,8 @@ accumulate enough to enhance production of Z, then the level of Z does not chang
 </div>
 <div class="section" id="The-dynamical-equations">
 <h2>The dynamical equations<a class="headerlink" href="#The-dynamical-equations" title="Permalink to this headline">¶</a></h2>
-<p>We will model the circuit by writing down a system of ordinary differential equations and solving them. We will assume Hill-like behavior for the activation of Y by X and of Z by Y. We also neglect leakage. We define the concentrations of X, Y, and Z, respectively as <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>. The system of ODEs describing this system is then</p>
+<p>We will model the circuit by writing down a system of ordinary differential equations and solving them.We will assume Hill-like behavior for the activation of Y by X and of Z by Y. (We will describe Hill functions, fortuitously named after <a class="reference external" href="https://en.wikipedia.org/wiki/Archibald_Hill">their inventor</a> and their shape, in the next lesson. For now, we take this regulatory function as given.) We also neglect leakage. We define the concentrations of X, Y, and Z, respectively as <span class="math notranslate nohighlight">\(x\)</span>,
+<span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>. The system of ODEs describing this system is then</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}y}{\mathrm{d}t} &= \beta_y\,\frac{(x/k_x)^{n_x}}{1+(x/k_x)^{n_x}} - \gamma_y y, \\[1em]
 \frac{\mathrm{d}z}{\mathrm{d}t} &= \beta_z\,\frac{(y/k_y)^{n_y}}{1+(y/k_y)^{n_y}} - \gamma_z z.
@@ -2478,7 +2479,7 @@ jupyterlab: 3.0.11
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7f9a66f88760> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fac90229af0> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
