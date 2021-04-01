@@ -55,7 +55,7 @@ Lectures will roughly cover one lesson in the posted materials and will proceed 
 
 - W 03/31 - :ref:`Lesson 2<2. Introduction to Python for biological circuits>`: Introduction to Python for biological circuits (JB)
 
-- F 04/02 - Lesson 3: Big functions from small circuits (ME)
+- F 04/02 - :ref:`Lesson 3<3. Big functions from small circuits>`: Big functions from small circuits (ME)
 
     + Chapter 2 of Alon
 
