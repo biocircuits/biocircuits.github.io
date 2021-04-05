@@ -7,15 +7,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>biocircuits.xyt_plot &mdash; Biological Circuit Design  documentation</title>
+  <title>0. Configuring your computer to use Python for scientific computing &mdash; Biological Circuit Design  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
   
@@ -27,27 +27,27 @@
 
   
   <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
+    <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/clipboard.min.js"></script>
-        <script src="../../../_static/copybutton.js"></script>
-        <script src="../../../_static/togglebutton.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="biocircuits.interactive_xy_plot" href="biocircuits.interactive_xy_plot.html" />
-    <link rel="prev" title="biocircuits.streamplot" href="biocircuits.streamplot.html" /> 
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. Introduction to biological circuit design" href="01_intro_to_circuit_design.html" />
+    <link rel="prev" title="Biological Circuit Design" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -61,12 +61,12 @@
           
 
           
-            <a href="../../../index.html">
+            <a href="../index.html">
           
 
           
             
-            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -74,7 +74,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -93,60 +93,53 @@
             
             
               <p class="caption"><span class="caption-text">Chapters</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/00_setting_up_python_computing_environment.html">0. Configuring your computer to use Python for scientific computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/02_intro_to_python_for_biological_circuits.html">2. Introduction to Python for biological circuits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/03_small_circuits.html">3. Big functions from small circuits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/04_finding_motifs.html">4. Finding biological circuit motifs</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">0. Configuring your computer to use Python for scientific computing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Why-Python?">Why Python?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Why-not-use-systems-biology-packages?">Why not use systems biology packages?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#The-biocircuits-package">The biocircuits package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#What-to-do-if-you-are-new-to-Python">What to do if you are new to Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Installing-a-Python-distribution">Installing a Python distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#A-special-note-to-Mac-users">A special note to Mac users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Windows-users:-Chrome-or-Firefox">Windows users: Chrome or Firefox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Downloading-and-installing-Anaconda">Downloading and installing Anaconda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Package-installations-and-the-conda-package-manager">Package installations and the <code class="docutils literal notranslate"><span class="pre">conda</span></code> package manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Launching-JupyterLab">Launching JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Checking-your-distribution">Checking your distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Computing-environment">Computing environment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intro_to_python_for_biological_circuits.html">2. Introduction to Python for biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_small_circuits.html">3. Big functions from small circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_finding_motifs.html">4. Finding biological circuit motifs</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../homework/01/index.html">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/01/index.html">Homework 1</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../schedule.html">Schedule overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../schedule.html#homework-due-dates">Homework due dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../schedule.html#lecture-schedule">Lecture schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schedule.html">Schedule overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schedule.html#homework-due-dates">Homework due dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schedule.html#lecture-schedule">Lecture schedule</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Policies</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html">Lectures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#homework">Homework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#grading">Grading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#extensions">Extensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#course-communications">Course communications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#ediquette">“Ediquette”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#homework">Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#grading">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#extensions">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#course-communications">Course communications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#ediquette">“Ediquette”</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Books</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Package docs</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">biocircuits package documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/installation.html">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/purpose.html">Purpose and contents</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../api.html#delay-differential-equations">Delay differential equations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#reaction-diffusion-equations">Reaction diffusion equations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#stochastic-simulation-algorithms">Stochastic simulation algorithms</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#visualization-functions">Visualization functions</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.phase_portrait.html">biocircuits.phase_portrait</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.streamplot.html">biocircuits.streamplot</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">biocircuits.xyt_plot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.interactive_xy_plot.html">biocircuits.interactive_xy_plot</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#regulatory-functions">Regulatory functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#interactive-vignettes">Interactive vignettes</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../credits_and_citation.html">Credits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../credits_and_citation.html#citing-biocircuits">Citing biocircuits</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../package_docs/index.html">biocircuits package documentation</a></li>
 </ul>
 
             
@@ -162,7 +155,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Biological Circuit Design</a>
+          <a href="../index.html">Biological Circuit Design</a>
         
       </nav>
 
@@ -193,20 +186,16 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../index.html">biocircuits package documentation</a> &raquo;</li>
-        
-          <li><a href="../api.html">API Reference</a> &raquo;</li>
-        
-      <li>biocircuits.xyt_plot</li>
+      <li>0. Configuring your computer to use Python for scientific computing</li>
     
     
   <li class="wy-breadcrumbs-aside">
     
         
         
-            <a href="../../../_sources/package_docs/user_guide/generated/biocircuits.xyt_plot.rst.txt" rel="nofollow"> View page source</a>
+            <a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/chapters/00_setting_up_python_computing_environment.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biocircuits/biocircuits.github.io/master/chapters/00_setting_up_python_computing_environment.ipynb" download> Download notebook</a>
         
       
     
@@ -222,6 +211,252 @@
             
   
 <style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
@@ -244,37 +479,524 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="biocircuits-xyt-plot">
-<h1>biocircuits.xyt_plot<a class="headerlink" href="#biocircuits-xyt-plot" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
-<dt id="biocircuits.xyt_plot">
-<code class="sig-prename descclassname"><span class="pre">biocircuits.</span></code><code class="sig-name descname"><span class="pre">xyt_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'line'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'top_right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_slider_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#biocircuits.xyt_plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an interactive plot some the output of <cite>rd_solve()</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>1D Numpy array</em>) – x-values for plot.</p></li>
-<li><p><strong>y</strong> (<em>tuple of 2D Numpy arrays</em>) – y-values for plot. <cite>y[i][j, k]</cite> is the y-value for curve i at
-time point j and position x[k].</p></li>
-<li><p><strong>t</strong> (<em>Numpy array</em>) – y-values for plot.</p></li>
-<li><p><strong>glyph</strong> (<em>str</em><em>, </em><em>either &quot;line&quot;</em><em> or </em><em>&quot;circle&quot;</em>) – What kind of glyph to use in plot.</p></li>
-<li><p><strong>legend_names</strong> (<em>list</em><em> or </em><em>None</em><em>, </em><em>default None</em>) – Names for legend in plot.</p></li>
-<li><p><strong>legend_location</strong> (<em>str</em><em>, </em><em>default 'top_right'</em>) – Position of legend using Bokeh’s specifications for legend
-position. Ignored if <cite>legend_names</cite> is None.</p></li>
-<li><p><strong>palette</strong> (<em>List of colors default bokeh.palettes.d3</em><em>[</em><em>'Category10'</em><em>]</em><em>[</em><em>10</em><em>]</em>) – Color palette to use for curves.</p></li>
-<li><p><strong>kwargs</strong> – All other kwargs are passed to bokeh.plotting.figure() in
-creating the figure.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An interactive plot with a time slider.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>output</p>
-</dd>
-</dl>
-</dd></dl>
+<div class="section" id="0.-Configuring-your-computer-to-use-Python-for-scientific-computing">
+<h1>0. Configuring your computer to use Python for scientific computing<a class="headerlink" href="#0.-Configuring-your-computer-to-use-Python-for-scientific-computing" title="Permalink to this headline">¶</a></h1>
+<hr><div class="section" id="Why-Python?">
+<h2>Why Python?<a class="headerlink" href="#Why-Python?" title="Permalink to this headline">¶</a></h2>
+<p>As will become readily apparent even at the beginning of our journey into biological circuit design, you will need to use your computer to analyze circuits and understand the principles governing their function. There are plenty of approaches we could take, and many languages we could use for computing as well. Indeed, in addition to Python, <a class="reference external" href="https://www.mathworks.com/products/matlab.html">Matlab</a>/<a class="reference external" href="https://www.gnu.org/software/octave/">Octave</a>,
+<a class="reference external" href="https://www.wolfram.com/mathematica/">Mathematica</a>, <a class="reference external" href="https://www.r-project.org">R</a>, <a class="reference external" href="http://julialang.org/">Julia</a>, <a class="reference external" href="https://www.oracle.com/java/">Java</a>, <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a>, and others are widely used. We have chosen to use Python. Though we view this as an unessential choice (we believe language wars are counterproductive and welcome anyone to port the code we use to any language
+of their choice), we nonetheless feel we should explain our choice.</p>
+<p>Python is a flexible programming language that is widely used in many applications. This is in contrast to more domain-specific languages like R and Julia. It is easily extendable, which is in many ways responsible for its breadth of use. We find that there is a decent Python-based tool for many applications we can dream up, certainly in systems biology. However, the Python-based tool is seldom the <em>very best</em> for the particular task at hand, but it is almost always <em>pretty good</em>. Thus, knowing
+Python is like having a Swiss Army knife; you can wield it to effectively accomplish myriad tasks. Finally, we also find that it has a shallow learning curve with most students.</p>
+</div>
+<div class="section" id="Why-not-use-systems-biology-packages?">
+<h2>Why not use systems biology packages?<a class="headerlink" href="#Why-not-use-systems-biology-packages?" title="Permalink to this headline">¶</a></h2>
+<p>There are packages available to streamline systems biology calculations, such as <a class="reference external" href="http://pysb.org">PySB</a> or <a class="reference external" href="https://www.mathworks.com/products/simbiology.html">Matlab’s SymBiology</a>. While these packages are useful, we find that many applications in systems biology, and in genetic circuits in particular, need, or at least benefit from, bespoke computational analyses. We therefore will build all of our code from scratch, using only packages like <a class="reference external" href="http://numpy.org/">NumPy</a>,
+<a class="reference external" href="http://scipy.org/">SciPy</a>, and <a class="reference external" href="http://bokeh.pydata.org/">Bokeh</a>, which contain core numerical and plotting data structures and routines. Of course, code we use in one chapter may be reused in another, but our approach is that we build all of the code we need as we go along. This will provide a greater level of mastery and less reliance on black boxes (though there will inevitably be some).</p>
+</div>
+<div class="section" id="The-biocircuits-package">
+<h2>The biocircuits package<a class="headerlink" href="#The-biocircuits-package" title="Permalink to this headline">¶</a></h2>
+<p>For some of those black boxes, we will use the <code class="docutils literal notranslate"><span class="pre">biocircuits</span></code> package, which is written to be used with this course. The functions contained therein are are presented in the course materials before being abstracted away into the package. Thus, anything that is in the package is introduced in the course and you should have a full understanding of how it works.</p>
+<p>The documentation for this package appears as an appendix to the course materials.</p>
+</div>
+<div class="section" id="What-to-do-if-you-are-new-to-Python">
+<h2>What to do if you are new to Python<a class="headerlink" href="#What-to-do-if-you-are-new-to-Python" title="Permalink to this headline">¶</a></h2>
+<p>As you proceed through the chapters, we assume that you have a basic introduction to computer programming and the Python programming language. We assume further that you have a working knowledge of <a class="reference external" href="http://numpy.org/">NumPy</a>. If this is new to you, there are plenty of great resources to learn Python and to learn the basics quickly. A <a class="reference external" href="http://justinbois.github.io/bootcamp/2020/">weeklong intensive course</a> offered by one of the authors and the <a class="reference external" href="http://justinbois.github.io/bootcamp/2020/resources.html">resources linked to
+therein</a> provide a good starting point.</p>
+</div>
+<div class="section" id="Installing-a-Python-distribution">
+<h2>Installing a Python distribution<a class="headerlink" href="#Installing-a-Python-distribution" title="Permalink to this headline">¶</a></h2>
+<p>Prior to embarking on your journey into biological circuits, you need to have a functioning Python distribution installed on your computer. There are two main ways people set up Python for scientific computing.</p>
+<ol class="arabic simple">
+<li><p>By downloading and installing package by package with tools like <a class="reference external" href="https://docs.python.org/3/installing/">pip</a>.</p></li>
+<li><p>By downloading and installing a Python distribution that contains binaries of many of the scientific packages needed. The major distributions of these are <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a> and <a class="reference external" href="https://www.enthought.com/products/canopy/">Enthought Canopy</a>. Both contain IDEs.</p></li>
+</ol>
+<p>We will use Anaconda, with its associated package manager, <code class="docutils literal notranslate"><span class="pre">conda</span></code>. It is pretty much the de facto package manager/distribution for scientific use.</p>
+</div>
+<div class="section" id="A-special-note-to-Mac-users">
+<h2>A special note to Mac users<a class="headerlink" href="#A-special-note-to-Mac-users" title="Permalink to this headline">¶</a></h2>
+<p>If your machine is a Mac, you will need to install <a class="reference external" href="https://developer.apple.com/xcode/">XCode</a>, which you can get through the App Store, before installing Anaconda. Once you install XCode, <strong>you need to launch it</strong> in order to have everything set up properly. It will take a while to launch, and it may ask you to install extras, which you should do. After it has launched, you can close it, and you won’t need it again for this course in biological circuits. Important components under the hood
+are set up by installing and launching XCode.</p>
+</div>
+<div class="section" id="Windows-users:-Chrome-or-Firefox">
+<h2>Windows users: Chrome or Firefox<a class="headerlink" href="#Windows-users:-Chrome-or-Firefox" title="Permalink to this headline">¶</a></h2>
+<p>To run Jupyter notebooks, you use <a class="reference external" href="http://jupyterlab.readthedocs.io/en/stable/index.html">JupyterLab</a>. It is browser-based, and Chrome, Firefox, and Safari are supported. (For JupyterLab versions 3.0.0 through 3.0.11, Safari is not supported.) Microsoft Edge is not. Therefore, if you are a Windows user, you need to be sure you have either Chrome of Firefox installed.</p>
+</div>
+<div class="section" id="Downloading-and-installing-Anaconda">
+<h2>Downloading and installing Anaconda<a class="headerlink" href="#Downloading-and-installing-Anaconda" title="Permalink to this headline">¶</a></h2>
+<p><strong>Mac users</strong>: Before installing Anaconda, be sure you have <a class="reference external" href="https://developer.apple.com/xcode/">XCode</a> installed.</p>
+<p>Downloading and installing Anaconda is simple.</p>
+<ol class="arabic simple">
+<li><p>Go to the <a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda homepage</a> and download the graphical installer.</p></li>
+<li><p>Install Anaconda with Python 3.8.</p></li>
+<li><p>You may be prompted for your email address, which you should provide. If you are at a university, you may want to use your university email address because educational users can get some of the non-free goodies in Anaconda.</p></li>
+<li><p>Follow the on-screen instructions for installation. While doing so, be sure that Anaconda is installed in your home directory, not in root.</p></li>
+</ol>
+<p>That’s it! After you do that, you will have a functioning Python distribution.</p>
+</div>
+<div class="section" id="Package-installations-and-the-conda-package-manager">
+<h2>Package installations and the <code class="docutils literal notranslate"><span class="pre">conda</span></code> package manager<a class="headerlink" href="#Package-installations-and-the-conda-package-manager" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> is a package manager for keeping all of your packages up-to-date. It has plenty of functionality beyond our basic usage in class, which you can learn more about by reading the <a class="reference external" href="http://conda.pydata.org/docs/get-started.html">docs</a>. We will primarily be using <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install and update packages.</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span></code> works from the command line. On Windows, the command line is usually accessed through PowerShell and on macOS through Terminal. After you have installed Anaconda, at a command line prompt, run the following commands to update <code class="docutils literal notranslate"><span class="pre">conda</span></code> (yes, do it twice).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda update conda
+conda update conda
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">conda</span></code> is out of date and needs to be updated, you will be prompted to perform the update. Just type <code class="docutils literal notranslate"><span class="pre">y</span></code>, and the update will proceed.</p>
+<p>Now that <code class="docutils literal notranslate"><span class="pre">conda</span></code> is updated, we’ll update all packages, so type the following on the command line.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda update --all
+</pre></div>
+</div>
+<p>You will be prompted to perform all of the updates. They may even be some downgrades. This happens when there are package conflicts where one package requires an earlier version of another. <code class="docutils literal notranslate"><span class="pre">conda</span></code> is very smart and figures all of this out for you, so you can almost always say “yes” (or “<code class="docutils literal notranslate"><span class="pre">y</span></code>”) to <code class="docutils literal notranslate"><span class="pre">conda</span></code> when it prompts you.</p>
+<p>As you work through this course, you will sometimes use packages that are not included in the default Anaconda distribution. As we develop code throughout the course, we will reuse it. For convenience, this is contained in the <code class="docutils literal notranslate"><span class="pre">biocircuits</span></code> package.</p>
+<p>You can do these installations with <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code> by doing the following at the command line. We will take care of these installations now, and will discuss them in much more detail as we use them. To do the installations, do the following on the command line.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install -c bokeh jupyter_bokeh
+conda install colorcet datashader fastparquet holoviews hvplot panel param
+pip install eqtk biocircuits iqplot watermark blackcellmagic
+</pre></div>
+</div>
+<p>Finally, if you want to install a spell checker for Jupyter notebooks, you can do so by doing the following on the command line. Note that you must have <a class="reference external" href="https://nodejs.org/">node.js</a> installed prior to installing the spell checker.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter labextension install @ijmbarr/jupyterlab_spellchecker
+</pre></div>
+</div>
+</div>
+<div class="section" id="Launching-JupyterLab">
+<h2>Launching JupyterLab<a class="headerlink" href="#Launching-JupyterLab" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to launch JupyterLab is from the command line. On Windows, this is usually accessed through PowerShell and on macOS through Terminal. To launch JupyterLab, type the following on the command line.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab
+</pre></div>
+</div>
+<p>If you are using an unsupported browser (e.g., Microsoft Edge or Safari for 3.0.0 ≤ JupyterLab version ≤ 3.0.11), you can specify the browser you want using, for example,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab --browser=firefox
+</pre></div>
+</div>
+<p>Alternatively, you can use the Anaconda Navigator that was installed when you installed Anaconda. If you’re using macOS, this is available in your <code class="docutils literal notranslate"><span class="pre">Applications</span></code> menu. If you are using Windows, you can do this from the <code class="docutils literal notranslate"><span class="pre">Start</span></code> menu. You can then launch Anaconda Navigator. After launching the Navigator, you should see an option to launch JupyterLab. When you do that, a new browser window or tab will open with JupyterLab running. Within the JupyterLab window, you will have the option to launch
+a notebook, a console, a terminal, or a text editor. We will notebooks heavily.</p>
+</div>
+<div class="section" id="Checking-your-distribution">
+<h2>Checking your distribution<a class="headerlink" href="#Checking-your-distribution" title="Permalink to this headline">¶</a></h2>
+<p>We’ll now run a quick test to make sure things are working properly. We will make a quick plot that requires some of the scientific libraries we will use in the bootcamp.</p>
+<p>Use the JupyterLab launcher (you can get a new launcher by clicking on the <code class="docutils literal notranslate"><span class="pre">+</span></code> icon on the left pane of your JupyterLab window) to launch a notebook. In the first cell (the box next to the <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code> prompt), paste the code below. To run the code, press <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> while the cursor is active inside the cell. You should see a plot that looks like the one below. If you do, you have a functioning Python environment for scientific computing!</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">bokeh.io</span>
+<span class="kn">import</span> <span class="nn">bokeh.plotting</span>
 
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">output_notebook</span><span class="p">()</span>
+
+<span class="c1"># Generate plotting values</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Make the plot</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">frame_width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">frame_height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ColumnDataSource</span><span class="p">(</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Biocircuits&quot;</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+    <span class="n">text_align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+    <span class="n">text_font_size</span><span class="o">=</span><span class="s2">&quot;18pt&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Display</span>
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div class="bk-root">
+    <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
+    <span id="1123">Loading BokehJS ...</span>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  var JS_MIME_TYPE = 'application/javascript';
+  var HTML_MIME_TYPE = 'text/html';
+  var EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  var CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    var script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    var cell = handle.cell;
+
+    var id = cell.output_area._bokeh_element_id;
+    var server_id = cell.output_area._bokeh_server_id;
+    // Clean up Bokeh references
+    if (id != null && id in Bokeh.index) {
+      Bokeh.index[id].model.document.clear();
+      delete Bokeh.index[id];
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      var cmd = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd, {
+        iopub: {
+          output: function(msg) {
+            var id = msg.content.text.trim();
+            if (id in Bokeh.index) {
+              Bokeh.index[id].model.document.clear();
+              delete Bokeh.index[id];
+            }
+          }
+        }
+      });
+      // Destroy server and session
+      var cmd = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    var output_area = handle.output_area;
+    var output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      var bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      var script_attrs = bk_div.children[0].attributes;
+      for (var i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      var toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+
+
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  var NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded() {
+    var el = document.getElementById("1123");
+    if (el != null) {
+      el.textContent = "BokehJS is loading...";
+    }
+    if (root.Bokeh !== undefined) {
+      if (el != null) {
+        el.textContent = "BokehJS " + root.Bokeh.version + " successfully loaded.";
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(display_loaded, 100)
+    }
+  }
+
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    const hashes = {"https://cdn.bokeh.org/bokeh/release/bokeh-2.3.0.min.js": "HjagQp6T0/7bxYTAXbLotF1MLAGWmhkY5siA1Gc/pcEgvgRPtMsRn0gQtMwGKiw1", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.0.min.js": "ZEPPTjL+mdyqgIq+/pl9KTwzji8Kow2NnI3zWY8+sFinWP/SYJ80BnfeJsa45iYj", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.0.min.js": "exLqv2ACDRIaV7ZK1iL8aGzGYQvKVuT3U2CT7FsQREBxRah6JrkVCoFy0koY1YqV"};
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      if (url in hashes) {
+        element.crossOrigin = "anonymous";
+        element.integrity = "sha384-" + hashes[url];
+      }
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.3.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.3.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.3.0.min.js"];
+  var css_urls = [];
+
+
+  var inline_js = [
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {
+
+
+    }
+  ];
+
+  function run_inline_js() {
+
+    if (root.Bokeh !== undefined || force === true) {
+
+    for (var i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+    if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      var cell = $(document.getElementById("1123")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div class="bk-root" id="4d9f6750-8706-4dd3-ad0c-27529cf68e0d" data-root-id="1124"></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+(function(root) {
+  function embed_document(root) {
+
+  var docs_json = {"33f45696-d700-4341-9a6f-7f4e73b84ecc":{"defs":[{"extends":null,"module":null,"name":"DataModel","overrides":[],"properties":[]}],"roots":{"references":[{"attributes":{"below":[{"id":"1133"}],"center":[{"id":"1136"},{"id":"1140"}],"frame_height":300,"frame_width":300,"left":[{"id":"1137"}],"renderers":[{"id":"1158"},{"id":"1164"}],"title":{"id":"1180"},"toolbar":{"id":"1148"},"x_range":{"id":"1125"},"x_scale":{"id":"1129"},"y_range":{"id":"1127"},"y_scale":{"id":"1131"}},"id":"1124","subtype":"Figure","type":"Plot"},{"attributes":{"line_color":"red","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"1156","type":"Line"},{"attributes":{"data":{"text":["Biocircuits"],"x":[0],"y":[0]},"selected":{"id":"1191"},"selection_policy":{"id":"1190"}},"id":"1160","type":"ColumnDataSource"},{"attributes":{"source":{"id":"1155"}},"id":"1159","type":"CDSView"},{"attributes":{"line_alpha":0.1,"line_color":"red","line_width":3,"x":{"field":"x"},"y":{"field":"y"}},"id":"1157","type":"Line"},{"attributes":{"text_align":{"value":"center"},"text_alpha":{"value":0.1},"text_color":{"value":"black"},"text_font_size":{"value":"18pt"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1163","type":"Text"},{"attributes":{"data_source":{"id":"1160"},"glyph":{"id":"1162"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1163"},"view":{"id":"1165"}},"id":"1164","type":"GlyphRenderer"},{"attributes":{},"id":"1180","type":"Title"},{"attributes":{},"id":"1134","type":"BasicTicker"},{"attributes":{},"id":"1190","type":"UnionRenderers"},{"attributes":{},"id":"1191","type":"Selection"},{"attributes":{"formatter":{"id":"1183"},"major_label_policy":{"id":"1181"},"ticker":{"id":"1138"}},"id":"1137","type":"LinearAxis"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"right_units":"screen","syncable":false,"top_units":"screen"},"id":"1147","type":"BoxAnnotation"},{"attributes":{},"id":"1141","type":"PanTool"},{"attributes":{},"id":"1129","type":"LinearScale"},{"attributes":{},"id":"1146","type":"HelpTool"},{"attributes":{},"id":"1125","type":"DataRange1d"},{"attributes":{},"id":"1131","type":"LinearScale"},{"attributes":{"data_source":{"id":"1155"},"glyph":{"id":"1156"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1157"},"view":{"id":"1159"}},"id":"1158","type":"GlyphRenderer"},{"attributes":{"axis":{"id":"1137"},"dimension":1,"ticker":null},"id":"1140","type":"Grid"},{"attributes":{"formatter":{"id":"1186"},"major_label_policy":{"id":"1184"},"ticker":{"id":"1134"}},"id":"1133","type":"LinearAxis"},{"attributes":{"axis":{"id":"1133"},"ticker":null},"id":"1136","type":"Grid"},{"attributes":{},"id":"1181","type":"AllLabels"},{"attributes":{},"id":"1183","type":"BasicTickFormatter"},{"attributes":{},"id":"1142","type":"WheelZoomTool"},{"attributes":{"text_align":{"value":"center"},"text_color":{"value":"black"},"text_font_size":{"value":"18pt"},"x":{"field":"x"},"y":{"field":"y"}},"id":"1162","type":"Text"},{"attributes":{"data":{"x":{"__ndarray__":"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","dtype":"float64","order":"little","shape":[200]},"y":{"__ndarray__":"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","dtype":"float64","order":"little","shape":[200]}},"selected":{"id":"1189"},"selection_policy":{"id":"1188"}},"id":"1155","type":"ColumnDataSource"},{"attributes":{"overlay":{"id":"1147"}},"id":"1143","type":"BoxZoomTool"},{"attributes":{"source":{"id":"1160"}},"id":"1165","type":"CDSView"},{"attributes":{},"id":"1145","type":"ResetTool"},{"attributes":{},"id":"1127","type":"DataRange1d"},{"attributes":{},"id":"1138","type":"BasicTicker"},{"attributes":{},"id":"1188","type":"UnionRenderers"},{"attributes":{"active_multi":null,"tools":[{"id":"1141"},{"id":"1142"},{"id":"1143"},{"id":"1144"},{"id":"1145"},{"id":"1146"}]},"id":"1148","type":"Toolbar"},{"attributes":{},"id":"1184","type":"AllLabels"},{"attributes":{},"id":"1186","type":"BasicTickFormatter"},{"attributes":{},"id":"1189","type":"Selection"},{"attributes":{},"id":"1144","type":"SaveTool"}],"root_ids":["1124"]},"title":"Bokeh Application","version":"2.3.0"}};
+  var render_items = [{"docid":"33f45696-d700-4341-9a6f-7f4e73b84ecc","root_ids":["1124"],"roots":{"1124":"4d9f6750-8706-4dd3-ad0c-27529cf68e0d"}}];
+  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script></div>
+</div>
+</div>
+<div class="section" id="Computing-environment">
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">load_ext</span> watermark
+<span class="o">%</span><span class="k">watermark</span> -v -p numpy,bokeh,jupyterlab
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Python implementation: CPython
+Python version       : 3.8.8
+IPython version      : 7.21.0
+
+numpy     : 1.19.2
+bokeh     : 2.3.0
+jupyterlab: 3.0.11
+
+</pre></div></div>
+</div>
+</div>
 </div>
 
 
@@ -283,8 +1005,8 @@ creating the figure.</p></li>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="biocircuits.interactive_xy_plot.html" class="btn btn-neutral float-right" title="biocircuits.interactive_xy_plot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="biocircuits.streamplot.html" class="btn btn-neutral float-left" title="biocircuits.streamplot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="01_intro_to_circuit_design.html" class="btn btn-neutral float-right" title="1. Introduction to biological circuit design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Biological Circuit Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
@@ -296,7 +1018,7 @@ creating the figure.</p></li>
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fcdb0203a90> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fcdafa3a580> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

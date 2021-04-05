@@ -7,15 +7,15 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>biocircuits.xyt_plot &mdash; Biological Circuit Design  documentation</title>
+  <title>Appendix A: Regulatory functions and their derivatives &mdash; Biological Circuit Design  documentation</title>
   
 
   
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
   
@@ -27,27 +27,27 @@
 
   
   <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
+    <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/clipboard.min.js"></script>
-        <script src="../../../_static/copybutton.js"></script>
-        <script src="../../../_static/togglebutton.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="biocircuits.interactive_xy_plot" href="biocircuits.interactive_xy_plot.html" />
-    <link rel="prev" title="biocircuits.streamplot" href="biocircuits.streamplot.html" /> 
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -61,12 +61,12 @@
           
 
           
-            <a href="../../../index.html">
+            <a href="../index.html">
           
 
           
             
-            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -74,7 +74,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -94,59 +94,38 @@
             
               <p class="caption"><span class="caption-text">Chapters</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/00_setting_up_python_computing_environment.html">0. Configuring your computer to use Python for scientific computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/02_intro_to_python_for_biological_circuits.html">2. Introduction to Python for biological circuits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/03_small_circuits.html">3. Big functions from small circuits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/04_finding_motifs.html">4. Finding biological circuit motifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="00_setting_up_python_computing_environment.html">0. Configuring your computer to use Python for scientific computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_intro_to_python_for_biological_circuits.html">2. Introduction to Python for biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_small_circuits.html">3. Big functions from small circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_finding_motifs.html">4. Finding biological circuit motifs</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../homework/01/index.html">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/01/index.html">Homework 1</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../schedule.html">Schedule overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../schedule.html#homework-due-dates">Homework due dates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../schedule.html#lecture-schedule">Lecture schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schedule.html">Schedule overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schedule.html#homework-due-dates">Homework due dates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../schedule.html#lecture-schedule">Lecture schedule</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Policies</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html">Lectures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#homework">Homework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#grading">Grading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#extensions">Extensions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#course-communications">Course communications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../policies.html#ediquette">“Ediquette”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html">Lectures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#homework">Homework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#grading">Grading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#extensions">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#course-communications">Course communications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#ediquette">“Ediquette”</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../resources.html">Books</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">Books</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Package docs</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">biocircuits package documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/installation.html">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/purpose.html">Purpose and contents</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../api.html#delay-differential-equations">Delay differential equations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#reaction-diffusion-equations">Reaction diffusion equations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#stochastic-simulation-algorithms">Stochastic simulation algorithms</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#visualization-functions">Visualization functions</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.phase_portrait.html">biocircuits.phase_portrait</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.streamplot.html">biocircuits.streamplot</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">biocircuits.xyt_plot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.interactive_xy_plot.html">biocircuits.interactive_xy_plot</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#regulatory-functions">Regulatory functions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#interactive-vignettes">Interactive vignettes</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../credits_and_citation.html">Credits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../credits_and_citation.html#citing-biocircuits">Citing biocircuits</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../package_docs/index.html">biocircuits package documentation</a></li>
 </ul>
 
             
@@ -162,7 +141,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Biological Circuit Design</a>
+          <a href="../index.html">Biological Circuit Design</a>
         
       </nav>
 
@@ -193,20 +172,16 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../index.html">biocircuits package documentation</a> &raquo;</li>
-        
-          <li><a href="../api.html">API Reference</a> &raquo;</li>
-        
-      <li>biocircuits.xyt_plot</li>
+      <li>Appendix A: Regulatory functions and their derivatives</li>
     
     
   <li class="wy-breadcrumbs-aside">
     
         
         
-            <a href="../../../_sources/package_docs/user_guide/generated/biocircuits.xyt_plot.rst.txt" rel="nofollow"> View page source</a>
+            <a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/chapters/appA_regulatory_functions.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biocircuits/biocircuits.github.io/master/chapters/appA_regulatory_functions.ipynb" download> Download notebook</a>
         
       
     
@@ -244,37 +219,98 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="biocircuits-xyt-plot">
-<h1>biocircuits.xyt_plot<a class="headerlink" href="#biocircuits-xyt-plot" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
-<dt id="biocircuits.xyt_plot">
-<code class="sig-prename descclassname"><span class="pre">biocircuits.</span></code><code class="sig-name descname"><span class="pre">xyt_plot</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'line'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'top_right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_slider_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#biocircuits.xyt_plot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an interactive plot some the output of <cite>rd_solve()</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>1D Numpy array</em>) – x-values for plot.</p></li>
-<li><p><strong>y</strong> (<em>tuple of 2D Numpy arrays</em>) – y-values for plot. <cite>y[i][j, k]</cite> is the y-value for curve i at
-time point j and position x[k].</p></li>
-<li><p><strong>t</strong> (<em>Numpy array</em>) – y-values for plot.</p></li>
-<li><p><strong>glyph</strong> (<em>str</em><em>, </em><em>either &quot;line&quot;</em><em> or </em><em>&quot;circle&quot;</em>) – What kind of glyph to use in plot.</p></li>
-<li><p><strong>legend_names</strong> (<em>list</em><em> or </em><em>None</em><em>, </em><em>default None</em>) – Names for legend in plot.</p></li>
-<li><p><strong>legend_location</strong> (<em>str</em><em>, </em><em>default 'top_right'</em>) – Position of legend using Bokeh’s specifications for legend
-position. Ignored if <cite>legend_names</cite> is None.</p></li>
-<li><p><strong>palette</strong> (<em>List of colors default bokeh.palettes.d3</em><em>[</em><em>'Category10'</em><em>]</em><em>[</em><em>10</em><em>]</em>) – Color palette to use for curves.</p></li>
-<li><p><strong>kwargs</strong> – All other kwargs are passed to bokeh.plotting.figure() in
-creating the figure.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>An interactive plot with a time slider.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>output</p>
-</dd>
-</dl>
-</dd></dl>
-
+<div class="section" id="Appendix-A:-Regulatory-functions-and-their-derivatives">
+<h1>Appendix A: Regulatory functions and their derivatives<a class="headerlink" href="#Appendix-A:-Regulatory-functions-and-their-derivatives" title="Permalink to this headline">¶</a></h1>
+<hr><p>Because we use certain functions to describe regulation of gene expression, it is useful to have a reference for the functions and their derivatives.</p>
+<p><strong>Dimensional forms</strong></p>
+<p>In all cases, the functions are dimensionless, and the arguments of the function are given in dimensionless form. To convert to a dimensional derivative, use the chain rule. Let <span class="math notranslate nohighlight">\(x_\mathrm{dim}\)</span> be the dimensional version of dimensionless <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(x_\mathrm{dim} = a x\)</span>. Then,</p>
+<p><span class="math">\begin{align}
+\frac{df}{\mathrm{d}x_\mathrm{dim}} = a \,\frac{\mathrm{d}f}{\mathrm{d}x}.
+\end{align}</span></p>
+<p><strong>Taylor series</strong></p>
+<p>In performing linear stability analysis, we need to express functions as Taylor series. For a univariate function (such a simple Hill functions), the Taylor series about the point <span class="math notranslate nohighlight">\(x_0\)</span> is</p>
+<p><span class="math">\begin{align}
+f(x) = f(x_0) + \left.\frac{\mathrm{d}f}{\mathrm{d}x}\right|_{x=x_0}\,(x-x_0) + \text{higher order terms.}
+\end{align}</span></p>
+<p>For a bivariate function the Taylor series about point <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> is</p>
+<p><span class="math">\begin{align}
+f(x, y) = f(x_0, y_0) + \left.\frac{\partial f}{\partial x}\right|_{x=x_0, y=y_0}\,(x-x_0) + \left.\frac{\partial f}{\partial y}\right|_{x=x_0, y=y_0}\,(y-y_0)+ \text{higher order terms.}
+\end{align}</span></p>
+<div class="section" id="Hill-functions">
+<h2>Hill functions<a class="headerlink" href="#Hill-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Activating-Hill-function">
+<h3>Activating Hill function<a class="headerlink" href="#Activating-Hill-function" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x) = \frac{x^n}{1 + x^n}, \\[1em]
+&\frac{\mathrm{d}f}{\mathrm{d}x} = \frac{n x^{n-1}}{(1 + x^n)^2}.
+\end{align}</span></p>
+</div>
+<div class="section" id="Repressive-Hill-function">
+<h3>Repressive Hill function<a class="headerlink" href="#Repressive-Hill-function" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x) = \frac{1}{1 + x^n}, \\[1em]
+&\frac{\mathrm{d}f}{\mathrm{d}x} = -\frac{n x^{n-1}}{(1 + x^n)^2}.
+\end{align}</span></p>
+</div>
+</div>
+<div class="section" id="Two-activators-affecting-the-same-gene">
+<h2>Two activators affecting the same gene<a class="headerlink" href="#Two-activators-affecting-the-same-gene" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="AND-logic">
+<h3>AND logic<a class="headerlink" href="#AND-logic" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x, y) = \frac{x^{n_x} y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1} y^{n_y}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial y} = \frac{n_y\,x^{n_x} y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
+<div class="section" id="OR-logic">
+<h3>OR logic<a class="headerlink" href="#OR-logic" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x,y) = \frac{x^{n_x} + y^{n_y} + x^{n_x} y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial y} = \frac{n_y\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
+</div>
+<div class="section" id="Two-repressors-affecting-the-same-gene">
+<h2>Two repressors affecting the same gene<a class="headerlink" href="#Two-repressors-affecting-the-same-gene" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>AND logic<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x, y) = \frac{1}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial x} = -\frac{n_x\,x^{n_x-1}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial y} = -\frac{n_y\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
+<div class="section" id="id2">
+<h3>OR logic<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x, y) = \frac{1 + x^{n_x} + y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial x} = -\frac{n_x\,x^{n_x-1}\,y^{n_y}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial y} = -\frac{n_y\,x^{n_x}\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
+</div>
+<div class="section" id="One-activator-and-one-repressor-affecting-the-same-gene">
+<h2>One activator and one repressor affecting the same gene<a class="headerlink" href="#One-activator-and-one-repressor-affecting-the-same-gene" title="Permalink to this headline">¶</a></h2>
+<p>Here, we assign <span class="math notranslate nohighlight">\(x\)</span> to be the concentration of the activator and <span class="math notranslate nohighlight">\(y\)</span> to be the concentration of the repressor.</p>
+<div class="section" id="id3">
+<h3>AND logic<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x, y) = \frac{x^{n_x}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial y} = -\frac{n_y\,x^{n_x}\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
+<div class="section" id="id4">
+<h3>OR logic<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x, y) = \frac{1 + x^{n_x} + x^{n_x}y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}\,y^{n_y}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial y} = -\frac{n_y\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
+</div>
 </div>
 
 
@@ -282,10 +318,6 @@ creating the figure.</p></li>
            
           </div>
           <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="biocircuits.interactive_xy_plot.html" class="btn btn-neutral float-right" title="biocircuits.interactive_xy_plot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="biocircuits.streamplot.html" class="btn btn-neutral float-left" title="biocircuits.streamplot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
 
   <hr/>
 
@@ -296,7 +328,7 @@ creating the figure.</p></li>
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fcdb0203a90> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fcd94c9e070> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -28,29 +28,31 @@ People
 
 .. toctree::
    :maxdepth: 1
-   :caption: Lessons
+   :caption: Chapters
 
-   lessons/00_setting_up_python_computing_environment
-   lessons/01_intro_to_circuit_design
-   lessons/02_intro_to_python_for_biological_circuits
-   lessons/03_small_circuits
-   .. lessons/04_finding_motifs
-   .. lessons/05_ffls
-   .. lessons/06_robustness
-   .. lessons/07_kinetic_proofreading
-   .. lessons/08_repressilator
-   .. lessons/09_delay_oscillators
-   .. lessons/10_noise
-   .. lessons/11_bursty
-   .. lessons/12_stochastic_simulation
-   .. lessons/13_stochastic_differentiation
-   .. lessons/14_bet_hedging
-   .. lessons/15_time-based_regulation
-   .. lessons/16_paradoxical
-   .. lessons/17_molecular_titration
-   .. lessons/20_turing
-   .. lessons/21_scaling_morphogens
-   .. lessons/appA_regulatory_functions
+   chapters/00_setting_up_python_computing_environment
+   chapters/01_intro_to_circuit_design
+   chapters/02_intro_to_python_for_biological_circuits
+   chapters/03_small_circuits
+   chapters/04_finding_motifs
+   
+   .. chapters/05_cffls
+   .. chapters/06_iffls
+   .. chapters/07_molecular_titration
+   .. chapters/08_robustness
+   .. chapters/09_kinetic_proofreading
+   .. chapters/10_repressilator
+   .. chapters/11_delay_oscillators
+   .. chapters/12_noise
+   .. chapters/13_bursty
+   .. chapters/14_stochastic_simulation
+   .. chapters/15_stochastic_differentiation
+   .. chapters/16_bet_hedging
+   .. chapters/17_time-based_regulation
+   .. chapters/18_paradoxical
+   .. chapters/21_turing
+   .. chapters/22_scaling_morphogens
+   .. chapters/appA_regulatory_functions
 
 
 .. toctree::

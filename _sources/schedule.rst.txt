@@ -45,115 +45,115 @@ Below are tentative homework due dates.
 Lecture schedule
 ----------------
 
-Lectures will roughly cover one lesson in the posted materials and will proceed in order. The schedule is subject to change. Under some lectures are suggested readings.
+Lectures will roughly cover one chapter in the posted materials and will proceed in order. The schedule is subject to change. Under some lectures are suggested readings.
 
-- Before class - :ref:`Lesson 0<0. Configuring your computer to use Python for scientific computing>`: Configuring your computer to use Python for scientific computing
+- Before class - :ref:`Chapter 0<0. Configuring your computer to use Python for scientific computing>`: Configuring your computer to use Python for scientific computing
 
-- M 03/29 - :ref:`Lesson 1<1. Introduction to Biological Circuit Design>`: Introduction to biological circuit design (ME)
+- M 03/29 - :ref:`Chapter 1<1. Introduction to Biological Circuit Design>`: Introduction to biological circuit design (ME)
 
     + Chapter 1 of Alon
 
-- W 03/31 - :ref:`Lesson 2<2. Introduction to Python for biological circuits>`: Introduction to Python for biological circuits (JB)
+- W 03/31 - :ref:`Chapter 2<2. Introduction to Python for biological circuits>`: Introduction to Python for biological circuits (JB)
 
-- F 04/02 - :ref:`Lesson 3<3. Big functions from small circuits>`: Big functions from small circuits (ME)
+- F 04/02 - :ref:`Chapter 3<3. Big functions from small circuits>`: Big functions from small circuits (ME)
 
     + Chapter 2 of Alon
 
-- M 04/05 - Lesson 4: Motifs in biological circuits (ME)
+- M 04/05 - Chapter 4: Motifs in biological circuits (ME)
 
     + Chapter 4 of Alon
 
-- W 04/07 - Lesson 5: A coherent feed-forward loop can perform dynamic signal processing (JB)
+- W 04/07 - Chapter 5: A coherent feed-forward loop can perform dynamic signal processing (JB)
 
     + Chapter 3 of Alon
     + `Alon, 2007 <https://doi.org/10.1038/nrg2102>`_
 
-- F 04/09 - Lesson 6: Incoherent feed-forward loops perform pulse generation and dosage compensation (ME)
+- F 04/09 - Chapter 6: Incoherent feed-forward loops perform pulse generation and dosage compensation (ME)
 
-- M 04/12 - Lesson 7: Molecular titration generates ultrasensitive responses (ME)
+- M 04/12 - Chapter 7: Molecular titration generates ultrasensitive responses (ME)
 
 - W 04/14 - Guest lecture 1: Ronghui Zhu presents *MultiFate: A scalable architecture for multistability in mammalian cells*
 
-- F 04/16 - Lesson 8: Robustness in sensory circuits (JB)
+- F 04/16 - Chapter 8: Robustness in sensory circuits (JB)
 
     + Chapters 8 and 9 of Alon
     + Sections 3.2 and 5.7 of Del Vecchio and Murray
 
-- M 04/19 - Lesson 9: Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition (JB)
+- M 04/19 - Chapter 9: Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition (JB)
 
     + Chapter 7 of Alon
     + `Chakraborty and Weiss, 2014 <https://doi.org/10.1038/ni.2940>`_
 
-- W 04/21 - Lesson 10: Blinking bacteria: delayed negative feedback circuits generate periodic oscillations (ME)
+- W 04/21 - Chapter 10: Blinking bacteria: delayed negative feedback circuits generate periodic oscillations (ME)
 
     + `Elowitz and Leibler, 2000 <https://doi.org/10.1038/35002125>`_
     + `Potvin-Trottier, et al., 2016 <https://doi.org/10.1038/nature19841>`_ (`News and Views <https://doi.org/doi:10.1038/nature19478>`_)
 
-- F 04/23 - Lesson 11: Oscillators II: Applications and alternative architectures (ME)
+- F 04/23 - Chapter 11: Oscillators II: Applications and alternative architectures (ME)
 
     + `Lewis, 2003 <https://doi.org/10.1016/S0960-9822(03)00534-7>`_
     + `Stricker, et al., 2008 <https://doi.org/10.1038/nature07389>`_
 
-- M 04/26 - Lesson 12: The noise inside the cell: How stochastic gene expression produces cellular heterogeneity (JB)
+- M 04/26 - Chapter 12: The noise inside the cell: How stochastic gene expression produces cellular heterogeneity (JB)
 
     + Appendix D of Alon
     + `Elowitz, et al., 2002 <https://doi.org/10.1126/science.1070919>`_
 
-- W 04/28 - Lesson 13: Bursty gene expression enables regulation of protein variability (JB)
+- W 04/28 - Chapter 13: Bursty gene expression enables regulation of protein variability (JB)
 
     + Section 4.1 of Del Vecchio and Murray
     + `Cai, et al., 2006 <https://doi.org/10.1038/nature04599>`_
     + `Singer, et al., 2014 <http://dx.doi.org/10.1016/j.molcel.2014.06.029>`_
 
-- F 04/30 - Lesson 14: Simulating stochastic circuit dynamics (JB)
+- F 04/30 - Chapter 14: Simulating stochastic circuit dynamics (JB)
 
     + Section 4.2 of Del Vecchio and Murray
 
-- M 05/03 - Lesson 15: Excitable circuit dynamics enable probabilistic, transient differentiation (JB)
+- M 05/03 - Chapter 15: Excitable circuit dynamics enable probabilistic, transient differentiation (JB)
 
     + `Süel, et al., 2006 <https://doi.org/10.1038/nature04588>`_
     + `Süel, et al., 2007 <https://doi.org/10.1126/science.1137455>`_
     + `Rue and Garcia-Ojalvo, 2011 <https://doi.org/10.1016/j.mbs.2011.02.013>`_
 
-- W 05/05 - Lesson 16: Bacterial bet-hedging and antibiotic persistence (ME)
+- W 05/05 - Chapter 16: Bacterial bet-hedging and antibiotic persistence (ME)
 
     + `Kussell and Leibler, 2005 <https://doi.org/10.1126/science.1114383>`_
     + `Rotem, et al., 2010 <https://doi.org/10.1073/pnas.1004333107>`_
 
-- F 05/07 - Lesson 17: Time-based regulation coordinates gene expression (ME)
+- F 05/07 - Chapter 17: Time-based regulation coordinates gene expression (ME)
 
     + `Cai, et al., 2008 <https://doi.org/10.1038/nature07292>`_
     + `Lin, et al., 2015 <https://doi.org/10.1038/nature15710>`_
 
 - M 05/10: Special guest lecture 2: Lacromioara Bintu presents *Principles of chromatin-based regulation*
 
-- W 05/12 - Lesson 18: Paradoxical circuits enable switch-like responses and linear amplification (JB)
+- W 05/12 - Chapter 18: Paradoxical circuits enable switch-like responses and linear amplification (JB)
 
     + `Hart, et al., 2012 <https://doi.org/10.1073/pnas.1117475109>`_
     + `Hart, et al., 2014 <https://doi.org/10.1016/j.cell.2014.07.033>`_
     + `Karin and Alon, 2017 <https://doi.org/10.15252/msb.20177599>`_
 
-- F 05/14 - Lesson 19: Cis-interactions enable unidirectional signaling (ME)
+- F 05/14 - Chapter 19: Cis-interactions enable unidirectional signaling (ME)
 
     + `Sprinzak, et al., 2010 <https://doi.org/10.1038/nature08959>`_
 
-- M 05/17 - Lesson 20: Promiscuous ligand-receptor interactions allow combinatorial signal processing (ME)
+- M 05/17 - Chapter 20: Promiscuous ligand-receptor interactions allow combinatorial signal processing (ME)
 
     + `Antebi, et al., 2017 <https://doi.org/10.1016/j.cell.2017.08.015>`_
 
-- W 05/19 - Lesson 21: Local activation and long-ranged inhibition can generate periodic spatial (Turing) patterns (JB)
+- W 05/19 - Chapter 21: Local activation and long-ranged inhibition can generate periodic spatial (Turing) patterns (JB)
 
     + `Turing, 1952 <https://doi.org/10.1098/rstb.1952.0012>`_
 
-- F 05/21 - Lesson 22: Feedbacks and scaling in morphogenetic patterning (JB)
+- F 05/21 - Chapter 22: Feedbacks and scaling in morphogenetic patterning (JB)
 
     + `Ben-Zvi, et al., 2010 <https://doi.org/10.1073/pnas.0912734107>`_
     + `Werner, et al., 2015 <https://doi.org/10.1103/PhysRevLett.114.138101>`_
 
 - M 05/23 - Special guest lecture 3: Uri Alon presents a special lecture and song on Systems Medicine
 
-- W 05/25 - Lesson 23: TBD
+- W 05/25 - Chapter 23: TBD
 
-- F 05/28 - Lesson 24: Course recap and the future of understanding and programming genetic circuitry (ME)
+- F 05/28 - Chapter 24: Course recap and the future of understanding and programming genetic circuitry (ME)
 
 
