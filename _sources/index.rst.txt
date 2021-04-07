@@ -35,8 +35,7 @@ People
    chapters/02_intro_to_python_for_biological_circuits
    chapters/03_small_circuits
    chapters/04_finding_motifs
-   
-   .. chapters/05_cffls
+   chapters/05_cffls
    .. chapters/06_iffls
    .. chapters/07_molecular_titration
    .. chapters/08_robustness
@@ -52,7 +51,7 @@ People
    .. chapters/18_paradoxical
    .. chapters/21_turing
    .. chapters/22_scaling_morphogens
-   .. chapters/appA_regulatory_functions
+   chapters/appA_regulatory_functions
 
 
 .. toctree::
@@ -60,6 +59,7 @@ People
    :caption: Homework
 
    homework/01/index
+   homework/02/index
 
 
 .. toctree::

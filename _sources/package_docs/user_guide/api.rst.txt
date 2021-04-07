@@ -59,6 +59,8 @@ Regulatory functions
    :toctree: generated
    :nosignatures:
 
+   act_hill
+   rep_hill
    aa_and
    aa_or
    rr_and
@@ -68,12 +70,13 @@ Regulatory functions
 
 
 
-Interactive vignettes
+Interactive applications
 ----------------------------
-.. currentmodule:: biocircuits.vignettes
+.. currentmodule:: biocircuits.apps
 
 .. autosummary::
-   :toctree: generated/vignettes
+   :toctree: generated/apps
    :nosignatures:
 
+   ffl_app
    promiscuous_222_app

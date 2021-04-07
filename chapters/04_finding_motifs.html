@@ -48,7 +48,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Homework 1" href="../homework/01/index.html" />
+    <link rel="next" title="5. Analysis of coherent feed forward loops" href="05_cffls.html" />
     <link rel="prev" title="3. Big functions from small circuits" href="03_small_circuits.html" /> 
 </head>
 
@@ -103,6 +103,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. Finding biological circuit motifs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Circuit-motifs">Circuit motifs</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Historical-context">Historical context</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Sequence-motifs-identify-cis-regulatory-sites"><em>Sequence motifs</em> identify cis-regulatory sites</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#A-circuit-can-be-represented-as-a-directed-graph">A circuit can be represented as a directed graph</a></li>
 </ul>
 </li>
@@ -111,14 +114,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#How-do-sub-graph-abundances-scale?">How do sub-graph abundances scale?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Beyond-transcriptional-circuits">Beyond transcriptional circuits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#There-are-many-kinds-of-FFLs">There are many kinds of FFLs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Aside:-sequence-motifs-identify-cis-regulatory-sites">Aside: <em>sequence motifs</em> identify cis-regulatory sites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Summary">Summary</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="05_cffls.html">5. Analysis of coherent feed forward loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../homework/01/index.html">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/02/index.html">Homework 2</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -261,6 +266,11 @@ particular transcription factor, and so on.</p>
 <p>The problem was that obtaining large data sets and extracting meaningful insights from them were, and are, two very different things. For instance, suppose you were given a data set providing the regulatory interactions among all the transcription factors within an organism. What would you analyze it? What could you learn from it?</p>
 <p>The breakthrough discovery of <strong>circuit motifs</strong> provided one crucial answer, demonstrating directly how one could obtain powerful new functional insights into genetic circuits from high throguhput data. Today we are going to define circuit motifs and see how they can be systematically discovered from maps of regulatory interactions. In the next chapter, we will focus on the functions of the most prevalent motifs. Our treatment follows the one in <em>Alon.</em></p>
 </div>
+</div>
+<div class="section" id="Sequence-motifs-identify-cis-regulatory-sites">
+<h2><em>Sequence motifs</em> identify cis-regulatory sites<a class="headerlink" href="#Sequence-motifs-identify-cis-regulatory-sites" title="Permalink to this headline">¶</a></h2>
+<p>The motif principle is quite general. Before it was applied to network motifs, it was used to identify functional motifs in genome sequences. For example, <a class="reference external" href="https://doi.org/10.1073/pnas.180265397">Bussemaker et al, PNAS, 2000</a> presented an algorithm called <em>MobyDick</em> that identifies “words” (letter sequence motifs), in any “text” (sequence of letters). They tested it out on the text of the classic novel Moby Dick, with spaces and punctuation removed, recovering a dictionary of English words
+that appear in the novel. Then, they used it on the yeast genome sequence to identify cis-regulatory sites, including binding sites</p>
 <div class="section" id="A-circuit-can-be-represented-as-a-directed-graph">
 <h3>A circuit can be represented as a directed graph<a class="headerlink" href="#A-circuit-can-be-represented-as-a-directed-graph" title="Permalink to this headline">¶</a></h3>
 <p>A regulatory circuit can be thought of abstractly as a <strong>directed graph</strong>–a set of nodes connected by arrows. For the transcriptional circuitry of a bacterium, each node represents an operon (a set of genes co-transcribed from a single promoter and independently translated to produce a corresponding set of proteins), and each arrow could represent regulation of one operon (tip of the arrow) by a transcription factor in another operon (base of the arrow).</p>
@@ -308,13 +318,15 @@ Note: The supplementary information of Milo et al, _Science_, 2002, available [h
 </div><p>This sub-graph, termed the <strong>Feed-Forward Loop (FFL)</strong>, has one node that regulates a target node two ways: directly, and indirectly through the third node.</p>
 <p>To visualize this, we can highlight in red all of the FFLs in the graphs shown above, the one at left being artificially constructed and those to the right being randomly generated graphs.</p>
 <div style="width: 600px; margin: auto"><img alt="labeled circuit ensemble" src="../_images/labeled_circuit_ensemble.png" />
-</div><p>We see that the FFL motif is over-represented. Of course, this is a schematic graph deliberately constructed to illustrate over-representation of this sub-graph.</p>
+</div><p><em>Image adapted from</em><a class="reference external" href="https://doi.org/10.1126/science.298.5594.824">Milo, et al., Science, 2002</a><em>.</em></p>
+<p>We see that the FFL motif is over-represented. Of course, this is a schematic graph deliberately constructed to illustrate over-representation of this sub-graph.</p>
 <p>What happens in real circuits?</p>
 <p>To address this question, Alon &amp; colleagues went through the <em>E. coli</em> transcriptional circuit, and systematically counted how many times they observed each of the thirteen possible three-node sub-graphs shown above. For each one, they compared the number of observations in the real circuit to the number of times that sub-graph was observed in each member of a large ensemble of randomized circuits. They used a <strong>z-score</strong> to quantify over- or under-representation in units of the standard
 deviation of the number of occurrences for the sub-graph in the randomized circuits: <span class="math notranslate nohighlight">\(z = (n_{obs}-\langle n\rangle)/\sigma\)</span>, where <span class="math notranslate nohighlight">\(n_{obs}\)</span> is the number of times the sub-graph was observed in the actual circuit, <span class="math notranslate nohighlight">\(\langle n\rangle\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> denote the mean and standard deviation of the number of times it was observed in each of the randomized circuits.</p>
 <p>They did this for several transcriptional circuits, including <em>E. coli</em>, yeast (two versions), and <em>B. subtilis</em>. Here are the results:</p>
 <div style="width: 600px; margin: auto"><img alt="profile of 3 motifs" src="../_images/profile_of_3_motifs.png" />
-</div><p>Several features are striking in this plot:</p>
+</div><p><em>Image adapted from</em><a class="reference external" href="https://doi.org/10.1126/science.1089167">Milo, et al., Science, 2004</a><em>.</em></p>
+<p>Several features are striking in this plot:</p>
 <ul class="simple">
 <li><p>There is strong over-representation of feed-forward loops (FFLs). In <em>E. coli</em>, one expects to see <strong>7±5</strong> FFLs by chance, but one observes this pattern <strong>42 times</strong> in the real circuit.</p></li>
 <li><p>The over-representation of FFLs is conserved across three distinct organisms, suggesting it is a general property of transcriptional circuits.</p></li>
@@ -324,7 +336,7 @@ deviation of the number of occurrences for the sub-graph in the randomized circu
 </div>
 <div class="section" id="How-do-sub-graph-abundances-scale?">
 <h2>How do sub-graph abundances scale?<a class="headerlink" href="#How-do-sub-graph-abundances-scale?" title="Permalink to this headline">¶</a></h2>
-<p>Next, let’s try to get a better intuition for how often we expect to see various sub-graphs appear in graphs of different sizes.</p>
+<p>Some species have much larger genomes than others. How would you expect the number of instances of different sub-graphs to change with the size of the overall circuit? You might at first think that larger circuits would simply have more copies of all possible sub-graphs. However, this is not the case. To see why, let’s try to get a better intuition for how often we expect to see various sub-graphs appear in graphs of different sizes.</p>
 <p>We will ask: What is the probability of obtaining an n-vertex sub-graph, <span class="math notranslate nohighlight">\(G\)</span>, by chance in a large random graph with <span class="math notranslate nohighlight">\(N\)</span> nodes and <span class="math notranslate nohighlight">\(E\)</span> edges? Clearly the answer will depend on the number of nodes, <span class="math notranslate nohighlight">\(n\)</span>, and edges, <span class="math notranslate nohighlight">\(g\)</span>, in <span class="math notranslate nohighlight">\(G\)</span>. For the FFL, <span class="math notranslate nohighlight">\(n=3, g=3\)</span>.</p>
 <p>Many biological networks are <strong>sparse</strong>, meaning the probability, <span class="math notranslate nohighlight">\(p\)</span>, of any potential edge occurring is low. Since the number of possible edges is <span class="math notranslate nohighlight">\(N^2\)</span>, so that <span class="math notranslate nohighlight">\(p = E/N^2 \ll 1\)</span>. For <em>E. coli</em>, <span class="math notranslate nohighlight">\(p≈0.002\)</span>. We will therefore focus on this regime.</p>
 <p>The question then becomes, for large sparse graphs, how should the expected number of occurrences of sub-graph, <span class="math notranslate nohighlight">\(G\)</span>, scale with the size of the circuit, or number of nodes, <span class="math notranslate nohighlight">\(N\)</span>?. For this argument, we will ignore numerical prefactors, and focus only on the dependence on <span class="math notranslate nohighlight">\(N\)</span>.</p>
@@ -371,11 +383,6 @@ N_G & \sim N^n p^g \\[1em]
 </div><p>We can then further classify the FFLS, according to how the regulatory arrows converging on the third node (now labeled “Z”) combine. In AND regulation, both X and Y need to be simultaneously present at high levels for Z to be expressed. in OR regulation, either input is sufficient to activate Z.</p>
 <p>In the next chapter, we will consider what functions the various FFLs can perform for cells.</p>
 </div>
-<div class="section" id="Aside:-sequence-motifs-identify-cis-regulatory-sites">
-<h2>Aside: <em>sequence motifs</em> identify cis-regulatory sites<a class="headerlink" href="#Aside:-sequence-motifs-identify-cis-regulatory-sites" title="Permalink to this headline">¶</a></h2>
-<p>The motif principle is quite general. Before it was applied to network motifs, it was used to identify functional motifs in genome sequences. For example, <a class="reference external" href="https://doi.org/10.1073/pnas.180265397">Bussemaker et al, PNAS, 2000</a> presented an algorithm called <em>MobyDick</em> that identifies “words” (letter sequence motifs), in any “text” (sequence of letters). They tested it out on the text of the classic novel Moby Dick, with spaces and punctuation removed, recovering a dictionary of English words
-that appear in the novel. Then, they used it on the yeast genome sequence to identify cis-regulatory sites, including binding sites</p>
-</div>
 <div class="section" id="Summary">
 <h2>Summary<a class="headerlink" href="#Summary" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -396,7 +403,7 @@ that appear in the novel. Then, they used it on the yeast genome sequence to ide
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../homework/01/index.html" class="btn btn-neutral float-right" title="Homework 1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="05_cffls.html" class="btn btn-neutral float-right" title="5. Analysis of coherent feed forward loops" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="03_small_circuits.html" class="btn btn-neutral float-left" title="3. Big functions from small circuits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
@@ -405,11 +412,11 @@ that appear in the novel. Then, they used it on the yeast genome sequence to ide
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 05, 2021.
+        Last updated on Apr 07, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fcd947599d0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fb532003a00> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

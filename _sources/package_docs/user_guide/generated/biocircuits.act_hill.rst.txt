@@ -1,0 +1,6 @@
+﻿biocircuits.act\_hill
+=====================
+
+.. currentmodule:: biocircuits
+
+.. autofunction:: act_hill

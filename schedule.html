@@ -47,7 +47,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Lectures" href="policies.html" />
-    <link rel="prev" title="Homework 1.2: Autoactivation, bistability, and the importance of leakage (30 pts)" href="homework/01/hw1.2.html" /> 
+    <link rel="prev" title="Homework 2.2: XOR gates (55 pts)" href="homework/02/hw2.2.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -99,10 +99,13 @@
 <li class="toctree-l1"><a class="reference internal" href="chapters/02_intro_to_python_for_biological_circuits.html">2. Introduction to Python for biological circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/03_small_circuits.html">3. Big functions from small circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chapters/04_finding_motifs.html">4. Finding biological circuit motifs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/05_cffls.html">5. Analysis of coherent feed forward loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="homework/01/index.html">Homework 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="homework/02/index.html">Homework 2</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul class="current">
@@ -250,7 +253,7 @@
 <p>Below are tentative homework due dates.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="homework/01/index.html#homework-1"><span class="std std-ref">Homework 1</span></a>: due 11 am PDT, April 7</p></li>
-<li><p>Homework 2: due 11 am PDT, April 14</p></li>
+<li><p><a class="reference internal" href="homework/02/index.html#homework-2"><span class="std std-ref">Homework 2</span></a>: due 11 am PDT, April 14</p></li>
 <li><p>Homework 3: due 11 am PDT, April 21</p></li>
 <li><p>Homework 4: due 11 am PDT, April 28</p></li>
 <li><p>Homework 5: due 11 am PDT, May 5</p></li>
@@ -273,7 +276,7 @@
 </ul>
 </div></blockquote>
 </li>
-<li><p>W 03/31 - <a class="reference internal" href="chapters/notebooks_with_panel/02_intro_to_python_for_biological_circuits.html#2.-Introduction-to-Python-for-biological-circuits"><span class="std std-ref">Chapter 2</span></a>: Introduction to Python for biological circuits (JB)</p></li>
+<li><p>W 03/31 - <a class="reference internal" href="chapters/02_intro_to_python_for_biological_circuits.html#2.-Introduction-to-Python-for-biological-circuits"><span class="std std-ref">Chapter 2</span></a>: Introduction to Python for biological circuits (JB)</p></li>
 <li><p>F 04/02 - <a class="reference internal" href="chapters/03_small_circuits.html#3.-Big-functions-from-small-circuits"><span class="std std-ref">Chapter 3</span></a>: Big functions from small circuits (ME)</p>
 <blockquote>
 <div><ul class="simple">
@@ -281,14 +284,14 @@
 </ul>
 </div></blockquote>
 </li>
-<li><p>M 04/05 - Chapter 4: Motifs in biological circuits (ME)</p>
+<li><p>M 04/05 - <a class="reference internal" href="chapters/04_finding_motifs.html#4.-Finding-biological-circuit-motifs"><span class="std std-ref">Chapter 4</span></a>: Motifs in biological circuits (ME)</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Chapter 4 of Alon</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>W 04/07 - Chapter 5: A coherent feed-forward loop can perform dynamic signal processing (JB)</p>
+<li><p>W 04/07 - <a class="reference internal" href="chapters/05_cffls.html#5.-Analysis-of-coherent-feed-forward-loops"><span class="std std-ref">Chapter 5</span></a>: A coherent feed-forward loop can perform dynamic signal processing (JB)</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Chapter 3 of Alon</p></li>
@@ -380,8 +383,7 @@
 </ul>
 </div></blockquote>
 </li>
-<li><p>M 05/10: Special guest lecture 2: Lacromioara Bintu presents <em>Principles of chromatin-based regulation</em></p></li>
-<li><p>W 05/12 - Chapter 18: Paradoxical circuits enable switch-like responses and linear amplification (JB)</p>
+<li><p>M 05/10 - Chapter 18: Paradoxical circuits enable switch-like responses and linear amplification (JB)</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference external" href="https://doi.org/10.1073/pnas.1117475109">Hart, et al., 2012</a></p></li>
@@ -390,6 +392,7 @@
 </ul>
 </div></blockquote>
 </li>
+<li><p>W 05/12: Special guest lecture 2: Lacromioara Bintu presents <em>Principles of chromatin-based regulation</em></p></li>
 <li><p>F 05/14 - Chapter 19: Cis-interactions enable unidirectional signaling (ME)</p>
 <blockquote>
 <div><ul class="simple">
@@ -432,7 +435,7 @@
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="policies.html" class="btn btn-neutral float-right" title="Lectures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="homework/01/hw1.2.html" class="btn btn-neutral float-left" title="Homework 1.2: Autoactivation, bistability, and the importance of leakage (30 pts)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="homework/02/hw2.2.html" class="btn btn-neutral float-left" title="Homework 2.2: XOR gates (55 pts)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
@@ -440,11 +443,11 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 05, 2021.
+        Last updated on Apr 07, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fcdb1f83d30> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fb54b48b370> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

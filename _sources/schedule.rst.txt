@@ -29,7 +29,7 @@ Homework due dates
 Below are tentative homework due dates.
 
 - :ref:`Homework 1<Homework 1>`: due 11 am PDT, April 7
-- Homework 2: due 11 am PDT, April 14
+- :ref:`Homework 2<Homework 2>`: due 11 am PDT, April 14
 - Homework 3: due 11 am PDT, April 21
 - Homework 4: due 11 am PDT, April 28
 - Homework 5: due 11 am PDT, May 5
@@ -59,11 +59,11 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
 
     + Chapter 2 of Alon
 
-- M 04/05 - Chapter 4: Motifs in biological circuits (ME)
+- M 04/05 - :ref:`Chapter 4<4. Finding biological circuit motifs>`: Motifs in biological circuits (ME)
 
     + Chapter 4 of Alon
 
-- W 04/07 - Chapter 5: A coherent feed-forward loop can perform dynamic signal processing (JB)
+- W 04/07 - :ref:`Chapter 5<5. Analysis of coherent feed forward loops>`: A coherent feed-forward loop can perform dynamic signal processing (JB)
 
     + Chapter 3 of Alon
     + `Alon, 2007 <https://doi.org/10.1038/nrg2102>`_
@@ -125,13 +125,13 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
     + `Cai, et al., 2008 <https://doi.org/10.1038/nature07292>`_
     + `Lin, et al., 2015 <https://doi.org/10.1038/nature15710>`_
 
-- M 05/10: Special guest lecture 2: Lacromioara Bintu presents *Principles of chromatin-based regulation*
-
-- W 05/12 - Chapter 18: Paradoxical circuits enable switch-like responses and linear amplification (JB)
+- M 05/10 - Chapter 18: Paradoxical circuits enable switch-like responses and linear amplification (JB)
 
     + `Hart, et al., 2012 <https://doi.org/10.1073/pnas.1117475109>`_
     + `Hart, et al., 2014 <https://doi.org/10.1016/j.cell.2014.07.033>`_
     + `Karin and Alon, 2017 <https://doi.org/10.15252/msb.20177599>`_
+
+- W 05/12: Special guest lecture 2: Lacromioara Bintu presents *Principles of chromatin-based regulation*
 
 - F 05/14 - Chapter 19: Cis-interactions enable unidirectional signaling (ME)
 
