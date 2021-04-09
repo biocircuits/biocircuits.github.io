@@ -36,7 +36,7 @@ People
    chapters/03_small_circuits
    chapters/04_finding_motifs
    chapters/05_cffls
-   .. chapters/06_iffls
+   chapters/06_functions_of_iffls
    .. chapters/07_molecular_titration
    .. chapters/08_robustness
    .. chapters/09_kinetic_proofreading

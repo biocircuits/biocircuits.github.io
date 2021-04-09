@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
@@ -35,9 +35,9 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
-        <script src="../_static/togglebutton.js"></script>
         <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -114,6 +114,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="04_finding_motifs.html">4. Finding biological circuit motifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_cffls.html">5. Analysis of coherent feed forward loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_functions_of_iffls.html">6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -217,35 +218,21 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
     border: none;
-    padding: 0;
+    padding: 0 0;
     margin: 0;
     box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -292,33 +279,20 @@ div.nboutput.container div.prompt pre {
 /* all prompts */
 div.nbinput.container div.prompt,
 div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
 }
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
 @media (max-width: 540px) {
     div.nbinput.container div.prompt,
     div.nboutput.container div.prompt {
-        width: unset;
         text-align: left;
         padding: 0.4em;
     }
     div.nboutput.container div.prompt.empty {
         padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
     }
 }
 
@@ -346,7 +320,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    /*background: #f5f5f5;*/
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -411,8 +385,7 @@ div.nboutput.container div.output_area div[class*=highlight].math,
 div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
+    padding: 0.3rem;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -500,7 +473,7 @@ div.rendered_html tbody tr:hover {
 <li><p>Steady state normalization allows analysis of response times.</p></li>
 <li><p>Nullclines identify fixed points and provide insight into the structure of dynamical systems.</p></li>
 </ul>
-<hr><div class="nbinput toggle docutils container">
+<hr><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -870,7 +843,7 @@ book</a>.</p>
 x(t) = \frac{\beta }{\gamma} (1-e^{-\gamma t})
 \end{align}</span></p>
 <p>Thus, the parameter that determines the response time is <span class="math notranslate nohighlight">\(\gamma\)</span>, the degradation+dilution rate of the protein. We define the response time (indicated by the vertical dashed line on the plot below) to be <span class="math notranslate nohighlight">\(\gamma^{-1}\)</span>, the time it takes for the concentration to rise to a factor of <span class="math notranslate nohighlight">\(1-\mathrm{e}^{-1}\)</span> of its steady state value.</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
@@ -970,7 +943,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 final steady state level (<span class="math notranslate nohighlight">\(\beta/\gamma\)</span>), and therefore leave the timescale over which the system reaches its new steady-state unaffected.</p>
 <p>One simple and direct way to speed up the response time of the protein is to destabilize it, increasing <span class="math notranslate nohighlight">\(\gamma\)</span>. This strategy pays the cost of a “futile cycle” of protein synthesis and degradation to provide a benefit in terms of the speed with which the regulatory system can reach a new steady state.</p>
 <p>To disentangle amplitude and timescale, it is useful to normalize these plots by their steady states, as in the right-hand plot below. Comparing normalized response curves is reasonable because many mutations can alter the expression level of a gene allowing evolution the potential to optimize expression level independently of the regulatory feedback system.</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
@@ -1111,7 +1084,7 @@ Autoregulation thus appears to be over-represented.</p>
 <div style="width: 260px; margin: auto"><img alt="simple_NAR_approx" src="../_images/simple_NAR_approx.png" />
 </div><p>In this sketch, we can see that the half-time, <span class="math notranslate nohighlight">\(t_{1/2}\)</span> for turning on should occur when <span class="math notranslate nohighlight">\(\beta t \approx K_d / 2\)</span>, i.e. at <span class="math notranslate nohighlight">\(t \approx K_d/2 \beta\)</span>. But this is only an approximation. A more complete treatment, in Rosenfeld et al, JMB 2002 shows that in the limit of strong negative autoregulation the dynamics approach <span class="math notranslate nohighlight">\(x(t) = x_\mathrm{st} \sqrt{1-\mathrm{e}^{-2 \gamma t}}\)</span>, where <span class="math notranslate nohighlight">\(x_\mathrm{st}\)</span> denotes the steady-state expression level. In the following section,
 we will explore these dynamics using numerical integration and compare them to this analytical approximation.</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
@@ -1240,7 +1213,7 @@ f_\mathrm{rep}(x) &= \frac{k^n}{k^n +x^n} = \frac{1}{1 + (x/k)^n}.
 \end{align}</span></p>
 <p>In these expressions, <span class="math notranslate nohighlight">\(k\)</span> is often referred to as an <strong>activation coefficient</strong>; it represents the concentration at which the function attains half its maximal value. It is a measure of the concentration <span class="math notranslate nohighlight">\(x\)</span> that is necessary to affect the regulation. The <strong>Hill coefficient</strong>, <span class="math notranslate nohighlight">\(n\)</span>, parametrizes how ultrasensitive the response is. When <span class="math notranslate nohighlight">\(n=1\)</span>, we recover the simple binding curves introduced earlier. When <span class="math notranslate nohighlight">\(n&gt;\)</span>, however, we achieve ever sharper, more ultrasensitive,
 responses. In the limit of <span class="math notranslate nohighlight">\(n=\infty\)</span> we have a step function. Here we plot the Hill function for a few values of <span class="math notranslate nohighlight">\(n\)</span>:</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
@@ -1319,7 +1292,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 \frac{\mathrm{d}x}{\mathrm{d}t} = \frac{\beta x^n} {x^n + K^n} - \gamma x
 \end{align}</span></p>
 <p>Note that we’ve replaced the simple activation function with a more general Hill function. To see what positive autoregulation might do, let’s plot the two terms on the right hand side (production rate and removal rate) versus <span class="math notranslate nohighlight">\(x\)</span>. We will start by considering a relatively high Hill coefficient of <span class="math notranslate nohighlight">\(n=4\)</span>.</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
@@ -1486,7 +1459,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Since this system has two stable fixed points, we can describe it as <strong>bistable</strong>. As long as noise or other perturbations are not too strong, the cell can happily remain at either a low or high value of x. Bistability is a special case of the more general phenomenon of <strong>multistability</strong>, which is one of the most important properties in biology, underlying the ability of a single genome to produce a vast array of distinct cell types in a multicellular organism. This simple analysis shows us
 immediately that a single positive autoregulatory gene can generate bistability!</p>
 <p>However, positive feedback by itself <em>is not enough</em>. We also need an <strong>ultrasensitive</strong> response to <span class="math notranslate nohighlight">\(x\)</span>. (In the context of the Hill function, ultrasensitivity can be defined as <span class="math notranslate nohighlight">\(n&gt;1\)</span>). If we reduce the Hill coefficient to 1, keeping other parameters the same, you can see that we now have only a single stable fixed point (and one unstable fixed point at <span class="math notranslate nohighlight">\(x=0\)</span>).</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
@@ -1573,7 +1546,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>Furthermore, ultrasensitivity is also not enough. Bistability in this system further requires tuning of different rate constants. For example, consider what happens for varying values of <span class="math notranslate nohighlight">\(\gamma\)</span>. (Here, I’ve set a very high value of <span class="math notranslate nohighlight">\(n=10\)</span> just to focus on the role of <span class="math notranslate nohighlight">\(\gamma\)</span>.)</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
@@ -1692,7 +1665,7 @@ y\text{ nullcline: }& y= \frac{\beta_y}{1 + x^n}.
 \end{align}</span></p>
 <p>Wherever these two lines cross, one has a fixed point. The stability of that fixed point can be determined by <strong>linear stability analysis</strong>, which we will introduce in a later chapter. For now, we will plot the two nullclines and investigate their behavior by varying the dimensionless parameters <span class="math notranslate nohighlight">\(\beta_x\)</span> and <span class="math notranslate nohighlight">\(\beta_y\)</span>, as well as the Hill coefficient <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>[If we want to have interactivity with a Bokeh plot when we convert the notebook to HTML, we need to use <strong>JavaScript callbacks</strong>. We do not need to have a Python interpreter running to perform the calculations to update the plot in that case, and the updates are all down by the client’s browser. In the code cell below, we use a <code class="docutils literal notranslate"><span class="pre">CustomJS</span></code> callback. You can read the code, and the syntax for doing this should be clear.]</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
@@ -1836,7 +1809,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <div class="section" id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline">¶</a></h2>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
@@ -1880,11 +1853,11 @@ jupyterlab: 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 07, 2021.
+        Last updated on Apr 09, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7ff5f3cdaa90> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fdba43bfa30> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
 
   
@@ -35,9 +35,9 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
-        <script src="../../_static/togglebutton.js"></script>
         <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/03_small_circuits.html">3. Big functions from small circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_finding_motifs.html">4. Finding biological circuit motifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_cffls.html">5. Analysis of coherent feed forward loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/06_functions_of_iffls.html">6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -203,35 +204,21 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
     border: none;
-    padding: 0;
+    padding: 0 0;
     margin: 0;
     box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -278,33 +265,20 @@ div.nboutput.container div.prompt pre {
 /* all prompts */
 div.nbinput.container div.prompt,
 div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
 }
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
 @media (max-width: 540px) {
     div.nbinput.container div.prompt,
     div.nboutput.container div.prompt {
-        width: unset;
         text-align: left;
         padding: 0.4em;
     }
     div.nboutput.container div.prompt.empty {
         padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
     }
 }
 
@@ -332,7 +306,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    /*background: #f5f5f5;*/
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -397,8 +371,7 @@ div.nboutput.container div.output_area div[class*=highlight].math,
 div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
+    padding: 0.3rem;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -1291,7 +1264,7 @@ the decay rate of Z to that of Y. If dilution is the primary mode of concentrati
 preferred method, with the others labeled as having an “old” API. The <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code> function has the flexibility of allowing choice of multiple numerical algorithms for solving ODEs. However, for the kinds of problems we encounter in this class, I find that the generic LSODA algorithm developed by Linda Petzold and Alan Hindmarsh that handles both stiff and non-stiff problems with variable time stepping is the best option. This is the only solver offered in the <code class="docutils literal notranslate"><span class="pre">odeint()</span></code> function. If we
 compare the two solvers, <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code> and <code class="docutils literal notranslate"><span class="pre">odeint()</span></code>, the former has a large overhead, which can lead to performance issues for small problems (for large problems, this is not a big deal). Since most of our problems are small, we will use <code class="docutils literal notranslate"><span class="pre">odeint()</span></code>. It has much better performance, and though its API is different, it is still intuitive.</p>
 <p>The basic call signature for <code class="docutils literal notranslate"><span class="pre">odeint()</span></code> is</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>scipy.integrate.odeint(func, y0, t, args=())
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scipy</span><span class="o">.</span><span class="n">integrate</span><span class="o">.</span><span class="n">odeint</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">())</span>
 </pre></div>
 </div>
 <p>There are many other keyword arguments to set algorithmic parameters, but we will generally not need them (and you can read about them in the <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.integrate.odeint.html#scipy.integrate.odeint">documentation</a>). Importantly, <code class="docutils literal notranslate"><span class="pre">func</span></code> is a vector-valued function with call signature <code class="docutils literal notranslate"><span class="pre">func(y,</span> <span class="pre">t,</span> <span class="pre">*args)</span></code> that specifies the right hand side of the system of ODEs to be solved. <code class="docutils literal notranslate"><span class="pre">t</span></code> is a scalar time point and <code class="docutils literal notranslate"><span class="pre">y</span></code> is a one-dimensional array (though
@@ -1527,6 +1500,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
+<div class="admonition warning">
+<p>Data type cannot be displayed:</p>
+</div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1709,6 +1685,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
+<div class="admonition warning">
+<p>Data type cannot be displayed:</p>
+</div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1750,7 +1729,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);</script></div>
 </div>
 <p>To serve the dashboard from the command line, you can enter the following:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>panel serve name_of_the_notebook.ipynb --show
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">panel</span> <span class="n">serve</span> <span class="n">name_of_the_notebook</span><span class="o">.</span><span class="n">ipynb</span> <span class="o">--</span><span class="n">show</span>
 </pre></div>
 </div>
 <p>This will open your default browser (Firefox or Chrome recommended) and the dashboard will be displayed along in a browser tab and be fully interactive.</p>
@@ -1907,6 +1886,9 @@ Watcher(inst=FloatSlider(end=10, name=&#39;n&#39;, start=0.1, value=1, value_thr
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
+<div class="admonition warning">
+<p>Data type cannot be displayed:</p>
+</div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -2829,11 +2811,11 @@ jupyterlab: 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 07, 2021.
+        Last updated on Apr 09, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7ff60d8ffbe0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fdba4efe370> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -13,8 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
 
   
@@ -35,9 +35,9 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/togglebutton.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
-        <script src="../_static/togglebutton.js"></script>
         <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="03_small_circuits.html">3. Big functions from small circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_finding_motifs.html">4. Finding biological circuit motifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_cffls.html">5. Analysis of coherent feed forward loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_functions_of_iffls.html">6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -217,35 +218,21 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
     border: none;
-    padding: 0;
+    padding: 0 0;
     margin: 0;
     box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -292,33 +279,20 @@ div.nboutput.container div.prompt pre {
 /* all prompts */
 div.nbinput.container div.prompt,
 div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
 }
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
 @media (max-width: 540px) {
     div.nbinput.container div.prompt,
     div.nboutput.container div.prompt {
-        width: unset;
         text-align: left;
         padding: 0.4em;
     }
     div.nboutput.container div.prompt.empty {
         padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
     }
 }
 
@@ -346,7 +320,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    /*background: #f5f5f5;*/
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -411,8 +385,7 @@ div.nboutput.container div.output_area div[class*=highlight].math,
 div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
+    padding: 0.3rem;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -541,36 +514,36 @@ are set up by installing and launching XCode.</p>
 <h2>Package installations and the <code class="docutils literal notranslate"><span class="pre">conda</span></code> package manager<a class="headerlink" href="#Package-installations-and-the-conda-package-manager" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code> is a package manager for keeping all of your packages up-to-date. It has plenty of functionality beyond our basic usage in class, which you can learn more about by reading the <a class="reference external" href="http://conda.pydata.org/docs/get-started.html">docs</a>. We will primarily be using <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install and update packages.</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code> works from the command line. On Windows, the command line is usually accessed through PowerShell and on macOS through Terminal. After you have installed Anaconda, at a command line prompt, run the following commands to update <code class="docutils literal notranslate"><span class="pre">conda</span></code> (yes, do it twice).</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda update conda
-conda update conda
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+<span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
 </pre></div>
 </div>
 <p>If <code class="docutils literal notranslate"><span class="pre">conda</span></code> is out of date and needs to be updated, you will be prompted to perform the update. Just type <code class="docutils literal notranslate"><span class="pre">y</span></code>, and the update will proceed.</p>
 <p>Now that <code class="docutils literal notranslate"><span class="pre">conda</span></code> is updated, we’ll update all packages, so type the following on the command line.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda update --all
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
 <p>You will be prompted to perform all of the updates. They may even be some downgrades. This happens when there are package conflicts where one package requires an earlier version of another. <code class="docutils literal notranslate"><span class="pre">conda</span></code> is very smart and figures all of this out for you, so you can almost always say “yes” (or “<code class="docutils literal notranslate"><span class="pre">y</span></code>”) to <code class="docutils literal notranslate"><span class="pre">conda</span></code> when it prompts you.</p>
 <p>As you work through this course, you will sometimes use packages that are not included in the default Anaconda distribution. As we develop code throughout the course, we will reuse it. For convenience, this is contained in the <code class="docutils literal notranslate"><span class="pre">biocircuits</span></code> package.</p>
 <p>You can do these installations with <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code> by doing the following at the command line. We will take care of these installations now, and will discuss them in much more detail as we use them. To do the installations, do the following on the command line.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install -c bokeh jupyter_bokeh
-conda install colorcet datashader fastparquet holoviews hvplot panel param
-pip install eqtk biocircuits iqplot watermark blackcellmagic
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">bokeh</span> <span class="n">jupyter_bokeh</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">colorcet</span> <span class="n">datashader</span> <span class="n">fastparquet</span> <span class="n">holoviews</span> <span class="n">hvplot</span> <span class="n">panel</span> <span class="n">param</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">eqtk</span> <span class="n">biocircuits</span> <span class="n">iqplot</span> <span class="n">watermark</span> <span class="n">blackcellmagic</span>
 </pre></div>
 </div>
 <p>Finally, if you want to install a spell checker for Jupyter notebooks, you can do so by doing the following on the command line. Note that you must have <a class="reference external" href="https://nodejs.org/">node.js</a> installed prior to installing the spell checker.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter labextension install @ijmbarr/jupyterlab_spellchecker
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">labextension</span> <span class="n">install</span> <span class="nd">@ijmbarr</span><span class="o">/</span><span class="n">jupyterlab_spellchecker</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="Launching-JupyterLab">
 <h2>Launching JupyterLab<a class="headerlink" href="#Launching-JupyterLab" title="Permalink to this headline">¶</a></h2>
 <p>The easiest way to launch JupyterLab is from the command line. On Windows, this is usually accessed through PowerShell and on macOS through Terminal. To launch JupyterLab, type the following on the command line.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">lab</span>
 </pre></div>
 </div>
 <p>If you are using an unsupported browser (e.g., Microsoft Edge or Safari for 3.0.0 ≤ JupyterLab version ≤ 3.0.11), you can specify the browser you want using, for example,</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab --browser=firefox
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">lab</span> <span class="o">--</span><span class="n">browser</span><span class="o">=</span><span class="n">firefox</span>
 </pre></div>
 </div>
 <p>Alternatively, you can use the Anaconda Navigator that was installed when you installed Anaconda. If you’re using macOS, this is available in your <code class="docutils literal notranslate"><span class="pre">Applications</span></code> menu. If you are using Windows, you can do this from the <code class="docutils literal notranslate"><span class="pre">Start</span></code> menu. You can then launch Anaconda Navigator. After launching the Navigator, you should see an option to launch JupyterLab. When you do that, a new browser window or tab will open with JupyterLab running. Within the JupyterLab window, you will have the option to launch
@@ -1017,11 +990,11 @@ jupyterlab: 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 07, 2021.
+        Last updated on Apr 09, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7ff60df71ee0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fdba4ee66d0> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
