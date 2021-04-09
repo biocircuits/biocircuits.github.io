@@ -68,7 +68,7 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
     + Chapter 3 of Alon
     + `Alon, 2007 <https://doi.org/10.1038/nrg2102>`_
 
-- F 04/09 - Chapter 6: Incoherent feed-forward loops perform pulse generation and dosage compensation (ME)
+- F 04/09 - :ref:`Chapter 6<6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators>`: Incoherent feed-forward loops perform pulse generation and dosage compensation (ME)
 
 - M 04/12 - Chapter 7: Molecular titration generates ultrasensitive responses (ME)
 
