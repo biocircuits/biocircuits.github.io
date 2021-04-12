@@ -70,7 +70,7 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
 
 - F 04/09 - :ref:`Chapter 6<6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators>`: Incoherent feed-forward loops perform pulse generation and dosage compensation (ME)
 
-- M 04/12 - Chapter 7: Molecular titration generates ultrasensitive responses (ME)
+- M 04/12 - :ref:`Chapter 7<7. Molecular titration generates ultrasensitive responses in biological circuits>`: Molecular titration generates ultrasensitive responses (ME)
 
 - W 04/14 - Guest lecture 1: Ronghui Zhu presents *MultiFate: A scalable architecture for multistability in mammalian cells*
 
