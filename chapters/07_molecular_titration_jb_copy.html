@@ -108,6 +108,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../homework/01/index.html">Homework 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/02/index.html">Homework 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/03/index.html">Homework 3</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -1328,7 +1329,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <h2>Ultrasensitivity is necessary for many circuits - how can one generate it?<a class="headerlink" href="#Ultrasensitivity-is-necessary-for-many-circuits---how-can-one-generate-it?" title="Permalink to this headline">¶</a></h2>
 <p>Ultrasensitivity can emerge at different levels: for instance, in the response of a protein to an allosteric effector or in the transcriptional regulation of a gene by a repressor or activator. Are there simple, generalizable, and engineerable circuit-level design strategies that could confer ultrasensitivity? Putting it another way, suppose you need to create an ultrasensitive relationship between one species and its target. How would you do it?</p>
 <p>For example, consider a simple gene regulatory system, in which an input activator, <span class="math notranslate nohighlight">\(A\)</span>, controls the expression of a target protein <span class="math notranslate nohighlight">\(Y\)</span>:</p>
-<center><p><img alt="7f0a60fa0ec34df1ba9254bd252cfde5" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
+<center><p><img alt="22805ba79bd84e15a9dc5b673f878b75" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
 </center><p>Let’s pause to ask:</p>
 <ol class="arabic simple">
 <li><p>How could you insert ultrasensitivity into the transcription response function (dependence of Y on A)?</p></li>
@@ -1339,7 +1340,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <h2>Molecular titration “subtracts” one protein concentration from another.<a class="headerlink" href="#Molecular-titration-“subtracts”-one-protein-concentration-from-another." title="Permalink to this headline">¶</a></h2>
 <p><strong>Molecular titration</strong> is a simple, general mechanism that provides tunable ultrasensitivity across diverse natural systems, and allows engineering of ultrasensitive responses in synthetic circuits.</p>
 <p>Many types of biological molecules are capable of forming strong and specific complexes with one another. Depending on the system, the complex itself may provide a particular activity, such as gene regulation. Or, alternatively, one of the monomers may provide an activity, with the complex inhibiting it.</p>
-<center><p><img alt="5e3049de251846439ac263d35e857f9e" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
+<center><p><img alt="37ceaed9ab4a4bac8a8de68f4a37c329" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
 </center><p>In this example, molecular titration performs a kind of “subtraction” operation. The inhibitor effectively “subtracts off” a fraction of otherwise active molecules.</p>
 <p>Molecular titration occurs in diverse contexts:</p>
 <ul class="simple">
@@ -2233,7 +2234,7 @@ array([9.90099980e-03, 1.00739051e-02, 1.02498300e-02, 1.04288271e-02,
 <p>That makes sense: when miRNAs are unsaturated, they can have a relatively strong effect on their target expression levels, essentially keeping them “off.” On the other hand, when targets are expressed highly enough, the relative effect of the miRNA on expression becomes much weaker, effectively just shifting it to slightly slower values.</p>
 <div style="margin: auto; width: 400px;"><img alt="miRNA_relative_change.png" src="../_images/miRNA_relative_change.png" />
 </div><p>Returning to the question posed earlier, we now see that a remarkably simple way to create a threshold within a regulatory step is to insert a constitutive, inhibitory miRNA:</p>
-<center><p><img alt="0f29aad79c914c6c8fa967cd98ed3334" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
+<center><p><img alt="6c77032e47864b23ac886ef8639069a5" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
 </center><p>Note that in addition to its general regulatory abilities and thresholding effects, miRNA regulation can also reduce noise in target gene expression. See <a class="reference external" href="https://science.sciencemag.org/content/sci/348/6230/128.full.pdf">Schmiedel et al, “MicroRNA control of protein expression noise,” Science (2015)</a>.</p>
 </div>
 <div class="section" id="Molecular-titration-in-antibiotic-persistence">
@@ -2308,11 +2309,11 @@ jupyterlab : 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 12, 2021.
+        Last updated on Apr 14, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa0634e0be0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fa8528dac40> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -108,6 +108,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../01/index.html">Homework 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Homework 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/index.html">Homework 3</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -476,7 +477,7 @@ div.rendered_html tbody tr:hover {
 <li><p>2019 Justin Bois and Michael Elowitz. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a class="reference external" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>. All code contained herein is licensed under an <a class="reference external" href="https://opensource.org/licenses/MIT">MIT license</a>.</p></li>
 </ol>
 <p>This document was prepared at <a class="reference external" href="http://www.caltech.edu">Caltech</a> with financial support from the <a class="reference external" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
-<p><img alt="e58033808c1e4c9da4c134cbb8f1021b" src="homework/02/figs/caltech_rosen.png" /></p>
+<p><img alt="99f681fbb7f64dd7844fa1bcb007cd64" src="homework/02/figs/caltech_rosen.png" /></p>
 <p><em>This homework was generated from a Jupyter notebook. You can download the notebook</em><a class="reference internal" href="#"><span class="doc">here</span></a><em>.</em><strong>These homework solutions may not be distributed.</strong></p>
 <hr><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -807,7 +808,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <hr><div class="section" id="2.1:-Design-principles-for-toggles,-30-pts">
 <h2>2.1: Design principles for toggles, 30 pts<a class="headerlink" href="#2.1:-Design-principles-for-toggles,-30-pts" title="Permalink to this headline">¶</a></h2>
 <p>Consider two components, A and B, which regulate each other. A may activate or repress B, and B may activate or repress A. There are three possible architectures in this scenario, two with positive feedback and one with negative feedback, shown below.</p>
-<p><img alt="8e69fa94746d4205a7f815f5a9ecc760" class="no-scaled-link" src="homework/02/figs/toggles.png" style="width: 400px;" /></p>
+<p><img alt="7a87fbd405fd47cbbc43aa31c6edc673" class="no-scaled-link" src="homework/02/figs/toggles.png" style="width: 400px;" /></p>
 <p><strong>a)</strong> A circuit can behave like a toggle if it has two stable steady states, one with A high and B low and another with B high and A low. Only one of the above architectures can function as a toggle. Which one? Explain in words and sketches why <em>only</em> the one you chose can be a toggle.</p>
 <p><strong>b)</strong> A and/or B may have ultrasensitive regulation, which we describe with a Hill coefficient, <span class="math notranslate nohighlight">\(n\)</span>, greater than one. Show that without ultrasensitive regulation, even the architecture you chose cannot have toggle behavior.</p>
 <div class="section" id="2.1-solution">
@@ -869,7 +870,7 @@ frac{beta_b}{1+a} - b &amp;= 0.</p>
 <div class="section" id="2.2-Autoregulation-in-a-C1-FFL,-40-pts">
 <h1>2.2 Autoregulation in a C1-FFL, 40 pts<a class="headerlink" href="#2.2-Autoregulation-in-a-C1-FFL,-40-pts" title="Permalink to this headline">¶</a></h1>
 <p><em>This problem is based off of problem 4.3 from Alon’s book.</em> The type 1 coherent feedforward loop (C1-FFL) is another motif that is found in large numbers in naturally occurring networks. In the figure below, we show two C1-FFL networks in which the regulator Y is autoregulated. In the C1-FFL with AND logic, Y shows autorepression, and in the C1-FFL with OR logic, it shows autoactivation. These “decorations” on C1-FFLs often occur in nature.</p>
-<center><p><img alt="9c42a76ad9e84c23841f225d0138958d" class="no-scaled-link" src="homework/02/figs/c1-ffl.png" style="width: 600px;" /></p>
+<center><p><img alt="e9e1ac6160e443e2a3c1ec054d495ada" class="no-scaled-link" src="homework/02/figs/c1-ffl.png" style="width: 600px;" /></p>
 </center><p><strong>a)</strong> As we learned in lecture, the C1-FFL with AND logic shows sign-sensitive delay. Specifically, if X is suddenly turned on, the response of Z is delayed, but if X is suddenly turned off, the response of Z is instantaneous. Analyze the left circuit in the above figure, and compare its dynamics to the canonical C1-FFL circuit with AND logic. Specifically address how the delay time changes. Assume that the regulation of Y follows AND logic.</p>
 <p><strong>b)</strong> The C1-FFL with OR logic also shows sign-sensitive delay. With OR logic, though, there is no delay when X is suddenly turned on, but rather delay when X is suddenly turned off. Analyze the right circuit in the above figure and compare its dynamics to the canonical C1-FFL circuit with OR logic. Again, address how the delay time changes, this time assuming that the regulation of Y follows OR logic.</p>
 <div class="section" id="2.2-solution">
@@ -1140,7 +1141,7 @@ text{b)};;; gamma dot{y} &amp;= beta_y,frac{(kappa_x x)^{n_{xy}}(kappa_y y)^{n_{
 <h2>2.3: A tri-stable cell-fate determinant circuit, 30 pts<a class="headerlink" href="#2.3:-A-tri-stable-cell-fate-determinant-circuit,-30-pts" title="Permalink to this headline">¶</a></h2>
 <p>Common myeloid precursor (CMP) cells are stem cells that can either differentiate into an erythroid (red blood cell) cell or a myeloid (bone marrow) cell. Such a binary differentiation may be regulated by a genetic circuit akin to the toggle circuit we have studied in class. However, the progenitor state of the CMP cells is also stable, which suggests tristability of the underlying circuit. In particular, the transcription factors GATA1 (which we will call X for convenience) and PU.1 (which we
 will call Y) are mutually repressive, which gives them the toggle-like behavior. They also are autoactivating. These interactions are summarized in the circuit below.</p>
-<center><p><img alt="8240d430e66641d7a855628974738886" class="no-scaled-link" src="homework/02/figs/tristable_toggle.png" style="width: 200px;" /></p>
+<center><p><img alt="a898cfef3d864ad6bd2eb2bbec962468" class="no-scaled-link" src="homework/02/figs/tristable_toggle.png" style="width: 200px;" /></p>
 </center><p><a class="reference external" href="https://doi.org/10.1016/j.ydbio.2007.02.036">Huang and coworkers (Dev. Biol., 2007)</a> claimed that this circuit can give tristability. Your task is to assess that claim. Model the circuit where the repression of X by Y and X’s autoactivation exhibits OR logic as does repression of Y by X and Y’s autoactivation. Can you come up with parameter values that show tristability?</p>
 <p>We have not covered some of the mathematical techniques, such as linear stability analysis, that help test the stability of fixed points. However, the graphical nullcline analysis we have covered is useful and sufficient to demonstrate tristability. Think about how many fixed points are necessary to get tristability.</p>
 <div class="section" id="2.3-solution">
@@ -1282,11 +1283,11 @@ var element = document.currentScript.previousSibling.previousSibling;
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 12, 2021.
+        Last updated on Apr 14, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa05b8e1a60> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fa86e1286d0> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

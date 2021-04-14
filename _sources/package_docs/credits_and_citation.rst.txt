@@ -18,5 +18,5 @@ Because this package is primarily pedagogical in nature and evolves according to
       keywords = {Github},
       title = {justinbois/biocircuits: Version 0.1.0},
       publisher = {CaltechDATA},
-      year = {2020}
+      year = {2021}
     }

@@ -30,7 +30,7 @@ Below are tentative homework due dates.
 
 - :ref:`Homework 1<Homework 1>`: due 11 am PDT, April 7
 - :ref:`Homework 2<Homework 2>`: due 11 am PDT, April 14
-- Homework 3: due 11 am PDT, April 21
+- :ref:`Homework 3<Homework 3>`: due 11 am PDT, April 21
 - Homework 4: due 11 am PDT, April 28
 - Homework 5: due 11 am PDT, May 5
 - Homework 6: due 11 am PDT, May 12

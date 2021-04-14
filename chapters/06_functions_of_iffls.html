@@ -125,6 +125,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../homework/01/index.html">Homework 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/02/index.html">Homework 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/03/index.html">Homework 3</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -489,6 +490,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="6.-Incoherent-feed-forward-loops-generate-pulses,-speed-responses,-and-serve-as-dosage-compensators">
 <h1>6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators<a class="headerlink" href="#6.-Incoherent-feed-forward-loops-generate-pulses,-speed-responses,-and-serve-as-dosage-compensators" title="Permalink to this headline">¶</a></h1>
+<p><em>Development of the sections of this chapter on dosage compensation benefited greatly from discussions with Michael Flynn.</em></p>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
 <li><p>The I1-FFL with AND logic is a pulse generator and also speeds response compared to an unregulated circuit.</p></li>
@@ -1004,8 +1006,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div class="section" id="The-accelerated-response-of-the-I1-FFL-is-observed-experimentally">
 <h3>The accelerated response of the I1-FFL is observed experimentally<a class="headerlink" href="#The-accelerated-response-of-the-I1-FFL-is-observed-experimentally" title="Permalink to this headline">¶</a></h3>
 <p>Mangan and coworkers (<a class="reference external" href="https://doi.org/10.1016/j.jmb.2005.12.003">J. Molec. Biol., 2006</a>) investigated an I1-FFL circuit that <em>E. coli</em> uses in its galactose utilization system. The circuit is shown below.</p>
-<div style="width: 250px; margin: auto"><img alt="gal E system" src="../_images/galE_system.png" />
-</div><p>As the “X” gene in this I1-FFL is CRP, the circuit is induced by sudden addition of cAMP, as in the arabidose and lactose circuits above. Mangan and coworkers investigated the response of the wild type circuit, as well as a mutant circuit where galS was deleted. This latter circuit lacks the feed forward loop, and the production of galETK is directly regulated by CRP.</p>
+<div style="width: 250px; margin: auto"><img alt="gal E system" src="../_images/galE_system.svg" /></div><p>As the “X” gene in this I1-FFL is CRP, the circuit is induced by sudden addition of cAMP, as in the arabidose and lactose circuits above. Mangan and coworkers investigated the response of the wild type circuit, as well as a mutant circuit where galS was deleted. This latter circuit lacks the feed forward loop, and the production of galETK is directly regulated by CRP.</p>
 <p>In their experiment, the galE promoter was engineering to express GFP so they could monitor the dynamics of the circuit with fluorescence. The result is shown below.</p>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -1384,11 +1385,11 @@ jupyterlab : 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 12, 2021.
+        Last updated on Apr 14, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa063c72610> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fa852c098e0> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

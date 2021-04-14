@@ -2,17 +2,19 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "b6114494",
+   "id": "8d6ef749",
    "metadata": {},
    "source": [
     "# 6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators\n",
+    "\n",
+    "*Development of the sections of this chapter on dosage compensation benefited greatly from discussions with Michael Flynn.*\n",
     "\n",
     "<hr>"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "e2968a7c",
+   "id": "8a78a3c5",
    "metadata": {},
    "source": [
     "**Design principles**\n",
@@ -26,7 +28,7 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "538b7b52",
+   "id": "08f1a058",
    "metadata": {
     "tags": [
      "hide-input"
@@ -379,7 +381,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c7bedb66",
+   "id": "03d83933",
    "metadata": {},
    "source": [
     "<hr>"
@@ -387,7 +389,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "efe0b555",
+   "id": "bb82aec5",
    "metadata": {},
    "source": [
     "In the [previous chapter](05_cffls.ipynb), we found that two of the eight architectures of feedforward loops were overrepresented in *E. coli* and *S. cerevisiae*, the C1-FFL and the I1-FFL. We analyzed the C1-FFL in detail, in so doing laid the groundwork for analyzing feedforward loops in genetic circuits in general. In this chapter, we turn our attention to the other over-represented circuit, the I1-FFL. As a reminder, here is the structure of the circuit.\n",
@@ -408,7 +410,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "502f9561",
+   "id": "cf59476c",
    "metadata": {},
    "source": [
     "## The I1-FFL with AND logic is a pulse generator\n",
@@ -421,7 +423,7 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "ebc39c87",
+   "id": "06df8034",
    "metadata": {
     "tags": [
      "hide-input"
@@ -511,7 +513,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c50c6e6a",
+   "id": "f7b6de99",
    "metadata": {},
    "source": [
     "We see that Z pulses up and then falls down to its steady state value. This is because the presence  X leads to production of Z due to its activation. X also leads to the increase in Y, and once enough Y is present, it can start to repress Z. This brings the Z level back down toward a new steady state where the production rate of Z is a balance between activation by X and repression by Y. Thus, **the I1-FFL with AND logic is a pulse generator.**"
@@ -519,7 +521,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "8ba19824",
+   "id": "b34f336b",
    "metadata": {},
    "source": [
     "### The I1-FFL with AND logic gives an accelerated response\n",
@@ -538,7 +540,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "ac9ea287",
+   "id": "bab5ad9c",
    "metadata": {
     "tags": [
      "hide-input"
@@ -625,7 +627,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "8bc2e9af",
+   "id": "c5e2dd8e",
    "metadata": {},
    "source": [
     "So, we have another design principle, **The I1-FFL with AND logic has a faster response time than an unregulated circuit.**"
@@ -633,7 +635,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b6c7079a",
+   "id": "7b778a35",
    "metadata": {},
    "source": [
     "### The accelerated response of the I1-FFL is observed experimentally\n",
@@ -642,7 +644,7 @@
     "\n",
     "<div style=\"width: 250px; margin: auto\">\n",
     "\n",
-    "![gal E system](figs/galE_system.png)\n",
+    "![gal E system](figs/galE_system.svg)\n",
     "\n",
     "</div>\n",
     "\n",
@@ -654,7 +656,7 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "bfc6f418",
+   "id": "bd0adadb",
    "metadata": {
     "tags": [
      "hide-input"
@@ -751,7 +753,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "688ad22a",
+   "id": "d7a3911b",
    "metadata": {},
    "source": [
     "We see that indeed the wild type I1-FFL architecture speeds up the response to the cAMP input, complete with the overshoot we expect from an I1-FFL circuit."
@@ -759,7 +761,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "ffdc9869",
+   "id": "5bc169a7",
    "metadata": {
     "tags": []
    },
@@ -790,7 +792,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "00e6e5bd",
+   "id": "a422604f",
    "metadata": {},
    "source": [
     "## Gene dosage also varies in eukaryotic cells\n",
@@ -804,7 +806,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "6cb7f9c8",
+   "id": "5647cf84",
    "metadata": {},
    "source": [
     "## Gene dosage compensation is important for synthetic biology and gene therapy applications.  \n",
@@ -818,7 +820,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "68d738f3",
+   "id": "1cd38322",
    "metadata": {},
    "source": [
     "## The transcriptional IFFL can provide gene dosage compensation\n",
@@ -891,7 +893,7 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "9916d886",
+   "id": "1a9f23f4",
    "metadata": {
     "tags": [
      "hide-input"
@@ -1019,7 +1021,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "d47ba4d1",
+   "id": "1658a2b5",
    "metadata": {},
    "source": [
     "In fact, it does. We can see that $n=1$ generates ideal dosage-independent behavior. With $n > 1$, $y_\\mathrm{ss}$ responds non-monotonically to copy number, producing a peak in Y concentration at intermediate copy numbers. By contrast, if $n < 1$, we observe an attenuated incomplete dosage compensation. For bacteria, we are fortunate (for this circuit) that gene regulation can be linearly sensitive ($n=1$) in many cases. "
@@ -1027,7 +1029,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "38ce2c5e",
+   "id": "43fb7dd4",
    "metadata": {},
    "source": [
     "## Synthetic biology enables experimental tests of dosage compensation in bacteria\n",
@@ -1063,7 +1065,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f3adcd58",
+   "id": "85bfe7c6",
    "metadata": {},
    "source": [
     "Segall-Shapiro et al conclude: \n",
@@ -1072,7 +1074,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "a9128981",
+   "id": "731eb4fb",
    "metadata": {},
    "source": [
     "## Single-gene miRNA-based IFFLs provide dosage compensation in mammalian cells \n",
@@ -1171,7 +1173,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "eeb33919",
+   "id": "e55c377c",
    "metadata": {},
    "source": [
     "## Conclusions\n",
@@ -1181,7 +1183,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "d6d70778",
+   "id": "5adbb851",
    "metadata": {},
    "source": [
     "## Computing environment"
@@ -1190,7 +1192,7 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "e22549de",
+   "id": "384f363c",
    "metadata": {},
    "outputs": [
     {
