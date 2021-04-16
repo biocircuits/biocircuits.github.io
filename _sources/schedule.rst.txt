@@ -74,12 +74,12 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
 
 - W 04/14 - Guest lecture 1: Ronghui Zhu presents *MultiFate: A scalable architecture for multistability in mammalian cells*
 
-- F 04/16 - Chapter 8: Robustness in sensory circuits (JB)
+- F 04/16 - :ref:`Chapter 8<8. Robustness in biological circuits>`: Robustness in sensory circuits (JB)
 
     + Chapters 8 and 9 of Alon
     + Sections 3.2 and 5.7 of Del Vecchio and Murray
 
-- M 04/19 - Chapter 9: Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition (JB)
+- M 04/19 - :ref:`Chapter 9<9. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition>`: Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition (JB)
 
     + Chapter 7 of Alon
     + `Chakraborty and Weiss, 2014 <https://doi.org/10.1038/ni.2940>`_

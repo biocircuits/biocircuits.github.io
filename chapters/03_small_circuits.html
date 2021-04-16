@@ -116,6 +116,8 @@
 <li class="toctree-l1"><a class="reference internal" href="05_cffls.html">5. Analysis of coherent feed forward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_functions_of_iffls.html">6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_molecular_titration.html">7. Molecular titration generates ultrasensitive responses in biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_robustness.html">8. Robustness in biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_kinetic_proofreading.html">9. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -845,10 +847,10 @@ var element = document.currentScript.previousSibling.previousSibling;
 <hr><div class="section" id="Demand-theory:-“use-it-or-lose-it”">
 <h2>Demand theory: “use it or lose it”<a class="headerlink" href="#Demand-theory:-“use-it-or-lose-it”" title="Permalink to this headline">¶</a></h2>
 <p>At the end of the first chapter, we asked our first design question: Under what conditions would you prefer to use activation or repression to regulate a gene? Both schemes are used in nature. They can each generate equivalent responses–a signal or condition that activates an activator should behave similarly to a signal that inhibits a repressor:</p>
-<div style="width: 350px; margin: auto"><img alt="equivalent systems" src="../_images/equivalent_systems.png" />
+<div style="width: 350px; margin: auto;"><img alt="equivalent systems" src="../_images/equivalent_systems.png" />
 </div><p>Michael Savageau posed this question in the context of bacterial metabolic gene regulation in his paper, “Design of molecular control mechanisms and the demand for gene expression” (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/271992">PNAS, 1977</a>). He focused on “demand” as a critical factor that influences the choice of activation or repression. <em>Demand</em> can be defined as the fraction of time that the gene is needed at the high end of its regulatory range in the cells natural environments. Savageau
 made the empirical observation that high demand genes are more frequently regulated by activators, while low demand genes are more often regulated by repressors.</p>
-<div style="width: 500px; margin: auto"><img alt="low demand, high demand" src="../_images/low_demand-high_demand3.png" />
+<div style="width: 500px; margin: auto;"><img alt="low demand, high demand" src="../_images/low_demand-high_demand3.png" />
 </div><p>He suggested that this relationship could be explained by a <strong>“use it or lose it”</strong> rule of evolutionary selection. Recall that mutations, especially those that diminish the function of a gene, occur frequently. A high demand gene controlled by an activator needs the activator to be on most of the time. Under these conditions, evolution would select against mutations that eliminate the activator. By contrast, if the same high demand system were regulated by a repressor then, most of the time,
 there would be weaker selection against mutations that removed the repressor, increasing the potential for evolutionary loss of the regulatory system. This reasoning assumes no direct fitness advantage for either regulation mode, just a difference in the average strength of selection pressure needed to maintain them.</p>
 <p>In 2009, <a class="reference external" href="https://dx.doi.org/10.1073%2Fpnas.0808500106">Gerland and Hwa</a> formulated and analyzed a model to explore these ideas mathematically. They showed that the “use it or lose it” principle indeed dominates when timescales of switching between low and high demand environments are long and populations are small. However, the same model could select for the opposite demand rule in other regimes.</p>
@@ -856,7 +858,7 @@ there would be weaker selection against mutations that removed the repressor, in
 of the time minimizes the fraction of time that such events can occur.</p>
 <p>This explanation make the same predictions as Savageau’s explanation but for different reasons. Here, a high demand gene should preferentially use an activator since this arrangement minimizes unoccupied binding sites more of the time. Conversely, a low demand gene would preferentially use repression to maintain the binding site in an occupied state under most conditions. This argument can be generalized to other examples of seemingly equivalent regulatory systems and is described in <a class="reference external" href="https://www.amazon.com/gp/product/1439837171/ref=dbs_a_def_rwt_bibl_vppi_i0">Uri Alon’s
 book</a>.</p>
-<div style="width: 250px; margin: auto"><img alt="Error load" src="../_images/ErrorLoad.png" />
+<div style="width: 250px; margin: auto;"><img alt="Error load" src="../_images/ErrorLoad.png" />
 </div><p><em>In this figure, a repressor, denoted R binds strongly and specifically to its target site. In the absence o the repressor, that site could also be bound non-specifically, and inappropriately by a range of other factors, denoted A-F.</em></p>
 <p>Remarkably, we still lack definitive experimental evidence to fully resolve this fundamental design question. Challenge: <strong>Can you devise an experimental way to discriminate among these potential explanations?</strong></p>
 </div>
@@ -1094,10 +1096,10 @@ var element = document.currentScript.previousSibling.previousSibling;
 <h2>Negative autoregulation is prevalent in natural circuits<a class="headerlink" href="#Negative-autoregulation-is-prevalent-in-natural-circuits" title="Permalink to this headline">¶</a></h2>
 <p>So destabilizing a protein can speed its resposne time. However, most bacterial proteins, transcription factors in particular, are stable. Do they use other mechanisms to accelerate response times?</p>
 <p>Empirically, many repressors repress their own expression.</p>
-<div style="width: 300px; margin: auto"><img alt="negative autorepression" src="../_images/negative_auto_regulation_diagram.png" />
+<div style="width: 300px; margin: auto;"><img alt="negative autorepression" src="../_images/negative_auto_regulation_diagram.png" />
 </div><p>In fact, we can consider autoregulation to be a <strong>network motif</strong>, defined as a regulatory pattern that is statistically over-represented in natural networks (circuits) compared to random networks. To see this, it is useful to imagine the transcriptional regulatory network of an organism as a graph consisting of <strong>nodes</strong> and <strong>directed edges</strong> (arrows). In bacteria, each node represents an operon, while each arrow represents regulation of the target operon (tip of the arrow) by a transcription
 factor in the originating operon (base of the arrow), as shown schematically here.</p>
-<div style="width: 300px; margin: auto"><img alt="simple graph" src="../_images/simple_graph.png" />
+<div style="width: 300px; margin: auto;"><img alt="simple graph" src="../_images/simple_graph.png" />
 </div><p>The transcriptional regulatory network of <em>E. coli</em> has been mapped (see <a class="reference external" href="http://regulondb.ccg.unam.mx">RegulonDB</a>). It contains ≈424 operons (nodes), ≈519 transcriptional regulatory interactions (arrows), involving ≈116 transcription factors. If the target of each arrow was chosen randomly, the probability of any given arrow being autoregulatory is low (≈1/424). One might expect only about one such event in the entire network. However, ≈40 such autoregulatory arrows are observed.
 Autoregulation thus appears to be over-represented.</p>
 <p>(If we further consider the “sign” of the arrow, with “+” representing activation and “-” representing repression, it turns out that there are 32 negative autoregulatory operons and 8 positive autoregulatory ones. We will discuss both types.)</p>
@@ -1111,7 +1113,7 @@ Autoregulation thus appears to be over-represented.</p>
 \end{align}</span></p>
 <p>We will consider the limit in which the autoregulation is “strong”, i.e. where <span class="math notranslate nohighlight">\(\beta/\gamma \gg K_d\)</span>, so the gene can, at maximal expression level, produce enough protein to fully repress itself.</p>
 <p>What happens when the operon is suddenly turned “on” from an initial “off” state (<span class="math notranslate nohighlight">\(x(0)=0\)</span>)? Initially, <span class="math notranslate nohighlight">\(x\)</span> builds up approximately linearly, at rate <span class="math notranslate nohighlight">\(\beta\)</span>. Eventually, its concentration is high enough to shut its own production off, <span class="math notranslate nohighlight">\(x \sim K_d\)</span>. While the real dynamcs are smoother, one can think of the behavior roughly like this:</p>
-<div style="width: 260px; margin: auto"><img alt="simple_NAR_approx" src="../_images/simple_NAR_approx.png" />
+<div style="width: 260px; margin: auto;"><img alt="simple_NAR_approx" src="../_images/simple_NAR_approx.png" />
 </div><p>In this sketch, we can see that the half-time, <span class="math notranslate nohighlight">\(t_{1/2}\)</span> for turning on should occur when <span class="math notranslate nohighlight">\(\beta t \approx K_d / 2\)</span>, i.e. at <span class="math notranslate nohighlight">\(t \approx K_d/2 \beta\)</span>. But this is only an approximation. A more complete treatment, in Rosenfeld et al, JMB 2002 shows that in the limit of strong negative autoregulation the dynamics approach <span class="math notranslate nohighlight">\(x(t) = x_\mathrm{st} \sqrt{1-\mathrm{e}^{-2 \gamma t}}\)</span>, where <span class="math notranslate nohighlight">\(x_\mathrm{st}\)</span> denotes the steady-state expression level. In the following section,
 we will explore these dynamics using numerical integration and compare them to this analytical approximation.</p>
 <div class="nbinput toggle docutils container">
@@ -1222,7 +1224,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>In fact, <em>negative autoregulation has accelerated the dynamics by about 5-fold compared to the unregulated system.</em></p>
 <p>Note that this acceleration occurs when we turn the gene on, but not when we turn it off. If we suddenly stop expression by setting <span class="math notranslate nohighlight">\(\beta\)</span> to 0, then the dynamics are governed by <span class="math notranslate nohighlight">\(\mathrm{d}x/\mathrm{d}t = -\gamma x\)</span> irrespective of which architecture we use.</p>
 <p>Can this acceleration be observed experimentally? To find out, Rosenfeld et al. engineered a simple synthetic system based on a bacterial repressor called TetR, fused to a fluorescent protein for readout, and studied its turn-on dynamics in bacterial populations.</p>
-<div style="width: 350px; margin: auto"><img alt="negative autoregulation experiment" src="../_images/negative_autoregulation_experiment.png" />
+<div style="width: 350px; margin: auto;"><img alt="negative autoregulation experiment" src="../_images/negative_autoregulation_experiment.png" />
 </div><center><p>This image is taken from Rosenfeld et al., J. Mol. Biol., 2002.</p>
 </center><p>Interestingly, these dynamics showed the expected acceleration, as well as some oscillations around steady-state, which may be explained by time delays in the regulatory system (something we will discuss more in an upcoming chapter).</p>
 <p>To conclude this section: We now have identified another simple <strong>design principle:</strong> <strong>Negative autoregulation speeds the response time of a transcription factor</strong>.</p>
@@ -1316,7 +1318,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div class="section" id="Positive-autoregulation-enables-bistability">
 <h2>Positive autoregulation enables bistability<a class="headerlink" href="#Positive-autoregulation-enables-bistability" title="Permalink to this headline">¶</a></h2>
 <p>Having examined negative autoregulation, we now turn to its opposite, <strong>positive autoregulation,</strong> a feature that is <em>also</em> prevalent in natural circuits. What functions could positive autoregulation provide?</p>
-<div style="width: 250px; margin: auto"><img alt="positive autoregulation" src="../_images/positive_autoregulation.png" />
+<div style="width: 250px; margin: auto;"><img alt="positive autoregulation" src="../_images/positive_autoregulation.png" />
 </div><p>We can represent a positive autoregulatory circuit with the following simple equation, where the production term comes from our analysis of an activation system in chapter 1:</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}x}{\mathrm{d}t} = \frac{\beta x^n} {x^n + K^n} - \gamma x
@@ -1676,7 +1678,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>In natural circuits positive feedback loops are often observed among multiple regulators rather than just a single autoregulatory transcription factor. For example, the “genetic switch” in phage lambda involves reciprocal repression of the <em>cro</em> repressor by the <span class="math notranslate nohighlight">\(\lambda\)</span> repressor, and vice versa (see <a class="reference external" href="https://www.amazon.com/Genetic-Switch-Third-Lambda-Revisited/dp/0879697164">Mark Ptashne’s classic book, A genetic switch</a>). This arrangement allows the phage to remain in the dormant
 “lysogenic” state or switch to a “lytic” state in which it replicates and eventually lyses the host cell to infect other cells.</p>
 <p>In 2000, <a class="reference external" href="https://doi.org/10.1038/35002131">Gardner and Collins</a> designed, constructed, and analyzed a synthetic version of this “toggle switch,” and showed that it could similarly exhibit bistability. Here is a simple diagram of the general design.</p>
-<div style="width: 350px; margin: auto"><img alt="toggle" src="../_images/toggle_switch.png" />
+<div style="width: 350px; margin: auto;"><img alt="toggle" src="../_images/toggle_switch.png" />
 </div><p>They further showed experimentally that they could put the system into one of two states, by externally activating either of the two proteins. Then they could remove the perturbation and the system stably remained in that state.</p>
 <p>To analyze this two-repressor feedback loop, we can write down differential equations for the concentrations of the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> proteins, assuming they have the same Hill coefficient, <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><span class="math">\begin{align}
@@ -1883,11 +1885,11 @@ jupyterlab: 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 14, 2021.
+        Last updated on Apr 15, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa86dec5280> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fde2b0ed340> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

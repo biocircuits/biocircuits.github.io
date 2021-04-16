@@ -125,6 +125,8 @@
 <li class="toctree-l1"><a class="reference internal" href="05_cffls.html">5. Analysis of coherent feed forward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_functions_of_iffls.html">6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_molecular_titration.html">7. Molecular titration generates ultrasensitive responses in biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_robustness.html">8. Robustness in biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_kinetic_proofreading.html">9. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -853,7 +855,7 @@ and Monod wrote,</p>
 <div><p>It is obvious from the analysis of these [bacterial genetic regulatory] mechanisms that their known elements could be connected into a wide variety of ‘circuits’ endowed with any desired degree of stability. <em>Jacob F, Monod J, “On the regulation of gene activity,” Symposium on cellular regulatory mechanisms, 1962</em>.</p>
 </div></blockquote>
 <p>Around the 2000s, interest in the structure and function of circuits began to explode, fueled in part by new technologies that improved the ability to make quantitative, high-throughput measurements of biological systems. The new field took the name <em>systems biology</em>.</p>
-<div style="width: 600px; margin: auto"><img alt="Hanahan and Weinberg" src="../_images/Hanahan-Weinberg-2000.png" />
+<div style="width: 600px; margin: auto;"><img alt="Hanahan and Weinberg" src="../_images/Hanahan-Weinberg-2000.png" />
 </div><p>This image of the cell as a set of circuits comes from a classic review of cancer by <a class="reference external" href="https://reader.elsevier.com/reader/sd/pii/S0092867400816839?token=0484E13D03429AA97AEB30B7F31F6FA354F58B5084EC65AAD2F7378F8799578FA1A1D3336D1FB292B5CE9FFA10DF5359">Hanahan and Weinberg, Cell, 2000</a>.</p>
 <!-- Once Sphinx can handle parentheses in links, use DOI: https://doi.org/10.1016/S0092-8674%2800%2981683-9 --></div>
 <div class="section" id="What-is-a-biological-circuit?">
@@ -880,7 +882,7 @@ designs of these circuits still remain unclear. For example:</p>
 </ul>
 <p>In this course, we will address these questions for both <em>natural</em> and <em>synthetic</em> circuits, with the idea that the principles that allow a circuit to function effectively within or among cells do not necessarily depend on whether that circuit evolved naturally or is constructed in the lab. Having said that, we also recognize that evolution may be able to produce designs that are more complex or different from those we are currently able to construct, or even conceive. In fact, a major goal of
 the course is to see to what extent we can learn principles from natural circuits that will allow us to design synthetic circuits more effectively.</p>
-<div style="width: 600px; margin: auto"><img alt="electronics and plumbing" src="../_images/Electronics-Software-Plumbing.png" />
+<div style="width: 600px; margin: auto;"><img alt="electronics and plumbing" src="../_images/Electronics-Software-Plumbing.png" />
 </div><p><em>Electronics, software, and plumbing are great examples of human-designed systems that possess many properties analogous to biological circuits. These systems are based on known design principles that sometimes overlap with, and sometimes differ from, those of biological circuits.</em></p>
 </div>
 <div class="section" id="Biological-circuits-differ-from-many-other-types-of-circuits-or-circuit-like-systems">
@@ -900,7 +902,7 @@ the course is to see to what extent we can learn principles from natural circuit
 <div class="section" id="Inspiration-from-electronics">
 <h3>Inspiration from electronics<a class="headerlink" href="#Inspiration-from-electronics" title="Permalink to this headline">¶</a></h3>
 <p>In their classic book, <a class="reference external" href="https://artofelectronics.net">The Art of Electronics</a>, Horowitz and Hill explain something similar to the excitement many now feel now about biological circuit design:</p>
-<div style="width: 600px; margin: auto"><img alt="Horowitz and Hill" src="../_images/art_of_electronics_quote.jpg" />
+<div style="width: 600px; margin: auto;"><img alt="Horowitz and Hill" src="../_images/art_of_electronics_quote.jpg" />
 </div><p><a class="reference external" href="https://artofelectronics.net">Paul Horowitz and Winfield Hill, The Art of Electronics, 3rd edition</a>, Cambridge University Press, 2015.</p>
 </div>
 <div class="section" id="Premise-and-goals">
@@ -929,7 +931,7 @@ concentrations through a simple first-order process, with a rate constant <span 
 <p>The approach we are taking can be described as “phenomenological modeling.” We do not explicitly represent every underlying molecular step. Instead, we assume those steps give rise to “coarse grained” relationships that we can model in a manner that is independent of many underlying molecular details. The test of this approach is whether it allows us to understand and experimentally predict the behavior of real biological systems. See <a class="reference external" href="https://en.wikipedia.org/wiki/Phenomenological_model">Wikipedia’s article on phenomenological
 models</a> and <a class="reference external" href="https://doi.org/10.1186/1741-7007-12-29">this article</a> by Jeremy Gunawardena.</p>
 <p>Thus, we can draw a diagram of our simple gene, x, with its protein being produced and removed (dashed circle):</p>
-<div style="width: 250px; margin: auto"><img alt="simplest_protein" src="../_images/simplest_protein.png" />
+<div style="width: 250px; margin: auto;"><img alt="simplest_protein" src="../_images/simplest_protein.png" />
 </div><p>Here, protein production occurs at rate <span class="math notranslate nohighlight">\(\beta\)</span> and degradation+dilution at rate <span class="math notranslate nohighlight">\(\gamma x\)</span>. We can then write down a simple ordinary differential equation describing these dynamics:</p>
 <p><span class="math">\begin{align}
 &\frac{dx}{dt} = \mathrm{production - (degradation+dilution)} \\[1em]
@@ -953,7 +955,7 @@ models</a> and <a class="reference external" href="https://doi.org/10.1186/1741-
 <div class="section" id="Including-transcription-and-translation-as-separate-steps">
 <h2>Including transcription and translation as separate steps<a class="headerlink" href="#Including-transcription-and-translation-as-separate-steps" title="Permalink to this headline">¶</a></h2>
 <p>This description does not distinguish between transcription and translation. However, considering both processes separately can be important in the more dynamic and stochastic contexts that we will encounter later in the course. To do so, we can simply add an additional variable to represent the mRNA concentration, which is now transcribed, translated to protein, and degraded (and diluted), as shown schematically here:</p>
-<div style="width: 450px; margin: auto"><img alt="transcript_and_translation" src="../_images/transcription_and_translation.png" />
+<div style="width: 450px; margin: auto;"><img alt="transcript_and_translation" src="../_images/transcription_and_translation.png" />
 </div><p>These reactions can be described by two coupled differential equations for the mRNA (m) and protein (x):</p>
 <p><span class="math">\begin{align}
 &\frac{dm}{dt} = \beta_m - \gamma_m m, \\[1em]
@@ -972,7 +974,7 @@ models</a> and <a class="reference external" href="https://doi.org/10.1186/1741-
 <p>In principle, genes could be left “on” all the time. In actuality, the cell activity regulates them, turning their expression levels lower or higher depending on environmental conditions and cellular state. Repressors provide a key mechanism for regulation. Repressors are proteins that bind to cognate specific sequences at or near a promoter, to change its expression. Often the strength of repressor binding depends on external inputs. For example, the LacI repressor normally turns off the genes
 for lactose utilization in <em>E. coli</em>. However, in the presence of lactose in the media, a modified form of lactose binds to LacI, inhibiting its ability to repress its target genes. Thus, a nutrient (lactose) can regulate expression of genes that allow the cell to use it. (The book <a class="reference external" href="https://www.amazon.com/lac-Operon-Benno-Müller-Hill/dp/3110148307">“The lac operon”</a> by B. Müller-Hill provides the fascinating scientific and historical saga of this iconic system.)</p>
 <p>In the following diagram, we label the repressor R.</p>
-<div style="width: 450px; margin: auto"><img alt="repressible_gene_2" src="../_images/repressible_gene2.png" />
+<div style="width: 450px; margin: auto;"><img alt="repressible_gene_2" src="../_images/repressible_gene2.png" />
 </div><p><span class="math">\begin{align}
 D + R \rightleftharpoons D_{occ}
 \end{align}</span></p>
@@ -1156,7 +1158,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <h2>Activation<a class="headerlink" href="#Activation" title="Permalink to this headline">¶</a></h2>
 <p>Genes can be regulated by activators as well as repressors. Treating the case of activation just involves switching the state that is actively expressing from the unbound one to the one bound by the protein (now called an Activator). And, just as the binding of a repressor to DNA can be modulated by small molecule inputs, so too can the binding of the activator be modulated by binding to small molecules. In bacteria, one of many examples is the <a class="reference external" href="https://en.wikipedia.org/wiki/L-arabinose_operon">arabinose regulation
 system</a>.</p>
-<div style="width: 350px; margin: auto"><img alt="activation" src="../_images/activation.png" />
+<div style="width: 350px; margin: auto;"><img alt="activation" src="../_images/activation.png" />
 </div><p><span class="math">\begin{align}
 \beta(A) = \beta_0 \frac{D_\mathrm{occ}}{D_\mathrm{tot}} = \frac{\beta_0 A/K_\mathrm{d}}{1+A/K_\mathrm{d}}.
 \end{align}</span></p>
@@ -1279,11 +1281,11 @@ jupyterlab: 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 14, 2021.
+        Last updated on Apr 15, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa85592b970> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fde123504c0> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

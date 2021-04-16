@@ -120,6 +120,8 @@
 <li class="toctree-l1"><a class="reference internal" href="05_cffls.html">5. Analysis of coherent feed forward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_functions_of_iffls.html">6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_molecular_titration.html">7. Molecular titration generates ultrasensitive responses in biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_robustness.html">8. Robustness in biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_kinetic_proofreading.html">9. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -279,7 +281,7 @@ that appear in the novel. Then, they used it on the yeast genome sequence to ide
 <p>A regulatory circuit can be thought of abstractly as a <strong>directed graph</strong>–a set of nodes connected by arrows. For the transcriptional circuitry of a bacterium, each node represents an operon (a set of genes co-transcribed from a single promoter and independently translated to produce a corresponding set of proteins), and each arrow could represent regulation of one operon (tip of the arrow) by a transcription factor in another operon (base of the arrow).</p>
 <p>A <strong>circuit motif</strong> (originally called a ‘network motif’) is defined as an over-represented regulatory pattern–or <strong>sub-graph</strong> within the overall circuit or graph. Note that to qualify as a ‘motif’, and not just an interesting pattern, it should occur significantly more frequently than one would expect under some reasonable null hypothesis. The enrichment of the motif within the larger circuitry indicates that it has been selected by evolution, repeatedly. This selection suggests that the motif
 could play an important role as a functional module within the larger circuit. Other features of the circuit that are not motifs can also play important roles. But, because of their prevalence, motifs provide a natural focal point for circuit analysis.</p>
-<div style="width: 300px; margin: auto"><img alt="simple graph" src="../_images/simple_graph.png" />
+<div style="width: 300px; margin: auto;"><img alt="simple graph" src="../_images/simple_graph.png" />
 </div><p>In the previous chapter, we briefly introduced this principle in the context of single-gene autoregulation, where we noted several key facts about the <em>E. coli</em> network:</p>
 <ul class="simple">
 <li><p><em>E. coli</em> has ≈424 operons, and ≈519 transcriptional regulatory interactions (“arrows”). In this regime, we only expect about one autoregulatory arrow “by chance,” assuming a given arrow selects its target operon randomly.</p></li>
@@ -292,7 +294,7 @@ could play an important role as a functional module within the larger circuit. O
 <div class="section" id="Random-graphs-enable-motif-identification">
 <h2>Random graphs enable motif identification<a class="headerlink" href="#Random-graphs-enable-motif-identification" title="Permalink to this headline">¶</a></h2>
 <p>Consider a directed graph representing a hypothetical regulatory circuit (left). To find over-represented patterns in this graph, we can compare it to an ensemble of randomized variants and look for sub-graphs that occur more frequently in this circuit than in most of the variants.</p>
-<div style="width: 600px; margin: auto"><img alt="unlabeled circuit ensemble" src="../_images/unlabeled_circuit_ensemble.png" />
+<div style="width: 600px; margin: auto;"><img alt="unlabeled circuit ensemble" src="../_images/unlabeled_circuit_ensemble.png" />
 </div><p><em>Schematic comparison between a specific circuit (left) and a set of randomized variants with the same incoming and outgoing arrow distributions (right). Image modified from</em><a class="reference external" href="https://doi.org/10.1126/science.298.5594.824">Milo et al, Science, 2002</a><em>.</em></p>
 <p>To make the comparison as fair as possible, we need to design variant graphs that maintain the key statistical properties of the original graph. Specifically, we insist that all variant graphs have the same number of nodes and arrows. But this is not really enough: It wouldn’t make sense to compare this graph, whose arrows are distributed over all the nodes to a variant in which, say, all arrows stem from a single source node, or converge on a single target node. Therefore, we also need to
 impose a stronger constraint: maintaining the exact distribution of incoming and outgoing arrows for each node.</p>
@@ -301,7 +303,7 @@ impose a stronger constraint: maintaining the exact distribution of incoming and
 2002</a> and in <a class="reference external" href="https://doi.org/10.1103/PhysRevE.64.026118">M. E. J. Newman et al, Phys. Rev. E, 2001</a>.</p>
 <p>To implement this type of algorithm, as described in <a class="reference external" href="https://doi.org/10.1126/science.298.5594.824">Milo et al, Science, 2002</a>, it is useful to represent the directed graph as a binary non-symmetric square matrix, <span class="math notranslate nohighlight">\(\mathsf{M}\)</span>. An example of a matrix representation of a graph is shown below. Here, an arrow from node <span class="math notranslate nohighlight">\(i\)</span> to node <span class="math notranslate nohighlight">\(j\)</span> is represented by <span class="math notranslate nohighlight">\(M_{i,j}=1\)</span>. The absence of such an arrow would be represented by <span class="math notranslate nohighlight">\(M_{i,j}=0\)</span>. (This type of matrix, representing a
 corresponding graph, is called an <strong>adjacency matrix.</strong>) With this algorithm, one can generate a large ensemble of randomized graphs. Then, one can ask which sub-graphs are significantly more (or less) prevalent in the actual graph than in the randomized variant graphs.</p>
-<div style="width: 500px; margin: auto"><img alt="matrix representations 2" src="../_images/matrix_representations2.png" />
+<div style="width: 500px; margin: auto;"><img alt="matrix representations 2" src="../_images/matrix_representations2.png" />
 </div><p><em>Different views of the same graph, using dots and arrows (left) or as a binary matrix, shown either with 0s and 1s or in black and white (right)</em>.</p>
 <p><strong>Questions:</strong> - What algorithm would you use to generate the randomized graphs (matrices)? - How would you control for the bias of smaller motifs in the frequency of larger motifs?</p>
 <!--
@@ -314,20 +316,20 @@ Note: The supplementary information of Milo et al, _Science_, 2002, available [h
 <div class="section" id="Finding-3-node-motifs-in-a-bacterial-transcriptional-network">
 <h2>Finding 3-node motifs in a bacterial transcriptional network<a class="headerlink" href="#Finding-3-node-motifs-in-a-bacterial-transcriptional-network" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have an algorithm to identify motifs, let’s use it on the E. coli network. First we will focus on 3-node sub-graphs. These are big enough to be quite interesting, but small enough to be easily conceptualized and analyzed. There are 13 possible 3-node graphs that exclude direct autoregulation, which are shown here in a drawing from the Alon book.</p>
-<div style="width: 400px; margin: auto"><img alt="all three node motifs" src="../_images/all_3_motifs.png" />
+<div style="width: 400px; margin: auto;"><img alt="all three node motifs" src="../_images/all_3_motifs.png" />
 </div><p><em>Image adapted from</em><a class="reference external" href="https://doi.org/10.1126/science.298.5594.824">Milo, et al., Science, 2002</a><em>.</em></p>
 <p>Now look back at the schematic graph/matrix representation above. Can you tell which of these sub-graphs are over-represented? That graph was constructed to contain a preponderance of one particular sub-graph:</p>
-<div style="width: 50px; margin: auto"><img alt="FFL motif" src="../_images/FFL-motif.png" />
+<div style="width: 50px; margin: auto;"><img alt="FFL motif" src="../_images/FFL-motif.png" />
 </div><p>This sub-graph, termed the <strong>Feed-Forward Loop (FFL)</strong>, has one node that regulates a target node two ways: directly, and indirectly through the third node.</p>
 <p>To visualize this, we can highlight in red all of the FFLs in the graphs shown above, the one at left being artificially constructed and those to the right being randomly generated graphs.</p>
-<div style="width: 600px; margin: auto"><img alt="labeled circuit ensemble" src="../_images/labeled_circuit_ensemble.png" />
+<div style="width: 600px; margin: auto;"><img alt="labeled circuit ensemble" src="../_images/labeled_circuit_ensemble.png" />
 </div><p><em>Image adapted from</em><a class="reference external" href="https://doi.org/10.1126/science.298.5594.824">Milo, et al., Science, 2002</a><em>.</em></p>
 <p>We see that the FFL motif is over-represented. Of course, this is a schematic graph deliberately constructed to illustrate over-representation of this sub-graph.</p>
 <p>What happens in real circuits?</p>
 <p>To address this question, Alon &amp; colleagues went through the <em>E. coli</em> transcriptional circuit, and systematically counted how many times they observed each of the thirteen possible three-node sub-graphs shown above. For each one, they compared the number of observations in the real circuit to the number of times that sub-graph was observed in each member of a large ensemble of randomized circuits. They used a <strong>z-score</strong> to quantify over- or under-representation in units of the standard
 deviation of the number of occurrences for the sub-graph in the randomized circuits: <span class="math notranslate nohighlight">\(z = (n_{obs}-\langle n\rangle)/\sigma\)</span>, where <span class="math notranslate nohighlight">\(n_{obs}\)</span> is the number of times the sub-graph was observed in the actual circuit, <span class="math notranslate nohighlight">\(\langle n\rangle\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> denote the mean and standard deviation of the number of times it was observed in each of the randomized circuits.</p>
 <p>They did this for several transcriptional circuits, including <em>E. coli</em>, yeast (two versions), and <em>B. subtilis</em>. Here are the results:</p>
-<div style="width: 600px; margin: auto"><img alt="profile of 3 motifs" src="../_images/profile_of_3_motifs.png" />
+<div style="width: 600px; margin: auto;"><img alt="profile of 3 motifs" src="../_images/profile_of_3_motifs.png" />
 </div><p><em>Image adapted from</em><a class="reference external" href="https://doi.org/10.1126/science.1089167">Milo, et al., Science, 2004</a><em>.</em></p>
 <p>Several features are striking in this plot:</p>
 <ul class="simple">
@@ -362,7 +364,7 @@ N_G & \sim N^n p^g \\[1em]
 \end{align}</span> The thing to notice here is that the N-dependence can be captured by an extensive term that scales as <span class="math notranslate nohighlight">\(N^{n-g}\)</span> times a function fo the graph’s mean connectivity, <span class="math notranslate nohighlight">\(E/N\)</span>, which is an intensive (N-independent) property.</p></li>
 </ol>
 <p>This result leads to interesting and counterintuitive expectations:</p>
-<div style="width: 250px; margin: auto"><img alt="motif scaling" src="../_images/motif_scaling.png" />
+<div style="width: 250px; margin: auto;"><img alt="motif scaling" src="../_images/motif_scaling.png" />
 </div><ul class="simple">
 <li><p>Sparsely connected sub-graphs increase in frequency with <span class="math notranslate nohighlight">\(N\)</span></p></li>
 <li><p>Densely connected sub-graphs decrease in frequency with <span class="math notranslate nohighlight">\(N\)</span>. This means that as the graph grows larger there are actually <em>fewer</em> of these motifs.</p></li>
@@ -373,7 +375,7 @@ N_G & \sim N^n p^g \\[1em]
 <div class="section" id="Beyond-transcriptional-circuits">
 <h2>Beyond transcriptional circuits<a class="headerlink" href="#Beyond-transcriptional-circuits" title="Permalink to this headline">¶</a></h2>
 <p>It’s important to remember that these are expectations for (a particular class of) random networks. Real networks will of course differ, because they are designed, or evolved, to perform specific functions. In fact, different types of systems seem to show quite distinct motif profiles:</p>
-<div style="width: 600px; margin: auto"><img alt="superfamilies" src="../_images/superfamilies.png" />
+<div style="width: 600px; margin: auto;"><img alt="superfamilies" src="../_images/superfamilies.png" />
 </div><p><em>Image taken from</em><a class="reference external" href="https://doi.org/10.1126/science.1089167">Milo, et al., Science, 2004</a></p>
 <p>Here, the top group are the transcriptional circuits we already saw. The next group are biological signal transduction circuits of different types from different species. The third group are networks like the world-wide web, for which a directed edge indicates a link from one web page to another. Finally, the lowest group represents motifs in language graphs, in which nodes are words and edges are derived from the probability that one word follows another.</p>
 </div>
@@ -382,7 +384,7 @@ N_G & \sim N^n p^g \\[1em]
 <p>Our description of regulatory interactions so far has been oversimplified in several ways: * We have collapsed positive and negative regulation together. * We have not considered how multiple regulators combine to control expression of a mutual target operon. * We have ignored the quantitative strength of the regulation.</p>
 <p>Understanding the function of a motif requires thinking about these aspects more carefully.</p>
 <p>We can classify the overall FFL motif into <span class="math notranslate nohighlight">\(2^3=8\)</span> different categories depending on which of its 3 arrows are positive or negative:</p>
-<div style="width: 500px; margin: auto"><img alt="FFL classes" src="../_images/FFL_classes.png" />
+<div style="width: 500px; margin: auto;"><img alt="FFL classes" src="../_images/FFL_classes.png" />
 </div><p>We can then further classify the FFLS, according to how the regulatory arrows converging on the third node (now labeled “Z”) combine. In AND regulation, both X and Y need to be simultaneously present at high levels for Z to be expressed. in OR regulation, either input is sufficient to activate Z.</p>
 <p>In the next chapter, we will consider what functions the various FFLs can perform for cells.</p>
 </div>
@@ -415,11 +417,11 @@ N_G & \sim N^n p^g \\[1em]
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 14, 2021.
+        Last updated on Apr 15, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa8670effa0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fde2b398310> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

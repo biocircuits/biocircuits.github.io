@@ -48,7 +48,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Appendix A: Regulatory functions and their derivatives" href="appA_regulatory_functions.html" />
+    <link rel="next" title="8. Robustness in biological circuits" href="08_robustness.html" />
     <link rel="prev" title="6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators" href="06_functions_of_iffls.html" /> 
 </head>
 
@@ -119,6 +119,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#Computing-environment">Computing environment</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="08_robustness.html">8. Robustness in biological circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_kinetic_proofreading.html">9. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -857,7 +859,7 @@ based on bistability.</p>
 <p>Biological circuits are replete with such ultrasensitive switches: The cell cycle uses switches to click decisively from one phase to another. Signal transduction systems require ultrasensitivity to amplify small but important input signals into large responses. Multistable cell fate control systems use switches to enforce distinct cellular states. Natural and synthetic oscillators such as the circadian clock and the repressilator, which we will examine in an upcoming lecture, also require
 ultrasensitive switches.</p>
 <p>Are there simple, generalizable, and engineerable circuit-level design strategies that could confer ultrasensitivity? For instance, consider a simple gene regulatory system, in which an input activator, <span class="math notranslate nohighlight">\(A\)</span>, controls the expression of a target protein <span class="math notranslate nohighlight">\(Y\)</span>:</p>
-<center><p><img alt="a6789678e0e242f4a242f10f89531625" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
+<center><p><img alt="eba68217aa6143b1b2d25131cfd847a1" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
 </center><p>Let’s pause to ask:</p>
 <ol class="arabic simple">
 <li><p>How could you insert ultrasensitivity into the transcription response function (dependence of Y on A)?</p></li>
@@ -965,7 +967,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <h2>Molecular titration “subtracts” one protein concentration from another.<a class="headerlink" href="#Molecular-titration-“subtracts”-one-protein-concentration-from-another." title="Permalink to this headline">¶</a></h2>
 <p><strong>Molecular titration</strong> is a simple, general mechanism that provides tunable ultrasensitivity across diverse natural systems, and allows engineering of ultrasensitive responses in synthetic circuits. It takes advantage of the ability of biological molecules to form strong and specific complexes with one another. Depending on the system, the complex itself may provide a particular activity, such as gene regulation. Or, alternatively, one of the monomers may provide an activity, with the complex
 inhibiting it.</p>
-<center><p><img alt="9054d6db366b449095b5cf6cd1327b25" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
+<center><p><img alt="4940ac5e94e0440c93e0c0e8d8d0e84a" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
 </center><p>In this example, molecular titration performs a kind of “subtraction” operation. The inhibitor effectively “subtracts off” a fraction of otherwise active molecules.</p>
 </div>
 <div class="section" id="Molecular-titration-occurs-in-diverse-contexts:">
@@ -1588,7 +1590,7 @@ similar to those observed in the experimental data shown above.</p>
 <p>That makes sense: when miRNAs are unsaturated, they can have a relatively strong effect on their target expression levels, essentially keeping them “off.” On the other hand, when targets are expressed highly enough, the relative effect of the miRNA on expression becomes much weaker, effectively just shifting it to slightly slower values.</p>
 <div style="margin: auto; width: 400px;"><img alt="miRNA_relative_change.png" src="../_images/miRNA_relative_change.png" />
 </div><p>Returning to the question posed earlier, we now see that inserting a constitutive, inhibitory miRNA provides an elegant way to threshold a gene regulatory interaction.</p>
-<center><p><img alt="9ee8069ff7e2440f90c6bf4ea43d46cf" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
+<center><p><img alt="f49a114626e1436082eaa7545da9ce2a" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
 </center><p>Note that in addition to its general regulatory abilities and thresholding effects, miRNA regulation can also reduce noise in target gene expression. See <a class="reference external" href="https://science.sciencemag.org/content/sci/348/6230/128.full.pdf">Schmiedel et al, “MicroRNA control of protein expression noise,” Science (2015)</a>.</p>
 </div>
 <div class="section" id="Molecular-titration-in-antibiotic-persistence">
@@ -1654,7 +1656,7 @@ jupyterlab: 3.0.11
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="appA_regulatory_functions.html" class="btn btn-neutral float-right" title="Appendix A: Regulatory functions and their derivatives" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="08_robustness.html" class="btn btn-neutral float-right" title="8. Robustness in biological circuits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="06_functions_of_iffls.html" class="btn btn-neutral float-left" title="6. Incoherent feed-forward loops generate pulses, speed responses, and serve as dosage compensators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
@@ -1663,11 +1665,11 @@ jupyterlab: 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 14, 2021.
+        Last updated on Apr 15, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fa852d80bb0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fde0eceb7f0> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
