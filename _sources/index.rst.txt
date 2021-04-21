@@ -40,7 +40,7 @@ People
    chapters/07_molecular_titration
    chapters/08_robustness
    chapters/09_kinetic_proofreading
-   .. chapters/10_repressilator
+   chapters/10_repressilator
    .. chapters/11_delay_oscillators
    .. chapters/12_noise
    .. chapters/13_bursty
@@ -61,6 +61,7 @@ People
    homework/01/index
    homework/02/index
    homework/03/index
+   homework/04/index
 
 
 .. toctree::

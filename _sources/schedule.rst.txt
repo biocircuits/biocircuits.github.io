@@ -31,7 +31,7 @@ Below are tentative homework due dates.
 - :ref:`Homework 1<Homework 1>`: due 11 am PDT, April 7
 - :ref:`Homework 2<Homework 2>`: due 11 am PDT, April 14
 - :ref:`Homework 3<Homework 3>`: due 11 am PDT, April 21
-- Homework 4: due 11 am PDT, April 28
+- :ref:`Homework 4<Homework 4>`: due 11 am PDT, April 28
 - Homework 5: due 11 am PDT, May 5
 - Homework 6: due 11 am PDT, May 12
 - Homework 7: due 11 am PDT, May 19
@@ -84,7 +84,7 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
     + Chapter 7 of Alon
     + `Chakraborty and Weiss, 2014 <https://doi.org/10.1038/ni.2940>`_
 
-- W 04/21 - Chapter 10: Blinking bacteria: delayed negative feedback circuits generate periodic oscillations (ME)
+- W 04/21 - :ref:`Chapter 10<10. Blinking bacteria: The repressilator enables self-sustaining oscillations>`: Blinking bacteria: delayed negative feedback circuits generate periodic oscillations (ME)
 
     + `Elowitz and Leibler, 2000 <https://doi.org/10.1038/35002125>`_
     + `Potvin-Trottier, et al., 2016 <https://doi.org/10.1038/nature19841>`_ (`News and Views <https://doi.org/doi:10.1038/nature19478>`_)
