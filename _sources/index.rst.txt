@@ -41,10 +41,10 @@ People
    chapters/08_robustness
    chapters/09_kinetic_proofreading
    chapters/10_repressilator
-   .. chapters/11_delay_oscillators
-   .. chapters/12_noise
-   .. chapters/13_bursty
-   .. chapters/14_stochastic_simulation
+   chapters/11_delay_oscillators
+   chapters/12_noise
+   chapters/13_bursty
+   chapters/14_stochastic_simulation
    .. chapters/15_stochastic_differentiation
    .. chapters/16_bet_hedging
    .. chapters/17_time-based_regulation

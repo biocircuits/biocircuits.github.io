@@ -119,6 +119,10 @@
 <li class="toctree-l1"><a class="reference internal" href="08_robustness.html">8. Robustness in biological circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_kinetic_proofreading.html">9. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_repressilator.html">10. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_delay_oscillators.html">11. Oscillators, part II: Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_noise.html">12. Gene expression is noisy! How stochastic effects lead to heterogeneity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_bursty.html">13. Bursty gene expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_stochastic_simulation.html">14. Stochastic simulation of biological circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -561,8 +565,8 @@ conda update conda
 <p>As you work through this course, you will sometimes use packages that are not included in the default Anaconda distribution. As we develop code throughout the course, we will reuse it. For convenience, this is contained in the <code class="docutils literal notranslate"><span class="pre">biocircuits</span></code> package.</p>
 <p>You can do these installations with <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code> by doing the following at the command line. We will take care of these installations now, and will discuss them in much more detail as we use them. To do the installations, do the following on the command line.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install -c bokeh jupyter_bokeh
-conda install colorcet datashader fastparquet holoviews hvplot panel param
-pip install eqtk biocircuits iqplot watermark blackcellmagic
+conda install colorcet datashader fastparquet holoviews hvplot panel param line_profiler
+pip install multiprocess eqtk biocircuits iqplot watermark blackcellmagic
 </pre></div>
 </div>
 <p>Finally, if you want to install a spell checker for Jupyter notebooks, you can do so by doing the following on the command line. Note that you must have <a class="reference external" href="https://nodejs.org/">node.js</a> installed prior to installing the spell checker.</p>
@@ -1024,11 +1028,11 @@ jupyterlab: 3.0.11
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 21, 2021.
+        Last updated on Apr 23, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7ff40ca98640> 
+  </div> <jinja2.runtime.BlockReference object at 0x7feac1dc1f10> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
