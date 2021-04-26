@@ -465,7 +465,7 @@
     "* What minimum circuit designs are sufficient to generate self-sustaining oscillations?\n",
     "* What tradeoffs exist between alternative clock circuit designs?\n",
     "\n",
-    "In addition, synthetic clocks provide modules for engineering more complex cellular behaviors. In the next lecture we will explore some applications of synthetic clocks."
+    "In addition, synthetic clocks provide modules for engineering more complex cellular behaviors. In the next chapter we will explore some applications of synthetic clocks."
    ]
   },
   {

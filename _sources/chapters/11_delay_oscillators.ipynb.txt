@@ -385,7 +385,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "The repressilator, introduced in the previous lecture, shows that delayed negative feedback, under the right conditions, can generate oscillations. Today, we will further explore this circuit design, showing how it can be improved **(Part I)**; used as a timer to record bacterial growth in the mammalian gut **(Part II)**; simplified into a single gene oscillator **(Part III)**; and extended with the addition of positive feedback to allow independent tuning of period and amplitude **(Part IV)**."
+    "The repressilator, introduced in the previous chapter, shows that delayed negative feedback, under the right conditions, can generate oscillations. Today, we will further explore this circuit design, showing how it can be improved **(Part I)**; used as a timer to record bacterial growth in the mammalian gut **(Part II)**; simplified into a single gene oscillator **(Part III)**; and extended with the addition of positive feedback to allow independent tuning of period and amplitude **(Part IV)**."
    ]
   },
   {
@@ -1385,7 +1385,7 @@
    "source": [
     "## Conclusions\n",
     "\n",
-    "To conclude, we have now explored several principles of oscillator design and an example of its application. To summarize the previous lecture along with this one, we see:\n",
+    "To conclude, we have now explored several principles of oscillator design and an example of its application. To summarize the previous chapter along with this one, we see:\n",
     "\n",
     "* Delayed negative feedback can generate self-sustaining limit cycle oscillations.\n",
     "* The repressilator design implements delayed negative feedback through a three component rock-scissors-paper architecture.\n",
