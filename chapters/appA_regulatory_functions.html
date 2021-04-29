@@ -120,16 +120,20 @@
 <li class="toctree-l2"><a class="reference internal" href="#Two-activators-affecting-the-same-gene">Two activators affecting the same gene</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#AND-logic">AND logic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#OR-logic">OR logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#OR-logic,-single-occupancy">OR logic, single occupancy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Two-repressors-affecting-the-same-gene">Two repressors affecting the same gene</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1">AND logic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2">OR logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#AND-logic,-single-occupancy">AND logic, single occupancy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#One-activator-and-one-repressor-affecting-the-same-gene">One activator and one repressor affecting the same gene</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3">AND logic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">OR logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">AND logic, single occupancy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">OR logic, single occupancy</a></li>
 </ul>
 </li>
 </ul>
@@ -141,6 +145,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../homework/02/index.html">Homework 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/03/index.html">Homework 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/04/index.html">Homework 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/05/index.html">Homework 5</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -309,6 +314,14 @@ f(x, y) = f(x_0, y_0) + \left.\frac{\partial f}{\partial x}\right|_{x=x_0, y=y_0
 &\frac{\partial f}{\partial y} = \frac{n_y\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
 </div>
+<div class="section" id="OR-logic,-single-occupancy">
+<h3>OR logic, single occupancy<a class="headerlink" href="#OR-logic,-single-occupancy" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x,y) = \frac{x^{n_x} + y^{n_y}}{1 + x^{n_x}+ y^{n_y}},\\[1em]
+&\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}}{(1 + x^{n_x} + y^{n_y})^2},\\[1em]
+&\frac{\partial f}{\partial y} = \frac{n_y\,y^{n_y-1}}{(1 + x^{n_x}+ y^{n_y})^2}.
+\end{align}</span></p>
+</div>
 </div>
 <div class="section" id="Two-repressors-affecting-the-same-gene">
 <h2>Two repressors affecting the same gene<a class="headerlink" href="#Two-repressors-affecting-the-same-gene" title="Permalink to this headline">¶</a></h2>
@@ -328,6 +341,14 @@ f(x, y) = f(x_0, y_0) + \left.\frac{\partial f}{\partial x}\right|_{x=x_0, y=y_0
 &\frac{\partial f}{\partial y} = -\frac{n_y\,x^{n_x}\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
 </div>
+<div class="section" id="AND-logic,-single-occupancy">
+<h3>AND logic, single occupancy<a class="headerlink" href="#AND-logic,-single-occupancy" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x, y) = \frac{1}{(1 + x^{n_x} + y^{n_y})},\\[1em]
+&\frac{\partial f}{\partial x} = -\frac{n_x\,x^{n_x-1}}{(1 + x^{n_x} + y^{n_y})^2},\\[1em]
+&\frac{\partial f}{\partial y} = -\frac{n_y\,y^{n_y-1}}{(1 + x^{n_x} + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
 </div>
 <div class="section" id="One-activator-and-one-repressor-affecting-the-same-gene">
 <h2>One activator and one repressor affecting the same gene<a class="headerlink" href="#One-activator-and-one-repressor-affecting-the-same-gene" title="Permalink to this headline">¶</a></h2>
@@ -335,7 +356,7 @@ f(x, y) = f(x_0, y_0) + \left.\frac{\partial f}{\partial x}\right|_{x=x_0, y=y_0
 <div class="section" id="id3">
 <h3>AND logic<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><span class="math">\begin{align}
-&f(x, y) = \frac{x^{n_x}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
+&f(x, y) = \frac{x^{n_x}}{1 + x^{n_x})\,(1 + y^{n_y}},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,x^{n_x}\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
@@ -346,6 +367,22 @@ f(x, y) = f(x_0, y_0) + \left.\frac{\partial f}{\partial x}\right|_{x=x_0, y=y_0
 &f(x, y) = \frac{1 + x^{n_x} + x^{n_x}y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}\,y^{n_y}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
+<div class="section" id="id5">
+<h3>AND logic, single occupancy<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x, y) = \frac{x^{n_x}}{1 + x^{n_x} + y^{n_y}},\\[1em]
+&\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}(1+y^{n_y})}{(1 + x^{n_x} + y^{n_y})^2},\\[1em]
+&\frac{\partial f}{\partial y} = -\frac{n_y\,x^{n_x}\,y^{n_y-1}}{(1 + x^{n_x} + y^{n_y})^2}.
+\end{align}</span></p>
+</div>
+<div class="section" id="id6">
+<h3>OR logic, single occupancy<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><span class="math">\begin{align}
+&f(x, y) = \frac{1 + x^{n_x}}{1 + x^{n_x} + y^{n_y}},\\[1em]
+&\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}\,y^{n_y}}{(1 + x^{n_x} + y^{n_y})^2},\\[1em]
+&\frac{\partial f}{\partial y} = -\frac{n_y\,(1+x^{n_x})\,y^{n_y-1}}{(1 + x^{n_x} + y^{n_y})^2}.
 \end{align}</span></p>
 </div>
 </div>
@@ -366,11 +403,11 @@ f(x, y) = f(x_0, y_0) + \left.\frac{\partial f}{\partial x}\right|_{x=x_0, y=y_0
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 26, 2021.
+        Last updated on Apr 28, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7f8282ab89a0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7ff53ff7e820> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

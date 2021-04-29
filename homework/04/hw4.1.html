@@ -123,6 +123,7 @@
 <li class="toctree-l2"><a class="reference internal" href="hw4.2.html">Homework 4.2: Kinetic proofreading in the immune system (50 pts)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../05/index.html">Homework 5</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -265,11 +266,17 @@ v_0 = \frac{\mathrm{d}c_0}{\mathrm{d}t}\;\text{considering only the top reaction
 <p>where <span class="math notranslate nohighlight">\(c_0\)</span> is the concentration of C₀. This is the quantity we are most interested in; it is the rate of oxygen consumption. We can describe this reaction as follows. The substrate C₁ cannot bind oxygen unless complexed with the enzyme E₀, to which is binds reversibly. The C₁·E₀ complex can them reversibly bind oxygen. Finally, the C₁·E₀·O₂ complex gets irreversibly converted to oxidized substrate C₀, freeing the enzyme E₀ and producing water in the process. We can write these steps as
 follows.</p>
 <ol class="arabic simple">
-<li><p>C₁ + E₀ ⇌ C₁·E₀</p></li>
-<li><p>C₁·E₀ + O₂ ⇌ C₁·E₀·O₂</p></li>
-<li><p>C₁·E₀·O₂ ⟶ C₀ + E₀ + H₂O</p></li>
+<li><p>C₁ + E₀ ⇌ C₁·E₀; forward rate constant <span class="math notranslate nohighlight">\(k_1\)</span>, reverse rate constant <span class="math notranslate nohighlight">\(k_{-1}\)</span></p></li>
+<li><p>C₁·E₀ + O₂ ⇌ C₁·E₀·O₂; forward rate constant <span class="math notranslate nohighlight">\(k_2\)</span>, reverse rate constant <span class="math notranslate nohighlight">\(k_{-2}\)</span></p></li>
+<li><p>C₁·E₀·O₂ ⟶ C₀ + E₀ + H₂O; rate constant <span class="math notranslate nohighlight">\(v\)</span></p></li>
 </ol>
-<p>If we write down the expressions for mass action kinetics and apply a quasi-steady state approximation such that the concentrations of C₁·E₀ and C₁·E₀·O₂ do not change appreciably, show that we can write</p>
+<p>To derive an expression for <span class="math notranslate nohighlight">\(v_0\)</span>,</p>
+<ul class="simple">
+<li><p>Write down expression using mass action kinetics,</p></li>
+<li><p>Apply quasi-steady state approximations such that the concentrations of C₁·E₀ and C₁·E₀·O₂ do not change appreciably,</p></li>
+<li><p>Consider the limit where the concentration of C₁ is much less than both terms in its Michaelis-like constant <span class="math notranslate nohighlight">\(K_1 = (v + k_{-1}) / k_1\)</span>. That is, <span class="math notranslate nohighlight">\(c_1 \ll v/k_1\)</span> and <span class="math notranslate nohighlight">\(c_1 \ll k_{-1}/k_1\)</span>.</p></li>
+</ul>
+<p>The result is</p>
 <p><span class="math">\begin{align}
 v_0 = k_0 \, c_1\,\frac{c_{\mathrm{O}_2}/K_0}{1 + c_{\mathrm{O}_2}/K_0},
 \end{align}</span></p>
@@ -298,11 +305,11 @@ concentration, does this system satisfy the Chance relation?</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 26, 2021.
+        Last updated on Apr 28, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7f82788012b0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7ff54085a2b0> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

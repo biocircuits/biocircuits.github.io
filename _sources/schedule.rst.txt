@@ -32,7 +32,7 @@ Below are tentative homework due dates.
 - :ref:`Homework 2<Homework 2>`: due 11 am PDT, April 14
 - :ref:`Homework 3<Homework 3>`: due 11 am PDT, April 21
 - :ref:`Homework 4<Homework 4>`: due 11 am PDT, April 28
-- Homework 5: due 11 am PDT, May 5
+- :ref:`Homework 5<Homework 5>`: due 11 am PDT, May 5
 - Homework 6: due 11 am PDT, May 12
 - Homework 7: due 11 am PDT, May 19
 - Homework 8: due 11 am PDT, May 26
@@ -89,23 +89,23 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
     + `Elowitz and Leibler, 2000 <https://doi.org/10.1038/35002125>`_
     + `Potvin-Trottier, et al., 2016 <https://doi.org/10.1038/nature19841>`_ (`News and Views <https://doi.org/doi:10.1038/nature19478>`_)
 
-- F 04/23 - Chapter 11: Oscillators II: Applications and alternative architectures (ME)
+- F 04/23 - :ref:`Chapter 11<11. Oscillators, part II: Uses, simplifications, and elaborations of negative feedback oscillators>`: Oscillators II: Applications and alternative architectures (ME)
 
     + `Lewis, 2003 <https://doi.org/10.1016/S0960-9822(03)00534-7>`_
     + `Stricker, et al., 2008 <https://doi.org/10.1038/nature07389>`_
 
-- M 04/26 - Chapter 12: The noise inside the cell: How stochastic gene expression produces cellular heterogeneity (JB)
+- M 04/26 - :ref:`Chapter 12<12. Gene expression is noisy! How stochastic effects lead to heterogeneity>`: The noise inside the cell: How stochastic gene expression produces cellular heterogeneity (JB)
 
     + Appendix D of Alon
     + `Elowitz, et al., 2002 <https://doi.org/10.1126/science.1070919>`_
 
-- W 04/28 - Chapter 13: Bursty gene expression enables regulation of protein variability (JB)
+- W 04/28 - :ref:`Chapter 13<13. Bursty gene expression>`: Bursty gene expression enables regulation of protein variability (JB)
 
     + Section 4.1 of Del Vecchio and Murray
     + `Cai, et al., 2006 <https://doi.org/10.1038/nature04599>`_
     + `Singer, et al., 2014 <http://dx.doi.org/10.1016/j.molcel.2014.06.029>`_
 
-- F 04/30 - Chapter 14: Simulating stochastic circuit dynamics (JB)
+- F 04/30 - :ref:`Chapter 14<14. Stochastic simulation of biological circuits>`: Simulating stochastic circuit dynamics (JB)
 
     + Section 4.2 of Del Vecchio and Murray
 
