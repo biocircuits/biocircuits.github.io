@@ -63,10 +63,14 @@ Regulatory functions
    rep_hill
    aa_and
    aa_or
+   aa_or_single
    rr_and
    rr_or
+   rr_and_single
    ar_and
    ar_or
+   ar_and_single
+   ar_or_single
 
 
 

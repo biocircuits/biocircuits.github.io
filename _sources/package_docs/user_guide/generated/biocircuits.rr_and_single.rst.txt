@@ -1,0 +1,6 @@
+﻿biocircuits.rr\_and\_single
+===========================
+
+.. currentmodule:: biocircuits
+
+.. autofunction:: rr_and_single
