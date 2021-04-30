@@ -45,7 +45,7 @@ People
    chapters/12_noise
    chapters/13_bursty
    chapters/14_stochastic_simulation
-   .. chapters/15_stochastic_differentiation
+   chapters/15_stochastic_differentiation
    .. chapters/16_bet_hedging
    .. chapters/17_time-based_regulation
    .. chapters/18_paradoxical

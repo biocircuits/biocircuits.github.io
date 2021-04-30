@@ -109,7 +109,7 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
 
     + Section 4.2 of Del Vecchio and Murray
 
-- M 05/03 - Chapter 15: Excitable circuit dynamics enable probabilistic, transient differentiation (JB)
+- M 05/03 - :ref:`Chapter 15<15. Stochastic differentiation>`: Excitable circuit dynamics enable probabilistic, transient differentiation (JB)
 
     + `Süel, et al., 2006 <https://doi.org/10.1038/nature04588>`_
     + `Süel, et al., 2007 <https://doi.org/10.1126/science.1137455>`_
