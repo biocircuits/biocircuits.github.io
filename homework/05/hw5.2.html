@@ -257,7 +257,7 @@ concentration of R, we can model the dynamics of the circuit as</p>
 \end{align}</span></p>
 <p>We will take <span class="math notranslate nohighlight">\(f(a, r)\)</span> to describe the regulation of the promoter to be governed by AND logic with single occupancy. By single occupancy, we mean that only the activator or repressor may be bound; they may not both be bound at the same time (for example, due to steric reasons). The resulting regulatory function, assuming some leakage <span class="math notranslate nohighlight">\(\alpha\)</span> is</p>
 <p><span class="math">\begin{align}
-f(a, r) = \alpha + \beta\,\frac{(a/k_a)^n}{(1 + (a/k_a)^n + (r/k_r)^n)}.
+f(a, r) = \alpha + \beta\,\frac{(a/k_a)^n}{1 + (a/k_a)^n + (r/k_r)^n}.
 \end{align}</span></p>
 <p>Single occupancy regulation means that when <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(r\)</span> are beyond <span class="math notranslate nohighlight">\(k_a\)</span> and <span class="math notranslate nohighlight">\(k_r\)</span>, respectively, the <em>relative</em> levels of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(r\)</span> determine whether or not expression is activated. If <span class="math notranslate nohighlight">\(a &gt; r\)</span>, we get activation, but not when <span class="math notranslate nohighlight">\(a &lt; r\)</span>.</p>
 <p>For simplicity, we have assumed the same Hill coefficient <span class="math notranslate nohighlight">\(n\)</span> for both activation and repression.</p>
@@ -277,7 +277,7 @@ f(a, r) = \alpha + \beta\,\frac{(a/k_a)^n}{(1 + (a/k_a)^n + (r/k_r)^n)}.
 <p><strong>e)</strong> As we seek more analytical guidance, we can take advantage of a very useful result from dynamical systems, the <strong>Poincaré-Bendixon theorem</strong>. We will not derive (or even state) the theorem here, but will instead list two of its important consequences.</p>
 <ol class="arabic simple">
 <li><p>If a two-dimensional dynamical system has no fixed points, it has a periodic solution.</p></li>
-<li><p>If a two-dimensional dynamical system has only fixed point and it is unstable and not a saddle, the dynamical system has a periodic solution.</p></li>
+<li><p>If a two-dimensional dynamical system has only one fixed point and it is unstable and not a saddle, the dynamical system has a periodic solution.</p></li>
 </ol>
 <p>A saddle for a two-dimensional dynamical system is a fixed point with one positive eigenvalue and one negative eigenvalue. So, we can learn a lot about the system be finding the fixed points, evaluating how many there are, and then computing the eigenvalues if there is only one. So, our strategy for understanding what kind of dynamics we can expect for a given set of parameters is as follows.</p>
 <ol class="arabic simple">
@@ -327,7 +327,7 @@ activator and repressor dynamics over time for this regime (this will require nu
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7f8c20b06520> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fd61c7ba700> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
