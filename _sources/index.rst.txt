@@ -46,7 +46,7 @@ People
    chapters/13_bursty
    chapters/14_stochastic_simulation
    chapters/15_stochastic_differentiation
-   .. chapters/16_bet_hedging
+   chapters/16_bet_hedging
    .. chapters/17_time-based_regulation
    .. chapters/18_paradoxical
    .. chapters/21_turing
@@ -63,6 +63,7 @@ People
    homework/03/index
    homework/04/index
    homework/05/index
+   homework/06/index
 
 
 .. toctree::

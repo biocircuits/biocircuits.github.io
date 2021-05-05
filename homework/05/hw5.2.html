@@ -48,7 +48,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Schedule overview" href="../../schedule.html" />
+    <link rel="next" title="Homework 6" href="../06/index.html" />
     <link rel="prev" title="Homework 5.1: Ruling out oscillations (25 pts)" href="hw5.1.html" /> 
 </head>
 
@@ -112,6 +112,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/13_bursty.html">13. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/14_stochastic_simulation.html">14. Stochastic simulation of biological circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/15_stochastic_differentiation.html">15. Stochastic differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bet_hedging.html">16. Cellular ‘bet-hedging’</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -125,6 +126,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Homework 5.2: Tuning delay oscillators with positive feedback (75 pts)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../06/index.html">Homework 6</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -268,13 +270,13 @@ f(a, r) = \alpha + \beta\,\frac{(a/k_a)^n}{1 + (a/k_a)^n + (r/k_r)^n}.
 \end{align}</span></p>
 <p>where all variables and parameters have been redefined to be dimensionless, and we have defined <span class="math notranslate nohighlight">\(\gamma = \gamma_a / \gamma_r\)</span> and <span class="math notranslate nohighlight">\(\kappa = k_r / k_a\)</span>.</p>
 <p><strong>b)</strong> Show that in the absence of leakage (<span class="math notranslate nohighlight">\(\alpha = 0\)</span>), <span class="math notranslate nohighlight">\(a = r = 0\)</span> is a fixed point. Show also that for <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, it is stable. Finally, show that the <span class="math notranslate nohighlight">\(a = r = 0\)</span> fixed point does not exist when <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span> (even if <span class="math notranslate nohighlight">\(n = 1\)</span>). What does this imply about the role of leakage in this circuit when it oscillates? Going forward, we will assume <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span>.</p>
-<p><strong>c)</strong> Show that in the presence of leakage and absence of ultrasensitivity (<span class="math notranslate nohighlight">\(n = 1\)</span>), one fixed point exists and is stable. <span class="math">\textit{Hint}</span>: That the fixed point is stable is most easily shown graphically; you do not need to assess linear stability. Can the circuit have sustained oscillations without ultrasensitivity? Going forward, we will take <span class="math notranslate nohighlight">\(n = 4\)</span>.</p>
+<p><strong>c)</strong> Show that in the presence of leakage and absence of ultrasensitivity (<span class="math notranslate nohighlight">\(n = 1\)</span>), one fixed point exists and is stable. <em>Hint</em>: That the fixed point is stable is most easily shown graphically; you do not need to assess linear stability. Can the circuit have sustained oscillations without ultrasensitivity? Going forward, we will take <span class="math notranslate nohighlight">\(n = 4\)</span>.</p>
 <p><strong>d)</strong> Finding the fixed points and determining their stability for this system is a bit sticky. Systems biology researchers bump up against this sort of problem all too often. In these cases, we need to resort to numerics. Nonetheless, it helps to have analytical guidance as we do so. Do one (or both if you are feeling motivated) of the following:</p>
 <ul class="simple">
 <li><p>Show that for <span class="math notranslate nohighlight">\(n &gt; 1\)</span> there are either one, two, or three fixed points. This can be done graphically.</p></li>
 <li><p>Show that for the <span class="math notranslate nohighlight">\(n = 4\)</span> special case we are considering, there are either one, two, or three fixed points. This can also be done graphically (actually it follows if you do the first option), but can also be done analytically.</p></li>
 </ul>
-<p><strong>e)</strong> As we seek more analytical guidance, we can take advantage of a very useful result from dynamical systems, the <strong>Poincaré-Bendixon theorem</strong>. We will not derive (or even state) the theorem here, but will instead list two of its important consequences.</p>
+<p><strong>e)</strong> As we seek more analytical guidance, we can take advantage of a very useful result from dynamical systems, the <strong>Poincaré-Bendixson theorem</strong>. We will not derive (or even state) the theorem here, but will instead list two of its important consequences.</p>
 <ol class="arabic simple">
 <li><p>If a two-dimensional dynamical system has no fixed points, it has a periodic solution.</p></li>
 <li><p>If a two-dimensional dynamical system has only one fixed point and it is unstable and not a saddle, the dynamical system has a periodic solution.</p></li>
@@ -314,7 +316,7 @@ activator and repressor dynamics over time for this regime (this will require nu
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../../schedule.html" class="btn btn-neutral float-right" title="Schedule overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../06/index.html" class="btn btn-neutral float-right" title="Homework 6" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="hw5.1.html" class="btn btn-neutral float-left" title="Homework 5.1: Ruling out oscillations (25 pts)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
@@ -323,11 +325,11 @@ activator and repressor dynamics over time for this regime (this will require nu
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 30, 2021.
+        Last updated on May 04, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fd61c7ba700> 
+  </div> <jinja2.runtime.BlockReference object at 0x7fc12e800100> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

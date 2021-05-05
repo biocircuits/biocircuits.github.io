@@ -1,0 +1,9 @@
+****************
+Homework 6
+****************
+
+.. toctree::
+   :maxdepth: 1
+
+   hw6.1.ipynb
+
