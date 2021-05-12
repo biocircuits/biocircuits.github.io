@@ -34,7 +34,7 @@ Below are tentative homework due dates.
 - :ref:`Homework 4<Homework 4>`: due 11 am PDT, April 28
 - :ref:`Homework 5<Homework 5>`: due 11 am PDT, May 5
 - :ref:`Homework 6<Homework 6>`: due 11 am PDT, May 12
-- Homework 7: due 11 am PDT, May 19
+- :ref:`Homework 7<Homework 7>`: due 11 am PDT, May 19
 - Homework 8: due 11 am PDT, May 26
 - Homework 9: due 11 am PDT, June 2
 
@@ -150,7 +150,7 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
     + `Ben-Zvi, et al., 2010 <https://doi.org/10.1073/pnas.0912734107>`_
     + `Werner, et al., 2015 <https://doi.org/10.1103/PhysRevLett.114.138101>`_
 
-- M 05/23 - Special guest lecture 3: Uri Alon presents a special lecture and song on Systems Medicine
+- M 05/23 - Special guest lecture 3: Uri Alon presents a special lecture and song on systems medicine
 
 - W 05/25 - Chapter 23: TBD
 
