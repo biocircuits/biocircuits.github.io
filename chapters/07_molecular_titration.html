@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -32,16 +34,17 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/togglebutton.js"></script>
-        <script >var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -130,6 +133,8 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bet_hedging.html">16. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_time-based_regulation.html">17. Time-based regulation in cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_paradoxical.html">18. Paradoxical regulation in intra- and intercellular circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Homework</span></p>
@@ -141,6 +146,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../homework/05/index.html">Homework 5</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/06/index.html">Homework 6</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/07/index.html">Homework 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/08/index.html">Homework 8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/09/index.html">Homework 9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homework/10/index.html">Homework 10</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
 <ul>
@@ -872,7 +880,7 @@ based on bistability.</p>
 <p>Biological circuits are replete with such ultrasensitive switches: The cell cycle uses switches to click decisively from one phase to another. Signal transduction systems require ultrasensitivity to amplify small but important input signals into large responses. Multistable cell fate control systems use switches to enforce distinct cellular states. Natural and synthetic oscillators such as the circadian clock and the repressilator, which we will examine in an upcoming chapter, also require
 ultrasensitive switches.</p>
 <p>Are there simple, generalizable, and engineerable circuit-level design strategies that could confer ultrasensitivity? For instance, consider a simple gene regulatory system, in which an input activator, <span class="math notranslate nohighlight">\(A\)</span>, controls the expression of a target protein <span class="math notranslate nohighlight">\(Y\)</span>:</p>
-<center><p><img alt="f3314f4dde2b439e931c0a2c6661b908" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
+<center><p><img alt="6c63467f609b43d48349fc14d981109d" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
 </center><p>Let’s pause to ask:</p>
 <ol class="arabic simple">
 <li><p>How could you insert ultrasensitivity into the transcription response function (dependence of Y on A)?</p></li>
@@ -980,7 +988,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <h2>Molecular titration “subtracts” one protein concentration from another.<a class="headerlink" href="#Molecular-titration-“subtracts”-one-protein-concentration-from-another." title="Permalink to this headline">¶</a></h2>
 <p><strong>Molecular titration</strong> is a simple, general mechanism that provides tunable ultrasensitivity across diverse natural systems, and allows engineering of ultrasensitive responses in synthetic circuits. It takes advantage of the ability of biological molecules to form strong and specific complexes with one another. Depending on the system, the complex itself may provide a particular activity, such as gene regulation. Or, alternatively, one of the monomers may provide an activity, with the complex
 inhibiting it.</p>
-<center><p><img alt="3b7f37343b4043ca8927dcbebe6dfa32" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
+<center><p><img alt="74b6af09f02c4d33a3758499f8ec20d7" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
 </center><p>In this example, molecular titration performs a kind of “subtraction” operation. The inhibitor effectively “subtracts off” a fraction of otherwise active molecules.</p>
 </div>
 <div class="section" id="Molecular-titration-occurs-in-diverse-contexts:">
@@ -1625,7 +1633,7 @@ similar to those observed in the experimental data shown above.</p>
 <p>That makes sense: when miRNAs are unsaturated, they can have a relatively strong effect on their target expression levels, essentially keeping them “off.” On the other hand, when targets are expressed highly enough, the relative effect of the miRNA on expression becomes much weaker, effectively just shifting it to slightly slower values.</p>
 <div style="margin: auto; width: 400px;"><img alt="miRNA_relative_change.png" src="../_images/miRNA_relative_change.png" />
 </div><p>Returning to the question posed earlier, we now see that inserting a constitutive, inhibitory miRNA provides an elegant way to threshold a gene regulatory interaction.</p>
-<center><p><img alt="630da2e2087645c69ac0c6343dacf6ab" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
+<center><p><img alt="b8b9a27ccc6c463d979dd2bb18f5b795" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
 </center><p>Note that in addition to its general regulatory abilities and thresholding effects, miRNA regulation can also reduce noise in target gene expression. See <a class="reference external" href="https://science.sciencemag.org/content/sci/348/6230/128.full.pdf">Schmiedel et al, “MicroRNA control of protein expression noise,” Science (2015)</a>.</p>
 </div>
 <div class="section" id="Molecular-titration-in-antibiotic-persistence">
@@ -1700,11 +1708,11 @@ jupyterlab: 3.0.14
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 12, 2021.
+        Last updated on May 18, 2021.
       </span>
 
     </p>
-  </div> <jinja2.runtime.BlockReference object at 0x7fc589a4b8e0> 
+  </div> <jinja2.runtime.BlockReference object at 0x7ff3980c6e50> 
 
 <p>© 2021 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -35,8 +35,9 @@ Below are tentative homework due dates.
 - :ref:`Homework 5<Homework 5>`: due 11 am PDT, May 5
 - :ref:`Homework 6<Homework 6>`: due 11 am PDT, May 12
 - :ref:`Homework 7<Homework 7>`: due 11 am PDT, May 19
-- Homework 8: due 11 am PDT, May 26
-- Homework 9: due 11 am PDT, June 2
+- :ref:`Homework 8<Homework 8>`: due 11 am PDT, May 26
+- :ref:`Homework 9<Homework 9>`: due 11 am PDT, June 2
+- :ref:`Homework 10<Homework 10>`: due 11 am PDT, June 3
 
 
 ----
@@ -141,18 +142,18 @@ Lectures will roughly cover one chapter in the posted materials and will proceed
 
     + `Antebi, et al., 2017 <https://doi.org/10.1016/j.cell.2017.08.015>`_
 
-- W 05/19 - Chapter 21: Local activation and long-ranged inhibition can generate periodic spatial (Turing) patterns (JB)
+- W 05/19 - :ref:`Chapter 21<21. Turing patterns>`: Local activation and long-ranged inhibition can generate periodic spatial (Turing) patterns (JB)
 
     + `Turing, 1952 <https://doi.org/10.1098/rstb.1952.0012>`_
 
-- F 05/21 - Chapter 22: Feedbacks and scaling in morphogenetic patterning (JB)
+- F 05/21 - :ref:`Chapter 22<22. Scaling reaction-diffusion patterns>`: Feedbacks and scaling in morphogenetic patterning (JB)
 
     + `Ben-Zvi, et al., 2010 <https://doi.org/10.1073/pnas.0912734107>`_
     + `Werner, et al., 2015 <https://doi.org/10.1103/PhysRevLett.114.138101>`_
 
-- M 05/23 - Special guest lecture 3: Uri Alon presents a special lecture and song on systems medicine
+- M 05/24 - Special guest lecture 3: Uri Alon presents a special lecture and song on systems medicine
 
-- W 05/25 - Chapter 23: TBD
+- W 05/26 - Chapter 23: TBD
 
 - F 05/28 - Chapter 24: Course recap and the future of understanding and programming genetic circuitry (ME)
 

@@ -49,8 +49,8 @@ People
    chapters/16_bet_hedging
    chapters/17_time-based_regulation
    chapters/18_paradoxical
-   .. chapters/21_turing
-   .. chapters/22_scaling_morphogens
+   chapters/21_turing
+   chapters/22_scaling_morphogens
    chapters/appA_regulatory_functions
 
 
@@ -65,7 +65,9 @@ People
    homework/05/index
    homework/06/index
    homework/07/index
-
+   homework/08/index
+   homework/09/index
+   homework/10/index
 
 .. toctree::
    :maxdepth: 1
