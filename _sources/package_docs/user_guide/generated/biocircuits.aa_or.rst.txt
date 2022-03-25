@@ -1,6 +1,0 @@
-﻿biocircuits.aa\_or
-==================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: aa_or

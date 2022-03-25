@@ -1,6 +1,0 @@
-﻿biocircuits.ddeint
-==================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: ddeint

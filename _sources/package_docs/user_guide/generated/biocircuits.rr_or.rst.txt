@@ -1,6 +1,0 @@
-﻿biocircuits.rr\_or
-==================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: rr_or

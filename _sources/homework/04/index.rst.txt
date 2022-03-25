@@ -1,9 +1,0 @@
-****************
-Homework 4
-****************
-
-.. toctree::
-   :maxdepth: 1
-
-   hw4.1.ipynb
-   hw4.2.ipynb

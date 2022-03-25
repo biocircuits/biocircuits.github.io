@@ -1,6 +1,0 @@
-﻿biocircuits.phase\_portrait
-===========================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: phase_portrait

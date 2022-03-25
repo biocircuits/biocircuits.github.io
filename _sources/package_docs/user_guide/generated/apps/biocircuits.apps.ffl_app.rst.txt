@@ -1,6 +1,0 @@
-﻿biocircuits.apps.ffl\_app
-=========================
-
-.. currentmodule:: biocircuits.apps
-
-.. autofunction:: ffl_app

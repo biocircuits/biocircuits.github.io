@@ -1,6 +1,0 @@
-﻿biocircuits.aa\_or\_single
-==========================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: aa_or_single

@@ -1,9 +1,0 @@
-****************
-Homework 8
-****************
-
-.. toctree::
-   :maxdepth: 1
-
-   hw8.1.ipynb
-

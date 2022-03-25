@@ -1,29 +1,7 @@
 Biological Circuit Design
 =============================================================
 
-This course focuses on quantitative studies of cellular and developmental systems in biology, including the architecture of specific genetic circuits controlling microbial behaviors and multicellular development in model organisms. Topics are approached from experimental, theoretical and computational perspectives. Our goals for the class are (a) to build understanding of key principles of systems biology and (b) to develop skills for modeling and analysis of genetic circuits.
 
-Useful links
--------------
-
-- `Ed <https://edstem.org/us/courses/5128/>`_ (used for course communications)
-- `Course Zoom link <http://be150.caltech.edu/2021/zoom/>`_ 
-- `"200 Broad" Gather link <http://be150.caltech.edu/2021/gather/>`_
-- `Video recordings <http://be150.caltech.edu/2021/videos/>`_
-
-
-People
-------
-
-- Instructors
-
-   + `Justin Bois <http://bois.caltech.edu/>`_ (`bois at caltech dot edu`)
-   + `Michael Elowitz <https://www.elowitz.caltech.edu>`_ (`melowitz at caltech dot edu`)
-
-- TAs
-
-   + John Marken (`jmarken at caltech dot edu`)
-   + Ankita Roychoudhury (`aroychou at caltech dot edu`)
 
 
 .. toctree::
@@ -31,66 +9,16 @@ People
    :caption: Chapters
 
    chapters/00_setting_up_python_computing_environment
-   chapters/01_intro_to_circuit_design
-   chapters/02_intro_to_python_for_biological_circuits
-   chapters/03_small_circuits
-   chapters/04_finding_motifs
-   chapters/05_cffls
-   chapters/06_functions_of_iffls
-   chapters/07_molecular_titration
-   chapters/08_robustness
-   chapters/09_kinetic_proofreading
-   chapters/10_repressilator
-   chapters/11_delay_oscillators
-   chapters/12_noise
-   chapters/13_bursty
-   chapters/14_stochastic_simulation
-   chapters/15_stochastic_differentiation
-   chapters/16_bet_hedging
-   chapters/17_time-based_regulation
-   chapters/18_paradoxical
-   chapters/21_turing
-   chapters/22_scaling_morphogens
-   chapters/appA_regulatory_functions
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Homework
-
-   homework/01/index
-   homework/02/index
-   homework/03/index
-   homework/04/index
-   homework/05/index
-   homework/06/index
-   homework/07/index
-   homework/08/index
-   homework/09/index
-   homework/10/index
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Schedule
-
-   schedule
+   .. chapters/01_intro_to_circuit_design
+   .. chapters/02_response_time
+   .. chapters/03_bistability
+   .. chapters/appA_regulatory_functions
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Policies
+.. .. toctree::
+..    :maxdepth: 1
+..    :caption: Package docs 
 
-   policies
-
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Resources
-
-   resources
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Package docs 
-
-   package_docs/index
+..    package_docs/index

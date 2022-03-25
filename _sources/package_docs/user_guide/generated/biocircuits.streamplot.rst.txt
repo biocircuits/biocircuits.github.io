@@ -1,6 +1,0 @@
-﻿biocircuits.streamplot
-======================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: streamplot
