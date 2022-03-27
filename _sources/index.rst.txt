@@ -9,9 +9,8 @@ Biological Circuit Design
    :caption: Chapters
 
    chapters/00_setting_up_python_computing_environment
+   chapters/01_intro_to_circuit_design
 
-
-   .. chapters/01_intro_to_circuit_design
    .. chapters/02_response_time
    .. chapters/03_bistability
    .. chapters/appA_regulatory_functions
