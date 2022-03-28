@@ -1,0 +1,6 @@
+﻿biocircuits.xyt\_plot
+=====================
+
+.. currentmodule:: biocircuits
+
+.. autofunction:: xyt_plot

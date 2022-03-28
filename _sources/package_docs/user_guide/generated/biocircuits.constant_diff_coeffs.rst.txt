@@ -1,0 +1,6 @@
+﻿biocircuits.constant\_diff\_coeffs
+==================================
+
+.. currentmodule:: biocircuits
+
+.. autofunction:: constant_diff_coeffs

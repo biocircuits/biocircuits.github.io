@@ -1,0 +1,6 @@
+﻿biocircuits.apps.promiscuous\_222\_app
+======================================
+
+.. currentmodule:: biocircuits.apps
+
+.. autofunction:: promiscuous_222_app

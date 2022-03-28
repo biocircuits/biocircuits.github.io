@@ -1,0 +1,6 @@
+﻿biocircuits.interactive\_xy\_plot
+=================================
+
+.. currentmodule:: biocircuits
+
+.. autofunction:: interactive_xy_plot

@@ -1,0 +1,6 @@
+﻿biocircuits.ar\_or
+==================
+
+.. currentmodule:: biocircuits
+
+.. autofunction:: ar_or

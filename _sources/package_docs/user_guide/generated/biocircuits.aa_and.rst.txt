@@ -1,0 +1,6 @@
+﻿biocircuits.aa\_and
+===================
+
+.. currentmodule:: biocircuits
+
+.. autofunction:: aa_and

@@ -2,22 +2,18 @@ Biological Circuit Design
 =============================================================
 
 
-
-
 .. toctree::
    :maxdepth: 1
    :caption: Chapters
 
-   chapters/00_setting_up_python_computing_environment
-   chapters/01_intro_to_circuit_design
-
-   .. chapters/02_response_time
-   .. chapters/03_bistability
-   .. chapters/appA_regulatory_functions
+   chapters/00_setting_up_python_computing_environment.ipynb
+   chapters/01_intro_to_circuit_design.ipynb
+   chapters/02_response_time.ipynb
+   chapters/appA_regulatory_functions.ipynb
 
 
-.. .. toctree::
-..    :maxdepth: 1
-..    :caption: Package docs 
+.. toctree::
+   :maxdepth: 1
+   :caption: Package docs 
 
-..    package_docs/index
+   package_docs/index
