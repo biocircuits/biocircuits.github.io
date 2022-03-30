@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Problem 2.3: Negative autoregulation &mdash; Biological Circuit Design  documentation</title>
+  <title>Problem 3.5: Negative autoregulation including mRNA dynamics &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -30,7 +30,9 @@
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Appendix A: Regulatory functions and their derivatives" href="../../chapters/appA_regulatory_functions.html" />
+    <link rel="prev" title="Problem 3.4: Modeling inducers in a toggle switch" href="problem_3.4.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,10 +52,26 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Chapters</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/00_setting_up_python_computing_environment.html">0. Configuring your computer to use Python for scientific computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/02_response_time.html">2. Design principles governing the rate of gene expression</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../chapters/03_bistability.html">3. Bistability through positive feedback</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#Positive-autoregulation-enables-bistability">Positive autoregulation enables bistability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#Analytically-determining-the-number-of-fixed-points">Analytically determining the number of fixed points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#Bistability-enables-memory-through-hysteresis">Bistability enables memory through hysteresis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#The-toggle-switch:-a-two-gene-positive-feedback-system">The toggle switch: a two-gene positive feedback system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#Computing-environment">Computing environment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../chapters/03_bistability.html#Problems">Problems</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="problem_3.1.html">3.1: Modes of bistability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_3.2.html">3.2: Controlling an autoactivationcircuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_3.3.html">3.3: Autoactivation, bistability, and the importance ofleakage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_3.4.html">3.4: Modeling inducers in a toggleswitch</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.5: Negative autoregulation including mRNAdynamics</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -75,12 +93,13 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Problem 2.3: Negative autoregulation</li>
+          <li><a href="../../chapters/03_bistability.html">3. Bistability through positive feedback</a> &raquo;</li>
+      <li>Problem 3.5: Negative autoregulation including mRNA dynamics</li>
   <li class="wy-breadcrumbs-aside">
     
         
         
-            <a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/problems/02/problem_2.3.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biocircuits/biocircuits.github.io/master/problems/02/problem_2.3.ipynb" download> Download notebook</a>
+            <a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/problems/03/problem_3.5.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biocircuits/biocircuits.github.io/master/problems/03/problem_3.5.ipynb" download> Download notebook</a>
         
       
     
@@ -116,8 +135,8 @@
     text-align: unset;
 }
 </style>
-<section id="Problem-2.3:-Negative-autoregulation">
-<h1>Problem 2.3: Negative autoregulation<a class="headerlink" href="#Problem-2.3:-Negative-autoregulation" title="Permalink to this headline"></a></h1>
+<section id="Problem-3.5:-Negative-autoregulation-including-mRNA-dynamics">
+<h1>Problem 3.5: Negative autoregulation including mRNA dynamics<a class="headerlink" href="#Problem-3.5:-Negative-autoregulation-including-mRNA-dynamics" title="Permalink to this headline"></a></h1>
 <hr><p>Consider the two simple circuits shown below, where R is a repressor.</p>
 <div style="width: 500px; margin: auto"><img alt="autoregulation" src="../../_images/autoreg.png" />
 </div><p>We parametrize the dynamics as follows. Let <span class="math notranslate nohighlight">\(\beta_m\)</span> be the unregulated mRNA production rate, <span class="math notranslate nohighlight">\(\gamma_m\)</span> be the mRNA degradation rate constant, <span class="math notranslate nohighlight">\(\beta_p\)</span> be the protein production rate constant, and <span class="math notranslate nohighlight">\(\gamma_p\)</span> be the protein degradation rate constant.</p>
@@ -141,17 +160,20 @@ dimensionless mRNA and protein concentrations over time. Comment on the nature o
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="problem_3.4.html" class="btn btn-neutral float-left" title="Problem 3.4: Modeling inducers in a toggle switch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../chapters/appA_regulatory_functions.html" class="btn btn-neutral float-right" title="Appendix A: Regulatory functions and their derivatives" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Mar 28, 2022.
+      <span class="lastupdated">Last updated on Mar 30, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f8c7ec21f70> 
+   <jinja2.runtime.BlockReference object at 0x7fb816ed1550> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

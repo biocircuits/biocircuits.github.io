@@ -1406,8 +1406,7 @@
     "- [1.2: Separation of time scales](../problems/01/problem_1.2.ipynb)\n",
     "- [1.3: Rate of production of gene product by an activator](../problems/01/problem_1.3.ipynb)\n",
     "- [1.4: Activators vs. repressors](../problems/01/problem_1.4.ipynb)\n",
-    "- [1.5: Bound and unbound promoter regions](../problems/01/problem_1.5.ipynb)\n",
-    "- [1.6: Autoactivation, bistability, and the importance of leakage](../problems/01/problem_1.6.ipynb)"
+    "- [1.5: Bound and unbound promoter regions](../problems/01/problem_1.5.ipynb)"
    ]
   }
  ],

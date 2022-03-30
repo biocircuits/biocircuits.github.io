@@ -9,6 +9,7 @@ Biological Circuit Design
    chapters/00_setting_up_python_computing_environment.ipynb
    chapters/01_intro_to_circuit_design.ipynb
    chapters/02_response_time.ipynb
+   chapters/03_bistability.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 

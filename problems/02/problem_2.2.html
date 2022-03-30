@@ -31,7 +31,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Appendix A: Regulatory functions and their derivatives" href="../../chapters/appA_regulatory_functions.html" />
+    <link rel="next" title="3. Bistability through positive feedback" href="../../chapters/03_bistability.html" />
     <link rel="prev" title="Problem 2.1: Cost of a steady state" href="problem_2.1.html" /> 
 </head>
 
@@ -62,7 +62,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/02_response_time.html#Negative-autoregulation-accelerates-response-times">Negative autoregulation accelerates response times</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/02_response_time.html#Solving-for-a-time-varying-input">Solving for a time-varying input</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/02_response_time.html#Interactive-plotting-and-varying-parameters">Interactive plotting and varying parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/02_response_time.html#Experimental-demonstration-of-negative-autoregulation-speeding-response-time">Experimental demonstration of negative autoregulation speeding response time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/02_response_time.html#Computing-environment">Computing environment</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/02_response_time.html#Problems">Problems</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="problem_2.1.html">2.1: The cost of a steadystate</a></li>
@@ -71,6 +70,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/03_bistability.html">3. Bistability through positive feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -138,16 +138,12 @@
 <h1>Problem 2.2: Event handling for discontinuous derivatives<a class="headerlink" href="#Problem-2.2:-Event-handling-for-discontinuous-derivatives" title="Permalink to this headline"></a></h1>
 <hr><p><em>This problem is still a draft.</em></p>
 <p>Throughout Chapter 2, we used a Guassian function to represent a pulse of input signal <span class="math notranslate nohighlight">\(s\)</span>. One of the reasons we chose to use a Gaussian function was to ensure that the function would be smooth, i.e. its derivative is always continuous. What if, however, we instead wanted to model how our system would respond to a step increase and decrease of the inducer? In that case, our <span class="math notranslate nohighlight">\(s(t)\)</span> timecourse would encode a <span class="math notranslate nohighlight">\(\tau\)</span>-width pulse that begins at time <span class="math notranslate nohighlight">\(t_0\)</span> as</p>
-<p>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{align}
-s(t) = begin{cases}</p>
-<blockquote>
-<div><blockquote>
-<div><p>1, hspace{5mm} t_0 leq t leq t_0 + tau \
-0, hspace{5mm} text{otherwise}.</p>
-</div></blockquote>
-<p>end{cases}</p>
-</div></blockquote>
-<p>end{align}`</p>
+<p><span class="math">\begin{align}
+s(t) = \left\{\begin{array}{lll}
+1 & & t_0 \leq t \leq t_0 + \tau \\[0.5em]
+0 & & \text{otherwise}.
+\end{array}\right.
+\end{align}</span></p>
 <p>This function has a discontinuous derivative at <span class="math notranslate nohighlight">\(t = t_0\)</span> and <span class="math notranslate nohighlight">\(t = t_0 + \tau\)</span>. In this exercise, we will walk through the construction of a solver for stepwises pulses in <span class="math notranslate nohighlight">\(s\)</span> and demonstrate the problems associated with non-smooth functions. We will then walk through the procedure of <strong>event handling</strong>, which is a way to resolve these smoothness issues.</p>
 <ol class="arabic simple">
 <li><p>Write a naive function that directly encodes stepwise s(t)</p></li>
@@ -162,18 +158,18 @@ s(t) = begin{cases}</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="problem_2.1.html" class="btn btn-neutral float-left" title="Problem 2.1: Cost of a steady state" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../chapters/appA_regulatory_functions.html" class="btn btn-neutral float-right" title="Appendix A: Regulatory functions and their derivatives" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../chapters/03_bistability.html" class="btn btn-neutral float-right" title="3. Bistability through positive feedback" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Mar 28, 2022.
+      <span class="lastupdated">Last updated on Mar 30, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f8c78e72340> 
+   <jinja2.runtime.BlockReference object at 0x7fb8145ff280> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

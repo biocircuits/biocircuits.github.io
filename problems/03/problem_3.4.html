@@ -4,33 +4,35 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>biocircuits.ar_or_single &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  <title>Problem 3.4: Modeling inducers in a toggle switch &mdash; Biological Circuit Design  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="../../../_static/js/html5shiv.min.js"></script>
+    <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/clipboard.min.js"></script>
-        <script src="../../../_static/copybutton.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'true';</script>
-        <script src="../../../_static/togglebutton.js"></script>
+        <script src="../../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="../../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="biocircuits.apps.ffl_app" href="apps/biocircuits.apps.ffl_app.html" />
-    <link rel="prev" title="biocircuits.ar_and_single" href="biocircuits.ar_and_single.html" /> 
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Problem 3.5: Negative autoregulation including mRNA dynamics" href="problem_3.5.html" />
+    <link rel="prev" title="Problem 3.3: Autoactivation, bistability, and the importance of leakage" href="problem_3.3.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,11 +40,11 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../../index.html">
-            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+            <a href="../../index.html">
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -50,45 +52,31 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Chapters</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/00_setting_up_python_computing_environment.html">0. Configuring your computer to use Python for scientific computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/02_response_time.html">2. Design principles governing the rate of gene expression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/03_bistability.html">3. Bistability through positive feedback</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/00_setting_up_python_computing_environment.html">0. Configuring your computer to use Python for scientific computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/02_response_time.html">2. Design principles governing the rate of gene expression</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../chapters/03_bistability.html">3. Bistability through positive feedback</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#Positive-autoregulation-enables-bistability">Positive autoregulation enables bistability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#Analytically-determining-the-number-of-fixed-points">Analytically determining the number of fixed points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#Bistability-enables-memory-through-hysteresis">Bistability enables memory through hysteresis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#The-toggle-switch:-a-two-gene-positive-feedback-system">The toggle switch: a two-gene positive feedback system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/03_bistability.html#Computing-environment">Computing environment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../chapters/03_bistability.html#Problems">Problems</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="problem_3.1.html">3.1: Modes of bistability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_3.2.html">3.2: Controlling an autoactivationcircuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_3.3.html">3.3: Autoactivation, bistability, and the importance ofleakage</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.4: Modeling inducers in a toggleswitch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_3.5.html">3.5: Negative autoregulation including mRNAdynamics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">biocircuits package documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/installation.html">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../getting_started/purpose.html">Purpose and contents</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../api.html#delay-differential-equations">Delay differential equations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#reaction-diffusion-equations">Reaction diffusion equations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#stochastic-simulation-algorithms">Stochastic simulation algorithms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#visualization-functions">Visualization functions</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../api.html#regulatory-functions">Regulatory functions</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.act_hill.html">biocircuits.act_hill</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.rep_hill.html">biocircuits.rep_hill</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.aa_and.html">biocircuits.aa_and</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.aa_or.html">biocircuits.aa_or</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.aa_or_single.html">biocircuits.aa_or_single</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.rr_and.html">biocircuits.rr_and</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.rr_or.html">biocircuits.rr_or</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.rr_and_single.html">biocircuits.rr_and_single</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.ar_and.html">biocircuits.ar_and</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.ar_or.html">biocircuits.ar_or</a></li>
-<li class="toctree-l4"><a class="reference internal" href="biocircuits.ar_and_single.html">biocircuits.ar_and_single</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">biocircuits.ar_or_single</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../api.html#interactive-applications">Interactive applications</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../credits_and_citation.html">Credits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../credits_and_citation.html#citing-biocircuits">Citing biocircuits</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../package_docs/index.html">biocircuits package documentation</a></li>
 </ul>
 
         </div>
@@ -97,22 +85,21 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F1F1F1" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">Biological Circuit Design</a>
+          <a href="../../index.html">Biological Circuit Design</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">biocircuits package documentation</a> &raquo;</li>
-          <li><a href="../api.html">API Reference</a> &raquo;</li>
-      <li>biocircuits.ar_or_single</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../chapters/03_bistability.html">3. Bistability through positive feedback</a> &raquo;</li>
+      <li>Problem 3.4: Modeling inducers in a toggle switch</li>
   <li class="wy-breadcrumbs-aside">
     
         
         
-            <a href="../../../_sources/package_docs/user_guide/generated/biocircuits.ar_or_single.rst.txt" rel="nofollow"> View page source</a>
+            <a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/problems/03/problem_3.4.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biocircuits/biocircuits.github.io/master/problems/03/problem_3.4.ipynb" download> Download notebook</a>
         
       
     
@@ -148,40 +135,26 @@
     text-align: unset;
 }
 </style>
-<section id="biocircuits-ar-or-single">
-<h1>biocircuits.ar_or_single<a class="headerlink" href="#biocircuits-ar-or-single" title="Permalink to this headline"></a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="biocircuits.ar_or_single">
-<span class="sig-prename descclassname"><span class="pre">biocircuits.</span></span><span class="sig-name descname"><span class="pre">ar_or_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ny</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#biocircuits.ar_or_single" title="Permalink to this definition"></a></dt>
-<dd><p>Dimensionless production rate for a gene regulated by one
-activator and one repressor with OR logic in the absence of
-leakage with single occupancy.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>float</em><em> or </em><em>NumPy array</em>) – Concentration of activator.</p></li>
-<li><p><strong>y</strong> (<em>float</em><em> or </em><em>NumPy array</em>) – Concentration of repressor.</p></li>
-<li><p><strong>nx</strong> (<em>float</em>) – Hill coefficient for activator.</p></li>
-<li><p><strong>ny</strong> (<em>float</em>) – Hill coefficient for repressor.</p></li>
+<section id="Problem-3.4:-Modeling-inducers-in-a-toggle-switch">
+<h1>Problem 3.4: Modeling inducers in a toggle switch<a class="headerlink" href="#Problem-3.4:-Modeling-inducers-in-a-toggle-switch" title="Permalink to this headline"></a></h1>
+<hr><p><em>This problem is still a draft.</em></p>
+<p>In our analysis of the Gardner and Collins synthetic toggle switch, we did not include a way to represent the addition of the inducer signals. Such signals typically function by decreasing a receptor’s affinity for its target binding site, in other words by increasing the value of the Hill repression constant <span class="math notranslate nohighlight">\(k\)</span>. In the nondimensionalized system, we see that <span class="math notranslate nohighlight">\(k_x\)</span> (and correspondingly, <span class="math notranslate nohighlight">\(k_y\)</span>) appear both in the dimensionless concentration <span class="math notranslate nohighlight">\(\tilde{x}\)</span> and in the
+dimensionless production term <span class="math notranslate nohighlight">\(\tilde{\beta}_x\)</span>.</p>
+<p>Create an interactive plot representing the following scenario:</p>
+<ul class="simple">
+<li><p>The circuit is built with parameters <span class="math notranslate nohighlight">\(\beta, \gamma, n\)</span> fixed to be <span class="math notranslate nohighlight">\(\beta = 10\)</span>, <span class="math notranslate nohighlight">\(\gamma = 1\)</span>, <span class="math notranslate nohighlight">\(n=10\)</span>.</p></li>
+<li><p>The plot has sliders for <span class="math notranslate nohighlight">\(k_x\)</span> and <span class="math notranslate nohighlight">\(k_y\)</span>, which represent the presence of inducer signal to inactivate the repressors <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, respectively. (Note that this representation assumes that the inducer’s action is linearly proportional to its concentration, which is typically not true but gives the right qualitative result).</p></li>
+<li><p>The plot shows how the nullclines, in dimensionless concentration space, change as you add and remove the inducer signals.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>output</strong> – (1 + x**nx) / (1 + x**nx + y**ny)</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>NumPy array or float</p>
-</dd>
-</dl>
-</dd></dl>
-
+<p>What insights did you gain from the visualization?</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="biocircuits.ar_and_single.html" class="btn btn-neutral float-left" title="biocircuits.ar_and_single" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="apps/biocircuits.apps.ffl_app.html" class="btn btn-neutral float-right" title="biocircuits.apps.ffl_app" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="problem_3.3.html" class="btn btn-neutral float-left" title="Problem 3.3: Autoactivation, bistability, and the importance of leakage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="problem_3.5.html" class="btn btn-neutral float-right" title="Problem 3.5: Negative autoregulation including mRNA dynamics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -192,7 +165,7 @@ leakage with single occupancy.</p>
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fb81476c3a0> 
+   <jinja2.runtime.BlockReference object at 0x7fb816e31be0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
