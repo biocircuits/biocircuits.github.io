@@ -10,6 +10,7 @@ Biological Circuit Design
    chapters/01_intro_to_circuit_design.ipynb
    chapters/02_response_time.ipynb
    chapters/03_bistability.ipynb
+   chapters/04_ffls.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 
