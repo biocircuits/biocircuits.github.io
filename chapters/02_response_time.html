@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2. Design principles governing the rate of gene expression &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -100,6 +99,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="03_bistability.html">3. Bistability through positive feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -416,7 +416,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="2.-Design-principles-governing-the-rate-of-gene-expression">
+<div class="section" id="2.-Design-principles-governing-the-rate-of-gene-expression">
 <h1>2. Design principles governing the rate of gene expression<a class="headerlink" href="#2.-Design-principles-governing-the-rate-of-gene-expression" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Concept</strong></p>
 <ul class="simple">
@@ -777,7 +777,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<hr><section id="Protein-stability-determines-the-response-time-to-a-change-in-gene-expression">
+<hr><div class="section" id="Protein-stability-determines-the-response-time-to-a-change-in-gene-expression">
 <h2>Protein stability determines the response time to a change in gene expression<a class="headerlink" href="#Protein-stability-determines-the-response-time-to-a-change-in-gene-expression" title="Permalink to this headline"></a></h2>
 <p>So far, we have focused on what happens to a system at steady state. However, biological circuits change dynamically, even in constant environmental conditions.</p>
 <p>Imagine a cell suddenly finds itself in a new environment, requiring it to turn up or down the expression of specific genes. How rapidly can it switch proteins to their new desired levels?</p>
@@ -882,8 +882,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</section>
-<section id="How-can-we-speed-up-responses?">
+</div>
+<div class="section" id="How-can-we-speed-up-responses?">
 <h2>How can we speed up responses?<a class="headerlink" href="#How-can-we-speed-up-responses?" title="Permalink to this headline"></a></h2>
 <p>So far, it seems as if the cell’s ability to modulate the concentration of a stable protein is quite limited, apparently requiring multiple cell cycles for both increases and decreases. This seems rather pathetic for such successful, billion year old creatures. You might think you could beat this timescale up-regulate the protein level faster by cranking up the promoter strength (increasing <span class="math notranslate nohighlight">\(\beta\)</span>). Indeed, this would allow the cell to hit a specific threshold earlier. However, it would
 also increase the final steady state level (<span class="math notranslate nohighlight">\(\beta/\gamma\)</span>), and therefore leave the timescale over which the system reaches its new steady-state unaffected.</p>
@@ -1002,8 +1002,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <!-- The plots above show the same y axis label -- we need to indicate normalization --><p>This analysis reveals an important <strong>design principle</strong>: <em>Increased protein degradation can speed up the response time of a gene expression system, at the cost of additional protein production.</em></p>
-</section>
-<section id="Network-motifs-identify-functionally-important-circuits.">
+</div>
+<div class="section" id="Network-motifs-identify-functionally-important-circuits.">
 <h2>Network motifs identify functionally important circuits.<a class="headerlink" href="#Network-motifs-identify-functionally-important-circuits." title="Permalink to this headline"></a></h2>
 <p>We have just seen that destabilizing a protein can speed its response time. However, most bacterial proteins, transcription factors in particular, are stable. Do they use other mechanisms to accelerate response times?</p>
 <p>The answer to this question will turn out to be yes, there is a circuit that can accelerate responses. But before we get there, let’s step back for a moment to ask how one can go about discovering such functionally important circuits in the first place. Do you have to guess them? It would be nice if there were some kind of catalog of important circuits and their functions that we could browse.</p>
@@ -1014,8 +1014,8 @@ Gen. 2002</a>).</p>
 </div><p>The transcriptional regulatory network of <em>E. coli</em> has been mapped (see <a class="reference external" href="http://regulondb.ccg.unam.mx">RegulonDB</a>). It contains ≈424 operons (nodes), ≈519 transcriptional regulatory interactions (arrows), involving ≈116 transcription factors. If the target of each arrow was chosen randomly, the probability of any given arrow being autoregulatory is low (≈1/424). One might expect only about one such event in the entire network. However, ≈40 such autoregulatory arrows are observed. (If we
 further consider whether the arrows are activating (+) or repressing (-), then we find 32 negative autoregulatory operons and 8 positive autoregulatory ones. Later on, we will discuss both types.) Autoregulation thus appears to be statistically over-represented compared to the null hypothesis of random regulatory interactions. It is a motif.</p>
 <p>The <strong>motif principle</strong> states that statistically over-represented patterns in networks have been selected repeatedly because they provide key cellular functions. A similar concept is useful in other aspects of biology. For example, sequence motifs are statistically over-represented sequences within the genome that are enriched for functionally important features, such as protein binding sites. Motifs of various kinds represent a cross-cutting concept in bioinformatics.</p>
-</section>
-<section id="Negative-autoregulation-accelerates-response-times">
+</div>
+<div class="section" id="Negative-autoregulation-accelerates-response-times">
 <h2>Negative autoregulation accelerates response times<a class="headerlink" href="#Negative-autoregulation-accelerates-response-times" title="Permalink to this headline"></a></h2>
 <p>Identifying motifs in regulatory networks is one way to discover functionally important circuits, and one of the strongest motifs of them all is autoregulation. You can guess that since we are discussing speeding up circuit response that it does just that. So, how does it work?</p>
 <p>To start, we write down a differential equation representing production and degradation of the repressor, <span class="math notranslate nohighlight">\(x\)</span>. We represent its regulation using a Hill repression function, and we keep the Hill coefficient at <span class="math notranslate nohighlight">\(n=1\)</span> for now.</p>
@@ -1110,7 +1110,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 x(t) \approx x_\mathrm{ss} \sqrt{1-\mathrm{e}^{-2 \gamma t}},
 \end{align}</span></p>
 <p>where <span class="math notranslate nohighlight">\(x_\mathrm{ss}\)</span> denotes the steady-state expression level. In the following sections, we will explore these dynamics using numerical integration and compare them to this analytical approximation.</p>
-<section id="Incorporating-explicit-input-dependence-into-a-model-of-regulation">
+<div class="section" id="Incorporating-explicit-input-dependence-into-a-model-of-regulation">
 <h3>Incorporating explicit input dependence into a model of regulation<a class="headerlink" href="#Incorporating-explicit-input-dependence-into-a-model-of-regulation" title="Permalink to this headline"></a></h3>
 <p>Throughout this chapter we have been invoking a situation where the gene has been off for some time before it is suddenly turned on. We previously saw that it is possible for an inducer molecule to inhibit the action of a repressor, but it is also possible for there to be molecules that can activate the action of a repressor, or inhibit the action of an activator, or many other types of interactions. For now, we will ignore specific biomolecular details and simply write out a generic dependence
 of the autorepressive gene’s expression on the presence of some external signal, <span class="math notranslate nohighlight">\(s\)</span>.</p>
@@ -1129,8 +1129,8 @@ phenomenologically represents a complex process of enzymatic inactivation of the
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}x}{\mathrm{d}t} = \beta_0\,\frac{(s/k_s)^{n_s}}{1 + (s/k_s)^{n_s}}\, \frac{1}{(1 + (x/k)^n)} - \gamma x.
 \end{align}</span></p>
-</section>
-<section id="The-scipy.intergrate-module">
+</div>
+<div class="section" id="The-scipy.intergrate-module">
 <h3>The scipy.intergrate module<a class="headerlink" href="#The-scipy.intergrate-module" title="Permalink to this headline"></a></h3>
 <p>As our dynamical equations become more complex, as they are starting to here, numerical solutions become essential.</p>
 <p><strong>The</strong><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">SciPy Library</a> is a Python library for scientific computing. It contains many modules, including <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.special</span></code>, and <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>, which respectively include functions to perform statistical calculations, “special functions,” and optimization routines, among many others. We will use the <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> module to integrate systems of ODEs.</p>
@@ -1144,8 +1144,8 @@ solvers, <code class="docutils literal notranslate"><span class="pre">solve_ivp(
 <p>There are many other keyword arguments to set algorithmic parameters, but we will generally not need them (and you can read about them in the <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.integrate.odeint.html#scipy.integrate.odeint">documentation</a>). Importantly, <code class="docutils literal notranslate"><span class="pre">func</span></code> is a vector-valued function with call signature <code class="docutils literal notranslate"><span class="pre">func(y,</span> <span class="pre">t,</span> <span class="pre">*args)</span></code> that specifies the right hand side of the system of ODEs to be solved. <code class="docutils literal notranslate"><span class="pre">t</span></code> is a scalar time point and <code class="docutils literal notranslate"><span class="pre">y</span></code> is a one-dimensional array (though
 multidimensional arrays are possible). <code class="docutils literal notranslate"><span class="pre">y0</span></code> is an array with the initial conditions.</p>
 <p>As is often the case, use of this function is best seen by example, and we will now apply it to the negative autoregulation circuit.</p>
-</section>
-<section id="Solving-for-a-constant-input">
+</div>
+<div class="section" id="Solving-for-a-constant-input">
 <h3>Solving for a constant input<a class="headerlink" href="#Solving-for-a-constant-input" title="Permalink to this headline"></a></h3>
 <p>We will first consider the case where we initially have no <span class="math notranslate nohighlight">\(s\)</span> present, but a step increase in <span class="math notranslate nohighlight">\(s\)</span> at time <span class="math notranslate nohighlight">\(t=0\)</span> causes a corresponding step-like increase in the value of <span class="math notranslate nohighlight">\(\beta\)</span>, which we represent by having <span class="math notranslate nohighlight">\(n_s \gg 1\)</span> and <span class="math notranslate nohighlight">\(s \gg k_s\)</span>.</p>
 <p>If we are only simulating our system starting at <span class="math notranslate nohighlight">\(t=0\)</span>, then we can treat <span class="math notranslate nohighlight">\(s\)</span> as a single, constant parameter, rather than a time-varying variable. So, we need seven parameters for the right hand side of our ODEs: <span class="math notranslate nohighlight">\(\beta_0\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(k_s\)</span>, <span class="math notranslate nohighlight">\(n_s\)</span>, and <span class="math notranslate nohighlight">\(s\)</span>.</p>
@@ -1243,8 +1243,8 @@ x(t) = \frac{\beta_0}{\gamma}\left(1 - \mathrm{e}^{-\gamma t}\right).
 </div>
 </div>
 <p>Now let’s now plot the results.</p>
-</section>
-<section id="Plotting-results">
+</div>
+<div class="section" id="Plotting-results">
 <h3>Plotting results<a class="headerlink" href="#Plotting-results" title="Permalink to this headline"></a></h3>
 <p>Like all of the plots in this book, we use <a class="reference external" href="https://docs.bokeh.org/">Bokeh</a> to plot our results. Bokeh is an excellent plotting tool that allows interactivity in the browser, and we use it to great effect in this and most other chapters.</p>
 <!-- I found the "we use it to great effect" line a bit heavy-handed...  --><p>The syntax is mostly self-explanatory from the example below. Note that you can save a plot as a PNG file by clicking the disk icon next to the plot. This is helpful for incorporating plots into presentations. (<a class="reference external" href="https://docs.bokeh.org/en/latest/docs/user_guide/export.html">Bokeh also supports</a> vector graphics output formats, which are ideal publications, but discouraged for displaying plots in a browser.)</p>
@@ -1434,13 +1434,13 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</section>
-<section id="Design-principle:-Negative-autoregulation-of-a-transcription-factor-accelerates-its-response-to-a-change-in-input">
+</div>
+<div class="section" id="Design-principle:-Negative-autoregulation-of-a-transcription-factor-accelerates-its-response-to-a-change-in-input">
 <h3>Design principle: Negative autoregulation of a transcription factor accelerates its response to a change in input<a class="headerlink" href="#Design-principle:-Negative-autoregulation-of-a-transcription-factor-accelerates-its-response-to-a-change-in-input" title="Permalink to this headline"></a></h3>
 <p>Comparing the unnormalized and normalized plots exposes two related effects of autoregulation. First, adding negative autoregulation reduces the steady-state expression level. Second, as a consequence, the approach to steady state is accelerated. This can be seen in the second plot where all the concentrations are normalized to their steady state. All told, in this example, negative autoregulation accelerated the dynamics by about 5-fold compared to the unregulated system. We have thus arrived
 at another <strong>design principle</strong>: <em>Negative autoregulation of a transcription factor accelerates its response to a change in input</em>.</p>
-</section>
-<section id="Experimental-demonstration-of-negative-autoregulation-speeding-response-time">
+</div>
+<div class="section" id="Experimental-demonstration-of-negative-autoregulation-speeding-response-time">
 <h3>Experimental demonstration of negative autoregulation speeding response time<a class="headerlink" href="#Experimental-demonstration-of-negative-autoregulation-speeding-response-time" title="Permalink to this headline"></a></h3>
 <p>Can this acceleration be observed experimentally? To find out, Rosenfeld, et al. engineered a simple synthetic system based on a bacterial repressor called TetR, fused to a fluorescent protein for readout, and studied its turn-on dynamics in bacterial populations. The plot below show the response to sudden induction of gene expression of GFP-fused TetR, using data digitized from Fig. 3 of the Rosenfeld, et al. paper.</p>
 <div class="nbinput toggle docutils container">
@@ -1511,9 +1511,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <p>The curves in blue are three trials with the autorepressive circuit. The gray line shows the response in the presence of aTc, a small molecule that inactivates TetR. The black line shows the response of an “open loop” circuit (simple repression) that lacks feedback.</p>
 <p>Interestingly, these dynamics show the expected acceleration, as well as some oscillations around steady-state, which may be explained by time delays in the regulatory system (which we will discuss more in an upcoming chapter).</p>
-</section>
-</section>
-<section id="Solving-for-a-time-varying-input">
+</div>
+</div>
+<div class="section" id="Solving-for-a-time-varying-input">
 <h2>Solving for a time-varying input<a class="headerlink" href="#Solving-for-a-time-varying-input" title="Permalink to this headline"></a></h2>
 <p>This acceleration in response occurs when we turn the gene on. What happens when we turn the gene off, for example by suddenly stopping the gene’s expression at some later time point? We can address this question by including <span class="math notranslate nohighlight">\(s\)</span> as a time-varying signal within the ODE solver.</p>
 <p>Now let’s imagine that the input signal <span class="math notranslate nohighlight">\(s\)</span>, rather than turning on instantaneously at <span class="math notranslate nohighlight">\(t=0\)</span> and remaining constant for the rest of the simulation, instead occurs as a pulse of duration <span class="math notranslate nohighlight">\(\tau\)</span> that peaks at time <span class="math notranslate nohighlight">\(t_0\)</span>. Then <span class="math notranslate nohighlight">\(s\)</span> would be present roughly within the time window <span class="math notranslate nohighlight">\((t_0-\tau/2, t_0+\tau/2)\)</span>, but absent outside of this time window. We will model the peak as a Gaussian function of unit height,</p>
@@ -1821,8 +1821,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 \left.\frac{\mathrm{d}x}{\mathrm{d}t}\right\vert_{\beta(s)=0}=- \gamma x,
 \end{align}</span></p>
 <p>meaning that the dynamics of the fall in gene expression will become identical between the two systems as <span class="math notranslate nohighlight">\(\beta(s)\)</span> approaches <span class="math notranslate nohighlight">\(0\)</span>.</p>
-</section>
-<section id="Interactive-plotting-and-varying-parameters">
+</div>
+<div class="section" id="Interactive-plotting-and-varying-parameters">
 <h2>Interactive plotting and varying parameters<a class="headerlink" href="#Interactive-plotting-and-varying-parameters" title="Permalink to this headline"></a></h2>
 <p>Although we have now convincingly demonstrated that it is possible for negative autoregulation to speed the response time of a gene’s expression, we do not yet have a clear understanding of how the values of the parameters themselves, particularly <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, affect the magnitude of this speed-up. To gain insight into these effects, we turn to interactive plotting.</p>
 <p>Plotting with Bokeh in Jupyter notebooks allows for interactivity with plots that can help to rapidly gain insights about how parameter values might affect the dynamics. We have found that this is a useful tool to rapidly explore parameter dependence on circuit behavior.</p>
@@ -1840,10 +1840,10 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>The excellent package <a class="reference external" href="https://panel.holoviz.org">Panel</a> allows for more declarative (and hence fewer lines of code) means of dashboarding (with dashboards ultimately being rendered, if desired, with Bokeh) and we encourage you to explore it. We however choose to use base Bokeh for interactive plotting in this book because it offers greater flexibility and performance, allows for convenient JavaScript integration (which is necessary for many of the interactive plots to work in the static HTML
 rendering of this book), and does not require <em>that</em> much more effort compared to Panel.</p>
 </div>
-<section id="A-simple-example:-Varying-the-properties-of-the-input-signal">
+<div class="section" id="A-simple-example:-Varying-the-properties-of-the-input-signal">
 <h3>A simple example: Varying the properties of the input signal<a class="headerlink" href="#A-simple-example:-Varying-the-properties-of-the-input-signal" title="Permalink to this headline"></a></h3>
 <p>To demonstrate dashboard construction, we will first build a simple example that lets you interactively change the properties of the input signal’s time course, without incorporating it into the ODE model just yet.</p>
-<section id="Step-1:-Generate-the-plot-(but-don’t-show-it)">
+<div class="section" id="Step-1:-Generate-the-plot-(but-don’t-show-it)">
 <h4>Step 1: Generate the plot (but don’t show it)<a class="headerlink" href="#Step-1:-Generate-the-plot-(but-don’t-show-it)" title="Permalink to this headline"></a></h4>
 <p>First, we will generate the plot. When we generate the plot, we specify the data in a <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> so that we can change the data in the plot without re-rendering it.</p>
 <p>We cannot show the plot here, since we will show it in the app. A Bokeh plot can only be in a single document, in our case the app (which as far as Bokeh is concerned is separate from showing it in the JupyterLab cell below).</p>
@@ -1873,8 +1873,8 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-2:-Make-the-widgets">
+</div>
+<div class="section" id="Step-2:-Make-the-widgets">
 <h4>Step 2: Make the widgets<a class="headerlink" href="#Step-2:-Make-the-widgets" title="Permalink to this headline"></a></h4>
 <p>Now we will make our widget, in this case two sliders to represent the values <span class="math notranslate nohighlight">\(t_0\)</span> and <span class="math notranslate nohighlight">\(\tau\)</span> parameters.</p>
 <div class="nbinput nblast docutils container">
@@ -1891,8 +1891,8 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </div>
 </div>
 <p>The sliders are instantiated using <code class="docutils literal notranslate"><span class="pre">bokeh.models.Slider()</span></code>, with keyword arguments whose meaning should be obvious from their names. The <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute of the slider is the present value of the slider.</p>
-</section>
-<section id="Step-3:-Make-the-callbacks">
+</div>
+<div class="section" id="Step-3:-Make-the-callbacks">
 <h4>Step 3: Make the callbacks<a class="headerlink" href="#Step-3:-Make-the-callbacks" title="Permalink to this headline"></a></h4>
 <p>Next, we specify the callback function that will be used to update the plot as the slider changes. The callback function for a slider must take three arguments, the attribute that changes, its old value, and its new one. We will not directly use these arguments (though we could), but will rather directly read the value from the slider using its <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute. Our callback function simply updates the <code class="docutils literal notranslate"><span class="pre">y</span></code> data values of the <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>.</p>
 <div class="nbinput nblast docutils container">
@@ -1914,8 +1914,8 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-4:-Build-the-layout">
+</div>
+<div class="section" id="Step-4:-Build-the-layout">
 <h4>Step 4: Build the layout<a class="headerlink" href="#Step-4:-Build-the-layout" title="Permalink to this headline"></a></h4>
 <p>Now that we have a slider and a plot and have linked the data source of the plot to the slider, we can lay out the dashboard. We will put the sliders in a column next to the plot, putting a spacer in between.</p>
 <div class="nbinput nblast docutils container">
@@ -1930,8 +1930,8 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-5:-Make-the-app">
+</div>
+<div class="section" id="Step-5:-Make-the-app">
 <h4>Step 5: Make the app<a class="headerlink" href="#Step-5:-Make-the-app" title="Permalink to this headline"></a></h4>
 <p>Now we are ready to make a function to produce the app. The function needs to have call signature <code class="docutils literal notranslate"><span class="pre">app(doc)</span></code>, where <code class="docutils literal notranslate"><span class="pre">doc</span></code> represents the document that Bokeh will build into an app. The purpose of this function is to add the layout we have just build to the document.</p>
 <div class="nbinput nblast docutils container">
@@ -1943,8 +1943,8 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-6:-Enjoy-your-interactive-plot!">
+</div>
+<div class="section" id="Step-6:-Enjoy-your-interactive-plot!">
 <h4>Step 6: Enjoy your interactive plot!<a class="headerlink" href="#Step-6:-Enjoy-your-interactive-plot!" title="Permalink to this headline"></a></h4>
 <p>And we are finally ready to see the app! When we call <code class="docutils literal notranslate"><span class="pre">bokeh.io.show()</span></code>, we pass the <code class="docutils literal notranslate"><span class="pre">app()</span></code> function as the first argument. We also need to use the <code class="docutils literal notranslate"><span class="pre">notebook_url</span></code> keyword argument to specify where the notebook is being hosted. This is usually <code class="docutils literal notranslate"><span class="pre">&quot;localhost:8888&quot;</span></code>, but the number may change (e.g., <code class="docutils literal notranslate"><span class="pre">8889</span></code> or <code class="docutils literal notranslate"><span class="pre">8890</span></code>). You can look in the navigation bar of your browser to make sure you get the right number. In this and all other chapters, we specify <code class="docutils literal notranslate"><span class="pre">notebook_url</span></code> in the first cell of
 the notebook along with the imports.</p>
@@ -2010,8 +2010,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p class="admonition-title fa fa-exclamation-circle">Warning</p>
 <p>Only one Bokeh app may be active in a running notebook at a time. We will momentarily build another app to look at the autorepressor circuit dynamics, and after you execute the code to build that app, the above app will no longer be active.</p>
 </div>
-</section>
-<section id="Serving-an-app">
+</div>
+<div class="section" id="Serving-an-app">
 <h4>Serving an app<a class="headerlink" href="#Serving-an-app" title="Permalink to this headline"></a></h4>
 <p>If you wanted to have a stand-alone interactive plot on its own browser tab, you can put all of the code necessary to generate it in a single <code class="docutils literal notranslate"><span class="pre">.py</span></code> file and then serve it from the command line. For this example, we could have a file <code class="docutils literal notranslate"><span class="pre">pulse_signal.py</span></code> with the following contents.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -2075,12 +2075,12 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bokeh serve --show s_pulse.py
 </pre></div>
 </div>
-</section>
-</section>
-<section id="An-app-for-the-negative-autoregulation-model">
+</div>
+</div>
+<div class="section" id="An-app-for-the-negative-autoregulation-model">
 <h3>An app for the negative autoregulation model<a class="headerlink" href="#An-app-for-the-negative-autoregulation-model" title="Permalink to this headline"></a></h3>
 <p>Now that we have gained some familiarity with interactive plotting via Bokeh, we will make a dashboard to allow us to interactively explore the negative autoregulation model. To do so, we will incorporate scipy’s ODE integration into the plotting function itself, and we will also demonstrate how to create a button that can toggle a categorical property (like normalization of the results).</p>
-<section id="Step-1:-Build-the-plot">
+<div class="section" id="Step-1:-Build-the-plot">
 <h4>Step 1: Build the plot<a class="headerlink" href="#Step-1:-Build-the-plot" title="Permalink to this headline"></a></h4>
 <p>We will build the plot as before. We will initially have it contain the parameters we have been using.</p>
 <div class="nbinput nblast docutils container">
@@ -2122,8 +2122,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-2:-Build-the-widgets">
+</div>
+<div class="section" id="Step-2:-Build-the-widgets">
 <h4>Step 2: Build the widgets<a class="headerlink" href="#Step-2:-Build-the-widgets" title="Permalink to this headline"></a></h4>
 <p>Now we will build our sliders, one for each parameter. We are interested in varying the parameters <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, and <span class="math notranslate nohighlight">\(x_0\)</span> on a logarithmic scale, so we will set up the sliders to specify <span class="math notranslate nohighlight">\(\log_{10} \beta\)</span>, <span class="math notranslate nohighlight">\(\log_{10}\gamma\)</span> and <span class="math notranslate nohighlight">\(\log_{10} x_0\)</span>.</p>
 <div class="nbinput nblast docutils container">
@@ -2175,8 +2175,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-3:-Build-the-callbacks">
+</div>
+<div class="section" id="Step-3:-Build-the-callbacks">
 <h4>Step 3: Build the callbacks<a class="headerlink" href="#Step-3:-Build-the-callbacks" title="Permalink to this headline"></a></h4>
 <p>We can now build our callback. This callback will be a bit more complicated. For each new slider value, we need to re-integrate the dynamical equations. We also need to check to see if the normalization toggle button is clicked and appropriately scale the data and change the y-axis label. We also will need to recalculate the result if the range of the time axis changes, so we need to read the time points off of the <code class="docutils literal notranslate"><span class="pre">x_range</span></code> property of the plot.</p>
 <div class="nbinput nblast docutils container">
@@ -2260,8 +2260,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-4:-The-layout">
+</div>
+<div class="section" id="Step-4:-The-layout">
 <h4>Step 4: The layout<a class="headerlink" href="#Step-4:-The-layout" title="Permalink to this headline"></a></h4>
 <p>We can now lay things out. I will put the sliders and normalization toggle in a column next to the plot.</p>
 <div class="nbinput nblast docutils container">
@@ -2289,8 +2289,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div>
 </div>
 </div>
-</section>
-<section id="Step-5:-The-app">
+</div>
+<div class="section" id="Step-5:-The-app">
 <h4>Step 5: The app<a class="headerlink" href="#Step-5:-The-app" title="Permalink to this headline"></a></h4>
 <p>And now for the app! (Note again that the app in the HTML rendering of this notebook will be using JavaScript. To use the Python-based app, be sure <code class="docutils literal notranslate"><span class="pre">interactive_python_plots</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> in the top cell of this notebook.)</p>
 <div class="nbinput docutils container">
@@ -2349,10 +2349,10 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>By moving around the sliders, we can see that increasing the strength of the repression (by decreasing <span class="math notranslate nohighlight">\(k\)</span>) accentuates the speed-up provided by negative autoregulation. Furthermore, we see that increasing the cooperativitity of the repressor (by increasing <span class="math notranslate nohighlight">\(n\)</span>) makes the initial rise in <span class="math notranslate nohighlight">\(x\)</span> “sharper”. What other properties can you find through interacting with this plot?</p>
-</section>
-</section>
-</section>
-<section id="Computing-environment">
+</div>
+</div>
+</div>
+<div class="section" id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
@@ -2380,8 +2380,8 @@ jupyterlab : 3.3.2
 
 </pre></div></div>
 </div>
-<hr></section>
-<section id="Problems">
+<hr></div>
+<div class="section" id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -2389,8 +2389,8 @@ jupyterlab : 3.3.2
 <li class="toctree-l1"><a class="reference internal" href="../problems/02/problem_2.2.html">2.2: Event handling for discontinuousderivatives</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -2404,11 +2404,11 @@ jupyterlab : 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 04, 2022.
+      <span class="lastupdated">Last updated on Apr 06, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fc6bea91ee0> 
+   <jinja2.runtime.BlockReference object at 0x7fc081153640> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

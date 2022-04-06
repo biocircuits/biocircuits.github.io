@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 3.5: Negative autoregulation including mRNA dynamics &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -75,6 +74,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -138,7 +138,7 @@
     text-align: unset;
 }
 </style>
-<section id="Problem-3.5:-Negative-autoregulation-including-mRNA-dynamics">
+<div class="section" id="Problem-3.5:-Negative-autoregulation-including-mRNA-dynamics">
 <h1>Problem 3.5: Negative autoregulation including mRNA dynamics<a class="headerlink" href="#Problem-3.5:-Negative-autoregulation-including-mRNA-dynamics" title="Permalink to this headline"></a></h1>
 <hr><p>Consider the two simple circuits shown below, where R is a repressor.</p>
 <div style="width: 500px; margin: auto"><img alt="autoregulation" src="../../_images/autoreg.png" />
@@ -158,7 +158,7 @@
 <p><strong>e)</strong> One of the ways we quantify the separation of time scales we mentioned in lecture is by evaluating the ratio <span class="math notranslate nohighlight">\(\gamma\)</span>. Provide an argument why we may neglect the mRNA dynamics and consider only the protein if <span class="math notranslate nohighlight">\(\gamma \ll 1\)</span>.</p>
 <p><strong>f)</strong> Assume we initially have no mRNA or protein present. Suddenly, a cell needs to start producing the protein, so the gene is turned on at time <span class="math notranslate nohighlight">\(t = 0\)</span>. Starting from initial conditions of <span class="math notranslate nohighlight">\(m(0) = p(0) = 0\)</span>, solve the ODEs (numerically or otherwise) for both the unregulated and autoregulated systems. You should choose parameters as would be typical for a bacterial cell. The excellent <a class="reference external" href="http://bionumbers.org/">BioNumbers website</a> will be helpful. Plot the respective
 dimensionless mRNA and protein concentrations over time. Comment on the nature of the responses of the unregulated versus regulated circuit. Which has a faster response? How long does it take each to get to steady state?</p>
-</section>
+</div>
 
 
            </div>
@@ -172,11 +172,11 @@ dimensionless mRNA and protein concentrations over time. Comment on the nature o
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 04, 2022.
+      <span class="lastupdated">Last updated on Apr 06, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fc6da7788e0> 
+   <jinja2.runtime.BlockReference object at 0x7fc08783c9d0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

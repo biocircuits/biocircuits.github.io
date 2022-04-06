@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 3.7: Design principles for toggles &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -75,6 +74,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -138,13 +138,13 @@
     text-align: unset;
 }
 </style>
-<section id="Problem-3.7:-Design-principles-for-toggles">
+<div class="section" id="Problem-3.7:-Design-principles-for-toggles">
 <h1>Problem 3.7: Design principles for toggles<a class="headerlink" href="#Problem-3.7:-Design-principles-for-toggles" title="Permalink to this headline"></a></h1>
 <hr><p>Consider two components, A and B, which regulate each other. A may activate or repress B, and B may activate or repress A. There are three possible architectures in this scenario, two with positive feedback and one with negative feedback, shown below.</p>
 <div style="width: 400px; margin: auto;"><img alt="Toggles" src="../../_images/toggles.png" />
 </div><p><strong>a)</strong> A circuit can behave like a toggle if it has two stable steady states, one with A high and B low and another with B high and A low. Only one of the above architectures can function as a toggle. Which one? Explain in words and sketches why <em>only</em> the one you chose can be a toggle.</p>
 <p><strong>b)</strong> A and/or B may have ultrasensitive regulation, which we describe with a Hill coefficient, <span class="math notranslate nohighlight">\(n\)</span>, greater than one. Show that without ultrasensitive regulation, even the architecture you chose cannot have toggle behavior.</p>
-</section>
+</div>
 
 
            </div>
@@ -158,11 +158,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 04, 2022.
+      <span class="lastupdated">Last updated on Apr 06, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fc6da715e20> 
+   <jinja2.runtime.BlockReference object at 0x7fc0807a0340> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

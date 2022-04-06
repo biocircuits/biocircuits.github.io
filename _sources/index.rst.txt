@@ -11,6 +11,7 @@ Biological Circuit Design
    chapters/02_response_time.ipynb
    chapters/03_bistability.ipynb
    chapters/04_ffls.ipynb
+   chapters/05_dosage_compensation.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 

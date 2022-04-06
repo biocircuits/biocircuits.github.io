@@ -13,7 +13,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Because we use certain functions to describe regulation of gene expression, it is useful to have a reference for the functions and their derivatives.\n",
+    "Because we use certain functions to describe regulation of gene expression, it is useful to have a reference for the functions and their first derivatives (and also some second derivatives).\n",
     "\n",
     "**Dimensional forms**\n",
     "\n",
@@ -50,7 +50,8 @@
     "\n",
     "\\begin{align}\n",
     "&f(x) = \\frac{x^n}{1 + x^n}, \\\\[1em]\n",
-    "&\\frac{\\mathrm{d}f}{\\mathrm{d}x} = \\frac{n x^{n-1}}{(1 + x^n)^2}.\n",
+    "&\\frac{\\mathrm{d}f}{\\mathrm{d}x} = \\frac{n x^{n-1}}{(1 + x^n)^2},\\\\[1em]\n",
+    "&\\frac{\\mathrm{d}^2f}{\\mathrm{d}x^2} = -\\frac{n x^{n-2}\\left(1 - n + (1+n)x^n\\right)}{(1 + x^n)^3}.\n",
     "\\end{align}\n",
     "\n",
     "\n",
@@ -58,7 +59,8 @@
     "\n",
     "\\begin{align}\n",
     "&f(x) = \\frac{1}{1 + x^n}, \\\\[1em]\n",
-    "&\\frac{\\mathrm{d}f}{\\mathrm{d}x} = -\\frac{n x^{n-1}}{(1 + x^n)^2}.\n",
+    "&\\frac{\\mathrm{d}f}{\\mathrm{d}x} = -\\frac{n x^{n-1}}{(1 + x^n)^2},\\\\[1em]\n",
+    "&\\frac{\\mathrm{d}^2f}{\\mathrm{d}x^2} = \\frac{n x^{n-2}\\left(1 - n + (1+n)x^n\\right)}{(1 + x^n)^3}.\n",
     "\\end{align}\n"
    ]
   },
