@@ -13,6 +13,7 @@ Biological Circuit Design
    chapters/04_ffls.ipynb
    chapters/05_dosage_compensation.ipynb
    chapters/06_exact_adaptation.ipynb
+   chapters/07_signal_amplification.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 
