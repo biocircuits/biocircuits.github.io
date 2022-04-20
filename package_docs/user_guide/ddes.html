@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solving delay differential equations &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -58,6 +59,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -374,7 +377,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Solving-delay-differential-equations">
+<section id="Solving-delay-differential-equations">
 <h1>Solving delay differential equations<a class="headerlink" href="#Solving-delay-differential-equations" title="Permalink to this headline"></a></h1>
 <hr><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -1102,7 +1105,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 515000
 </pre></div></div>
 </div>
-<div class="section" id="Our-model-system">
+<section id="Our-model-system">
 <h2>Our model system<a class="headerlink" href="#Our-model-system" title="Permalink to this headline"></a></h2>
 <p>As we learn how to use some Python-based tools for analysis of genetic circuits, we will learn an important design principle about <em>cascades</em>. A three-component cascade is illustrated below.</p>
 <p><span class="math">\begin{align}
@@ -1110,8 +1113,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 \end{align}</span></p>
 <p>Here, X is our input, which we will specify. X could be something like an externally imposed stimulus. We are interested in the response of Y and Z as a function of input X. We will expose the design principle that <em>a cascade can filter out high frequency fluctuations</em>. This makes sense intuitively. Imagine we have a brief pulse in X. Y will start to grow in concentration during the pulse, but will then fall back toward its basal level when the pulse stops. If there is not enough time for Y to
 accumulate enough to enhance production of Z, then the level of Z does not change appreciably. Thus, Z shows no response to a brief pulse.</p>
-</div>
-<div class="section" id="The-dynamical-equations">
+</section>
+<section id="The-dynamical-equations">
 <h2>The dynamical equations<a class="headerlink" href="#The-dynamical-equations" title="Permalink to this headline"></a></h2>
 <p>We will model the circuit by writing down a system of ordinary differential equations and solving them. We will assume Hill-like behavior for the activation of Y by X and of Z by Y. We also neglect leakage. We define the concentrations of X, Y, and Z, respectively as <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>. The system of ODEs describing this system is then</p>
 <p><span class="math">\begin{align}
@@ -1119,8 +1122,8 @@ accumulate enough to enhance production of Z, then the level of Z does not chang
 \frac{\mathrm{d}z}{\mathrm{d}t} &= \beta_z\,\frac{(y/k_y)^{n_y}}{1+(y/k_y)^{n_y}} - \gamma_z z.
 \end{align}</span></p>
 <p>Note that the imposed <span class="math notranslate nohighlight">\(x(t)\)</span> is in general a function of time.</p>
-</div>
-<div class="section" id="Nondimensionalization">
+</section>
+<section id="Nondimensionalization">
 <h2>Nondimensionalization<a class="headerlink" href="#Nondimensionalization" title="Permalink to this headline"></a></h2>
 <p>As is generally a good idea for analysis of these systems, we will <strong>nondimensionalize</strong> the dynamical equations. The variables and parameters in the problem have <strong>dimension</strong>. For example, <span class="math notranslate nohighlight">\(y\)</span> has dimension of concentration, or number of particles per cubic length, written as</p>
 <p><span class="math">\begin{align}
@@ -1180,8 +1183,8 @@ y = \left[\frac{N}{L^3}\right].
 \end{align}</span></p>
 <p>Thus, in addition to the specifics of our input <span class="math notranslate nohighlight">\(x(t)\)</span>, we have four parameters, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(n_x\)</span>, and <span class="math notranslate nohighlight">\(n_y\)</span>. We already know that <span class="math notranslate nohighlight">\(n_x\)</span> and <span class="math notranslate nohighlight">\(n_y\)</span> are Hill coefficients that parametrize the ultrasensitivity of the regulation by X and Y respectively. The parameter <span class="math notranslate nohighlight">\(\beta = \beta_y/\gamma_y k_y\)</span> is the ratio of the unregulated level of Y, <span class="math notranslate nohighlight">\(\beta_y/\gamma\)</span> to the level of Y that activates Z. The parameter <span class="math notranslate nohighlight">\(\gamma\)</span> is the ratio of
 the decay rate of Z to that of Y. If dilution is the primary mode of concentration depletion for both Y and Z, then <span class="math notranslate nohighlight">\(\gamma \approx 1\)</span>. We now have a clear picture of which dimensionless parameters dictate the dynamics and what they mean physically.</p>
-</div>
-<div class="section" id="The-scipy.intergrate-module">
+</section>
+<section id="The-scipy.intergrate-module">
 <h2>The scipy.intergrate module<a class="headerlink" href="#The-scipy.intergrate-module" title="Permalink to this headline"></a></h2>
 <p>Now that we have our dimensionless dynamical equations, we will move to solving them.</p>
 <p><strong>The</strong><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">SciPy Library</a> is a Python library for scientific computing. It contains many modules, including <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.special</span></code>, and <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>, which respectively have functions to perform statistical calculations, special functions, and optimization routines. There are many more. We will use the <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> module to integrate systems of ODEs.</p>
@@ -1195,8 +1198,8 @@ compare the two solvers, <code class="docutils literal notranslate"><span class=
 <p>There are many other keyword arguments to set algorithmic parameters, but we will generally not need them (and you can read about them in the <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.integrate.odeint.html#scipy.integrate.odeint">documentation</a>). Importantly, <code class="docutils literal notranslate"><span class="pre">func</span></code> is a vector-valued function with call signature <code class="docutils literal notranslate"><span class="pre">func(y,</span> <span class="pre">t,</span> <span class="pre">*args)</span></code> that specifies the right hand side of the system of ODEs to be solved. <code class="docutils literal notranslate"><span class="pre">t</span></code> is a scalar time point and <code class="docutils literal notranslate"><span class="pre">y</span></code> is a one-dimensional array (though
 multidimensional arrays are possible). <code class="docutils literal notranslate"><span class="pre">y0</span></code> is an array with the initial conditions.</p>
 <p>As is often the case, use of this function is best seen by example, and we will now apply it to the cascade circuit.</p>
-</div>
-<div class="section" id="Solving-for-a-constant-input-X">
+</section>
+<section id="Solving-for-a-constant-input-X">
 <h2>Solving for a constant input X<a class="headerlink" href="#Solving-for-a-constant-input-X" title="Permalink to this headline"></a></h2>
 <p>We will first consider the case where we initially have no X, Y, or Z present. At time <span class="math notranslate nohighlight">\(t = 0\)</span>, we suddenly have a concentration of X of <span class="math notranslate nohighlight">\(x_0\)</span>. So, we need five parameters for the right hand side of our ODEs, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(n_x\)</span>, <span class="math notranslate nohighlight">\(n_y\)</span>, and <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
 <p>We now define the function for the right hand side of the ODEs.</p>
@@ -1270,8 +1273,8 @@ multidimensional arrays are possible). <code class="docutils literal notranslate
 </pre></div></div>
 </div>
 <p>The first column of the output <code class="docutils literal notranslate"><span class="pre">yz</span></code> gives <span class="math notranslate nohighlight">\(y(t)\)</span> at the specified time points and the second column gives <span class="math notranslate nohighlight">\(z(t)\)</span>. We would now like to plot the results.</p>
-</div>
-<div class="section" id="Plotting-results">
+</section>
+<section id="Plotting-results">
 <h2>Plotting results<a class="headerlink" href="#Plotting-results" title="Permalink to this headline"></a></h2>
 <p>We will use <a class="reference external" href="https://docs.bokeh.org/">Bokeh</a> to plot the results. The syntax is pretty self-explanatory from the example below. Note that you can save a plot as a PNG by clicking the disk icon next to the plot, which might be helpful for incorporating your plots into your presentations. (Note that for publications, you should usually save your figures in a vector graphics format, which <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/user_guide/export.html">Bokeh supports</a>, but is not necessary, and
 in fact discouraged, for display of plots in the browser.)</p>
@@ -1396,8 +1399,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>We see that the cascade acts as a delay for changes in <span class="math notranslate nohighlight">\(z\)</span> as a result of input <span class="math notranslate nohighlight">\(x\)</span>.</p>
-</div>
-<div class="section" id="Interactive-plotting-and-varying-parameters">
+</section>
+<section id="Interactive-plotting-and-varying-parameters">
 <h2>Interactive plotting and varying parameters<a class="headerlink" href="#Interactive-plotting-and-varying-parameters" title="Permalink to this headline"></a></h2>
 <p>Plotting with Bokeh in Jupyter notebooks allows for interactivity with plots that can help to rapidly gain insights about how parameter values might affect the dynamics. We have found that this is a useful tool to rapidly explore parameter dependence on circuit behavior. We will construct an interactive plot for the cascade circuit to demonstrate how it is done.</p>
 <p>For our interactivity, we will use <a class="reference external" href="https://panel.holoviz.org">Panel</a>. (Note that we imported Panel as <code class="docutils literal notranslate"><span class="pre">pn</span></code> at the beginning of this notebook and executed <code class="docutils literal notranslate"><span class="pre">pn.extension()</span></code> to enable Panel to work.) Panel allows convenient functionality for making interactive graphics. As you will see throughout the course, interactive graphics make it easier to explore how circuits work; you can interact directly with plots instead of having to re-run calculations and manually re-plot.</p>
@@ -1642,8 +1645,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>This will open your default browser (Firefox or Chrome recommended) and the dashboard will be displayed along in a browser tab and be fully interactive.</p>
 <p>Importantly, when exploring the plot interactively, we see that when Y cooperatively activates Z (that is, <span class="math notranslate nohighlight">\(n_y\)</span> is large), the delay is longer. The delay is also naturally longer as <span class="math notranslate nohighlight">\(\gamma\)</span> gets small. This makes sense, since <span class="math notranslate nohighlight">\(\gamma\)</span> is the ratio of the decay rate of Z to that of Y. As we saw in the previous lesson, the decay rate sets the speed of the response, and if Z decays more slowly than Y, its dynamics will be slower.</p>
 <p>Note that the above conclusions are clearer when we plot the normalized curves.</p>
-</div>
-<div class="section" id="Speeding-up-interactions-and-Hill-functions">
+</section>
+<section id="Speeding-up-interactions-and-Hill-functions">
 <h2>Speeding up interactions and Hill functions<a class="headerlink" href="#Speeding-up-interactions-and-Hill-functions" title="Permalink to this headline"></a></h2>
 <p>The process of building the interactive plot may have seemed like a lot of steps. However, if we look back at what we did to build it, we did the following.</p>
 <ol class="arabic simple">
@@ -1828,8 +1831,8 @@ Watcher(inst=FloatSlider(end=10, name=&#39;n&#39;, start=0.1, value=1, value_thr
 })(window);</script></div>
 </div>
 <p>The response of sliders constructed this way can be much quicker than in the simpler method we did before, which regenerates the plot each time the slider changes value. However, as you can see from this example, you have to write more code to implement the faster-responding sliders. Going forward, we will almost always use the simpler construction, where we simple write a function that generates a plot and include that in our Panel layout, though in some applications, speed matters.</p>
-</div>
-<div class="section" id="Duration-of-input">
+</section>
+<section id="Duration-of-input">
 <h2>Duration of input<a class="headerlink" href="#Duration-of-input" title="Permalink to this headline"></a></h2>
 <p>Coming back to our cascade circuit, now imagine that the input is a pulse of duration <span class="math notranslate nohighlight">\(\tau\)</span>. We can write a function for this and plot it.</p>
 <div class="nbinput docutils container">
@@ -2081,8 +2084,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>We see that Z basically does not respond strongly to a short pulse. The delay of the circuit allows short pulses to be ignored, but large pulses to be detected and responded to.</p>
-</div>
-<div class="section" id="Really-short-pulses-and-a-lesson-about-scipy.integrate.odeint()">
+</section>
+<section id="Really-short-pulses-and-a-lesson-about-scipy.integrate.odeint()">
 <h2>Really short pulses and a lesson about scipy.integrate.odeint()<a class="headerlink" href="#Really-short-pulses-and-a-lesson-about-scipy.integrate.odeint()" title="Permalink to this headline"></a></h2>
 <p>Now, we will take a brief interlude to learn an important lesson about the algorithm of <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> and its use in these applications. We will consider a very brief pulse, <span class="math notranslate nohighlight">\(1 \le t \le 1.05\)</span>.</p>
 <div class="nbinput docutils container">
@@ -2264,8 +2267,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <p>Much better. Dealing with discontinuities like this while solving systems of ODEs are facilitated by <strong>event handling</strong>. Unfortunately, <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> does not allow for event handling, and we need to take the less elegant approach we just showed.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp()</span></code> <em>does</em> have event handling capabilities. However, we will seldom need event handing for our purposes, and it is still advantages to use <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> due to its low overhead.</p>
-</div>
-<div class="section" id="Periodic-input">
+</section>
+<section id="Periodic-input">
 <h2>Periodic input<a class="headerlink" href="#Periodic-input" title="Permalink to this headline"></a></h2>
 <p>Finally, we will consider the case where we have periodic forcing of the circuit. We will do this for highly cooperative activation by Y, taking <span class="math notranslate nohighlight">\(n_y = 10\)</span>. Recall that this gives a longer time delay.</p>
 <p>We first write a function for the forcing, <code class="docutils literal notranslate"><span class="pre">x_fun</span></code>, which is periodic with frequency <span class="math notranslate nohighlight">\(f\)</span>.</p>
@@ -2650,12 +2653,12 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>Even though the high frequency part of the forcing has a bigger amplitude, the signal in <em>z</em> responds predominantly to the low frequency part of the signal.</p>
-</div>
-<div class="section" id="A-challenge">
+</section>
+<section id="A-challenge">
 <h2>A challenge<a class="headerlink" href="#A-challenge" title="Permalink to this headline"></a></h2>
 <p>In the above analysis of periodic forcing, I made a fresh plot each time of the response to an oscillating input so that the plots would display nicely in the HTML rendered version of this notebook. Can you make the sample plot(s) by making a single interactive plot?</p>
-</div>
-<div class="section" id="Computing-environment">
+</section>
+<section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
@@ -2684,8 +2687,8 @@ jupyterlab: 3.0.11
 
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -2696,11 +2699,11 @@ jupyterlab: 3.0.11
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 18, 2022.
+      <span class="lastupdated">Last updated on Apr 20, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fd9869c3a30> 
+   <jinja2.runtime.BlockReference object at 0x7f9505c73fd0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

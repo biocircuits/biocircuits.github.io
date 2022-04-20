@@ -14,6 +14,8 @@ Biological Circuit Design
    chapters/05_dosage_compensation.ipynb
    chapters/06_exact_adaptation.ipynb
    chapters/07_signal_amplification.ipynb
+   chapters/08_kinetic_proofreading.ipynb
+   chapters/09_repressilator.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 

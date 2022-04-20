@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5. Incoherent feed-forward loops serve as dosage compensators &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -83,6 +84,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -399,7 +402,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="5.-Incoherent-feed-forward-loops-serve-as-dosage-compensators">
+<section id="5.-Incoherent-feed-forward-loops-serve-as-dosage-compensators">
 <h1>5. Incoherent feed-forward loops serve as dosage compensators<a class="headerlink" href="#5.-Incoherent-feed-forward-loops-serve-as-dosage-compensators" title="Permalink to this headline"></a></h1>
 <p><em>Development of this chapter on dosage compensation benefited greatly from discussions with Michael Flynn.</em></p>
 <hr><p><strong>Design principles</strong></p>
@@ -747,7 +750,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<div class="section" id="Cells-respond-to-an-unpredictable-world-with-unpredictable-components">
+<section id="Cells-respond-to-an-unpredictable-world-with-unpredictable-components">
 <h2>Cells respond to an unpredictable world with unpredictable components<a class="headerlink" href="#Cells-respond-to-an-unpredictable-world-with-unpredictable-components" title="Permalink to this headline"></a></h2>
 <p>Throughout this and the following three chapters, we will begin to explore the concept of robustness. You have likely heard the word “robustness” used in biology. You may have a feeling for what is meant when we talk about robustness. Nevertheless, its precise meaning may seem fuzzy.</p>
 <p>Living cells find themselves in a world that is constantly changing. For a soil microbe, such as <em>Bacillus subtilis</em>, nutrients deplete, temperatures fluctuate, humidity levels can vary drastically. A given cell may need to contend with antibiotics produced by other bacteria, among other challenges. Other bacteria, such as <em>Escherichia coli</em>, alternate between very different environments: the gut of an animal, a sewer, an uncooked hamburger. In a multicellular organism, cells have to deal with a
@@ -758,14 +761,14 @@ robustness can provide key insights into why one circuit design may be preferabl
 <p>Robustness is also important in the context of synthetic biology. There, it provides a principle that can help select among alternative potential synthetic circuit designs. One can often identify multiple circuit architectures that provide similar functions overall, but differ in their robustness to variations. For a synthetic circuit to operate reliably in a cell, robust designs may be essential, and worth their cost in additional circuit complexity.</p>
 <p>Finally, one amusing aspect of robustness is this: non-robust circuit designs are, by definition, sensitive to their numerous biochemical parameters, most of whose values are often unmeasured and unknown. This makes it challenging to accurately model or simulate their behavior. Robust designs, in addition to benefiting the organism, also benefit the scientist, because their models, like the circuits themselves, can be analyzed with less accurate knowledge of parameter values.</p>
 <p>Over these next four chapters, we will explore a number of different biological systems that exhibit robust and fine-tuned in various forms. Through these examples, our goal is to develop a deeper and more precise understanding of the principle of robustness, and become proficient in clearly and precisely describing the nature of robustness in various biological systems. Let us begin with the principle of robustness.</p>
-</div>
-<div class="section" id="The-principle-of-robustness">
+</section>
+<section id="The-principle-of-robustness">
 <h2>The principle of robustness<a class="headerlink" href="#The-principle-of-robustness" title="Permalink to this headline"></a></h2>
 <p>Here, we will begin with the following operational definition.</p>
 <blockquote>
 <div><p>A property of a biological circuit is <strong>robust</strong> if it is nearly independent of some of the biochemical parameters that vary unavoidably from cell to cell or system to system.</p>
 </div></blockquote>
-<div class="section" id="How-to-make-statements-about-robustness">
+<section id="How-to-make-statements-about-robustness">
 <h3>How to make statements about robustness<a class="headerlink" href="#How-to-make-statements-about-robustness" title="Permalink to this headline"></a></h3>
 <p>It is important to be precise about what system properties are robust to what potential perturbations, as well as the operating regime or context one is considering. We say <em>Property X of the system is robust to variations in Y in operating regime Z.</em> That is, we specify</p>
 <ol class="arabic simple">
@@ -775,14 +778,14 @@ robustness can provide key insights into why one circuit design may be preferabl
 </ol>
 <p>Further, robustness is quantitative: it can range from perfect (if X is totally indepenent of Y in the regime Z) to partial (if X varies by only, say, 10% over the same conditions).</p>
 <p>Often the term is used more loosely or colloquially in biology. You may encounter statements that omit a description of the regime Z or even the variation Y. But here we will try to be as precise as possible.</p>
-</div>
-<div class="section" id="The-opposite-of-robustness:-fine-tuned-properties">
+</section>
+<section id="The-opposite-of-robustness:-fine-tuned-properties">
 <h3>The opposite of robustness: fine-tuned properties<a class="headerlink" href="#The-opposite-of-robustness:-fine-tuned-properties" title="Permalink to this headline"></a></h3>
 <p>A system or property of a system that is <em>not</em> robust can be said to be <strong>fine-tuned</strong>. A fine-tuned property of a circuit requires precise adjustment of biochemical parameters to maintain its function. For example, in open loop gene expression, the steady-state protein concentration is fine-tuned by the parameters <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>. Just like robustness, we need to define X, Y, and Z as above: what property we are talking about, what parameter variations affect its function, and
 in what regime do those variations have that effect.</p>
-</div>
-</div>
-<div class="section" id="Gene-dosage-varies-in-bacteria">
+</section>
+</section>
+<section id="Gene-dosage-varies-in-bacteria">
 <h2>Gene dosage varies in bacteria<a class="headerlink" href="#Gene-dosage-varies-in-bacteria" title="Permalink to this headline"></a></h2>
 <p>As a first example of robusteness we will consider the phenomenon of <strong>gene dosage compensation</strong>—the ability of a system to maintain constant protein expression despite variation in the number of DNA copies, or “dosage,” of the underlying gene. Systems for gene gene dosage compensation are essential if the cell needs to maintain a protein concentration at a fixed value despite variation in its gene dosage.</p>
 <p>We tend to think of gene dosage as fairly stable—usually there are 2 copies of each gene in a diploid organism like ourselves—but in fact dosage varies a lot across different cellular contexts. For one thing, even in a “standard” diploid eukaryotic cell, gene dosage doubles during the cell cycle. But other systems show more complex types of dosage variation. The X chromosome can be present in one or two copies in a cell. Some cell types, such as muscle myotubes, are polyploid, with many copies
@@ -793,24 +796,24 @@ the origin of replication and the growth rate and other conditions, different ge
 <div style="width: 600px; margin: auto;"><img alt="dichotomous_replication 2" src="../_images/dichotomous_replication.png" />
 </div><p><em>Schematic view of dichotomous replication, after similar diagram in Trojanowski et al,</em><a class="reference external" href="https://doi.org/10.3389/fmicb.2018.02819">Front. Microbiol. 2018</a></p>
 <p>In addition to this level of dosage variation, plasmids (self-replicating circular DNA molecules) in bacteria can exist at a widely varying range of copy numbers depending on growth conditions, and can be transferred (in some cases) laterally from one cell to another. Thus, genes on a plasmid may also need mechanisms to compensate for variations in their own dosage.</p>
-</div>
-<div class="section" id="Gene-dosage-also-varies-in-eukaryotic-cells">
+</section>
+<section id="Gene-dosage-also-varies-in-eukaryotic-cells">
 <h2>Gene dosage also varies in eukaryotic cells<a class="headerlink" href="#Gene-dosage-also-varies-in-eukaryotic-cells" title="Permalink to this headline"></a></h2>
 <p>Eukaryotic cells also experience another form of gene dosage variation: changes in ploidy. For instance, chromosome numbers double in the G2 phase (after replication) compared to G1 (before replication). Ploidy can also vary in other contexts. Muscle, liver, heart, bone marrow, and placenta all contain polyploid cells with multiple copies of chromosomes. In these cases, the copy number of the whole genome is altered in the same proportion. And sometimes this comes along with an increase in total
 cell volume.</p>
 <p>Sex chromosomes can be present at different numbers in males and females, leading to variation in gene dosage. For example, in humans, the X chromosome exists at one copy per cell in males but two in females. This is solved through randomly silencing, or “inactivating,” one of the two X chromosomes in each cell. (The “calico” coat pattern in cats is partly explained by mosaic clones in which different X chromosomes, carrying coat color genes, are inactivated this way.)</p>
 <p>While this strategy is used by humans, in <em>Drosophila</em>, males instead boost expression of genes on their one X chromosome by two-fold. In <em>C. elegans</em>, hermaphrodites, with two X chromosomes, do the opposite, down-regulating the expression of each X by 50% to match the X expression in males, which contain only one X chromosome.</p>
 <p>In cancer, certain chromosomal regions can be duplicated multiple times, amplifying their copy number. These amplifications can drive cancer cell survival and replication. This is a different, aberrant, context in which gene dosage can similarly vary.</p>
-</div>
-<div class="section" id="Gene-dosage-compensation-is-important-for-synthetic-biology-and-gene-therapy-applications.">
+</section>
+<section id="Gene-dosage-compensation-is-important-for-synthetic-biology-and-gene-therapy-applications.">
 <h2>Gene dosage compensation is important for synthetic biology and gene therapy applications.<a class="headerlink" href="#Gene-dosage-compensation-is-important-for-synthetic-biology-and-gene-therapy-applications." title="Permalink to this headline"></a></h2>
 <p>In synthetic biology and metabolic engineering, there is interest in designing genetic systems that can operate predictably across different contexts, despite all of this dosage variation.</p>
 <p>Gene therapies seek to provide cells with a replacement copy of a gene that is otherwise mutated or inactivated in the patient. This gene could be inserted into cells in different ways. One currently popular approach uses adeno-associated virus (AAV) vectors, which can efficiently enter cells and allow expression of their DNA cargo. With these systems, it is impossible to precisely control the number of copies of the gene that are delivered to each cell—some cells may receive many copies, while
 others receive fewer, or none. Furthermore, with vectors that integrate in the genome, the precise location of integration can influence the level of expression of the gene. As a result, even if each cell received the same number of copies, those copies might express at different levels in different cells. Thus, without some mechanism to compensate for dosage variation, the gene therapy will be expressed at a range of different levels in different cells.</p>
 <p>If merely providing the protein at any level were sufficient, this variability might be tolerable. However, in some cases too much of the “good” protein can be almost as bad as too little. One example of this “Goldilocks” problem occurs in Rett syndrome, a devastating condition that results from loss of function of the gene MeCP2, which is on the X chromosome. In heterozygous females, half of cells express mutant MeCP2, leading to disease. Yet overexpression of MeCP2 is also toxic, leading to a
 condition known as MeCP2 duplication syndrome. For these reasons, gene dosage compensation could be important for gene therapy as well as for endogenous organismal regulation.</p>
-</div>
-<div class="section" id="The-transcriptional-IFFL-can-provide-gene-dosage-compensation">
+</section>
+<section id="The-transcriptional-IFFL-can-provide-gene-dosage-compensation">
 <h2>The transcriptional IFFL can provide gene dosage compensation<a class="headerlink" href="#The-transcriptional-IFFL-can-provide-gene-dosage-compensation" title="Permalink to this headline"></a></h2>
 <p>Recent work has shown that the incoherent feed-forward loop (IFFL) can provide a remarkably simple mechanism for gene dosage compensation. Here, we will explore two different IFFL designs that use either transcriptional or post-transcriptional (micro-RNA) regulation in bacteria or mammalian cells, respectively.</p>
 <p>We start with a beautiful demonstration of dosage compensation in bacteria by <a class="reference external" href="https://doi.org/10.1038/nbt.4111">Segall-Shapiro, Sontag, and Voigt (2018)</a>.</p>
@@ -969,8 +972,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 <blockquote>
 <div><p>The I1-FFL dosage compensation circuit is <em>not</em> robust to copy number fluctuations if the Hill coefficient <span class="math notranslate nohighlight">\(n\)</span> is anything other than unity.</p>
 </div></blockquote>
-</div>
-<div class="section" id="Synthetic-biology-enables-experimental-tests-of-dosage-compensation-in-bacteria">
+</section>
+<section id="Synthetic-biology-enables-experimental-tests-of-dosage-compensation-in-bacteria">
 <h2>Synthetic biology enables experimental tests of dosage compensation in bacteria<a class="headerlink" href="#Synthetic-biology-enables-experimental-tests-of-dosage-compensation-in-bacteria" title="Permalink to this headline"></a></h2>
 <p>To test the prediction that the IFFL can dosage compensate expression, Voigt and colleagues designed a synthetic gene regulatory system incorporating a variety of designed regulatory elements. As a repressor, they used Transcription activator-like effector (TALE) proteins derived from <em>Xanthamonas</em> bacteria that infect plants. These proteins exhibit a programmable structure based on modular ≈34 amino acid units that recognize different DNA dinucleotides. By concatenating these modules, one can
 design TALE proteins that target desired DNA binding sites. (Before the emergence of CRISPR as a supremely powerful and versatile programmable gene editing system, TALEs were poised to allow many similar functions.) For the purposes of this experiment, key properties of the TALE repressors include their ability to tightly (≈100-fold) repress target promoters in bacteria and their ability, demonstrated in this paper, to provide linearly sensitive (<span class="math notranslate nohighlight">\(n=1\)</span>) repression. To control the copy
@@ -994,7 +997,7 @@ Code up the model from the Segall-Shapiro paper as an "assumption free" ODE syst
 Also: Fang Xiao and I have found that when you simulate the model fully, there is a regime where the system exhibits copy-number invariance that is not predicted to be copy-number invariant by their model assumptions. It may be interesting to lead the student to this regime in an exercise to highlight what can be lost when simplifying assumptions are made.
 </div>
 
---><div class="section" id="Dosage-compensation-through-ultra-sensitive-negative-feedback">
+--><section id="Dosage-compensation-through-ultra-sensitive-negative-feedback">
 <h3>Dosage compensation through ultra-sensitive negative feedback<a class="headerlink" href="#Dosage-compensation-through-ultra-sensitive-negative-feedback" title="Permalink to this headline"></a></h3>
 <p>It’s worth mentioning that the IFFL is not the only way to achieve dosage compensated expression. Consider a negative autoregulatory feedback loop, similar to the ones we considered in Chapter 2, but with very high ultrasensitivity. In this system, changes in gene dosage that strongly affect the protein production rate can have much more modest effects on the steady-state protein level. The reason can be seen graphically in the following plot. Across varying gene dosages, the intersection of
 production and removal rates occurs when <span class="math notranslate nohighlight">\(x\approx k\)</span>, since that is when production rate suddenly drops off and crosses the removal line.</p>
@@ -1104,9 +1107,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-</div>
-<div class="section" id="Single-gene-miRNA-based-IFFLs-provide-dosage-compensation-in-mammalian-cells">
+</section>
+</section>
+<section id="Single-gene-miRNA-based-IFFLs-provide-dosage-compensation-in-mammalian-cells">
 <h2>Single-gene miRNA-based IFFLs provide dosage compensation in mammalian cells<a class="headerlink" href="#Single-gene-miRNA-based-IFFLs-provide-dosage-compensation-in-mammalian-cells" title="Permalink to this headline"></a></h2>
 <p>The strategy above appears to provide nearly ideal dosage compensation in bacteria. But several features make it unsuitable for mammalian gene therapies. For one thing, TALEs are large genes that take up a lot of the limited real estate of gene therapy vectors such as AAVs. Another issues is that it is generally more difficult in mammalian cells to isolate adjacent genes. A constitutive “<span class="math notranslate nohighlight">\(X\)</span>” could lead to undesired expression of an adjacent target gene, <span class="math notranslate nohighlight">\(Y\)</span>. Finally, in a mammalian
 cell, gene regulation can be bursty (as we shall see soon in this course) and there can be delays of many hours for the transcription and translation of the constitutively expressed repressor, potentially leading to pulses and other dynamic behaviors.</p>
@@ -1159,15 +1162,15 @@ m_\mathrm{ss} = \frac{\beta_m}{\gamma_m}\,\frac{C}{1+\kappa C} \approx \frac{\be
 compensation can be achieved with a single, post-transcriptionally self-regulating gene implementing a variant of the I1-IFFL motif.</p>
 <div style="width: 550px; margin: auto;"><img alt="Bleris_data.png" src="../_images/Bleris_data.png" />
 </div><p><em>Image from</em><a class="reference external" href="https://doi.org/10.1038/msb.2011.49">Bleris et al, Molecular Systems Biology, 2011</a></p>
-</div>
-<div class="section" id="Conclusions">
+</section>
+<section id="Conclusions">
 <h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this headline"></a></h2>
 <p>At first glance, the incoherent feed-forward loop is as mysterious as it is prevalent. Why would one want to regulate the same target gene in two opposite ways? The examples above and those in the previous chapter suggest a few of its many dynamic functions: generating adaptive responses to step increases in input, accelerating responses, and, perhaps most dramatically, making gene expression independent of the dosage of the gene itself. IFFLs have also been shown to play other, related, roles
 as well, such as implementing <a class="reference external" href="https://doi.org/10.1016/j.molcel.2009.11.018">fold-change detection</a>, which occurs in systems whose outputs depend only on the fold increase of their inputs, irrespective of their absolute values.</p>
 <p>Now that we know that an IFFL can provide dosage compensation, one can also ask why <em>every</em> gene is not dosage compensated? Is it enough to merely dosage compensate regulatory proteins and not their targets? Is the cost of implementing the added regulation so high that it can only be justified for those genes for which too much activity would be especially deleterious? Are there distinct, dosage compensating mechanisms that might also be operating in some genes?</p>
 <p>We have also now encountered our first formal introduction to the principle of robustness. We have learned that robustness properties can be some of the most striking functions a system can perform, but also that such behaviors always carry with them caveats about the regimes in which the robustnesses can actually hold. In the following chapters we will continue to explore this theme further across examples as diverse as bacterial motility and error correction in gene expression machinery.</p>
-</div>
-<div class="section" id="Computing-environment">
+</section>
+<section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -1195,16 +1198,16 @@ jupyterlab: 3.0.14
 
 </pre></div></div>
 </div>
-<hr></div>
-<div class="section" id="Problems">
+<hr></section>
+<section id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/05/problem_5.1.html">5.1: Robustness in a C1-FFL</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1218,11 +1221,11 @@ jupyterlab: 3.0.14
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 18, 2022.
+      <span class="lastupdated">Last updated on Apr 20, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fd973074a00> 
+   <jinja2.runtime.BlockReference object at 0x7f94ddcdeb80> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
