@@ -31,7 +31,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Appendix A: Regulatory functions and their derivatives" href="../../chapters/appA_regulatory_functions.html" />
+    <link rel="next" title="Problem 9.2: The KaiABC clock" href="problem_9.2.html" />
     <link rel="prev" title="9. Blinking bacteria: The repressilator enables self-sustaining oscillations" href="../../chapters/09_repressilator.html" /> 
 </head>
 
@@ -63,8 +63,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Today’s-topic:-designing-cellular-clocks">Today’s topic: designing cellular clocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Clocks-function-within-cells-and-organisms">Clocks function within cells and organisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#How-to-design-a-biological-clock">How to design a biological clock</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Limit-cycles-are-ideal-dynamical-behaviors-for-clocks">Limit cycles are ideal dynamical behaviors for clocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Build-to-understand:-Designing-a-synthetic-clock-circuit">Build to understand: Designing a synthetic clock circuit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Dynamical-equations-for-the-repressilator">Dynamical equations for the repressilator</a></li>
@@ -76,10 +75,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Including-mRNA-in-the-model-provides-additional-insights">Including mRNA in the model provides additional insights</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#The-repressilator-design-objectives">The repressilator design objectives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Will-it-work?">Will it work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Improving-the-repressilator">Improving the repressilator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Precision-repressilators-can-record-bacterial-growth-in-the-mammalian-gut">Precision repressilators can record bacterial growth in the mammalian gut</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Conclusions">Conclusions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Computing-environment">Computing environment</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/09_repressilator.html#Problems">Problems</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">9.1: Coupled repressilators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_9.2.html">9.2: The KaiABC clock</a></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +151,8 @@
 </style>
 <section id="Problem-9.1:-Coupled-repressilators">
 <h1>Problem 9.1: Coupled repressilators<a class="headerlink" href="#Problem-9.1:-Coupled-repressilators" title="Permalink to this headline"></a></h1>
-<hr><p>In this problem, we further study the dynamics of the repressilator, with the interesting twist that we will consider two coupled respressilators. A schematic of the repressilator is shown panel (a) of the figure below. Consider now two repressilators, which we will label x and y, that are coupled as in panel (b) of the figure below. For this coupling, we have chosen that gene A in the respective circuits repress their counterparts in the other. <span class="math notranslate nohighlight">\(\mathrm{A}_\mathrm{x}\)</span> and
+<hr><p><em>This problem is still a draft.</em></p>
+<p>In this problem, we further study the dynamics of the repressilator, with the interesting twist that we will consider two coupled respressilators. A schematic of the repressilator is shown panel (a) of the figure below. Consider now two repressilators, which we will label x and y, that are coupled as in panel (b) of the figure below. For this coupling, we have chosen that gene A in the respective circuits repress their counterparts in the other. <span class="math notranslate nohighlight">\(\mathrm{A}_\mathrm{x}\)</span> and
 <span class="math notranslate nohighlight">\(\mathrm{A}_\mathrm{y}\)</span> have two repressors acting on them, and we assume if one or both of the repressors are bound (with their respective cooperativity), the polymerase is occluded.</p>
 <div style="margin: auto; width:400px;"><img alt="repressilator and coupled repressilator" src="../../_images/coupled_repressilators.png" />
 </div><p>For simplicity, we will consider only the dynamics of the protein products and neglect the mRNA dynamics. We will further assume that each gene in the “x” repressilator has the same unregulated rate of production <span class="math notranslate nohighlight">\(\beta_x\)</span> and the same rate of dilution/decay, <span class="math notranslate nohighlight">\(\gamma_x\)</span>. Each repressor acts on the other repressors within its repressilator with activation constant <span class="math notranslate nohighlight">\(k\)</span> and Hill coefficient <span class="math notranslate nohighlight">\(n\)</span>. The same holds for the “y” repressilator; each gene has the same unregulated
@@ -176,18 +179,18 @@ spectra, or you could detect where peaks are. To do the latter, the <code class=
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../../chapters/09_repressilator.html" class="btn btn-neutral float-left" title="9. Blinking bacteria: The repressilator enables self-sustaining oscillations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../chapters/appA_regulatory_functions.html" class="btn btn-neutral float-right" title="Appendix A: Regulatory functions and their derivatives" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="problem_9.2.html" class="btn btn-neutral float-right" title="Problem 9.2: The KaiABC clock" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 20, 2022.
+      <span class="lastupdated">Last updated on Apr 22, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f94ecb3a400> 
+   <jinja2.runtime.BlockReference object at 0x7fab8c2678e0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
