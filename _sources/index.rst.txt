@@ -17,6 +17,7 @@ Biological Circuit Design
    chapters/08_kinetic_proofreading.ipynb
    chapters/09_repressilator.ipynb
    chapters/10_delay_oscillators.ipynb
+   chapters/11_time-based_regulation.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 
