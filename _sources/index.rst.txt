@@ -18,6 +18,7 @@ Biological Circuit Design
    chapters/09_repressilator.ipynb
    chapters/10_delay_oscillators.ipynb
    chapters/11_time-based_regulation.ipynb
+   chapters/12_molecular_titration.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 

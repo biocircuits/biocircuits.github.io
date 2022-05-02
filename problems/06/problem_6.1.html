@@ -76,6 +76,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/11_time-based_regulation.html">11. Time-based regulation in cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/12_molecular_titration.html">12. Molecular titration generates ultrasensitive responses in biological circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -146,8 +147,11 @@
 <p>This is a question of robustness. Is rate of respiration robust to differences in oxygen concentration over a physiologically relevant operating regime? To address this question consider a simple model of the mitochondrial electron transport chain (ETC) consisting of a single electron carrier C and two reactions that catalyze its oxidation and reduction, shown in below.</p>
 <div style="margin: auto; width: 200px;"><img alt="co-substrate competition schematic" src="../../_images/kueh_oxygen.svg" /></div><p>The carrier can exist in an oxidized state C₀ and in a reduced state C₁. The oxidation reaction is catalyzed by enzyme E₀, and the reduction reaction is catalyzed by enzyme E₁.</p>
 <p><strong>a)</strong> In this part of the problem and in part (b), we will write down governing ODEs for the dynamics of this system. We will do so by first splitting the system into its two enzyme-catalyzed reactions. We start with the lower one. We can write the reaction as</p>
-<p>C₀ + E₁ ⇌ C₀·E₁ ⟶ C₁ + E₁.</p>
-<p>We will assume Michaelis-Menten kinetics (and the assumptions involved therein). First, write an expression for the rate of electron transfer, which is the rate of production of reduced substrate C₁, <span class="math notranslate nohighlight">\(v_1\)</span>. Note that</p>
+<p><span class="math">\begin{align}
+\require{mhchem}
+\ce{C_0 + E_1 <=> E_1 \cdot C_0 -> C_1 + E_1}.
+\end{align}</span></p>
+<!-- C₀ + E₁ ⇌ C₀·E₁ ⟶ C₁ + E₁. --><p>We will assume Michaelis-Menten kinetics (and the assumptions involved therein). First, write an expression for the rate of electron transfer, which is the rate of production of reduced substrate C₁, <span class="math notranslate nohighlight">\(v_1\)</span>. Note that</p>
 <p><span class="math">\begin{align}
 v_1 = \frac{\mathrm{d}c_1}{\mathrm{d}t}\;\text{considering only the bottom reaction},
 \end{align}</span></p>
@@ -162,12 +166,15 @@ v_0 = \frac{\mathrm{d}c_0}{\mathrm{d}t}\;\text{considering only the top reaction
 \end{align}</span></p>
 <p>where <span class="math notranslate nohighlight">\(c_0\)</span> is the concentration of C₀. This is the quantity we are most interested in; it is the rate of oxygen consumption. We can describe this reaction as follows. The substrate C₁ cannot bind oxygen unless complexed with the enzyme E₀, to which is binds reversibly. The C₁·E₀ complex can them reversibly bind oxygen. Finally, the C₁·E₀·O₂ complex gets irreversibly converted to oxidized substrate C₀, freeing the enzyme E₀ and producing water in the process. We can write these steps as
 follows.</p>
-<ol class="arabic simple">
-<li><p>C₁ + E₀ ⇌ C₁·E₀; forward rate constant <span class="math notranslate nohighlight">\(k_1\)</span>, reverse rate constant <span class="math notranslate nohighlight">\(k_{-1}\)</span></p></li>
-<li><p>C₁·E₀ + O₂ ⇌ C₁·E₀·O₂; forward rate constant <span class="math notranslate nohighlight">\(k_2\)</span>, reverse rate constant <span class="math notranslate nohighlight">\(k_{-2}\)</span></p></li>
-<li><p>C₁·E₀·O₂ ⟶ C₀ + E₀ + H₂O; rate constant <span class="math notranslate nohighlight">\(v\)</span></p></li>
-</ol>
-<p>We have chosen to write the rate constants as <span class="math notranslate nohighlight">\(k_1\)</span>, <span class="math notranslate nohighlight">\(k_{-1}\)</span>, <span class="math notranslate nohighlight">\(k_2\)</span> and <span class="math notranslate nohighlight">\(k_{-2}\)</span> for notational convenience; the <span class="math notranslate nohighlight">\(k_1\)</span> in this reaction scheme is not the same as the one appearing in the expression for <span class="math notranslate nohighlight">\(v_1\)</span>.</p>
+<p><span class="math">\begin{align}
+\require{mhchem}
+\ce{C_1 + E_0 <=>[k_1][k_{-1}] C_1\cdot E_0 + O_2 <=>[k_2][k_{-2}] C_1\cdot E_0 \cdot O_2 ->[v] C_0 + E_0 + H_2O}.
+\end{align}</span></p>
+<!--
+1. C₁ + E₀ ⇌ C₁·E₀; forward rate constant $k_1$, reverse rate constant $k_{-1}$
+2. C₁·E₀ + O₂ ⇌ C₁·E₀·O₂; forward rate constant $k_2$, reverse rate constant $k_{-2}$
+3. C₁·E₀·O₂ ⟶ C₀ + E₀ + H₂O; rate constant $v$
+--><p>We have chosen to write the rate constants as <span class="math notranslate nohighlight">\(k_1\)</span>, <span class="math notranslate nohighlight">\(k_{-1}\)</span>, <span class="math notranslate nohighlight">\(k_2\)</span> and <span class="math notranslate nohighlight">\(k_{-2}\)</span> for notational convenience; the <span class="math notranslate nohighlight">\(k_1\)</span> in this reaction scheme is not the same as the one appearing in the expression for <span class="math notranslate nohighlight">\(v_1\)</span>.</p>
 <p>To derive an expression for <span class="math notranslate nohighlight">\(v_0\)</span>,</p>
 <ul class="simple">
 <li><p>Write down expression using mass action kinetics,</p></li>
@@ -200,11 +207,11 @@ concentration, does this system satisfy the Chance relation?</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 29, 2022.
+      <span class="lastupdated">Last updated on May 02, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7ff658040d00> 
+   <jinja2.runtime.BlockReference object at 0x7f91a8778f70> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
