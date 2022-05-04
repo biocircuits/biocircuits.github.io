@@ -19,6 +19,7 @@ Biological Circuit Design
    chapters/10_delay_oscillators.ipynb
    chapters/11_time-based_regulation.ipynb
    chapters/12_molecular_titration.ipynb
+   chapters/13_promiscuous_binding.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 
