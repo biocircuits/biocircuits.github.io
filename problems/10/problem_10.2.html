@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 10.2: Tuning delay oscillators with positive feedback &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -31,7 +30,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="11. Time-based regulation in cells" href="../../chapters/11_time-based_regulation.html" />
+    <link rel="next" title="Problem 10.3: Controlling p53 levels" href="problem_10.3.html" />
     <link rel="prev" title="Problem 10.1: Coupled delay oscillators" href="problem_10.1.html" /> 
 </head>
 
@@ -74,6 +73,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/10_delay_oscillators.html#Problems">Problems</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="problem_10.1.html">10.1: Coupled delayoscillators</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">10.2: Tuning delay oscillators with positivefeedback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_10.3.html">10.3: Controlling p53 levels</a></li>
 </ul>
 </li>
 </ul>
@@ -144,7 +144,7 @@
     text-align: unset;
 }
 </style>
-<section id="Problem-10.2:-Tuning-delay-oscillators-with-positive-feedback">
+<div class="section" id="Problem-10.2:-Tuning-delay-oscillators-with-positive-feedback">
 <h1>Problem 10.2: Tuning delay oscillators with positive feedback<a class="headerlink" href="#Problem-10.2:-Tuning-delay-oscillators-with-positive-feedback" title="Permalink to this headline"></a></h1>
 <hr><p>In this problem, we will explore the properties of a minimal 2 gene relaxation oscillator with positive and negative feedback loops introduced at the end of the chapter. The circuit for the oscillator is show below.</p>
 <div style="margin: auto; width: 300px;"><img alt="pos-neg oscillator" src="../../_images/positive-negative_oscillator1.png" />
@@ -180,7 +180,7 @@ f(a, r) = \alpha + \beta\,\frac{(a/k_a)^n}{1 + (a/k_a)^n + (r/k_r)^n}.
 <li><p>If a two-dimensional dynamical system has no fixed points, it has a periodic solution.</p></li>
 <li><p>If a two-dimensional dynamical system has only one fixed point and it is unstable and not a saddle, the dynamical system has a periodic solution.</p></li>
 </ol>
-<p>A saddle for a two-dimensional dynamical system is a fixed point with one positive eigenvalue and one negative eigenvalue. We can learn a lot about the system be finding the fixed points, evaluating how many there are, and then computing the eigenvalues if there is only one. So, our strategy for understanding what kind of dynamics we can expect for a given set of parameters is as follows.</p>
+<p>A saddle for a two-dimensional dynamical system is a fixed point with one positive eigenvalue and one negative eigenvalue. We can learn a lot about the system by finding the fixed points, evaluating how many there are, and then computing the eigenvalues if there is only one. So, our strategy for understanding what kind of dynamics we can expect for a given set of parameters is as follows.</p>
 <ol class="arabic simple">
 <li><p>Numerically find the fixed point(s).</p></li>
 <li><p>If there is only one fixed point, compute its linear stability matrix.</p></li>
@@ -202,30 +202,30 @@ express the problem as finding the roots of a polynomial and you can use the <co
 <li><p>Fix <span class="math notranslate nohighlight">\(\alpha = 5\)</span> and <span class="math notranslate nohighlight">\(\beta = 80\)</span> and vary <span class="math notranslate nohighlight">\(\kappa\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> from 0.1 to 50. To make the diagram, for each set of parameters, find the fixed points and compute the eigenvalues if there is only one fixed point. You can use <code class="docutils literal notranslate"><span class="pre">np.linalg.eigvals()</span></code> to do this. One way to display the results is by plotting a circle for each point you considered in the <span class="math notranslate nohighlight">\(\gamma\)</span>-<span class="math notranslate nohighlight">\(\kappa\)</span> plane. You can color the points according to the scheme laid out above.</p></li>
 <li><p>Set <span class="math notranslate nohighlight">\(\gamma = \kappa = 10\)</span> and vary <span class="math notranslate nohighlight">\(\alpha\)</span> from 0.1 to 30 and <span class="math notranslate nohighlight">\(\beta\)</span> from 0.1 to 100. Make a similar plot.</p></li>
 </ul>
-<p>Comment on what you see; specifically what guidelines should you use to help choose parameter sets that will give sustained oscillations? You can use these plots to guide you for the last part of the problem. You can also choose additional visualizations of this analysis if you like (which will not be graded).</p>
+<p>Comment on what you see; specifically what guidelines should you use to help choose parameter sets that will give sustained oscillations? You can use these plots to guide you for the last part of the problem. You can also choose additional visualizations of this analysis if you like.</p>
 <p><strong>f)</strong> Choose or find a parameter set that imparts this system with a relaxation-type oscillation. In this type of oscillation, the activator comes up, rising quickly. As it does so, it turns on the repressor. Once the repressor accumulates, it shuts off the activator. The activator decays away and is no longer present, but the repressor is still present in high copy number. The repressor slowly decays away until it is low enough for the activator to self-activate again. Make a plot of the
 activator and repressor dynamics over time for this regime (this will require numerical solution of the ODEs). Also make a plot of the system trajectory in the <span class="math notranslate nohighlight">\(a\)</span>-<span class="math notranslate nohighlight">\(r\)</span> plane. Comment on what this analysis has taught you about this circuit and its function as a relaxation operator.</p>
 <p><strong>g)</strong> In what other ways would you like to investigate this circuit? What do you hope to learn about it?</p>
 <p><strong>h)</strong> If you feel like exploring some more, you can add an explicit time delay. That is, use <span class="math notranslate nohighlight">\(f(a, r(t-\tau))\)</span> or <span class="math notranslate nohighlight">\(f(a(t-\tau_a), r(t-\tau_r))\)</span> for your regulatory functions. How does time delay affect the overall dynamics? How does it impact the requirements on other parameters? Play around with the system and comment on what you see.</p>
-</section>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="problem_10.1.html" class="btn btn-neutral float-left" title="Problem 10.1: Coupled delay oscillators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../chapters/11_time-based_regulation.html" class="btn btn-neutral float-right" title="11. Time-based regulation in cells" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="problem_10.3.html" class="btn btn-neutral float-right" title="Problem 10.3: Controlling p53 levels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 04, 2022.
+      <span class="lastupdated">Last updated on May 06, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fb4fe5a9a30> 
+   <jinja2.runtime.BlockReference object at 0x7f7d6c0422b0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

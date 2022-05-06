@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9. Blinking bacteria: The repressilator enables self-sustaining oscillations &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -425,7 +424,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="9.-Blinking-bacteria:-The-repressilator-enables-self-sustaining-oscillations">
+<div class="section" id="9.-Blinking-bacteria:-The-repressilator-enables-self-sustaining-oscillations">
 <h1>9. Blinking bacteria: The repressilator enables self-sustaining oscillations<a class="headerlink" href="#9.-Blinking-bacteria:-The-repressilator-enables-self-sustaining-oscillations" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
@@ -797,18 +796,18 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<hr><section id="How-to-design-a-biological-clock">
+<hr><div class="section" id="How-to-design-a-biological-clock">
 <h2>How to design a biological clock<a class="headerlink" href="#How-to-design-a-biological-clock" title="Permalink to this headline"></a></h2>
 <p>In this chapter we will explore ways to build a clock in a living cell. More specifically, we will discuss a <strong>synthetic genetic clock circuit</strong> called the <strong>Repressilator</strong> (<a class="reference external" href="https://doi.org/10.1038/35002125">Elowitz &amp; Leibler, Nature, 2000</a>). We first discuss the roles of oscillators and clocks in natural biological systems, and then ask how one might go about designing a synthetic clock circuit that can operate in a cell. To do this, we will use <strong>linear stability analysis</strong>, a broadly
 useful approach for analyzing diverse systems. We will also introduce the concept of a <strong>limit cycle</strong> attractor.</p>
-<section id="Clocks-are-necessary-for-life">
+<div class="section" id="Clocks-are-necessary-for-life">
 <h3>Clocks are necessary for life<a class="headerlink" href="#Clocks-are-necessary-for-life" title="Permalink to this headline"></a></h3>
 <p>Our lives depend on accurate time-keeping. This is enabled by generations of improvement in clocks. A major turning point in global navigation was the development of portable clocks, which enabled sailors to measure longitude. <a class="reference external" href="https://en.wikipedia.org/wiki/John_Harrison">John Harrison</a> engineered a series of increasingly precise, and beautiful, clocks, or “marine chronometers.” A big challenge was making them function accurately despite variations in temperature, humidity, and other
 conditions. To do this, he invented internal compensation mechanisms that made critical parameters robust to these conditions. Even today, navigation remains dependent on clocks. The Global Positioning System (GPS), which we use to navigate our cities, relies on precise atomic clocks installed in orbiting satellites.</p>
 <p>Time-keeping is as fundamental to our inner lives as it is to our outer lives. The cell division cycle drives the cell through a series of states, including periods of growth, chromosome replication, seperation of daughter cells, and so on. When cells are rapidly proliferating, this circuit acts as a kind of clock. Organisms also have <strong>circadian clocks</strong> that allow them to track and anticipate the daily environmental changes that occur during the 24 hour day. Plants have mechanisms to keep
 track of time on longer timescales, allowing them to anticipate seasonal changes. Hormones can cycle over timescales of weeks or months. On shorter timescales, some factors in the cell oscillate periodically in and out of the nucleus over timescales of minutes to hours. Countless processes in biology involve periodic cycles rather than steady states.</p>
-</section>
-<section id="Circadian-clocks-function-in-single-cells">
+</div>
+<div class="section" id="Circadian-clocks-function-in-single-cells">
 <h3>Circadian clocks function in single cells<a class="headerlink" href="#Circadian-clocks-function-in-single-cells" title="Permalink to this headline"></a></h3>
 <p><strong>Circadian clocks</strong> control our 24 hour cycles of sleep, hunger, and activity. Humans confined to environments with constant light and temperature still maintain circadian activity cycles with <a class="reference external" href="https://doi.org/10.1126/science.284.5423.2177">nearly 24hr periods</a>). This experiment, along with the more familiar experience of jet lag, shows that our body has an internal clock that enforces temporal organization on our bodies and minds. The <strong>cell cycle</strong> represents another kind of oscillator
 that takes cells through repetitive cycles of growth and division. <strong>Hormones</strong> cycle on a range of timescales from hours to weeks. Plants contain circadian and <strong>seasonal clocks</strong> that control their movement and flowering, in response to time as well as light, temperature and other inputs.</p>
@@ -820,15 +819,15 @@ al. (<a class="reference external" href="https://doi.org/10.1016/j.cub.2004.11.
 </video></div><p>Time traces of individual cells from this movie show periodic 24 hour oscillations:</p>
 <div style="width: 500px; margin: auto;"><img alt="Welsh_circadian_single_cells_plotsonly_cropped" src="../_images/Welsh_circadian_single_cells_plotsonly_cropped.png" />
 </div><p>This work revealed a complex clock containing many interacting protein components.</p>
-</section>
-<section id="In-cyanobacteria,-a-three-protein-phosphorylation-circuit-generates-oscillations.">
+</div>
+<div class="section" id="In-cyanobacteria,-a-three-protein-phosphorylation-circuit-generates-oscillations.">
 <h3>In cyanobacteria, a three-protein phosphorylation circuit generates oscillations.<a class="headerlink" href="#In-cyanobacteria,-a-three-protein-phosphorylation-circuit-generates-oscillations." title="Permalink to this headline"></a></h3>
 <p>But clocks need not be complex. Even single cell cyanobacteria have precise, <a class="reference external" href="https://doi.org/10.1038/nature02533">cell-autonomous</a> circadian clocks. To learn how they work, Kondo and colleagues genetically identified a single locus containing three genes required for the cyanobacterial clock. In 2005 they showed, amazingly, that these <a class="reference external" href="https://doi.org/10.1126/science.1108451">three proteins, plus ATP,</a> were sufficient to reconstitute 24 hour oscillations of phosphorylation in a test tube.</p>
 <p>The mechanism for these oscillations was subsequently explained by Rust, et al. in terms of <a class="reference external" href="https://doi.org/10.1126/science.1148596">ordered phosphorylation and feedback</a>. One protein, KaiC, has two phosphorylation sites. During each cycle, one site is phosphorylated, then the second is phosphorylated, then the first is dephosphorylated, and finally the second is dephosphorylated. The use of two phosphorylation sites ensures the dynamics are at least two dimensional. A one dimensional
 dynamical system cannot oscillate (see Strogatz).</p>
-<!-- I would like to add a little more on the cyanobacterial clock circuit in the future -- but where should we insert it? --></section>
-</section>
-<section id="Limit-cycles-are-ideal-dynamical-behaviors-for-clocks">
+<!-- I would like to add a little more on the cyanobacterial clock circuit in the future -- but where should we insert it? --></div>
+</div>
+<div class="section" id="Limit-cycles-are-ideal-dynamical-behaviors-for-clocks">
 <h2>Limit cycles are ideal dynamical behaviors for clocks<a class="headerlink" href="#Limit-cycles-are-ideal-dynamical-behaviors-for-clocks" title="Permalink to this headline"></a></h2>
 <p>So far in this course, we have discussed only one kind of “attractor”—the stable fixed point. When a system sits at a stable fixed point, it does not change over time. (While true for a continuous system, biological systems are made of discrete molecules whose dynamics are subject to stochastic fluctuations, or noise, and therefore they cannot really remain precisely at a single state. We will learn more about noise soon.) By contrast, in a functioning clock circuit, the state of the system
 constantly changes in a periodic fashion, progressing through a cyclic sequence of “phases” that returns it to its starting point. This cycling occurs on its own, without any external input. Furthermore, if such an ideal clock circuit is perturbed in some way—whether by environmental fluctuations or internal noise—it returns to its oscillatory trajectory. It “has to” oscillate.</p>
@@ -842,21 +841,21 @@ away from the limit cycle, it will tend to return back to it, as shown here:</p>
 \end{align}</span></p>
 <p>by a constant produces another solution. Limit cycle oscillators are thus inherently non-linear systems.</p>
 <p>For our purposes, the key point is that limit cycle dynamics are ideal for natural or synthetic clock circuits because they ensure periodic oscillations that do not damp out over time and can resume even if temporarily perturbed.</p>
-</section>
-<section id="Build-to-understand:-Designing-a-synthetic-clock-circuit">
+</div>
+<div class="section" id="Build-to-understand:-Designing-a-synthetic-clock-circuit">
 <h2>Build to understand: Designing a synthetic clock circuit<a class="headerlink" href="#Build-to-understand:-Designing-a-synthetic-clock-circuit" title="Permalink to this headline"></a></h2>
 <p>In biology, clocks have long been metaphorically identified with the perplexing mystery of how the undirected process of evolution could generate precise behaviors from seemingly “messy” molecular components. Dawkins’s 1986 book, <a class="reference external" href="https://en.wikipedia.org/wiki/The_Blind_Watchmaker">The Blind Watchmaker</a>, personifies evolution as a watchmaker, who creates devices of astonishing precision (tissues and organisms) without being able to “see,” much less plan, what she is doing. How “hard” is it
 for evolution—or anyone, really—to make a biological clock?</p>
 <p>We will now discuss the design of a synthetic clock circuit in bacteria. By seeing whether we can design a clock out of biological components, we can find out “how hard” it is to make a clock, what circuits are sufficient to produce self-sustaining <strong>limit cycle</strong> oscillations, and whether the sorts of models we write down can describe biological circuits operating in the more complex, and largely uncharacterized, intracellular milieu. Beyond their value in teaching us about circuit design,
 synthetic clock circuits can also provide useful functions, as we will see below.</p>
-<section id="Clock-components-should-ideally-be-composable,-orthogonal,-and-well-characterized">
+<div class="section" id="Clock-components-should-ideally-be-composable,-orthogonal,-and-well-characterized">
 <h3>Clock components should ideally be composable, orthogonal, and well-characterized<a class="headerlink" href="#Clock-components-should-ideally-be-composable,-orthogonal,-and-well-characterized" title="Permalink to this headline"></a></h3>
 <p>The first question we must ask is what components we can build a clock from. Among the best characterized regulators in biology are prokaryotic (bacterial) transcriptional repressors and their cognate target promoters. These components are <strong>modular</strong>, <strong>orthogonal</strong>, and <strong>composable</strong>. By modular, we mean that they can be taken out of their natural context and used to generate a new regulatory circuit. By orthogonal, we mean that a variety of variants exist that operate similarly, but
 independently. Thus, different repressors bind to distinct DNA binding sites. Composability is a stronger form of modularity in which a set of components can regulate each other in the same way. LEGOs are a familiar example of composability: each of the standard bricks can be stuck onto a similar type of brick from below and above. Transcription factors are composable because any one can be engineered to regulate any other simply by combining corresponding target promoter sequences with open
 reading frames for the transcription factors.</p>
 <p>(Transcriptional activators, which we have already encountered, are also excellent components for synthetic design, and <a class="reference external" href="https://doi.org/10.1038/nature07389">have been used to build oscillators</a>. At the time this work was done, there were generally fewer examples that were as well-understood as repressors. Therefore, we will focus below on a circuit design built exclusively from repressors).</p>
-</section>
-<section id="Design-strategy:">
+</div>
+<div class="section" id="Design-strategy:">
 <h3>Design strategy:<a class="headerlink" href="#Design-strategy:" title="Permalink to this headline"></a></h3>
 <p>Based on the considerations above, we will try to design a biological circuit that generates <strong>limit cycle oscillations</strong> across a <strong>broad range of biochemical parameter values</strong> using a set of well-characterized, composable, and orthogonal <strong>transcriptional repressors</strong>.</p>
 <p>One of the first designs one can imagine building with repressors is a “rock-scissors-paper” feedback loop composed of three repressors, each of which represses the next one, in a cycle:</p>
@@ -874,9 +873,9 @@ numbers. The increased repressor 2 concentration leads to less repressor 3. Then
 <li><p>What kinds of behaviors would this circuit be expected to produce?</p></li>
 <li><p>How can we engineer the circuit to favor, or better yet, guarantee, limit cycle oscillations?</p></li>
 </ol>
-</section>
-</section>
-<section id="Dynamical-equations-for-the-repressilator">
+</div>
+</div>
+<div class="section" id="Dynamical-equations-for-the-repressilator">
 <h2>Dynamical equations for the repressilator<a class="headerlink" href="#Dynamical-equations-for-the-repressilator" title="Permalink to this headline"></a></h2>
 <p>To analyze the repressilator, we will, as usual, write down a set of differential equations for each of the proteins. For simplicity, we will assume perfect symmetry among the species, with each one having identical biochemical properties (this will not be true in the real system). While we initially consider only protein dynamics here, later on, we will ask how including mRNA modifies the conclusions.</p>
 <p><span class="math">\begin{align}
@@ -889,8 +888,8 @@ numbers. The increased repressor 2 concentration leads to less repressor 3. Then
 \frac{\mathrm{d}x_i}{\mathrm{d}t} &= \frac{\beta}{1 + x_j^n} - x_i, \quad \text{ with } (i,j) \text{ pairs } (1,3), (2,1), (3,2).
 \end{align}</span></p>
 <p>Note that <span class="math notranslate nohighlight">\(\beta\)</span> has been redefined as <span class="math notranslate nohighlight">\(\beta \leftarrow \beta/k\gamma\)</span>.</p>
-</section>
-<section id="Temporal-dynamics">
+</div>
+<div class="section" id="Temporal-dynamics">
 <h2>Temporal dynamics<a class="headerlink" href="#Temporal-dynamics" title="Permalink to this headline"></a></h2>
 <p>We can integrate the dynamical equations to follow the concentrations of three proteins over time. Interactive plotting further allows us to see how these dynamics depend on the parameters <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(n\)</span>. Oscillations are clear when the curves go up and down periodically in time.</p>
 <p>Alternatively, it is also instructive to plot the trajectory of the system as a projection in the <span class="math notranslate nohighlight">\(x_2\)</span>-<span class="math notranslate nohighlight">\(x_1\)</span> plane (or in either of the other two planes this three-dimensional system can be projected onto). When the fixed point is stable, the trajectory in the <span class="math notranslate nohighlight">\(x_2\)</span>-<span class="math notranslate nohighlight">\(x_1\)</span> plane spirals into the fixed point. When it is unstable, the trajectory spirals away from it, eventually cycling around the fixed point to join a limit cycle, corresponding to oscillations.</p>
@@ -1071,7 +1070,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <img alt="../_images/chapters_09_repressilator_15_0.png" class="no-scaled-link" src="../_images/chapters_09_repressilator_15_0.png" style="width: 266px; height: 238px;" />
 </div>
 </div>
-<section id="What-conditions-are-necessary-and-sufficient-for-oscillations?">
+<div class="section" id="What-conditions-are-necessary-and-sufficient-for-oscillations?">
 <h3>What conditions are necessary and sufficient for oscillations?<a class="headerlink" href="#What-conditions-are-necessary-and-sufficient-for-oscillations?" title="Permalink to this headline"></a></h3>
 <p>Why does the system oscillate for some values of <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> but not others? To find out, we need to use linear stability analysis to see how the values of the key biochemical parameters, <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(n\)</span> control oscillations.</p>
 <p>As a first step, we will identify fixed points by solving <span class="math notranslate nohighlight">\(\mathrm{d}x_i/\mathrm{d}t = 0\)</span> for each <span class="math notranslate nohighlight">\(x_i\)</span>.</p>
@@ -1181,9 +1180,9 @@ x_1 = x_2 = x_3 \equiv x_0 = \frac{\beta}{1 + x_0^n},
 \beta = x_0(1+x_0^n).
 \end{align}</span></p>
 <p>We have one fixed point. If it is stable, then the system will sit there, constant in time. On the other hand, if it is unstable, then there is the potential for limit cycle oscillations. The question is: under what conditions is this fixed point unstable?</p>
-</section>
-</section>
-<section id="Linear-stability-analysis">
+</div>
+</div>
+<div class="section" id="Linear-stability-analysis">
 <h2>Linear stability analysis<a class="headerlink" href="#Linear-stability-analysis" title="Permalink to this headline"></a></h2>
 <p>Following is a minimal introduction to the technique of linear stability analysis, which is discussed in greater depth in <a class="reference external" href="http://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering">Strogatz’s book</a>. The idea is to locally approximate a <em>nonlinear</em> dynamical system by its Taylor series to first order near the fixed point, and then examine the behavior of the resulting simpler linear system. The Hartman-Grobman theorem
 (which we will not derive here) ensures that the linearized system faithfully represents the phase portrait of the full nonlinear system near the fixed point.</p>
@@ -1237,8 +1236,8 @@ x_1 = x_2 = x_3 \equiv x_0 = \frac{\beta}{1 + x_0^n},
 \frac{1}{1+x^n} &= \frac{1}{1+x_0^n} - \frac{n x_0^{n-1}}{(1+x_0^n)^2}\,\delta x + \text{higher order terms}.
 \end{align}</span></p>
 <p>In the following we only need the second, repressing case.</p>
-</section>
-<section id="Linear-stability-analysis-for-the-repressilator">
+</div>
+<div class="section" id="Linear-stability-analysis-for-the-repressilator">
 <h2>Linear stability analysis for the repressilator<a class="headerlink" href="#Linear-stability-analysis-for-the-repressilator" title="Permalink to this headline"></a></h2>
 <p>To perform linear stability analysis for the repressilator, we begin by writing the linearized system.</p>
 <p><span class="math">\begin{align}
@@ -1315,8 +1314,8 @@ x_0^n = \frac{2}{n-2}.
 \beta > \frac{n}{2}\left(\frac{n}{2} - 1\right)^{-\frac{n+1}{n}},
 \end{align}</span></p>
 <p>we have imaginary eigenvalues with positive real parts. This is therefore an <strong>oscillatory instability</strong>.</p>
-</section>
-<section id="Ensuring-oscillations">
+</div>
+<div class="section" id="Ensuring-oscillations">
 <h2>Ensuring oscillations<a class="headerlink" href="#Ensuring-oscillations" title="Permalink to this headline"></a></h2>
 <p>It is useful to make a <strong>linear stability diagram</strong>, which is a map of parameter space highlighting stable and unstable regions. We know the bifurcation line is</p>
 <p><span class="math">\begin{align}
@@ -1393,8 +1392,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</section>
-<section id="Intuition-from-the-protein-only-model">
+</div>
+<div class="section" id="Intuition-from-the-protein-only-model">
 <h2>Intuition from the protein-only model<a class="headerlink" href="#Intuition-from-the-protein-only-model" title="Permalink to this headline"></a></h2>
 <p>This analysis shows two conditions that favor oscillations:</p>
 <ul class="simple">
@@ -1403,8 +1402,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </ul>
 <p>In fact, these results can be understood intuitively: oscillations occur when the feedback “overshoots.” The sharper and stronger the response as one goes around the complete feedback loop, the longer and higher a pulse in one factor can grow before it is, inevitably, yanked back down by the feedback. Consistent with this view, there is a <a class="reference external" href="https://catalog.princeton.edu/catalog/2244277">tradeoff</a> between the length of the cycle (number of repressors in the loop) and the minimum Hill
 coefficient required.</p>
-</section>
-<section id="Including-mRNA-in-the-model-provides-additional-insights">
+</div>
+<div class="section" id="Including-mRNA-in-the-model-provides-additional-insights">
 <h2>Including mRNA in the model provides additional insights<a class="headerlink" href="#Including-mRNA-in-the-model-provides-additional-insights" title="Permalink to this headline"></a></h2>
 <p>In the above analysis, we only considered the three proteins themselves, and we neglected the mRNA dynamics. However, it would be of interest to understand how mRNA properties like stability and translation rate affect whether and how the circuit oscillations. Therefore, we will add additional equations for each mRNA species. We will continue to assume symmetry among species, with all mRNAs sharing the same parameter values. With this assumption, the dynamical equations become:</p>
 <p><span class="math">\begin{align}
@@ -1626,7 +1625,7 @@ f_0 = \frac{\beta n x_0^{n-1}}{(1+x_0^n)^2}.
 \end{align}</span></p>
 <p>Note something interesting here: <span class="math notranslate nohighlight">\(x_0\)</span> is independent of <span class="math notranslate nohighlight">\(\gamma\)</span>, while the <span class="math notranslate nohighlight">\(\left(\sqrt{\gamma} + \sqrt{\gamma^{-1}}\right)^2\)</span> term is invariant to exchanging <span class="math notranslate nohighlight">\(\gamma \leftrightarrow \gamma^{-1}\)</span>. This is telling us that the magnitude of the ratio matters, but not whether protein or mRNA is more stable.</p>
 <p>We can compute the phase boundary to be the line for which the inequality above becomes an equality. To compute this, we first need to find the fixed point <span class="math notranslate nohighlight">\(x_0\)</span> as a function of <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span>, and <span class="math notranslate nohighlight">\(n\)</span> for the six-component system. This cannot be done analytically as in the case of the simplified three-component system we considered before. We therefore introduce a numerical technique to compute a fixed point.</p>
-<section id="Solving-for-the-fixed-point">
+<div class="section" id="Solving-for-the-fixed-point">
 <h3>Solving for the fixed point<a class="headerlink" href="#Solving-for-the-fixed-point" title="Permalink to this headline"></a></h3>
 <p>In the present example, the single fixed point, <span class="math notranslate nohighlight">\(x_0\)</span> is the solution to</p>
 <p><span class="math">\begin{align}
@@ -1649,8 +1648,8 @@ method</a> to find the root. The bisection method is guaranteed to find the root
 </pre></div>
 </div>
 </div>
-</section>
-<section id="The-linear-stability-diagram">
+</div>
+<div class="section" id="The-linear-stability-diagram">
 <h3>The linear stability diagram<a class="headerlink" href="#The-linear-stability-diagram" title="Permalink to this headline"></a></h3>
 <p>Now that we can numerically compute the fixed point, we can proceed to construct the linear stability diagram showing the phase boundary (bifurcation line) for various n.</p>
 <p>We write a function to compute the values of <span class="math notranslate nohighlight">\(\gamma\)</span> along the bifurcation line for various values of <span class="math notranslate nohighlight">\(\beta\)</span>. It is useful to rewrite the expression for the bifurcation.</p>
@@ -1834,9 +1833,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</section>
-</section>
-<section id="The-repressilator-design-objectives">
+</div>
+</div>
+<div class="section" id="The-repressilator-design-objectives">
 <h2>The repressilator design objectives<a class="headerlink" href="#The-repressilator-design-objectives" title="Permalink to this headline"></a></h2>
 <p>Compared to the protein-only analysis, including the mRNAs explicitly provided additional insight. We learned that when the protein and mRNA decay times are comparable, the delay around the loop is effectively longer, reducing the minimum Hill coefficient and promoter strength required for oscillations. From this analysis we can extract several design objectives to maximize the chances of achieving self-sustaining oscillations in an experimental realization of the circuit:</p>
 <ol class="arabic simple">
@@ -1855,8 +1854,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Based on these considerations, we designed the repressilator as a two plasmid system to be used in an <em>E. coli</em> strain deleted for the natural <em>lac</em> operon.</p>
 <div style="margin: auto; width: 400px;"><img alt="repressilator plasmids" src="../_images/repressilator_plasmids.png" />
 </div><p>Here, the repressilator consists of three repressors on the low copy pSC101 plasmid, with TetR additionally repressing a green fluorescent protein reporter on the higher copy ColE1 plasmid. The <em>lite</em> suffix on the repressors signifies that they have a destruction tag to decrease their stability. The <em>aav</em> suffix on the GFP indicates that it incorporates a less active degradation tag variant.</p>
-</section>
-<section id="Will-it-work?">
+</div>
+<div class="section" id="Will-it-work?">
 <h2>Will it work?<a class="headerlink" href="#Will-it-work?" title="Permalink to this headline"></a></h2>
 <p>It took a long time to design and then construct the repressilator. In addition to the molecular cloning, there were many steps to characterize the repressors and promoters and make sure signals could propagate through sequential repressor cascades.</p>
 <p>After all of this, there was more than a little uncertainty as to whether the system would, indeed, exhibit self-sustaining oscillations.</p>
@@ -1868,8 +1867,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div style="margin: auto; width: 600px;"><img alt="Repressilator trace" src="../_images/repressilator_trace.png" />
 </div><p>Analysis of many cells showed a typical repressilator period of 160 ± 40 min (SD, <em>n</em> = 63), with a cell division time of ≈50-60 min at 30°C. Sibling cells desynchronized with one another over about two cell cycles (95 ± 10 min).</p>
 <p>Evidently, a simple three element negative feedback loop can indeed generate oscillations. But those oscillations are variable. Do the dynamics have to be so variable? Next, we will see that oscillations can be improved dramatically, and even used as a timer to record bacterial growth in the mammalian gut.</p>
-</section>
-<section id="Improving-the-repressilator">
+</div>
+<div class="section" id="Improving-the-repressilator">
 <h2>Improving the repressilator<a class="headerlink" href="#Improving-the-repressilator" title="Permalink to this headline"></a></h2>
 <p>In Potvin-Trottier et al, <a class="reference external" href="https://doi.org/10.1038/nature19841">Nature, 2016</a>, Johan Paulsson and colleagues asked what accounted for the repressilator’s variability and whether it could be further improved (see <a class="reference external" href="https://doi.org/10.1038/nature19478">Gao &amp; Elowitz, Nature, 2016</a> for a summary of this work).</p>
 <ul class="simple">
@@ -1903,11 +1902,11 @@ three reporters, one expressed with each repressor):</p>
 <div style="width: 600px; margin: auto;"><img alt="repressilator watch" src="../_images/RepressilatorWatch.png" />
 </div><p>This is a great example of a “less is more” principle of circuit design. One might have imagined that increasing the precision of the repressilator would require additional regulatory circuitry, but this does not seem to be the case, at least under these well-controlled conditions. As we wrote in an accompanying piece, <a class="reference external" href="https://doi.org/10.1038/nature19478">“Evidently, precision does not necessarily demand circuit complexity and, in this case, even seems to benefit from minimalism.”</a>. At the
 same time, achieving a constant period irrespective of growth conditions will likely require compensation mechanisms, much as early navigational clocks <a class="reference external" href="https://www.theatlantic.com/technology/archive/2016/01/pendulum-clock-john-harrison/424614/">required additional systems to compensate for the effects of varying temperature on clock period</a>.</p>
-</section>
-<section id="Precision-repressilators-can-record-bacterial-growth-in-the-mammalian-gut">
+</div>
+<div class="section" id="Precision-repressilators-can-record-bacterial-growth-in-the-mammalian-gut">
 <h2>Precision repressilators can record bacterial growth in the mammalian gut<a class="headerlink" href="#Precision-repressilators-can-record-bacterial-growth-in-the-mammalian-gut" title="Permalink to this headline"></a></h2>
 <p>This section is based on Riglar DT et al, “<a class="reference external" href="https://doi.org/10.1038/s41467-019-12638-z">Bacterial variability in the mammalian gut captured by a single-cell synthetic oscillator</a>,” <em>Nature Communications</em>, 2019.</p>
-<section id="Ring-phases-enable-inference-of-bacterial-growth-dynamics">
+<div class="section" id="Ring-phases-enable-inference-of-bacterial-growth-dynamics">
 <h3>Ring phases enable inference of bacterial growth dynamics<a class="headerlink" href="#Ring-phases-enable-inference-of-bacterial-growth-dynamics" title="Permalink to this headline"></a></h3>
 <p>Recently, Pam Silver and colleagues took advantage of the incredible precision offered by this circuit to interrogate bacterial growth dynamics in the mammalian gut <a class="reference external" href="https://doi.org/10.1038/s41467-019-12638-z">Riglar, et al., 2019</a>. Their approach relied on the ability to read out repressilator <strong>phase</strong> from colony ring phases. More specifically, they found that the <strong>phase</strong> of the repressilator in the initial cell that seeded the colony controls the radial phasing of the rings in the
 colony. Cells that are plated at the peak of reporter fluorescence produce colonies with a high intensity “dot” at the center, whereas cells plated at the trough of the oscillations have rings shifted by 180 degrees. This is shown schematically in part c of the image below. They also took advantage of the ability to modulate the phase of the repressilator directly with two small molecule drugs, anhydrotetracycline (aTc) and IPTG, which respectively inhibit TetR and LacI proteins (a, below).
@@ -1918,9 +1917,9 @@ After using these drugs to synchronize a population of cells at one phase, they 
 <p>Taken together, this means that <em>the phase of the oscillator can be used as a measure of bacterial growth</em>.</p>
 <p>They wondered whether this might allow one to recover the history of cell growth in an environment that would otherwise be inaccessible. <em>E. coli</em> normally spend part of their life cycle within the mammalian gut, an environment that is difficult to observe directly. Ideally, one would like ot know how much bacterial cells typically grow within the gut, how much cell-cell variability there is in that growth, and how the amount of growth depends on conditions in the gut, including which other
 bacteria are present, or whether it has been recently depleted of bacteria by antibiotics. Using the repressilator as a growth recorder, they identified conditions, such as inflammation, that led to greater variability in growth. They also saw that growth varied between different spatial areas or niches in the gut.</p>
-</section>
-</section>
-<section id="Conclusions">
+</div>
+</div>
+<div class="section" id="Conclusions">
 <h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this headline"></a></h2>
 <p>The process of designing and building a synthetic oscillator in bacteria taught us many things about oscillatory dynamics, and synthetic circuit design:</p>
 <ul class="simple">
@@ -1941,8 +1940,8 @@ followed by DNA replication during S phase, a second G phase (G2), and finally a
 </ul>
 <p>One could imagine further exploring how engineered probiotic cells behave when introduced into animals.</p>
 <p>Taken together, this work shows the complementary power of thoughtful rational design and engineering in creating dynamic cellular circuits. Can our own rationally designed circuits eventually compete those produced by evolution, the “blind watchmaker” itself? Only time will tell.</p>
-</section>
-<section id="Computing-environment">
+</div>
+<div class="section" id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -1972,8 +1971,8 @@ jupyterlab : 3.0.14
 
 </pre></div></div>
 </div>
-<hr></section>
-<section id="Problems">
+<hr></div>
+<div class="section" id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -1981,8 +1980,8 @@ jupyterlab : 3.0.14
 <li class="toctree-l1"><a class="reference internal" href="../problems/09/problem_9.2.html">9.2: The KaiABC clock</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -1996,11 +1995,11 @@ jupyterlab : 3.0.14
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 04, 2022.
+      <span class="lastupdated">Last updated on May 06, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fb4e9666a30> 
+   <jinja2.runtime.BlockReference object at 0x7f7d545f8d00> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

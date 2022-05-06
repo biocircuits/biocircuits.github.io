@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>0. Configuring your computer to use Python for scientific computing &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -398,9 +397,9 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="0.-Configuring-your-computer-to-use-Python-for-scientific-computing">
+<div class="section" id="0.-Configuring-your-computer-to-use-Python-for-scientific-computing">
 <h1>0. Configuring your computer to use Python for scientific computing<a class="headerlink" href="#0.-Configuring-your-computer-to-use-Python-for-scientific-computing" title="Permalink to this headline"></a></h1>
-<hr><section id="Why-Python?">
+<hr><div class="section" id="Why-Python?">
 <h2>Why Python?<a class="headerlink" href="#Why-Python?" title="Permalink to this headline"></a></h2>
 <p>As will become readily apparent even at the beginning of our journey into biological circuit design, you will need to use your computer to analyze circuits and understand the principles governing their function. There are plenty of approaches we could take, and many languages we could use for computing as well. Indeed, in addition to Python, <a class="reference external" href="https://www.mathworks.com/products/matlab.html">Matlab</a>/<a class="reference external" href="https://www.gnu.org/software/octave/">Octave</a>,
 <a class="reference external" href="https://www.wolfram.com/mathematica/">Mathematica</a>, <a class="reference external" href="https://www.r-project.org">R</a>, <a class="reference external" href="http://julialang.org/">Julia</a>, <a class="reference external" href="https://www.oracle.com/java/">Java</a>, <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a>, and others are widely used. We have chosen to use Python. Though we view this as an unessential choice (we believe language wars are counterproductive and welcome anyone to port the code we use to any language
@@ -408,23 +407,23 @@ of their choice), we nonetheless feel we should explain our choice.</p>
 <p>Python is a flexible programming language that is widely used in many applications. This is in contrast to more domain-specific languages like R and Julia. It is easily extendable, which is in many ways responsible for its breadth of use. We find that there is a decent Python-based tool for many applications we can dream up, certainly in systems biology. However, the Python-based tool is seldom the <em>very best</em> for the particular task at hand, but it is almost always <em>pretty good</em>. Thus, knowing
 Python is like having a Swiss Army knife; you can wield it to effectively accomplish myriad tasks. Finally, we also find that it has a shallow learning curve with most students.</p>
 <p>That said, if we had to choose another language, it would be Julia. Julia is a well-designed, modern language for scientific computing. Its tools for numerical differential equations, an important method we employ, are superb.</p>
-</section>
-<section id="Why-not-use-systems-biology-packages?">
+</div>
+<div class="section" id="Why-not-use-systems-biology-packages?">
 <h2>Why not use systems biology packages?<a class="headerlink" href="#Why-not-use-systems-biology-packages?" title="Permalink to this headline"></a></h2>
 <p>There are packages available to streamline systems biology calculations, such as <a class="reference external" href="http://pysb.org">PySB</a> or <a class="reference external" href="https://www.mathworks.com/products/simbiology.html">Matlab’s SymBiology</a>. While these packages are useful, we find that many applications in systems biology, and in genetic circuits in particular, need, or at least benefit from, bespoke computational analyses. We therefore will build all of our code from scratch, using only packages like <a class="reference external" href="http://numpy.org/">NumPy</a>,
 <a class="reference external" href="http://scipy.org/">SciPy</a>, and <a class="reference external" href="http://bokeh.pydata.org/">Bokeh</a>, which contain core numerical and plotting data structures and routines. Of course, code we use in one chapter may be reused in another, but our approach is that we build all of the code we need as we go along. This will provide a greater level of mastery and less reliance on black boxes (though there will inevitably be some).</p>
-</section>
-<section id="The-biocircuits-package">
+</div>
+<div class="section" id="The-biocircuits-package">
 <h2>The biocircuits package<a class="headerlink" href="#The-biocircuits-package" title="Permalink to this headline"></a></h2>
 <p>For some of those black boxes, we will use the <code class="docutils literal notranslate"><span class="pre">biocircuits</span></code> package, which is written to be used with this book. The functions contained therein are presented before being abstracted away into the package. Thus, anything that is in the package is introduced in the main text and you should have a full understanding of how it works.</p>
 <p>The documentation for this package appears as an appendix.</p>
-</section>
-<section id="What-to-do-if-you-are-new-to-Python">
+</div>
+<div class="section" id="What-to-do-if-you-are-new-to-Python">
 <h2>What to do if you are new to Python<a class="headerlink" href="#What-to-do-if-you-are-new-to-Python" title="Permalink to this headline"></a></h2>
 <p>As you proceed through the chapters, we assume that you have a basic introduction to computer programming and the Python programming language. We assume further that you have a working knowledge of <a class="reference external" href="http://numpy.org/">NumPy</a>. If this is new to you, there are plenty of great resources to learn Python and to learn the basics quickly. A <a class="reference external" href="http://justinbois.github.io/bootcamp/2021/">weeklong intensive course</a> offered by one of the authors and the <a class="reference external" href="http://justinbois.github.io/bootcamp/2021/resources.html">resources linked to
 therein</a> provide a good starting point.</p>
-</section>
-<section id="Installing-a-Python-distribution">
+</div>
+<div class="section" id="Installing-a-Python-distribution">
 <h2>Installing a Python distribution<a class="headerlink" href="#Installing-a-Python-distribution" title="Permalink to this headline"></a></h2>
 <p>Prior to embarking on your journey into biological circuits, you need to have a functioning Python distribution installed on your computer. There are two main ways people set up Python for scientific computing.</p>
 <ol class="arabic simple">
@@ -432,17 +431,17 @@ therein</a> provide a good starting point.</p>
 <li><p>By downloading and installing a Python distribution that contains binaries of many of the scientific packages needed. <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a> is the dominant distribution for scientific and data science computing.</p></li>
 </ol>
 <p>We will use Anaconda, with its associated package manager, <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
-</section>
-<section id="A-special-note-to-Mac-users">
+</div>
+<div class="section" id="A-special-note-to-Mac-users">
 <h2>A special note to Mac users<a class="headerlink" href="#A-special-note-to-Mac-users" title="Permalink to this headline"></a></h2>
 <p>If your machine is a Mac, you will need to install <a class="reference external" href="https://developer.apple.com/xcode/">XCode</a>, which you can get through the App Store, before installing Anaconda. Important components under the hood are set up by installing and launching XCode. Once you install XCode, you need to launch it in order to have everything set up properly. It may take a while to launch, and it may ask you to install extras, which you should do. After it has launched, you can close it, and you won’t need it again
 for this course in biological circuits.</p>
-</section>
-<section id="Windows-users:-Chrome-or-Firefox">
+</div>
+<div class="section" id="Windows-users:-Chrome-or-Firefox">
 <h2>Windows users: Chrome or Firefox<a class="headerlink" href="#Windows-users:-Chrome-or-Firefox" title="Permalink to this headline"></a></h2>
 <p>To run Jupyter notebooks, we use <a class="reference external" href="http://jupyterlab.readthedocs.io/en/stable/index.html">JupyterLab</a>. It is browser-based, and Chrome, Firefox, and Safari are supported. Microsoft Edge is not. Therefore, if you are a Windows user, you need to be sure you have either Chrome of Firefox installed.</p>
-</section>
-<section id="Downloading-and-installing-Anaconda">
+</div>
+<div class="section" id="Downloading-and-installing-Anaconda">
 <h2>Downloading and installing Anaconda<a class="headerlink" href="#Downloading-and-installing-Anaconda" title="Permalink to this headline"></a></h2>
 <p><strong>Mac users</strong>: Before installing Anaconda, be sure you have <a class="reference external" href="https://developer.apple.com/xcode/">XCode</a> installed.</p>
 <p>Downloading and installing Anaconda is simple.</p>
@@ -453,12 +452,12 @@ for this course in biological circuits.</p>
 <li><p>Follow the on-screen instructions for installation. While doing so, be sure that Anaconda is installed in your home directory, not in root.</p></li>
 </ol>
 <p>That’s it! After you do that, you will have a functioning Python distribution.</p>
-</section>
-<section id="Install-node.js">
+</div>
+<div class="section" id="Install-node.js">
 <h2>Install node.js<a class="headerlink" href="#Install-node.js" title="Permalink to this headline"></a></h2>
 <p><a class="reference external" href="https://nodejs.org/">node.js</a> is a platform that enables you to run JavaScript outside of the browser. We will not use it directly, but it needs to be installed for some of the more sophisticated JupyterLab functionality. Install node.js by downloading the appropriate installer for your machine from the <a class="reference external" href="https://nodejs.org/en/download/">node.js website</a>.</p>
-</section>
-<section id="Package-installations-and-the-conda-package-manager">
+</div>
+<div class="section" id="Package-installations-and-the-conda-package-manager">
 <h2>Package installations and the <code class="docutils literal notranslate"><span class="pre">conda</span></code> package manager<a class="headerlink" href="#Package-installations-and-the-conda-package-manager" title="Permalink to this headline"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code> is a package manager for keeping all of your packages up-to-date. It has plenty of functionality beyond our basic usage in class, which you can learn more about by reading the <a class="reference external" href="http://conda.pydata.org/docs/get-started.html">docs</a>. We will primarily be using <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install and update packages.</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code> works from the command line. On Windows, the command line is usually accessed through PowerShell and on macOS through Terminal. After you have installed Anaconda, at a command line prompt, run the following command to update <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
@@ -479,8 +478,8 @@ pip install multiprocess eqtk biocircuits iqplot watermark jupyterlab-spellcheck
 </pre></div>
 </div>
 <p>(We will not actually use <code class="docutils literal notranslate"><span class="pre">jupyterlab-spellchecker</span></code> or <code class="docutils literal notranslate"><span class="pre">blackcellmagic</span></code>, but they are useful tools to have when using JupyterLab.)</p>
-</section>
-<section id="Launching-JupyterLab">
+</div>
+<div class="section" id="Launching-JupyterLab">
 <h2>Launching JupyterLab<a class="headerlink" href="#Launching-JupyterLab" title="Permalink to this headline"></a></h2>
 <p>The easiest way to launch JupyterLab is from the command line. On Windows, this is usually accessed through PowerShell and on macOS through Terminal. To launch JupyterLab, type the following on the command line.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab
@@ -492,8 +491,8 @@ pip install multiprocess eqtk biocircuits iqplot watermark jupyterlab-spellcheck
 </div>
 <p>Alternatively, you can use the Anaconda Navigator that was installed when you installed Anaconda. If you’re using macOS, this is available in your <code class="docutils literal notranslate"><span class="pre">Applications</span></code> menu. If you are using Windows, you access it from the <code class="docutils literal notranslate"><span class="pre">Start</span></code> menu. You can then launch Anaconda Navigator. After launching the Navigator, you should see an option to launch JupyterLab. When you do that, a new browser window or tab will open with JupyterLab running. Within the JupyterLab window, you will have the option to launch a
 notebook, a console, a terminal, or a text editor. As you work through this book, you will use notebooks almost exclusively.</p>
-</section>
-<section id="Checking-your-distribution">
+</div>
+<div class="section" id="Checking-your-distribution">
 <h2>Checking your distribution<a class="headerlink" href="#Checking-your-distribution" title="Permalink to this headline"></a></h2>
 <p>Let’s now run a quick test to make sure things are working properly. We will make a quick plot that requires some of the scientific libraries we will use in this book.</p>
 <p>Use the JupyterLab launcher (you can get a new launcher by clicking on the <code class="docutils literal notranslate"><span class="pre">+</span></code> icon on the left pane of your JupyterLab window) to launch a notebook. In the first cell (the box next to the <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">]:</span></code> prompt), paste the code below. To run the code, press <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> while the cursor is active inside the cell. You should see a plot that looks like the one below. If you do, you have a functioning Python environment for scientific computing!</p>
@@ -881,8 +880,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</section>
-<section id="Computing-environment">
+</div>
+<div class="section" id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <p>At the end of each chapter in this book, all of which are constructed from a Jupyter notebook, we will show what versions of the employed packages were used. This will help you troubleshoot if your outputs look dissimilar from what is on the book website.</p>
 <p>We use the handy <a class="reference external" href="https://github.com/rasbt/watermark">watermark package</a> to do this.</p>
@@ -910,8 +909,8 @@ jupyterlab: 3.3.2
 
 </pre></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -925,11 +924,11 @@ jupyterlab: 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 04, 2022.
+      <span class="lastupdated">Last updated on May 06, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fb4fb9a8f40> 
+   <jinja2.runtime.BlockReference object at 0x7f7d6bc0fca0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
