@@ -20,6 +20,8 @@ Biological Circuit Design
    chapters/11_time-based_regulation.ipynb
    chapters/12_molecular_titration.ipynb
    chapters/13_promiscuous_binding.ipynb
+   chapters/14_multifate.ipynb
+   chapters/15_noise.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 

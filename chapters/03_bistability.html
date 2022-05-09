@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3. Bistability through positive feedback &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -91,6 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="11_time-based_regulation.html">11. Time-based regulation in cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_molecular_titration.html">12. Molecular titration generates ultrasensitive responses in biological circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_multifate.html">14. MultiFate enables expandable and controllable multistability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="15_noise.html">15. Gene expression is noisy! How stochastic effects lead to heterogeneity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -407,7 +410,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="3.-Bistability-through-positive-feedback">
+<section id="3.-Bistability-through-positive-feedback">
 <h1>3. Bistability through positive feedback<a class="headerlink" href="#3.-Bistability-through-positive-feedback" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Concepts</strong></p>
 <ul class="simple">
@@ -762,7 +765,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<hr><div class="section" id="Positive-autoregulation-enables-bistability">
+<hr><section id="Positive-autoregulation-enables-bistability">
 <h2>Positive autoregulation enables bistability<a class="headerlink" href="#Positive-autoregulation-enables-bistability" title="Permalink to this headline"></a></h2>
 <p>One of the most amazing aspects of living cells is their ability to exist in different—sometimes radically different—states. In animals, neurons look and behave quite differently than skin or blood cells even though they all share the same genome. Single cell analysis and <a class="reference external" href="https://doi.org/10.7554/eLife.27041">large scale cell atlas projects</a> are only beginning to reveal the full diversity of cell states. And, as we zoom in to examine individual cells of any one nominal type, we often find
 many sub-types, with different morphologies, functions, spatial locations, and gene expression states. Something similar occurs in bacteria, where a given strain can often exist in different states that differ in function and gene expression. (In fact, it is not easy to define <a class="reference external" href="https://doi.org/10.1016/j.cels.2017.03.006">what we mean by a cell type</a>!)</p>
@@ -1080,11 +1083,11 @@ var element = document.currentScript.previousSibling.previousSibling;
 that the system transitions between monostability and bistability, and within a critical region of parameter space near this bifurcation, even a miniscule change in the value of a parameter is enough to push the system over the edge into one regime or the other.</p>
 <p>When we design a biological circuit, it is important to be aware of bifurcations. Slight deviations in a parameter value that would have only modest effects on system performance away from a bifurcation point can generate much more drastic changes if they cause the system to bifurcate from one regime to another.</p>
 <p>But how can you know whether a given parametrization of the system is close to a bifurcation value or not? A simple way to find out for the positive autoregulation circuit is to determine the number of fixed points in the system and identify the boundary in parameter space between regimes that exhibit one fixed point and those that have three fixed points.</p>
-</div>
-<div class="section" id="Analytically-determining-the-number-of-fixed-points">
+</section>
+<section id="Analytically-determining-the-number-of-fixed-points">
 <h2>Analytically determining the number of fixed points<a class="headerlink" href="#Analytically-determining-the-number-of-fixed-points" title="Permalink to this headline"></a></h2>
 <p>In this section, we will illustrate how we can mathematically manipulate the ODE for the positive autoregulation system to analytically determine the number of fixed points for a given parametrization. While the approach here is not universal—it cannot be applied directly to any system to analyze its behavior—it illustrates a useful style of reasoning that will help develop intuition for other circuits we encounter.</p>
-<div class="section" id="Using-nondimensionalization-to-simplify-the-system">
+<section id="Using-nondimensionalization-to-simplify-the-system">
 <h3>Using nondimensionalization to simplify the system<a class="headerlink" href="#Using-nondimensionalization-to-simplify-the-system" title="Permalink to this headline"></a></h3>
 <p>Recall our differential equation for the dynamics of an autoactivator:</p>
 <p><span class="math">\begin{align}
@@ -1147,8 +1150,8 @@ variables in this problem. Also, recall that <span class="math notranslate nohig
 \frac{\mathrm{d}x}{\mathrm{d}t} = \beta\,\frac{x^{n}}{1 + x^n} - x.
 \end{align}</span></p>
 <p>Nondimensionalization is often the first step in analyzing a model for circuit behavior, We will apply it again and again throughout this book.</p>
-</div>
-<div class="section" id="Analytical-methods-for-exploring-steady-states">
+</section>
+<section id="Analytical-methods-for-exploring-steady-states">
 <h3>Analytical methods for exploring steady states<a class="headerlink" href="#Analytical-methods-for-exploring-steady-states" title="Permalink to this headline"></a></h3>
 <p>From our analysis above, we found that the system has the following properties.</p>
 <ol class="arabic simple">
@@ -1308,8 +1311,8 @@ g(x_{\mathrm{min}}) &= \left(\beta \,\frac{n-1}{n}\right)^n - \beta \left(\beta 
 line in parameter space represents a <strong>bifurcation</strong>, where the qualitative properties of the system change upon crossing it.</p>
 <p><strong>The n ≤ 1 regime:</strong></p>
 <p>We have not yet considered the <span class="math notranslate nohighlight">\(n \le 1\)</span> regime. In an end-of-chapter problem, you can prove that only one stable fixed point exists in this regime, regardless of the values of <span class="math notranslate nohighlight">\(\beta\)</span>. We will take that as given going forward.</p>
-</div>
-<div class="section" id="A-bifurcation-diagram">
+</section>
+<section id="A-bifurcation-diagram">
 <h3>A bifurcation diagram<a class="headerlink" href="#A-bifurcation-diagram" title="Permalink to this headline"></a></h3>
 <p>We have now analyzed the system fully and shown that the system is monostable for <span class="math notranslate nohighlight">\(n\leq 1\)</span>. For <span class="math notranslate nohighlight">\(n&gt;1\)</span>, the system is bistable when <span class="math notranslate nohighlight">\(\beta &gt; n(n-1)^{(1-n)/n}\)</span>, monostable when <span class="math notranslate nohighlight">\(\beta &lt; n(n-1)^{(1-n)/n}\)</span>, and undergoes a bifurcation between these two regimes when <span class="math notranslate nohighlight">\(\beta = n(n-1)^{(1-n)/n}\)</span>.</p>
 <p>Thanks to the fact that we nondimensionalized our system, its bifurcation behavior can be fully explained using only two dimensionless parameters. This allows us to visualize it with the nature of the steady states of the system with a <strong>bifurcation diagram</strong>, shown below.</p>
@@ -1387,9 +1390,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>This analysis can help us engineer a system to be bistable. By using a strong (<span class="math notranslate nohighlight">\(\beta\)</span> large) and ultrasensitive (<span class="math notranslate nohighlight">\(n\)</span> larger than 1, and preferably larger than 2) regulatory system, we can ensure bistability. Further, if we measure the values of our parameters and find that we are near the bifurcation boundary, then we know that small variations in the parameter values can cause a large, qualitative change in the system’s behavior. In particular, we can see from the plot above that
 the regime where <span class="math notranslate nohighlight">\(1 &lt; \beta &lt; 2\)</span> and <span class="math notranslate nohighlight">\(1 &lt; n &lt; 2\)</span> is a particularly bifurcation-prone regime that we would definitely want to avoid designing our system into if its desired performance is to be reliably bistable.</p>
 <p>Because considerations like measurement error and random fluctuations in system components ensure that parameters’ values can never be known to perfect confidence, it is important to design a system to lie far away from a bifurcation boundary in order to ensure its robust and reliable performance.</p>
-</div>
-</div>
-<div class="section" id="Bistability-enables-memory-through-hysteresis">
+</section>
+</section>
+<section id="Bistability-enables-memory-through-hysteresis">
 <h2>Bistability enables memory through hysteresis<a class="headerlink" href="#Bistability-enables-memory-through-hysteresis" title="Permalink to this headline"></a></h2>
 <p>Bistability’s most obvious function is enabling a clonal cell population to differentiate into phenotypically-distinct subpopulations. But a second function is its ability to enable memory of transient signals through a feature known as <strong>hysteresis</strong>.</p>
 <p>Consider the postive autoregulation circuit in its bistable regime, with <span class="math notranslate nohighlight">\(x\)</span> at the upper stable fixed point. Now, suppose some transient perturbation occurs. Perhaps the value of <span class="math notranslate nohighlight">\(\gamma\)</span> is suddenly increased because the cell has begun dividing at a much faster rate. If this perturbation is large enough to cross the bifurcation boundary, then the system becomes monostable, and <span class="math notranslate nohighlight">\(x\)</span> will be driven to the only stable fixed point, at a value closer to what was previously the
@@ -1589,8 +1592,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>This is the principle of hysteresis—a dependence of the system state on its past history. We will now examine how a circuit can be designed to explicitly enable the recording of an external stimulus via hysteresis in a bistable system.</p>
-</div>
-<div class="section" id="The-toggle-switch:-a-two-gene-positive-feedback-system">
+</section>
+<section id="The-toggle-switch:-a-two-gene-positive-feedback-system">
 <h2>The toggle switch: a two-gene positive feedback system<a class="headerlink" href="#The-toggle-switch:-a-two-gene-positive-feedback-system" title="Permalink to this headline"></a></h2>
 <p>In natural circuits, positive feedback loops often include multiple regulators rather than just a single autoregulatory transcription factor. For example, the “genetic switch” in the bacterial virus, or bacteriophage, lambda involves reciprocal repression of the <em>cro</em> repressor by the <span class="math notranslate nohighlight">\(\lambda\)</span> <em>cI</em> repressor, and vice versa (see <a class="reference external" href="https://www.amazon.com/Genetic-Switch-Third-Lambda-Revisited/dp/0879697164">Mark Ptashne’s classic book, A genetic switch</a>). This arrangement allows lambda to
 remain in its dormant “lysogenic” state, where <em>λcI</em> is expressed and represses <em>cro</em>, or switch to a “lytic” state in which <em>cro</em> is expressed, repressing <em>cI</em>. In the lytic phase, the phage replicates itself and lyses the host cell, enabling lambda to go on to infect other cells. Interestingly, cI is not only a repressor, but also an activator, and it activates its own expression in an ultrasensitive manner due to cooperative binding interactions. Thus, the natural circuit combines a 1-gene
@@ -1757,7 +1760,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Play with the <span class="math notranslate nohighlight">\(n\)</span> slider: By moving <span class="math notranslate nohighlight">\(n\)</span> down, you can see that bistability persists at lower Hill coefficients. However, it requires a more delicate balancing act, where the values of <span class="math notranslate nohighlight">\(\beta_x\)</span> and <span class="math notranslate nohighlight">\(\beta_y\)</span> need to be large and close in magnitude. Then, at <span class="math notranslate nohighlight">\(n=1\)</span>, bistability is lost completely and the system becomes monostable.</p>
 <p>Even at higher Hill coefficients, the strengths of the promoters must still be balanced. If we use widely varying values of <span class="math notranslate nohighlight">\(\beta_x\)</span> and <span class="math notranslate nohighlight">\(\beta_y\)</span>, we again have monostability. You can see this by setting <span class="math notranslate nohighlight">\(\beta_x = 10\)</span>, <span class="math notranslate nohighlight">\(\beta_y = 1.5\)</span>, and <span class="math notranslate nohighlight">\(n = 5\)</span> with the sliders.</p>
 <p>The classic synthetic toggle circuit provides an ideal example of how synthetic biology can be used to design, create, and test simple circuits in living cells.</p>
-<div class="section" id="Conclusions:-Bistability-and-hysteresis-are-powerful-features-that-can-be-generated-through-remarkably-simple-circuits.">
+<section id="Conclusions:-Bistability-and-hysteresis-are-powerful-features-that-can-be-generated-through-remarkably-simple-circuits.">
 <h3>Conclusions: Bistability and hysteresis are powerful features that can be generated through remarkably simple circuits.<a class="headerlink" href="#Conclusions:-Bistability-and-hysteresis-are-powerful-features-that-can-be-generated-through-remarkably-simple-circuits." title="Permalink to this headline"></a></h3>
 <p>Taken together, our analysis of the positive autoregulatory and the toggle switch revealed some key design principles for bistability and hysteresis:</p>
 <ol class="arabic simple">
@@ -1766,9 +1769,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 <li><p>Bistable systems exhibit hysteresis, which allows cells to permanently switch states in response to a transient input signal.</p></li>
 </ol>
 <p>Later in the course, we will continue to analyze this system and its stability, learning how to further characterize dynamical systems beyond their nullclines. We will also explore multistable circuit architectures that can scale to produce many stable states. We are only beginning to explore the many fascinating aspects of multistable systems.</p>
-</div>
-</div>
-<div class="section" id="Computing-environment">
+</section>
+</section>
+<section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1796,8 +1799,8 @@ jupyterlab : 3.3.2
 
 </pre></div></div>
 </div>
-<hr></div>
-<div class="section" id="Problems">
+<hr></section>
+<section id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -1810,8 +1813,8 @@ jupyterlab : 3.3.2
 <li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.7.html">3.7: Design principles fortoggles</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1825,11 +1828,11 @@ jupyterlab : 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 06, 2022.
+      <span class="lastupdated">Last updated on May 09, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f7d529ce100> 
+   <jinja2.runtime.BlockReference object at 0x7f7de83f7910> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

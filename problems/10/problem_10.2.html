@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 10.2: Tuning delay oscillators with positive feedback &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -81,6 +82,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/11_time-based_regulation.html">11. Time-based regulation in cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/12_molecular_titration.html">12. Molecular titration generates ultrasensitive responses in biological circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/14_multifate.html">14. MultiFate enables expandable and controllable multistability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/15_noise.html">15. Gene expression is noisy! How stochastic effects lead to heterogeneity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -144,7 +147,7 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Problem-10.2:-Tuning-delay-oscillators-with-positive-feedback">
+<section id="Problem-10.2:-Tuning-delay-oscillators-with-positive-feedback">
 <h1>Problem 10.2: Tuning delay oscillators with positive feedback<a class="headerlink" href="#Problem-10.2:-Tuning-delay-oscillators-with-positive-feedback" title="Permalink to this headline"></a></h1>
 <hr><p>In this problem, we will explore the properties of a minimal 2 gene relaxation oscillator with positive and negative feedback loops introduced at the end of the chapter. The circuit for the oscillator is show below.</p>
 <div style="margin: auto; width: 300px;"><img alt="pos-neg oscillator" src="../../_images/positive-negative_oscillator1.png" />
@@ -207,7 +210,7 @@ express the problem as finding the roots of a polynomial and you can use the <co
 activator and repressor dynamics over time for this regime (this will require numerical solution of the ODEs). Also make a plot of the system trajectory in the <span class="math notranslate nohighlight">\(a\)</span>-<span class="math notranslate nohighlight">\(r\)</span> plane. Comment on what this analysis has taught you about this circuit and its function as a relaxation operator.</p>
 <p><strong>g)</strong> In what other ways would you like to investigate this circuit? What do you hope to learn about it?</p>
 <p><strong>h)</strong> If you feel like exploring some more, you can add an explicit time delay. That is, use <span class="math notranslate nohighlight">\(f(a, r(t-\tau))\)</span> or <span class="math notranslate nohighlight">\(f(a(t-\tau_a), r(t-\tau_r))\)</span> for your regulatory functions. How does time delay affect the overall dynamics? How does it impact the requirements on other parameters? Play around with the system and comment on what you see.</p>
-</div>
+</section>
 
 
            </div>
@@ -221,11 +224,11 @@ activator and repressor dynamics over time for this regime (this will require nu
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 06, 2022.
+      <span class="lastupdated">Last updated on May 09, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f7d6c0422b0> 
+   <jinja2.runtime.BlockReference object at 0x7f7de9157a90> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

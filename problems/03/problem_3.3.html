@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 3.3: Autoactivation, bistability, and the importance of leakage &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -83,6 +84,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/11_time-based_regulation.html">11. Time-based regulation in cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/12_molecular_titration.html">12. Molecular titration generates ultrasensitive responses in biological circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/14_multifate.html">14. MultiFate enables expandable and controllable multistability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/15_noise.html">15. Gene expression is noisy! How stochastic effects lead to heterogeneity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
@@ -146,14 +149,14 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Problem-3.3:-Autoactivation,-bistability,-and-the-importance-of-leakage">
+<section id="Problem-3.3:-Autoactivation,-bistability,-and-the-importance-of-leakage">
 <h1>Problem 3.3: Autoactivation, bistability, and the importance of leakage<a class="headerlink" href="#Problem-3.3:-Autoactivation,-bistability,-and-the-importance-of-leakage" title="Permalink to this headline"></a></h1>
 <hr><p>In this problem, we will explore a very simple circuit: autoactivation of a single gene, shown in the figure below. We will assume a separation of time scales in mRNA and protein degradation/dilution such that we only need to consider the dynamics of the protein, and we will call its concentration <span class="math notranslate nohighlight">\(x\)</span>. We will further assume that the autoactivation effect can be modeled as a Hill function with Hill coefficient <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <div style="width: 225px; margin: auto"><img alt="autoactivator" src="../../_images/autoactivator.png" />
 </div><p><strong>a)</strong> Write down an ODE describing the dynamics of <span class="math notranslate nohighlight">\(x\)</span>. Include leakage parametrized by <span class="math notranslate nohighlight">\(\alpha\)</span>. (This is the same model for an autoactivating circuit we used in the chapter, but now including leakage.)</p>
 <p><strong>b)</strong> Show that in the absence of ultrasensitivity (<span class="math notranslate nohighlight">\(0 &lt; n \le 1\)</span>), only one steady state exists for <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span>. Show further that when <span class="math notranslate nohighlight">\(\alpha = 0\)</span>, two steady states may exist, but only one is stable and the stable one has <span class="math notranslate nohighlight">\(x &gt; 0\)</span>.</p>
 <p><strong>c)</strong> In part (b), we considered the case where activation is not ultrasensitive. We now consider the other extreme, where activation is infinitely ultrasensitive. Derive the condition for bistability when <span class="math notranslate nohighlight">\(n\to\infty\)</span>. In other words, for what parameter values does the circuit exhibit two stable steady states? Discuss this condition as it relates to design principles for bistability.</p>
-</div>
+</section>
 
 
            </div>
@@ -167,11 +170,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 06, 2022.
+      <span class="lastupdated">Last updated on May 09, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f7d6b8851f0> 
+   <jinja2.runtime.BlockReference object at 0x7f7dfa8daee0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
