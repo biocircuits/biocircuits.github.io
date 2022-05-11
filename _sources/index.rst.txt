@@ -22,6 +22,7 @@ Biological Circuit Design
    chapters/13_promiscuous_binding.ipynb
    chapters/14_multifate.ipynb
    chapters/15_noise.ipynb
+   chapters/16_bursty.ipynb
    chapters/appA_regulatory_functions.ipynb
 
 
