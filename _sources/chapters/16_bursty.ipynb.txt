@@ -368,6 +368,27 @@
     "Another problem idea: Derive the Neg. Binomial distribution for bursty gene expression using similar arguments as used in the above for Poisson distributed.\n",
     "-->"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "<hr>\n",
+    "\n",
+    "## Problems"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "nbsphinx-toctree": {},
+    "tags": []
+   },
+   "source": [
+    "- [16.1: Dynamics of noise](../problems/16/problem_16.1.ipynb)"
+   ]
   }
  ],
  "metadata": {

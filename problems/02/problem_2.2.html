@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 2.2: Event handling for discontinuous derivatives &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -148,7 +147,7 @@
     text-align: unset;
 }
 </style>
-<section id="Problem-2.2:-Event-handling-for-discontinuous-derivatives">
+<div class="section" id="Problem-2.2:-Event-handling-for-discontinuous-derivatives">
 <h1>Problem 2.2: Event handling for discontinuous derivatives<a class="headerlink" href="#Problem-2.2:-Event-handling-for-discontinuous-derivatives" title="Permalink to this headline"></a></h1>
 <hr><p><em>This problem is still a draft.</em></p>
 <p>Throughout Chapter 2, we used a Guassian function to represent a pulse of input signal <span class="math notranslate nohighlight">\(s\)</span>. One of the reasons we chose to use a Gaussian function was to ensure that the function would be smooth, i.e. its derivative is always continuous. What if, however, we instead wanted to model how our system would respond to a step increase and decrease of the inducer? In that case, our <span class="math notranslate nohighlight">\(s(t)\)</span> timecourse would encode a <span class="math notranslate nohighlight">\(\tau\)</span>-width pulse that begins at time <span class="math notranslate nohighlight">\(t_0\)</span> as</p>
@@ -165,7 +164,7 @@ s(t) = \left\{\begin{array}{lll}
 <li><p>Guide the student in writing a new solver for stepwise s(t) that uses event handling to do three separate integrations that are chained together in the final result</p></li>
 <li><p>Show that the problematic regime from Step 2 is no longer an issue</p></li>
 </ol>
-</section>
+</div>
 
 
            </div>
@@ -183,7 +182,7 @@ s(t) = \left\{\begin{array}{lll}
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fb0b2f8c820> 
+   <jinja2.runtime.BlockReference object at 0x7fcf4693a160> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
