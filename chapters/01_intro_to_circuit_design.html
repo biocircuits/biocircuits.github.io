@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1. Introduction to biological circuit design &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -418,7 +419,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="1.-Introduction-to-biological-circuit-design">
+<section id="1.-Introduction-to-biological-circuit-design">
 <h1>1. Introduction to biological circuit design<a class="headerlink" href="#1.-Introduction-to-biological-circuit-design" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Concepts</strong></p>
 <ul class="simple">
@@ -762,12 +763,12 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<hr><div class="section" id="Biological-circuit-design">
+<hr><section id="Biological-circuit-design">
 <h2>Biological circuit design<a class="headerlink" href="#Biological-circuit-design" title="Permalink to this headline"></a></h2>
 <p>The living cell is a device unlike any other: It can sense its environment, search out nutrients, avoid threats, control its own division and growth, while quietly keeping track of time. Individual cells can switch into a multitude of different states, coordinate with other cells to build complex multicellular tissues and organs (even brains!), develop into social organisms, and generate immune systems that can patrol those organisms to repair damage and destroy pathogens. Most of the time, they
 do these things reliably, with minimal external help, and without complaining. How are these incredible behaviors programmed within the cell? Can we understand cells well enough to <em>rationally</em> predict, control, or even reprogram their behaviors?</p>
 <p>In this book, we will develop foundational concepts, approaches, and examples that will enable us to address these critical biological challenges. The key premise is that many of these problems can be addressed by thinking of biological systems in terms of <em>circuits</em> – sets of molecular or cellular components that interact with another in specific ways.</p>
-<div class="section" id="What-is-a-biological-circuit?">
+<section id="What-is-a-biological-circuit?">
 <h3>What is a biological circuit?<a class="headerlink" href="#What-is-a-biological-circuit?" title="Permalink to this headline"></a></h3>
 <p>We will consider two levels of biological circuitry:</p>
 <div style="width: 500px; margin: auto;"><img alt="molecular_circuit_schematic" src="../_images/l01_molecular_cellular_circuit_examples.png" />
@@ -779,8 +780,8 @@ signals, forming a collection of complex, interconnected cell circuits.</p>
 <p>At both levels, as we explore different circuits, we will approach them from a <strong>design</strong> point of view, seeking to understand the tradeoffs among alternative circuit designs, and looking for <strong>design principles</strong> that explain why and in what context one design might be preferred over another. These design principles can help to make sense of an otherwise bewildering space of potential circuits.</p>
 <p>There are several wonderful aspects to working at the circuit level: First, circuits are particularly amenable to experimental analysis. If we want to know how one element of a circuit, whether a protein or a cell type, affects another, we can directly perturb it and observe the responses of other components. In other words, we can play with circuits. Second, circuits can be engineered. We can design and construct many different synthetic circuits from a handful of components and compare their
 behavior. This provides a way to experimentally explore the behavior of different circuit designs, even those that do not occur naturally, directly within living cells. Third, circuits can be modeled. Once we know how a set of components behave, we can generate testable predictions for how circuits comprised of those components ought to behave. Thus, circuits are an arena in which analysis, synthesis, and modeling come together in a beautiful way.</p>
-</div>
-<div class="section" id="From-molecular-biology-to-systems-biology">
+</section>
+<section id="From-molecular-biology-to-systems-biology">
 <h3>From molecular biology to systems biology<a class="headerlink" href="#From-molecular-biology-to-systems-biology" title="Permalink to this headline"></a></h3>
 <p>Historically, the framework of molecular biology became dominant in the second half of the twentieth century, with the central idea that we could understand biological phenomena in terms of the molecular structure and biochemical function of DNA, mRNA, and other molecules. (“The Eighth Day of Creation” by Horace Freeland Judson provides a riveting history of molecular biology.) Despite the focus on individual molecules, it was clear to the pioneers of molecular biology that all of these
 molecules functioned together in circuits. For example, in a 1962 essay, speaking about the organization of transcriptional regulatory systems, Jacob and Monod wrote,</p>
@@ -792,8 +793,8 @@ scale data sets to predict, let alone understand, cellular behaviors. At the sam
 cohesively as a circuit. Somehow, a new field seems to have emerged, loosely defined by its focus on the circuit level, but diverse in its approaches and subject matter. It took the name <em>systems biology</em>.</p>
 <div style="width: 600px; margin: auto;"><img alt="Hanahan and Weinberg" src="../_images/Hanahan-Weinberg-2000.png" />
 </div><p><em>This image of the cell as a set of circuits comes from a classic review of cancer (</em><a class="reference external" href="https://doi.org/10.1016/S0092-8674%2800%2981683-9">Hanahan and Weinberg, Cell, 2000</a><em>).</em></p>
-<!-- Once Sphinx can handle percents in links, use DOI: https://doi.org/10.1016/S0092-8674%2800%2981683-9 --><!-- Link to reader: https://reader.elsevier.com/reader/sd/pii/S0092867400816839?token=0484E13D03429AA97AEB30B7F31F6FA354F58B5084EC65AAD2F7378F8799578FA1A1D3336D1FB292B5CE9FFA10DF5359. --></div>
-<div class="section" id="Designing-biological-circuits">
+<!-- Once Sphinx can handle percents in links, use DOI: https://doi.org/10.1016/S0092-8674%2800%2981683-9 --><!-- Link to reader: https://reader.elsevier.com/reader/sd/pii/S0092867400816839?token=0484E13D03429AA97AEB30B7F31F6FA354F58B5084EC65AAD2F7378F8799578FA1A1D3336D1FB292B5CE9FFA10DF5359. --></section>
+<section id="Designing-biological-circuits">
 <h3>Designing biological circuits<a class="headerlink" href="#Designing-biological-circuits" title="Permalink to this headline"></a></h3>
 <p><strong>Circuit design problems</strong> emerge whenever one can build many different products from arrangements of the same elements. Electronic circuits are composed of a handful of different kinds of elements: transistors, resisters, capacitors, etc. that can be connected in different ways to produce circuits with different properties. Design requires comparing different circuit designs that may appear to perform similar functions, but in fact exhibit different tradeoffs, e.g. between power and
 performance, or speed and precision. Design problems are also prevalent outside of science and engineering. For example, to make a movie poster one has to choose and arrange graphical elements in relation to one another.</p>
@@ -805,16 +806,16 @@ designs of these circuits still remain unclear. For example:</p>
 <li><p>How can we control cells in predictable ways using these circuits? (biomedical applications)</p></li>
 <li><p>How can we use circuit design principles to program predictable new behaviors in living cells? (synthetic biology and bioengineering)</p></li>
 </ul>
-</div>
-<div class="section" id="Similar-principles-apply-to-natural-and-synthetic-circuits.">
+</section>
+<section id="Similar-principles-apply-to-natural-and-synthetic-circuits.">
 <h3>Similar principles apply to natural and synthetic circuits.<a class="headerlink" href="#Similar-principles-apply-to-natural-and-synthetic-circuits." title="Permalink to this headline"></a></h3>
 <p>In this book, we will address these questions for both <em>natural</em> and <em>synthetic</em> circuits. The former are discovered in microbes, plants, and animals, while the latter are designed and engineered in cells out of well-characterized, re-engineered, or de novo designed genes, proteins, and other molecular components. Despite their different origins, natural and synthetic circuits, operating in similar biological contexts, should share a common set of design principles. That is, the principles that
 allow a circuit to function effectively within or among cells do not necessarily depend on whether that circuit evolved naturally or was designed and constructed in the lab. Having said that, we also recognize that evolution may be able to produce designs that are more complex or different from those we are currently able to construct, or even conceive, and that we do not in most cases understand all of the constraints impacting natural circuits. A major theme of this book is that principles
 from natural circuits can often allow more effective synthetic circuit design.</p>
 <div style="width: 600px; margin: auto;"><img alt="electronics and plumbing" src="../_images/electronics_software_plumbing.png" />
 </div><p><em>Electronics, software, and plumbing are great examples of human-designed systems that possess many properties analogous to biological circuits. These systems are based on known design principles that sometimes overlap with, and sometimes differ from, those of biological circuits. Plumbing picture by flickr user frozen-tundra,</em><a class="reference external" href="https://creativecommons.org/licenses/by/2.0/deed.en">CC-BY-2.0 licensed</a><em>.</em></p>
-</div>
-<div class="section" id="Biological-circuits-differ-from-many-other-types-of-circuits-or-circuit-like-systems">
+</section>
+<section id="Biological-circuits-differ-from-many-other-types-of-circuits-or-circuit-like-systems">
 <h3>Biological circuits differ from many other types of circuits or circuit-like systems<a class="headerlink" href="#Biological-circuits-differ-from-many-other-types-of-circuits-or-circuit-like-systems" title="Permalink to this headline"></a></h3>
 <p>Is biological circuit design a solved problem? Electronics, software, plumbing, construction, and other human designed systems are based on connections between modular components (see Figure). Can we not just apply known principles of those systems biological circuits? The answer is generally “no,” or “only a little,” because biological systems differ in fundamental ways from these systems:</p>
 <ul class="simple">
@@ -827,8 +828,8 @@ from natural circuits can often allow more effective synthetic circuit design.</
 <li><p>From a more practical point of view, we have a very limited ability to construct, test, and compare designs. Even with recent developments such as CRISPR, our ability to rapidly and precisely produce cells with well-defined genomes remains limited compared to what is possible in more advanced disciplines. (This situation is rapidly improving!)</p></li>
 <li><p><em>What other fundamental differences between biological circuits and human designed systems can you think of?</em></p></li>
 </ul>
-</div>
-<div class="section" id="Inspiration-from-electronics">
+</section>
+<section id="Inspiration-from-electronics">
 <h3>Inspiration from electronics<a class="headerlink" href="#Inspiration-from-electronics" title="Permalink to this headline"></a></h3>
 <p>In their classic book, <a class="reference external" href="https://artofelectronics.net">The Art of Electronics</a>, 3rd Ed., Horowitz and Hill explain something similar to the excitement many now feel now about biological circuit design.</p>
 <blockquote>
@@ -838,12 +839,12 @@ Perhaps as noteworthy is the pleasant trend toward increased performance per dol
 <p>On reading of these exciting new developments in electronics, you may get the impression that you should be able to construct powerful, elegant, yet inexpensive, little gadgets to do almost any conceivable task — all you need to know is how all these miracle devices work.</p>
 </div></blockquote>
 <p>Indeed, the marvelous progression of electronic circuit capabilities they describe could well describe biological circuits decades from now. Like electronics, we may will soon be able to program cellular “miracle devices” to create “little gadgets” that address serious environmental and medical applications.</p>
-</div>
-<div class="section" id="Premise-and-goals">
+</section>
+<section id="Premise-and-goals">
 <h3>Premise and goals<a class="headerlink" href="#Premise-and-goals" title="Permalink to this headline"></a></h3>
 <p>This book explores foundational concepts needed to understand, predict, and control living systems with greater precision (systems biology), and to design synthetic circuits that provide new functions (synthetic biology). We will develop quantitative approaches for analyzing different circuit designs (tools), and also identify circuit design principles that provide insight and intuition into how different designs operate, and why they were selected by evolution or synthetic biologists.</p>
-</div>
-<div class="section" id="Design-principles-relate-circuit-features-to-circuit-functions">
+</section>
+<section id="Design-principles-relate-circuit-features-to-circuit-functions">
 <h3>Design principles relate circuit features to circuit functions<a class="headerlink" href="#Design-principles-relate-circuit-features-to-circuit-functions" title="Permalink to this headline"></a></h3>
 <p>We will define a circuit <strong>design principle</strong> as a statement of the form: <em>Circuit feature X enables function Y</em>. Many chapters of the book will explore a design principle. Here are just a few examples:</p>
 <ul class="simple">
@@ -859,9 +860,9 @@ Perhaps as noteworthy is the pleasant trend toward increased performance per dol
 </ul>
 <p>New principles are still emerging in ongoing research.</p>
 <p>With the general premise of the course out of the way, we can immediately start to analyze some systems:</p>
-</div>
-</div>
-<div class="section" id="Developing-intuition:-Steady-state-expression-levels-depend-on-protein-production-and-removal-rates.">
+</section>
+</section>
+<section id="Developing-intuition:-Steady-state-expression-levels-depend-on-protein-production-and-removal-rates.">
 <h2>Developing intuition: Steady state expression levels depend on protein production and removal rates.<a class="headerlink" href="#Developing-intuition:-Steady-state-expression-levels-depend-on-protein-production-and-removal-rates." title="Permalink to this headline"></a></h2>
 <p>We will start with the simplest possible “circuit”—hardly a circuit at all, really, just a single gene coding for a single protein expressed at a constant level. This minimal example will allow us to develop intuition for the dynamics of the simplest gene regulation systems and lay out a procedure that we can further extend to analyze more complex circuits.</p>
 <p>How much protein will the gene <em>x</em> produce? We assume that the gene will be transcribed to mRNA and those mRNA molecules will in turn be translated to produce proteins, such that new proteins are produced at a total rate <span class="math notranslate nohighlight">\(\beta\)</span> molecules per unit time. The <span class="math notranslate nohighlight">\(x\)</span> protein does not simply accumulate over time. It is also removed both through active degradation as well as dilution as cells grow and divide. For simplicity, we will assume that both processes tend to reduce protein
@@ -886,7 +887,7 @@ models</a> and <a class="reference external" href="https://doi.org/10.1186/1741-
 &\Rightarrow x_\mathrm{ss} = \beta / \gamma
 \end{align}</span></p>
 <p>In other words, the steady-state protein concentration is proportional to the ratio of production and removal rates. More production or slower removal will both increase it.</p>
-<div class="section" id="Including-transcription-and-translation-as-separate-steps">
+<section id="Including-transcription-and-translation-as-separate-steps">
 <h3>Including transcription and translation as separate steps<a class="headerlink" href="#Including-transcription-and-translation-as-separate-steps" title="Permalink to this headline"></a></h3>
 <p>So far, our description does not distinguish between two key steps in gene expression: transcription and translation. Considering the two processes separately can be important in dynamic and stochastic contexts, including some we will encounter later. To do so, we can simply add an additional variable to represent the mRNA concentration, which is now transcribed, translated to protein, and degraded (and diluted), as shown schematically here:</p>
 <div style="width: 350px; margin: auto;"><img alt="transcript_and_translation" src="../_images/transcription_and_translation.png" />
@@ -902,9 +903,9 @@ models</a> and <a class="reference external" href="https://doi.org/10.1186/1741-
 \end{align}</span></p>
 <p>From this, we see that the steady state protein concentration is proportional to the product of the two synthesis rates and inversely proportional to the product of the two degradation rates.</p>
 <p>And this gives us our first <strong>design puzzle</strong>, which you can explore in an end-of-chapter problem: The cell could control protein expression level in at least four different ways. It could modulate (1) transcription, (2) translation, (3) mRNA degradation, or (4) protein degradation rates, or combinations thereof. Are there tradeoffs between these different options? Are they all used indiscriminately or is one favored in natural contexts?</p>
-</div>
-</div>
-<div class="section" id="Repressors-enable-gene-regulation">
+</section>
+</section>
+<section id="Repressors-enable-gene-regulation">
 <h2>Repressors enable gene regulation<a class="headerlink" href="#Repressors-enable-gene-regulation" title="Permalink to this headline"></a></h2>
 <p>In principle, genes could be left “on” all the time. In actuality, the cell activity regulates them, turning their expression levels lower or higher depending on environmental conditions and cellular state. <strong>Repressors</strong> provide a key mechanism for regulation. Repressors are proteins that bind to specific, cognate sequences (binding sites) at or near a promoter, altering its expression. Often the strength of repressor binding depends on external inputs. For example, the LacI repressor normally
 turns off the genes for lactose utilization in <em>E. coli</em>. However, in the presence of lactose in the media, a modified form of lactose (allolactose) binds to LacI, inhibiting its ability to repress its target genes. (Small molecules that bind to proteins and alter their activities are called <strong>allosteric effectors</strong> or, in contexts like this, <strong>inducers.</strong> Thus, in this relatively simple circuit, a nutrient (lactose) regulates expression of the genes that allow its metabolism. (A wonderful book,
@@ -943,8 +944,8 @@ K_\mathrm{d} = \frac{k_-}{k_+}
 <p><span class="math">\begin{align}
 \beta(r) = \beta_0 \frac{p}{p_\mathrm{tot}} = \frac{\beta_0}{1+r/K_\mathrm{d}}.
 \end{align}</span></p>
-</div>
-<div class="section" id="Properties-of-the-simple-binding-curve">
+</section>
+<section id="Properties-of-the-simple-binding-curve">
 <h2>Properties of the simple binding curve<a class="headerlink" href="#Properties-of-the-simple-binding-curve" title="Permalink to this headline"></a></h2>
 <p>This is our first encounter with a soon to be familiar function. Note that this function has two parameters: <span class="math notranslate nohighlight">\(K_\mathrm{d}\)</span> specifies the concentration of repressor at which the response is reduced to half its maximum value. The coefficient <span class="math notranslate nohighlight">\(\beta_0\)</span> is simply the maximum expression level, and is a parameter that multiples the rest of the function. Also notice that for small values of <span class="math notranslate nohighlight">\(r\)</span>, the slope is <span class="math notranslate nohighlight">\(1/K_d\)</span></p>
 <div class="nbinput toggle docutils container">
@@ -1015,8 +1016,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-<div class="section" id="Gene-expression-can-be-“leaky”">
+</section>
+<section id="Gene-expression-can-be-“leaky”">
 <h2>Gene expression can be “leaky”<a class="headerlink" href="#Gene-expression-can-be-“leaky”" title="Permalink to this headline"></a></h2>
 <p>In real life, many genes never get repressed all the way to zero expression, even when you add a lot of repressor. Instead, there is a baseline, or “basal”, expression level that still occurs. A simple way to model this is by adding an additional constant term, <span class="math notranslate nohighlight">\(\alpha_0\)</span> to the expression</p>
 <p><span class="math">\begin{align}
@@ -1106,8 +1107,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-<div class="section" id="Activators-enable-positive-regulation">
+</section>
+<section id="Activators-enable-positive-regulation">
 <h2>Activators enable positive regulation<a class="headerlink" href="#Activators-enable-positive-regulation" title="Permalink to this headline"></a></h2>
 <p>Genes can be positively regulated by <strong>activators</strong> as well as negatively regulated by repressors. Treating the case of activation just involves switching the state that is actively expressing from the unbound state to the state where the promoter region is bound by the protein (now called an activator). And, just as small molecule inputs can modulate the binding of a repressor to DNA, so too can they modulate the binding of the activator. In bacteria, one of many examples is the <a class="reference external" href="https://en.wikipedia.org/wiki/LuxR-type_DNA-binding_HTH_domain">Lux-type
 quorum sensing system</a>, where the transcription factor LuxR acts as an activator in the presence of its cognate ligand, a signaling molecule produced by cells.</p>
@@ -1183,8 +1184,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-<div class="section" id="Hill-functions-enable-analysis-of-ultrasensitivity">
+</section>
+<section id="Hill-functions-enable-analysis-of-ultrasensitivity">
 <h2>Hill functions enable analysis of ultrasensitivity<a class="headerlink" href="#Hill-functions-enable-analysis-of-ultrasensitivity" title="Permalink to this headline"></a></h2>
 <p>While the activating and repressing functions we derive above indeed capture the behavior of this simple model of transcriptional regulation, in practice we find that many responses in gene regulation and protein-protein interactions have a more switch-like, or <strong>ultrasensitive</strong>, shape. Ultrasensitivity can arise from many sources. One important source is <strong>cooperativity</strong> in molecular interactions. For example, binding of a protein at one DNA binding site can increase the affinity for binding
 of a second protein at an adjacent site. Or, imagine a protein with an alternative molecular conformation that is stabilized by binding of multiple agonist effector molecules and, in that conformation, has a higher affinity for the same effectors. In these and many other situations, an increasing concentration of one species can have little effect for a while, and then suddenly have a large effect. (See Rob Phillips’s book, <a class="reference external" href="https://doi.org/10.2307/j.ctvx5w8pf">The Molecular Switch: Signaling and
@@ -1423,8 +1424,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-<div class="section" id="When-should-a-circuit-use-an-activator-and-when-should-it-use-a-repressor?">
+</section>
+<section id="When-should-a-circuit-use-an-activator-and-when-should-it-use-a-repressor?">
 <h2>When should a circuit use an activator and when should it use a repressor?<a class="headerlink" href="#When-should-a-circuit-use-an-activator-and-when-should-it-use-a-repressor?" title="Permalink to this headline"></a></h2>
 <p><em>And now at last we have reached our first “design” question:</em> The cell has at least two different ways to regulate a gene: using an activator or using a repressor. That is, we could design gene regulation systems that turn on in the presence of a specific molecular signal (we will call this the <strong>inducer</strong>) in two, seemingly equivalent, ways. The gene could be regulated by an activator whose activity is turned on by the inducer (see left figure below), or alternatively, it could be regulated by
 a repressor whose activity is inhibited by the inducer (see right figure below).</p>
@@ -1445,8 +1446,8 @@ potentially leading to erroneous gene expression. These expression “errors” 
 <div style="width: 400px; margin: auto;"><img alt="Error load" src="../_images/ErrorLoad2022.png" />
 </div><p><em>In this figure, a repressor, denoted R binds strongly and specifically to its target site. In the absence of the repressor, that site could also be bound non-specifically, and inappropriately by a range of other factors, denoted B-E.</em></p>
 <p>Remarkably, despite all of this beautiful work, we still lack definitive experimental evidence to fully resolve this fundamental design question. As a challenge in the end-of-chapter problems, you are aked to devise an experimental way to discriminate among these potential explanations.</p>
-<hr></div>
-<div class="section" id="Computing-environment">
+<hr></section>
+<section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -1472,8 +1473,8 @@ jupyterlab: 3.3.2
 
 </pre></div></div>
 </div>
-<hr></div>
-<div class="section" id="Problems">
+<hr></section>
+<section id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -1484,8 +1485,8 @@ jupyterlab: 3.3.2
 <li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.5.html">1.5: Bound and unbound promoterregions</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1499,11 +1500,11 @@ jupyterlab: 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 13, 2022.
+      <span class="lastupdated">Last updated on May 14, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fcf35dbe580> 
+   <jinja2.runtime.BlockReference object at 0x7fe88e219be0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

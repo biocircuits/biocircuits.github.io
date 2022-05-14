@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>12. Molecular titration generates ultrasensitive responses in biological circuits &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -410,7 +411,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="12.-Molecular-titration-generates-ultrasensitive-responses-in-biological-circuits">
+<section id="12.-Molecular-titration-generates-ultrasensitive-responses-in-biological-circuits">
 <h1>12. Molecular titration generates ultrasensitive responses in biological circuits<a class="headerlink" href="#12.-Molecular-titration-generates-ultrasensitive-responses-in-biological-circuits" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
@@ -749,20 +750,20 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<div class="section" id="Introduction:-Molecular-titration-as-an-ultrasensitivity-module">
+<section id="Introduction:-Molecular-titration-as-an-ultrasensitivity-module">
 <h2>Introduction: Molecular titration as an ultrasensitivity module<a class="headerlink" href="#Introduction:-Molecular-titration-as-an-ultrasensitivity-module" title="Permalink to this headline"></a></h2>
 <p>Biological circuits rely heavily on “switches,” systems in which a change in the level or state of an input molecule can strongly alter the level or state of the output molecules it controls. When we say a process is “switch-like”, we usually mean that a small change in the input can generate a much larger and more complete change in output. In other words, switches are <strong>ultrasensitive</strong>. (In some contexts, we go further to demand that switches have a toggle-like, or hysteretic, behavior based
 on bistability.)</p>
 <p>Biological circuits are replete with such ultrasensitive switches: The cell cycle uses switches to click decisively from one phase to another. Signal transduction systems require ultrasensitivity to amplify small but important input signals into large responses. Multistable cell fate control systems use switches to enforce distinct cellular states. Natural and synthetic oscillators such as the circadian clock and the repressilator, as we have seen, also require ultrasensitive switches.</p>
 <p>Are there simple, generalizable, engineerable circuit-level design strategies that could confer ultrasensitivity? For instance, consider a simple gene regulatory system, in which an input activator, <span class="math notranslate nohighlight">\(A\)</span>, controls the expression of a target protein <span class="math notranslate nohighlight">\(Y\)</span>:</p>
-<center><p><img alt="dcb205680ebf4d45a0b825a8262e014c" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
+<center><p><img alt="cb082f7fc1a4492e99d1f0f63fc0797d" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
 </center><p>Let’s pause to ask:</p>
 <ol class="arabic simple">
 <li><p>How could you ensure ultrasensitivity in the transcription response function (dependence of Y on A)?</p></li>
 <li><p>How could you make the threshold and sensitivity of the response function tunable?</p></li>
 </ol>
-</div>
-<div class="section" id="Defining-sensitivity-and-ultrasensitivity">
+</section>
+<section id="Defining-sensitivity-and-ultrasensitivity">
 <h2>Defining sensitivity and ultrasensitivity<a class="headerlink" href="#Defining-sensitivity-and-ultrasensitivity" title="Permalink to this headline"></a></h2>
 <p>Thus far, we have used the term ultrasensitivity a bit loosely, roughly taking ultrasensitivity to mean a “switch-like” response, quantified by having a Hill coefficient greater than one. Here is a precise definition: An <strong>ultrasensitive</strong> response is one in which a given <strong>fold change</strong> in the concentration or activity of an input molecule produces a larger fold change in the level or activity of an output molecule. Because a fold change in a quantity means an incremental change in its
 logarithm (e.g., <span class="math notranslate nohighlight">\(x \to a x\)</span> means that <span class="math notranslate nohighlight">\(x\)</span> changes by a <em>factor</em> of <span class="math notranslate nohighlight">\(a\)</span>, and correspondingly <span class="math notranslate nohighlight">\(\ln x \to \ln a x = \ln a + \ln x\)</span> means that <span class="math notranslate nohighlight">\(\ln x\)</span> changes by an <em>additive</em> amount <span class="math notranslate nohighlight">\(\ln a\)</span>), we define the <strong>sensitivity</strong> <span class="math notranslate nohighlight">\(s\)</span> of the input-output relationship as</p>
@@ -770,7 +771,7 @@ logarithm (e.g., <span class="math notranslate nohighlight">\(x \to a x\)</span>
 s = \left|\frac{\mathrm{d} \ln y}{\mathrm{d} \ln x}\right| = \frac{x}{y}\left|\frac{\mathrm{d}y}{\mathrm{d} x} \right|,
 \end{align}</span></p>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are the concentrations of the respective molecules. If a regulatory interaction is ultrasensitive, then <span class="math notranslate nohighlight">\(s &gt; 1\)</span> for at least some values of <span class="math notranslate nohighlight">\(x\)</span>. When discussing ultrasensitivity, we need make clear what operating point we are considering—for example, the “EC50” or point at which the function is half maximal, or, alternatively, the point at which the sensitivity itself is maximized.</p>
-<div class="section" id="Sensitivity-of-Hill-functions">
+<section id="Sensitivity-of-Hill-functions">
 <h3>Sensitivity of Hill functions<a class="headerlink" href="#Sensitivity-of-Hill-functions" title="Permalink to this headline"></a></h3>
 <p>The Hill function provides a versatile way to parameterize ultrasensitive responses.</p>
 <p><span class="math">\begin{align}
@@ -1226,8 +1227,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-<div class="section" id="Ultrasensitivity-≠-gain">
+</section>
+<section id="Ultrasensitivity-≠-gain">
 <h3>Ultrasensitivity ≠ gain<a class="headerlink" href="#Ultrasensitivity-≠-gain" title="Permalink to this headline"></a></h3>
 <p>Note that ultrasensitivity is different than <strong>gain</strong>. A system in which <span class="math notranslate nohighlight">\(y = 100 x\)</span> has high gain, but still responds linearly to its input, and is therefore <em>not</em> ultrasensitive.</p>
 <div class="nbinput toggle docutils container">
@@ -1314,15 +1315,15 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-</div>
-<div class="section" id="Molecular-titration-“subtracts”-one-protein-concentration-from-another.">
+</section>
+</section>
+<section id="Molecular-titration-“subtracts”-one-protein-concentration-from-another.">
 <h2>Molecular titration “subtracts” one protein concentration from another.<a class="headerlink" href="#Molecular-titration-“subtracts”-one-protein-concentration-from-another." title="Permalink to this headline"></a></h2>
 <p><strong>Molecular titration</strong> is a simple, general mechanism that provides tunable ultrasensitivity across diverse natural systems, and allows engineering of ultrasensitive responses in synthetic circuits. It takes advantage of the ability of biological molecules to form strong and specific complexes with one another. Depending on the system, the complex itself may provide a particular activity, such as gene regulation. Or, alternatively, one of the monomers may provide an activity, with the complex
 inhibiting it.</p>
-<center><p><img alt="a6e5f4885cad45a28dbbaa2a9a2ac9b2" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
+<center><p><img alt="3f9f64969d8a4abb943943b0f75af329" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
 </center><p>In this example, molecular titration performs a kind of “subtraction” operation. The inhibitor effectively “subtracts off” a fraction of otherwise active molecules. As we will soon demonstrate, molecular titration can provide ultrasensitive responses of activator to inhibitor concentrations.</p>
-<div class="section" id="Molecular-titration-occurs-in-diverse-contexts">
+<section id="Molecular-titration-occurs-in-diverse-contexts">
 <h3>Molecular titration occurs in diverse contexts<a class="headerlink" href="#Molecular-titration-occurs-in-diverse-contexts" title="Permalink to this headline"></a></h3>
 <p>Examples where molecular titration plays a central role in circuit function include:</p>
 <ul class="simple">
@@ -1333,9 +1334,9 @@ inhibiting it.</p>
 <li><p>Intercellular communication systems often work through direct complexes between ligands and receptors or ligands and inhibitors. In an upcoming chapter, we will learn how stoichiometric interactions between Notch receptors and their ligands can affect their signaling capabilities.</p></li>
 <li><p>Basic helix-loop-helix (bHLH) transcription factors form specific homo- and hetero-dimeric complexes with one another, each with a distinct binding specificity or activity. These proteins can titrate one another’s activity.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="Molecular-titration:-a-minimal-model">
+</section>
+</section>
+<section id="Molecular-titration:-a-minimal-model">
 <h2>Molecular titration: a minimal model<a class="headerlink" href="#Molecular-titration:-a-minimal-model" title="Permalink to this headline"></a></h2>
 <p>To see how molecular titration produces ultrasensitivity consider two proteins, A and B, that can bind to form a complex, C, which is inactive for both A and B activities. This system can be described by the following reaction.</p>
 <p><span class="math">\begin{align}
@@ -1650,8 +1651,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-<div class="section" id="Ultrasensitivity-in-threshold-linear-response-functions">
+</section>
+<section id="Ultrasensitivity-in-threshold-linear-response-functions">
 <h2>Ultrasensitivity in threshold-linear response functions<a class="headerlink" href="#Ultrasensitivity-in-threshold-linear-response-functions" title="Permalink to this headline"></a></h2>
 <p>Threshold-linear responses differ qualitatively from what we had with a Hill function. Unlike the sigmoidal, or “S-shaped,” Hill function, which saturates at a maximum “ceiling,” the threshold-linear function increases without bound, maintaining a constant slope as input values increase.</p>
 <p>Despite these differences, we can still quantify the sensitivity of this response, which as a reminder is defined as the fold change in output for a given fold change in input, evaluated at a particular operating point. The plots below show this sensitivity plotted for varying <span class="math notranslate nohighlight">\(a_\mathrm{tot}\)</span>, and for different values of <span class="math notranslate nohighlight">\(K_\mathrm{d}\)</span>. Note the peak in sensitivity right around the transition, whose strength grows with tighter binding (lower <span class="math notranslate nohighlight">\(K_\mathrm{d}\)</span>). This peak
@@ -1705,8 +1706,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-<div class="section" id="A-synthetic-demonstration-of-molecular-titration">
+</section>
+<section id="A-synthetic-demonstration-of-molecular-titration">
 <h2>A synthetic demonstration of molecular titration<a class="headerlink" href="#A-synthetic-demonstration-of-molecular-titration" title="Permalink to this headline"></a></h2>
 <p>Simple models like the ones above can help us think about what behaviors we should expect in a system. But how do we know if they accurately describe the real behavior of a complex molecular system, particularly one operating in the more complex milieu of the living cell? In the spirit of building-to-understand, <a class="reference external" href="https://doi.org/10.1038/msb.2009.30">Buchler and Cross</a> used a synthetic biology approach to investigate how this simple scheme could indeed generate the predicted ultrasensitivity.</p>
 <p>They engineered yeast cells to express a transcription factor, a stoichiometric inhibitor of that factor, and a target reporter gene to readout the level of the transcription factor. As a transcription factor, they used the mammalian bZip family activator CEBP/<span class="math notranslate nohighlight">\(\alpha\)</span>, which homodimerizes to activate target genes, and does not exist in yeast. As the inhibitor, they used a dominant negative mutant of CEBP/<span class="math notranslate nohighlight">\(\alpha\)</span> that binds to it with a tight <span class="math notranslate nohighlight">\(K_\mathrm{d} \approx 0.04\)</span> nM to
@@ -1721,8 +1722,8 @@ activate other genes.)</p>
 <p><em>Figure from</em><a class="reference external" href="https://doi.org/10.1038/msb.2009.30">Buchler and Cross</a></p>
 </div><p>These results show that the circuit feature of molecular titration can be reconstituted and quantitatively predicted in living cells, and can generate ultrasensitive responses with a tunable threshold.</p>
 <p>We now turn to non-engineered contexts in which molecular titration appears.</p>
-</div>
-<div class="section" id="Small-RNA-regulation-can-generate-ultrasensitive-responses-through-molecular-titration">
+</section>
+<section id="Small-RNA-regulation-can-generate-ultrasensitive-responses-through-molecular-titration">
 <h2>Small RNA regulation can generate ultrasensitive responses through molecular titration<a class="headerlink" href="#Small-RNA-regulation-can-generate-ultrasensitive-responses-through-molecular-titration" title="Permalink to this headline"></a></h2>
 <p>The last few decades have revealed different classes of RNA molecules that play a wide range of regulatory roles within the cell. In particular, small RNA molecules regulate gene expression in systems from bacteria to mammalian cells. microRNA (miRNA) represents a major class of regulatory RNA molecules in eukaryotes. Humans have <a class="reference external" href="https://bionumbers.hms.harvard.edu/bionumber.aspx?s=n&amp;v=3&amp;id=114541">hundreds</a> of miRNAs, with individual miRNAs typically targeting hundreds of genes.
 <a class="reference external" href="https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102584&amp;ver=5&amp;trm=miRNA&amp;org=">30-90%</a> of human protein-coding genes are targets of one or more miRNAs. Individual miRNAs can also be highly expressed (as many as <a class="reference external" href="https://www.cell.com/fulltext/S0092-8674(04)00045-5">50,000 copies per cell in C. elegans</a>). Many miRNAs exhibit strong sequence conservation across species, suggesting selection for function.</p>
@@ -1735,7 +1736,7 @@ with the binding site, mCherry expression is suppressed at lower YFP expression 
 </div><p>Indeed, threshold-linear behavior can be seen more clearly in a scatter plot of the two colors:</p>
 <div style="margin: auto; width: 300px;"><img alt="Mukherji_YFP_mCherry.png" src="../_images/Mukherji_YFP_mCherry.png" />
 </div><p>Here, the YFP x-axis is analogous to our <span class="math notranslate nohighlight">\(a_\mathrm{tot}\)</span>, above, while the mCherry y-axis is analogous to <span class="math notranslate nohighlight">\(a\)</span>.</p>
-<div class="section" id="Modeling-the-miRNA-system">
+<section id="Modeling-the-miRNA-system">
 <h3>Modeling the miRNA system<a class="headerlink" href="#Modeling-the-miRNA-system" title="Permalink to this headline"></a></h3>
 <p>So far, we considered a static pool of A and B, but in a cell, both proteins undergo continuous synthesis as well as degradation and/or dilution. To explain the miRNA system, several papers, including <a class="reference external" href="https://doi.org/10.1038/ng.905">Mukherji, et al., 2011</a>, as well as <a class="reference external" href="https://doi.org/10.1016/j.jmb.2008.09.079">Buchler &amp; Louis, 2008</a>, <a class="reference external" href="https://doi.org/10.1371/journal.pbio.0050229">Levine, et al., 2007</a>, and <a class="reference external" href="https://doi.org/10.1038/msb.2008.58">Mehta, et al., 2008</a> use similar
 representations. The following analysis follows the treatment in the supplementary material of Mukherji, et al., but with altered notation.</p>
@@ -1987,11 +1988,11 @@ similar to those observed in the experimental data shown above.</p>
 <p>That makes sense: when miRNAs are unsaturated, they can have a relatively strong effect on their target expression levels, essentially keeping them “off.” On the other hand, when targets are expressed highly enough, the relative effect of the miRNA on expression becomes much weaker, effectively just shifting it to slightly slower values.</p>
 <div style="margin: auto; width: 400px;"><img alt="miRNA_relative_change.png" src="../_images/miRNA_relative_change.png" />
 </div><p>Returning to the question posed earlier, we now see that inserting a constitutive, inhibitory miRNA provides an elegant way to threshold a gene regulatory interaction.</p>
-<center><p><img alt="88ec0e387c5041538fe87bd13b5d19ae" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
+<center><p><img alt="f95edf98e393499f90bc6110c9be45da" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
 </center><p>Note that in addition to its general regulatory abilities and thresholding effects, miRNA regulation can also reduce noise in target gene expression. See <a class="reference external" href="https://doi.org/10.1126/science.aaa1738">Schmiedel et al, “MicroRNA control of protein expression noise,” Science (2015)</a>.</p>
-</div>
-</div>
-<div class="section" id="Molecular-titration-in-antibiotic-persistence">
+</section>
+</section>
+<section id="Molecular-titration-in-antibiotic-persistence">
 <h2>Molecular titration in antibiotic persistence<a class="headerlink" href="#Molecular-titration-in-antibiotic-persistence" title="Permalink to this headline"></a></h2>
 <p>In an upcoming chapter, we will analyze a phenomenon known as antibiotic persistence, in which individual bacteria spontaneously and stochastically enter slow-growing persistent states that tolerate antibiotics, even in the absence of those antibiotics. One such system in E. coli is controlled by the hipAB circuit, which comprises a toxin protein, HipA, and a cognate anti-toxin, HipB. The two proteins are expressed from a single operon. They form tight complexes that also act to repress their
 own promoter. If the levels of the HipA toxin exceed those of the HipB anti-toxin, for example due to stochastic fluctuations in expession, it can trigger a transition into the persistent state.</p>
@@ -2003,13 +2004,13 @@ own promoter. If the levels of the HipA toxin exceed those of the HipB anti-toxi
 <p><em>Plots from</em><a class="reference external" href="https://doi.org/10.1073/pnas.1004333107">Rotem et al, Regulation of phenotypic variability by a threshold-based mechanism underlies bacterial persistence, PNAS, 2010</a></p>
 </div><p>Note that the inset in the plot is the behavior of a mathematical model of the circuit.</p>
 <p>We will come back to this circuit later once we have the tools to analyze and simulate noise, and understand how noise combines with molecular titration to enable this important phenomenon.</p>
-</div>
-<div class="section" id="Beyond-pairwise-titration">
+</section>
+<section id="Beyond-pairwise-titration">
 <h2>Beyond pairwise titration<a class="headerlink" href="#Beyond-pairwise-titration" title="Permalink to this headline"></a></h2>
 <p>Today we talked about molecular titration arising from interactions between protein pairs. However, proteins often form more complex, and even combinatorial, networks of homo- and hetero-dimerizing components. One example occurs in the control of cell death (apoptosis) by Bcl2-family proteins, a process that naturally should be performed in an all-or-none way. In the next chapter, we will learn about a synthetic circuit that takes advantage of these interactions to generate multistability in
 mammalian cells.</p>
-</div>
-<div class="section" id="Conclusions">
+</section>
+<section id="Conclusions">
 <h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this headline"></a></h2>
 <p>Today we have seen that molecular titration provides a powerful, elegant way to generate ultrasensitive responses across different types of molecular systems:</p>
 <ul class="simple">
@@ -2017,8 +2018,8 @@ mammalian cells.</p>
 <li><p>Molecular titration can be observed in synthetic experiments.</p></li>
 <li><p>Molecular titration explains some features of miRNA based regulation and could underlie the generation of bacterial persisters through toxin-antitoxin systems.</p></li>
 </ul>
-</div>
-<div class="section" id="References">
+</section>
+<section id="References">
 <h2>References<a class="headerlink" href="#References" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Molecular titration can generate ultrasensitive switches:</p>
@@ -2042,8 +2043,8 @@ mammalian cells.</p>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="Computing-environment">
+</section>
+<section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -2070,8 +2071,8 @@ jupyterlab : 3.3.2
 
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -2085,11 +2086,11 @@ jupyterlab : 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 13, 2022.
+      <span class="lastupdated">Last updated on May 14, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fcf48b1c1c0> 
+   <jinja2.runtime.BlockReference object at 0x7fe878560f40> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>16. Bursty gene expression &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -145,7 +146,7 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="16.-Bursty-gene-expression">
+<section id="16.-Bursty-gene-expression">
 <h1>16. Bursty gene expression<a class="headerlink" href="#16.-Bursty-gene-expression" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
@@ -163,7 +164,7 @@
 </ul>
 <hr><p>In the last lesson, we laid out two objectives. First, we aimed to identify the sources of noise and how to characterize them. We summarized statistics about the probability distribution of copy numbers by considering the mean and coefficient of variation. The mean ends up following the same deterministic dynamics we have been considering thus far in the course. The coefficient of variation is a measure of noise, or relative departure from the mean behavior. Now, we will look at the dynamics of
 the entire probability distribution of copy number, <span class="math notranslate nohighlight">\(P(n,t)\)</span>.</p>
-<div class="section" id="Master-equations">
+<section id="Master-equations">
 <h2>Master equations<a class="headerlink" href="#Master-equations" title="Permalink to this headline"></a></h2>
 <p>We will use <strong>master equations</strong> to describe the dynamics of <span class="math notranslate nohighlight">\(P(n,t)\)</span>. Generally, a master equation is a loss-gain equation for probabilities of states governed by a Markov process. (To see where it gets its name, you can read <a class="reference external" href="https://quantumfrontiers.com/2015/06/21/hello-my-name-is-quantum-master-equation/">this amusing blog post by Nicole Yunger Halpern</a>.) In our case, the “state” is the set of copy numbers of molecular species of interest. The values of <span class="math notranslate nohighlight">\(n\)</span> are discrete, so we
 have a separate differential equation for each <span class="math notranslate nohighlight">\(P(n,t)\)</span>. Specifically,</p>
@@ -173,8 +174,8 @@ have a separate differential equation for each <span class="math notranslate noh
 <p>Here, <span class="math notranslate nohighlight">\(W(n\mid n')\)</span> is the transition probability per unit time of going from <span class="math notranslate nohighlight">\(n'\)</span> to <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>The master equation makes sense by inspection and appears simple. The nuance lies in the definition of the transition rates, <span class="math notranslate nohighlight">\(W(n\mid n')\)</span>. There is also the computational difficulty that <span class="math notranslate nohighlight">\(n\)</span> can be very large. In general, solving the master equation is difficult and is usually intractable analytically. Therefore, we <em>sample</em> out of the distribution. That is, we can draw many samples of values of <span class="math notranslate nohighlight">\(n\)</span> at time points <span class="math notranslate nohighlight">\(t\)</span> that are distributed according to the probability
 distribution that solves the master equation. We can then plot histograms to get an approximate plot of the probability distribution. We can also use the samples to compute moments, giving us estimates of the mean and variance. Generating the samples from the <em>differential</em> master equation is done using a <em>Gillespie algorithm</em>, also known as a <em>stochastic simulation algorithm</em>, or SSA. We will learn how to do these calculations in the next chapter.</p>
-</div>
-<div class="section" id="The-Master-equation-for-unregulated-gene-expression">
+</section>
+<section id="The-Master-equation-for-unregulated-gene-expression">
 <h2>The Master equation for unregulated gene expression<a class="headerlink" href="#The-Master-equation-for-unregulated-gene-expression" title="Permalink to this headline"></a></h2>
 <p>As we have seen, unregulated gene expression is described by the macroscale equation</p>
 <p><span class="math">\begin{align}
@@ -253,8 +254,8 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n \mathrm{e}^{-\beta/\gamma
 &\text{noise} = \text{coefficient of variation} = \eta = \frac{\sigma}{\langle n \rangle} = \sqrt{\frac{\gamma}{\beta}}, \\[1em]
 &\text{Fano factor} = F = \frac{\sigma^2}{\langle n \rangle} = 1.
 \end{align}</span></p>
-</div>
-<div class="section" id="Dynamics-of-the-moments">
+</section>
+<section id="Dynamics-of-the-moments">
 <h2>Dynamics of the moments<a class="headerlink" href="#Dynamics-of-the-moments" title="Permalink to this headline"></a></h2>
 <p>From the master equation, we can derive an ODE describing the dynamics of the mean copy number of time, <span class="math notranslate nohighlight">\(\langle n(t) \rangle\)</span>. To do this, we multiply both sides of the master equations by <span class="math notranslate nohighlight">\(n\)</span> and then sum over <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><span class="math">\begin{align}
@@ -283,13 +284,13 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n \mathrm{e}^{-\beta/\gamma
 &= \beta - \gamma \langle n \rangle,
 \end{align}</span></p>
 <p>which is precisely the macroscale ODE we are used to. It is now clear that it describes the mean of the full probability distribution. The assumptions behind our ODE models are now clear. They describe</p>
-</div>
-<div class="section" id="Experimental-Fano-factors-are-greater-than-one">
+</section>
+<section id="Experimental-Fano-factors-are-greater-than-one">
 <h2>Experimental Fano factors are greater than one<a class="headerlink" href="#Experimental-Fano-factors-are-greater-than-one" title="Permalink to this headline"></a></h2>
 <p>A nice feature of considering the whole probability distribution is that we can predict a value for the noise and Fano factor. Importantly, the Fano factor is invariant to parameters; it is always unity. So, if we see Fano factors of unity in experiment, we know our model for gene transcription is at least plausible.</p>
 <p>Gene expression in individual cells typically results in a Fano factor greater than one! There are many ways this could come about, such as explicitly considering the multiple steps involved in making a protein, or by having a switchable promoter, as you can explore in an end-of-chapter problem in forthcoming chapters. Today, we will focus on a key experimental result: <strong>gene expression occurs in bursts.</strong></p>
-</div>
-<div class="section" id="Observations-of-bursty-gene-expression">
+</section>
+<section id="Observations-of-bursty-gene-expression">
 <h2>Observations of bursty gene expression<a class="headerlink" href="#Observations-of-bursty-gene-expression" title="Permalink to this headline"></a></h2>
 <p>In a beautiful set of experiments, <a class="reference external" href="https://doi.org/10.1038/nature04599">Cai, Friedman, and Xie (Nature, 2006)</a> discovered that gene expression is bursty. (We will come to understand what we mean by “bursty” in a moment.)</p>
 <p>Through a clever experimental setup (we encourage you to read the paper), Cai, Friedman, and Xie were able to get accurate counts of the number of β-galactosidase molecules in individual cells over time. They found that the number of molecules was constant over long stretches of time, and then the number suddenly increased. The figure below, taken from the paper, shows the number of β-galactosidase molecules present in a single cell over time (black) and a blank background (red). This shows that
@@ -306,8 +307,8 @@ expression of the β-<em>gal</em> gene happens in bursts. In each burst, many mo
 P(k;p_0) = (1-p_0)^k p.
 \end{align}</span></p>
 <p>Considering this story, this implies that a burst is turned on, and then it turns off by a random process after some time.</p>
-</div>
-<div class="section" id="Master-equation-for-bursty-gene-expression">
+</section>
+<section id="Master-equation-for-bursty-gene-expression">
 <h2>Master equation for bursty gene expression<a class="headerlink" href="#Master-equation-for-bursty-gene-expression" title="Permalink to this headline"></a></h2>
 <p>We also see from the experimental results tracking β-galactosidase copy number that the time scale of the bursty gene expression is much shorter than the typical decay time. So, per unit time, we can have many gene products made, not just a single gene product as we have considered thus far. So, we can re-write our transition probabilities per unit time as</p>
 <p><span class="math">\begin{align}
@@ -334,8 +335,8 @@ W(n\mid n') &= \beta' \xi_{n-n'} - \gamma (n+1) \delta_{n+1,n'},
 &\;\;\;\;- \beta'(1-p_0)P(n,t) - \gamma n P(n,t).
 \end{align}</span></p>
 <p>As we might expect, an analytical solution for this master equation is difficult. We are left to simulate it using SSA.</p>
-</div>
-<div class="section" id="The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">
+</section>
+<section id="The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">
 <h2>The steady state distribution for bursty expression is Negative Binomial<a class="headerlink" href="#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial" title="Permalink to this headline"></a></h2>
 <p>We could derive the steady state distribution of copy numbers under the bursty master equation, but we will instead take a story matching approach to guess the solution. The story of the <a class="reference external" href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">Negative Binomial distribution</a> is as follows.</p>
 <blockquote>
@@ -376,16 +377,16 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 <!-- Problem idea: Derive an ODE for the variance and noise for simple gene expression/decay.
 
 Another problem idea: Derive the Neg. Binomial distribution for bursty gene expression using similar arguments as used in the above for Poisson distributed.
---><hr></div>
-<div class="section" id="Problems">
+--><hr></section>
+<section id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.1.html">16.1: Dynamics of noise</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -399,11 +400,11 @@ Another problem idea: Derive the Neg. Binomial distribution for bursty gene expr
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 13, 2022.
+      <span class="lastupdated">Last updated on May 14, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fcf4f64c790> 
+   <jinja2.runtime.BlockReference object at 0x7fe88e219880> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

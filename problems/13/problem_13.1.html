@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 13.1: Programming cellular response &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -29,7 +30,9 @@
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="14. MultiFate enables expandable and controllable multistability" href="../../chapters/14_multifate.html" />
+    <link rel="prev" title="13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems" href="../../chapters/13_promiscuous_binding.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,7 +52,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Chapters</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/00_setting_up_python_computing_environment.html">0. Configuring your computer to use Python for scientific computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/02_response_time.html">2. Design principles governing the rate of gene expression</a></li>
@@ -63,7 +66,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/11_time-based_regulation.html">11. Time-based regulation in cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/12_molecular_titration.html">12. Molecular titration generates ultrasensitive responses in biological circuits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Cell-cell-communication-systems-use-families-of-partly-redundant-ligands-and-receptors">Cell-cell communication systems use families of partly redundant ligands and receptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#The-Bone-Morphogenetic-Protein-(BMP)-pathways-signals-through-a-set-of-promiscuously-interacting-ligands-and-receptors">The Bone Morphogenetic Protein (BMP) pathways signals through a set of promiscuously interacting ligands and receptors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Do-BMPs-“compute?”">Do BMPs “compute?”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#A-simple-model-of-promsiscuous-ligand-receptor-interactions-can-explain-pathway-computations">A simple model of promsiscuous ligand-receptor interactions can explain pathway computations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#The-EQTK-python-package-enables-solution-of-coupled-equilibria">The EQTK python package enables solution of coupled equilibria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Scanning-ligand-concentrations-and-receptor-expression-levels">Scanning ligand concentrations and receptor expression levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#The-readout">The readout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Solve!">Solve!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Rapid-characterization-of-signaling-behavior">Rapid characterization of signaling behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Determining-the-causes-of-the-response-functions">Determining the causes of the response functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Removing-the-trimolecular-binding-assumption-from-the-model">Removing the trimolecular binding assumption from the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Ligand-receptor-promiscuity-enables-cellular-addressing">Ligand-receptor promiscuity enables cellular addressing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Looking-forward:-what-is-the-‘grammar’-of-BMP-signaling?">Looking forward: what is the ‘grammar’ of BMP signaling?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Computing-environment">Computing environment</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Problems">Problems</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">13.1: Programming cellularresponse</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/14_multifate.html">14. MultiFate enables expandable and controllable multistability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/15_noise.html">15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
@@ -89,6 +112,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../chapters/13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a> &raquo;</li>
       <li>Problem 13.1: Programming cellular response</li>
   <li class="wy-breadcrumbs-aside">
     
@@ -384,10 +408,10 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Problem-13.1:-Programming-cellular-response">
+<section id="Problem-13.1:-Programming-cellular-response">
 <h1>Problem 13.1: Programming cellular response<a class="headerlink" href="#Problem-13.1:-Programming-cellular-response" title="Permalink to this headline"></a></h1>
 <hr><div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -396,18 +420,19 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<hr><p>We have seen in this chapter that the combinatoric binding of multiple ligand types with multiple receptor types can lead to cellular addressing. In this problem, you will develop a scheme using two types of ligands, two types of “A” receptors, and two types of “B” receptors (as in this chapter) whereby the cell can exist respond to variation in ligand concentration in three orthogonal prescribed ways. We will following closely the work of <a class="reference external" href="https://doi.org/10.1016/j.cels.2022.03.001">Su, et al.,
-2022</a>.</p>
-<p>We use the one-step promiscuous ligand-receptor model from this chapter, using the same notation. We define by a ligand “word” to be a set of specific concentration values for each ligand variant in a combination. For example, a concentration of 10 mM for ligand 1 and 100 mM for ligand 2 constitutes a ligand word (10 mM, 100 mM). In the diagram below, we have three ligand words.</p>
+<hr><p>We have seen in this chapter that the combinatoric binding of multiple ligand types with multiple receptor types can lead to cellular addressing. In this problem, you will develop a scheme using two types of ligands, two types of “A” receptors, and two types of “B” receptors whereby the cell can respond to variation in ligand concentration in three orthogonal prescribed ways. These responses vary based on concentration of the respective receptors; the expression of these receptors delineate cell
+types.</p>
+<p>In our approach, we will closely follow the work of <a class="reference external" href="https://doi.org/10.1016/j.cels.2022.03.001">Su, et al., 2022</a>. We use the one-step promiscuous ligand-receptor model from this chapter, using the same notation. We define by a ligand “word” to be a set of specific concentration values for each ligand variant in a combination. For example, a concentration of 10 mM for ligand 1 and 100 mM for ligand 2 constitutes a ligand word (10 mM, 100 mM). In the diagram below, we have three ligand words
+denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 <div style="width: 100px; margin: auto;"><img alt="ligand_words" src="../../_images/ligand_words.png" />
 </div><p>Each word should encode a separate cellular response, giving different cell types. An example of three responses is shown in the image below.</p>
 <div style="width: 100px; margin: auto;"><img alt="ligand_words" src="../../_images/responses.png" />
 </div><p>The cell “cares” about the levels in the colored regions; the response in the hatched regions is irrelevant. In the above diagram, purple indicates low response and yellow indicates a high response.</p>
-<p>Your task is to come up with a set of parameters, eight <span class="math notranslate nohighlight">\(K_{ijk}\)</span>’s and eight <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span>’s, along with three sets of receptor concentrations, each containing the concentrations of A₁, A₂, B₁, and B₂, that have the desired response above, one each for each of the three words in the top diagram. An example of a desired response is shown below.</p>
+<p>Your task is to come up with a set of parameters, eight <span class="math notranslate nohighlight">\(K_{ijk}\)</span>’s and eight <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span>’s, along with three sets of receptor concentrations, each containing the concentrations of A₁, A₂, B₁, and B₂, that have the desired response above, one each for each of the three words (1, 1000), (1000, 1), and (1000, 1000). An example of a desired response is shown below.</p>
 <div style="width: 500px; margin: auto;"><img alt="ligand_words" src="../../_images/computed_responses.png" />
 </div><p>In working this problem, it helps to have some handy functions from the chapter.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_rxns</span><span class="p">(</span><span class="n">nA</span><span class="p">,</span> <span class="n">nB</span><span class="p">,</span> <span class="n">nL</span><span class="p">):</span>
@@ -453,14 +478,14 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>We can make a stoichiometric matrix using these functions; it will be the same for all calculations we do.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">make_N</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<p>Half of the battle in problems like these is keeping track of indices and what species is what. The columns of the stoichiometric matrix correspond to the following species.</p>
+<p>Half of the battle in problems like these is keeping track of indices to know what species is what. The columns of the stoichiometric matrix correspond to the following species.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 42%" />
@@ -518,7 +543,7 @@ div.rendered_html tbody tr:hover {
 </table>
 <p>These indices also correspond to the species in our inputted initial concentrations and in the output of EQTK’s solver for the equilibrium concentrations. With that in mind, we can write a function to generate our initial concentration values for a given set of initial ligand concentrations, <code class="docutils literal notranslate"><span class="pre">cL0</span></code>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_c0_grid</span><span class="p">(</span><span class="n">cL0</span><span class="p">,</span> <span class="n">cA10</span><span class="p">,</span> <span class="n">cA20</span><span class="p">,</span> <span class="n">cB10</span><span class="p">,</span> <span class="n">cB20</span><span class="p">):</span>
@@ -570,29 +595,34 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>In trying to find parameters, we will take</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cL0 = np.array([1.0, 32.0, 1000.0])
+<p>In trying to find parameters, we will use the ligand concentrations below.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<p>Next, in order to do the calculation, we need to specify the target response and for which ligand concentrations the target response is relevant. We refer to the latter as <code class="docutils literal notranslate"><span class="pre">active_target</span></code>, defined below.</p>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cL0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>Next, in order to do the calculation, we need to specify the prescribed target response of the various cell types and for which ligand words the target response is relevant (ignoring the hatches areas in the graphic above). We refer to the latter as <code class="docutils literal notranslate"><span class="pre">active_words</span></code>, defined below.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ligand words from top diagram</span>
-<span class="n">active_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="n">active_words</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>You can see how it corresponds to the words by comparing to our target ligand concantrations.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c0</span> <span class="o">=</span> <span class="n">make_c0_grid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ligand 1:     &quot;</span><span class="p">,</span> <span class="n">c0</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ligand 2:     &quot;</span><span class="p">,</span> <span class="n">c0</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;active target:&quot;</span><span class="p">,</span> <span class="n">active_target</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ligand 1:    &quot;</span><span class="p">,</span> <span class="n">c0</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ligand 2:    &quot;</span><span class="p">,</span> <span class="n">c0</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;active words:&quot;</span><span class="p">,</span> <span class="n">active_words</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -601,34 +631,14 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Ligand 1:      [   1.   32. 1000.    1.   32. 1000.    1.   32. 1000.]
-Ligand 2:      [   1.    1.    1.   32.   32.   32. 1000. 1000. 1000.]
-active target: [False False  True False False False  True False  True]
-</pre></div></div>
-</div>
-<p>The target is listed as active according to wherever we are considering a ligand word.</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">active_target</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-array([[False, False,  True],
-       [False, False, False],
-       [ True, False,  True]])
+Ligand 1:     [   1.   32. 1000.    1.   32. 1000.    1.   32. 1000.]
+Ligand 2:     [   1.    1.    1.   32.   32.   32. 1000. 1000. 1000.]
+active words: [False False  True False False False  True False  True]
 </pre></div></div>
 </div>
 <p>We can now specify a list of target responses.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targets</span> <span class="o">=</span> <span class="p">[</span>
@@ -642,50 +652,136 @@ array([[False, False,  True],
 </pre></div>
 </div>
 </div>
-<p>Finally, it will be useful to have a function to solve for the normalized response of a cell to an inputted set of initial concentrations and parameters. The function returns the cellular response, with the maximum value of the response over all ligand concentrations being set to one.</p>
+<p>Finally, it will be useful to have a function to solve for the normalized response of a cell to an inputted set of initial concentrations and parameters. The function returns the cellular response, with the maximum value of the response over all ligand concentrations being set to one. That is, we want a function that returns <span class="math notranslate nohighlight">\(s_\mathrm{norm}\)</span>, defined by</p>
+<p><span class="math">\begin{align}
+&s(l_1, l_2) = \sum_{ijk} \epsilon_{ijk}\,t_{ijk}(l_1, l_2),\\[1em]
+&s_\mathrm{norm}(l_1,l_2) = \frac{s(l_1, l_2)}{\text{maximal }s\text{ over all ligand concentrations}}.
+\end{align}</span></p>
 <p><strong>a)</strong> Complete the function below.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_norm_response</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Solve for normalized response.</span>
+    <span class="sd">&quot;&quot;&quot;Solve for normalized response. Returns a one-dimensional array</span>
+<span class="sd">    containing signal levels corresponding to each row in `c0`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
-<p><strong>b)</strong> To find optimal parameters, we will</p>
+<p><strong>b)</strong> To find optimal parameters that give cell responses close to the target responses, you can use whatever method you like. However, we will walk you through a method following <a class="reference external" href="https://doi.org/10.1016/j.cels.2022.03.001">Su, et al.</a>, which you may find easier to do that developing your own method.</p>
+<p>We will use a least squares method. To do this we define a <strong>residual</strong>, which is the value of the signal a given active ligand word, minus the target signal for that word.</p>
+<p><span class="math">\begin{align}
+\text{residual}(l_1, l_2) = s_\mathrm{norm}(l_1, l_2) - s_\mathrm{norm}^\mathrm{target}(l_1, l_2).
+\end{align}</span></p>
+<p>We then seek to minimize the sum of these residuals. Note that there exists three residuals for each cell type in the above example, for a total of nine residuals.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">scipy.optimize.least_squares()</span></code> function performs this calculation automatically. Its call signature is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>scipy.optimize.least_squares(residuals, x0, bounds=(lower_bounds, upper_bounds), args=args)
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">residuals()</span></code> is a function that returns the array of residuals and has call signature</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>residuals(x, *args),
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">x</span></code> is an array of the parameters being optimized and <code class="docutils literal notranslate"><span class="pre">args</span></code> is a tuple of any other arguments the function needs. To keep things organized, we will take the first eight entries in <code class="docutils literal notranslate"><span class="pre">x</span></code> to be the <span class="math notranslate nohighlight">\(K_{ijk}\)</span> values, the next eight entries to be the <span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> values, and the remaining twelve entries to be the receptor concentrations for the respective cell types.</p>
+<p>Complete the function below.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_readout</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
-    <span class="n">fixed_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">c0</span><span class="p">)</span>
-    <span class="n">fixed_c</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">c0</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">eqtk</span><span class="o">.</span><span class="n">fixed_value_solve</span><span class="p">(</span><span class="n">c0</span><span class="o">=</span><span class="n">c0</span><span class="p">,</span> <span class="n">fixed_c</span><span class="o">=</span><span class="n">fixed_c</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">)</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">eqtk</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">c0</span><span class="o">=</span><span class="n">c0</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">readout</span><span class="p">(</span><span class="n">epsilon</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">residuals</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cL0</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">active_words</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return array of residuals.&quot;&quot;&quot;</span>
+    <span class="c1"># Unpack x, log K&#39;s, then log epsilons, then receptor concs</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>
+    <span class="n">epsilon</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">16</span><span class="p">]</span>
+    <span class="n">receptor_conc</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">16</span><span class="p">:]</span>
+
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
-<p>Hint: The optimization will converge to a local minimum, which may not hit your target addressing very well. You can try rerunning the optimization with a different set of starting guesses for the parameters and receptor concentrations.</p>
+<p>Given our function residuals, we can define <code class="docutils literal notranslate"><span class="pre">args</span></code> to match its call signature.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
 </div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">cL0</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">active_words</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>c)</strong> To complete the optimization, we need to two more pieces. First, we need to provide bounds for all of the parameters. All of the <span class="math notranslate nohighlight">\(K_{ijk}\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span>, and receptor concentrations must be positive, so we have the following for the lower bounds.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lower_bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">16</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">n_cell_types</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>For the upper bounds, Su, et al., specified that all <span class="math notranslate nohighlight">\(K_{ijk}\)</span> and <span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span> must be between zero and one. This effectively sets the arbitrary units of the ligand and receptor concentrations. (We do not require that the sum of the <span class="math notranslate nohighlight">\(K_{ijk}\)</span>’s and the sum of the <span class="math notranslate nohighlight">\(\varepsilon_{ijk}\)</span>’s sum to one.) The receptor concentrations are unbounded, so we can set the upper bounds, recalling the ordering of our parameter array.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">upper_bounds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+    <span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span>  <span class="c1"># Upper bounds on K&#39;s and ε&#39;s</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">inf</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n_cell_types</span><span class="p">)</span> <span class="c1"># Upper bounds on receptor concs</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Finally, we must provide a guess of the parameter values. Su, et al. used the strategy that the initial guess of all receptor concentrations were one and randomly chose values for <span class="math notranslate nohighlight">\(K_{ijk}\)</span> and <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> from a uniform distribution on the interval [0, 1]. You can try this strategy as in the code cell below or adopt one of your own.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial guesses of parameter values</span>
+<span class="n">K0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">epsilon0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">receptor_conc0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n_cell_types</span><span class="p">)</span>
+
+<span class="c1"># Package together</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">K0</span><span class="p">,</span> <span class="n">epsilon0</span><span class="p">,</span> <span class="n">receptor_conc0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>Now, you can perform the optimization be running</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>res = scipy.optimize.least_squares(
+    residuals, x0, bounds=(lower_bounds, upper_bounds), args=args
+)
+</pre></div>
+</div>
+<p>The object return is the optimization result. You can pull out the parameter values from the <code class="docutils literal notranslate"><span class="pre">res.x</span></code> attribute.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>K = res.x[:8]
+epsilon = res.x[8:16]
+receptor_conc = res.x[16:]
+</pre></div>
+</div>
+<p>Find a set of parameters that give the desired cell types. Make a plot like the triptych above for the various cell types to demonstrate that you parameter set does indeed give the desired orthogonal cell types. Also report the respective receptor concentration profiles of each of the three cell types.</p>
+<p><em>Hint:</em> The optimization will converge to a local minimum, which may not hit your target addressing very well. There are <em>lots</em> of local minima. You can try rerunning the optimization with a different set of starting guesses for the parameters and receptor concentrations. You may have to do this several times.</p>
+<p><strong>d)</strong> If you like, try coming up with parameter values for other word sets and/or target responses.</p>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../chapters/13_promiscuous_binding.html" class="btn btn-neutral float-left" title="13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../chapters/14_multifate.html" class="btn btn-neutral float-right" title="14. MultiFate enables expandable and controllable multistability" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 13, 2022.
+      <span class="lastupdated">Last updated on May 14, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fcf32d35760> 
+   <jinja2.runtime.BlockReference object at 0x7fe877bb3310> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
