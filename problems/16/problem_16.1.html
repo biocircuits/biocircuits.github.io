@@ -31,7 +31,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="17. Cellular bet-hedging" href="../../chapters/17_bet_hedging.html" />
+    <link rel="next" title="Homework 16.2: Noise in a switchable promoter" href="problem_16.2.html" />
     <link rel="prev" title="16. Bursty gene expression" href="../../chapters/16_bursty.html" /> 
 </head>
 
@@ -73,18 +73,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#Master-equations">Master equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#The-Master-equation-for-unregulated-gene-expression">The Master equation for unregulated gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#Dynamics-of-the-moments">Dynamics of the moments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#Sampling-out-of-master-equations">Sampling out of master equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#Implementation-in-the-biocircuits-package">Implementation in the biocircuits package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#Experimental-Fano-factors-are-greater-than-one">Experimental Fano factors are greater than one</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#Observations-of-bursty-gene-expression">Observations of bursty gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#Master-equation-for-bursty-gene-expression">Master equation for bursty gene expression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/16_bursty.html#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">The steady state distribution for bursty expression is Negative Binomial</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/16_bursty.html#Problems">Problems</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">16.1: Dynamics of noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_16.2.html">16.2: Noise in a switchablepromoter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_16.3.html">16.3: A possible mechanism for bursty geneexpression</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Stochastic differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul>
@@ -173,18 +179,18 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n\mathrm{e}^{-\beta / \gamm
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../../chapters/16_bursty.html" class="btn btn-neutral float-left" title="16. Bursty gene expression" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../chapters/17_bet_hedging.html" class="btn btn-neutral float-right" title="17. Cellular bet-hedging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="problem_16.2.html" class="btn btn-neutral float-right" title="Homework 16.2: Noise in a switchable promoter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 14, 2022.
+      <span class="lastupdated">Last updated on May 16, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fe88c1462e0> 
+   <jinja2.runtime.BlockReference object at 0x7ff72c281be0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

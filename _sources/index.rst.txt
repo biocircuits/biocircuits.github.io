@@ -24,7 +24,9 @@ Biological Circuit Design
    chapters/15_noise.ipynb
    chapters/16_bursty.ipynb
    chapters/17_bet_hedging.ipynb
+   chapters/18_stochastic_differentiation.ipynb
    chapters/appA_regulatory_functions.ipynb
+   chapters/appB_gillespie.ipynb
 
 
 .. toctree::
