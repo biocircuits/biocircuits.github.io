@@ -31,7 +31,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="18. Stochastic differentiation" href="18_stochastic_differentiation.html" />
+    <link rel="next" title="18. Excitability enables probabilistic, transient differentiation" href="18_stochastic_differentiation.html" />
     <link rel="prev" title="Homework 16.3: A possible mechanism for bursty gene expression" href="../problems/16/problem_16.3.html" /> 
 </head>
 
@@ -74,6 +74,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#Design-principle">Design principle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Concepts">Concepts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Techniques">Techniques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Noise:-A-bug-or-feature?">Noise: A bug or feature?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Cellular-investors">Cellular investors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#The-ideal-cell-for-an-uncertain-world">The ideal cell for an uncertain world</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Overview-of-this-chapter:">Overview of this chapter:</a></li>
@@ -94,7 +95,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Stochastic differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -759,6 +760,12 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div><p>Survival in an uncertain world requires adaptability and anticipation, the complementary abilities to respond to and prepare for change.</p>
 </div></blockquote>
 <p>— Jeffrey N. Carey and Mark Goulian, “<a class="reference external" href="https://doi.org/10.1007/s00294-018-0856-2">A bacterial signaling system regulates noise to enable bet hedging</a>,” <em>Current Genetics</em>, 2019.</p>
+<section id="Noise:-A-bug-or-feature?">
+<h3>Noise: A bug or feature?<a class="headerlink" href="#Noise:-A-bug-or-feature?" title="Permalink to this headline"></a></h3>
+<p>In the past two chapters, we have studied noise, how it arises, how to quantify it, and how to take it into account when we study the dynamics of biological circuits. There is a natural tendency to think of noise as a defect since it makes circuit operation less precise. Indeed, we have largely suppressed noise in electronic circuits.</p>
+<p>But can noise be a feature, as well as a bug?</p>
+<p>Today we will start to explore how noise, in the context of circuits, can provide critical enabling capabilities for cells and organisms.</p>
+</section>
 <section id="Cellular-investors">
 <h3>Cellular investors<a class="headerlink" href="#Cellular-investors" title="Permalink to this headline"></a></h3>
 <p>Consider a loose analogy between financial investing and bacterial survival. With a crystal ball that tells the future, you could maximize your wealth by investing all your cash in a single stock, the one you know will perform best over the period you care about. This is an ideal strategy, but requires the crystal ball. In real life, you cannot predict how any stock will perform and which ones will collapse entirely. Indeed, the value of any stock may depend not only on the underlying strength
@@ -770,8 +777,8 @@ of individual cells, across multiple physiological states, each adapted to a dif
 <section id="The-ideal-cell-for-an-uncertain-world">
 <h3>The ideal cell for an uncertain world<a class="headerlink" href="#The-ideal-cell-for-an-uncertain-world" title="Permalink to this headline"></a></h3>
 <p>Today, we seek to gain some insight into how bacteria bet hedge. We will imagine that we are designing the stress response system for a custom, designer super-bacterium. Our goal is to maximize its survival and proliferation. We can of course provide the cell with an array of sensors, information processing circuits, and responses—the types of circuits we have been studying.</p>
-<p>But now we also have a new trick: we can provide cells with a “random number generator” that operates independently in each individual cell. The ability to generate random behaviors is essential for bet hedging. It allows genetically identical cells to do different things in the same environment, controlling the probability of each choice. “What kind of random number generator is this?” you ask. Noise, that’s what. We have just learned that cells generate randomness in gene expression through
-intrinsically stochastic bursts of protein production. This noise, when considered in the context of a regulatory circuit, enables cells to implement <strong>probabilistic strategies</strong>, by controlling the fraction of cells in the population that are in one state or another.</p>
+<p>But now we also have a new trick: we can provide cells with a “random number generator” that operates independently in each individual cell. The ability to generate random behaviors is essential for bet hedging. It allows genetically identical cells to do different things in the same environment, controlling the probability of each choice. “What kind of random number generator is this?” you ask. Noise! We have just learned that cells generate randomness in gene expression through intrinsically
+stochastic bursts of protein production. This noise, when considered in the context of a regulatory circuit, enables cells to implement <strong>probabilistic strategies</strong>, by controlling the fraction of cells in the population that are in one state or another.</p>
 </section>
 <section id="Overview-of-this-chapter:">
 <h3>Overview of this chapter:<a class="headerlink" href="#Overview-of-this-chapter:" title="Permalink to this headline"></a></h3>
@@ -1296,18 +1303,18 @@ jupyterlab: 3.3.2
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../problems/16/problem_16.3.html" class="btn btn-neutral float-left" title="Homework 16.3: A possible mechanism for bursty gene expression" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="18_stochastic_differentiation.html" class="btn btn-neutral float-right" title="18. Stochastic differentiation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="18_stochastic_differentiation.html" class="btn btn-neutral float-right" title="18. Excitability enables probabilistic, transient differentiation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 16, 2022.
+      <span class="lastupdated">Last updated on May 21, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7ff72cd68a30> 
+   <jinja2.runtime.BlockReference object at 0x7fbbc0ca8fd0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

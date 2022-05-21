@@ -88,7 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Stochastic differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -478,10 +478,11 @@ download relevant parameter sets <a class="reference external" href="autorepress
 </div>
 <p>Now that you know how to access parameters, you can code up and run a simulation. For your first simulation, use the parameter set <span class="math notranslate nohighlight">\(N = 5\)</span>, <span class="math notranslate nohighlight">\(M = 0\)</span>, and <span class="math notranslate nohighlight">\(\gamma = 1\)</span>. Since <span class="math notranslate nohighlight">\(M = 0\)</span>, expression is shut down if any proteins are bound to any of the binding sites. Perform a Gillespie simulation starting with <span class="math notranslate nohighlight">\(n = m = 0\)</span> going from time <span class="math notranslate nohighlight">\(t = 0\)</span> to <span class="math notranslate nohighlight">\(t = 30\)</span>. Compute the total number of protein products (<span class="math notranslate nohighlight">\(n_t = m + n\)</span>) over time. Plot the result. Do you
 see bursts?</p>
-<p><strong>c)</strong> I suspect you said you saw bursts in part (c). (If you didn’t, you should probably try troubleshooting your code.) Re-run the simulation much longer this time; up to about <span class="math notranslate nohighlight">\(t = 500\)</span> will do. Using this trajectory, compute the burst size (number of proteins made per burst) and the inter-burst times.</p>
-<p>Recall that in class, we showed from the <a class="reference external" href="https://doi.org/10.1038/nature04599">Cai, Friedman, and Xie paper</a> that the burst size for expression of β-gal in yeast was geometrically distributed. We assumed that the inter-burst times were exponentially distributed, which gives that the number of proteins is negative binomially distributed. Based on the burst sizes and inter-burst times you computed, do you think they are respectively geometrically and exponentially distributed in this model?</p>
-<p><strong>d)</strong> In class, we will discuss <a class="reference external" href="https://doi.org/10.1016/j.molcel.2014.06.029">a paper by Singer, et al.</a>, in which they use mRNA FISH to show that the number of RNA transcripts in a population of cells are negative binomially distributed. Now you can simulate that experiment. Perform 200 Gillespie simulations up to time <span class="math notranslate nohighlight">\(t = 20\)</span>. You now have samples of the number of proteins, <span class="math notranslate nohighlight">\(n_t\)</span>, in 200 “cells” at time <span class="math notranslate nohighlight">\(t = 20\)</span>. Do these values appear to be negative binomially
-distributed?</p>
+<p><strong>c)</strong> I suspect you said you saw bursts in part (c). (If you didn’t, you should probably try troubleshooting your code.) Re-run the simulation much longer this time; up to about <span class="math notranslate nohighlight">\(t = 500\)</span> will do. Using this trajectory, compute the burst sizes (number of proteins made in each burst) and the inter-burst times.</p>
+<p>Recall that <a class="reference external" href="https://doi.org/10.1038/nature04599">Cai, Friedman, and Xie</a> showed that the burst size for expression of β-gal in yeast was geometrically distributed. In the chapter, we assumed that the inter-burst times were exponentially distributed. Taken together with the geometrically distributed burst sizes, the number of proteins is negative binomially distributed. Based on the burst sizes and inter-burst times you computed, do you think they are respectively geometrically and
+exponentially distributed in this model?</p>
+<p><strong>d)</strong> As shown in <a class="reference external" href="https://doi.org/10.1016/j.molcel.2014.06.029">this paper by Singer, et al.</a>, the number of mRNA transcripts in a population of cells can be negative binomially distributed. We can now perform a simulation to see if the Lengyel-Morelli model gives a steady state negative binomial distribution of transcripts across a population of cells. Perform 200 Gillespie simulations up to time <span class="math notranslate nohighlight">\(t = 20\)</span>. You now have samples of the number of proteins, <span class="math notranslate nohighlight">\(n_t\)</span>, in 200 “cells” at
+time <span class="math notranslate nohighlight">\(t = 20\)</span>. Do these values appear to be negative binomially distributed?</p>
 <p><strong>e)</strong> It is often thought that negative autorepression can reduce noise. Here, we will quantify noise as we have been by the coefficient of variation,</p>
 <p><span class="math">\begin{align}
 \eta = \frac{\sqrt{\left\langle n_t^2\right\rangle - \left\langle n_t\right\rangle^2}}{\left\langle n_t\right\rangle}.
@@ -492,7 +493,7 @@ distributed?</p>
 </ol>
 </li>
 <li><ol class="lowerroman simple" start="2">
-<li><p>We will now look at how the threshold number of bound sites before repression affects now. Say we have <span class="math notranslate nohighlight">\(N = 14\)</span> binding sites, again with <span class="math notranslate nohighlight">\(\gamma = 1\)</span>. Compute <span class="math notranslate nohighlight">\(\eta\)</span> for <span class="math notranslate nohighlight">\(M \in [0, 14]\)</span> and plot the result. Are there values for <span class="math notranslate nohighlight">\(M\)</span> for which the noise is lower than the single binding site (<span class="math notranslate nohighlight">\(N=1\)</span>) case?</p></li>
+<li><p>We will now look at how the threshold number of bound sites before repression affects noise. Say we have <span class="math notranslate nohighlight">\(N = 14\)</span> binding sites, again with <span class="math notranslate nohighlight">\(\gamma = 1\)</span>. Compute <span class="math notranslate nohighlight">\(\eta\)</span> for <span class="math notranslate nohighlight">\(M \in [0, 14]\)</span> and plot the result. Are there values for <span class="math notranslate nohighlight">\(M\)</span> for which the noise is lower than the single binding site (<span class="math notranslate nohighlight">\(N=1\)</span>) case?</p></li>
 </ol>
 </li>
 </ul>
@@ -511,11 +512,11 @@ distributed?</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 16, 2022.
+      <span class="lastupdated">Last updated on May 21, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7ff746e576a0> 
+   <jinja2.runtime.BlockReference object at 0x7fbbde552c40> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
