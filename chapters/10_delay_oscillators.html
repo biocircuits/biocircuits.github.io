@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10. Uses, simplifications, and elaborations of negative feedback oscillators &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -96,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -413,7 +413,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="10.-Uses,-simplifications,-and-elaborations-of-negative-feedback-oscillators">
+<div class="section" id="10.-Uses,-simplifications,-and-elaborations-of-negative-feedback-oscillators">
 <h1>10. Uses, simplifications, and elaborations of negative feedback oscillators<a class="headerlink" href="#10.-Uses,-simplifications,-and-elaborations-of-negative-feedback-oscillators" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
@@ -772,7 +772,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 completion of translation for each protein. (By contrast, translation can occur co-transcriptionally in bacteria, so translation does not have to wait to start before transcription is finished.)</p>
 <p>In <em>E. coli</em>, translation occurs at a rate of about 15 amino acids per second. So a sizable protein like β-galactosidase can take more than a minute to translate.</p>
 <p>In eukaryotic cells, where gene expression has additional steps, including splicing and nuclear export, these delays can be even longer. In fact, a totally different synthetic single gene negative autoregulation oscillator circuit was implemented in eukaryotic cells using the variability in intron length (<a class="reference external" href="https://dx.doi.org/10.1101%2Fgad.1696108">Swinburne, et al., Genes and Dev., 2008</a>), rather than translational delay per se, to delay protein production.</p>
-<section id="An-example-of-delay-in-a-biological-circuit">
+<div class="section" id="An-example-of-delay-in-a-biological-circuit">
 <h2>An example of delay in a biological circuit<a class="headerlink" href="#An-example-of-delay-in-a-biological-circuit" title="Permalink to this headline"></a></h2>
 <p>To investigate how molecular details can give rise to delay (which in turn can give oscillations), we consider a multistep process of the production and action of a repressor. The delay in transcriptional regulation in real cells comes from processes such as translation, trans-nuclear transport, etc. We will consider a simple version of this, shown below, in which <span class="math notranslate nohighlight">\(r\)</span> is some intermediate state en route to functioning protein.</p>
 <div style="width: 200px; margin: auto;"><img alt="simple delay" src="../_images/simple_delay.png" />
@@ -932,7 +932,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>Importantly, we see that we must have very high ultrasensitivity (<span class="math notranslate nohighlight">\(n\)</span> about 9 or 10) to get oscillatory instabilities for reasonable values of <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>. Furthermore, the sliver of parameter space that gives an oscillatory instability is small. For such a simple mechanism for delay, the presence of oscillations are not robust to variations in parameter values and high sensitivity is necessary.</p>
-<section id="Differential-equations-with-explicit-delays">
+<div class="section" id="Differential-equations-with-explicit-delays">
 <h3>Differential equations with explicit delays<a class="headerlink" href="#Differential-equations-with-explicit-delays" title="Permalink to this headline"></a></h3>
 <p>Above, we inserted extra biochemical steps into a process. But what if there is a real delay in a process, such as the delay betweeen initiation of translation and appearance of the fully synthesized and active protein? Or a delay between transcription initiation and nuclear export and translation initiation of the corresponding mRNA? To gain deeper insights on how delays affect stability, we will treat these situations with <strong>delay differential equations</strong>.</p>
 <p>(The COVID-19 pandemic provides an all too familiar example of time-delayed dynamics. With this disease, the onset of symptoms occurs after a delay of many days from initial infection. Similarly, recovery or death also occur only many days after the symptoms appear. Delay differential equations represent a natural framework for modeling the pandemic.)</p>
@@ -948,9 +948,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>We can solve this numerically to get oscillations, which we will do momentarily.</p>
 <p>The principle behind the presence of oscillations is simple, and illustrated in the image below. Because the rate of expression is determined by past protein levels, high expression occurs when protein levels were low in the past and low expression occurs when protein levels were high in the past.</p>
 <div style="width: 550px; margin: auto;"><img alt="delay oscillations" src="../_images/delay_oscillations.png" />
-</div></section>
-</section>
-<section id="Numerical-solution-of-DDEs">
+</div></div>
+</div>
+<div class="section" id="Numerical-solution-of-DDEs">
 <h2>Numerical solution of DDEs<a class="headerlink" href="#Numerical-solution-of-DDEs" title="Permalink to this headline"></a></h2>
 <p>In general, we may write a system of DDEs as</p>
 <p><span class="math">\begin{align}
@@ -1140,8 +1140,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">ddeint()</span></code> function is available as <code class="docutils literal notranslate"><span class="pre">biocircuits.ddeint()</span></code> package for future use.</p>
-</section>
-<section id="Linear-stability-analysis-of-a-delay-differential-equation">
+</div>
+<div class="section" id="Linear-stability-analysis-of-a-delay-differential-equation">
 <h2>Linear stability analysis of a delay differential equation<a class="headerlink" href="#Linear-stability-analysis-of-a-delay-differential-equation" title="Permalink to this headline"></a></h2>
 <p>Consider a system of delay differential equations,</p>
 <p><span class="math">\begin{align}
@@ -1185,8 +1185,8 @@ stability analysis about this steady state.</p>
 \end{align}</span></p>
 <p>So, <span class="math notranslate nohighlight">\(\lambda\)</span> is an eigenvalue and <span class="math notranslate nohighlight">\(\mathbf{w}\)</span> is the corresponding eigenvector for the matrix <span class="math notranslate nohighlight">\((\mathsf{A} + \mathrm{e}^{-\lambda \tau} \mathsf{A}_{\tau})\)</span>. In general, there are infinitely many values of <span class="math notranslate nohighlight">\(\lambda\)</span>. Nonetheless, if we can show that the real part of all possible values of <span class="math notranslate nohighlight">\(\lambda\)</span> is less than zero, then the fixed point is stable. Otherwise, if the real part of any values of <span class="math notranslate nohighlight">\(\lambda\)</span> are positive, the fixed point is locally unstable. If
 <span class="math notranslate nohighlight">\(\lambda\)</span> has an imaginary part for the eigenvalues with a positive real part, the instability is oscillatory.</p>
-</section>
-<section id="Linear-stability-analysis-of-delayed-autorepression">
+</div>
+<div class="section" id="Linear-stability-analysis-of-delayed-autorepression">
 <h2>Linear stability analysis of delayed autorepression<a class="headerlink" href="#Linear-stability-analysis-of-delayed-autorepression" title="Permalink to this headline"></a></h2>
 <p>We consider now the simple case of an autorepressor with delay.</p>
 <p><span class="math">\begin{align}
@@ -1338,15 +1338,15 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>Note that for longer delays, provided the promoter is not too weak (<span class="math notranslate nohighlight">\(\beta &gt; 1\)</span>), the region for which there is an oscillatory instability is very large. Thus, in the large <span class="math notranslate nohighlight">\(\tau\)</span> regime, the presence of oscillations is robust to changes in other parameter values.</p>
-<section id="Synthetic-single-gene-oscillators-oscillate">
+<div class="section" id="Synthetic-single-gene-oscillators-oscillate">
 <h3>Synthetic single gene oscillators oscillate<a class="headerlink" href="#Synthetic-single-gene-oscillators-oscillate" title="Permalink to this headline"></a></h3>
 <p>Can a single gene oscillator actually oscillate? In fact, it can! <a class="reference external" href="https://doi.org/10.1038/nature07389">Stricker et</a> built a simple negative autoregulatory circuit, in which the LacI repressor represses its own expression as well as the expression of a fluorescent protein, as in the following diagram:</p>
 <div style="width:600px; margin:auto;"><img alt="toggle delay oscillator" src="../_images/single_gene_oscillator.png" />
 </div><p>Then, they analyzed the dynamics of this circuit in bacteria that were grown in a microfluidic device to keep them under relatively constant environmental conditions. During growth, they recorded movies and tracked individual cells. The oscillations of individual cells are apparent in the plot to the right, as they are in the <a class="reference external" href="figs/Stricker-single_gene_oscillator_movieS11.mp4">movie below</a>.</p>
 <div style="margin: auto; width: 500px;"><video src="figs/Stricker-single_gene_oscillator_movieS11.mp4" style="width: 500px;" controls><p>Your browser does not support display of this video.</p>
-</video></div></section>
-</section>
-<section id="Positive-negative-feedback-loops-decouple-period-and-amplitude">
+</video></div></div>
+</div>
+<div class="section" id="Positive-negative-feedback-loops-decouple-period-and-amplitude">
 <h2>Positive-negative feedback loops decouple period and amplitude<a class="headerlink" href="#Positive-negative-feedback-loops-decouple-period-and-amplitude" title="Permalink to this headline"></a></h2>
 <p>We have now explored several ways that delayed negative feedback can generate oscillations and how those oscillations may be useful. You may be thinking all there is to oscillators is delayed negative feedback. In fact, a distinct positive-negative feedback architecture occurs naturally and has been constructed and analyzed synthetically. In these systems, an activator stimulates its own expression and that of a repressor. The repressor, in turn, represses the activator and itself. Thus, this
 topology comprises three feedback loops involving two proteins.</p>
@@ -1367,15 +1367,15 @@ we encounter <strong>combinatorial regulation</strong>: each of the two genes is
 their amplitude. Similarly, they suggested, the period of the cell cycle may need to be regulated independently without altering the peak concentrations of the activated cyclin-dependent kinases that it controls.</p>
 <p>In contrast to the positive-negative oscillators, in pure negative feedback oscillators, most parameters tend to tune period and amplitude together. For example, in the repressilator, increasing the gene expression strength <span class="math notranslate nohighlight">\(\beta\)</span> increases the peak concentrations of each protein. But this in turn means that it takes correspondingly longer for each repressor to decay low enough to relieve its repression. As a result, one gets a longer period as well as a higher amplitude. Similar results
 hold for other parameter variations.</p>
-<section id="Experimental-realization-of-the-positive-negative-oscillator:">
+<div class="section" id="Experimental-realization-of-the-positive-negative-oscillator:">
 <h3>Experimental realization of the positive-negative oscillator:<a class="headerlink" href="#Experimental-realization-of-the-positive-negative-oscillator:" title="Permalink to this headline"></a></h3>
 <p>In 2008, Hasty’s lab described a synthetic implementation of the positive-negative oscillator (<a class="reference external" href="https://doi.org/10.1038/nature07389">Nature, 2008</a>). As a repressor, they used LacI, as in the repressilator. As an activator, they repurposed AraC, a well-characterized transcriptional activator whose normal role is to control arabinose utilization genes in <em>E. coli</em>. They also incorporated a fluorescent reporter gene to interrogate what was happening.</p>
 <div style="width:600px; margin:auto;"><img alt="Hasty diagrams" src="../_images/Hasty_diagrams.png" />
 </div><p>Using this design, they obtained beautiful oscillations, seen in the <a class="reference external" href="figs/stricker_oscillator.mp4">movie below</a>, and further showed tunability of the oscillator.</p>
 <div style="margin: auto; width: 500px;"><video src="figs/stricker_oscillator.mp4" style="width: 500px;" controls><p>Your browser does not support display of this video.</p>
-</video></div></section>
-</section>
-<section id="Conclusions">
+</video></div></div>
+</div>
+<div class="section" id="Conclusions">
 <h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this headline"></a></h2>
 <p>To conclude, we have now explored several principles of oscillator design and an example of its application. To summarize the previous chapter along with this one, we see:</p>
 <ul class="simple">
@@ -1388,8 +1388,8 @@ hold for other parameter variations.</p>
 <li><p>These systems can be treated using delay differential equations, in which the rate of change of a component now depends on the concentrations of system components some time ago.</p></li>
 <li><p>Finally, combining negative and positive feedback loops enables relaxation oscillators. These exist in many natural systems, and offer a key benefit: the ability to independently tune amplitude and period.</p></li>
 </ul>
-</section>
-<section id="Computing-environment">
+</div>
+<div class="section" id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -1416,8 +1416,8 @@ jupyterlab: 3.0.14
 
 </pre></div></div>
 </div>
-<hr></section>
-<section id="Problems">
+<hr></div>
+<div class="section" id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -1426,8 +1426,8 @@ jupyterlab: 3.0.14
 <li class="toctree-l1"><a class="reference internal" href="../problems/10/problem_10.3.html">10.3: Controlling p53 levels</a></li>
 </ul>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -1441,11 +1441,11 @@ jupyterlab: 3.0.14
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc33af460> 
+   <jinja2.runtime.BlockReference object at 0x7f859eeb3310> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

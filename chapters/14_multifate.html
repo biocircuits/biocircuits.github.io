@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>14. MultiFate enables expandable and controllable multistability &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -101,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -418,7 +418,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="14.-MultiFate-enables-expandable-and-controllable-multistability">
+<div class="section" id="14.-MultiFate-enables-expandable-and-controllable-multistability">
 <h1>14. MultiFate enables expandable and controllable multistability<a class="headerlink" href="#14.-MultiFate-enables-expandable-and-controllable-multistability" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
@@ -796,7 +796,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<section id="Multicellular-organisms-rely-on-a-repertoire-of-cell-states">
+<div class="section" id="Multicellular-organisms-rely-on-a-repertoire-of-cell-states">
 <h2>Multicellular organisms rely on a repertoire of cell states<a class="headerlink" href="#Multicellular-organisms-rely-on-a-repertoire-of-cell-states" title="Permalink to this headline"></a></h2>
 <p>The cells in our bodies exist in thousands of different states, differing in morphology, functional capabilities, gene expression, and other features. This multitude of cell states is generated through the astonishing process of multicellular development. As the embryo develops, cells generally commit themselves and their descendants to ever more specific cell fates: initially they decide among the germ layers—endoderm, ectoderm, and mesoderm. Later on, they will further commit to more various
 tissue and organ-specific cell types.</p>
@@ -824,8 +824,8 @@ a synthetic cell fate control system “from scratch” and to see what lessons 
 <p>These features are illustrated here:</p>
 <div style="width: 600px; margin: auto;"><img alt="MultiFate_features" src="../_images/MultiFate_features.png" />
 </div><p>Can you ever imagine engineering a synthetic differentiation circuit that could rival the complexity of the complex multicellular organisms we see in nature? How would you design it?</p>
-</section>
-<section id="Circuit-architectures-for-cell-differentiation">
+</div>
+<div class="section" id="Circuit-architectures-for-cell-differentiation">
 <h2>Circuit architectures for cell differentiation<a class="headerlink" href="#Circuit-architectures-for-cell-differentiation" title="Permalink to this headline"></a></h2>
 <p>To begin to explore how these capabilities emerge from underlying circuits, we will shift from Waddington’s metaphorical diagram to a more directly applicable dynamical systems perspective.</p>
 <p>We imagine each cell state as a stable attractor in a phase space of concentrations of transcription factors or other regulators. This representation is more general and does not require an overall “slope” down which the marble will roll.</p>
@@ -841,8 +841,8 @@ a synthetic cell fate control system “from scratch” and to see what lessons 
 </div><p>The first multistable circuit that may come to mind is the classic two component toggle switch, which we analyzed in Chapter 3. In principle, this circuit might be extended by incorporating many transcription factors that all repress one another. However, this would be difficult to achieve. With <span class="math notranslate nohighlight">\(N\)</span> transcription factors, the promoter controlling each repressor gene would have to be repressed by <span class="math notranslate nohighlight">\(N-1\)</span> repressors. This could become impractical given the limited available space in a
 promoter for effective repression. More fundamentally, however, it does not expand easily: incrememting the system from <span class="math notranslate nohighlight">\(N\)</span> to <span class="math notranslate nohighlight">\(N+1\)</span> repressors would require adding binding sites for the new repressor to all of the <span class="math notranslate nohighlight">\(N\)</span> existing repressors.</p>
 <p>Before reading further, take a moment to think about what kind of architecture you might use to create a cell fate control system providing the features above.</p>
-</section>
-<section id="Inspiration:-natural-circuits-use-combinatorial-dimerization-and-positive-autoregulation">
+</div>
+<div class="section" id="Inspiration:-natural-circuits-use-combinatorial-dimerization-and-positive-autoregulation">
 <h2>Inspiration: natural circuits use combinatorial dimerization and positive autoregulation<a class="headerlink" href="#Inspiration:-natural-circuits-use-combinatorial-dimerization-and-positive-autoregulation" title="Permalink to this headline"></a></h2>
 <p>Inspiration for the design of a synthetic cell fate control system can come from looking at what is known about natural cell fate control systems. Zhu et al. (<a class="reference external" href="https://doi.org/10.1126/science.abg9765">2022, Science</a>) noticed that many natural fate control systems share two critical features:</p>
 <p>First, they are based on sets of transcription factors that combinatorially dimerize to form many possible complexes. (This is reminescent of the combinatorial complex formation explored in the previous chapter on BMP.) Certain dimers activate downstream genes, whie others may be inactive. Formation of inactive complexes sequesters certain transcription factors, preventing them from forming alternative, active dimers with other proteins. This is analogous to the molecular titration motif we
@@ -851,16 +851,16 @@ analyzed in Chapter 12.</p>
 <p>For example, in the circuit controlling muscle cell differentiation, the master transcription factor MyoD can dimerize with Id or E47. The MyoD-Id dimer is inactive. But te MyoD-E47 dimer transcriptionall activates many genes involved in myogenesis, including MyoD itself. Similarly, embryonic stem cells can remain in a “pluripotent” state in which they have the potential to differentiate into virtually all cell types in the embryo. The circuit that controls this state includes the key
 transcription factor Oct4, which can dimerize with either Sox2 or Sox17. Sox2-Oct4 and Sox17-Oct4 respectively activate expression of Sox2 and Sox17, generating autoregulation.</p>
 <div style="width: 600px; margin: auto;"><img alt="Natural differentiation circuits exhibit molecular titration" src="../_images/MultiFate_NaturalCircuits.png" />
-</div></section>
-<section id="MultiFate:-a-naturally-inspired-synthetic-cell-fate-control-circuit">
+</div></div>
+<div class="section" id="MultiFate:-a-naturally-inspired-synthetic-cell-fate-control-circuit">
 <h2>MultiFate: a naturally inspired synthetic cell fate control circuit<a class="headerlink" href="#MultiFate:-a-naturally-inspired-synthetic-cell-fate-control-circuit" title="Permalink to this headline"></a></h2>
 <p>Intrigued and inspired by these architectures, Zhu et al. desigend a circuit called MultiFate, which incorporates the two themes of combinatorial dimerizaton among a set of transcription factors and positive autoregulation. We will see that the MultiFate architecture can generate multistability and the other features enough, but is simple enough to be constructed and analyzed synthetically within cells.</p>
 <p>We will start by analzying a minimal version of the MultiFate architecture, termed MultiFate-2, comprising just two transcription factors, which we label A and B. A and B can each form homodimers. They can also heterodimerize with one another. The homodimers positively activate their own gene, while heterodimers are inactive. The reason that homodimers can activate their own genes, while the corresponding monomers cannot is that the DNA binding site for the dimer is effectively double the length
 of that of the monomer, providing approximately twice the binding energy.</p>
 <p>The schematic drawing below explains the structure of MultiFate-2.</p>
 <div style="width: 400px; margin: auto;"><img alt="MultiFate-2 Schematic" src="../_images/MultiFate-2.png" />
-</div></section>
-<section id="A-two-dimensional-model-of-MultiFate-dynamics">
+</div></div>
+<div class="section" id="A-two-dimensional-model-of-MultiFate-dynamics">
 <h2>A two-dimensional model of MultiFate dynamics<a class="headerlink" href="#A-two-dimensional-model-of-MultiFate-dynamics" title="Permalink to this headline"></a></h2>
 <p>How many states can this architecture generate? Can it be expanded? And what other dynamic properties does it possess? To find out, we will apply the approaches developed previously with additional phase plane analysis.</p>
 <p>To begin, we will define a few variables. The A and B transcription factors can each exist either in monomeric, homodimeric, or heterodimeric form. We will represent their concentrations by the variables <span class="math notranslate nohighlight">\([A]\)</span> (or <span class="math notranslate nohighlight">\([B]\)</span>), <span class="math notranslate nohighlight">\([A_2]\)</span> (or <span class="math notranslate nohighlight">\([B_2]\)</span>), and <span class="math notranslate nohighlight">\([AB]\)</span>, respectively.</p>
@@ -888,7 +888,7 @@ heterodimer can form in two different ways (A+B and B+A). It prevents double-cou
 & [A_{\mathrm{tot}}] = [A] + 2 [A_2] + [AB] \\
 & [B_{\mathrm{tot}}] = [B] + 2 [B_2] + [AB]
 \end{align}</span></p>
-<section id="Conservation-of-mass-reduces-the-model-to-two-dimensions">
+<div class="section" id="Conservation-of-mass-reduces-the-model-to-two-dimensions">
 <h3>Conservation of mass reduces the model to two dimensions<a class="headerlink" href="#Conservation-of-mass-reduces-the-model-to-two-dimensions" title="Permalink to this headline"></a></h3>
 <p>These equations make a few choices and assumptions. First, we chose to use <span class="math notranslate nohighlight">\([A_{\mathrm{tot}}]\)</span> and <span class="math notranslate nohighlight">\([B_{\mathrm{tot}}]\)</span> as the dynamical variables appearing in the <span class="math notranslate nohighlight">\(d/dt\)</span> terms on the left hand side. This decision will simplify the analysis below, and is reasonable because it is these “total” concentrations that vary over the slower timescsales we will be interested in. Second, we represented transcriptional regulation using a leaky Hill function regulated by the homodimeric
 form of the transcription factor, with leak term <span class="math notranslate nohighlight">\(\alpha\)</span> and half-activation constant <span class="math notranslate nohighlight">\(K_M\)</span>. The inclusion of this basal transcription is important for allowing the system to self-activate and avoiding a potential stable state in which both factors are off. (Such a state would be difficult to “read out” but could be physiologically useful in some contexts.) Finally, we assumed that removal of the two proteins occurs at the same rate regardless of whether they are in a monomeric or
@@ -906,8 +906,8 @@ obtain an expression that represents <span class="math notranslate nohighlight">
 & [B_2] = \frac{2 [B_{\mathrm{tot}}]^2}{K_d + 4\left([A_{\mathrm{tot}}] + [B_{\mathrm{tot}}]\right) + \sqrt{K_d^2 + 8\left([A_{\mathrm{tot}}] + [B_{\mathrm{tot}}]\right)K_d}}.
 \end{align}</span></p>
 <p>If we substitute these expression back into our ODEs, then we now have a closed-form system where the rate of change of <span class="math notranslate nohighlight">\([A_{\mathrm{tot}}]\)</span> and <span class="math notranslate nohighlight">\([B_{\mathrm{tot}}]\)</span> are written as functions of only themselves.</p>
-</section>
-<section id="Nondimensionalizing-further-simplifies-the-MultiFate-model">
+</div>
+<div class="section" id="Nondimensionalizing-further-simplifies-the-MultiFate-model">
 <h3>Nondimensionalizing further simplifies the MultiFate model<a class="headerlink" href="#Nondimensionalizing-further-simplifies-the-MultiFate-model" title="Permalink to this headline"></a></h3>
 <p>Since the above expressions contain many parameters, it will be useful to nondimensionalize the system. We can make the substitutions</p>
 <p><span class="math">\begin{align}
@@ -927,11 +927,11 @@ obtain an expression that represents <span class="math notranslate nohighlight">
 [A_2] &= \frac{2[A_{tot}]^2}{K_d + 4\left( [A_{tot}] + [B_{tot}]\right) + \sqrt{K_d^2 + 8\left([A_{tot}] + [B_{tot}]\right)K_d}} \\
 [B_2] &= \frac{2[B_{tot}]^2}{K_d + 4\left( [A_{tot}] + [B_{tot}]\right) + \sqrt{K_d^2 + 8\left([A_{tot}] + [B_{tot}]\right)K_d}}
 \end{align}</span></p>
-</section>
-</section>
-<section id="The-MultiFate-Phase-portrait">
+</div>
+</div>
+<div class="section" id="The-MultiFate-Phase-portrait">
 <h2>The MultiFate Phase portrait<a class="headerlink" href="#The-MultiFate-Phase-portrait" title="Permalink to this headline"></a></h2>
-<section id="Calculating-nullclines">
+<div class="section" id="Calculating-nullclines">
 <h3>Calculating nullclines<a class="headerlink" href="#Calculating-nullclines" title="Permalink to this headline"></a></h3>
 <p>Plotting nullclines can be used to identify steady states and provide insight into the structure of a dynamical system. Even better, we can make the nullcline plot interactive, allowing us to see directly how different features depend on biochemical parameters. Recall from our analysis of the Toggle Switch in Chapter 3 that for a two-dimensional ODE system there will be two nullclines, one corresponding to all of the points in the plane where <span class="math notranslate nohighlight">\(\mathrm{d}[A_{tot}]/\mathrm{d}t = 0\)</span>, and one
 corresponding to all of the points in the plane where <span class="math notranslate nohighlight">\(\mathrm{d}[B_{tot}]/\mathrm{d}t = 0\)</span>. When the nullclines intersect, both ODEs are equal to zero and the system is at a fixed point.</p>
@@ -1160,8 +1160,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</section>
-<section id="Determining-the-stability-of-the-fixed-points">
+</div>
+<div class="section" id="Determining-the-stability-of-the-fixed-points">
 <h3>Determining the stability of the fixed points<a class="headerlink" href="#Determining-the-stability-of-the-fixed-points" title="Permalink to this headline"></a></h3>
 <p>With the default parameters in the plot, you can count five nullcline intersections, or fixed points. For a cell fate control system we are interested in those that are stable. To determine their stability we return to Linear Stability Analysis (see Chapter 9).</p>
 <p>Recall that to determine stability we evaluate the Jacobian matrix of partial derivatives, <span class="math notranslate nohighlight">\(J\)</span>, at the fixed point of interest <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>:</p>
@@ -1451,8 +1451,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</section>
-<section id="Plotting-a-flow-field">
+</div>
+<div class="section" id="Plotting-a-flow-field">
 <h3>Plotting a flow field<a class="headerlink" href="#Plotting-a-flow-field" title="Permalink to this headline"></a></h3>
 <p>To investigate the behavior near the fixed points, and indeed away from them as well, we can plot the <strong>phase portrait</strong>. A phase portrait is a plot displaying possible trajectories of a dynamical system in <strong>phase space</strong>, in this case on the <span class="math notranslate nohighlight">\(A_\mathrm{tot}\)</span>-<span class="math notranslate nohighlight">\(B_\mathrm{tot}\)</span> plane. Let’s generate a phase portrait using the <code class="docutils literal notranslate"><span class="pre">biocircuits</span></code> package (with the nullclines overlaid).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">biocircuits.phase_portrait()</span></code> function requires explicit functions for <span class="math notranslate nohighlight">\(\mathrm{d}[A_{tot}]/\mathrm{d}t\)</span> and <span class="math notranslate nohighlight">\(\mathrm{d}[B_{tot}]/\mathrm{d}t\)</span>.</p>
@@ -1612,8 +1612,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</section>
-<section id="Plotting-separatrices">
+</div>
+<div class="section" id="Plotting-separatrices">
 <h3>Plotting separatrices<a class="headerlink" href="#Plotting-separatrices" title="Permalink to this headline"></a></h3>
 <p>Notice how two trajectories can start very close to each other yet diverge and end up at different stable fixed points. The set of all starting points that eventually land on a given attractor (stable fixed point) is known as its <strong>basin of attraction</strong>. The boundary between two basins of attraction is called a <strong>separatrix</strong>.</p>
 <p>We can calculaute the separatrices by making use of the fact that a separatrix is the one-dimensional stable manifold of a particular saddle fixed point— while trajectories on either side of a separatrix will converge to a stable fixed point, trajectories that start exactly <em>on</em> a separatrix will converge to a saddle point.</p>
@@ -1814,9 +1814,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div style="width: 1000px; margin: auto;"><img alt="MultiFate-2_Other_Regimes.png" src="../_images/MultiFate-2_Other_Regimes.png" />
 </div><p>These are just the symmetric systems. Allowing asymmetric regimes, in which A and B can take on different production rates or other parameters, generates an even larger space of dynamical behaviors.</p>
 <p>Taken together, this analysis shows that MultiFate should be able to produce a variety of different types of multistability.</p>
-</section>
-</section>
-<section id="Building-MultiFate">
+</div>
+</div>
+<div class="section" id="Building-MultiFate">
 <h2>Building MultiFate<a class="headerlink" href="#Building-MultiFate" title="Permalink to this headline"></a></h2>
 <p>Will MultiFate indeed generate multistability in cells? And, could it provide some of the key capabilities expected of an ideal cell differentiation circuit, such as multistability, state-switching, control of state stability, and expandability? To find out, Zhu et al. constructed an experimental implementation of the MultiFate-2 circuit.</p>
 <p>The key components required to build MultiFate are transcription factors that activate only as homodimers and inhibit each other through heterodimerization. Zinc finger DNA-binding proteins (below, left) provided an ideal type of engineerable DNA binding protein. They are comprised of modular domains (fingers) that bind to specific 3bp sequences an can be concatenated to recognize longer sites. They can thus be designed to recognize specific DNA binding sites.</p>
@@ -1830,8 +1830,8 @@ binding sites.</p>
 <p>In addition to controlling these components, one also would like to read out their concentrations. For this purpose, a fluorescent protein such as mCitrine was incorporated downstream of the gene.</p>
 <p>This diagram visually summarizes the design of one of a MultiFate transcription factor cassette.</p>
 <div style="width: 400px; margin: auto;"><img alt="Design of the synthetic transcription factors for MultiFate" src="../_images/MultiFate_TF_Design.png" />
-</div></section>
-<section id="Testing-MultiFate">
+</div></div>
+<div class="section" id="Testing-MultiFate">
 <h2>Testing MultiFate<a class="headerlink" href="#Testing-MultiFate" title="Permalink to this headline"></a></h2>
 <p>To test out the circuit, Zhu et al integrated two such cassettes with two distinct zinc finger proteins and fluorescent proteins (the greenish mCitrine and the red mCherry) into cells. Different cells received different numbers of copies of these genes integrated at different locations. In this way, each cell and its clonal descendants probed different values of the <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> parameters for each of the two genes.</p>
 <div style="width: 600px; margin: auto;"><img alt="Inserting MultiFate-2 into cells" src="../_images/circuit_into_CHO.png" />
@@ -1843,7 +1843,7 @@ binding sites.</p>
 </div><p>This behavior is most directly visualized in the following movie, in which individual cells in each of the three states were plated down together. Cells in the A-only and B-only states are shown in green and red, while cells in the AB state have a combination of both colors and appear yellow. You can see directly how the state (color) is faithfully preserved as cells grow into colonies.</p>
 <div style="margin: auto; width: 600px;"><video src="figs/MF2_wholefield_compressed.mp4" style="width: 600px;" controls><p>Your browser does not support display of this video.</p>
 </video></div><p>Evidently, MultiFate-2 can indeed produce tristability. And other MultiFate-2 clones produced other behaviors as well.</p>
-<section id="Irreversible-differentiation-(hysteresis)">
+<div class="section" id="Irreversible-differentiation-(hysteresis)">
 <h3>Irreversible differentiation (hysteresis)<a class="headerlink" href="#Irreversible-differentiation-(hysteresis)" title="Permalink to this headline"></a></h3>
 <p>A striking feature in natural cell fate control systems is the appearance of irreversible or hysteretic transitions, in which a cell can differentiate into one or more new fates, perhaps in response to a signal, but does not (under normal conditions) de-differentiate back to its previous state. One of the best studied examples of this is the <a class="reference external" href="https://doi.org/10.1016/j.febslet.2009.10.068">maturation of Xenopus oocytes</a> in response to the hormone progesterone, beautifully studied by James
 Ferrell and colleauges. Another example is the differentiation of embryonic stem cells.</p>
@@ -1853,9 +1853,9 @@ attractors in the system now have A or B expression but not both. With no other 
 <div style="margin: auto; width: 350px;"><video src="figs/MF2BifurcationMovieSymmetricOnly.mov" style="width: 350px;" controls><p>Your browser does not support display of this video.</p>
 </video></div><p>Remarkably, the same behavior occurs in the real cells as well. In the following diagram, the four circles represent the fraction of cells in states that have low or high expression of gene A (x-axis) or B (y-axis). You can see the AB state depopulating at low TMP and not re-populating when TMP is restored.</p>
 <div style="width: 600px; margin: auto;"><img alt="MultiFate toggling between states experimentally" src="../_images/MultiFate_Experimental_Toggling.png" />
-</div></section>
-</section>
-<section id="MultiFate-expands">
+</div></div>
+</div>
+<div class="section" id="MultiFate-expands">
 <h2>MultiFate expands<a class="headerlink" href="#MultiFate-expands" title="Permalink to this headline"></a></h2>
 <p>Three states is nice. Seven states is nicer. One of the key advantages of the MultiFate architecture is that it can be expanded by plugging in additional transcription factors to an existing circuit. This works because all of the interactions between factors occur at the protein level (rather than through transcriptional regulation).</p>
 <div style="width: 350px; margin: auto;"><img alt="MultiFate-3" src="../_images/MultiFate-3.png" />
@@ -1880,8 +1880,8 @@ attractors in the system now have A or B expression but not both. With no other 
 able to determine that cells that started in each of these seven states persisted within these states for at least 18 days in the absence of external control signals.</p>
 <div style="width: 800px; margin: auto;"><img alt="Various multistable regimes for a 3-gene MultiFate circuit" src="../_images/MultiFate3_Modeling.png" />
 </div><p>With MultiFate, in experiments as well as in the model, the number of states increases faster than the number of transcription factors. This is essential to achieve very large numbers of states.</p>
-</section>
-<section id="Progressive-differentiation">
+</div>
+<div class="section" id="Progressive-differentiation">
 <h2>Progressive differentiation<a class="headerlink" href="#Progressive-differentiation" title="Permalink to this headline"></a></h2>
 <p>A classic theme in natural cell fate control systems is the occurrence of branching fate decisions, exemplified by this illustration of cell fate diversification in the hematopoietic system (<a class="reference external" href="https://doi.org/10.1002/sctm.17-0192">Antoniani et al</a>):</p>
 <div style="width: 400px; margin: auto;"><img alt="HSC_differentiation.png" src="../_images/HSC_differentiation.png" />
@@ -1889,7 +1889,7 @@ able to determine that cells that started in each of these seven states persiste
 states: AB, BC, and AC. Then, just as they are getting comfortable, we can further reduce protein stability. Now the double positive states become unstable as well, and cells migrate to the A-only, B-only, and C-only states. In this way, varyiung one parameter can cause a progressive series of decisions.</p>
 <div style="margin: auto; width: 650px;"><video src="figs/MovieS6_MF3Bifurcation.mp4" style="width: 650px;" controls><p>Your browser does not support display of this video.</p>
 </video></div><p>Remarkably, this occurs not only in the model but in the real system as well (see <a class="reference external" href="https://doi.org/10.1126/science.abg9765">Zhu et al</a>).</p>
-<section id="Scaling:-how-far-can-it-go?">
+<div class="section" id="Scaling:-how-far-can-it-go?">
 <h3>Scaling: how far can it go?<a class="headerlink" href="#Scaling:-how-far-can-it-go?" title="Permalink to this headline"></a></h3>
 <p>A final question we can ask in the model is how far can MultiFate scale? How many states can it generate? To address this question, one can analyze MultiFate models with increasing numbers of transcription factors. In addition to counting the number of stable fixed points, we can also quantify the relative sizes of their basins of attraction to make sure they are really accessible. Zhu et al performed this analysis. As shown in the next plot, the number of states initially grows exponentially
 with the number of factors. Eventually it starts to saturate. The reason for this turns out to be interesting. In the MultiFate architecture, only the homodimers are active. For a state with a certain number, <span class="math notranslate nohighlight">\(m\)</span> of transcription factors simultaneously expressed, there are <span class="math notranslate nohighlight">\(~m^2\)</span> dimer complexes but only <span class="math notranslate nohighlight">\(m\)</span> of those are active. So the fraction of all species that are active decreases as <span class="math notranslate nohighlight">\(~1/m\)</span>. This eventually limits the total number of states. Nevertheless, for the
@@ -1903,15 +1903,15 @@ Eventually the homodimer state becomes too improbable because the heterodimer st
 We have that
 \begin{align}
 \frac{[X_{2,i}]}{[X_{tot,i}]} = \frac{2 [X_{tot,i}]}{K_d + 4\sum [X_{tot,i}] + \sqrt{K_d^2 + 8K_d\sum [X_{tot,i}]}}
-\end{align} --></section>
-</section>
-<section id="Conclusion">
+\end{align} --></div>
+</div>
+<div class="section" id="Conclusion">
 <h2>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this headline"></a></h2>
 <p>Multicellular organisms are built from multiple cells in multiple states. Understanding how those states are established, stabilized, and controlled remains a fundamental biological challenge. Natural circuits appear to combine combinatorial dimerization and positive autoregulation—two circuit level features we have already encountered. The synthetic MultiFate circuit shows that these two features together provide a scalable architecture for multistability with many features that are reminescent
 of natural cell fate control systems. Additional mechanisms are almost certain to play critical roles. Nevertheless, this approach reveals that multistability can be engineered, and provokes a range of questions about how combinations of transcription factors work to specify fates and their transitions. Above, the knobs used to experimentally control the state of the MultiFate circuit were external, based on small molecules. In future iterations, a larger circuit may be able to control these
 dynamics autonomously or in response to signals from other cells, similar to the behaviors observed during the development of multicellular organisms. Achieving this vision will likely require uncovering additional design principles for multicellularity.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -1925,11 +1925,11 @@ dynamics autonomously or in response to signals from other cells, similar to the
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc60c5850> 
+   <jinja2.runtime.BlockReference object at 0x7f85a0eb67f0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

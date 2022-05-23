@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>17. Cellular bet-hedging &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -96,6 +95,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -413,23 +413,23 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="17.-Cellular-bet-hedging">
+<div class="section" id="17.-Cellular-bet-hedging">
 <h1>17. Cellular bet-hedging<a class="headerlink" href="#17.-Cellular-bet-hedging" title="Permalink to this headline"></a></h1>
-<hr><section id="Design-principle">
+<hr><div class="section" id="Design-principle">
 <h2>Design principle<a class="headerlink" href="#Design-principle" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Bet-hedging through probabilistic cellular state-switching (differentiation) can outperform adaptive response strategies when environmental conditions fluctuate unpredictably.</p></li>
 </ul>
-</section>
-<section id="Concepts">
+</div>
+<div class="section" id="Concepts">
 <h2>Concepts<a class="headerlink" href="#Concepts" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Optimal (Kelly) betting</p></li>
 <li><p>Antibiotic persistence</p></li>
 <li><p>Biological bet-hedging</p></li>
 </ul>
-</section>
-<section id="Techniques">
+</div>
+<div class="section" id="Techniques">
 <h2>Techniques<a class="headerlink" href="#Techniques" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Optimal betting strategies</p></li>
@@ -760,27 +760,27 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div><p>Survival in an uncertain world requires adaptability and anticipation, the complementary abilities to respond to and prepare for change.</p>
 </div></blockquote>
 <p>— Jeffrey N. Carey and Mark Goulian, “<a class="reference external" href="https://doi.org/10.1007/s00294-018-0856-2">A bacterial signaling system regulates noise to enable bet hedging</a>,” <em>Current Genetics</em>, 2019.</p>
-<section id="Noise:-A-bug-or-feature?">
+<div class="section" id="Noise:-A-bug-or-feature?">
 <h3>Noise: A bug or feature?<a class="headerlink" href="#Noise:-A-bug-or-feature?" title="Permalink to this headline"></a></h3>
 <p>In the past two chapters, we have studied noise, how it arises, how to quantify it, and how to take it into account when we study the dynamics of biological circuits. There is a natural tendency to think of noise as a defect since it makes circuit operation less precise. Indeed, we have largely suppressed noise in electronic circuits.</p>
 <p>But can noise be a feature, as well as a bug?</p>
 <p>Today we will start to explore how noise, in the context of circuits, can provide critical enabling capabilities for cells and organisms.</p>
-</section>
-<section id="Cellular-investors">
+</div>
+<div class="section" id="Cellular-investors">
 <h3>Cellular investors<a class="headerlink" href="#Cellular-investors" title="Permalink to this headline"></a></h3>
 <p>Consider a loose analogy between financial investing and bacterial survival. With a crystal ball that tells the future, you could maximize your wealth by investing all your cash in a single stock, the one you know will perform best over the period you care about. This is an ideal strategy, but requires the crystal ball. In real life, you cannot predict how any stock will perform and which ones will collapse entirely. Indeed, the value of any stock may depend not only on the underlying strength
 of the company but also on all sorts of extraneous factors including interest rates, pandemics, and wars. Given the uncertainty, the common wisdom is to diversify, spreading one’s money across across multiple investments. One hopes that the strong performers will more than compensate for the lackluster ones. And if any individual stock fails, one would not lose everything. This is a form of bet hedging.</p>
 <p>Bacteria face a similar challenge. Individual cells can exist in a variety of physiological states, each of which may be adapted to some but not all potential future environments. A bacterial cell that anticipates the environment it will soon face can proliferate more rapidly than its relatives. By contrast, if it finds itself in the wrong state, it may grow more slowly or not survive the coming environmental change at all. Bacteria have evolved for billions of years, and have acquired
 mechanisms that allow them to anticipate future conditions. Nevertheless, just as future stock prices are hard to predict even for an expert investor, so too are environmental fluctuations. Our poor little bacterium doesn’t stand a chance of accurately predicting future temperature, salt, toxins, antibiotics, and attacking immune cells all by itself. Instead, it uses a form of biological bet hedging, in which the shared genome of a clonal cell population effectively spreads its bets, in the form
 of individual cells, across multiple physiological states, each adapted to a different possible future.</p>
-</section>
-<section id="The-ideal-cell-for-an-uncertain-world">
+</div>
+<div class="section" id="The-ideal-cell-for-an-uncertain-world">
 <h3>The ideal cell for an uncertain world<a class="headerlink" href="#The-ideal-cell-for-an-uncertain-world" title="Permalink to this headline"></a></h3>
 <p>Today, we seek to gain some insight into how bacteria bet hedge. We will imagine that we are designing the stress response system for a custom, designer super-bacterium. Our goal is to maximize its survival and proliferation. We can of course provide the cell with an array of sensors, information processing circuits, and responses—the types of circuits we have been studying.</p>
 <p>But now we also have a new trick: we can provide cells with a “random number generator” that operates independently in each individual cell. The ability to generate random behaviors is essential for bet hedging. It allows genetically identical cells to do different things in the same environment, controlling the probability of each choice. “What kind of random number generator is this?” you ask. Noise! We have just learned that cells generate randomness in gene expression through intrinsically
 stochastic bursts of protein production. This noise, when considered in the context of a regulatory circuit, enables cells to implement <strong>probabilistic strategies</strong>, by controlling the fraction of cells in the population that are in one state or another.</p>
-</section>
-<section id="Overview-of-this-chapter:">
+</div>
+<div class="section" id="Overview-of-this-chapter:">
 <h3>Overview of this chapter:<a class="headerlink" href="#Overview-of-this-chapter:" title="Permalink to this headline"></a></h3>
 <p>The goal of this chapter is to explain how probabilistic circuits can be beneficial for cells living in unpredictable environments.</p>
 <ul class="simple">
@@ -789,8 +789,8 @@ stochastic bursts of protein production. This noise, when considered in the cont
 <li><p>We will then extend this discussion to systems with multiple states and multiple corresponding environments, to see if and when a purely probabilistic strategy can outperform one based on direct sensing of the environment.</p></li>
 <li><p>Finally, we will highlight the particular phenomenon of antibiotic persistence, which presents a biomedically important example in which bacterial bet-hedging plays out.</p></li>
 </ul>
-</section>
-<section id="A-simple-betting-game">
+</div>
+<div class="section" id="A-simple-betting-game">
 <h3>A simple betting game<a class="headerlink" href="#A-simple-betting-game" title="Permalink to this headline"></a></h3>
 <p>We start with the simplest betting game one can imagine: Each day you get to make a bet, and the odds of winning are always the same. Unlike Vegas, the odds will be in your favor, with your probability of winning, <span class="math notranslate nohighlight">\(p\)</span> , better than even: <span class="math notranslate nohighlight">\(p&gt;0.5\)</span> .</p>
 <p>All you have to decide is how much you want to bet each day. <span class="math notranslate nohighlight">\(b_k\)</span> denotes the amount of your <span class="math notranslate nohighlight">\(k\)</span>th bet. It could range from 0 to your total fortune before the bet, denoted <span class="math notranslate nohighlight">\(X_{k-1}\)</span>. That is <span class="math notranslate nohighlight">\(0\le b_k \le X_{k-1}\)</span>.</p>
@@ -802,14 +802,14 @@ X_{k-1} + b_k & \textrm{ with probability } p \\[1em]
 X_{k-1} - b_k & \textrm{ with probability } 1-p
 \end{cases}
 \end{align}</span></p>
-</section>
-<section id="“I’m-ruined!”">
+</div>
+<div class="section" id="“I’m-ruined!”">
 <h3>“I’m ruined!”<a class="headerlink" href="#“I’m-ruined!”" title="Permalink to this headline"></a></h3>
 <p>Suppose you start off with $ X_0 = <span class="math">\mathrm{$100}</span> $. How much of this money should you bet? Take a moment to think about it.</p>
 <p>Because <span class="math notranslate nohighlight">\(p&gt; \frac{1}{2}\)</span>, the bet that will maximize the average return, or “expectation value,” of a single bet would be everything: <span class="math notranslate nohighlight">\(b_k=X_{k-1}\)</span>.</p>
 <p>If you won every single bet, your wealth would increase, after <span class="math notranslate nohighlight">\(k\)</span> bets by a factor of <span class="math notranslate nohighlight">\(2^k\)</span>. However, the probability of winning <span class="math notranslate nohighlight">\(k\)</span> bets in a row, <span class="math notranslate nohighlight">\(p^k\)</span>, is low even when <span class="math notranslate nohighlight">\(p\)</span> is high. For instance, with <span class="math notranslate nohighlight">\(p=0.8\)</span>, you have less than a 1.5% chance of surviving 20 rounds. This is the phenomenon known as <a class="reference external" href="https://en.wikipedia.org/wiki/Gambler%27s_ruin">gambler’s ruin</a>. In biology, as in finance, ruin is undesirable and unsustainable.</p>
-</section>
-<section id="Proportional-betting">
+</div>
+<div class="section" id="Proportional-betting">
 <h3>Proportional betting<a class="headerlink" href="#Proportional-betting" title="Permalink to this headline"></a></h3>
 <p>Since the odds are in your favor here, there ought to be a better strategy, one that provides strong returns but also limits the risk of ruin.</p>
 <p>One possibility is <strong>proportional betting</strong>. In this scheme, you set the size of your bet to be proportional to the amount of money you have: <span class="math notranslate nohighlight">\(b_k = f X_{k-1}\)</span>, where <span class="math notranslate nohighlight">\(0&lt;f&lt;1\)</span> denotes the fraction of your wealth you bet on each round. Even if you lose, you are not wiped out completely. You still live to play another day.</p>
@@ -913,8 +913,8 @@ geometric mean turns out to be equivalent to maximizing the expectation value of
 dollar each week but not to reinvest his winnings. He should then maximize his expectation (expected value of capital) on each bet. He would bet all his available capital (one dollar) on the event yielding the highest expectation. With probability one he would get ahead of anyone dividing his money differently.</p>
 </div></blockquote>
 <p>See <a class="reference external" href="http://www.math.ucla.edu/~tom/stat596/Kelly.pdf">Tom Ferguson’s lecture</a> for other interesting extensions and applications. For example, this result can be generalized to the case where the probabilities change with time. In that case, each round one just replaces <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(p_k\)</span>. It can also be generalized to cases in which there are multiple outcomes, like a horse rase. In this case, the optimal straetgy involves betting on each horse in proportion to its odds of winning.</p>
-</section>
-<section id="Simulating-Kelly-betting">
+</div>
+<div class="section" id="Simulating-Kelly-betting">
 <h3>Simulating Kelly betting<a class="headerlink" href="#Simulating-Kelly-betting" title="Permalink to this headline"></a></h3>
 <p>We worked out the expectation value of the logarithm of wealth. We might also be interested in learning about how individual outcomes of Kelly betting might play out and to gather information about the <em>distribution</em> of outcomes. To that end, we can simulate Kelly betting games. We do so below, starting with <span class="math notranslate nohighlight">\(X_0 = 1\)</span> and betting 100 rounds, with <span class="math notranslate nohighlight">\(p = 0.6\)</span>, giving an optimal betting strategy of <span class="math notranslate nohighlight">\(f = 2p-1 = 0.2\)</span>.</p>
 <div class="nbinput toggle docutils container">
@@ -1112,8 +1112,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <p>We lose about 12% of the time, but we can still win big (the riches axis is on a logarithmic scale)!</p>
 <p>What does this calculation have to do with bacteria? The key point here is that even when outcomes are unpredictable, there can be optimal betting strategies. Over billions of years, evolution may have found those strategies.</p>
-</section>
-<section id="Alternative-bacterial-strategies:-sense-and-respond-or-stochastically-switch?">
+</div>
+<div class="section" id="Alternative-bacterial-strategies:-sense-and-respond-or-stochastically-switch?">
 <h3>Alternative bacterial strategies: sense and respond or stochastically switch?<a class="headerlink" href="#Alternative-bacterial-strategies:-sense-and-respond-or-stochastically-switch?" title="Permalink to this headline"></a></h3>
 <p>Having seen a very simple example of an optimal bet-hedging strategy, we now turn back to biology and ask how a population of cells can use probabilistic strategies to survive and even thrive in unpredictable environments. There are many systems in which this appears to happen:</p>
 <ul class="simple">
@@ -1125,8 +1125,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div><p><strong>Responsive switching.</strong> At first glance, the most straightforward solution is to deterministically sense the current and environment and adjust expression of proteins to put cells into its best adapted state. However, this requires that cells express specific sensors for a broad variety of conditions that they may not encounter most of the time.</p>
 <p><strong>Stochastic switching</strong>. An alternative way to adapt is not to sense at all, but rather to just switch stochastically between different states, “hoping” that the cost from having cells in less adaptive states some of the time will be outweighed by the reduced cost of constantly sensing a broad variety of different inputs. In fact, many natural systems appear to implement such stochastic state-switching strategies.</p>
 <p>Of course, both strategies could be used together in any particular system.</p>
-</section>
-<section id="Optimizing-stochastic-switching-for-environmental-variation:">
+</div>
+<div class="section" id="Optimizing-stochastic-switching-for-environmental-variation:">
 <h3>Optimizing stochastic switching for environmental variation:<a class="headerlink" href="#Optimizing-stochastic-switching-for-environmental-variation:" title="Permalink to this headline"></a></h3>
 <p>We first focus on a purely stochastic strategy.</p>
 <p><a class="reference external" href="https://doi.org/10.1534/genetics.167.1.523">Thattai and van Oudenaarden (Genetics, 2003)</a> considered a minimal case in which cells can switch between two distinct states, each optimized for growth in one of two possible environments. They assumed that both the environment and the cells switch stochastically between their respective states. However, the cell is assumed not to directly sense the environment it is in. The situation here is loosely analogous to the Kelly betting example
@@ -1163,8 +1163,8 @@ risk by ‘not putting all of their eggs in one basket’. Recent work suggests 
 rates with respect to the duration of exposures to alternating environments. This ‘resonant’ condition provides an effective survival strategy by ‘blindly’ anticipating environmental changes. This strategy could be used by cellular populations that lack dedicated signal transduction machinery for particular extracellular signals, or when it is crucial for a population to act at a faster timescale than is possible by signal transduction.</p>
 </div></blockquote>
 <p>Stochastic switching can thus be a good strategy when cells are unable to detect the environment or detect it fast enough. But could it ever outperform a “smarter” strategy based on directly sensing and responding to the environment the cell is in?</p>
-</section>
-<section id="Tradeoffs-between-responsive-and-stochastic-switching-strategies">
+</div>
+<div class="section" id="Tradeoffs-between-responsive-and-stochastic-switching-strategies">
 <h3>Tradeoffs between responsive and stochastic switching strategies<a class="headerlink" href="#Tradeoffs-between-responsive-and-stochastic-switching-strategies" title="Permalink to this headline"></a></h3>
 <p>Kussell and Leibler approached this problem in an elegant paper (<a class="reference external" href="https://doi.org/10.1126/science.1114383">Science, 2005</a>), where they directly compared responsive and stochastic switching strategies. They set up the problem in the following way:</p>
 <p><strong>Environment dynamics</strong>. First, imagine a set of different environments, each of which lasts for a random, exponentially distributed, time, before transitioning to another environmental state. The <span class="math notranslate nohighlight">\(i^{th}\)</span> environment has a mean lifetime, <span class="math notranslate nohighlight">\(\tau_i\)</span>. Now, allow a probabilistic alternation among environments, characterized by a matrix of environment switching rates, with <span class="math notranslate nohighlight">\(b_{ij}\)</span> denoting the probability of switching to environment <span class="math notranslate nohighlight">\(i\)</span> from environment <span class="math notranslate nohighlight">\(j\)</span>. While each
@@ -1190,8 +1190,8 @@ environment has some characteristic duration, and some likelihood of switching t
 </ul>
 <p>Note the different costs that are incurred in the two strategies. Generally speaking, sensing is favored when the diversity costs would be high, sensing costs are low, and the environment is highly variable. By contrast, stochastic switching can be favored in regimes in which sensing costs are higher, and environments are stable over longer times. (These statements are made mathematically precise in the paper).</p>
 <p>With these general ideas in mind, we will now turn to a fascinating and biomedically important phenomenon: antibiotic persistence.</p>
-</section>
-<section id="Antibiotic-persistence:-a-stochastic-switching-strategy">
+</div>
+<div class="section" id="Antibiotic-persistence:-a-stochastic-switching-strategy">
 <h3>Antibiotic persistence: a stochastic switching strategy<a class="headerlink" href="#Antibiotic-persistence:-a-stochastic-switching-strategy" title="Permalink to this headline"></a></h3>
 <p>When one adds antibiotics to a bacterial culture, they typically kill almost, but not quite, all of the cells. A small fraction of cells, termed <strong>persisters</strong>, survive. This occurs even when the bacteria are genetically identical. One explanation might be the occurrence of antibiotic resistant mutants – cells that have acquired heritable mutations making them insensitive to the antibiotic. But in many cases the cells that survive the antibiotic treatment turn out <em>not</em> to be resistant mutants.
 The way to see that is to grow them up in media lacking the antibiotic, and then again expose them to antibiotic again. If they were resistant, then all of this re-grown culture would survive. If the survivors are persisters, on the other hand, then the antibiotic again kills the vast majority of cells, and only the same tiny fraction of persisters again survives.</p>
@@ -1215,8 +1215,8 @@ schematically here.</p>
 <li><p>Temporal heterogeneity: perhaps adapt to the antibiotic, but do so at different rates, with only the fastest surviving.</p></li>
 <li><p>Pre-existing heterogeneity: cells may switch among distinct, physiological states even in the absence of the antibiotic, with a small percentage occupying a transient, insensitive state at the time of antibiotic addition.</p></li>
 </ul>
-</section>
-<section id="Persistence-in-movies">
+</div>
+<div class="section" id="Persistence-in-movies">
 <h3>Persistence in movies<a class="headerlink" href="#Persistence-in-movies" title="Permalink to this headline"></a></h3>
 <p>The most direct way to visualize persistence is to look at it directly using <a class="reference external" href="figs/persistence_movie.mov">time-lapse movies</a>. Notice here the large variation in the time at which different cells start growing, even though they are all in essentially the same environment.</p>
 <div style="margin: auto; width: 500px;"><video width="600px" src="figs/persistence_movie.mov" controls><p>Your browser does not support display of this video.</p>
@@ -1229,8 +1229,8 @@ schematically here.</p>
 <div style="margin: auto; width: 450px;"><img alt="Balaban movie diagram" src="../_images/balaban_movie_diagram.png" />
 </div><p><em>Figure taken from</em><a class="reference external" href="https://doi.org/10.1126/science.1099390">Balaban and Leibler, Science, 2004</a><em>.</em></p>
 <p>From these experiments, we can see directly that cells spontaneously switch to persistent states characterized by slow growth. These states are far less vulnerable to attack by ampicillin, which affects cell wall synthesis. After removal of antibiotics, these cells can resume growth.</p>
-</section>
-<section id="Persistence-comes-in-multiple-flavors">
+</div>
+<div class="section" id="Persistence-comes-in-multiple-flavors">
 <h3>Persistence comes in multiple flavors<a class="headerlink" href="#Persistence-comes-in-multiple-flavors" title="Permalink to this headline"></a></h3>
 <p>Through the movies and many other experiments, the authors identified two types of persisters: Those that are formed in response to a triggering event, termed type I persisters, and those that are formed spontaneously, even in constant conditions, and even in the absence of the drug, termed type II persisters. They summarized the two types of behavior with this diagram:</p>
 <div style="margin: auto; width: 250px;"><img alt="persister_diagram" src="../_images/balaban_persister_diagram.png" />
@@ -1244,8 +1244,8 @@ way in which they are generated. It also appeared that type II persisters are no
 \end{align}</span></p>
 <p>Note the similarities of this model to the one used above to describe switching dynamics in theoretical models as well as experimental yeast strains. As mentioned above, the exponential growth regime described here can only exist in specific laboratory conditions. In a real environment, cells would rapidly approach the carrying capacity of the environment.</p>
 <p>Experiments measured the switching rates to be <span class="math notranslate nohighlight">\(a=1.2±0.2 \times 10^{-6}\)</span> per hour and <span class="math notranslate nohighlight">\(b=0.1 ± 0.05\)</span> per hour for wild-type E. coli in the conditions used, with a hipQ mutant increasing the frequency of persisters with an elevated rate of switching into the persister state, <span class="math notranslate nohighlight">\(a=1.0±0.2 \times 10^{-3}\)</span> per hour. The recovery rate, <span class="math notranslate nohighlight">\(b\)</span>, was estimated to be somewhere in the range of <span class="math notranslate nohighlight">\(10^{-7} - 10^{-4}\)</span> per hour.</p>
-</section>
-<section id="A-“toxin-antitoxin”-module-generates-persisters-through-molecular-titration">
+</div>
+<div class="section" id="A-“toxin-antitoxin”-module-generates-persisters-through-molecular-titration">
 <h3>A “toxin-antitoxin” module generates persisters through molecular titration<a class="headerlink" href="#A-“toxin-antitoxin”-module-generates-persisters-through-molecular-titration" title="Permalink to this headline"></a></h3>
 <p>So far, we have seen that probabilistic “bet-hedging” strategies can be advantageous under some conditions, with antibiotic persistence providing an ideal example of such a strategy. But how is persistence implemented by underlying molecular circuits? When discussing molecular titration, we learned that the hip persistence system is based on a <strong>toxin-antitoxin</strong> module. A thorough recent review of this fascinating topic can be found <a class="reference external" href="https://doi.org/10.1016/j.molcel.2018.01.003">here</a>.</p>
 <p>Toxin-antitoxin modules usually consist of a two gene operon. One gene codes for a toxic protein that inhibits cell growth. The other codes for an antitoxin that binds to and inhibits the first protein. In some cases, the toxin is more stable than the antitoxin. Many naturally occurring plasmids (circular, self-replicating DNA molecules) contain such toxin-antitoxin modules. If the plasmid is lost from a cell, the antitoxin rapidly degrades, leaving the toxin, and thereby killing the cell. In
@@ -1260,14 +1260,14 @@ growth-arrested state. Cells exit from this state after long and broadly distrib
 proteins could generate subpopulations of cells in which HipA exceeds HipB, triggering persistent growth-arrested states.</p>
 <p>Mutations can alter the frequencies of persisters in a population. This indicates that the key requirements for evolution of bet-hedging exist in this system: an ability probabilistically switch to a distinct state that grows faster or survives better in certain environments (in this case, with antibiotics), and the ability to control the stochastic rates at which cells switch between states. As I write this, single-cell transcriptome profiling is just emerging in bacteria (see
 <a class="reference external" href="https://dx.doi.org/10.1126/science.aba5257">this</a> and <a class="reference external" href="https://doi.org/10.1101/2021.03.10.434868">this</a>, both from former Caltechers), but could enable the discovery of many other low frequency cellular states, which, like the persisters discussed here, enable bacteria to hedge their bets.</p>
-</section>
-<section id="Summary">
+</div>
+<div class="section" id="Summary">
 <h3>Summary<a class="headerlink" href="#Summary" title="Permalink to this headline"></a></h3>
 <p>Microorganisms face unpredictable environments. In this situation, a key strategy is to take advantage of stochastic noise within the cell to implement probabilistic survival strategies, analogous to bet-hedging. With the classic example of proportional betting, we can see how there can be optimal strategies when only the statistics of potential outcomes are known. Turning to microorganisms, we saw how a population can effectively hedge its bets by devoting different fractions of the population
 to different states, each optimized for different potential environments. In fact, stochastic switching strategies can even outperform seemingly better sense and respond strategies when there are high sensing costs and low diversity costs. Bacterial persistence represents a biomedically important natural case of bet-hedging. Persisters can form prior to antibiotic exposure, and enable survival of subsequent antibiotic treatments. Finally, we saw that toxin-antitoxin cassettes use the molecular
 titration and noise to provide a mechanism for persistence. Thus, we can see how circuits operating within individual cells can implement probabilistic strategies at the level of cell populations.</p>
-</section>
-<section id="Computing-environment">
+</div>
+<div class="section" id="Computing-environment">
 <h3>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h3>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -1294,9 +1294,9 @@ jupyterlab: 3.3.2
 
 </pre></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -1310,11 +1310,11 @@ jupyterlab: 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc0ca8fd0> 
+   <jinja2.runtime.BlockReference object at 0x7f85d9d48400> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

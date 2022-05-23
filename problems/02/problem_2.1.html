@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 2.1: Cost of a steady state &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -86,6 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -150,13 +150,13 @@
     text-align: unset;
 }
 </style>
-<section id="Problem-2.1:-Cost-of-a-steady-state">
+<div class="section" id="Problem-2.1:-Cost-of-a-steady-state">
 <h1>Problem 2.1: Cost of a steady state<a class="headerlink" href="#Problem-2.1:-Cost-of-a-steady-state" title="Permalink to this headline"></a></h1>
 <hr><p><em>This problem is still a draft.</em></p>
 <p>We worked out that for unregulated gene expression, the steady state level of gene product is <span class="math notranslate nohighlight">\(\beta/\gamma\)</span>, where <span class="math notranslate nohighlight">\(\beta\)</span> is the production rate and <span class="math notranslate nohighlight">\(\gamma\)</span> is the degradation rate. A steady state may be achieved for low <span class="math notranslate nohighlight">\(\beta\)</span> and low <span class="math notranslate nohighlight">\(\gamma\)</span>, for high <span class="math notranslate nohighlight">\(\beta\)</span> and high <span class="math notranslate nohighlight">\(\gamma\)</span>, and everything in between, provided the ratio <span class="math notranslate nohighlight">\(\beta/\gamma\)</span> is the same.</p>
 <p>A <strong>loss function</strong>, also known as a <strong>cost function</strong>, takes as input an operating parameter or set of parameters and returns the “cost” associated operating with the given parameter value(s). Sketch a loss function <span class="math notranslate nohighlight">\(L(\beta)\)</span> as a function of <span class="math notranslate nohighlight">\(\beta\)</span>, assuming <span class="math notranslate nohighlight">\(\beta/\gamma\)</span> is held constant. Describe why the curve might have the shape it does. Note that there is not right answer, or even a quantitative one, for this problem. It is meant to get you thinking about what some of
 the costs may be that are associated with different operating regimes.</p>
-</section>
+</div>
 
 
            </div>
@@ -170,11 +170,11 @@ the costs may be that are associated with different operating regimes.</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc2433df0> 
+   <jinja2.runtime.BlockReference object at 0x7f85dbd80eb0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

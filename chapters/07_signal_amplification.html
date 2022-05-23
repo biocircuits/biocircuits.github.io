@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7. Amplification of extracellular signals &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -92,6 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -409,7 +409,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="7.-Amplification-of-extracellular-signals">
+<div class="section" id="7.-Amplification-of-extracellular-signals">
 <h1>7. Amplification of extracellular signals<a class="headerlink" href="#7.-Amplification-of-extracellular-signals" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
@@ -755,7 +755,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<section id="Amplifiers:-the-middle-management-of-biological-circuitry">
+<div class="section" id="Amplifiers:-the-middle-management-of-biological-circuitry">
 <h2>Amplifiers: the middle management of biological circuitry<a class="headerlink" href="#Amplifiers:-the-middle-management-of-biological-circuitry" title="Permalink to this headline"></a></h2>
 <p>In electronic circuits, among the first systems one learns about are amplifiers. They come in a huge variety of types and are required for a vast array of circuit capabilities. Biological circuits are similarly overflowing with amplifiers, which play a variety of essential roles in circuits. The cell</p>
 <p>First and most obviously, amplifiers can modulate the amplitude of a signal. This is important if an intrinsically weak input signal needs to be magnified to control a cellular response. Second, amplifiers can reshape signals, allowing a system to respond to signals that exceed a threshold. A third, less obvious aspect of amplifiers is their role in conveying signals from one molecular species (e.g. protein) or biochemical form to another (e.g. from protein abundance to protein phosphorylation).</p>
@@ -763,8 +763,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 --><p>Amplifiers are like middle managers: they do not generate new information nor do they use information. Instead, they take results from one group, extract key features, manipulate them, and then pass them along to others in a new form, hopefully adding some value along the way.</p>
 <p>In this chapter, we will analyze multi-component amplifiers based on protein kinases. While gene regulation also functions as a kind of amplifier, with transcription factors serving as inputs to control the abundances of other genes, phosphorylation amplifiers can operate faster and more directly. We will focus on two of the most important classes of kinasee amplifiers: two-component systems in prokaryotes and kinase cascades in eukaryotes. We will learn how amplifiers can operate in a manner
 that is robust to their own component concentrations and how they can allow tuning of two key properties: gain and sensitivity.</p>
-</section>
-<section id="Amplifiers-are-characterized-by-gain-and-sensitivity">
+</div>
+<div class="section" id="Amplifiers-are-characterized-by-gain-and-sensitivity">
 <h2>Amplifiers are characterized by gain and sensitivity<a class="headerlink" href="#Amplifiers-are-characterized-by-gain-and-sensitivity" title="Permalink to this headline"></a></h2>
 <p>Consider the task of designing a biomolecular sensor module that encodes the concentration of an input signal in the concentration of a target protein. Cells have to do this all the time, in order to transmit information about the external environment from sensory components at the periphery of the cell to regulatory components in the interior of the cell that regulate the cellular response to environmental conditions. As they convert information from the input to the effector molecule, in a
 process called <strong>signal transduction</strong>, they also amplify it, making the effector response larger than the input. The degree to which an output signal is increased relative to its input is called <strong>gain.</strong> Gain is easiest to define for a linear input-output relation, where it is independent of input level. In non-linear input-output systems, gain varies depending on the input level. More importantly, non-linear systems offer different levels of <strong>sensitivity</strong>, defined as
@@ -772,7 +772,7 @@ process called <strong>signal transduction</strong>, they also amplify it, makin
 <p>We have already seen how the sensitivity of a regulation function can critically influence the functional behavior of the circuit in which it appears. For example, in Chapter 3 we saw that ultrasensitive regulation (<span class="math notranslate nohighlight">\(n &gt; 1\)</span>) was required for bistability in both the positive autoregulatory feedback loop and mutual repression toggle switch. On the other hand, we saw in Chapter 5 that incoherent feed-forward loops enable dosage compensation when regulation is linear (<span class="math notranslate nohighlight">\(n=1\)</span>). Thus,
 depending on the circuit function, different levels of sensitivity can be necessary.</p>
 <p>Different kingdoms provide different amplification circuits. Bacteria rely heavily on a diverse set of signaling pathways called two-component systems. Mammalian cells use distinct families of signal transduction systems, often based on cascades of kinases that regulate one another in linear cascades. In this chapter we will consider both types of signaling systems.</p>
-<section id="Tradeoffs-between-sensitivity-and-fidelity">
+<div class="section" id="Tradeoffs-between-sensitivity-and-fidelity">
 <h3>Tradeoffs between sensitivity and fidelity<a class="headerlink" href="#Tradeoffs-between-sensitivity-and-fidelity" title="Permalink to this headline"></a></h3>
 <p>If the relationship between the output concentration and the input concentration is ultrasensitive, the module can reliably encode the <em>qualitative</em> information of whether the input signal is significantly above or below a particular threshold. However, it performs poorly in encoding the <em>quantitative</em> information of the input signal’s exact concentration. With an ultrasensitive response, most input concentrations either fail to activate or saturate response, causing most input concentrations to
 map to similar output concentrations. Further, even within the sensitive part of the response curve, slight fluctuations in the input concentration can lead to large variations in the output. As a result, ultrasensitive systems do a poor job at allowing the cell to confidently infer the input concentrations. (The chemotaxis circuit we encountered in the previous chapter gets around this problem by continually adapting to ambient input signals, effectively keeping itself responsive to small
@@ -787,15 +787,15 @@ JB: We need to programmatically generate the plot below.
 <p>With such a system, fluctuations in the input propagate to the output but are not disproportionately amplified.</p>
 <p>Two conditions are necessary to make such a “perfect” linear amplifier. First, <strong>linearity</strong>: the linear response regime should cover the range of input concentrations the system needs to reliably encode. Second, <strong>robustness</strong>: since all protein levels vary between cells and over time, the entire input-output response curve should ideally remain the same regardless of the levels of the systems own components.</p>
 <p>What circuit design could provide such a linear input-output response and ensure it is robust to variation in its own components?</p>
-</section>
-</section>
-<section id="Two-component-signaling-systems-provide-tunable-linear-amplification.">
+</div>
+</div>
+<div class="section" id="Two-component-signaling-systems-provide-tunable-linear-amplification.">
 <h2>Two-component signaling systems provide tunable linear amplification.<a class="headerlink" href="#Two-component-signaling-systems-provide-tunable-linear-amplification." title="Permalink to this headline"></a></h2>
 <p><strong>Two-component signaling systems</strong> are ubiquitous in both prokaryotes and eukaryotes. They modularly encode the ability to sense a signal, via a sensing receptor, and respond to it, via a cognate response regulator, often a transcription factor, whose activity is modulated by the receptor component. The “two components” in the name refer to a histidine kinase that can autophosphorylate itself on a histidine residue and then transfer these phosphate groups to an aspartate residue on a second
 protein termed the response regulator. Once phosphorylated, this protein can activate target genes or other processes. Bacteria often have many distinct two component systems. In fact, the chemotaxis system we discussed in the previous chapter is a special example of a two component signaling system.</p>
 <p>(Many two-component systems indeed have two protein components, as the name implies, while others actually have more, making the term, in some cases, a misnomer. For example, Bacillus subtilis cells use a four-component “phosphorelay” in which histidine kinases of the general type considered here respond to environmental insults by autophosphorylating and transferring their phosphate to a second protein, from which it is then transfered to a third, and finally a fourth protein, which is thereby
 activated. This terminal protein, called Spo0A, triggers sporulation, the transformation of the living cell into a dormant spore. This phosphorelay is used to sense dire environmental conditions and respond by triggering sporulation. An interesting, and as far as we know not fully answered, design question is under what circumstances a system should use such a 4-component phosphorelay rather than the seemingly simpler 2-component architecture described below.)</p>
-<section id="Two-component-system-input-output-relationships-generally-depend-on-the-concentrations-of-circuit-components">
+<div class="section" id="Two-component-system-input-output-relationships-generally-depend-on-the-concentrations-of-circuit-components">
 <h3>Two-component system input-output relationships generally depend on the concentrations of circuit components<a class="headerlink" href="#Two-component-system-input-output-relationships-generally-depend-on-the-concentrations-of-circuit-components" title="Permalink to this headline"></a></h3>
 <p>Before we get to the two component system architecture, we will first observe how hard the problem of robust, linear amplification is, by considering the simplest signaling system we can imagine. Here, an input signaling molecule <span class="math notranslate nohighlight">\(S\)</span> allows the receptor kinase <span class="math notranslate nohighlight">\(X\)</span> to phosphorylate a signaling moleucle <span class="math notranslate nohighlight">\(Y\)</span>, as shown below.</p>
 <div style="margin: auto; width: 200px;"><img alt="nonparadoxical signaling" src="../_images/Two-component-system_minimal.png" />
@@ -929,8 +929,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>To overcome this obstacle, and improve the fidelity of <span class="math notranslate nohighlight">\(y_p\)</span>’s encoding of <span class="math notranslate nohighlight">\(s\)</span>, we need <span class="math notranslate nohighlight">\(y_p\)</span> to somehow depend <em>only</em> on the concentation of the signaling molecule, <span class="math notranslate nohighlight">\(s\)</span>, independent of the concentrations of X, Y, and Z. But how…?</p>
-</section>
-<section id="Bifunctional-kinases-make-two-component-signaling-systems-robust-to-variation-in-their-own-components">
+</div>
+<div class="section" id="Bifunctional-kinases-make-two-component-signaling-systems-robust-to-variation-in-their-own-components">
 <h3>Bifunctional kinases make two-component signaling systems robust to variation in their own components<a class="headerlink" href="#Bifunctional-kinases-make-two-component-signaling-systems-robust-to-variation-in-their-own-components" title="Permalink to this headline"></a></h3>
 <p>The solution to this conundrum comes from a perplexing feature of many two-component systems: The same histidine kinase protein responsible for transferring phosphates to the response regulator also has a distinct, and nearly opposite, activity as a phosphatase. This kinase is therefore said to be “bifunctional.” In that role, it causes the response regulator to <em>lose</em> its phosphate. Perversely, even as it giveth of the phosphate, it also taketh away. This is an example of a more general concept
 called <strong>paradoxical regulation</strong>, in which the same component can have two opposite effects on its target.</p>
@@ -1054,8 +1054,8 @@ Potential exercise: build a ODE system that models this system with the Michaeli
 <div class="alert alert-block alert-info">
 Potential exercise: Take the original non-paradoxical signaling system and include an explicit ATP to ADP step associated with $X$'s phosphorylation of $Y$, and an explicit formation of inorganic phosphate associated with $Z$'s dephosphorylation of $Y_p$. Then apply the same black box appraoch that was used to analyze the paradoxical system, and show that you obtain the same expression for $y_p(s)$ as we obtained using michaelis menten analysis.
 </div>
---></section>
-<section id="An-example-paradoxical-signaling-system">
+--></div>
+<div class="section" id="An-example-paradoxical-signaling-system">
 <h3>An example paradoxical signaling system<a class="headerlink" href="#An-example-paradoxical-signaling-system" title="Permalink to this headline"></a></h3>
 <p>The EnvZ-OmpR system in <em>E. coli</em> is a classic two component system with a bifunctional kinase. EnvZ is a histidine kinase membrane protein that senses osmotic stress. It phosphorylates OmpR, which in turn regulates expression of porin genes. At high osmolarity, the cell up-regulates a large porin called OmpF, while at lower osmolarity, it predominantly expresses OmpC, which has a smaller pore.</p>
 <div style="margin: auto; width: 250px;"><img alt="EnvZ-OmpR" src="../_images/EnvZ-OmpR.png" />
@@ -1164,9 +1164,9 @@ MBE To do: Add discussion of linear responses from product inhibition: Springer 
     - Check whether model is robust to component concentrations.
 </div>
 
---></section>
-</section>
-<section id="Encoding-ultrasensitivity:-beyond-cooperativity">
+--></div>
+</div>
+<div class="section" id="Encoding-ultrasensitivity:-beyond-cooperativity">
 <h2>Encoding ultrasensitivity: beyond cooperativity<a class="headerlink" href="#Encoding-ultrasensitivity:-beyond-cooperativity" title="Permalink to this headline"></a></h2>
 <p>Let’s now return back to our discussion about ultrasensitivity, above. We have seen that bifunctional two-component systems can generate almost perfect linear amplifiers through their paradoxical architecture, and thus represent ideal systems for transmitting a signal with minimal distortion.</p>
 <p>But it is also sometimes the case that cells want to respond in more of an all-or-none manner to an external stimulus. This is particularly true for yes/no decisions. Should the cell divide? Should it differentiate? Should it undergo cell death? All of these responses require a sharp, switch-like response to input signals.</p>
@@ -1175,8 +1175,8 @@ mechanism can generate ultrasensitivity, it also has some disadvantages.</p>
 <p>For one, generating very ultrasensitive responses (<span class="math notranslate nohighlight">\(n &gt; 10\)</span>, for example) using only multimerization would require very large complexes. This places an architectural constraint on the structure of the proteins themselves which may compromise their other functional properties. Secondly, cooperativity is a property that is often ‘hard-wired’ into the structure of the protein itself—it is difficult to dynamically tune whether a protein complex is active only as a tetramer, only as a dimer, or
 only as a monomer, for example. Cells may very well face situations where they want to respond ultrasensitively to a signal, such as a hormone, in one context or cell type, but sense that same signal more linearly in a different one. In such a case, a more flexible, and dynamically tunable system for controlling ultrasensitivity would be useful.</p>
 <p>In this section, we will explore the kinase cascade circuit and show how the expression levels of its components can tune from graded to ultrasensitive responses.</p>
-</section>
-<section id="The-MAP-kinase-cascade-exhibits-both-ultrasensitive-and-graded-responses">
+</div>
+<div class="section" id="The-MAP-kinase-cascade-exhibits-both-ultrasensitive-and-graded-responses">
 <h2>The MAP kinase cascade exhibits both ultrasensitive and graded responses<a class="headerlink" href="#The-MAP-kinase-cascade-exhibits-both-ultrasensitive-and-graded-responses" title="Permalink to this headline"></a></h2>
 <p>The MAP (Mitogen-Activated Protein) kinase cascade is a conserved signaling system found in all eukaryotes, including yeast, plants, and mammals. Its core structure consists of a cascade of three kinases, including the eponymous MAP kinase itself (MAPK), whose active, phosphorylated form directs a downstream response. MAPK is switched into this active form through phosphorylation by the MAPK Kinase (MAPKK). MAPKK, in turn, is also active only in a phosphorylated form, which it can enter via the
 action of the MAPKK Kinase (MAPKKK). And MAPKKK too has active and inactive forms. As the upstream kinase in the cascade, it is phosphorylated by a variety of signals and inputs, such as growth factor receptors. Interestingly, these kinases often need to be doubly phosphorylated on two sites in order to be fully active, as indicated below by the “PP” forms.</p>
@@ -1190,7 +1190,7 @@ contexts within each species.</p>
 <p>In order to address this question, one would ideally like to to take a MAPK cascade and systematically analyze its input-output response across a wide range of different regimes, varying the levels of its components. <a class="reference external" href="https://doi.org/10.1016/j.cell.2010.12.014">O’Shaughnessy et al. (2011, Cell)</a> used a synthetic biology approach to do just this. They built a minimal mammalian MAPK cascade in yeast. This transplantation approach helped to insulate the core motif from the many complicating
 regulatory interactions it would otherwise have in its native mammalian context. Importantly, the authors designed their system so that they could quantitatively control the concentration of each of the system components. Using these “control knobs,” they investigated the response profile of the cascade across these different regimes. They then compared the observed experimental behavior with expectations from a mathematical model, which we will now explore.</p>
 <p>We will see that the extra steps in the cascade provide ‘control knobs’ that allow it to operate it as a tunable amplifier.</p>
-<section id="A-mathematical-model-of-the-MAP-kinase-cascade">
+<div class="section" id="A-mathematical-model-of-the-MAP-kinase-cascade">
 <h3>A mathematical model of the MAP kinase cascade<a class="headerlink" href="#A-mathematical-model-of-the-MAP-kinase-cascade" title="Permalink to this headline"></a></h3>
 <p>O’Shaughnessy et al. developed a mass action ODE model based on the following reaction scheme, where the environmental signal (S) propagates down through the sequential kinases until the final MAP kinase, ERK, reaches its active form (ERKpp).</p>
 <div style="width: 400px; margin: auto;"><img alt="MAP kinase cascade reaction schematic" src="../_images/MAPK_cascade.png" />
@@ -1564,9 +1564,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <p>We can indeed see that the minimal MAP kinase cascade is able to exhibit both graded and switchlike responses <em>for the same choice of kinetic parameters</em>. The only difference between the two conditions above are the values total concentrations of MEK1 and ERK2, which are tuned by changing the values of <span class="math notranslate nohighlight">\(\beta_M\)</span> and <span class="math notranslate nohighlight">\(\beta_E\)</span> with <span class="math notranslate nohighlight">\(\gamma\)</span> fixed. We can now see conclusively that the kinase cascade architecture enables cells to dynamically change the qualitative nature of its
 response, via its steepness, to the same environmental stimulus simply by changing the concentration of the kinases in the cascade.</p>
-</section>
-</section>
-<section id="Conclusion:-phosphorylation-cascades-provide-robust,-tunable-protein-level-amplification">
+</div>
+</div>
+<div class="section" id="Conclusion:-phosphorylation-cascades-provide-robust,-tunable-protein-level-amplification">
 <h2>Conclusion: phosphorylation cascades provide robust, tunable protein-level amplification<a class="headerlink" href="#Conclusion:-phosphorylation-cascades-provide-robust,-tunable-protein-level-amplification" title="Permalink to this headline"></a></h2>
 <p>Phosphorylation appears to be a powerful mechanism for generating protein amplification systems. We have seen that these systems can provide remarkable capabilities. In a two-component system—the simplest phosphorylation cascade one can imagine—bifunctional kinases can generate linear input-output relationships, whose gain can be tuned by a single rate constant. This ability allows a pathway to convert a signal from one form to another, accurately preserving information about its level.
 Amazingly, this entire input-output system can be robust to the levels of its own components. Perhaps it is at least in part the combination of simplicity of design and the general usefulness of this function that accounts for the tremendous proliferation of two component systems among bacteria. E. coli has ~29 of them. B. subtilis has at least 30. And other species have even more.</p>
@@ -1574,8 +1574,8 @@ Amazingly, this entire input-output system can be robust to the levels of its ow
 powerful feature for the cell that enhances the flexibility of one of its core pathways. On the other hand, it means that just knowing that a MAP kinase cascade is involved in a process is not enough to predict how it will amplify signals. To know that, we also need to know the expression levels of kinases, and likely other related components as well.</p>
 <p>In the future, one can imagine having a predictive model that would tell us what the gain and sensitivity of a circuit will look like based on the expression levels of its protein components—something that is increasingly available thanks to high-throughput “omics” methods. One can also consider other types of protein amplifiers. For example, within the programmed cell death pathways there are cascades of proteases that activate each other. How do such protease cascades differ in their
 amplification abilities compared to phosphorylation cascades?</p>
-</section>
-<section id="Computing-environment">
+</div>
+<div class="section" id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -1602,8 +1602,8 @@ jupyterlab: 3.3.2
 
 </pre></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -1617,11 +1617,11 @@ jupyterlab: 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc643ff40> 
+   <jinja2.runtime.BlockReference object at 0x7f85a01bd3d0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Purpose and contents &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -70,6 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -141,7 +141,7 @@
     text-align: unset;
 }
 </style>
-<section id="purpose-and-contents">
+<div class="section" id="purpose-and-contents">
 <span id="purpose"></span><h1>Purpose and contents<a class="headerlink" href="#purpose-and-contents" title="Permalink to this headline"></a></h1>
 <p>This package contains convenient functions for learners of analysis and design of biological circuits. It is meant to complement the book <em>Biological Circuit Design</em> by <a class="reference external" href="https://www.elowitz.caltech.edu">Michael Elowitz</a> and <a class="reference external" href="http://bois.caltech.edu/">Justin Bois</a> and the associate courses at <a class="reference external" href="http://caltech.edu/">Caltech</a>.</p>
 <p>The package consists of a set of separate functions, most of which are developed and described in the <em>Biological Circuit Design</em> book. Nearly every function in the package is developed and described in the book. As such, the package consists of a set of functions meant to do specific tasks in analysis of biological circuits. The structure of the package is simple; few if any classes are defined and the functions are fairly isolated from each other. The code is structured to be instructional, as opposed to optimized for speed. For example, the stochastic simulation algorithms employ a straightforward implementation of Gillespie’s original formulation and do not use more modern speed-ups. Nonetheless, former students have found the package to use useful in real research contexts.</p>
@@ -154,7 +154,7 @@
 <li><p>Common regulatory functions</p></li>
 <li><p>Vignettes demonstrating interactive dashboards</p></li>
 </ul>
-</section>
+</div>
 
 
            </div>
@@ -168,11 +168,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc5710340> 
+   <jinja2.runtime.BlockReference object at 0x7f85a04a0820> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

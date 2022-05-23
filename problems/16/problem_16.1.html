@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 16.1: Dynamics of noise &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -89,6 +88,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -153,7 +153,7 @@
     text-align: unset;
 }
 </style>
-<section id="Problem-16.1:-Dynamics-of-noise">
+<div class="section" id="Problem-16.1:-Dynamics-of-noise">
 <h1>Problem 16.1: Dynamics of noise<a class="headerlink" href="#Problem-16.1:-Dynamics-of-noise" title="Permalink to this headline"></a></h1>
 <hr><p>In the chapter, we worked out that the dynamics of the mean copy number of unregulated gene expression follow the same ODE we introduced at the very beginning,</p>
 <p><span class="math">\begin{align}
@@ -172,7 +172,7 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n\mathrm{e}^{-\beta / \gamm
 \end{align}</span></p>
 <p><strong>b)</strong> Assuming we start at <span class="math notranslate nohighlight">\(t = 0\)</span> with no gene product (<span class="math notranslate nohighlight">\(n = 0\)</span>), solve for <span class="math notranslate nohighlight">\(\langle n \rangle(t)\)</span> and <span class="math notranslate nohighlight">\(\sigma^2(t)\)</span> to show that the mean and variance are equal for all time, and therefore the Fano factor is always unity. <em>Hint:</em> We have already solved for <span class="math notranslate nohighlight">\(\langle n \rangle(t)\)</span> in the notes. The resulting ODE for <span class="math notranslate nohighlight">\(\sigma^2(t)\)</span> may be solved by integrating factor.</p>
 <p><strong>c)</strong> Take the limit of <span class="math notranslate nohighlight">\(t \to \infty\)</span> of the above solutions to show that the steady state noise is <span class="math notranslate nohighlight">\(\eta = \sqrt{\gamma/\beta}\)</span>, as we have shown in the chapter.</p>
-</section>
+</div>
 
 
            </div>
@@ -186,11 +186,11 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n\mathrm{e}^{-\beta / \gamm
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbd78a7fa0> 
+   <jinja2.runtime.BlockReference object at 0x7f85a0031430> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

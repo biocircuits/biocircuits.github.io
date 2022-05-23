@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 10.1: Coupled delay oscillators &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -87,6 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -151,7 +151,7 @@
     text-align: unset;
 }
 </style>
-<section id="Problem-10.1:-Coupled-delay-oscillators">
+<div class="section" id="Problem-10.1:-Coupled-delay-oscillators">
 <h1>Problem 10.1: Coupled delay oscillators<a class="headerlink" href="#Problem-10.1:-Coupled-delay-oscillators" title="Permalink to this headline"></a></h1>
 <hr><p><em>This problem was inspired by Julian Lewis’s 2003 paper entitled “Autoinhibition with transcriptional delay: A simple mechanism for the zebrafish somitogenesis oscillator.”</em></p>
 <p>It has been postulated that the oscillations in the zebrafish presomitic mesoderm (PSM) come from a very simple genetic circuit. In particular, two hairy/E(spl)-related (her) genes, <em>her1</em> and <em>her7</em>, show oscillations. Interestingly, the protein product of these genes inhibit the expression of the genes themselves. So, a simple genetic circuit arises, in which a <em>her</em> gene is autoinhibited. Furthermore, active Notch protein represses expression of Delta in the same cell via the <em>her</em> genes. In
@@ -210,7 +210,7 @@ In particular, what must be true of the magnitude of <span class="math notransla
 do the latter two choices mean physically?</p>
 <p>For your initial conditions, assume both cells are completely absent of <span class="math notranslate nohighlight">\(her\)</span> mRNA and protein and the <span class="math notranslate nohighlight">\(her\)</span> gene suddenly become transcriptionally active at time <span class="math notranslate nohighlight">\(t = 0\)</span>. Investigate how coupling brings the oscillators into phase by numerically integrating the dynamical equations for various values of <span class="math notranslate nohighlight">\(\tau_{12}\)</span>.</p>
 <p>You may want to build a dashboard to investigate how changing parameters affects the oscillations between the two cells and their coupling.</p>
-</section>
+</div>
 
 
            </div>
@@ -224,11 +224,11 @@ do the latter two choices mean physically?</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc6261c70> 
+   <jinja2.runtime.BlockReference object at 0x7f85a05da7f0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

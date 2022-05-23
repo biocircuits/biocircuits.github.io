@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>18. Excitability enables probabilistic, transient differentiation &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -70,6 +69,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -387,7 +387,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="18.-Excitability-enables-probabilistic,-transient-differentiation">
+<div class="section" id="18.-Excitability-enables-probabilistic,-transient-differentiation">
 <h1>18. Excitability enables probabilistic, transient differentiation<a class="headerlink" href="#18.-Excitability-enables-probabilistic,-transient-differentiation" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
@@ -741,7 +741,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<section id="Altered-states">
+<div class="section" id="Altered-states">
 <h2>Altered states<a class="headerlink" href="#Altered-states" title="Permalink to this headline"></a></h2>
 <p>Cells can exist in a broad repertoire of physiologically distinct states with different properties. In the previous chapter we saw how spontaneous transitions to slow growing states can give rise to antibiotic persistence in bacteria, effectively sacrificing the growth of some cells to increase the survival probability of their clone. In fact, cells are constantly switching in and out of a myriad of different physiological states.</p>
 <p>We have now encountered several different features of dynamical systems that each enable a distinct cellular capability:</p>
@@ -773,7 +773,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <li><p>It has a unique, globally attracting rest state;</p></li>
 <li><p>A large enough stimulus can send the system on a long excursion before it returns to the resting state.</p></li>
 </ol>
-<section id="Excitability-is-prevalent">
+<div class="section" id="Excitability-is-prevalent">
 <h3>Excitability is prevalent<a class="headerlink" href="#Excitability-is-prevalent" title="Permalink to this headline"></a></h3>
 <p>A forest is a classic example of an excitable system. Its resting state consists of many trees peacefully photosynthesizing and providing shade for hikers. Occasionally, though, a relatively small perturbation, perhaps an errant lightning strike or a careless camper, can dramatically alter the landscape, initiating a transient excursion wherein the forest burns, recovers, and then grows back again.</p>
 <div style="margin: auto; width: 300px;"><img alt="forest fires" src="../_images/forest_fires.png" />
@@ -782,9 +782,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div><!-- this needs to be re-drawn -- it was taken from a paper --><p>(Image adapted from <a class="reference external" href="https://www.izhikevich.org/publications/dsn/index.htm">Izhikevich, Dynamical Systems in Neuroscience, 2007</a>.)</p>
 <p>Perhaps the most familiar example of excitability is a toilet. Normally the toilet sits at rest in a more or less constant state. If one presses the handle enough, however, it initiates a stereotyped sequence of behaviors: first draining and then refilling the bowl with water. Finally, it returns to its steady state. This is a deterministic system. But imagine adding noise by jiggling the handle. Most of the time the jiggles have no effect. But occasionally they can be strong enough to activate
 the flush. the resulting flush cycle is the same as one initiated by a more deliberate push. In an excitable system like this, any threshold-crossing perturbation—whether external or from internal noise—can generate a similar dynamic trajectory.</p>
-<!-- add pink toilet image --></section>
-</section>
-<section id="Cellular-competence">
+<!-- add pink toilet image --></div>
+</div>
+<div class="section" id="Cellular-competence">
 <h2>Cellular competence<a class="headerlink" href="#Cellular-competence" title="Permalink to this headline"></a></h2>
 <p>Now let’s see how bacteria take advantage of excitability. When stressed, some bacteria, such as <em>Bacillus subtilis</em>, can initiate multiple distinct responses.</p>
 <div style="margin: auto; width: 400px;"><img alt="bacillus stress" src="../_images/bacillus_stress.png" />
@@ -800,8 +800,8 @@ not all, cells within the population. Indeed, the response to certain stresses c
 <li><p>Can these properties be tuned?</p></li>
 <li><p>Is noise necessary to induce competence?</p></li>
 </ul>
-</section>
-<section id="The-B.-subtilis-competence-circuit">
+</div>
+<div class="section" id="The-B.-subtilis-competence-circuit">
 <h2>The <em>B. subtilis</em> competence circuit<a class="headerlink" href="#The-B.-subtilis-competence-circuit" title="Permalink to this headline"></a></h2>
 <p>Competence is activated under conditions of nutrient limitation stress. The genetic circuit responsible for competence is therefore connected to receptors responsible for sensing environmental and intracellular conditions. It can appear rather complicated:</p>
 <div style="margin: auto; width: 400px;"><img alt="Hamoan Com circuit" src="../_images/hamoen_com_circuit.png" />
@@ -814,8 +814,8 @@ many genes specifically activated by ComK that puts the cell into the competent 
 <p>Looking at the circuit, one can start to see how it might be excitable. Imagine there is a transient increase of ComK levels. This stimulation can be amplified by positive feedback (the orange arrows), leading to more production of ComK. We assume there is enough ComS around to keep MecA from degrading the ComK molecules that are made due to the positive feedback. On a longer time scale, however, production of ComS gets inhibited, which results in the MecA complex starting to degrade ComK
 instead of ComS. This brings ComK back to its pre-excitedment level. In this sense, ComS helps to initiate competence by reducing degradation of ComK, but also serves to bring the exit of competence when it is repressed by high concentrations of ComK.</p>
 <p>We will now try to see how these dynamics, described in words above, can be analyzed mathematically. We will obtain a design principle. Namely, <strong>fast positive feedback combined with slow negative feedback can generate excitable circuits.</strong></p>
-</section>
-<section id="A-minimal-model-of-the-ComK-circuit">
+</div>
+<div class="section" id="A-minimal-model-of-the-ComK-circuit">
 <h2>A minimal model of the ComK circuit<a class="headerlink" href="#A-minimal-model-of-the-ComK-circuit" title="Permalink to this headline"></a></h2>
 <p>To model the ComK circuit, we will follow the logic of Süel, et al. (<a class="reference external" href="https://doi.org/10.1126/science.1137455">Science, 2007</a>). We will first focus on the MecA complex, which degrades ComK and ComS. There are two competing reactions: degradation of ComK and degradation of ComS. We take both of these reactions to have Michaelis-Menten kinetics, giving the reaction schemes</p>
 <p><span class="math">\begin{align}
@@ -865,8 +865,8 @@ m_S &= m_\mathrm{total}\,\frac{s/\Gamma_s}{1 + k/\Gamma_k + s/\Gamma_s},
 \frac{\mathrm{d}s}{\mathrm{d}t}&= a_s + \frac{b_s}{1 + (k/\kappa_s)^p} - \frac{s}{1 + k + s} - \gamma_s s.
 \end{align}</span></p>
 <p>It is left to the reader to work out the relationships between the dimensionless and dimensional parameters.</p>
-</section>
-<section id="Analysis-of-the-dynamical-system">
+</div>
+<div class="section" id="Analysis-of-the-dynamical-system">
 <h2>Analysis of the dynamical system<a class="headerlink" href="#Analysis-of-the-dynamical-system" title="Permalink to this headline"></a></h2>
 <p>Now that we have our dynamic system set up, we can begin analysis. We will start by defining parameters for the system, using the parameters specified in the <a class="reference external" href="https://doi.org/10.1126/science.1137455">Süel, et al. paper</a>. For convenience, we will store the parameters in a named tuple.</p>
 <div class="nbinput nblast docutils container">
@@ -1314,8 +1314,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>This fixed point is a spiral source. It is unstable and the system spirals away from it.</p>
-</section>
-<section id="Numerical-solution-of-dynamical-equations">
+</div>
+<div class="section" id="Numerical-solution-of-dynamical-equations">
 <h2>Numerical solution of dynamical equations<a class="headerlink" href="#Numerical-solution-of-dynamical-equations" title="Permalink to this headline"></a></h2>
 <p>Now that we have a good picture of the dynamics, we can numerically solve the dynamical equations. Of course, the initial conditions are relevant here. We will start with no ComK or ComS (which is not at all relevant physiologically) and solve.</p>
 <div class="nbinput nblast docutils container">
@@ -1453,8 +1453,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>The system takes a much longer trajectory to get to the fixed point, taking the excursion we suspected it would from the phase portrait.</p>
-</section>
-<section id="Stochastic-simulation">
+</div>
+<div class="section" id="Stochastic-simulation">
 <h2>Stochastic simulation<a class="headerlink" href="#Stochastic-simulation" title="Permalink to this headline"></a></h2>
 <p>As we have just seen, the system can take a transient journey into competence provided it is perturbed far enough away from the stable fixed point. This raises the question, is intrinsic noise enough to give the “kick” needed to make the excursion to competence? To investigate this, we can perform a Gillespie simulation (SSA) to investigate the dynamics. To specify the master equation, we need the usual ingredients.</p>
 <ol class="arabic simple">
@@ -2004,16 +2004,16 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>In looking at the trajectory, we see that the system stays near the stable fixed point, but fluctuations due solely to small copy numbers are enough to occasionally send the system on a trajectory toward competence and then back to the stable fixed point.</p>
-</section>
-<section id="Quieting-things-down">
+</div>
+<div class="section" id="Quieting-things-down">
 <h2>Quieting things down<a class="headerlink" href="#Quieting-things-down" title="Permalink to this headline"></a></h2>
 <p>We have seen that intrinsic noise occasionally kicks the competence circuit into long excursions in competence. Can we avoid competence if we can somehow quiet the noise?</p>
 <p>Remember that small copy numbers are a major source of noise. If we could make the copy numbers of the components of the competence circuit have higher copy numbers, we could reduce intrinsic noise. To accomplish this, Süel and coworkers used a ftsW mutant that fails to septate; that is, the cells do not divide. The result is long cells with high copy numbers.</p>
 <p>Indeed, when they did this experiment, Süel and coworkers found that cells in their movies were less likely to become competent the longer, and therefore less noisy, the cell was, as shown in the figure below, taken from the <a class="reference external" href="https://doi.org/10.1126/science.1137455">2007 paper</a>. The black curve is from experimental measurements and the gray curve from analysis of stochastic simulations similar to what we show in the next section of this notebook. Here, the y-axis represents the probability
 that a given cell will become competent before division.</p>
 <div style="margin: auto; width: 500px;"><img alt="Suel ftsW mutant" src="../_images/ftsW_less_noise.png" />
-</div></section>
-<section id="Tunable-control-of-competence">
+</div></div>
+<div class="section" id="Tunable-control-of-competence">
 <h2>Tunable control of competence<a class="headerlink" href="#Tunable-control-of-competence" title="Permalink to this headline"></a></h2>
 <p>A given cell may go in to competence before it divides. This depends on the amount of time it takes to get kicked into competence by intrinsic noise. Once competent, the cell may remain competent for a short or a long time. This depends on the dynamics as it traverses the competent loop of the phase portrait.</p>
 <p>How can these two time scales, that is, the time scale to become competent and the time scale to return from competence, be tuned? Süel and coworkers found that these two time scales can be tuned <em>independently</em> by varying the constitutive expression of comK and comS, respectively, as parametrized by <span class="math notranslate nohighlight">\(\alpha_k\)</span> and <span class="math notranslate nohighlight">\(\alpha_s\)</span>.</p>
@@ -2305,7 +2305,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Taken together, these results point to <em>independent</em> tuning of the time to initialize competence and the time spent in competence by the strength of constitutive expression of ComK and ComS, respectively. Indeed, Süel and coworkers found this to be the case experimentally. They made <em>Bacillus</em> strains that contains additional copies of <em>comS</em> or <em>comK</em> under control of inducible promoters so that they could artificially adjust <span class="math notranslate nohighlight">\(\alpha_s\)</span> and <span class="math notranslate nohighlight">\(\alpha_k\)</span>. They then measured the time to
 competence and the time spent in competence and found that they could indeed be tuned independently.</p>
 <div style="margin: auto; width: 300px;"><img alt="Suel independent competence" src="../_images/independent_competence.png" />
-</div><section id="Computing-environment">
+</div><div class="section" id="Computing-environment">
 <h3>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h3>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
@@ -2336,9 +2336,9 @@ jupyterlab : 3.3.2
 
 </pre></div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -2349,11 +2349,11 @@ jupyterlab : 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc70e69a0> 
+   <jinja2.runtime.BlockReference object at 0x7f859f449e20> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

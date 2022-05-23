@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -93,6 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -410,15 +410,15 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation">
+<div class="section" id="15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation">
 <h1>15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation<a class="headerlink" href="#15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation" title="Permalink to this headline"></a></h1>
-<hr><section id="Concepts">
+<hr><div class="section" id="Concepts">
 <h2>Concepts<a class="headerlink" href="#Concepts" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Intrinsic and extrinsic noise</p></li>
 </ul>
-</section>
-<section id="Techniques">
+</div>
+<div class="section" id="Techniques">
 <h2>Techniques<a class="headerlink" href="#Techniques" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Plug-in estimates</p></li>
@@ -759,7 +759,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <hr><p>Thus far, we have written deterministic systems of ordinary differential equations to describe the dynamics of mRNA and protein concentrations in cells. These expressions assume that there are enough of all the components, and enough time, to sample all of the many available molecular states. As such, we were looking at rates of gene expression considering large numbers of the molecular constituents. However biochemical processes within a cell can be stochastic (a term meaning intrinsically
 random) or “noisy.”</p>
 <p>Over the next chapters we will focus on understanding the sources and dynamics of noise, methods to analyze noise, and the functional roles of noise in biological systems. To do so, we will use the mathematical machinery of probability, an important tool for every biologist and bioengineer to have in their toolbox.</p>
-<section id="Noise-is-present-in-genetic-circuits,-and-cells-are-like-burritos">
+<div class="section" id="Noise-is-present-in-genetic-circuits,-and-cells-are-like-burritos">
 <h3>Noise is present in genetic circuits, and cells are like burritos<a class="headerlink" href="#Noise-is-present-in-genetic-circuits,-and-cells-are-like-burritos" title="Permalink to this headline"></a></h3>
 <p>One cell may seem at first glance identical to any other cell living alongside it in the same conditions. However, the inside of cells are heterogeneous and may be highly variable. Furthermore, the copy numbers of many proteins and mRNA molecules are small in a given cell. <a class="reference external" href="http://dx.doi.org/10.1016/j.cell.2014.02.033">Wi and coworkers (Cell, 2014)</a> used ribosome profiling to obtain estimates for absolute protein counts of various transcription factors. They found that half of repressors have
 copy numbers below 100 per genome equivalent and 90% of activators do as well. About 10% of repressors and 50% of activators have copy numbers of 10 or below. These are small numbers! This means that they are susceptible to fluctuations.</p>
@@ -779,16 +779,16 @@ As evident in the figure, half of repressors have copy numbers below 100 and 90%
 <p>Consider the “model” of an <em>E. coli</em> cell depicted below. From the outside (left image), it appears as a simple cylindrical container, encapsulating what one might incorrectly assume is a homogeneous well-mixed continuum of biochemical mush inside. However, if we were to slice open the cell (right image), the low copy numbers of certain molecules and their spatial heterogenetiy become apparent. Within each cell, the copy numbers and locations of different molecules can vary dramatically over
 time, just as they vary from cell to cell. Like burritos, no two are truly identical. (Unlike this burrito, most bacteria do not include cheese in the periplasm.)</p>
 <div style="margin: auto; width: 500px"><img alt="Michael’s epiphanic burrito" src="../_images/burrito.jpg" />
-</div></section>
-<section id="Looking-at-heterogeneity">
+</div></div>
+<div class="section" id="Looking-at-heterogeneity">
 <h3>Looking at heterogeneity<a class="headerlink" href="#Looking-at-heterogeneity" title="Permalink to this headline"></a></h3>
 <p>To demonstrate the heterogeneity that may arise from small copy numbers, Boris Rotman (<a class="reference external" href="https://doi.org/10.1073/pnas.47.12.1981">PNAS, 1961</a>) performed a classic experiment in which he put small numbers (on average one) of β-D-galactosidase in droplets containing a fluorescent substrate 6HFP, which glows green when it is cleaved by β-D-galactosidase.</p>
 <div style="margin: auto; width: 250px"><img alt="Rotman drops" src="../_images/rotman_drops.png" />
 </div><p>The heterogeneity in the drops is obvious. Drops showed quantized activities proportional to the number of enzyme copies in the droplet.</p>
 <p>We can also see heterogeneity if we look at gene expression in bacterial cells. In the image below, we see an image of <em>E. coli</em> cells expressing yellow fluorescent protein (YFP) under control of the LacI promoter. The variation in fluorescent intensity, and therefore gene expression level, is apparent.</p>
 <div style="margin: auto; width: 350px"><img alt="YFP noise" src="../_images/yfp_noise.png" />
-</div></section>
-<section id="Types-of-noise">
+</div></div>
+<div class="section" id="Types-of-noise">
 <h3>Types of noise<a class="headerlink" href="#Types-of-noise" title="Permalink to this headline"></a></h3>
 <p>To quantitatively define noise, it helps to perform a thought experiment. Say we have many exactly identical cells. At some point in the future, as gene expression, responses to the environment (which we assume is the same for each cell), etc. proceed, the cells will no longer be identical due to stochasticity in all of these processes involving small numbers of molecules. Consider one gene product of interest in these cells (such as YFP in the image above). We can define the <strong>total noise</strong>,
 <span class="math notranslate nohighlight">\(\eta_\mathrm{tot}\)</span>, as the <strong>coefficient of variation</strong> of the copy numbers of the gene product. The coefficient of variation is the standard deviation of the copy number divided by the mean copy number, or</p>
@@ -802,8 +802,8 @@ the noise according to <strong>intrinsic</strong> and <strong>extrinsic</strong>
 <li><p><strong>Intrinsic noise</strong>: Transcription and translation can occur at different times and rates in otherwise identical systems. This results in fluctuations in <span class="math notranslate nohighlight">\(n(t)\)</span>. The fluctuations in the copy number of the protein of interest are due to fluctuations that affect <em>only</em> the gene of interest. Operationally, intrinsic noise causes the failure of identical genes in identical environments to correlate. This fundamentally limits the precision of regulation.</p></li>
 <li><p><strong>Extrinsic noise</strong>: Other molecular species, such as RNA polymerase, ribosomes, and chemical species in the cell’s environment, vary over time and affect the gene of interest. The fluctuations in the copy number of the protein of interest are due to fluctuations that affect <em>all</em> genes in a cell.</p></li>
 </ul>
-</section>
-<section id="Experimentally-determining-intrinsic-and-extrinsic-noise">
+</div>
+<div class="section" id="Experimentally-determining-intrinsic-and-extrinsic-noise">
 <h3>Experimentally determining intrinsic and extrinsic noise<a class="headerlink" href="#Experimentally-determining-intrinsic-and-extrinsic-noise" title="Permalink to this headline"></a></h3>
 <p>It is difficult to know a priori how intrinsically noisy gene expression will be without measuring it. The problem is that just measuring cell-cell variation does not separate intrinsic noise in the process of gene expression from extrinsic cell-cell variation in key cellular components. Moreover, even if there were no extrinsic noise at all, intrinsic noise can still depend on the relative transcription, translation, and degradation rates, or other factors we are not aware of. Thus, it is
 critical to actually measure noise to see how it behaves.</p>
@@ -816,7 +816,7 @@ conceptually related, and allows us to think of these two genes as two independe
 <div style="margin: auto; width: 450px"><img alt="cell noise" src="../_images/cell_noise.png" />
 </div><p>We can see that in some cells, both the CFP and YFP levels are high (yellow in the merge), but in other cases, they CFP and YFP levels differ (green or red in the merge).</p>
 <p>The rest of this chapter addresses how we can separate intrinsic from extrinsic noise from images like these.</p>
-<section id="Segmentation-and-scaling-of-fluorescence">
+<div class="section" id="Segmentation-and-scaling-of-fluorescence">
 <h4>Segmentation and scaling of fluorescence<a class="headerlink" href="#Segmentation-and-scaling-of-fluorescence" title="Permalink to this headline"></a></h4>
 <p>First, the images must be <strong>segmented</strong>, which means that each pixel in the image needs to be labeled with a unique number corresponding to which bacterium (or background) it belongs. The phase contrast image is used for this purpose because it is generally bad practice to use the signal you are trying to measure in segmentation. Next, the intensities of the pixels in each channel (CFP and YFP) for each bacterium are summed to give a total intensity. The integrated CFP intensity for cell
 <span class="math notranslate nohighlight">\(i\)</span> is</p>
@@ -843,8 +843,8 @@ c_i \leftarrow c_i / \bar{c},\\[1em]
 y_i \leftarrow y_i / \bar{y},
 \end{align}</span></p>
 <p>which enforces that the means are equal (and both arbitrarily equal to one). With these rescaled intensities, the prefactors connecting the fluorescent intensity to copy number are equal, or <span class="math notranslate nohighlight">\(c_0 = y_0\)</span>.</p>
-</section>
-<section id="Plug-in-estimates-for-intrinsic,-extrinsic,-and-total-noise">
+</div>
+<div class="section" id="Plug-in-estimates-for-intrinsic,-extrinsic,-and-total-noise">
 <h4>Plug-in estimates for intrinsic, extrinsic, and total noise<a class="headerlink" href="#Plug-in-estimates-for-intrinsic,-extrinsic,-and-total-noise" title="Permalink to this headline"></a></h4>
 <p>As our first approach to estimating the intrinsic and extrinsic noise from our data set <span class="math notranslate nohighlight">\(\{c_i, y_i\}\)</span>, let us assume that we do not know the probability distribution describing <span class="math notranslate nohighlight">\(\{c_i, y_i\}\)</span>. Since we do not know the distribution, we will resort to making <strong>plug-in estimates</strong> of the moments of the distribution to estimate quantities such as <span class="math notranslate nohighlight">\(\langle n^2 \rangle\)</span>. Remember that going forward, we assume that the data have already been properly scaled to have the same mean.</p>
 <p>To compute the total noise, we need to compute the variance in gene expression. Since both CFP and YFP are on identical promoters, we can group them together as a single species in this calculation. The plug-in estimate for the total variance is then</p>
@@ -866,8 +866,8 @@ V_\mathrm{ext} = V_\mathrm{tot} - V_\mathrm{int} = \overline{cy} - \frac{1}{2}\l
 &\eta_\mathrm{int}^2 = \frac{V_\mathrm{int}}{\bar{c}\bar{y}} = \frac{1}{2\bar{c}\bar{y}}\left(\overline{c^2} + \overline{y^2}\right) - \overline{cy}\\[1em]
 &\eta_\mathrm{ext}^2 = \frac{V_\mathrm{ext}}{\bar{c}\bar{y}} = \frac{\overline{cy} - \bar{c}\bar{y}}{\bar{c}\bar{y}}.
 \end{align}</span></p>
-</section>
-<section id="Computing-the-intrinsic-and-extrinsic-noise-from-experimental-data">
+</div>
+<div class="section" id="Computing-the-intrinsic-and-extrinsic-noise-from-experimental-data">
 <h4>Computing the intrinsic and extrinsic noise from experimental data<a class="headerlink" href="#Computing-the-intrinsic-and-extrinsic-noise-from-experimental-data" title="Permalink to this headline"></a></h4>
 <p>As an example, let us compute the intrinsic and extrinsic noise from experimental data. We will consider two data sets from the <a class="reference external" href="https://doi.org/10.1126/science.1070919">Elowitz, et al. paper</a>, both of which are contained in <a class="reference external" href="data/elowitz_et_al_2002_fig_3a.csv">this CSV file</a>. One set of measurements is for the M22 strain, which has the CFP/YFP under control of LacI setup in <em>E. coli</em> we have previously described. The other set of measurements is for the D22 strain, which has a deletion of
 the <em>recA</em> gene, which is responsible for rescuing stalled replication forks.</p>
@@ -1177,22 +1177,22 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>There is slight anticorrelation between intrinsic and extrinsic noise.</p>
-</section>
-<section id="Interpreting-the-results">
+</div>
+<div class="section" id="Interpreting-the-results">
 <h4>Interpreting the results<a class="headerlink" href="#Interpreting-the-results" title="Permalink to this headline"></a></h4>
 <p>Apparently, for genes regulated by LacI in <em>E. coli</em>, the intrinsic and extrinsic noise are of similar magnitude. The D22 string is inherently noisier, with the noise being about 50% higher than the M22 strain. Importantly, this suggests that the difference in noise is genetically determined. That the role of <em>recA</em> in rescuing stalled replication forks and the fact that it is missing in the D22 strain suggests that the increased noise, both intrinsic and extrinsic, is due to transient copy
 number differences between different parts of the chromosome.</p>
-</section>
-</section>
-<section id="Lower-copy-numbers-lead-to-more-noise">
+</div>
+</div>
+<div class="section" id="Lower-copy-numbers-lead-to-more-noise">
 <h3>Lower copy numbers lead to more noise<a class="headerlink" href="#Lower-copy-numbers-lead-to-more-noise" title="Permalink to this headline"></a></h3>
 <p>By titrating the amount of IPTG, the copy number of the YFP and CFP gene products may be controlled. The above results are for high IPTG concentrations for which expression of YFP and CFP is fully induced. Elowitz and coworkers varies ITPG concentration to get different intensities; the results are shown below for the M22 strain.</p>
 <div style="margin: auto; width: 400px"><img alt="noise versus fluorescence intensity" src="../_images/noise_vs_intensity.png" />
 </div><p>When high fluorescence intensity if observed, the copy number of LacI is low. We nonetheless see low intrisic and extrinsic noise because of the high copy numbers of the fluorophore gene product (the denominator in the noise is large). When low fluorescence intensity is observed, the intrinsic and extrinsic noise are both large, as we would expect, since the copy number of gene product is so low. However, when the IPTG concentration is very low (and therefore expression is also low), the
 resulting the high copy numbers of LacI dampen out extrinsic noise, leading to its drop at low intensity values.</p>
 <p>We note that at full induction, the total noise is somewhere around 0.1. By contrast, a “good” electronic circuit has a signal to noise ratio of about 25 or 30 dB, or a noise level of about 0.001, 100 times quieter than this example of gene expression.</p>
-</section>
-<section id="Generative-Bayesian-modeling-of-noise">
+</div>
+<div class="section" id="Generative-Bayesian-modeling-of-noise">
 <h3>Generative Bayesian modeling of noise<a class="headerlink" href="#Generative-Bayesian-modeling-of-noise" title="Permalink to this headline"></a></h3>
 <p>In the above analysis, we assumed we knew nothing about underlying probability distribution generating the data. This means we are not modeling the source of the noise, but are rather <em>defining</em> what we mean by intrinsic and extrinsic noise based on moments of the unknown distribution, which we then estimate with plug-in estimates. We now take an alternative approach, where we propose a <strong>generative model</strong> for the data. The parameters of this model then define what we mean by intrinsic and
 extrinsic noise. We use Bayes’s theorem to connect the experimental measurements to the noise, given the model.</p>
@@ -1239,7 +1239,7 @@ P(\mu_i\mid \mu, \sigma_\mu) = \frac{1}{\sqrt{2\pi\sigma_\mu^2}}\,\exp\left[-\fr
 P(\{\mu_i\}, \mu, \sigma, \sigma_\mu\mid \{c_i, y_i\}) \propto \left(\prod_{i=1}^N P(c_i, y_i \mid \mu_i, \sigma) P(\mu_i\mid \mu, \sigma_\mu)\right) P(\mu, \sigma, \sigma_\mu).
 \end{align}</span></p>
 <p>Performance of full Bayesian inference on this model involves some sophisticated techniques involving Markov chain Monte Carlo, which we will not cover here, but you can explore in an end-of-chapter problem. Most important for this chapter is that we can build a generative model and directly and intuitively interpret its parameters.</p>
-<section id="Computing-environment">
+<div class="section" id="Computing-environment">
 <h4>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h4>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -1266,10 +1266,10 @@ jupyterlab: 3.3.2
 
 </pre></div></div>
 </div>
-</section>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -1283,11 +1283,11 @@ jupyterlab: 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbc633c670> 
+   <jinja2.runtime.BlockReference object at 0x7f859fba0430> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

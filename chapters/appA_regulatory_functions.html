@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Appendix A: Regulatory functions and their derivatives &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -32,7 +31,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Appendix B: Gillespie simulation example with speed considerations" href="appB_gillespie.html" />
-    <link rel="prev" title="18. Excitability enables probabilistic, transient differentiation" href="18_stochastic_differentiation.html" /> 
+    <link rel="prev" title="20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells" href="20_lateral_inhibition.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -72,6 +71,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Appendix A: Regulatory functions and their derivatives</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Hill-functions">Hill functions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Activating-Hill-function">Activating Hill function</a></li>
@@ -161,7 +161,7 @@
     text-align: unset;
 }
 </style>
-<section id="Appendix-A:-Regulatory-functions-and-their-derivatives">
+<div class="section" id="Appendix-A:-Regulatory-functions-and-their-derivatives">
 <h1>Appendix A: Regulatory functions and their derivatives<a class="headerlink" href="#Appendix-A:-Regulatory-functions-and-their-derivatives" title="Permalink to this headline"></a></h1>
 <hr><p>Because we use certain functions to describe regulation of gene expression, it is useful to have a reference for the functions and their first derivatives (and also some second derivatives).</p>
 <p><strong>Dimensional forms</strong></p>
@@ -178,122 +178,122 @@ f(x) = f(x_0) + \left.\frac{\mathrm{d}f}{\mathrm{d}x}\right|_{x=x_0}\,(x-x_0) + 
 <p><span class="math">\begin{align}
 f(x, y) = f(x_0, y_0) + \left.\frac{\partial f}{\partial x}\right|_{x=x_0, y=y_0}\,(x-x_0) + \left.\frac{\partial f}{\partial y}\right|_{x=x_0, y=y_0}\,(y-y_0)+ \text{higher order terms.}
 \end{align}</span></p>
-<section id="Hill-functions">
+<div class="section" id="Hill-functions">
 <h2>Hill functions<a class="headerlink" href="#Hill-functions" title="Permalink to this headline"></a></h2>
-<section id="Activating-Hill-function">
+<div class="section" id="Activating-Hill-function">
 <h3>Activating Hill function<a class="headerlink" href="#Activating-Hill-function" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x) = \frac{x^n}{1 + x^n}, \\[1em]
 &\frac{\mathrm{d}f}{\mathrm{d}x} = \frac{n x^{n-1}}{(1 + x^n)^2},\\[1em]
 &\frac{\mathrm{d}^2f}{\mathrm{d}x^2} = -\frac{n x^{n-2}\left(1 - n + (1+n)x^n\right)}{(1 + x^n)^3}.
 \end{align}</span></p>
-</section>
-<section id="Repressive-Hill-function">
+</div>
+<div class="section" id="Repressive-Hill-function">
 <h3>Repressive Hill function<a class="headerlink" href="#Repressive-Hill-function" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x) = \frac{1}{1 + x^n}, \\[1em]
 &\frac{\mathrm{d}f}{\mathrm{d}x} = -\frac{n x^{n-1}}{(1 + x^n)^2},\\[1em]
 &\frac{\mathrm{d}^2f}{\mathrm{d}x^2} = \frac{n x^{n-2}\left(1 - n + (1+n)x^n\right)}{(1 + x^n)^3}.
 \end{align}</span></p>
-</section>
-</section>
-<section id="Two-activators-affecting-the-same-gene">
+</div>
+</div>
+<div class="section" id="Two-activators-affecting-the-same-gene">
 <h2>Two activators affecting the same gene<a class="headerlink" href="#Two-activators-affecting-the-same-gene" title="Permalink to this headline"></a></h2>
-<section id="AND-logic">
+<div class="section" id="AND-logic">
 <h3>AND logic<a class="headerlink" href="#AND-logic" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x, y) = \frac{x^{n_x} y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1} y^{n_y}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial y} = \frac{n_y\,x^{n_x} y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-<section id="OR-logic">
+</div>
+<div class="section" id="OR-logic">
 <h3>OR logic<a class="headerlink" href="#OR-logic" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x,y) = \frac{x^{n_x} + y^{n_y} + x^{n_x} y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial y} = \frac{n_y\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-<section id="OR-logic,-single-occupancy">
+</div>
+<div class="section" id="OR-logic,-single-occupancy">
 <h3>OR logic, single occupancy<a class="headerlink" href="#OR-logic,-single-occupancy" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x,y) = \frac{x^{n_x} + y^{n_y}}{1 + x^{n_x}+ y^{n_y}},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}}{(1 + x^{n_x} + y^{n_y})^2},\\[1em]
 &\frac{\partial f}{\partial y} = \frac{n_y\,y^{n_y-1}}{(1 + x^{n_x}+ y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-</section>
-<section id="Two-repressors-affecting-the-same-gene">
+</div>
+</div>
+<div class="section" id="Two-repressors-affecting-the-same-gene">
 <h2>Two repressors affecting the same gene<a class="headerlink" href="#Two-repressors-affecting-the-same-gene" title="Permalink to this headline"></a></h2>
-<section id="id1">
+<div class="section" id="id1">
 <h3>AND logic<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x, y) = \frac{1}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial x} = -\frac{n_x\,x^{n_x-1}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h3>OR logic<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x, y) = \frac{1 + x^{n_x} + y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial x} = -\frac{n_x\,x^{n_x-1}\,y^{n_y}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,x^{n_x}\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-<section id="AND-logic,-single-occupancy">
+</div>
+<div class="section" id="AND-logic,-single-occupancy">
 <h3>AND logic, single occupancy<a class="headerlink" href="#AND-logic,-single-occupancy" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x, y) = \frac{1}{(1 + x^{n_x} + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial x} = -\frac{n_x\,x^{n_x-1}}{(1 + x^{n_x} + y^{n_y})^2},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,y^{n_y-1}}{(1 + x^{n_x} + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-</section>
-<section id="One-activator-and-one-repressor-affecting-the-same-gene">
+</div>
+</div>
+<div class="section" id="One-activator-and-one-repressor-affecting-the-same-gene">
 <h2>One activator and one repressor affecting the same gene<a class="headerlink" href="#One-activator-and-one-repressor-affecting-the-same-gene" title="Permalink to this headline"></a></h2>
 <p>Here, we assign <span class="math notranslate nohighlight">\(x\)</span> to be the concentration of the activator and <span class="math notranslate nohighlight">\(y\)</span> to be the concentration of the repressor.</p>
-<section id="id3">
+<div class="section" id="id3">
 <h3>AND logic<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x, y) = \frac{x^{n_x}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,x^{n_x}\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-<section id="id4">
+</div>
+<div class="section" id="id4">
 <h3>OR logic<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x, y) = \frac{1 + x^{n_x} + x^{n_x}y^{n_y}}{(1 + x^{n_x})\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}\,y^{n_y}}{(1 + x^{n_x})^2\,(1 + y^{n_y})},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,y^{n_y-1}}{(1 + x^{n_x})\,(1 + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-<section id="id5">
+</div>
+<div class="section" id="id5">
 <h3>AND logic, single occupancy<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x, y) = \frac{x^{n_x}}{1 + x^{n_x} + y^{n_y}},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}(1+y^{n_y})}{(1 + x^{n_x} + y^{n_y})^2},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,x^{n_x}\,y^{n_y-1}}{(1 + x^{n_x} + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-<section id="id6">
+</div>
+<div class="section" id="id6">
 <h3>OR logic, single occupancy<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
 <p><span class="math">\begin{align}
 &f(x, y) = \frac{1 + x^{n_x}}{1 + x^{n_x} + y^{n_y}},\\[1em]
 &\frac{\partial f}{\partial x} = \frac{n_x\,x^{n_x-1}\,y^{n_y}}{(1 + x^{n_x} + y^{n_y})^2},\\[1em]
 &\frac{\partial f}{\partial y} = -\frac{n_y\,(1+x^{n_x})\,y^{n_y-1}}{(1 + x^{n_x} + y^{n_y})^2}.
 \end{align}</span></p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="18_stochastic_differentiation.html" class="btn btn-neutral float-left" title="18. Excitability enables probabilistic, transient differentiation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="20_lateral_inhibition.html" class="btn btn-neutral float-left" title="20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="appB_gillespie.html" class="btn btn-neutral float-right" title="Appendix B: Gillespie simulation example with speed considerations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -301,11 +301,11 @@ f(x, y) = f(x_0, y_0) + \left.\frac{\partial f}{\partial x}\right|_{x=x_0, y=y_0
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 21, 2022.
+      <span class="lastupdated">Last updated on May 23, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbbde211820> 
+   <jinja2.runtime.BlockReference object at 0x7f859fa5c340> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
