@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Appendix B: Gillespie simulation example with speed considerations &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -72,6 +73,8 @@
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Appendix B: Gillespie simulation example with speed considerations</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Simulating-the-repressilator">Simulating the repressilator</a></li>
@@ -398,7 +401,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Appendix-B:-Gillespie-simulation-example-with-speed-considerations">
+<section id="Appendix-B:-Gillespie-simulation-example-with-speed-considerations">
 <h1>Appendix B: Gillespie simulation example with speed considerations<a class="headerlink" href="#Appendix-B:-Gillespie-simulation-example-with-speed-considerations" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Techniques</strong></p>
 <ul class="simple">
@@ -750,7 +753,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>It helps to have complete examples as starting points for building systems to simulate with the Gillespie algorithm. In this appendix, we set up a Gillespie simulation of the <a class="reference internal" href="09_repressilator.html"><span class="doc">repressilator</span></a>. We will then return to a simple example of gene expression to demonstrate how to assess the speed of the calculation and improve it.</p>
-<div class="section" id="Simulating-the-repressilator">
+<section id="Simulating-the-repressilator">
 <h2>Simulating the repressilator<a class="headerlink" href="#Simulating-the-repressilator" title="Permalink to this headline"></a></h2>
 <p>We have seen a structure to how we can set up Gillespie simulations; we need to specify the propensities and updates, along with an initial population. It helps clarify the system being simulated and also avoids bugs if we make tables for</p>
 <ol class="arabic simple">
@@ -1158,8 +1161,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>We observe the oscillations, but the amplitudes are highly variable.</p>
-</div>
-<div class="section" id="Increasing-speed">
+</section>
+<section id="Increasing-speed">
 <h2>Increasing speed<a class="headerlink" href="#Increasing-speed" title="Permalink to this headline"></a></h2>
 <p>The calculation we implemented without JITting is much slower than the version in the biocircuits package. Still, the algorithm in that package implements a rather naive version of the Gillespie algorithm.</p>
 <p>An obvious speed improvement can be made by only recalculating the propensity for copy numbers we have not visited. For example, for simple gene expression, we do not need to recompute the propensity for mRNA decay if the previous move was a protein decay. The propensity for mRNA decay is the same it was at the previous step. Gibson and Bruck developed the <a class="reference external" href="http://doi.org/10.1021/jp993732q">next reaction method</a>, which makes these improvements, among others, and can result in significant
@@ -1527,7 +1530,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 </pre></div></div>
 </div>
 <p>The propensity function is taking the most time. We will focus on improving that.</p>
-<div class="section" id="Speed-boost-by-JIT-compilation-with-Numba">
+<section id="Speed-boost-by-JIT-compilation-with-Numba">
 <h3>Speed boost by JIT compilation with Numba<a class="headerlink" href="#Speed-boost-by-JIT-compilation-with-Numba" title="Permalink to this headline"></a></h3>
 <p>As we have seen <a class="reference external" href="https://numba.pydata.org">Numba</a> is a package that does LLVM optimized just-in-time compilation of Python code. The speed-ups can be substantial. We will use <code class="docutils literal notranslate"><span class="pre">numba</span></code> to compile the parts of the code that we can. For many functions, we just need to decorate the function with</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>@numba.jit()
@@ -1949,9 +1952,9 @@ Totally numba&#39;d Gillespie SSA:
 </pre></div></div>
 </div>
 <p>We got an extra order of magnitude speed boost by totally JIT compiling everything. The speed up is significant, so we should probably use Numba’d code, which is what the <code class="docutils literal notranslate"><span class="pre">biocircuits.gillespie_ssa()</span></code> function uses when possible.</p>
-</div>
-</div>
-<div class="section" id="Parallel-Gillespie-simulations">
+</section>
+</section>
+<section id="Parallel-Gillespie-simulations">
 <h2>Parallel Gillespie simulations<a class="headerlink" href="#Parallel-Gillespie-simulations" title="Permalink to this headline"></a></h2>
 <p>Sampling by the Gillespie algorithm is trivially parallelizable. We can use the <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> module to parallelize the computation. Syntactically, we need to specify a function that takes a single argument. Below, we set up a parallel calculation of Gillespie simulations for our specific example.</p>
 <div class="admonition note">
@@ -2013,8 +2016,8 @@ Parallel numba&#39;d Gillespie SSA:
 </div>
 <p>We get a factor of two speed boost from two cores. This brings our total speed boost from the optimization to nearly two orders of magnitude.</p>
 <p>If we insist on <em>exact</em> sampling out of a probability distribution defined by a master question, we can get significant speed boosts by switching to the <a class="reference external" href="http://doi.org/10.1021/jp993732q">Gibson and Bruck algorithm</a>, especially for more complicated systems and propensity functions. If we are willing to <em>approximately</em> sample out of the probability distribution, there are many fast, approximate methods (e.g., <a class="reference external" href="https://doi.org/10.1063%2F1.1835951">Salis and Kaznessis</a>) available.</p>
-</div>
-<div class="section" id="Computing-environment">
+</section>
+<section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
@@ -2045,8 +2048,8 @@ jupyterlab  : 3.0.14
 
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -2060,11 +2063,11 @@ jupyterlab  : 3.0.14
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 23, 2022.
+      <span class="lastupdated">Last updated on May 25, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f859fef0b80> 
+   <jinja2.runtime.BlockReference object at 0x7fa8afa592b0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

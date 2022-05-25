@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 4.2: A tri-stable cell-fate determinant circuit &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -95,6 +96,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -159,14 +162,14 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Problem-4.2:-A-tri-stable-cell-fate-determinant-circuit">
+<section id="Problem-4.2:-A-tri-stable-cell-fate-determinant-circuit">
 <h1>Problem 4.2: A tri-stable cell-fate determinant circuit<a class="headerlink" href="#Problem-4.2:-A-tri-stable-cell-fate-determinant-circuit" title="Permalink to this headline"></a></h1>
 <hr><p>Common myeloid precursor (CMP) cells are stem cells that can either differentiate into an erythroid (red blood cell) cell or a myeloid (bone marrow) cell. Such a binary differentiation may be regulated by a genetic circuit akin to the toggle circuit we have studied in class. However, the progenitor state of the CMP cells is also stable, which suggests tristability of the underlying circuit. In particular, the transcription factors GATA1 (which we will call X for convenience) and PU.1 (which we
 will call Y) are mutually repressive, which gives them the toggle-like behavior. They also are autoactivating. These interactions are summarized in the circuit below.</p>
 <div style="margin: auto; width: 200px"><img alt="tristable toggle" src="../../_images/tristable_toggle.svg" /></div><p><a class="reference external" href="https://doi.org/10.1016/j.ydbio.2007.02.036">Huang and coworkers (Dev. Biol., 2007)</a> claimed that this circuit can give tristability. Your task is to assess that claim. Model the circuit where the repression of X by Y and X’s autoactivation exhibits OR logic as does repression of Y by X and Y’s autoactivation. Can you come up with parameter values that show tristability?</p>
 <p>We have not covered some of the mathematical techniques, such as linear stability analysis, that help test the stability of fixed points. However, the graphical nullcline analysis we have covered is useful and sufficient to demonstrate tristability. Think about how many fixed points are necessary to get tristability. Here is a useful hint: It may be a bit tricky to plot the nullclines because they may be discontinuous and not defined on some intervals. Make sure you plot <em>plenty</em> of values of
 <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> so that you can catch all of the crossings of nullclines.</p>
-</div>
+</section>
 
 
            </div>
@@ -180,11 +183,11 @@ will call Y) are mutually repressive, which gives them the toggle-like behavior.
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 23, 2022.
+      <span class="lastupdated">Last updated on May 25, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f859e86c310> 
+   <jinja2.runtime.BlockReference object at 0x7fa8f0d389a0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

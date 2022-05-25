@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>16. Bursty gene expression &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -102,6 +103,8 @@
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -419,7 +422,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="16.-Bursty-gene-expression">
+<section id="16.-Bursty-gene-expression">
 <h1>16. Bursty gene expression<a class="headerlink" href="#16.-Bursty-gene-expression" title="Permalink to this headline"></a></h1>
 <hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -786,7 +789,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </ul>
 <hr><p>In the last lesson, we laid out two objectives. First, we aimed to identify the sources of noise and how to characterize them. We summarized statistics about the probability distribution of copy numbers by considering the mean and coefficient of variation. The mean ends up following the same deterministic dynamics we have been considering thus far in the course. The coefficient of variation is a measure of noise, or relative departure from the mean behavior. Now, we will look at the dynamics of
 the entire probability distribution of copy number, <span class="math notranslate nohighlight">\(P(n,t)\)</span>.</p>
-<div class="section" id="Master-equations">
+<section id="Master-equations">
 <h2>Master equations<a class="headerlink" href="#Master-equations" title="Permalink to this headline"></a></h2>
 <p>We will use <strong>master equations</strong> to describe the dynamics of <span class="math notranslate nohighlight">\(P(n,t)\)</span>. Generally, a master equation is a loss-gain equation for probabilities of states governed by a Markov process. (To see where it gets its name, you can read <a class="reference external" href="https://quantumfrontiers.com/2015/06/21/hello-my-name-is-quantum-master-equation/">this amusing blog post by Nicole Yunger Halpern</a>.) In our case, the “state” is the set of copy numbers of molecular species of interest. The values of <span class="math notranslate nohighlight">\(n\)</span> are discrete, so we
 have a separate differential equation for each <span class="math notranslate nohighlight">\(P(n,t)\)</span>. Specifically,</p>
@@ -798,8 +801,8 @@ have a separate differential equation for each <span class="math notranslate noh
 distribution that solves the master equation. We can then plot histograms to get an approximate plot of the probability distribution. We can also use the samples to compute moments, giving us estimates of the mean and variance. Generating the samples from the <em>differential</em> master equation is done using a <em>Gillespie algorithm</em>, also known as a <em>stochastic simulation algorithm</em>, or SSA, which we will discuss later in this chapter.</p>
 <p>Note in using a master equation we are assuming that events that change state (that is, that change the copy number of one or more species) are <strong>Poisson processes</strong>. In this context, a <a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_point_process">Poisson process</a> may be thought of as a series of well-defined, separate events that occur randomly, without memory of what has occurred before. This is often the case for things like molecular collisions. Implicit in the assumption that state changes are
 modeled as Poisson processes is that the binding or dissociation (or any other event) happens essentially instantaneously with well-defined pauses between them. This is yet another instance of where a separation of time scales is important.</p>
-</div>
-<div class="section" id="The-Master-equation-for-unregulated-gene-expression">
+</section>
+<section id="The-Master-equation-for-unregulated-gene-expression">
 <h2>The Master equation for unregulated gene expression<a class="headerlink" href="#The-Master-equation-for-unregulated-gene-expression" title="Permalink to this headline"></a></h2>
 <p>As we have seen, unregulated gene expression is described by the macroscale equation</p>
 <p><span class="math">\begin{align}
@@ -878,8 +881,8 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n \mathrm{e}^{-\beta/\gamma
 &\text{noise} = \text{coefficient of variation} = \eta = \frac{\sigma}{\langle n \rangle} = \sqrt{\frac{\gamma}{\beta}}, \\[1em]
 &\text{Fano factor} = F = \frac{\sigma^2}{\langle n \rangle} = 1.
 \end{align}</span></p>
-</div>
-<div class="section" id="Dynamics-of-the-moments">
+</section>
+<section id="Dynamics-of-the-moments">
 <h2>Dynamics of the moments<a class="headerlink" href="#Dynamics-of-the-moments" title="Permalink to this headline"></a></h2>
 <p>From the master equation, we can derive an ODE describing the dynamics of the mean copy number of time, <span class="math notranslate nohighlight">\(\langle n(t) \rangle\)</span>. To do this, we multiply both sides of the master equations by <span class="math notranslate nohighlight">\(n\)</span> and then sum over <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><span class="math">\begin{align}
@@ -908,11 +911,11 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n \mathrm{e}^{-\beta/\gamma
 &= \beta - \gamma \langle n \rangle,
 \end{align}</span></p>
 <p>which is precisely the macroscale ODE we are used to. It is now clear that it describes the mean of the full probability distribution. The assumptions behind our ODE models are now also clear. They describe the dynamics of the expectation value of copy number (or concentration when divided by the total volume) whose probability distribution is described by a master equation.</p>
-</div>
-<div class="section" id="Sampling-out-of-master-equations">
+</section>
+<section id="Sampling-out-of-master-equations">
 <h2>Sampling out of master equations<a class="headerlink" href="#Sampling-out-of-master-equations" title="Permalink to this headline"></a></h2>
 <p>We have managed to derive the steady state solution to a master equation, but we would like to know the full dynamics. In nearly all cases we may come across in modeling biological circuits, an exact analytical expression for <span class="math notranslate nohighlight">\(P(n;t)\)</span> is not accessible. We therefore turn to <strong>sampling</strong> out of <span class="math notranslate nohighlight">\(P(n;t)\)</span>, a concept we will first consider with simpler distributions.</p>
-<div class="section" id="Sampling-out-of-probability-distributions">
+<section id="Sampling-out-of-probability-distributions">
 <h3>Sampling out of probability distributions<a class="headerlink" href="#Sampling-out-of-probability-distributions" title="Permalink to this headline"></a></h3>
 <p>Sampling out of a distribution involves using a random number generator to <em>simulate</em> the <strong>story</strong> that generates the distribution. So, if you know the story and you have a computer handy, you can sample to be able to get a plot of your distribution, though you will not get the analytical form.</p>
 <p>Let’s demonstrate this with the Binomial distribution. We know that if we flip a coin that has probability <span class="math notranslate nohighlight">\(p\)</span> of landing heads, the number of heads in <span class="math notranslate nohighlight">\(n\)</span> flips is Bionomially distributed. Imagine for a moment that we did not know that, but will instead take to sampling using the story. We will take <span class="math notranslate nohighlight">\(n = 25\)</span> and <span class="math notranslate nohighlight">\(p = 0.25\)</span> and compute <span class="math notranslate nohighlight">\(P(h \mid n, p)\)</span>, the probability of getting <span class="math notranslate nohighlight">\(h\)</span> heads in <span class="math notranslate nohighlight">\(n\)</span> flips, each with probability <span class="math notranslate nohighlight">\(p\)</span> of landing heads.
@@ -1001,15 +1004,15 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>As we can see, if we <em>sample</em> out of the probability distribution, we can approximately calculate the actual distribution. If we sample enough, the approximation is very good.</p>
 <p>Sampling is such a powerful strategy that highly efficient algorithms with convenient APIs have been developed to sample out of named probability distributions. For example, we could have used <code class="docutils literal notranslate"><span class="pre">np.random.binom()</span></code> as a drop-in (and <em>much</em> more efficient) replacement for the <code class="docutils literal notranslate"><span class="pre">simulate_coinflips()</span></code> function above.</p>
 <p>We will use the same strategy for solving master equations. We will find a way to <em>sample</em> out of the distribution that is governed by the master equation. This technique was pioneered by Dan Gillespie in the last 70s. For that reason, these sampling techniques are often called <strong>Gillespie simulations</strong>. The algorithm is sometimes referred to as a <strong>stochastic simulation algorithm</strong>, or SSA.</p>
-</div>
-<div class="section" id="Example:-Unregulated-gene-expression">
+</section>
+<section id="Example:-Unregulated-gene-expression">
 <h3>Example: Unregulated gene expression<a class="headerlink" href="#Example:-Unregulated-gene-expression" title="Permalink to this headline"></a></h3>
 <p>Here will explore how this algorithm works by looking at simple production of a protein. We will include the production of RNA to demonstrate how this is done with a master equation that has more than one species.</p>
 <p>For simple protein production, we have the following reactions.</p>
 <p><span class="math">\begin{align}
 \text{DNA} \rightarrow \text{mRNA} \rightarrow \text{protein}
 \end{align}</span></p>
-<div class="section" id="Macroscale-equations">
+<section id="Macroscale-equations">
 <h4>Macroscale equations<a class="headerlink" href="#Macroscale-equations" title="Permalink to this headline"></a></h4>
 <p>As we’ve seen before, the deterministic dynamics, which describe mean concentrations over a large population of cells, are described by the ODEs</p>
 <p><span class="math">\begin{align}
@@ -1028,8 +1031,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 \frac{\mathrm{d}p}{\mathrm{d}t} &= \beta_p m - \gamma p,
 \end{align}</span></p>
 <p>with <span class="math notranslate nohighlight">\(\gamma = \gamma_p/\gamma_m\)</span>.</p>
-</div>
-<div class="section" id="The-Master-equation">
+</section>
+<section id="The-Master-equation">
 <h4>The Master equation<a class="headerlink" href="#The-Master-equation" title="Permalink to this headline"></a></h4>
 <p>We can write a master equation for these dynamics. In this case, each state is defined by an mRNA copy number <span class="math notranslate nohighlight">\(m\)</span> and a protein copy number <span class="math notranslate nohighlight">\(p\)</span>. So, we will write a master equation for <span class="math notranslate nohighlight">\(P(m, p, t)\)</span>.</p>
 <p><span class="math">\begin{align}
@@ -1037,9 +1040,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 &+\beta_p mP(m,p-1,t) + \gamma (p+1)P(m,p+1,t) - \beta_p mP(m,p,t) - \gamma p P(m,p,t).
 \end{align}</span></p>
 <p>We implicitly define <span class="math notranslate nohighlight">\(P(m, p, t) = 0\)</span> if <span class="math notranslate nohighlight">\(m &lt; 0\)</span> or <span class="math notranslate nohighlight">\(p &lt; 0\)</span>. This is the master equation we will sample from using the stochastic simulation algorithm (SSA), also known as the Gillespie algorithm.</p>
-</div>
-</div>
-<div class="section" id="The-Gillespie-algorithm">
+</section>
+</section>
+<section id="The-Gillespie-algorithm">
 <h3>The Gillespie algorithm<a class="headerlink" href="#The-Gillespie-algorithm" title="Permalink to this headline"></a></h3>
 <p>The Gillespie algorithm is a way to sample the story behind a master equation, as will become clear momentarily as we work through the algorithm and introduce some terminology.</p>
 <p>The transition probabilities are also called <strong>propensities</strong> in the context of stochastic simulation. The propensity for a given transition, say indexed <span class="math notranslate nohighlight">\(i\)</span>, is denoted as <span class="math notranslate nohighlight">\(a_i\)</span>. The equivalence to notation we introduced for master equations is that if transition <span class="math notranslate nohighlight">\(i\)</span> results in the change of state from <span class="math notranslate nohighlight">\(n'\)</span> to <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(a_i = W(n\mid n')\)</span>.</p>
@@ -1085,8 +1088,8 @@ P(t_1 > \Delta t) P(t_2 > \Delta t) \cdots =
 <li><p>If <span class="math notranslate nohighlight">\(t\)</span> is less than your pre-determined stopping time, go to step 2. Else stop.</p></li>
 </ol>
 <p>Gillespie proved that this algorithm samples the probability distribution described by the master equation in his seminal papers in <a class="reference external" href="https://doi.org/10.1016/0021-9991(76)90041-3">1976</a> and <a class="reference external" href="http://doi.org/10.1021/j100540a008">1977</a>. (We recommend reading the latter.) You can also read a concise discussion of how the algorithm samples the master equation in <a class="reference external" href="http://www.cds.caltech.edu/~murray/books/AM08/pdf/bfs-stochastic_14Sep14.pdf">section 4.2 of Del Vecchio and Murray</a>.</p>
-</div>
-<div class="section" id="Coding-up-a-Gillespie-simulation">
+</section>
+<section id="Coding-up-a-Gillespie-simulation">
 <h3>Coding up a Gillespie simulation<a class="headerlink" href="#Coding-up-a-Gillespie-simulation" title="Permalink to this headline"></a></h3>
 <p>To code up the Gillespie simulation of the simple gene expression example, we first make an an array that gives the changes in the counts of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(p\)</span> for each of the four reactions. This is a way of encoding the updates in the particle counts that we get from choosing the respective state changes.</p>
 <div class="nbinput nblast docutils container">
@@ -1127,8 +1130,8 @@ also be a function of time, so we explicitly allow for time dependence (even tho
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Making-a-draw">
+</section>
+<section id="Making-a-draw">
 <h3>Making a draw<a class="headerlink" href="#Making-a-draw" title="Permalink to this headline"></a></h3>
 <p>Finally, we write a general function that draws a choice of reaction and the time interval for that reaction. This is the heart of the Gillespie algorithm, so we will take some time to discuss speed. First, to get the time interval, we sample a random number from an exponential distribution with mean <span class="math notranslate nohighlight">\(\left(\sum_i a_i\right)^{-1}\)</span>. This is easily done using the <code class="docutils literal notranslate"><span class="pre">np.random.exponential()</span></code> function.</p>
 <p>Next, we have to select which reaction will take place. This amounts to drawing a sample over the discrete distribution where <span class="math notranslate nohighlight">\(P_i = a_i\left(\sum_i a_i\right)^{-1}\)</span>, or the probability of each reaction is proportional to its propensity. This can be done using <code class="docutils literal notranslate"><span class="pre">scipy.stats.rv_discrete</span></code>, which allows specification of an arbitrary discrete distribution. We will write a function to do this.</p>
@@ -1246,8 +1249,8 @@ Result from hand-coded method:
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Gillespie-time-stepping">
+</section>
+<section id="Gillespie-time-stepping">
 <h3>Gillespie time stepping<a class="headerlink" href="#Gillespie-time-stepping" title="Permalink to this headline"></a></h3>
 <p>Now we are ready to write our mainA loop. We will only keep the counts at pre-specified time points. This saves on RAM, and we really only care about the values at given time points anyhow.</p>
 <p>Note that this function is generic. All we need to specify our system is the following.</p>
@@ -1327,8 +1330,8 @@ Result from hand-coded method:
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Running-and-parsing-results">
+</section>
+<section id="Running-and-parsing-results">
 <h3>Running and parsing results<a class="headerlink" href="#Running-and-parsing-results" title="Permalink to this headline"></a></h3>
 <p>We can now run a set of SSA simulations and plot the results. We will run 100 trajectories and store them, using <span class="math notranslate nohighlight">\(\beta_p = \beta_m = 10\)</span> and <span class="math notranslate nohighlight">\(\gamma = 0.4\)</span>. We will also use the nifty package <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> to give a progress bar so we know how long it is taking.</p>
 <div class="nbinput docutils container">
@@ -1552,9 +1555,9 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <p>As we expect, the mRNA copy number matches the Poisson distribution. We also managed to get a distribution for the protein copy number that we could plot.</p>
 <p>You now have the basic tools for doing Gillespie simulations. You just need to code the propensity function and the update, and you’re on your way! (Note, though, that this only works for Gillespie simulations where the states are defined by particle counts, which should suffice for this course.)</p>
-</div>
-</div>
-<div class="section" id="Implementation-in-the-biocircuits-package">
+</section>
+</section>
+<section id="Implementation-in-the-biocircuits-package">
 <h2>Implementation in the biocircuits package<a class="headerlink" href="#Implementation-in-the-biocircuits-package" title="Permalink to this headline"></a></h2>
 <p>This algorithm is implemented in the biocircuits package. A significant speed boost is achieved by <a class="reference external" href="https://en.wikipedia.org/wiki/Just-in-time_compilation">just-in-time compliation</a> using <a class="reference external" href="http://numba.pydata.org">Numba</a>. To utilize this feature, you need to just-in-time compile (JIT) your propensity function. You can insist that everything is compiled (and therefore skips the comparably slow Python interpreter) by using the &#64;numba.njit decorator. In many cases, like in this one for simple
 gene expression, that is all you have to do.</p>
@@ -1679,13 +1682,13 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
-</div>
-<div class="section" id="Experimental-Fano-factors-are-greater-than-one">
+</section>
+<section id="Experimental-Fano-factors-are-greater-than-one">
 <h2>Experimental Fano factors are greater than one<a class="headerlink" href="#Experimental-Fano-factors-are-greater-than-one" title="Permalink to this headline"></a></h2>
 <p>Both or theoretical analysis and the Gillespie simulation (at least of the mRNA) showed us that the Fano factor for simple gene expression is one. So, if we see Fano factors of unity in experiment, we know our model for gene transcription is at least plausible.</p>
 <p>Gene expression in individual cells typically results in a Fano factor greater than one! There are many ways this could come about, such as explicitly considering the multiple steps involved in making a protein, or by having a switchable promoter, as you can explore in an end-of-chapter problem in forthcoming chapters. Today, we will focus on a key experimental result: <strong>gene expression occurs in bursts.</strong></p>
-</div>
-<div class="section" id="Observations-of-bursty-gene-expression">
+</section>
+<section id="Observations-of-bursty-gene-expression">
 <h2>Observations of bursty gene expression<a class="headerlink" href="#Observations-of-bursty-gene-expression" title="Permalink to this headline"></a></h2>
 <p>In a beautiful set of experiments, <a class="reference external" href="https://doi.org/10.1038/nature04599">Cai, Friedman, and Xie (Nature, 2006)</a> discovered that gene expression is bursty. (We will come to understand what we mean by “bursty” in a moment.)</p>
 <p>Through a clever experimental setup (we encourage you to read the paper), Cai, Friedman, and Xie were able to get accurate counts of the number of β-galactosidase molecules in individual cells over time. They found that the number of molecules was constant over long stretches of time, and then the number suddenly increased. The figure below, taken from the paper, shows the number of β-galactosidase molecules present in a single cell over time (black) and a blank background (red). This shows that
@@ -1702,8 +1705,8 @@ expression of the β-<em>gal</em> gene happens in bursts. In each burst, many mo
 P(k;p_0) = (1-p_0)^k p.
 \end{align}</span></p>
 <p>Considering this story, this implies that a burst is turned on, and then it turns off by a random process after some time.</p>
-</div>
-<div class="section" id="Master-equation-for-bursty-gene-expression">
+</section>
+<section id="Master-equation-for-bursty-gene-expression">
 <h2>Master equation for bursty gene expression<a class="headerlink" href="#Master-equation-for-bursty-gene-expression" title="Permalink to this headline"></a></h2>
 <p>We also see from the experimental results tracking β-galactosidase copy number that the time scale of the bursty gene expression is much shorter than the typical decay time. So, per unit time, we can have many gene products made, not just a single gene product as we have considered thus far. So, we can re-write our transition probabilities per unit time as</p>
 <p><span class="math">\begin{align}
@@ -1730,8 +1733,8 @@ W(n\mid n') &= \beta' \xi_{n-n'} - \gamma (n+1) \delta_{n+1,n'},
 &\;\;\;\;- \beta'(1-p_0)P(n,t) - \gamma n P(n,t).
 \end{align}</span></p>
 <p>As we might expect, an analytical solution for this master equation is difficult. We are left to simulate it using SSA.</p>
-</div>
-<div class="section" id="The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">
+</section>
+<section id="The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">
 <h2>The steady state distribution for bursty expression is Negative Binomial<a class="headerlink" href="#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial" title="Permalink to this headline"></a></h2>
 <p>We could derive the steady state distribution of copy numbers under the bursty master equation, but we will instead take a story matching approach to guess the solution. The story of the <a class="reference external" href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">Negative Binomial distribution</a> is as follows.</p>
 <blockquote>
@@ -1772,8 +1775,8 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 <!-- Problem idea: Derive an ODE for the variance and noise for simple gene expression/decay.
 
 Another problem idea: Derive the Neg. Binomial distribution for bursty gene expression using similar arguments as used in the above for Poisson distributed.
---><hr></div>
-<div class="section" id="Problems">
+--><hr></section>
+<section id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
@@ -1782,8 +1785,8 @@ Another problem idea: Derive the Neg. Binomial distribution for bursty gene expr
 <li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty geneexpression</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1797,11 +1800,11 @@ Another problem idea: Derive the Neg. Binomial distribution for bursty gene expr
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 23, 2022.
+      <span class="lastupdated">Last updated on May 25, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f85dc1208b0> 
+   <jinja2.runtime.BlockReference object at 0x7fa8aba995b0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

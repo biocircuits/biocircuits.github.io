@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Homework 16.2: Noise in a switchable promoter &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -89,6 +90,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -153,7 +156,7 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Homework-16.2:-Noise-in-a-switchable-promoter">
+<section id="Homework-16.2:-Noise-in-a-switchable-promoter">
 <h1>Homework 16.2: Noise in a switchable promoter<a class="headerlink" href="#Homework-16.2:-Noise-in-a-switchable-promoter" title="Permalink to this headline"></a></h1>
 <hr><p>This problem was inspired by <a class="reference external" href="https://doi.org/10.1126/science.1216379">Munsky, et al. (Science, 2012)</a>. We will explore some aspects of stochastic gene expression using both the analytical and computational techniques that we described in class. In this problem we will contrast two models of stochastic gene expression.</p>
 <p>The first “simple” model consists of a simplely active promoter where transcription happens with a constant stochastic rate, while the second model consists of a promoter switching stochastically between an ON and an OFF state. Transcription in this model can only occur when the promoter is in the ON state. This could, for example, describe the open and closed chromatin state. mRNA degradation is present in both models. We will not consider protein in this problem.</p>
@@ -225,7 +228,7 @@ distribution resemble a negative binomial distribution?</p>
 <ol class="lowerroman simple" start="3">
 <li><p>Do the results you derived in part (d) about the Fano factor and mean hold for the steady states you observe? You can investigate other parameter values as well, if you wish.</p></li>
 </ol>
-</div>
+</section>
 
 
            </div>
@@ -239,11 +242,11 @@ distribution resemble a negative binomial distribution?</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 23, 2022.
+      <span class="lastupdated">Last updated on May 25, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f85d3c66f40> 
+   <jinja2.runtime.BlockReference object at 0x7fa8ab892490> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

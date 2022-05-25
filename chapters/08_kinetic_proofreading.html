@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -93,6 +94,8 @@
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -156,7 +159,7 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="8.-Kinetic-proofreading:-Multi-step-processes-reduce-error-rates-in-molecular-recognition">
+<section id="8.-Kinetic-proofreading:-Multi-step-processes-reduce-error-rates-in-molecular-recognition">
 <h1>8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition<a class="headerlink" href="#8.-Kinetic-proofreading:-Multi-step-processes-reduce-error-rates-in-molecular-recognition" title="Permalink to this headline"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
@@ -166,15 +169,15 @@
 <ul class="simple">
 <li><p>Application of statistical thermodynamics to estimate error rates.</p></li>
 </ul>
-<hr><div class="section" id="Introduction">
+<hr><section id="Introduction">
 <h2>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline"></a></h2>
 <p>In the past several chapters, we have encountered the concept of robustness through several examples. Through our study of dosage compensation, we saw how expression level of a gene can be robust to variations in the copy number of that gene via an incoherent feed-forward loop. Through our examination of chemotaxis, we saw how circuit architecture can endow a bacterial cell with exact adaptation robustly with respect to enzyme levels over many orders of magnitude. Finally, in our study of signal
 amplification, we saw how bifunctionality of enzymes can achieve perfect linear amplification completely independently of (and therefore robust to) variations in the total level of signaling molecules.</p>
 <p>In this final chapter on robustness, we will discuss the process of <strong>kinetic proofreading</strong>, the process by which cells achieve the remarkable fidelity of their core transcriptional and translational processes. Here we will focus on translation, though there are interesting proofreading mechanisms at play in transcription as well. The robustness statement is: <em>The fidelity of translation is robust to inherent thermal fluctuations.</em> This is a different flavor of robustness; kinetic proofreading
 is a mechanism by which the function of a biochemical process, in this case translation, achieves a higher fidelity that what is naively expected by equilibrium processes.</p>
 <p>The error rate in translation of mRNA to protein by ribosomes is about <span class="math notranslate nohighlight">\(10^{-4}\)</span> errors per amino acid. We will work out whether or not this error rate is high or low compared to equilibrium expections, and then discuss mechanisms about how it is achieved. The design principle we will explore is more general: <strong>Driven multistep pathways enable amplification of selectivity.</strong> By the word “driven,” we mean that energy consuming reactions are necessary for the multiple steps.</p>
-</div>
-<div class="section" id="A-simple-model-for-incorporation-of-amino-acids">
+</section>
+<section id="A-simple-model-for-incorporation-of-amino-acids">
 <h2>A simple model for incorporation of amino acids<a class="headerlink" href="#A-simple-model-for-incorporation-of-amino-acids" title="Permalink to this headline"></a></h2>
 <p>We can think of the process of translation as consisting of two successive steps. First, a tRNA (T) reversibly associates with the ribosome/mRNA complex (R). When associated, an amino acid can be irreversibly added to the nascent peptide. This is represented by the following reaction scheme.</p>
 <div style="width: 245px; margin: auto;"><img alt="simple amino acid incorporation" src="../_images/simple_aa_incorporation.png" />
@@ -182,7 +185,7 @@ is a mechanism by which the function of a biochemical process, in this case tran
 <p>Unfortunately, there can also be incorporation of erroneous tRNAs leading to erroneous amino acid incorporation. So, we should really write two sets of chemical reactions, one for correct incorporation of an amino acid and one for erroneous.</p>
 <div style="width: 300px; margin: auto;"><img alt="simple amino acid production with errors" src="../_images/simple_aa_prod_with_errors.png" />
 </div><p>Here, we have denoted chemical rate constants for erroneous incorporation with a <span class="math notranslate nohighlight">\(p\)</span>. Note that we have assumed that the irreversible incorporation rate is the same for correct and incorrect incorporation.</p>
-<div class="section" id="Amino-acid-incorporation-rate">
+<section id="Amino-acid-incorporation-rate">
 <h3>Amino acid incorporation rate<a class="headerlink" href="#Amino-acid-incorporation-rate" title="Permalink to this headline"></a></h3>
 <p>Using mass action kinetics, we can write the dynamical equations for amino acid incorporation. Importantly, we have</p>
 <p><span class="math">\begin{align}
@@ -210,8 +213,8 @@ e &\approx \frac{p_+^{(1)}}{p_-^{(1)}}\,c_\mathrm{R}\,c_\mathrm{E}.
 &r_c = \frac{v\,k_+^{(1)}}{k_-^{(1)}}\,c_\mathrm{R}\,c_\mathrm{C},\\[1em]
 &r_e = \frac{v\,p_+^{(1)}}{p_-^{(1)}}\,c_\mathrm{R}\,c_\mathrm{E}.
 \end{align}</span></p>
-</div>
-<div class="section" id="Error-rates">
+</section>
+<section id="Error-rates">
 <h3>Error rates<a class="headerlink" href="#Error-rates" title="Permalink to this headline"></a></h3>
 <p>We are interested in computing the <strong>error rate</strong>, <span class="math notranslate nohighlight">\(f_0\)</span>, which is the number of erroneous amino acids incorporated per correct amino acid. We will compute this at steady state, so the steady state error rate is</p>
 <p><span class="math">\begin{align}
@@ -236,8 +239,8 @@ K_\mathrm{d} = \exp\left[-\frac{E_\mathrm{R} + E_\mathrm{T} - E_\mathrm{RT}}{k_\
 <p><span class="math">\begin{align}
 f_0 = q\,\exp\left[-\frac{E_{\mathrm{RE}} - E_{\mathrm{RC}}}{k_\mathrm{B}T}\right].
 \end{align}</span></p>
-</div>
-<div class="section" id="Does-this-work?">
+</section>
+<section id="Does-this-work?">
 <h3>Does this work?<a class="headerlink" href="#Does-this-work?" title="Permalink to this headline"></a></h3>
 <p>As mentioned before, about <span class="math notranslate nohighlight">\(10^{-4}\)</span> erroneous amino acids per residue are incorporated. We will take <span class="math notranslate nohighlight">\(q \approx 20\)</span>, though this can vary significantly depending on the amino acid, since tRNA abundance is variable. Plugging in numbers, to get an error rate of <span class="math notranslate nohighlight">\(10^{-4}\)</span>, we need</p>
 <p><span class="math">\begin{align}
@@ -246,14 +249,14 @@ f_0 = q\,\exp\left[-\frac{E_{\mathrm{RE}} - E_{\mathrm{RC}}}{k_\mathrm{B}T}\righ
 <p>The difference in the interaction between an erroneous and correct tRNA and the ribosome/mRNA complex would have to be at least <span class="math notranslate nohighlight">\(12k_\mathrm{B}T\)</span> (maybe more because some tRNAs are in higher abundance). We now have to ask: What is the energy difference between correctly and incorrectly bound tRNA-mRNA pairs and how does this compare to <span class="math notranslate nohighlight">\(12k_\mathrm{B}T\)</span>?</p>
 <p>Being off by a single base pair could result in an erroneous amino acid being incorporated. The misalignment of the base pairs would result in disrupted hydrogen bonds. Base pairs have two or three hydrogen bonds. Presumably, at least one could form if the bases are misaligned. Thus, we could get an error with a single hydrogen bond being off. The stacking interactions are not as important here, since the bases are confined within the geometry of the ribosome. So, we will estimate that the
 energy difference is about one hydrogen bond, or <span class="math notranslate nohighlight">\(2k_\mathrm{B}T\)</span>. There is just not enough energy in hydrogen bonding to give the necessary energy difference to give the low error rate.</p>
-</div>
-</div>
-<div class="section" id="Kinetic-proofreading">
+</section>
+</section>
+<section id="Kinetic-proofreading">
 <h2>Kinetic proofreading<a class="headerlink" href="#Kinetic-proofreading" title="Permalink to this headline"></a></h2>
 <p>Experimentally, it is known that there are intermediate steps in translation. In 1974, <a class="reference external" href="https://doi.org/10.1073/pnas.71.10.4135">John Hopfield’s big insight</a> was that these steps require energy (e.g., GTP hydrolysis involving the elongation factor EF-Tu), and can therefore serve to decrease the error rate since the energy serves to overcome the limit set by thermodynamics. These hydrolysis events can cause a conformational change in the tRNA-codon complex that allow elongation and also for
 dissociation of tRNA from the codon. For this scheme, the chemical reactions are</p>
 <div style="width: 310px; margin: auto;"><img alt="simple amino acid incorporation with kinetic proofreading" src="../_images/aa_prod_with_kinetic_proofreading.png" />
-</div><div class="section" id="Error-rate-by-kinetic-proofreading">
+</div><section id="Error-rate-by-kinetic-proofreading">
 <h3>Error rate by kinetic proofreading<a class="headerlink" href="#Error-rate-by-kinetic-proofreading" title="Permalink to this headline"></a></h3>
 <p>We will now compute the error rate for this new scheme. To begin, we compute the steady rate of elongation with correct amino acids, which we will call <span class="math notranslate nohighlight">\(r_c\)</span>. Again assuming a separation of time scales, our goal is to compute the steady state concentration of RC<span class="math notranslate nohighlight">\(^*\)</span>, <span class="math notranslate nohighlight">\(c^*\)</span>, since <span class="math notranslate nohighlight">\(r_c = v c^*\)</span>. Some differential equations describing the dynamics of the system under mass action kinetics are</p>
 <p><span class="math">\begin{align}
@@ -285,8 +288,8 @@ f = \frac{r_e}{r_c} = \frac{e^*}{c^*} =
 q\left(\frac{p_+^{(1)} p_+^{(2)}}{k_+^{(1)} k_+^{(2)}}\right)
 \left(\frac{k_+^{(2)}k_d + k_-^{(1)}\left(k_-^{(2)} + k_d\right)}{p_+^{(2)}p_d + p_-^{(1)}\left(p_-^{(2)} + p_d\right)}\right).
 \end{align}</span></p>
-</div>
-<div class="section" id="Approximate-error-rate">
+</section>
+<section id="Approximate-error-rate">
 <h3>Approximate error rate<a class="headerlink" href="#Approximate-error-rate" title="Permalink to this headline"></a></h3>
 <p>For ease of comparison and to build intuition, we will consider the following approximations.</p>
 <ol class="arabic simple">
@@ -315,34 +318,34 @@ f \approx q\,\frac{p_+^{(2)}}{k_+^{(2)}}\,\frac{K_{\mathrm{d,e}}}{K_\mathrm{d,c}
 f \approx q\,\frac{K_{\mathrm{d,e}}}{K_\mathrm{d,c}}\,\frac{k_d}{p_d} = \frac{k_d}{p_d}\,f_0,
 \end{align}</span></p>
 <p>which is a <span class="math notranslate nohighlight">\(k_d/p_d\)</span>-fold improvement over the error rate without proofreading. So, to get improved fidelity, we need <span class="math notranslate nohighlight">\(k_d &lt; p_d\)</span>; incorrectly paired complexes dissociate faster than correctly paired ones. To bring the error rate down four more orders of magnitude to the observed error rate, we would need this ratio to be about 1/10000.</p>
-</div>
-<div class="section" id="Multiple-steps-enable-greater-selectivity">
+</section>
+<section id="Multiple-steps-enable-greater-selectivity">
 <h3>Multiple steps enable greater selectivity<a class="headerlink" href="#Multiple-steps-enable-greater-selectivity" title="Permalink to this headline"></a></h3>
 <p>We have shown that adding the extra activation step allows for greater selectivity of correct amino acid incorporation in the context of translation. This extra step is a “proofreading” step that requires energy, hence the name kinetic proofreading. The kinetic proofreading principle is, in fact, more general. We have studied a <strong>recognition problem</strong> where there are two steps: bind a substrate and trigger a response. In this case, the substrate is tRNA and the response is addition of a new
 amino acid.</p>
 <p>This principle can be extended to arbitrarily many steps, with greater fidelity achieved as more and more steps are added. Of course, each step costs energy. If you want to beat thermodynamics, you have to pay for it with energy!</p>
-</div>
-</div>
-<div class="section" id="Kinetic-proofreading-in-the-immune-system">
+</section>
+</section>
+<section id="Kinetic-proofreading-in-the-immune-system">
 <h2>Kinetic proofreading in the immune system<a class="headerlink" href="#Kinetic-proofreading-in-the-immune-system" title="Permalink to this headline"></a></h2>
 <p>Kinetic proofreading has been applied extensively to model the exquisite fidelity of T cell antigen receptors in the recognition of major histocompatibility complexes (MHCs). In this system, agonist MHCs bind T cell receptors that then trigger an immune response. It is important to not trigger a response when endogenous MHCs are presented to the T cell to avoid an autoimmune response.</p>
 <p>This system exhibits extraordinary sensitivity, with the ability to detect a single ligand in a sea of thousands. The error rate in this recognition process is below <span class="math notranslate nohighlight">\(10^{-6}\)</span>. This is accomplished by a kinetic proofreading mechanism that uses a simple idea. Imagine an MHC candidate binds a T cell receptor. Before the immune response can proceed, a sequence of phosphorylations of the receptor must occur. The phosophorylations can only occur when the receptor is bound. While waiting for
 these phosphorylation events endogenous MHCs, which have a faster rate of dissociation from the receptor, may fall off, while the agonist MHCs have a better chance of hanging on before the signal to the immune response can be transmitted. You can work out the details of this mechanism in an end-of-chapter problem.</p>
-</div>
-<div class="section" id="Conclusion">
+</section>
+<section id="Conclusion">
 <h2>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this headline"></a></h2>
 <p>We now conclude our section focusing on robustness. We hope that we have conveyed how this complex property of robustness can be viewed from many angles and can appear at many different levels of a biological system’s architecture to serve many different purposes. The ubiquity of robustness means that it will often prove beneficial to think about any new system you encounter from a robustness-oriented point of view in order to gain new insights and understanding about its structure and behavior.
 As such, we hope that as we move into studying other types of biological systems in the chapters to come, you will continue to think in the back of your mind about how various components and properties of these systems might be robust or fine-tuned, and to what purpose they have evolved to be this way.</p>
-<hr></div>
-<div class="section" id="Problems">
+<hr></section>
+<section id="Problems">
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/08/problem_8.1.html">8.1: Kinetic proofreading in the immunesystem</a></li>
 </ul>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -356,11 +359,11 @@ As such, we hope that as we move into studying other types of biological systems
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 23, 2022.
+      <span class="lastupdated">Last updated on May 25, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f85a0b7f8b0> 
+   <jinja2.runtime.BlockReference object at 0x7fa8af8307c0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

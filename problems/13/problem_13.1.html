@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 13.1: Programming cellular response &mdash; Biological Circuit Design  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -92,6 +93,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
 </ul>
@@ -410,7 +413,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Problem-13.1:-Programming-cellular-response">
+<section id="Problem-13.1:-Programming-cellular-response">
 <h1>Problem 13.1: Programming cellular response<a class="headerlink" href="#Problem-13.1:-Programming-cellular-response" title="Permalink to this headline"></a></h1>
 <hr><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -765,7 +768,7 @@ receptor_conc = res.x[16:]
 <p>Find a set of parameters that give the desired cell types. Make a plot like the triptych above for the various cell types to demonstrate that you parameter set does indeed give the desired orthogonal cell types. Also report the respective receptor concentration profiles of each of the three cell types.</p>
 <p><em>Hint:</em> The optimization will converge to a local minimum, which may not hit your target addressing very well. There are <em>lots</em> of local minima. You can try rerunning the optimization with a different set of starting guesses for the parameters and receptor concentrations. You may have to do this several times.</p>
 <p><strong>d)</strong> If you like, try coming up with parameter values for other word sets and/or target responses.</p>
-</div>
+</section>
 
 
            </div>
@@ -779,11 +782,11 @@ receptor_conc = res.x[16:]
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 23, 2022.
+      <span class="lastupdated">Last updated on May 25, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f85d5e0e0a0> 
+   <jinja2.runtime.BlockReference object at 0x7fa8f3e61520> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

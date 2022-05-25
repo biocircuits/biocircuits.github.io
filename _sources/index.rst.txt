@@ -26,6 +26,8 @@ Biological Circuit Design
    chapters/17_bet_hedging.ipynb
    chapters/18_stochastic_differentiation.ipynb
    chapters/20_lateral_inhibition.ipynb
+   chapters/21_turing.ipynb
+   chapters/22_scaling_morphogens.ipynb
    chapters/appA_regulatory_functions.ipynb
    chapters/appB_gillespie.ipynb
 
