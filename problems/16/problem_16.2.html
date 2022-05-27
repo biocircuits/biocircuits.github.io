@@ -169,7 +169,7 @@
 <p>When the promoter is on, transcription proceeds at a rate <span class="math notranslate nohighlight">\(\beta\)</span>. Otherwise, no transcripts are made. Transcripts degrade with a rate <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
 <p><strong>a)</strong> Write down a master equation describing the temporal dynamics of the probability distribution of the number of RNA transcripts, <span class="math notranslate nohighlight">\(P(n,t)\)</span>, for the simple model. Nondimensionalize time using the decay rate <span class="math notranslate nohighlight">\(\gamma\)</span>.</p>
 <p><strong>b)</strong> In this part of the problem, you will perform Gillespie simulations of the simple model. (This is very similar to what was done in the chapter, but provides a good baseline for studying the two-state model.) Start by writing down a system of stochastic chemical reactions for the simple model of gene expression. Make sure to enumerate all species, all reactions, and the propensity functions and associated parameters. Then, using the Gillespie stochastic simulation algorithm, implement a
-simulation of the simple model of gene expression. Use a <span class="math notranslate nohighlight">\(\beta/\gamma\)</span> of 10, where <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are the dimensional parameters. Initialize your simulation with no copies of mRNA being present. Perform many simulations to get plenty of samples at each time point.</p>
+simulation of the simple model of gene expression. Use a <span class="math notranslate nohighlight">\(\beta/\gamma\)</span> of 25, where <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are the dimensional parameters. Initialize your simulation with no copies of mRNA being present. Perform many simulations to get plenty of samples at each time point.</p>
 <ul class="simple">
 <li><ol class="lowerroman simple">
 <li><p>Plot snapshots of the simulated mRNA distribution at various time points. Comment on what you see.</p></li>
@@ -203,7 +203,7 @@ F &= \frac{\sigma^2}{\langle n \rangle} = 1 + \frac{\beta}{\gamma}\,(1-\langle a
 \end{align}</span></p>
 <p>where again the parameters are dimensional.</p>
 <ol class="lowerroman simple" start="4">
-<li><p>What is the significance that the Fano factor of the two-state model can never be less than unity? Describe physically what is happening when the Fano factor is large.</p></li>
+<li><p>What is the significance that the Fano factor of the two-state model can never be less than one? Describe physically what is happening when the Fano factor is large.</p></li>
 </ol>
 <p><strong>e)</strong> We will now use a Gillespie algorithm to sample out of the probability distribution defined by the master equation for the two-state system. Start with no transcripts with the promoter being off. There are lots of ways to explore the space of the three dimensionless parameters. To do our exploration, we will vary the parameters <span class="math notranslate nohighlight">\(k_\mathrm{on}\)</span> and <span class="math notranslate nohighlight">\(k_\mathrm{off}\)</span> and choose <span class="math notranslate nohighlight">\(\beta/\gamma\)</span> such that the steady state <span class="math notranslate nohighlight">\(\langle n \rangle = 25\)</span>.</p>
 <ol class="lowerroman simple">
@@ -242,11 +242,11 @@ distribution resemble a negative binomial distribution?</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 25, 2022.
+      <span class="lastupdated">Last updated on May 26, 2022.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fa8ab892490> 
+   <jinja2.runtime.BlockReference object at 0x7fad7d152fa0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

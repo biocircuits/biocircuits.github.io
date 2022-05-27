@@ -1337,6 +1337,27 @@
     "%load_ext watermark\n",
     "%watermark -v -p numpy,scipy,numba,bokeh,biocircuits,jupyterlab"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "tags": []
+   },
+   "source": [
+    "<hr>\n",
+    "\n",
+    "## Problems"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "nbsphinx-toctree": {},
+    "tags": []
+   },
+   "source": [
+    "- [22.1: Turing patterns with expanders](../problems/22/problem_22.1.ipynb)"
+   ]
   }
  ],
  "metadata": {
