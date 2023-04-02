@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 6.1: Co-substrate compensation &mdash; Biological Circuit Design  documentation</title>
@@ -17,6 +17,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -26,8 +27,8 @@
         <script src="../../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -40,12 +41,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../index.html">
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -60,7 +65,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/06_exact_adaptation.html#Exact-adaptation-uses-robustness-to-enable-gradient-sensing">Exact adaptation uses robustness to enable gradient sensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/06_exact_adaptation.html#Exact-adaptation-enables-gradient-sensing">Exact adaptation enables gradient sensing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/06_exact_adaptation.html#The-molecular-sources-of-robustness-in-the-E.-coli-chemotaxis-system">The molecular sources of robustness in the <em>E. coli</em> chemotaxis system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/06_exact_adaptation.html#A-more-complex-model-for-chemotaxis">A more complex model for chemotaxis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/06_exact_adaptation.html#Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally">Exact adaptation in the Che system is robust to CheR levels, as shown experimentally</a></li>
@@ -86,8 +91,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul>
@@ -107,9 +123,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a> &raquo;</li>
-      <li>Problem 6.1: Co-substrate compensation</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
+      <li class="breadcrumb-item active">Problem 6.1: Co-substrate compensation</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -126,32 +142,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Problem-6.1:-Co-substrate-compensation">
-<h1>Problem 6.1: Co-substrate compensation<a class="headerlink" href="#Problem-6.1:-Co-substrate-compensation" title="Permalink to this headline"></a></h1>
+  <section id="Problem-6.1:-Co-substrate-compensation">
+<h1>Problem 6.1: Co-substrate compensation<a class="headerlink" href="#Problem-6.1:-Co-substrate-compensation" title="Permalink to this heading"></a></h1>
 <hr><p><em>This problem derived from discussions with H. Y. Kueh, and is based on his paper</em> (<a class="reference external" href="https://doi.org/10.1016/j.bpj.2013.01.030">Biophys J., 104, 1338–1348, 2013</a>).</p>
 <p>To put this problem in context, let us think about an intriguing question. Oxygen is delivered to the cells of your body through your blood. Naturally, cells are situated at difference distances from blood vessels. As oxygen diffuses away from the blood vessels, different cells experience different local oxygen concentrations, often very different concentrations. How, then, do cells respire at the same rate, despite the large difference in oxygen concentration?</p>
 <p>This is a question of robustness. Is rate of respiration robust to differences in oxygen concentration over a physiologically relevant operating regime? To address this question consider a simple model of the mitochondrial electron transport chain (ETC) consisting of a single electron carrier C and two reactions that catalyze its oxidation and reduction, shown in below.</p>
@@ -201,7 +193,7 @@ v_0 = k_0 \, c_1\,\frac{c_{\mathrm{O}_2}/K_0}{1 + c_{\mathrm{O}_2}/K_0},
 <p><strong>c)</strong> Write down an expression for the rate of oxygen consumption, <span class="math notranslate nohighlight">\(v_0\)</span>, at steady state.</p>
 <p><strong>d)</strong> In what operating regime is the steady state oxygen consumption rate independent of oxygen concentration? On other words, what parameter values ensure robustness of the oxygen consumption rate to variations in oxygen levels?</p>
 <p><strong>e)</strong> You have shown that for some operating regime, the rate of oxygen consumption is robust to variation of oxygen concentration. Now imagine that the system is in steady state and there is a sudden step in oxygen concentration. In looking at your differential equation in part (b), you should be able to identify the time scale for recovery to steady state consumption rate. Is the time to recovery robust to variations in oxygen concentration? If so, over what operating regime?</p>
-<p><strong>f)</strong> Define the oxygen concentration for which the steady state oxygen consumption rate is half-maximal as <span class="math notranslate nohighlight">\(K_\mathrm{m}\)</span>. The Chance relationship <a class="reference external" href="https://doi.org/10.1085/jgp.49.1.163">Chance, J. Gen. Physiol., 1965</a> says that <span class="math notranslate nohighlight">\(K_m\)</span> scales linearly with the maximal rate of electron transfer (the maximal <span class="math notranslate nohighlight">\(v_1\)</span>), and inversely with the reaction rate constant for oxygen reduction (<span class="math notranslate nohighlight">\(k_0\)</span>). In the regime where oxygen consumption rate is independent of oxygen
+<p><strong>f)</strong> Define the oxygen concentration for which the steady state oxygen consumption rate is half-maximal as <span class="math notranslate nohighlight">\(K_\mathrm{m}\)</span>. The Chance relationship <a class="reference external" href="https://doi.org/10.1085/jgp.49.1.163">Chance, J. Gen. Physiol., 1965</a> says that <span class="math notranslate nohighlight">\(K_m\)</span> scales linearly with the maximal rate of electron transfer (the maximal <span class="math notranslate nohighlight">\(v_1\)</span>), and inversely with the reaction rate constant for oxygen reduction (<span class="math notranslate nohighlight">\(k_0\)</span>). In the regime where oxygen consumption rate is independent of oxygen
 concentration, does this system satisfy the Chance relation?</p>
 </section>
 
@@ -217,11 +209,11 @@ concentration, does this system satisfy the Chance relation?</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad7b0aef40> 
+   <jinja2.runtime.BlockReference object at 0x7fec99ff0280> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

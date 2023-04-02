@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>biocircuits.xyt_plot &mdash; Biological Circuit Design  documentation</title>
@@ -17,6 +17,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
@@ -38,12 +39,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../../index.html">
-            <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../../index.html">
+            
+              <img src="../../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -73,8 +78,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul class="current">
@@ -115,10 +131,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">biocircuits package documentation</a> &raquo;</li>
-          <li><a href="../api.html">API Reference</a> &raquo;</li>
-      <li>biocircuits.xyt_plot</li>
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">biocircuits package documentation</a></li>
+          <li class="breadcrumb-item"><a href="../api.html">API Reference</a></li>
+      <li class="breadcrumb-item active">biocircuits.xyt_plot</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -135,38 +151,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="biocircuits-xyt-plot">
-<h1>biocircuits.xyt_plot<a class="headerlink" href="#biocircuits-xyt-plot" title="Permalink to this headline"></a></h1>
+  <section id="biocircuits-xyt-plot">
+<h1>biocircuits.xyt_plot<a class="headerlink" href="#biocircuits-xyt-plot" title="Permalink to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="biocircuits.xyt_plot">
 <span class="sig-prename descclassname"><span class="pre">biocircuits.</span></span><span class="sig-name descname"><span class="pre">xyt_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'line'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'top_right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_slider_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#biocircuits.xyt_plot" title="Permalink to this definition"></a></dt>
 <dd><p>Create an interactive plot some the output of <cite>rd_solve()</cite>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>1D Numpy array</em>) – x-values for plot.</p></li>
 <li><p><strong>y</strong> (<em>tuple of 2D Numpy arrays</em>) – y-values for plot. <cite>y[i][j, k]</cite> is the y-value for curve i at
@@ -181,10 +173,10 @@ position. Ignored if <cite>legend_names</cite> is None.</p></li>
 creating the figure.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>An interactive plot with a time slider.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>output</p>
 </dd>
 </dl>
@@ -204,11 +196,11 @@ creating the figure.</p></li>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad45f851f0> 
+   <jinja2.runtime.BlockReference object at 0x7fec9d7d7a60> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

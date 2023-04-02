@@ -1,0 +1,32 @@
+name: biocircuits
+channels:
+  - bokeh
+  - default
+dependencies:
+  - python>=3.10
+  - black
+  - bokeh>=3.1.0
+  - colorcet
+  - ipython
+  - jupyter
+  - jupyterlab
+  - jupyter_bokeh
+  - line_profiler
+  - matplotlib
+  - numba
+  - numpy
+  - pandas
+  - pip
+  - scipy
+  - sympy
+  - tqdm
+  - xarray
+  - pip:
+    - biocircuits
+    - blackcellmagic
+    - eqtk
+    - iqplot
+    - jupyterlab-spellchecker
+    - multiprocess
+    - rdsolver
+    - watermark

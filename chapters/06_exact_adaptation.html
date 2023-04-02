@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6. Exact adaptation in the chemotaxis pathway &mdash; Biological Circuit Design  documentation</title>
@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -17,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -26,8 +28,8 @@
         <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -60,7 +66,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. Exact adaptation in the chemotaxis pathway</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Exact-adaptation-uses-robustness-to-enable-gradient-sensing">Exact adaptation uses robustness to enable gradient sensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exact-adaptation-enables-gradient-sensing">Exact adaptation enables gradient sensing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#The-molecular-sources-of-robustness-in-the-E.-coli-chemotaxis-system">The molecular sources of robustness in the <em>E. coli</em> chemotaxis system</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#The-CheA-circuit">The CheA circuit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Michaelis-Menten-kinetics">Michaelis-Menten kinetics</a><ul>
@@ -97,8 +103,19 @@
 <li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul>
@@ -118,8 +135,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>6. Exact adaptation in the chemotaxis pathway</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">6. Exact adaptation in the chemotaxis pathway</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -136,300 +153,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="6.-Exact-adaptation-in-the-chemotaxis-pathway">
-<h1>6. Exact adaptation in the chemotaxis pathway<a class="headerlink" href="#6.-Exact-adaptation-in-the-chemotaxis-pathway" title="Permalink to this headline"></a></h1>
+  <section id="6.-Exact-adaptation-in-the-chemotaxis-pathway">
+<h1>6. Exact adaptation in the chemotaxis pathway<a class="headerlink" href="#6.-Exact-adaptation-in-the-chemotaxis-pathway" title="Permalink to this heading"></a></h1>
 <hr><p><strong>Concepts</strong></p>
 <ul class="simple">
 <li><p>Exact adaptation allows a system to sense changes in signal across a wide dynamic range of ambient signal levels.</p></li>
 </ul>
-<!--
-- Integral feedback.
-
-
-
-**Design principles**
-
-- Exact adaptation can be achieved through integral feedback.
-
---><p><strong>Techniques</strong></p>
+<p><strong>Design principles</strong></p>
+<ul class="simple">
+<li><p>Activity dependent negative feedback enables exact adaptation.</p></li>
+</ul>
+<p><strong>Techniques</strong></p>
 <ul class="simple">
 <li><p>Michaelis-Menten kinetics allow modeling of enzyme dynamics.</p></li>
 </ul>
@@ -438,7 +172,7 @@ div.rendered_html tbody tr:hover {
 
 - Bacterial chemotaxis
 --><hr><div class="nbinput toggle docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Colab setup ------------------</span>
@@ -766,47 +500,51 @@ var element = document.currentScript.previousSibling.previousSibling;
 }(window));
 </script></div>
 </div>
-<hr><section id="Exact-adaptation-uses-robustness-to-enable-gradient-sensing">
-<h2>Exact adaptation uses robustness to enable gradient sensing<a class="headerlink" href="#Exact-adaptation-uses-robustness-to-enable-gradient-sensing" title="Permalink to this headline"></a></h2>
-<p>The previous chapter provided a first taste of robustness. We saw how the simple IFFL circuit architecture could, under the right conditions, make a protein’s concentration independent of the number of copies of its own gene. Today, we will extend the concept of robustness in two ways: First, we will shift from static steady state protein expression systems to dynamic signal transduction systems that can sense rates of change in their input. Second, we will shift from the level of gene
-expression circuits that has captured our attention so far to the level of circuits of interacting proteins. To do this, we will focus on one of the most paradigmatic signaling systems in biology: bacterial chemotaxis.</p>
-<p>Consider the chemotactic needs of an <em>E. coli</em> cell. A bacterium will want to move itself through space so that, over time, it moves towards regions of higher attractant concentration– in other words, it wants to move up a gradient. An implication of this behavior is that the cell should not have any net directional bias in its movement when there is no gradient in attractant concentration, <em>regardless of what the specific value of the attractant concentration is</em>.</p>
-<p>How might the cell implement such a behavior? One approach would be to have the signal governing movement exhibit <strong>exact adaptation</strong>, meaning its value always returns to the same initial steady state level after an adjustment of its input value, <em>even though the input itself does not return to its original value</em>. In this case, the input signal would be the attractant concentration.</p>
+<hr><section id="Exact-adaptation-enables-gradient-sensing">
+<h2>Exact adaptation enables gradient sensing<a class="headerlink" href="#Exact-adaptation-enables-gradient-sensing" title="Permalink to this heading"></a></h2>
+<p>The previous chapter provided a first glimpse of robustness. We saw how the simple IFFL circuit architecture could, under the right conditions, make a protein’s concentration independent of the number of copies of its own gene. Today, we will extend the concept of robustness in two ways: First, we will shift from static steady state protein expression systems to dynamic signal transduction systems that can sense rates of change in their input. Second, we will shift from the level of gene
+expression circuits that has captured our attention so far to the level of circuits of interacting proteins. To do this, we will focus on one of the best studied signaling systems in biology: bacterial chemotaxis and its ability to exactly adapt biochemical pathway activity to the same constant level across a wide range of input concentrations.</p>
+<p>Before we get started, consider a familiar example of adaptation in our own visual system. Outdoors, your eyes are sensitive to relative differences in light intensity, allowing you to clearly see the world around you. Step inside, and ambient light intensities decrease by orders of magnitude. Initially, everything looks dim. But over the next ~15 or so minutes, your eyes increase their “gain” and soon enough objects look bright again. Your visual system has adapted to lower light by increasing
+amplification. This allows it to remain sensitive to variations in light intensity around the ambient level. Even when blind to light, bacteria can achieve something similar.</p>
+<p>Bacterial cells are sensitive, hungry, and frightened. They navigate through space towards regions of higher concentrations of some molecules, termed attractants, and away from others, termed repellents. (Here, we will focus on attractants, but similar behaviors are observed for repellents.) Navigation requires that bacteria sense local gradients of attractant and move up them.</p>
+<p>Due to their small size, they must infer these spatial gradients by swimming for a little while, and then checking whether attractant concentrations are increasing or decreasing. In other words, they use swimming to convert spatial gradients into temporal gradients. When conditions are improving (attractant is increasing) they tend to keep swimming in the same direction. Otherwise, they under go a directional randomization process called “tumbling” and set off in a new direction. Remarkably,
+they are able to sense spatial gradients in attractants over five orders of magnitude of ambient concentrations. For a beautiful description of how bacteria swim up gradients, you should read the classic paper by Berg and Purcell.</p>
+<p>For this to work, bacteria must constantly adapt their basal signal perception to the ambient environment. If they did not, their sensory system would either be flooded, at high attractant concentration, or be completely shut off, at low attractant concentration. In either extreme, they would be “blind” to local variations. More precisely, the signaling system must exhibit <strong>exact adaptation</strong>, meaning its value should always returns to the same initial steady state level after a change in its
+input value.</p>
 <div style="width: 400px; margin: auto;"><img alt="CheA system" src="../_images/ExactAdaptationSchematic.png" />
-</div><p>In order to implement exact adaptation effectively, we need to have the transient output response profile take the same shape for a given fold difference in the input signal, regardless of the specific value of the input signal itself. Framing this as a robustness statement, we want the system’s response profile to be robust to the value of the total attractant concentration across a wide range of attractant concentrations.</p>
-<p>In this chapter, we will explore various models of the <em>E. coli</em> Che system, which governs its chemotaxis, to understand how this exact adaptation is accomplished. Our treatment is largely based on Chapter 9 of Uri Alon’s <em>Systems Biology</em>, 2nd Ed., which should be consulted for a deeper treatment of each molecular model.</p>
+</div><p>In this chapter, we will explore various models of the <em>E. coli</em> Che (pronounced “key”) system, which governs its chemotaxis, to understand how this exact adaptation is accomplished. This treatment is largely based on Chapter 9 of Uri Alon’s <em>Systems Biology</em>, 2nd Ed., which should be consulted for a deeper treatment of each molecular model.</p>
 </section>
 <section id="The-molecular-sources-of-robustness-in-the-E.-coli-chemotaxis-system">
-<h2>The molecular sources of robustness in the <em>E. coli</em> chemotaxis system<a class="headerlink" href="#The-molecular-sources-of-robustness-in-the-E.-coli-chemotaxis-system" title="Permalink to this headline"></a></h2>
+<h2>The molecular sources of robustness in the <em>E. coli</em> chemotaxis system<a class="headerlink" href="#The-molecular-sources-of-robustness-in-the-E.-coli-chemotaxis-system" title="Permalink to this heading"></a></h2>
 <p>To understand how <em>E. coli</em> perform chemotaxis, we must first understand how <em>E. coli</em> swim. Their flagellar motors spin in an anticlockwise direction when they are being propelled forward in a so-called “run.” Occasionally, a few of the motors switch to a clockwise rotation, which causes the bacterium to stall and spin in a so-called “tumble.” When the motors switch to spinning anticlockwise, the bacterium runs again in a new, random direction.</p>
-<p>If a bacterium is swimming up a gradient of attractant, its switching frequency decreases and it continues up the gradient. If however, there is no <em>gradient</em>, but perhaps a more uniform concentration of attractant, the switching frequency should return back to the level it was before detecting the gradient. This leads to a statement about robustness: <strong>The steady state tumbling frequency of the Che system is robust to variations in total attractant concentration</strong>, in an operating regime that
-spans over five orders of magnitude of total attractant concentration!</p>
+<p>If a bacterium is swimming up a gradient of attractant, its switching frequency decreases and it continues up the gradient. If however, there is no <em>gradient</em>, but rather a more uniform concentration of attractant, the switching frequency returns back to the level it was before detecting the gradient. This leads to a statement about robustness: <strong>The steady state tumbling frequency of the Che system is robust to variations in total attractant concentration</strong> over an operating regime that spans
+over five orders of magnitude of total attractant concentration!</p>
 <p>The switching frequency is controlled by the Che system, shown in the image below.</p>
 <div style="width: 400px; margin: auto;"><img alt="CheA system" src="../_images/chea_system.png" />
-</div><p>The CheA receptor complex, which we shall call X, is autophosphorylated. Attractant serves to inhibit autophosphorylation of CheA, thereby inhibiting phosphorylation of CheY. This then leads to a decrease in tumbling rate.</p>
-<p>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>With <a href="#id3"><span class="problematic" id="id4">`</span></a>this model, then, to enable the steady state tumbling frequency to be invariant to total attractant concentration, we always want the level of phosphorylated CheA to return to the same steady state <em>regardless of the attractant concentration</em>. Thus the concentration of phosphorylated CheA is the “movement signal” that undergoes exact adaptation.</p>
-<p>We will be focusing on the exact adaptation aspects of this circuit. For a beautiful description of how swimming bacteria compute gradients for foraging, you should read the classic paper by Berg and Purcell.</p>
+</div><p>The CheA receptor complex, which we shall call X, is autophosphorylated. CheA can transfer its phosphate to an effector protein called CheY. Phosphorylated CheY can interact with the flagellar motor to induce tumbling. Attractants inhibit autophosphorylation, reducing phosphorylation of CheY, and thereby suppressing tumbles.</p>
+<p>Within the model, making the steady state tumbling frequency invariant to total attractant concentration requires that the level of phosphorylated CheA return to the same steady state <em>regardless of the attractant concentration</em>.</p>
 <section id="The-CheA-circuit">
-<h3>The CheA circuit<a class="headerlink" href="#The-CheA-circuit" title="Permalink to this headline"></a></h3>
-<p>In our analysis of the Che circuit, we will zoom in on the CheA portion of the circuit in the orange box in the figure above. We will consider the activity in the purple box phenomenologically, positing that</p>
+<h3>The CheA circuit<a class="headerlink" href="#The-CheA-circuit" title="Permalink to this heading"></a></h3>
+<p>In our analysis of the Che circuit, we will zoom in on the CheA portion of the circuit in the orange box in the figure above. We will consider a simplified version of the circuit that omits some states and interactions but allows undderstanding of the key feature of exact adaptation.</p>
+<p>Activation of the CheA receptor complex involves multiple molecules and states. The CheA receptor complex has active and inactive states, with attractant binding favoring the inactive state. Furthermore, CheA can be methylated by a methyltransferase called CheR or demethylated by an opposing methylesterase, CheB. (See <a class="reference external" href="http://dx.doi.org/10.1016/j.tim.2015.03.003">Parkinson, et al., 2015</a> for a review of the molecules involved in the circuit.) A simplified schematic of these interactions is
+shown in the image below.</p>
+<p>We will consider the activity in the purple box phenomenologically, positing that</p>
 <p><span class="math">\begin{align}
 \text{tumbling frequency} \equiv f = g(a)\,x_m^*,
 \end{align}</span></p>
-<p>where <span class="math notranslate nohighlight">\(g(a)\)</span> is some function of the attractant concentration <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(x_m^*\)</span> is the concentration of the active methylated CheA receptor complex, defined below.</p>
-<p>The activation of the CheA receptor complex involves the host of molecules. The CheA receptor complex can have an active state and an inactive state; when it is bound to attractant it is inactive. Furthermore, the CheA receptor complex can exist in methylated or demethylated states, with the methylated state in the active conformation providing the greatest kinase activity to phosphorylate CheY and activate tumbling. The methylation state is controlled by the methyltransferase CheR and the
-methylesterase CheB, the latter being primarily active in its phosphorylated state. (See <a class="reference external" href="http://dx.doi.org/10.1016/j.tim.2015.03.003">Parkinson, et al., 2015</a> for a review of the molecules involved in the circuit.) A schematic for a possible mechanism is shown in the image below.</p>
+<p>where <span class="math notranslate nohighlight">\(g(a)\)</span> is some function of the attractant concentration, <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(x_m^*\)</span> is the concentration of the active methylated CheA receptor complex.</p>
 <div style="width: 600px; margin: auto;"><img alt="fine-tuned Che system" src="../_images/finetuned_che.png" />
 </div><p>The combination of being in the active and methylated state results in a much more active receptor, so we will be most interested in the concentration of <span class="math notranslate nohighlight">\(\mathrm{X}_m^*\)</span>.</p>
-<p>We will model all of the enzyme kinetics using Michaelis-Menten kinetics, and we pause for a moment to work out the mathematical expressions.</p>
+<p>We will model the enzyme reactions using standard Michaelis-Menten kinetics, so we will pause for a moment to work out the mathematical expressions.</p>
 </section>
 <section id="Michaelis-Menten-kinetics">
-<h3>Michaelis-Menten kinetics<a class="headerlink" href="#Michaelis-Menten-kinetics" title="Permalink to this headline"></a></h3>
-<p>At the heart of a Michaelis-Menten description of enzyme kinetics is the following set of chemical reactions between the enzyme E and substrate S to give product P.</p>
+<h3>Michaelis-Menten kinetics<a class="headerlink" href="#Michaelis-Menten-kinetics" title="Permalink to this heading"></a></h3>
+<p>At the heart of a Michaelis-Menten description of enzyme kinetics is the following set of chemical reactions between the enzyme E and its substrate S to give product P.</p>
 <p><span class="math">\begin{align}
 \require{mhchem}
 \ce{E + S <=>[k_+][k_-] ES ->[k_\mathrm{cat}] P + E}.
 \end{align}</span></p>
-<p>The idea is that the enzyme reversibly binds the substrate with binding rate constant <span class="math notranslate nohighlight">\(k_+\)</span> and unbinding rate constant <span class="math notranslate nohighlight">\(k_-\)</span>. When bound, the enzyme can serve to convert the substrate to product with rate constant <span class="math notranslate nohighlight">\(k_\mathrm{cat}\)</span>. Applying mass action kinetics, we can write the dynamics as a system of ordinary differential equations.</p>
+<p>The mechanism assumes that the enzyme reversibly binds the substrate with binding rate constant <span class="math notranslate nohighlight">\(k_+\)</span> and unbinding rate constant <span class="math notranslate nohighlight">\(k_-\)</span>. When bound, the enzyme can convert the substrate to product with rate constant <span class="math notranslate nohighlight">\(k_\mathrm{cat}\)</span>. Applying mass action kinetics, we can write the dynamics as a system of ordinary differential equations.</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}c_\mathrm{e}}{\mathrm{d}t} &= -\frac{\mathrm{d}c_\mathrm{es}}{\mathrm{d}t} = -k_+c_\mathrm{e} c_\mathrm{s} + (k_- + k_\mathrm{cat})c_\mathrm{es},\\[1em]
 \frac{\mathrm{d}c_\mathrm{s}}{\mathrm{d}t} &= -k_+c_\mathrm{s} c_\mathrm{e} + k_-c_\mathrm{es},\\[1em]
@@ -816,13 +554,13 @@ methylesterase CheB, the latter being primarily active in its phosphorylated sta
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}c_\mathrm{e}}{\mathrm{d}t} + \frac{\mathrm{d}c_\mathrm{es}}{\mathrm{d}t} = 0,
 \end{align}</span></p>
-<p>which is a statement of conservation of enzyme. This means that we need to specify a total enzyme amount to fully specify the problem. We define this to be <span class="math notranslate nohighlight">\(c_\mathrm{e}^0\)</span> such that <span class="math notranslate nohighlight">\(c_\mathrm{e}^0 = c_\mathrm{e} + c_\mathrm{es}\)</span>. With this conservation law, we can write the ODEs as</p>
+<p>which is a statement of conservation of enzyme. This means that we need to specify a total enzyme amount to fully determine the problem. We define this to be <span class="math notranslate nohighlight">\(c_\mathrm{e}^0\)</span> such that <span class="math notranslate nohighlight">\(c_\mathrm{e}^0 = c_\mathrm{e} + c_\mathrm{es}\)</span>. With this conservation law, we can write the ODEs as</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}c_\mathrm{es}}{\mathrm{d}t} &= k_+(c_\mathrm{e}^0-c_\mathrm{es}) c_\mathrm{s} - (k_- + k_\mathrm{cat})c_\mathrm{es},\\[1em]
 \frac{\mathrm{d}c_\mathrm{s}}{\mathrm{d}t} &= -k_+(c_\mathrm{e}^0-c_\mathrm{es})c_\mathrm{s} + k_-c_\mathrm{es},\\[1em]
 \frac{\mathrm{d}c_p}{\mathrm{d}t} &= k_\mathrm{cat} c_\mathrm{es}.
 \end{align}</span></p>
-<p>These equations describe the full dynamics of the enzyme catalyzed system. To simplify the analysis, we often make the <strong>quasi-steady state approximation</strong> that the bound substrate intermediate ES does not see appreciable change in its concentration on the time scale of the production of the product P. That is,</p>
+<p>These equations describe the full dynamics of the enzyme catalyzed system. To simplify the analysis, we often make the <strong>quasi-steady state approximation</strong> that the bound substrate intermediate ES does not appreciably change in its concentration on the time scale of the production of the product P. That is,</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}c_\mathrm{es}}{\mathrm{d}t} = k_+(c_\mathrm{e}^0-c_\mathrm{es}) c_\mathrm{s} - (k_- + k_\mathrm{cat})c_\mathrm{es} \approx 0.
 \end{align}</span></p>
@@ -834,7 +572,7 @@ methylesterase CheB, the latter being primarily active in its phosphorylated sta
 <p><span class="math">\begin{align}
 K_\mathrm{M} = \frac{k_- + k_\mathrm{cat}}{k_+}.
 \end{align}</span></p>
-<p>It has dimension of concentration and is analogous to a dissociation constant in that it is the ratio of the total rate constant for chemical changes away from enzyme bound to substrate to that of binding the enzyme to the substrate.</p>
+<p>The Michaelis constant has dimension of concentration. It is analogous to a dissociation constant, in that it is the ratio of the total rate constants for leaving the bound state to the rate constant for enzyme-substrate binding.</p>
 <p>Substitution of this expression gives</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}c_p}{\mathrm{d}t} \approx k_\mathrm{cat}\,c_\mathrm{e}^0\, \frac{c_\mathrm{s}/K_\mathrm{M}}{1 + c_\mathrm{s}/K_\mathrm{M}}.
@@ -844,8 +582,8 @@ K_\mathrm{M} = \frac{k_- + k_\mathrm{cat}}{k_+}.
 \frac{\mathrm{d}c_\mathrm{s}}{\mathrm{d}t}  \approx -\frac{\mathrm{d}c_p}{\mathrm{d}t} \approx -k_\mathrm{cat} c_\mathrm{e}^0\, \frac{c_\mathrm{s}/K_\mathrm{M}}{1 + c_\mathrm{s}/K_\mathrm{M}}.
 \end{align}</span></p>
 <section id="Testing-the-accuracy-of-the-quasi-steady-state-approximation">
-<h4>Testing the accuracy of the quasi-steady state approximation<a class="headerlink" href="#Testing-the-accuracy-of-the-quasi-steady-state-approximation" title="Permalink to this headline"></a></h4>
-<p>To test the accuracy of the pseudo-steady state approximation, it helps, as usual, to nondimensionalize the variables. We perform the nondimensionalization as follows.</p>
+<h4>Testing the accuracy of the quasi-steady state approximation<a class="headerlink" href="#Testing-the-accuracy-of-the-quasi-steady-state-approximation" title="Permalink to this heading"></a></h4>
+<p>To test the accuracy of the quasi-steady state approximation, it helps, as usual, to nondimensionalize the variables, as follows:</p>
 <p><span class="math">\begin{align}
 t &\leftarrow \frac{k_\mathrm{cat}c_\mathrm{e}^0}{K_\mathrm{M}}\, t,\\[1em]
 c_\mathrm{es} &\leftarrow \frac{c_\mathrm{es}}{c_\mathrm{e}^0},\\[1em]
@@ -870,7 +608,7 @@ c_p &\leftarrow \frac{c_p}{K_\mathrm{M}}.
 <p>It is apparent in looking at the dimensionless equations that the quasi-steady state approximation is valid when <span class="math notranslate nohighlight">\(\zeta \kappa\)</span> is small. Because <span class="math notranslate nohighlight">\(0 &lt; \kappa &lt; 1\)</span>, it is sufficient to have <span class="math notranslate nohighlight">\(\zeta \ll 1\)</span> for the quasi-steady state approximation to hold. Thus, the approximation holds when the amount of enzyme is small compared to the Michaelis constant.</p>
 <p>To investigate this, we can make plots and compare the solution to the full dynamical equations and those using the quasi-steady state approximation. In the plot below, we show the approximate dynamics of the substrate and the product as fainter colored lines and the exact solution as darker, thinner lines. All concentrations and times are dimensionless.</p>
 <div class="nbinput toggle docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">biocircuits</span><span class="o">.</span><span class="n">jsplots</span><span class="o">.</span><span class="n">michaelis_menten_approx</span><span class="p">())</span>
@@ -941,7 +679,7 @@ is also evident in the dimensionless equations. When <span class="math notransla
 <p>such that the dynamics are independent of <span class="math notranslate nohighlight">\(\kappa\)</span>.</p>
 </section>
 <section id="Operating-regimes">
-<h4>Operating regimes<a class="headerlink" href="#Operating-regimes" title="Permalink to this headline"></a></h4>
+<h4>Operating regimes<a class="headerlink" href="#Operating-regimes" title="Permalink to this heading"></a></h4>
 <p>Now that we know when the quasi-steady state approximation is valid such that the rate of production of product is</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}c_p}{\mathrm{d}t} \approx k_\mathrm{cat} c_\mathrm{e}^0\, \frac{c_\mathrm{s}/K_\mathrm{M}}{1 + c_\mathrm{s}/K_\mathrm{M}},
@@ -959,8 +697,8 @@ is also evident in the dimensionless equations. When <span class="math notransla
 </section>
 </section>
 <section id="Approximate-dynamics-of-the-Che-signaling-system">
-<h3>Approximate dynamics of the Che signaling system<a class="headerlink" href="#Approximate-dynamics-of-the-Che-signaling-system" title="Permalink to this headline"></a></h3>
-<p>We will now use Michaelis-Menten kinetics to describe the dynamics of the Che system. Because of the more verbose names of the species (e.g., “<span class="math notranslate nohighlight">\(\mathrm{X}_m^*\)</span>” instead of “S”), we will denote concentrations of respective species with lower case letter, e.g. <span class="math notranslate nohighlight">\(x_m^*\)</span>.</p>
+<h3>Approximate dynamics of the Che signaling system<a class="headerlink" href="#Approximate-dynamics-of-the-Che-signaling-system" title="Permalink to this heading"></a></h3>
+<p>We will now use Michaelis-Menten kinetics to describe the dynamics of the Che system. Because of the more verbose names of the species (e.g., “<span class="math notranslate nohighlight">\(\mathrm{X}_m^*\)</span>” instead of “S”), we will denote concentrations of respective species with lower case letters, e.g. <span class="math notranslate nohighlight">\(x_m^*\)</span> instead of <span class="math notranslate nohighlight">\(c_\mathrm{X_m^*}\)</span>.</p>
 <p>We will assume that the quasi-steady state approximation holds for all enzyme-catalyzed reactions. We assume further that CheR operates at saturation. This means that there is so much substrate (in this case methylated and unmethlyated CheA receptor complex) such that the rate of methylation by CheR is directly proportional to the CheR concentration.</p>
 <p>We can write ODEs for the concentration of each of the methylated species.</p>
 <p><span class="math">\begin{align}
@@ -971,14 +709,14 @@ is also evident in the dimensionless equations. When <span class="math notransla
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}(x^*_m + x_m)}{\mathrm{d}t} = \frac{\mathrm{d}x_m^\mathrm{tot}}{\mathrm{d}t} = 2k_\mathrm{cat}^\mathrm{R} r - k_\mathrm{cat}^\mathrm{B} b_0\left(\frac{x_m^*/K_\mathrm{M}}{1 + x_m^*/K_\mathrm{M}} + \frac{x_m/\kappa_m}{1 + x_m/\kappa_m}\right),
 \end{align}</span></p>
-<p>At steady state, the derivative vanishes, and the resulting equation is readily solved for <span class="math notranslate nohighlight">\(x_m^*\)</span>.</p>
+<p>At steady state, the derivative vanishes, and the resulting equation can be solved for <span class="math notranslate nohighlight">\(x_m^*\)</span>.</p>
 <p><span class="math">\begin{align}
 x_m^* = K_\mathrm{M}\,\frac{2 k_\mathrm{cat}^\mathrm{R} r - k_\mathrm{cat}^\mathrm{B} b\,\frac{x_m/\kappa_m}{1 + x_m/\kappa_m}}{k_\mathrm{cat}^\mathrm{B} b - 2k_\mathrm{cat}^\mathrm{R} r + k_\mathrm{cat}^\mathrm{B} b_0\,\frac{x_m/\kappa_m}{1 + x_m/\kappa_m}}.
 \end{align}</span></p>
 <p>Note that as <span class="math notranslate nohighlight">\(x_m\)</span> grows, the numerator decreases, while the denominator increases. So, for increasing <span class="math notranslate nohighlight">\(x_m\)</span>, <span class="math notranslate nohighlight">\(x_m^*\)</span> decreases. Because the amount of <span class="math notranslate nohighlight">\(x_m\)</span> is dependent on the amount of attractant present (more attractant means the equilibrium shifts toward the inactive conformations, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(x_m\)</span>), the concentration of active CheA receptor complex is dependent on the attractant concentration in this model.</p>
 </section>
 <section id="Fine-tuned-exact-adaptation">
-<h3>Fine-tuned exact adaptation<a class="headerlink" href="#Fine-tuned-exact-adaptation" title="Permalink to this headline"></a></h3>
+<h3>Fine-tuned exact adaptation<a class="headerlink" href="#Fine-tuned-exact-adaptation" title="Permalink to this heading"></a></h3>
 <p>We recall that we model the tumbling frequency as</p>
 <p><span class="math">\begin{align}
 f = g(a)\,x_m^*.
@@ -1003,7 +741,7 @@ f_1 = g_1 x_{m,1}^* = g_1 K_\mathrm{M} \,\frac{\theta_1}{k_\mathrm{cat}^\mathrm{
 <p>The problem is that this ratio must hold for <em>any</em> <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> within an operating regime if exact adaptation is to be robust. This results in a delicate balancing act, since <span class="math notranslate nohighlight">\(\theta\)</span> changes with varying attractant concentration. This is an example of <strong>fine-tuning</strong>. Exact adaptation is only possible by precisely setting parameters for a given pair of attractant concentrations, and the exact adaptation is lost if those attractant concentrations change at all.</p>
 </section>
 <section id="Robust-exact-adaptation">
-<h3>Robust exact adaptation<a class="headerlink" href="#Robust-exact-adaptation" title="Permalink to this headline"></a></h3>
+<h3>Robust exact adaptation<a class="headerlink" href="#Robust-exact-adaptation" title="Permalink to this heading"></a></h3>
 <p>Let us now assume a different architecture of the Che circuit. We will assume that CheB only demethylates <em>active</em> receptors, rendering them inactive. The circuit diagram in this case is</p>
 <div style="width: 600px; margin: auto;"><img alt="robust CheA" src="../_images/chea_robust.png" />
 </div><p>Taking the same approach as before, we can again write down the dynamics for the total amount of methylated CheA complex. We will again assume that CheR is operating at saturation.</p>
@@ -1041,11 +779,11 @@ If the dynamics of CheB phosphorylation are fast compared to the other CheA dyna
 \begin{align}
 b^* = b_0\,\frac{x_m^*/k_x}{1+x_m^*/k_x}.
 \end{align}
---><p>Note, however, that the steady state tumbling frequency is <em>not</em> robust to changes in parameter values. The exact adaptation is robust to changes in parameter values, but the level of the steady state has explicit dependence on them and is therefore not robust to fluctuations in parameter values.</p>
+--><p>While exact adaptation is robust to variation in parameter values, the steady state tumbling frequency is <em>not</em>. As you can see in the expression above, it explicitly depends on several parameters.</p>
 </section>
 </section>
 <section id="A-more-complex-model-for-chemotaxis">
-<h2>A more complex model for chemotaxis<a class="headerlink" href="#A-more-complex-model-for-chemotaxis" title="Permalink to this headline"></a></h2>
+<h2>A more complex model for chemotaxis<a class="headerlink" href="#A-more-complex-model-for-chemotaxis" title="Permalink to this heading"></a></h2>
 <p>In the model for chemotaxis that we have considered, there are only two methylation states of the receptor, either unmethylated or methylated. In a more general model, we could consider multiple methylation states of the receptor. That is, it could be unmethylated, once methylated, twice methylated, …, m-times methylated. Such a system was analyzed computationally by <a class="reference external" href="https://doi.org/10.1038/43199">Barkai and Leibler (1997)</a>.</p>
 <p>Because the model for generic number of methylation states is not tractable analytically as the one we have considered, Barkai and Leibler instead did a computational exploration of the parameter space. They began with a set of <span class="math notranslate nohighlight">\(n\)</span> parameters <span class="math notranslate nohighlight">\(k_1^0\)</span>, <span class="math notranslate nohighlight">\(k_2^0\)</span>, …, <span class="math notranslate nohighlight">\(k_n^0\)</span>. They randomly varied these parameters to get a new set of parameters <span class="math notranslate nohighlight">\(k_1\)</span>, <span class="math notranslate nohighlight">\(k_2\)</span>, …, <span class="math notranslate nohighlight">\(k_n\)</span>. They defined the total parameter variation <span class="math notranslate nohighlight">\(K\)</span> according to</p>
 <p><span class="math">\begin{align}
@@ -1054,15 +792,16 @@ b^* = b_0\,\frac{x_m^*/k_x}{1+x_m^*/k_x}.
 <p>For this new set of parameters, they solved the system of ODEs numerically from a steady state in response to an abrupt step up in ligand. If the probability of being in an active state for the original set of parameters is <span class="math notranslate nohighlight">\(A_0\)</span> and for the perturbed parameters is A, then the precision of adaptation, <span class="math notranslate nohighlight">\(P\)</span>, is defined as <span class="math notranslate nohighlight">\(P = A_0 / A\)</span>.</p>
 <p>The results from thousands of such perturbations and calculations of the precision of adaptation is shown below. This image was taken from the Barkai and Liebler paper (which unfortunately has the Nature Publishing Group watermark on it).</p>
 <div style="width: 450px; margin: auto;"><img alt="barkai and leibler p" src="../_images/barkai_leiber_p.png" />
-</div><p>In the top plot, the diamond represented the original set of parameters. In the inset, the response for the original set of parameters is shown (solid line) along with an example response, corresponding to the white box.</p>
+</div><p>In the top plot, the black diamond in the upper left corner represents the original set of parameters. In the inset, the response for the original set of parameters is shown (solid line) along with an example response, corresponding to the white box.</p>
 <p>To make clear the overlapping points in the top plot, the bottom plot shows the fraction of parameter sets for which the precision of adaptation <span class="math notranslate nohighlight">\(P &lt; 0.95\)</span> for various values of the total parameter variation <span class="math notranslate nohighlight">\(K\)</span>. These plots demonstrate that even over large degrees of parameter variation, up to a total of four or five orders of magnitude, the system can still achieve rather exact adaptation.</p>
 <p>Conversely, Barkai and Leibler found that the time to steady state is <em>not</em> robust to parameter variations.</p>
 </section>
 <section id="Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally">
-<h2>Exact adaptation in the Che system is robust to CheR levels, as shown experimentally<a class="headerlink" href="#Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally" title="Permalink to this headline"></a></h2>
-<p>In a follow-up experimental paper (<a class="reference external" href="https://doi.org/10.1038/16483">Alon, et al., 2000</a>), the authors varied CheR expression levels by putting CheR under control of the <em>lac</em> promoter and varying the concentrations of IPTG. They used microscopy to observe the tumbling frequency of cells. They spiked in a saturating amount of attractant and observed the tumbling frequency over time. The results from their experiment are shown below, reproduced from the paper.</p>
+<h2>Exact adaptation in the Che system is robust to CheR levels, as shown experimentally<a class="headerlink" href="#Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally" title="Permalink to this heading"></a></h2>
+<p>How do the tumbling frequency, the adaptation time, and the precision of adaptation depend on CheR expression in real cells? To find out, Alon et al engineered bacteria in which CheR expression could be controlled by an inducer called IPTG (<a class="reference external" href="https://doi.org/10.1038/16483">Alon, et al., 2000</a>). They then used time-lapse microscopy to observe the tumbling behavior of cells before and after adding a saturating amount of chemoattractant. They quantified the frequency of tumbling events (tumbling
+frequency), the time required for that frequency to return to its initial value after adding attractant (adaptation time), and the precision of adaptation.</p>
 <div style="width: 450px; margin: auto;"><img alt="robustness tumbling" src="../_images/alon_leibler_robustness.png" />
-</div><p>Commensurate with the model predictions, the precision of adaptation is robust to varying levels of CheR over about two orders of magnitude. They also found that the time it took to reach a steady state tumbling frequency and the steady state frequency itself were <em>not</em> robust to varying levels of CheR.</p>
+</div><p>Consistent with the model predictions, the precision of adaptation is robust to varying levels of CheR over about two orders of magnitude. They also found that steady-state tumbling frequency and adaptation time were <em>not</em> robust to varying levels of CheR, as the model predicts.</p>
 <!-- JB: I think we should cut integral feedback entirely or make it its own chapter.
 
 ## Integral feedback
@@ -1103,7 +842,7 @@ You can read more about integral feedback in [section 3.2 of Del Vecchio and Mur
 
 --></section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -1132,7 +871,7 @@ jupyterlab : 3.3.2
 </div>
 <hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/06/problem_6.1.html">6.1: Co-substrate compensation</a></li>
@@ -1153,11 +892,11 @@ jupyterlab : 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad36d3bac0> 
+   <jinja2.runtime.BlockReference object at 0x7fec666b3460> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

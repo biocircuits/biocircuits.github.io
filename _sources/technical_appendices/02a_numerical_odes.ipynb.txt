@@ -1,0 +1,824 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# 2a. Numerical solutions to ODEs with SciPy\n",
+    "\n",
+    "<hr>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<style>\n",
+       "        .bk-notebook-logo {\n",
+       "            display: block;\n",
+       "            width: 20px;\n",
+       "            height: 20px;\n",
+       "            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);\n",
+       "        }\n",
+       "    </style>\n",
+       "    <div>\n",
+       "        <a href=\"https://bokeh.org\" target=\"_blank\" class=\"bk-notebook-logo\"></a>\n",
+       "        <span id=\"p1001\">Loading BokehJS ...</span>\n",
+       "    </div>\n"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "(function(root) {\n",
+       "  function now() {\n",
+       "    return new Date();\n",
+       "  }\n",
+       "\n",
+       "  const force = true;\n",
+       "\n",
+       "  if (typeof root._bokeh_onload_callbacks === \"undefined\" || force === true) {\n",
+       "    root._bokeh_onload_callbacks = [];\n",
+       "    root._bokeh_is_loading = undefined;\n",
+       "  }\n",
+       "\n",
+       "const JS_MIME_TYPE = 'application/javascript';\n",
+       "  const HTML_MIME_TYPE = 'text/html';\n",
+       "  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';\n",
+       "  const CLASS_NAME = 'output_bokeh rendered_html';\n",
+       "\n",
+       "  /**\n",
+       "   * Render data to the DOM node\n",
+       "   */\n",
+       "  function render(props, node) {\n",
+       "    const script = document.createElement(\"script\");\n",
+       "    node.appendChild(script);\n",
+       "  }\n",
+       "\n",
+       "  /**\n",
+       "   * Handle when an output is cleared or removed\n",
+       "   */\n",
+       "  function handleClearOutput(event, handle) {\n",
+       "    const cell = handle.cell;\n",
+       "\n",
+       "    const id = cell.output_area._bokeh_element_id;\n",
+       "    const server_id = cell.output_area._bokeh_server_id;\n",
+       "    // Clean up Bokeh references\n",
+       "    if (id != null && id in Bokeh.index) {\n",
+       "      Bokeh.index[id].model.document.clear();\n",
+       "      delete Bokeh.index[id];\n",
+       "    }\n",
+       "\n",
+       "    if (server_id !== undefined) {\n",
+       "      // Clean up Bokeh references\n",
+       "      const cmd_clean = \"from bokeh.io.state import curstate; print(curstate().uuid_to_server['\" + server_id + \"'].get_sessions()[0].document.roots[0]._id)\";\n",
+       "      cell.notebook.kernel.execute(cmd_clean, {\n",
+       "        iopub: {\n",
+       "          output: function(msg) {\n",
+       "            const id = msg.content.text.trim();\n",
+       "            if (id in Bokeh.index) {\n",
+       "              Bokeh.index[id].model.document.clear();\n",
+       "              delete Bokeh.index[id];\n",
+       "            }\n",
+       "          }\n",
+       "        }\n",
+       "      });\n",
+       "      // Destroy server and session\n",
+       "      const cmd_destroy = \"import bokeh.io.notebook as ion; ion.destroy_server('\" + server_id + \"')\";\n",
+       "      cell.notebook.kernel.execute(cmd_destroy);\n",
+       "    }\n",
+       "  }\n",
+       "\n",
+       "  /**\n",
+       "   * Handle when a new output is added\n",
+       "   */\n",
+       "  function handleAddOutput(event, handle) {\n",
+       "    const output_area = handle.output_area;\n",
+       "    const output = handle.output;\n",
+       "\n",
+       "    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only\n",
+       "    if ((output.output_type != \"display_data\") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {\n",
+       "      return\n",
+       "    }\n",
+       "\n",
+       "    const toinsert = output_area.element.find(\".\" + CLASS_NAME.split(' ')[0]);\n",
+       "\n",
+       "    if (output.metadata[EXEC_MIME_TYPE][\"id\"] !== undefined) {\n",
+       "      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];\n",
+       "      // store reference to embed id on output_area\n",
+       "      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE][\"id\"];\n",
+       "    }\n",
+       "    if (output.metadata[EXEC_MIME_TYPE][\"server_id\"] !== undefined) {\n",
+       "      const bk_div = document.createElement(\"div\");\n",
+       "      bk_div.innerHTML = output.data[HTML_MIME_TYPE];\n",
+       "      const script_attrs = bk_div.children[0].attributes;\n",
+       "      for (let i = 0; i < script_attrs.length; i++) {\n",
+       "        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);\n",
+       "        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent\n",
+       "      }\n",
+       "      // store reference to server id on output_area\n",
+       "      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE][\"server_id\"];\n",
+       "    }\n",
+       "  }\n",
+       "\n",
+       "  function register_renderer(events, OutputArea) {\n",
+       "\n",
+       "    function append_mime(data, metadata, element) {\n",
+       "      // create a DOM node to render to\n",
+       "      const toinsert = this.create_output_subarea(\n",
+       "        metadata,\n",
+       "        CLASS_NAME,\n",
+       "        EXEC_MIME_TYPE\n",
+       "      );\n",
+       "      this.keyboard_manager.register_events(toinsert);\n",
+       "      // Render to node\n",
+       "      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};\n",
+       "      render(props, toinsert[toinsert.length - 1]);\n",
+       "      element.append(toinsert);\n",
+       "      return toinsert\n",
+       "    }\n",
+       "\n",
+       "    /* Handle when an output is cleared or removed */\n",
+       "    events.on('clear_output.CodeCell', handleClearOutput);\n",
+       "    events.on('delete.Cell', handleClearOutput);\n",
+       "\n",
+       "    /* Handle when a new output is added */\n",
+       "    events.on('output_added.OutputArea', handleAddOutput);\n",
+       "\n",
+       "    /**\n",
+       "     * Register the mime type and append_mime function with output_area\n",
+       "     */\n",
+       "    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {\n",
+       "      /* Is output safe? */\n",
+       "      safe: true,\n",
+       "      /* Index of renderer in `output_area.display_order` */\n",
+       "      index: 0\n",
+       "    });\n",
+       "  }\n",
+       "\n",
+       "  // register the mime type if in Jupyter Notebook environment and previously unregistered\n",
+       "  if (root.Jupyter !== undefined) {\n",
+       "    const events = require('base/js/events');\n",
+       "    const OutputArea = require('notebook/js/outputarea').OutputArea;\n",
+       "\n",
+       "    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {\n",
+       "      register_renderer(events, OutputArea);\n",
+       "    }\n",
+       "  }\n",
+       "  if (typeof (root._bokeh_timeout) === \"undefined\" || force === true) {\n",
+       "    root._bokeh_timeout = Date.now() + 5000;\n",
+       "    root._bokeh_failed_load = false;\n",
+       "  }\n",
+       "\n",
+       "  const NB_LOAD_WARNING = {'data': {'text/html':\n",
+       "     \"<div style='background-color: #fdd'>\\n\"+\n",
+       "     \"<p>\\n\"+\n",
+       "     \"BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \\n\"+\n",
+       "     \"may be due to a slow or bad network connection. Possible fixes:\\n\"+\n",
+       "     \"</p>\\n\"+\n",
+       "     \"<ul>\\n\"+\n",
+       "     \"<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\\n\"+\n",
+       "     \"<li>use INLINE resources instead, as so:</li>\\n\"+\n",
+       "     \"</ul>\\n\"+\n",
+       "     \"<code>\\n\"+\n",
+       "     \"from bokeh.resources import INLINE\\n\"+\n",
+       "     \"output_notebook(resources=INLINE)\\n\"+\n",
+       "     \"</code>\\n\"+\n",
+       "     \"</div>\"}};\n",
+       "\n",
+       "  function display_loaded() {\n",
+       "    const el = document.getElementById(\"p1001\");\n",
+       "    if (el != null) {\n",
+       "      el.textContent = \"BokehJS is loading...\";\n",
+       "    }\n",
+       "    if (root.Bokeh !== undefined) {\n",
+       "      if (el != null) {\n",
+       "        el.textContent = \"BokehJS \" + root.Bokeh.version + \" successfully loaded.\";\n",
+       "      }\n",
+       "    } else if (Date.now() < root._bokeh_timeout) {\n",
+       "      setTimeout(display_loaded, 100)\n",
+       "    }\n",
+       "  }\n",
+       "\n",
+       "  function run_callbacks() {\n",
+       "    try {\n",
+       "      root._bokeh_onload_callbacks.forEach(function(callback) {\n",
+       "        if (callback != null)\n",
+       "          callback();\n",
+       "      });\n",
+       "    } finally {\n",
+       "      delete root._bokeh_onload_callbacks\n",
+       "    }\n",
+       "    console.debug(\"Bokeh: all callbacks have finished\");\n",
+       "  }\n",
+       "\n",
+       "  function load_libs(css_urls, js_urls, callback) {\n",
+       "    if (css_urls == null) css_urls = [];\n",
+       "    if (js_urls == null) js_urls = [];\n",
+       "\n",
+       "    root._bokeh_onload_callbacks.push(callback);\n",
+       "    if (root._bokeh_is_loading > 0) {\n",
+       "      console.debug(\"Bokeh: BokehJS is being loaded, scheduling callback at\", now());\n",
+       "      return null;\n",
+       "    }\n",
+       "    if (js_urls == null || js_urls.length === 0) {\n",
+       "      run_callbacks();\n",
+       "      return null;\n",
+       "    }\n",
+       "    console.debug(\"Bokeh: BokehJS not loaded, scheduling load and callback at\", now());\n",
+       "    root._bokeh_is_loading = css_urls.length + js_urls.length;\n",
+       "\n",
+       "    function on_load() {\n",
+       "      root._bokeh_is_loading--;\n",
+       "      if (root._bokeh_is_loading === 0) {\n",
+       "        console.debug(\"Bokeh: all BokehJS libraries/stylesheets loaded\");\n",
+       "        run_callbacks()\n",
+       "      }\n",
+       "    }\n",
+       "\n",
+       "    function on_error(url) {\n",
+       "      console.error(\"failed to load \" + url);\n",
+       "    }\n",
+       "\n",
+       "    for (let i = 0; i < css_urls.length; i++) {\n",
+       "      const url = css_urls[i];\n",
+       "      const element = document.createElement(\"link\");\n",
+       "      element.onload = on_load;\n",
+       "      element.onerror = on_error.bind(null, url);\n",
+       "      element.rel = \"stylesheet\";\n",
+       "      element.type = \"text/css\";\n",
+       "      element.href = url;\n",
+       "      console.debug(\"Bokeh: injecting link tag for BokehJS stylesheet: \", url);\n",
+       "      document.body.appendChild(element);\n",
+       "    }\n",
+       "\n",
+       "    for (let i = 0; i < js_urls.length; i++) {\n",
+       "      const url = js_urls[i];\n",
+       "      const element = document.createElement('script');\n",
+       "      element.onload = on_load;\n",
+       "      element.onerror = on_error.bind(null, url);\n",
+       "      element.async = false;\n",
+       "      element.src = url;\n",
+       "      console.debug(\"Bokeh: injecting script tag for BokehJS library: \", url);\n",
+       "      document.head.appendChild(element);\n",
+       "    }\n",
+       "  };\n",
+       "\n",
+       "  function inject_raw_css(css) {\n",
+       "    const element = document.createElement(\"style\");\n",
+       "    element.appendChild(document.createTextNode(css));\n",
+       "    document.body.appendChild(element);\n",
+       "  }\n",
+       "\n",
+       "  const js_urls = [\"https://cdn.bokeh.org/bokeh/release/bokeh-3.1.0.min.js\", \"https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.1.0.min.js\", \"https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.1.0.min.js\", \"https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.1.0.min.js\", \"https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.1.0.min.js\"];\n",
+       "  const css_urls = [];\n",
+       "\n",
+       "  const inline_js = [    function(Bokeh) {\n",
+       "      Bokeh.set_log_level(\"info\");\n",
+       "    },\n",
+       "function(Bokeh) {\n",
+       "    }\n",
+       "  ];\n",
+       "\n",
+       "  function run_inline_js() {\n",
+       "    if (root.Bokeh !== undefined || force === true) {\n",
+       "          for (let i = 0; i < inline_js.length; i++) {\n",
+       "      inline_js[i].call(root, root.Bokeh);\n",
+       "    }\n",
+       "if (force === true) {\n",
+       "        display_loaded();\n",
+       "      }} else if (Date.now() < root._bokeh_timeout) {\n",
+       "      setTimeout(run_inline_js, 100);\n",
+       "    } else if (!root._bokeh_failed_load) {\n",
+       "      console.log(\"Bokeh: BokehJS failed to load within specified timeout.\");\n",
+       "      root._bokeh_failed_load = true;\n",
+       "    } else if (force !== true) {\n",
+       "      const cell = $(document.getElementById(\"p1001\")).parents('.cell').data().cell;\n",
+       "      cell.output_area.append_execute_result(NB_LOAD_WARNING)\n",
+       "    }\n",
+       "  }\n",
+       "\n",
+       "  if (root._bokeh_is_loading === 0) {\n",
+       "    console.debug(\"Bokeh: BokehJS loaded, going straight to plotting\");\n",
+       "    run_inline_js();\n",
+       "  } else {\n",
+       "    load_libs(css_urls, js_urls, function() {\n",
+       "      console.debug(\"Bokeh: BokehJS plotting callback run at\", now());\n",
+       "      run_inline_js();\n",
+       "    });\n",
+       "  }\n",
+       "}(window));"
+      ],
+      "application/vnd.bokehjs_load.v0+json": "(function(root) {\n  function now() {\n    return new Date();\n  }\n\n  const force = true;\n\n  if (typeof root._bokeh_onload_callbacks === \"undefined\" || force === true) {\n    root._bokeh_onload_callbacks = [];\n    root._bokeh_is_loading = undefined;\n  }\n\n\n  if (typeof (root._bokeh_timeout) === \"undefined\" || force === true) {\n    root._bokeh_timeout = Date.now() + 5000;\n    root._bokeh_failed_load = false;\n  }\n\n  const NB_LOAD_WARNING = {'data': {'text/html':\n     \"<div style='background-color: #fdd'>\\n\"+\n     \"<p>\\n\"+\n     \"BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \\n\"+\n     \"may be due to a slow or bad network connection. Possible fixes:\\n\"+\n     \"</p>\\n\"+\n     \"<ul>\\n\"+\n     \"<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\\n\"+\n     \"<li>use INLINE resources instead, as so:</li>\\n\"+\n     \"</ul>\\n\"+\n     \"<code>\\n\"+\n     \"from bokeh.resources import INLINE\\n\"+\n     \"output_notebook(resources=INLINE)\\n\"+\n     \"</code>\\n\"+\n     \"</div>\"}};\n\n  function display_loaded() {\n    const el = document.getElementById(\"p1001\");\n    if (el != null) {\n      el.textContent = \"BokehJS is loading...\";\n    }\n    if (root.Bokeh !== undefined) {\n      if (el != null) {\n        el.textContent = \"BokehJS \" + root.Bokeh.version + \" successfully loaded.\";\n      }\n    } else if (Date.now() < root._bokeh_timeout) {\n      setTimeout(display_loaded, 100)\n    }\n  }\n\n  function run_callbacks() {\n    try {\n      root._bokeh_onload_callbacks.forEach(function(callback) {\n        if (callback != null)\n          callback();\n      });\n    } finally {\n      delete root._bokeh_onload_callbacks\n    }\n    console.debug(\"Bokeh: all callbacks have finished\");\n  }\n\n  function load_libs(css_urls, js_urls, callback) {\n    if (css_urls == null) css_urls = [];\n    if (js_urls == null) js_urls = [];\n\n    root._bokeh_onload_callbacks.push(callback);\n    if (root._bokeh_is_loading > 0) {\n      console.debug(\"Bokeh: BokehJS is being loaded, scheduling callback at\", now());\n      return null;\n    }\n    if (js_urls == null || js_urls.length === 0) {\n      run_callbacks();\n      return null;\n    }\n    console.debug(\"Bokeh: BokehJS not loaded, scheduling load and callback at\", now());\n    root._bokeh_is_loading = css_urls.length + js_urls.length;\n\n    function on_load() {\n      root._bokeh_is_loading--;\n      if (root._bokeh_is_loading === 0) {\n        console.debug(\"Bokeh: all BokehJS libraries/stylesheets loaded\");\n        run_callbacks()\n      }\n    }\n\n    function on_error(url) {\n      console.error(\"failed to load \" + url);\n    }\n\n    for (let i = 0; i < css_urls.length; i++) {\n      const url = css_urls[i];\n      const element = document.createElement(\"link\");\n      element.onload = on_load;\n      element.onerror = on_error.bind(null, url);\n      element.rel = \"stylesheet\";\n      element.type = \"text/css\";\n      element.href = url;\n      console.debug(\"Bokeh: injecting link tag for BokehJS stylesheet: \", url);\n      document.body.appendChild(element);\n    }\n\n    for (let i = 0; i < js_urls.length; i++) {\n      const url = js_urls[i];\n      const element = document.createElement('script');\n      element.onload = on_load;\n      element.onerror = on_error.bind(null, url);\n      element.async = false;\n      element.src = url;\n      console.debug(\"Bokeh: injecting script tag for BokehJS library: \", url);\n      document.head.appendChild(element);\n    }\n  };\n\n  function inject_raw_css(css) {\n    const element = document.createElement(\"style\");\n    element.appendChild(document.createTextNode(css));\n    document.body.appendChild(element);\n  }\n\n  const js_urls = [\"https://cdn.bokeh.org/bokeh/release/bokeh-3.1.0.min.js\", \"https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.1.0.min.js\", \"https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.1.0.min.js\", \"https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.1.0.min.js\", \"https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.1.0.min.js\"];\n  const css_urls = [];\n\n  const inline_js = [    function(Bokeh) {\n      Bokeh.set_log_level(\"info\");\n    },\nfunction(Bokeh) {\n    }\n  ];\n\n  function run_inline_js() {\n    if (root.Bokeh !== undefined || force === true) {\n          for (let i = 0; i < inline_js.length; i++) {\n      inline_js[i].call(root, root.Bokeh);\n    }\nif (force === true) {\n        display_loaded();\n      }} else if (Date.now() < root._bokeh_timeout) {\n      setTimeout(run_inline_js, 100);\n    } else if (!root._bokeh_failed_load) {\n      console.log(\"Bokeh: BokehJS failed to load within specified timeout.\");\n      root._bokeh_failed_load = true;\n    } else if (force !== true) {\n      const cell = $(document.getElementById(\"p1001\")).parents('.cell').data().cell;\n      cell.output_area.append_execute_result(NB_LOAD_WARNING)\n    }\n  }\n\n  if (root._bokeh_is_loading === 0) {\n    console.debug(\"Bokeh: BokehJS loaded, going straight to plotting\");\n    run_inline_js();\n  } else {\n    load_libs(css_urls, js_urls, function() {\n      console.debug(\"Bokeh: BokehJS plotting callback run at\", now());\n      run_inline_js();\n    });\n  }\n}(window));"
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# Colab setup ------------------\n",
+    "import os, sys, subprocess\n",
+    "if \"google.colab\" in sys.modules:\n",
+    "    cmd = \"pip install --upgrade watermark\"\n",
+    "    process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)\n",
+    "    stdout, stderr = process.communicate()\n",
+    "# ------------------------------\n",
+    "\n",
+    "import numpy as np\n",
+    "import scipy.integrate\n",
+    "\n",
+    "import colorcet\n",
+    "\n",
+    "import bokeh.io\n",
+    "import bokeh.plotting\n",
+    "\n",
+    "bokeh.io.output_notebook()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In this chapter, we numerically solve the ODE for a negative autoregulatory circuit,\n",
+    "\n",
+    "\\begin{align}\n",
+    "\\frac{\\mathrm{d}x}{\\mathrm{d}t} = \\beta_0\\,\\frac{(s/k_s)^{n_s}}{1 + (s/k_s)^{n_s}}\\, \\frac{1}{(1 + (x/k)^n)} - \\gamma x.\n",
+    "\\end{align}\n",
+    "\n",
+    "In this technical appendix, we solve this ODE numerically to generate the plots shown in the chapter."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### The scipy.integrate module\n",
+    "\n",
+    "The [SciPy Library](https://docs.scipy.org/doc/scipy/reference/) is a Python library for scientific computing. It contains many modules, including `scipy.stats`, `scipy.special`, and `scipy.optimize`, which respectively include functions to perform statistical calculations, \"special functions,\" and optimization routines, among many others. We will use the `scipy.integrate` module to integrate systems of ODEs.\n",
+    "\n",
+    "There are three main APIs for solving real-valued initial value problems in the module. They are [solve_ivp()](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp), [ode()](https://scipy.github.io/devdocs/generated/scipy.integrate.ode.html#scipy.integrate.ode), and [odeint()](https://scipy.github.io/devdocs/generated/scipy.integrate.odeint.html#scipy.integrate.odeint). According to the SciPy developers, `solve_ivp()` is the preferred method, with the others labeled as having an \"old\" API. The `solve_ivp()` function has the flexibility of allowing choice of multiple numerical algorithms for solving ODEs. However, for the kinds of problems we encounter in this class, we favor the generic LSODA algorithm developed by Linda Petzold and Alan Hindmarsh that handles both stiff and non-stiff problems with variable time stepping. This is also the only solver offered in the `odeint()` function. If we compare the two solvers, `solve_ivp()` and `odeint()`, the former has a large overhead, which can lead to performance issues for small problems (for large problems, the overhead is negligible). Since most of our problems are small and we need to solve them rapidly for interactive graphics, we will use `odeint()`, which performs better for these problems and through a distinct, but still intuitive, API.\n",
+    "\n",
+    "The basic call signature for `odeint()` is\n",
+    "\n",
+    "    scipy.integrate.odeint(func, y0, t, args=())\n",
+    "\n",
+    "There are many other keyword arguments to set algorithmic parameters, but we will generally not need them (and you can read about them in the [documentation](https://scipy.github.io/devdocs/generated/scipy.integrate.odeint.html#scipy.integrate.odeint)). Importantly, `func` is a vector-valued function with call signature `func(y, t, *args)` that specifies the right hand side of the system of ODEs to be solved. `t` is a scalar time point and `y` is a one-dimensional array (though multidimensional arrays are possible). `y0` is an array with the initial conditions.\n",
+    "\n",
+    "As is often the case, use of this function is best seen by example, and we will now apply it to the negative autoregulation circuit."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Solving for a constant input\n",
+    "\n",
+    "We first seek to solve the ODE where we have a sudden step in $s$ at time $t = 0$. Since we are only simulating our system starting at $t=0$, we can treat $s$ as a single, constant parameter, rather than a time-varying variable. So, we need seven parameters for the right hand side of our ODEs: $\\beta_0$, $\\gamma$, $k$, $n$, $k_s$, $n_s$, and $s$.\n",
+    "\n",
+    "We now define the function for the right hand side of the ODEs."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def neg_auto_rhs(x, t, beta0, gamma, k, n, ks, ns, s):\n",
+    "    \"\"\"\n",
+    "    Right hand side for negative autoregulation motif with s dependence.\n",
+    "    Return dx/dt.\n",
+    "    \"\"\"\n",
+    "    # Compute dx/dt\n",
+    "    return (\n",
+    "        beta0 * (s / ks) ** ns / (1 + (s / ks) ** ns) / (1 + (x / k) ** n) - gamma * x\n",
+    "    )"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We can now define the initial conditions, our parameters (taking $n_s = 10$), and the time points we want and use `scipy.integrate.odeint()` to solve."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Time points we want for the solution\n",
+    "t = np.linspace(0, 10, 200)\n",
+    "\n",
+    "# Initial condition\n",
+    "x0 = 0.0\n",
+    "\n",
+    "# Parameters\n",
+    "beta0 = 100\n",
+    "gamma = 1.0\n",
+    "k = 1.0\n",
+    "n = 1.0\n",
+    "s = 100.0\n",
+    "ns = 10.0\n",
+    "ks = 0.1\n",
+    "\n",
+    "# Package parameters into a tuple\n",
+    "args = (beta0, gamma, k, n, ks, ns, s)\n",
+    "\n",
+    "# Integrate ODES\n",
+    "x = scipy.integrate.odeint(neg_auto_rhs, x0, t, args=args)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "That's it! The integration is done. Let's take a quick look at the output."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(200, 1)"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "x.shape"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We see that the output of `odeint()` has each column corresponding to a given species and each row to a given time point. It is often convenient to transpose the output so that the each species is more easily index-able."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Extract time course for first (in this case only) species\n",
+    "x = x.transpose()[0]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "When we plot the result, we would like to compare it both to the limiting result of <a href=\"https://doi.org/10.1016/S0022-2836(02)00994-4\">Rosenfeld et al.</a>,\n",
+    "\n",
+    "\\begin{align}\n",
+    "x(t) \\approx x_\\mathrm{ss} \\sqrt{1-\\mathrm{e}^{-2 \\gamma t}},\n",
+    "\\end{align}\n",
+    "\n",
+    "and also to the unregulated case,\n",
+    "\n",
+    "\\begin{align}\n",
+    "x(t) = \\frac{\\beta_0}{\\gamma}\\left(1 - \\mathrm{e}^{-\\gamma t}\\right),\n",
+    "\\end{align}\n",
+    "\n",
+    "so we need to code up those solutions as well for plotting."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Unregulated solution\n",
+    "x_unreg = beta0 / gamma * (1 - np.exp(-gamma * t))\n",
+    "\n",
+    "# Limiting analytical solution\n",
+    "x_limiting = x[-1] * np.sqrt(1 - np.exp(-2 * gamma * t))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Now let's plot the results. As a reminder, you can read about making plots with Bokeh in [Appendix B](../appendices/appB_python/b14_making_plots.ipynb)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "\n",
+       "  <div id=\"93e6fd53-e405-4ec5-b5fa-9e849d6ca006\" data-root-id=\"p1002\" style=\"display: contents;\"></div>\n"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "(function(root) {\n",
+       "  function embed_document(root) {\n",
+       "  const docs_json = {\"3962d706-3375-4563-bfdb-0b77c5f5662e\":{\"version\":\"3.1.0\",\"title\":\"Bokeh Application\",\"defs\":[],\"roots\":[{\"type\":\"object\",\"name\":\"Figure\",\"id\":\"p1002\",\"attributes\":{\"x_range\":{\"type\":\"object\",\"name\":\"Range1d\",\"id\":\"p1011\",\"attributes\":{\"end\":10.0}},\"y_range\":{\"type\":\"object\",\"name\":\"DataRange1d\",\"id\":\"p1004\"},\"x_scale\":{\"type\":\"object\",\"name\":\"LinearScale\",\"id\":\"p1015\"},\"y_scale\":{\"type\":\"object\",\"name\":\"LinearScale\",\"id\":\"p1017\"},\"title\":{\"type\":\"object\",\"name\":\"Title\",\"id\":\"p1006\",\"attributes\":{\"text\":\"Constant-input dynamics\"}},\"renderers\":[{\"type\":\"object\",\"name\":\"GlyphRenderer\",\"id\":\"p1057\",\"attributes\":{\"data_source\":{\"type\":\"object\",\"name\":\"ColumnDataSource\",\"id\":\"p1048\",\"attributes\":{\"selected\":{\"type\":\"object\",\"name\":\"Selection\",\"id\":\"p1050\",\"attributes\":{\"indices\":[],\"line_indices\":[]}},\"selection_policy\":{\"type\":\"object\",\"name\":\"UnionRenderers\",\"id\":\"p1049\"},\"data\":{\"type\":\"map\",\"entries\":[[\"t\",{\"type\":\"ndarray\",\"array\":{\"type\":\"bytes\",\"data\":\"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\"},\"shape\":[200],\"dtype\":\"float64\",\"order\":\"little\"}],[\"x\",{\"type\":\"ndarray\",\"array\":{\"type\":\"bytes\",\"data\":\"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\"},\"shape\":[200],\"dtype\":\"float64\",\"order\":\"little\"}],[\"x_limiting\",{\"type\":\"ndarray\",\"array\":{\"type\":\"bytes\",\"data\":\"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\"},\"shape\":[200],\"dtype\":\"float64\",\"order\":\"little\"}],[\"x_unreg\",{\"type\":\"ndarray\",\"array\":{\"type\":\"bytes\",\"data\":\"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\"},\"shape\":[200],\"dtype\":\"float64\",\"order\":\"little\"}]]}}},\"view\":{\"type\":\"object\",\"name\":\"CDSView\",\"id\":\"p1058\",\"attributes\":{\"filter\":{\"type\":\"object\",\"name\":\"AllIndices\",\"id\":\"p1059\"}}},\"glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1054\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x\"},\"line_color\":\"#1f77b3\",\"line_width\":2}},\"nonselection_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1055\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x\"},\"line_color\":\"#1f77b3\",\"line_alpha\":0.1,\"line_width\":2}},\"muted_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1056\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x\"},\"line_color\":\"#1f77b3\",\"line_alpha\":0.2,\"line_width\":2}}}},{\"type\":\"object\",\"name\":\"GlyphRenderer\",\"id\":\"p1068\",\"attributes\":{\"data_source\":{\"id\":\"p1048\"},\"view\":{\"type\":\"object\",\"name\":\"CDSView\",\"id\":\"p1069\",\"attributes\":{\"filter\":{\"type\":\"object\",\"name\":\"AllIndices\",\"id\":\"p1070\"}}},\"glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1065\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x_limiting\"},\"line_color\":\"#ff7e0e\",\"line_width\":2}},\"nonselection_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1066\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x_limiting\"},\"line_color\":\"#ff7e0e\",\"line_alpha\":0.1,\"line_width\":2}},\"muted_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1067\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x_limiting\"},\"line_color\":\"#ff7e0e\",\"line_alpha\":0.2,\"line_width\":2}}}},{\"type\":\"object\",\"name\":\"GlyphRenderer\",\"id\":\"p1078\",\"attributes\":{\"data_source\":{\"id\":\"p1048\"},\"view\":{\"type\":\"object\",\"name\":\"CDSView\",\"id\":\"p1079\",\"attributes\":{\"filter\":{\"type\":\"object\",\"name\":\"AllIndices\",\"id\":\"p1080\"}}},\"glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1075\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x_unreg\"},\"line_color\":\"#2ba02b\",\"line_width\":2}},\"nonselection_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1076\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x_unreg\"},\"line_color\":\"#2ba02b\",\"line_alpha\":0.1,\"line_width\":2}},\"muted_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1077\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"t\"},\"y\":{\"type\":\"field\",\"field\":\"x_unreg\"},\"line_color\":\"#2ba02b\",\"line_alpha\":0.2,\"line_width\":2}}}}],\"toolbar\":{\"type\":\"object\",\"name\":\"Toolbar\",\"id\":\"p1008\",\"attributes\":{\"tools\":[{\"type\":\"object\",\"name\":\"PanTool\",\"id\":\"p1033\"},{\"type\":\"object\",\"name\":\"WheelZoomTool\",\"id\":\"p1034\"},{\"type\":\"object\",\"name\":\"BoxZoomTool\",\"id\":\"p1035\",\"attributes\":{\"overlay\":{\"type\":\"object\",\"name\":\"BoxAnnotation\",\"id\":\"p1036\",\"attributes\":{\"syncable\":false,\"level\":\"overlay\",\"visible\":false,\"left_units\":\"canvas\",\"right_units\":\"canvas\",\"bottom_units\":\"canvas\",\"top_units\":\"canvas\",\"line_color\":\"black\",\"line_alpha\":1.0,\"line_width\":2,\"line_dash\":[4,4],\"fill_color\":\"lightgrey\",\"fill_alpha\":0.5}}}},{\"type\":\"object\",\"name\":\"SaveTool\",\"id\":\"p1037\"},{\"type\":\"object\",\"name\":\"ResetTool\",\"id\":\"p1038\"},{\"type\":\"object\",\"name\":\"HelpTool\",\"id\":\"p1039\"}]}},\"left\":[{\"type\":\"object\",\"name\":\"LinearAxis\",\"id\":\"p1026\",\"attributes\":{\"ticker\":{\"type\":\"object\",\"name\":\"BasicTicker\",\"id\":\"p1027\",\"attributes\":{\"mantissas\":[1,2,5]}},\"formatter\":{\"type\":\"object\",\"name\":\"BasicTickFormatter\",\"id\":\"p1029\"},\"axis_label\":\"x\",\"major_label_policy\":{\"type\":\"object\",\"name\":\"AllLabels\",\"id\":\"p1028\"}}}],\"below\":[{\"type\":\"object\",\"name\":\"LinearAxis\",\"id\":\"p1019\",\"attributes\":{\"ticker\":{\"type\":\"object\",\"name\":\"BasicTicker\",\"id\":\"p1020\",\"attributes\":{\"mantissas\":[1,2,5]}},\"formatter\":{\"type\":\"object\",\"name\":\"BasicTickFormatter\",\"id\":\"p1022\"},\"axis_label\":\"time\",\"major_label_policy\":{\"type\":\"object\",\"name\":\"AllLabels\",\"id\":\"p1021\"}}}],\"center\":[{\"type\":\"object\",\"name\":\"Grid\",\"id\":\"p1025\",\"attributes\":{\"axis\":{\"id\":\"p1019\"}}},{\"type\":\"object\",\"name\":\"Grid\",\"id\":\"p1032\",\"attributes\":{\"dimension\":1,\"axis\":{\"id\":\"p1026\"}}},{\"type\":\"object\",\"name\":\"Legend\",\"id\":\"p1060\",\"attributes\":{\"location\":\"center_right\",\"click_policy\":\"hide\",\"items\":[{\"type\":\"object\",\"name\":\"LegendItem\",\"id\":\"p1061\",\"attributes\":{\"label\":{\"type\":\"value\",\"value\":\"numerical solution\"},\"renderers\":[{\"id\":\"p1057\"}]}},{\"type\":\"object\",\"name\":\"LegendItem\",\"id\":\"p1071\",\"attributes\":{\"label\":{\"type\":\"value\",\"value\":\"Rosenfeld limiting solution\"},\"renderers\":[{\"id\":\"p1068\"}]}},{\"type\":\"object\",\"name\":\"LegendItem\",\"id\":\"p1081\",\"attributes\":{\"label\":{\"type\":\"value\",\"value\":\"unregulated\"},\"renderers\":[{\"id\":\"p1078\"}]}}]}}],\"frame_width\":325,\"frame_height\":250}}],\"callbacks\":{\"type\":\"map\"}}};\n",
+       "  const render_items = [{\"docid\":\"3962d706-3375-4563-bfdb-0b77c5f5662e\",\"roots\":{\"p1002\":\"93e6fd53-e405-4ec5-b5fa-9e849d6ca006\"},\"root_ids\":[\"p1002\"]}];\n",
+       "  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);\n",
+       "  }\n",
+       "  if (root.Bokeh !== undefined) {\n",
+       "    embed_document(root);\n",
+       "  } else {\n",
+       "    let attempts = 0;\n",
+       "    const timer = setInterval(function(root) {\n",
+       "      if (root.Bokeh !== undefined) {\n",
+       "        clearInterval(timer);\n",
+       "        embed_document(root);\n",
+       "      } else {\n",
+       "        attempts++;\n",
+       "        if (attempts > 100) {\n",
+       "          clearInterval(timer);\n",
+       "          console.log(\"Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing\");\n",
+       "        }\n",
+       "      }\n",
+       "    }, 10, root)\n",
+       "  }\n",
+       "})(window);"
+      ],
+      "application/vnd.bokehjs_exec.v0+json": ""
+     },
+     "metadata": {
+      "application/vnd.bokehjs_exec.v0+json": {
+       "id": "p1002"
+      }
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# Set up color palette for this notebook\n",
+    "colors = colorcet.b_glasbey_category10\n",
+    "\n",
+    "# Set up figure\n",
+    "p = bokeh.plotting.figure(\n",
+    "    frame_width=325,\n",
+    "    frame_height=250,\n",
+    "    x_axis_label=\"time\",\n",
+    "    y_axis_label=\"x\",\n",
+    "    x_range=[np.min(t), np.max(t)],\n",
+    ")\n",
+    "\n",
+    "cds = bokeh.models.ColumnDataSource(\n",
+    "    dict(t=t, x=x, x_limiting=x_limiting, x_unreg=x_unreg)\n",
+    ")\n",
+    "\n",
+    "# Populate glyphs\n",
+    "p.line(source=cds, x=\"t\", y=\"x\", line_width=2, color=colors[0], legend_label=\"numerical solution\")\n",
+    "p.line(source=cds, x=\"t\", y=\"x_limiting\", line_width=2, color=colors[1], legend_label=\"Rosenfeld limiting solution\")\n",
+    "p.line(source=cds, x=\"t\", y=\"x_unreg\", line_width=2, color=colors[2], legend_label=\"unregulated\")\n",
+    "\n",
+    "# Aesthetic tweaks\n",
+    "p.legend.location = \"center_right\"\n",
+    "p.legend.click_policy = \"hide\"\n",
+    "p.title.text = \"Constant-input dynamics\"\n",
+    "\n",
+    "bokeh.io.show(p)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Solving for a time-varying input\n",
+    "\n",
+    "We consider now a pulsatile input signal,\n",
+    "\n",
+    "\\begin{align}\n",
+    "s(t) = \\exp\\left[-\\frac{4(t-t_0)^2}{\\tau^2}\\right].\n",
+    "\\end{align}\n",
+    "\n",
+    "In order to incorporate these dynamics into our model, we can write a function for the pulse."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def s_pulse(t, t_0, tau):\n",
+    "    \"\"\"\n",
+    "    Returns s value for a pulse centered at t_0 with duration tau.\n",
+    "    \"\"\"\n",
+    "    # Return 0 is tau is zero, otherwise Gaussian\n",
+    "    return 0 if tau == 0 else np.exp(-4 * (t - t_0) ** 2 / tau ** 2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "If we want to solve the ODEs for a varying input, we need to have a way to pass a function defining the variation as a parameter. Fortunately, we can pass functions as arguments in Python. So, we write a new function for the right-hand-side of our ODE that takes `s_fun`, the function describing $s(t)$ as an argument, as well as `s_args`, the set of parameters passed into `s_fun`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def neg_auto_rhs_s_fun(x, t, beta0, gamma, k, n, ks, ns, s_fun, s_args):\n",
+    "    \"\"\"\n",
+    "    Right hand side for negative autoregulation function, with s variable.\n",
+    "    Returns dx/dt.\n",
+    "    \n",
+    "    s_fun is a function of the form s_fun(t, *s_args), so s_args is a tuple\n",
+    "    containing the arguments to pass to s_fun.\n",
+    "    \"\"\"\n",
+    "    # Compute s\n",
+    "    s = s_fun(t, *s_args)\n",
+    "    \n",
+    "    # Correct for x possibly being numerically negative as odeint() adjusts step size\n",
+    "    x = np.maximum(0, x)\n",
+    "    \n",
+    "    # Plug in this value of s to the RHS of the negative autoregulation model\n",
+    "    return neg_auto_rhs(x, t, beta0, gamma, k, n, ks, ns, s)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Now that we have this new function in hand, we can numerically integrate our ODEs as we did before. We'll start with a pulse that is on from roughly $t=2$ to $t=6$, as above."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "\n",
+       "  <div id=\"4b4e4820-7095-4e5d-8013-1e375ec262a7\" data-root-id=\"p1216\" style=\"display: contents;\"></div>\n"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/javascript": [
+       "(function(root) {\n",
+       "  function embed_document(root) {\n",
+       "  const docs_json = {\"beb4425c-dc6a-4dce-8f9c-205ab1be9173\":{\"version\":\"3.1.0\",\"title\":\"Bokeh Application\",\"defs\":[],\"roots\":[{\"type\":\"object\",\"name\":\"Figure\",\"id\":\"p1216\",\"attributes\":{\"x_range\":{\"type\":\"object\",\"name\":\"Range1d\",\"id\":\"p1225\",\"attributes\":{\"end\":10}},\"y_range\":{\"type\":\"object\",\"name\":\"DataRange1d\",\"id\":\"p1218\"},\"x_scale\":{\"type\":\"object\",\"name\":\"LinearScale\",\"id\":\"p1229\"},\"y_scale\":{\"type\":\"object\",\"name\":\"LinearScale\",\"id\":\"p1231\"},\"title\":{\"type\":\"object\",\"name\":\"Title\",\"id\":\"p1220\"},\"renderers\":[{\"type\":\"object\",\"name\":\"GlyphRenderer\",\"id\":\"p1268\",\"attributes\":{\"data_source\":{\"type\":\"object\",\"name\":\"ColumnDataSource\",\"id\":\"p1262\",\"attributes\":{\"selected\":{\"type\":\"object\",\"name\":\"Selection\",\"id\":\"p1264\",\"attributes\":{\"indices\":[],\"line_indices\":[]}},\"selection_policy\":{\"type\":\"object\",\"name\":\"UnionRenderers\",\"id\":\"p1263\"},\"data\":{\"type\":\"map\",\"entries\":[[\"x\",{\"type\":\"ndarray\",\"array\":{\"type\":\"bytes\",\"data\":\"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\"},\"shape\":[200],\"dtype\":\"float64\",\"order\":\"little\"}],[\"y\",{\"type\":\"ndarray\",\"array\":{\"type\":\"bytes\",\"data\":\"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\"},\"shape\":[200],\"dtype\":\"float64\",\"order\":\"little\"}]]}}},\"view\":{\"type\":\"object\",\"name\":\"CDSView\",\"id\":\"p1269\",\"attributes\":{\"filter\":{\"type\":\"object\",\"name\":\"AllIndices\",\"id\":\"p1270\"}}},\"glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1265\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"x\"},\"y\":{\"type\":\"field\",\"field\":\"y\"},\"line_color\":\"#1f77b3\",\"line_width\":2}},\"nonselection_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1266\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"x\"},\"y\":{\"type\":\"field\",\"field\":\"y\"},\"line_color\":\"#1f77b3\",\"line_alpha\":0.1,\"line_width\":2}},\"muted_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1267\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"x\"},\"y\":{\"type\":\"field\",\"field\":\"y\"},\"line_color\":\"#1f77b3\",\"line_alpha\":0.2,\"line_width\":2}}}},{\"type\":\"object\",\"name\":\"GlyphRenderer\",\"id\":\"p1279\",\"attributes\":{\"data_source\":{\"type\":\"object\",\"name\":\"ColumnDataSource\",\"id\":\"p1273\",\"attributes\":{\"selected\":{\"type\":\"object\",\"name\":\"Selection\",\"id\":\"p1275\",\"attributes\":{\"indices\":[],\"line_indices\":[]}},\"selection_policy\":{\"type\":\"object\",\"name\":\"UnionRenderers\",\"id\":\"p1274\"},\"data\":{\"type\":\"map\",\"entries\":[[\"x\",{\"type\":\"ndarray\",\"array\":{\"type\":\"bytes\",\"data\":\"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\"},\"shape\":[200],\"dtype\":\"float64\",\"order\":\"little\"}],[\"y\",{\"type\":\"ndarray\",\"array\":{\"type\":\"bytes\",\"data\":\"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\"},\"shape\":[200],\"dtype\":\"float64\",\"order\":\"little\"}]]}}},\"view\":{\"type\":\"object\",\"name\":\"CDSView\",\"id\":\"p1280\",\"attributes\":{\"filter\":{\"type\":\"object\",\"name\":\"AllIndices\",\"id\":\"p1281\"}}},\"glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1276\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"x\"},\"y\":{\"type\":\"field\",\"field\":\"y\"},\"line_color\":\"#ff7e0e\",\"line_width\":2}},\"nonselection_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1277\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"x\"},\"y\":{\"type\":\"field\",\"field\":\"y\"},\"line_color\":\"#ff7e0e\",\"line_alpha\":0.1,\"line_width\":2}},\"muted_glyph\":{\"type\":\"object\",\"name\":\"Line\",\"id\":\"p1278\",\"attributes\":{\"x\":{\"type\":\"field\",\"field\":\"x\"},\"y\":{\"type\":\"field\",\"field\":\"y\"},\"line_color\":\"#ff7e0e\",\"line_alpha\":0.2,\"line_width\":2}}}}],\"toolbar\":{\"type\":\"object\",\"name\":\"Toolbar\",\"id\":\"p1222\",\"attributes\":{\"tools\":[{\"type\":\"object\",\"name\":\"PanTool\",\"id\":\"p1247\"},{\"type\":\"object\",\"name\":\"WheelZoomTool\",\"id\":\"p1248\"},{\"type\":\"object\",\"name\":\"BoxZoomTool\",\"id\":\"p1249\",\"attributes\":{\"overlay\":{\"type\":\"object\",\"name\":\"BoxAnnotation\",\"id\":\"p1250\",\"attributes\":{\"syncable\":false,\"level\":\"overlay\",\"visible\":false,\"left_units\":\"canvas\",\"right_units\":\"canvas\",\"bottom_units\":\"canvas\",\"top_units\":\"canvas\",\"line_color\":\"black\",\"line_alpha\":1.0,\"line_width\":2,\"line_dash\":[4,4],\"fill_color\":\"lightgrey\",\"fill_alpha\":0.5}}}},{\"type\":\"object\",\"name\":\"SaveTool\",\"id\":\"p1251\"},{\"type\":\"object\",\"name\":\"ResetTool\",\"id\":\"p1252\"},{\"type\":\"object\",\"name\":\"HelpTool\",\"id\":\"p1253\"}]}},\"left\":[{\"type\":\"object\",\"name\":\"LinearAxis\",\"id\":\"p1240\",\"attributes\":{\"ticker\":{\"type\":\"object\",\"name\":\"BasicTicker\",\"id\":\"p1241\",\"attributes\":{\"mantissas\":[1,2,5]}},\"formatter\":{\"type\":\"object\",\"name\":\"BasicTickFormatter\",\"id\":\"p1243\"},\"axis_label\":\"normalized concentration\",\"major_label_policy\":{\"type\":\"object\",\"name\":\"AllLabels\",\"id\":\"p1242\"}}}],\"below\":[{\"type\":\"object\",\"name\":\"LinearAxis\",\"id\":\"p1233\",\"attributes\":{\"ticker\":{\"type\":\"object\",\"name\":\"BasicTicker\",\"id\":\"p1234\",\"attributes\":{\"mantissas\":[1,2,5]}},\"formatter\":{\"type\":\"object\",\"name\":\"BasicTickFormatter\",\"id\":\"p1236\"},\"axis_label\":\"time\",\"major_label_policy\":{\"type\":\"object\",\"name\":\"AllLabels\",\"id\":\"p1235\"}}}],\"center\":[{\"type\":\"object\",\"name\":\"Grid\",\"id\":\"p1239\",\"attributes\":{\"axis\":{\"id\":\"p1233\"}}},{\"type\":\"object\",\"name\":\"Grid\",\"id\":\"p1246\",\"attributes\":{\"dimension\":1,\"axis\":{\"id\":\"p1240\"}}},{\"type\":\"object\",\"name\":\"Legend\",\"id\":\"p1271\",\"attributes\":{\"click_policy\":\"hide\",\"items\":[{\"type\":\"object\",\"name\":\"LegendItem\",\"id\":\"p1272\",\"attributes\":{\"label\":{\"type\":\"value\",\"value\":\"s\"},\"renderers\":[{\"id\":\"p1268\"}]}},{\"type\":\"object\",\"name\":\"LegendItem\",\"id\":\"p1282\",\"attributes\":{\"label\":{\"type\":\"value\",\"value\":\"x\"},\"renderers\":[{\"id\":\"p1279\"}]}}]}}],\"frame_width\":450,\"frame_height\":250}}],\"callbacks\":{\"type\":\"map\"}}};\n",
+       "  const render_items = [{\"docid\":\"beb4425c-dc6a-4dce-8f9c-205ab1be9173\",\"roots\":{\"p1216\":\"4b4e4820-7095-4e5d-8013-1e375ec262a7\"},\"root_ids\":[\"p1216\"]}];\n",
+       "  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);\n",
+       "  }\n",
+       "  if (root.Bokeh !== undefined) {\n",
+       "    embed_document(root);\n",
+       "  } else {\n",
+       "    let attempts = 0;\n",
+       "    const timer = setInterval(function(root) {\n",
+       "      if (root.Bokeh !== undefined) {\n",
+       "        clearInterval(timer);\n",
+       "        embed_document(root);\n",
+       "      } else {\n",
+       "        attempts++;\n",
+       "        if (attempts > 100) {\n",
+       "          clearInterval(timer);\n",
+       "          console.log(\"Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing\");\n",
+       "        }\n",
+       "      }\n",
+       "    }, 10, root)\n",
+       "  }\n",
+       "})(window);"
+      ],
+      "application/vnd.bokehjs_exec.v0+json": ""
+     },
+     "metadata": {
+      "application/vnd.bokehjs_exec.v0+json": {
+       "id": "p1216"
+      }
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "# Set up parameters for the pulse\n",
+    "s_args = (4.0, 2.0)\n",
+    "\n",
+    "# Package parameters into a tuple\n",
+    "args = (beta0, gamma, k, n, ks, ns, s_pulse, s_args)\n",
+    "\n",
+    "# Integrate ODEs\n",
+    "x = scipy.integrate.odeint(neg_auto_rhs_s_fun, x0, t, args=args).transpose()[0]\n",
+    "\n",
+    "# Plot the normalized values\n",
+    "x /= x.max()\n",
+    "\n",
+    "# Also calculate the pulse for plotting purposes\n",
+    "s = s_pulse(t, *s_args)\n",
+    "\n",
+    "# Plot the results\n",
+    "p = bokeh.plotting.figure(\n",
+    "    frame_width=450,\n",
+    "    frame_height=250,\n",
+    "    x_axis_label=\"time\",\n",
+    "    y_axis_label=\"normalized concentration\",\n",
+    "    x_range=[0, 10],\n",
+    ")\n",
+    "\n",
+    "# Populate glyphs\n",
+    "p.line(t, s, line_width=2, color=colors[0], legend_label=\"s\")\n",
+    "p.line(t, x, line_width=2, color=colors[1], legend_label=\"x\")\n",
+    "\n",
+    "# Plot aesthetics\n",
+    "p.legend.location = \"top_right\"\n",
+    "p.legend.click_policy = \"hide\"\n",
+    "\n",
+    "# Show plot\n",
+    "bokeh.io.show(p)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Computing environment"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {
+    "tags": [
+     "hide_input"
+    ]
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Python implementation: CPython\n",
+      "Python version       : 3.10.10\n",
+      "IPython version      : 8.10.0\n",
+      "\n",
+      "numpy     : 1.23.5\n",
+      "scipy     : 1.10.0\n",
+      "bokeh     : 3.1.0\n",
+      "colorcet  : 3.0.1\n",
+      "jupyterlab: 3.5.3\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "%load_ext watermark\n",
+    "%watermark -v -p numpy,scipy,bokeh,colorcet,jupyterlab"
+   ]
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

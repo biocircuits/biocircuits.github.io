@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>16. Bursty gene expression &mdash; Biological Circuit Design  documentation</title>
@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -17,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -26,8 +28,8 @@
         <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -94,8 +100,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">The steady state distribution for bursty expression is Negative Binomial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Problems">Problems</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.1.html">16.1: Dynamics of noise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.2.html">16.2: Noise in a switchablepromoter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty geneexpression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.2.html">16.2: Noise in a switchable promoter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -105,8 +111,19 @@
 <li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul>
@@ -126,8 +143,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>16. Bursty gene expression</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">16. Bursty gene expression</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -144,286 +161,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="16.-Bursty-gene-expression">
-<h1>16. Bursty gene expression<a class="headerlink" href="#16.-Bursty-gene-expression" title="Permalink to this headline"></a></h1>
+  <section id="16.-Bursty-gene-expression">
+<h1>16. Bursty gene expression<a class="headerlink" href="#16.-Bursty-gene-expression" title="Permalink to this heading"></a></h1>
 <hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -790,7 +529,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <hr><p>In the last lesson, we laid out two objectives. First, we aimed to identify the sources of noise and how to characterize them. We summarized statistics about the probability distribution of copy numbers by considering the mean and coefficient of variation. The mean ends up following the same deterministic dynamics we have been considering thus far in the course. The coefficient of variation is a measure of noise, or relative departure from the mean behavior. Now, we will look at the dynamics of
 the entire probability distribution of copy number, <span class="math notranslate nohighlight">\(P(n,t)\)</span>.</p>
 <section id="Master-equations">
-<h2>Master equations<a class="headerlink" href="#Master-equations" title="Permalink to this headline"></a></h2>
+<h2>Master equations<a class="headerlink" href="#Master-equations" title="Permalink to this heading"></a></h2>
 <p>We will use <strong>master equations</strong> to describe the dynamics of <span class="math notranslate nohighlight">\(P(n,t)\)</span>. Generally, a master equation is a loss-gain equation for probabilities of states governed by a Markov process. (To see where it gets its name, you can read <a class="reference external" href="https://quantumfrontiers.com/2015/06/21/hello-my-name-is-quantum-master-equation/">this amusing blog post by Nicole Yunger Halpern</a>.) In our case, the “state” is the set of copy numbers of molecular species of interest. The values of <span class="math notranslate nohighlight">\(n\)</span> are discrete, so we
 have a separate differential equation for each <span class="math notranslate nohighlight">\(P(n,t)\)</span>. Specifically,</p>
 <p><span class="math">\begin{align}
@@ -803,7 +542,7 @@ distribution that solves the master equation. We can then plot histograms to get
 modeled as Poisson processes is that the binding or dissociation (or any other event) happens essentially instantaneously with well-defined pauses between them. This is yet another instance of where a separation of time scales is important.</p>
 </section>
 <section id="The-Master-equation-for-unregulated-gene-expression">
-<h2>The Master equation for unregulated gene expression<a class="headerlink" href="#The-Master-equation-for-unregulated-gene-expression" title="Permalink to this headline"></a></h2>
+<h2>The Master equation for unregulated gene expression<a class="headerlink" href="#The-Master-equation-for-unregulated-gene-expression" title="Permalink to this heading"></a></h2>
 <p>As we have seen, unregulated gene expression is described by the macroscale equation</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}n}{\mathrm{d}t} = \beta - \gamma n.
@@ -883,7 +622,7 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n \mathrm{e}^{-\beta/\gamma
 \end{align}</span></p>
 </section>
 <section id="Dynamics-of-the-moments">
-<h2>Dynamics of the moments<a class="headerlink" href="#Dynamics-of-the-moments" title="Permalink to this headline"></a></h2>
+<h2>Dynamics of the moments<a class="headerlink" href="#Dynamics-of-the-moments" title="Permalink to this heading"></a></h2>
 <p>From the master equation, we can derive an ODE describing the dynamics of the mean copy number of time, <span class="math notranslate nohighlight">\(\langle n(t) \rangle\)</span>. To do this, we multiply both sides of the master equations by <span class="math notranslate nohighlight">\(n\)</span> and then sum over <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><span class="math">\begin{align}
 &\sum_{n=0}^\infty n \left[
@@ -913,10 +652,10 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n \mathrm{e}^{-\beta/\gamma
 <p>which is precisely the macroscale ODE we are used to. It is now clear that it describes the mean of the full probability distribution. The assumptions behind our ODE models are now also clear. They describe the dynamics of the expectation value of copy number (or concentration when divided by the total volume) whose probability distribution is described by a master equation.</p>
 </section>
 <section id="Sampling-out-of-master-equations">
-<h2>Sampling out of master equations<a class="headerlink" href="#Sampling-out-of-master-equations" title="Permalink to this headline"></a></h2>
+<h2>Sampling out of master equations<a class="headerlink" href="#Sampling-out-of-master-equations" title="Permalink to this heading"></a></h2>
 <p>We have managed to derive the steady state solution to a master equation, but we would like to know the full dynamics. In nearly all cases we may come across in modeling biological circuits, an exact analytical expression for <span class="math notranslate nohighlight">\(P(n;t)\)</span> is not accessible. We therefore turn to <strong>sampling</strong> out of <span class="math notranslate nohighlight">\(P(n;t)\)</span>, a concept we will first consider with simpler distributions.</p>
 <section id="Sampling-out-of-probability-distributions">
-<h3>Sampling out of probability distributions<a class="headerlink" href="#Sampling-out-of-probability-distributions" title="Permalink to this headline"></a></h3>
+<h3>Sampling out of probability distributions<a class="headerlink" href="#Sampling-out-of-probability-distributions" title="Permalink to this heading"></a></h3>
 <p>Sampling out of a distribution involves using a random number generator to <em>simulate</em> the <strong>story</strong> that generates the distribution. So, if you know the story and you have a computer handy, you can sample to be able to get a plot of your distribution, though you will not get the analytical form.</p>
 <p>Let’s demonstrate this with the Binomial distribution. We know that if we flip a coin that has probability <span class="math notranslate nohighlight">\(p\)</span> of landing heads, the number of heads in <span class="math notranslate nohighlight">\(n\)</span> flips is Bionomially distributed. Imagine for a moment that we did not know that, but will instead take to sampling using the story. We will take <span class="math notranslate nohighlight">\(n = 25\)</span> and <span class="math notranslate nohighlight">\(p = 0.25\)</span> and compute <span class="math notranslate nohighlight">\(P(h \mid n, p)\)</span>, the probability of getting <span class="math notranslate nohighlight">\(h\)</span> heads in <span class="math notranslate nohighlight">\(n\)</span> flips, each with probability <span class="math notranslate nohighlight">\(p\)</span> of landing heads.
 We will draw 10, 30, 100, and 300 samples by simulating the story of the Binomial distribution and plot the result obtained by sampling along with the expected Binomial distribution.</p>
@@ -1006,14 +745,14 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>We will use the same strategy for solving master equations. We will find a way to <em>sample</em> out of the distribution that is governed by the master equation. This technique was pioneered by Dan Gillespie in the last 70s. For that reason, these sampling techniques are often called <strong>Gillespie simulations</strong>. The algorithm is sometimes referred to as a <strong>stochastic simulation algorithm</strong>, or SSA.</p>
 </section>
 <section id="Example:-Unregulated-gene-expression">
-<h3>Example: Unregulated gene expression<a class="headerlink" href="#Example:-Unregulated-gene-expression" title="Permalink to this headline"></a></h3>
+<h3>Example: Unregulated gene expression<a class="headerlink" href="#Example:-Unregulated-gene-expression" title="Permalink to this heading"></a></h3>
 <p>Here will explore how this algorithm works by looking at simple production of a protein. We will include the production of RNA to demonstrate how this is done with a master equation that has more than one species.</p>
 <p>For simple protein production, we have the following reactions.</p>
 <p><span class="math">\begin{align}
 \text{DNA} \rightarrow \text{mRNA} \rightarrow \text{protein}
 \end{align}</span></p>
 <section id="Macroscale-equations">
-<h4>Macroscale equations<a class="headerlink" href="#Macroscale-equations" title="Permalink to this headline"></a></h4>
+<h4>Macroscale equations<a class="headerlink" href="#Macroscale-equations" title="Permalink to this heading"></a></h4>
 <p>As we’ve seen before, the deterministic dynamics, which describe mean concentrations over a large population of cells, are described by the ODEs</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}m}{\mathrm{d}t} &= \beta_m - \gamma_m m, \\[1em]
@@ -1033,7 +772,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>with <span class="math notranslate nohighlight">\(\gamma = \gamma_p/\gamma_m\)</span>.</p>
 </section>
 <section id="The-Master-equation">
-<h4>The Master equation<a class="headerlink" href="#The-Master-equation" title="Permalink to this headline"></a></h4>
+<h4>The Master equation<a class="headerlink" href="#The-Master-equation" title="Permalink to this heading"></a></h4>
 <p>We can write a master equation for these dynamics. In this case, each state is defined by an mRNA copy number <span class="math notranslate nohighlight">\(m\)</span> and a protein copy number <span class="math notranslate nohighlight">\(p\)</span>. So, we will write a master equation for <span class="math notranslate nohighlight">\(P(m, p, t)\)</span>.</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}P(m,p,t)}{\mathrm{d}t} &= \beta_m P(m-1,p,t) + (m+1)P(m+1,p,t) - \beta_m P(m,p,t) - mP(m,p,t) \nonumber \\[1em]
@@ -1043,7 +782,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="The-Gillespie-algorithm">
-<h3>The Gillespie algorithm<a class="headerlink" href="#The-Gillespie-algorithm" title="Permalink to this headline"></a></h3>
+<h3>The Gillespie algorithm<a class="headerlink" href="#The-Gillespie-algorithm" title="Permalink to this heading"></a></h3>
 <p>The Gillespie algorithm is a way to sample the story behind a master equation, as will become clear momentarily as we work through the algorithm and introduce some terminology.</p>
 <p>The transition probabilities are also called <strong>propensities</strong> in the context of stochastic simulation. The propensity for a given transition, say indexed <span class="math notranslate nohighlight">\(i\)</span>, is denoted as <span class="math notranslate nohighlight">\(a_i\)</span>. The equivalence to notation we introduced for master equations is that if transition <span class="math notranslate nohighlight">\(i\)</span> results in the change of state from <span class="math notranslate nohighlight">\(n'\)</span> to <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(a_i = W(n\mid n')\)</span>.</p>
 <p>To cast this problem for a Gillespie simulation, we can write each change of state (moving either the copy number of mRNA or protein up or down by 1 in this case) and their respective propensities.</p>
@@ -1090,7 +829,7 @@ P(t_1 > \Delta t) P(t_2 > \Delta t) \cdots =
 <p>Gillespie proved that this algorithm samples the probability distribution described by the master equation in his seminal papers in <a class="reference external" href="https://doi.org/10.1016/0021-9991(76)90041-3">1976</a> and <a class="reference external" href="http://doi.org/10.1021/j100540a008">1977</a>. (We recommend reading the latter.) You can also read a concise discussion of how the algorithm samples the master equation in <a class="reference external" href="http://www.cds.caltech.edu/~murray/books/AM08/pdf/bfs-stochastic_14Sep14.pdf">section 4.2 of Del Vecchio and Murray</a>.</p>
 </section>
 <section id="Coding-up-a-Gillespie-simulation">
-<h3>Coding up a Gillespie simulation<a class="headerlink" href="#Coding-up-a-Gillespie-simulation" title="Permalink to this headline"></a></h3>
+<h3>Coding up a Gillespie simulation<a class="headerlink" href="#Coding-up-a-Gillespie-simulation" title="Permalink to this heading"></a></h3>
 <p>To code up the Gillespie simulation of the simple gene expression example, we first make an an array that gives the changes in the counts of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(p\)</span> for each of the four reactions. This is a way of encoding the updates in the particle counts that we get from choosing the respective state changes.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -1132,7 +871,7 @@ also be a function of time, so we explicitly allow for time dependence (even tho
 </div>
 </section>
 <section id="Making-a-draw">
-<h3>Making a draw<a class="headerlink" href="#Making-a-draw" title="Permalink to this headline"></a></h3>
+<h3>Making a draw<a class="headerlink" href="#Making-a-draw" title="Permalink to this heading"></a></h3>
 <p>Finally, we write a general function that draws a choice of reaction and the time interval for that reaction. This is the heart of the Gillespie algorithm, so we will take some time to discuss speed. First, to get the time interval, we sample a random number from an exponential distribution with mean <span class="math notranslate nohighlight">\(\left(\sum_i a_i\right)^{-1}\)</span>. This is easily done using the <code class="docutils literal notranslate"><span class="pre">np.random.exponential()</span></code> function.</p>
 <p>Next, we have to select which reaction will take place. This amounts to drawing a sample over the discrete distribution where <span class="math notranslate nohighlight">\(P_i = a_i\left(\sum_i a_i\right)^{-1}\)</span>, or the probability of each reaction is proportional to its propensity. This can be done using <code class="docutils literal notranslate"><span class="pre">scipy.stats.rv_discrete</span></code>, which allows specification of an arbitrary discrete distribution. We will write a function to do this.</p>
 <div class="nbinput nblast docutils container">
@@ -1251,7 +990,7 @@ Result from hand-coded method:
 </div>
 </section>
 <section id="Gillespie-time-stepping">
-<h3>Gillespie time stepping<a class="headerlink" href="#Gillespie-time-stepping" title="Permalink to this headline"></a></h3>
+<h3>Gillespie time stepping<a class="headerlink" href="#Gillespie-time-stepping" title="Permalink to this heading"></a></h3>
 <p>Now we are ready to write our mainA loop. We will only keep the counts at pre-specified time points. This saves on RAM, and we really only care about the values at given time points anyhow.</p>
 <p>Note that this function is generic. All we need to specify our system is the following.</p>
 <ul class="simple">
@@ -1332,7 +1071,7 @@ Result from hand-coded method:
 </div>
 </section>
 <section id="Running-and-parsing-results">
-<h3>Running and parsing results<a class="headerlink" href="#Running-and-parsing-results" title="Permalink to this headline"></a></h3>
+<h3>Running and parsing results<a class="headerlink" href="#Running-and-parsing-results" title="Permalink to this heading"></a></h3>
 <p>We can now run a set of SSA simulations and plot the results. We will run 100 trajectories and store them, using <span class="math notranslate nohighlight">\(\beta_p = \beta_m = 10\)</span> and <span class="math notranslate nohighlight">\(\gamma = 0.4\)</span>. We will also use the nifty package <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> to give a progress bar so we know how long it is taking.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1558,7 +1297,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="Implementation-in-the-biocircuits-package">
-<h2>Implementation in the biocircuits package<a class="headerlink" href="#Implementation-in-the-biocircuits-package" title="Permalink to this headline"></a></h2>
+<h2>Implementation in the biocircuits package<a class="headerlink" href="#Implementation-in-the-biocircuits-package" title="Permalink to this heading"></a></h2>
 <p>This algorithm is implemented in the biocircuits package. A significant speed boost is achieved by <a class="reference external" href="https://en.wikipedia.org/wiki/Just-in-time_compilation">just-in-time compliation</a> using <a class="reference external" href="http://numba.pydata.org">Numba</a>. To utilize this feature, you need to just-in-time compile (JIT) your propensity function. You can insist that everything is compiled (and therefore skips the comparably slow Python interpreter) by using the &#64;numba.njit decorator. In many cases, like in this one for simple
 gene expression, that is all you have to do.</p>
 <div class="nbinput nblast docutils container">
@@ -1684,12 +1423,12 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Experimental-Fano-factors-are-greater-than-one">
-<h2>Experimental Fano factors are greater than one<a class="headerlink" href="#Experimental-Fano-factors-are-greater-than-one" title="Permalink to this headline"></a></h2>
+<h2>Experimental Fano factors are greater than one<a class="headerlink" href="#Experimental-Fano-factors-are-greater-than-one" title="Permalink to this heading"></a></h2>
 <p>Both or theoretical analysis and the Gillespie simulation (at least of the mRNA) showed us that the Fano factor for simple gene expression is one. So, if we see Fano factors of unity in experiment, we know our model for gene transcription is at least plausible.</p>
 <p>Gene expression in individual cells typically results in a Fano factor greater than one! There are many ways this could come about, such as explicitly considering the multiple steps involved in making a protein, or by having a switchable promoter, as you can explore in an end-of-chapter problem in forthcoming chapters. Today, we will focus on a key experimental result: <strong>gene expression occurs in bursts.</strong></p>
 </section>
 <section id="Observations-of-bursty-gene-expression">
-<h2>Observations of bursty gene expression<a class="headerlink" href="#Observations-of-bursty-gene-expression" title="Permalink to this headline"></a></h2>
+<h2>Observations of bursty gene expression<a class="headerlink" href="#Observations-of-bursty-gene-expression" title="Permalink to this heading"></a></h2>
 <p>In a beautiful set of experiments, <a class="reference external" href="https://doi.org/10.1038/nature04599">Cai, Friedman, and Xie (Nature, 2006)</a> discovered that gene expression is bursty. (We will come to understand what we mean by “bursty” in a moment.)</p>
 <p>Through a clever experimental setup (we encourage you to read the paper), Cai, Friedman, and Xie were able to get accurate counts of the number of β-galactosidase molecules in individual cells over time. They found that the number of molecules was constant over long stretches of time, and then the number suddenly increased. The figure below, taken from the paper, shows the number of β-galactosidase molecules present in a single cell over time (black) and a blank background (red). This shows that
 expression of the β-<em>gal</em> gene happens in bursts. In each burst, many molecules are made, and then there is a period between bursts where no molecules are made.</p>
@@ -1707,7 +1446,7 @@ P(k;p_0) = (1-p_0)^k p.
 <p>Considering this story, this implies that a burst is turned on, and then it turns off by a random process after some time.</p>
 </section>
 <section id="Master-equation-for-bursty-gene-expression">
-<h2>Master equation for bursty gene expression<a class="headerlink" href="#Master-equation-for-bursty-gene-expression" title="Permalink to this headline"></a></h2>
+<h2>Master equation for bursty gene expression<a class="headerlink" href="#Master-equation-for-bursty-gene-expression" title="Permalink to this heading"></a></h2>
 <p>We also see from the experimental results tracking β-galactosidase copy number that the time scale of the bursty gene expression is much shorter than the typical decay time. So, per unit time, we can have many gene products made, not just a single gene product as we have considered thus far. So, we can re-write our transition probabilities per unit time as</p>
 <p><span class="math">\begin{align}
 W(n\mid n') &= \beta' \xi_{n-n'} - \gamma (n+1) \delta_{n+1,n'},
@@ -1735,7 +1474,7 @@ W(n\mid n') &= \beta' \xi_{n-n'} - \gamma (n+1) \delta_{n+1,n'},
 <p>As we might expect, an analytical solution for this master equation is difficult. We are left to simulate it using SSA.</p>
 </section>
 <section id="The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">
-<h2>The steady state distribution for bursty expression is Negative Binomial<a class="headerlink" href="#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial" title="Permalink to this headline"></a></h2>
+<h2>The steady state distribution for bursty expression is Negative Binomial<a class="headerlink" href="#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial" title="Permalink to this heading"></a></h2>
 <p>We could derive the steady state distribution of copy numbers under the bursty master equation, but we will instead take a story matching approach to guess the solution. The story of the <a class="reference external" href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">Negative Binomial distribution</a> is as follows.</p>
 <blockquote>
 <div><p>We perform a series of Bernoulli trials with a success rate <span class="math notranslate nohighlight">\(p_0\)</span> until we get <span class="math notranslate nohighlight">\(r\)</span> successes. The number of failures, <span class="math notranslate nohighlight">\(n\)</span>, before we get <span class="math notranslate nohighlight">\(r\)</span> successes is Negative Binomially distributed.</p>
@@ -1757,7 +1496,7 @@ P(n;r,b) = \frac{(n+r-1)!}{n!(r-1)!}\,\frac{b^n}{(1+b)^{n+r}}.
 \end{align}</span></p>
 <p>Strictly speaking, <span class="math notranslate nohighlight">\(r\)</span> can be non-integer, so</p>
 <p><span class="math">\begin{align}
-P(n;r,b) = \frac{\Gamma(n+r)}{n!\Gamma(r)!}\,\frac{b^n}{(1+b)^{n+r}},
+P(n;r,b) = \frac{\Gamma(n+r)}{n!\Gamma(r)}\,\frac{b^n}{(1+b)^{n+r}},
 \end{align}</span></p>
 <p>where <span class="math notranslate nohighlight">\(\Gamma(x)\)</span> is the gamma function.</p>
 <p>The Negative Binomial is interesting because it can be peaked for <span class="math notranslate nohighlight">\(r &gt; 1\)</span>, but has a maximum at <span class="math notranslate nohighlight">\(n=0\)</span> for <span class="math notranslate nohighlight">\(r &lt; 1\)</span>. So, for a low burst frequency, we get several cells with zero copies, but we can also get cells with many. This might have interesting implications on the response of a group of cells to a rise in lactose concentration and also drop in other food sources. If <span class="math notranslate nohighlight">\(r &lt; 1\)</span>, we then have a simple explanation for the “all-or-none” phenomenon of induction observed 60
@@ -1777,12 +1516,12 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 Another problem idea: Derive the Neg. Binomial distribution for bursty gene expression using similar arguments as used in the above for Poisson distributed.
 --><hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.1.html">16.1: Dynamics of noise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.2.html">16.2: Noise in a switchablepromoter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty geneexpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.2.html">16.2: Noise in a switchable promoter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty gene expression</a></li>
 </ul>
 </div>
 </section>
@@ -1800,11 +1539,11 @@ Another problem idea: Derive the Neg. Binomial distribution for bursty gene expr
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad45efee80> 
+   <jinja2.runtime.BlockReference object at 0x7fec666b18a0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

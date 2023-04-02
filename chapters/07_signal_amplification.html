@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>7. Amplification of extracellular signals &mdash; Biological Circuit Design  documentation</title>
@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -17,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -26,8 +28,8 @@
         <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -95,8 +101,19 @@
 <li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul>
@@ -116,8 +133,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>7. Amplification of extracellular signals</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">7. Amplification of extracellular signals</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -134,286 +151,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="7.-Amplification-of-extracellular-signals">
-<h1>7. Amplification of extracellular signals<a class="headerlink" href="#7.-Amplification-of-extracellular-signals" title="Permalink to this headline"></a></h1>
+  <section id="7.-Amplification-of-extracellular-signals">
+<h1>7. Amplification of extracellular signals<a class="headerlink" href="#7.-Amplification-of-extracellular-signals" title="Permalink to this heading"></a></h1>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
 <li><p>Bifunctional kinases that paradoxically phosphorylate <em>and</em> dephosphorylate their targets enable linear amplification that is robust to total protein copy numbers.</p></li>
@@ -759,16 +498,16 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <section id="Amplifiers:-the-middle-management-of-biological-circuitry">
-<h2>Amplifiers: the middle management of biological circuitry<a class="headerlink" href="#Amplifiers:-the-middle-management-of-biological-circuitry" title="Permalink to this headline"></a></h2>
+<h2>Amplifiers: the middle management of biological circuitry<a class="headerlink" href="#Amplifiers:-the-middle-management-of-biological-circuitry" title="Permalink to this heading"></a></h2>
 <p>In electronic circuits, among the first systems one learns about are amplifiers. They come in a huge variety of types and are required for a vast array of circuit capabilities. Biological circuits are similarly overflowing with amplifiers, which play a variety of essential roles in circuits. The cell</p>
-<p>First and most obviously, amplifiers can modulate the amplitude of a signal. This is important if an intrinsically weak input signal needs to be magnified to control a cellular response. Second, amplifiers can reshape signals, allowing a system to respond to signals that exceed a threshold. A third, less obvious aspect of amplifiers is their role in conveying signals from one molecular species (e.g. protein) or biochemical form to another (e.g. from protein abundance to protein phosphorylation).</p>
+<p>First and most obviously, amplifiers can modulate the amplitude of a signal. This is important if an intrinsically weak input signal needs to be magnified to control a cellular response. Second, amplifiers can reshape signals, allowing a system to respond to signals that exceed a threshold. A third, less obvious aspect of amplifiers is their role in conveying signals from one molecular species (e.g. protein) or biochemical form to another (e.g. from protein abundance to protein phosphorylation).</p>
 <!-- JB: In the first point, an amplifier need not be perfectly linear to increase the amplitude. Maybe introduce perfect linearity later?
 --><p>Amplifiers are like middle managers: they do not generate new information nor do they use information. Instead, they take results from one group, extract key features, manipulate them, and then pass them along to others in a new form, hopefully adding some value along the way.</p>
 <p>In this chapter, we will analyze multi-component amplifiers based on protein kinases. While gene regulation also functions as a kind of amplifier, with transcription factors serving as inputs to control the abundances of other genes, phosphorylation amplifiers can operate faster and more directly. We will focus on two of the most important classes of kinasee amplifiers: two-component systems in prokaryotes and kinase cascades in eukaryotes. We will learn how amplifiers can operate in a manner
 that is robust to their own component concentrations and how they can allow tuning of two key properties: gain and sensitivity.</p>
 </section>
 <section id="Amplifiers-are-characterized-by-gain-and-sensitivity">
-<h2>Amplifiers are characterized by gain and sensitivity<a class="headerlink" href="#Amplifiers-are-characterized-by-gain-and-sensitivity" title="Permalink to this headline"></a></h2>
+<h2>Amplifiers are characterized by gain and sensitivity<a class="headerlink" href="#Amplifiers-are-characterized-by-gain-and-sensitivity" title="Permalink to this heading"></a></h2>
 <p>Consider the task of designing a biomolecular sensor module that encodes the concentration of an input signal in the concentration of a target protein. Cells have to do this all the time, in order to transmit information about the external environment from sensory components at the periphery of the cell to regulatory components in the interior of the cell that regulate the cellular response to environmental conditions. As they convert information from the input to the effector molecule, in a
 process called <strong>signal transduction</strong>, they also amplify it, making the effector response larger than the input. The degree to which an output signal is increased relative to its input is called <strong>gain.</strong> Gain is easiest to define for a linear input-output relation, where it is independent of input level. In non-linear input-output systems, gain varies depending on the input level. More importantly, non-linear systems offer different levels of <strong>sensitivity</strong>, defined as
 <span class="math notranslate nohighlight">\(\mathrm{log}(\mathrm{output}/\mathrm{input})\)</span>. Sensitivity, like gain, is a local property. For a Hill function, $f(x) = {x<sup>n}/:nbsphinx-math:</sup>left`({x`n + k^n }:nbsphinx-math:<cite>right</cite>) $, it is maximal at the input level that produces a half-maximal response, <span class="math notranslate nohighlight">\(x=k\)</span>, and <span class="math notranslate nohighlight">\(0\)</span> when <span class="math notranslate nohighlight">\(x \ll k\)</span> or <span class="math notranslate nohighlight">\(x \gg k\)</span>.</p>
@@ -776,7 +515,7 @@ process called <strong>signal transduction</strong>, they also amplify it, makin
 depending on the circuit function, different levels of sensitivity can be necessary.</p>
 <p>Different kingdoms provide different amplification circuits. Bacteria rely heavily on a diverse set of signaling pathways called two-component systems. Mammalian cells use distinct families of signal transduction systems, often based on cascades of kinases that regulate one another in linear cascades. In this chapter we will consider both types of signaling systems.</p>
 <section id="Tradeoffs-between-sensitivity-and-fidelity">
-<h3>Tradeoffs between sensitivity and fidelity<a class="headerlink" href="#Tradeoffs-between-sensitivity-and-fidelity" title="Permalink to this headline"></a></h3>
+<h3>Tradeoffs between sensitivity and fidelity<a class="headerlink" href="#Tradeoffs-between-sensitivity-and-fidelity" title="Permalink to this heading"></a></h3>
 <p>If the relationship between the output concentration and the input concentration is ultrasensitive, the module can reliably encode the <em>qualitative</em> information of whether the input signal is significantly above or below a particular threshold. However, it performs poorly in encoding the <em>quantitative</em> information of the input signal’s exact concentration. With an ultrasensitive response, most input concentrations either fail to activate or saturate response, causing most input concentrations to
 map to similar output concentrations. Further, even within the sensitive part of the response curve, slight fluctuations in the input concentration can lead to large variations in the output. As a result, ultrasensitive systems do a poor job at allowing the cell to confidently infer the input concentrations. (The chemotaxis circuit we encountered in the previous chapter gets around this problem by continually adapting to ambient input signals, effectively keeping itself responsive to small
 relative changes in input, but throwing away information about absolute signal levels.)</p>
@@ -793,13 +532,13 @@ JB: We need to programmatically generate the plot below.
 </section>
 </section>
 <section id="Two-component-signaling-systems-provide-tunable-linear-amplification.">
-<h2>Two-component signaling systems provide tunable linear amplification.<a class="headerlink" href="#Two-component-signaling-systems-provide-tunable-linear-amplification." title="Permalink to this headline"></a></h2>
+<h2>Two-component signaling systems provide tunable linear amplification.<a class="headerlink" href="#Two-component-signaling-systems-provide-tunable-linear-amplification." title="Permalink to this heading"></a></h2>
 <p><strong>Two-component signaling systems</strong> are ubiquitous in both prokaryotes and eukaryotes. They modularly encode the ability to sense a signal, via a sensing receptor, and respond to it, via a cognate response regulator, often a transcription factor, whose activity is modulated by the receptor component. The “two components” in the name refer to a histidine kinase that can autophosphorylate itself on a histidine residue and then transfer these phosphate groups to an aspartate residue on a second
 protein termed the response regulator. Once phosphorylated, this protein can activate target genes or other processes. Bacteria often have many distinct two component systems. In fact, the chemotaxis system we discussed in the previous chapter is a special example of a two component signaling system.</p>
 <p>(Many two-component systems indeed have two protein components, as the name implies, while others actually have more, making the term, in some cases, a misnomer. For example, Bacillus subtilis cells use a four-component “phosphorelay” in which histidine kinases of the general type considered here respond to environmental insults by autophosphorylating and transferring their phosphate to a second protein, from which it is then transfered to a third, and finally a fourth protein, which is thereby
 activated. This terminal protein, called Spo0A, triggers sporulation, the transformation of the living cell into a dormant spore. This phosphorelay is used to sense dire environmental conditions and respond by triggering sporulation. An interesting, and as far as we know not fully answered, design question is under what circumstances a system should use such a 4-component phosphorelay rather than the seemingly simpler 2-component architecture described below.)</p>
 <section id="Two-component-system-input-output-relationships-generally-depend-on-the-concentrations-of-circuit-components">
-<h3>Two-component system input-output relationships generally depend on the concentrations of circuit components<a class="headerlink" href="#Two-component-system-input-output-relationships-generally-depend-on-the-concentrations-of-circuit-components" title="Permalink to this headline"></a></h3>
+<h3>Two-component system input-output relationships generally depend on the concentrations of circuit components<a class="headerlink" href="#Two-component-system-input-output-relationships-generally-depend-on-the-concentrations-of-circuit-components" title="Permalink to this heading"></a></h3>
 <p>Before we get to the two component system architecture, we will first observe how hard the problem of robust, linear amplification is, by considering the simplest signaling system we can imagine. Here, an input signaling molecule <span class="math notranslate nohighlight">\(S\)</span> allows the receptor kinase <span class="math notranslate nohighlight">\(X\)</span> to phosphorylate a signaling moleucle <span class="math notranslate nohighlight">\(Y\)</span>, as shown below.</p>
 <div style="margin: auto; width: 200px;"><img alt="nonparadoxical signaling" src="../_images/Two-component-system_minimal.png" />
 </div><p>Using the analysis techniques for Michaelis-Menten kinetics that we introduced in the previous chapter, we can determine the system’s response behavior. If we assume the enzymes operate at saturation, we have</p>
@@ -934,7 +673,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>To overcome this obstacle, and improve the fidelity of <span class="math notranslate nohighlight">\(y_p\)</span>’s encoding of <span class="math notranslate nohighlight">\(s\)</span>, we need <span class="math notranslate nohighlight">\(y_p\)</span> to somehow depend <em>only</em> on the concentation of the signaling molecule, <span class="math notranslate nohighlight">\(s\)</span>, independent of the concentrations of X, Y, and Z. But how…?</p>
 </section>
 <section id="Bifunctional-kinases-make-two-component-signaling-systems-robust-to-variation-in-their-own-components">
-<h3>Bifunctional kinases make two-component signaling systems robust to variation in their own components<a class="headerlink" href="#Bifunctional-kinases-make-two-component-signaling-systems-robust-to-variation-in-their-own-components" title="Permalink to this headline"></a></h3>
+<h3>Bifunctional kinases make two-component signaling systems robust to variation in their own components<a class="headerlink" href="#Bifunctional-kinases-make-two-component-signaling-systems-robust-to-variation-in-their-own-components" title="Permalink to this heading"></a></h3>
 <p>The solution to this conundrum comes from a perplexing feature of many two-component systems: The same histidine kinase protein responsible for transferring phosphates to the response regulator also has a distinct, and nearly opposite, activity as a phosphatase. This kinase is therefore said to be “bifunctional.” In that role, it causes the response regulator to <em>lose</em> its phosphate. Perversely, even as it giveth of the phosphate, it also taketh away. This is an example of a more general concept
 called <strong>paradoxical regulation</strong>, in which the same component can have two opposite effects on its target.</p>
 <p>To see how this particular type of paradoxical regulation impacts the input-output behavior of the system, we will write down a modified model, in which the receptor X is a bifunctional kinase. In its phosphorylated form, it phosphorylates Y via phosphotransfer with rate <span class="math notranslate nohighlight">\(v_3\)</span>. This is its activating regulation. In its dephosphorylated state, it serves to dephosphorylate Y with rate <span class="math notranslate nohighlight">\(v_2\)</span>, giving it its paradoxical repressive regulation. So, X paradoxically has both kinase
@@ -1059,7 +798,7 @@ Potential exercise: Take the original non-paradoxical signaling system and inclu
 </div>
 --></section>
 <section id="An-example-paradoxical-signaling-system">
-<h3>An example paradoxical signaling system<a class="headerlink" href="#An-example-paradoxical-signaling-system" title="Permalink to this headline"></a></h3>
+<h3>An example paradoxical signaling system<a class="headerlink" href="#An-example-paradoxical-signaling-system" title="Permalink to this heading"></a></h3>
 <p>The EnvZ-OmpR system in <em>E. coli</em> is a classic two component system with a bifunctional kinase. EnvZ is a histidine kinase membrane protein that senses osmotic stress. It phosphorylates OmpR, which in turn regulates expression of porin genes. At high osmolarity, the cell up-regulates a large porin called OmpF, while at lower osmolarity, it predominantly expresses OmpC, which has a smaller pore.</p>
 <div style="margin: auto; width: 250px;"><img alt="EnvZ-OmpR" src="../_images/EnvZ-OmpR.png" />
 </div><p>Batchelor and Goulian (<a class="reference external" href="https://doi.org/10.1073/pnas.0234782100">PNAS, 2003</a>) engineered <em>E. coli</em> cells to express OmpR under the control of the <em>lac</em> promoter so they could systematically vary its expression by titrating the lactose analog IPTG. They then monitored expression of fluorescent reporter proteins expressed from OmpR’s target promoters. The compared target promoter activity at low osmolarity (in a minimal medium) and at high osmolarity (minimal medium with 15% sucrose). The
@@ -1170,7 +909,7 @@ MBE To do: Add discussion of linear responses from product inhibition: Springer 
 --></section>
 </section>
 <section id="Encoding-ultrasensitivity:-beyond-cooperativity">
-<h2>Encoding ultrasensitivity: beyond cooperativity<a class="headerlink" href="#Encoding-ultrasensitivity:-beyond-cooperativity" title="Permalink to this headline"></a></h2>
+<h2>Encoding ultrasensitivity: beyond cooperativity<a class="headerlink" href="#Encoding-ultrasensitivity:-beyond-cooperativity" title="Permalink to this heading"></a></h2>
 <p>Let’s now return back to our discussion about ultrasensitivity, above. We have seen that bifunctional two-component systems can generate almost perfect linear amplifiers through their paradoxical architecture, and thus represent ideal systems for transmitting a signal with minimal distortion.</p>
 <p>But it is also sometimes the case that cells want to respond in more of an all-or-none manner to an external stimulus. This is particularly true for yes/no decisions. Should the cell divide? Should it differentiate? Should it undergo cell death? All of these responses require a sharp, switch-like response to input signals.</p>
 <p>When we introduced ultrasensitivty in Chapters 2 and 3 via the Hill coefficient <span class="math notranslate nohighlight">\(n\)</span>, we pointed out that it is often achieved by cooperativity in regulatory genes. If the monomers of a transcription factor must combine to form a dimer before it can regulate its target genes, then we would expect to see a Hill coefficient up to <span class="math notranslate nohighlight">\(n \approx 2\)</span>. Similarly, transcription factors that are only active as tetramers could yield a Hill coefficient of up to <span class="math notranslate nohighlight">\(n \approx 4\)</span>. While this
@@ -1180,7 +919,7 @@ only as a monomer, for example. Cells may very well face situations where they w
 <p>In this section, we will explore the kinase cascade circuit and show how the expression levels of its components can tune from graded to ultrasensitive responses.</p>
 </section>
 <section id="The-MAP-kinase-cascade-exhibits-both-ultrasensitive-and-graded-responses">
-<h2>The MAP kinase cascade exhibits both ultrasensitive and graded responses<a class="headerlink" href="#The-MAP-kinase-cascade-exhibits-both-ultrasensitive-and-graded-responses" title="Permalink to this headline"></a></h2>
+<h2>The MAP kinase cascade exhibits both ultrasensitive and graded responses<a class="headerlink" href="#The-MAP-kinase-cascade-exhibits-both-ultrasensitive-and-graded-responses" title="Permalink to this heading"></a></h2>
 <p>The MAP (Mitogen-Activated Protein) kinase cascade is a conserved signaling system found in all eukaryotes, including yeast, plants, and mammals. Its core structure consists of a cascade of three kinases, including the eponymous MAP kinase itself (MAPK), whose active, phosphorylated form directs a downstream response. MAPK is switched into this active form through phosphorylation by the MAPK Kinase (MAPKK). MAPKK, in turn, is also active only in a phosphorylated form, which it can enter via the
 action of the MAPKK Kinase (MAPKKK). And MAPKKK too has active and inactive forms. As the upstream kinase in the cascade, it is phosphorylated by a variety of signals and inputs, such as growth factor receptors. Interestingly, these kinases often need to be doubly phosphorylated on two sites in order to be fully active, as indicated below by the “PP” forms.</p>
 <div style="width: 450px; margin: auto;"><img alt="MAP kinase cascade schematic" src="../_images/huang_MAPK_schematic.png" />
@@ -1188,14 +927,14 @@ action of the MAPKK Kinase (MAPKKK). And MAPKKK too has active and inactive form
 <p>This core pathway is duplicated in some systems, typically embedded within larger circuits, and sometimes elaborated with additional regulatory inputs. Nevertheless, the core MAPK cascade architecture is strikingly conserved and provides critical functions across a huge range of different biological systems and contexts.</p>
 <p>Because of its central role in many critical cellular processes, the MAPK cascade has been well-studied by biologists for decades. This body of work has revealed that, in various organisms, the MAPK cascade can both exhibit an ultrasensitive response (see <a class="reference external" href="https://doi.org/10.1073/pnas.93.19.10078">Huang and Ferrel 1996, PNAS</a>) and a graded response (see <a class="reference external" href="https://doi.org/10.1002/yea.777">Poritz et al 2007, Yeast</a>), as well as many other interesting dynamical properties (<a class="reference external" href="https://doi.org/10.1126/science.1068873">Bhalla et al 2002,
 Science</a>). In particular, James Ferrell and colleagues did pioneering early studies that sought to <a class="reference external" href="http://dx.doi.org/10.1016/j.tibs.2014.10.002">quantitatively understand</a> the nature of amplification in kinase cascades.</p>
-<p>At first glance, the structure of this system appears puzzling. Why are all these intermediate kinases necessary? Can the first kinase not just directly active the downstream response, and skip the middle men (MAPKKK and MAPKK)? Has the MAPK cascade indeed evolved to produce different behaivors in each organism and context? Or, could it be that a key conserved function of this cascade is precisely its functional plasticity, i.e. its ability to operate in various different modes in different cell
+<p>At first glance, the structure of this system appears puzzling. Why are all these intermediate kinases necessary? Can the first kinase not just directly active the downstream response, and skip the middle men (MAPKKK and MAPKK)? Has the MAPK cascade indeed evolved to produce different behaivors in each organism and context? Or, could it be that a key conserved function of this cascade is precisely its functional plasticity, i.e. its ability to operate in various different modes in different cell
 contexts within each species.</p>
-<p>In order to address this question, one would ideally like to to take a MAPK cascade and systematically analyze its input-output response across a wide range of different regimes, varying the levels of its components. <a class="reference external" href="https://doi.org/10.1016/j.cell.2010.12.014">O’Shaughnessy et al. (2011, Cell)</a> used a synthetic biology approach to do just this. They built a minimal mammalian MAPK cascade in yeast. This transplantation approach helped to insulate the core motif from the many complicating
+<p>In order to address this question, one would ideally like to to take a MAPK cascade and systematically analyze its input-output response across a wide range of different regimes, varying the levels of its components. <a class="reference external" href="https://doi.org/10.1016/j.cell.2010.12.014">O’Shaughnessy et al. (2011, Cell)</a> used a synthetic biology approach to do just this. They built a minimal mammalian MAPK cascade in yeast. This transplantation approach helped to insulate the core motif from the many complicating
 regulatory interactions it would otherwise have in its native mammalian context. Importantly, the authors designed their system so that they could quantitatively control the concentration of each of the system components. Using these “control knobs,” they investigated the response profile of the cascade across these different regimes. They then compared the observed experimental behavior with expectations from a mathematical model, which we will now explore.</p>
 <p>We will see that the extra steps in the cascade provide ‘control knobs’ that allow it to operate it as a tunable amplifier.</p>
 <section id="A-mathematical-model-of-the-MAP-kinase-cascade">
-<h3>A mathematical model of the MAP kinase cascade<a class="headerlink" href="#A-mathematical-model-of-the-MAP-kinase-cascade" title="Permalink to this headline"></a></h3>
-<p>O’Shaughnessy et al. developed a mass action ODE model based on the following reaction scheme, where the environmental signal (S) propagates down through the sequential kinases until the final MAP kinase, ERK, reaches its active form (ERKpp).</p>
+<h3>A mathematical model of the MAP kinase cascade<a class="headerlink" href="#A-mathematical-model-of-the-MAP-kinase-cascade" title="Permalink to this heading"></a></h3>
+<p>O’Shaughnessy et al. developed a mass action ODE model based on the following reaction scheme, where the environmental signal (S) propagates down through the sequential kinases until the final MAP kinase, ERK, reaches its active form (ERKpp).</p>
 <div style="width: 400px; margin: auto;"><img alt="MAP kinase cascade reaction schematic" src="../_images/MAPK_cascade.png" />
 </div><p>We denote the three cascade kinases as <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(M\)</span>, and <span class="math notranslate nohighlight">\(E\)</span>, respectively, for Raf, MEK, and ERK. To represent the input, the authors assume that S binds directly to R to create an active Raf kinase, denoted <span class="math notranslate nohighlight">\([R \cdot S]\)</span>. Each subsequent phosphorylation step is treated as a Michaelis-Menten reaction (see Chapter 6). For example, <span class="math notranslate nohighlight">\(M + [R \cdot S] \leftrightarrow [M \cdot R \cdot S] \rightarrow M_p + [R \cdot S]\)</span>, where <span class="math notranslate nohighlight">\(M_p\)</span> denotes a singly phosphorylated state
 of MEK. <span class="math notranslate nohighlight">\(M_p\)</span> can similarly be phosphorylated to produce the active, doubly phosphorylated state, <span class="math notranslate nohighlight">\(M_{pp}\)</span>.</p>
@@ -1228,7 +967,7 @@ cascade circuit can exhibit a variety of response profiles (marked as symbols on
 <!--
 JB:
 We need to generate our own figure for the heat maps above.
---><p>To visualize the response of the concentration of doubly phosphorylated ERK to total input substrate (S) concentration. This can be calculated by integrating the above dynamical equations for various substrate concentrations and evaluating the steady states. We do this for total concentration of MEK1 and ERK that are indicated by the circle and square in the left heatmap, above. We use the same parameters as in the O’Shaughnessy et al. paper.</p>
+--><p>To visualize the response of the concentration of doubly phosphorylated ERK to total input substrate (S) concentration. This can be calculated by integrating the above dynamical equations for various substrate concentrations and evaluating the steady states. We do this for total concentration of MEK1 and ERK that are indicated by the circle and square in the left heatmap, above. We use the same parameters as in the O’Shaughnessy et al. paper.</p>
 <!--
 Previous text:
 
@@ -1570,7 +1309,7 @@ response, via its steepness, to the same environmental stimulus simply by changi
 </section>
 </section>
 <section id="Conclusion:-phosphorylation-cascades-provide-robust,-tunable-protein-level-amplification">
-<h2>Conclusion: phosphorylation cascades provide robust, tunable protein-level amplification<a class="headerlink" href="#Conclusion:-phosphorylation-cascades-provide-robust,-tunable-protein-level-amplification" title="Permalink to this headline"></a></h2>
+<h2>Conclusion: phosphorylation cascades provide robust, tunable protein-level amplification<a class="headerlink" href="#Conclusion:-phosphorylation-cascades-provide-robust,-tunable-protein-level-amplification" title="Permalink to this heading"></a></h2>
 <p>Phosphorylation appears to be a powerful mechanism for generating protein amplification systems. We have seen that these systems can provide remarkable capabilities. In a two-component system—the simplest phosphorylation cascade one can imagine—bifunctional kinases can generate linear input-output relationships, whose gain can be tuned by a single rate constant. This ability allows a pathway to convert a signal from one form to another, accurately preserving information about its level.
 Amazingly, this entire input-output system can be robust to the levels of its own components. Perhaps it is at least in part the combination of simplicity of design and the general usefulness of this function that accounts for the tremendous proliferation of two component systems among bacteria. E. coli has ~29 of them. B. subtilis has at least 30. And other species have even more.</p>
 <p>Then we examined MAP kinase cascades, one of the best studied and most central circuits within the cell. We found that these systems can generate different levels of amplification and, critically, can allow the cell to modulate the sensitivity, from linear to ultrasensitive, just by modulating the concentrations of its own components. In other words, the cascade functions as a tunable amplifier, whose gain and sensitivity can differ depending on the cellular context. On the one hand, this is a
@@ -1579,7 +1318,7 @@ powerful feature for the cell that enhances the flexibility of one of its core p
 amplification abilities compared to phosphorylation cascades?</p>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -1620,11 +1359,11 @@ jupyterlab: 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad376d00d0> 
+   <jinja2.runtime.BlockReference object at 0x7fec6a6ae9e0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>API Reference &mdash; Biological Circuit Design  documentation</title>
@@ -17,6 +17,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -38,12 +39,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../index.html">
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -73,8 +78,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul class="current">
@@ -143,9 +159,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">biocircuits package documentation</a> &raquo;</li>
-      <li>API Reference</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">biocircuits package documentation</a></li>
+      <li class="breadcrumb-item active">API Reference</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -162,39 +178,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="api-reference">
-<span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline"></a></h1>
+  <section id="api-reference">
+<span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading"></a></h1>
 <section id="delay-differential-equations">
-<h2>Delay differential equations<a class="headerlink" href="#delay-differential-equations" title="Permalink to this headline"></a></h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<h2>Delay differential equations<a class="headerlink" href="#delay-differential-equations" title="Permalink to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/biocircuits.ddeint.html#biocircuits.ddeint" title="biocircuits.ddeint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ddeint</span></code></a></p></td>
 <td><p>Integrate a system of delay differential equations defined by</p></td>
@@ -203,12 +191,8 @@
 </table>
 </section>
 <section id="reaction-diffusion-equations">
-<h2>Reaction diffusion equations<a class="headerlink" href="#reaction-diffusion-equations" title="Permalink to this headline"></a></h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<h2>Reaction diffusion equations<a class="headerlink" href="#reaction-diffusion-equations" title="Permalink to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/biocircuits.rd_solve.html#biocircuits.rd_solve" title="biocircuits.rd_solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rd_solve</span></code></a></p></td>
 <td><p>Solve a system of reaction-diffusion equations in space and time.</p></td>
@@ -220,12 +204,8 @@
 </table>
 </section>
 <section id="stochastic-simulation-algorithms">
-<h2>Stochastic simulation algorithms<a class="headerlink" href="#stochastic-simulation-algorithms" title="Permalink to this headline"></a></h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<h2>Stochastic simulation algorithms<a class="headerlink" href="#stochastic-simulation-algorithms" title="Permalink to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/biocircuits.gillespie_ssa.html#biocircuits.gillespie_ssa" title="biocircuits.gillespie_ssa"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gillespie_ssa</span></code></a></p></td>
 <td><p>Uses the Gillespie stochastic simulation algorithm to sample from probability distribution of particle counts over time.</p></td>
@@ -234,12 +214,8 @@
 </table>
 </section>
 <section id="visualization-functions">
-<h2>Visualization functions<a class="headerlink" href="#visualization-functions" title="Permalink to this headline"></a></h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<h2>Visualization functions<a class="headerlink" href="#visualization-functions" title="Permalink to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/biocircuits.phase_portrait.html#biocircuits.phase_portrait" title="biocircuits.phase_portrait"><code class="xref py py-obj docutils literal notranslate"><span class="pre">phase_portrait</span></code></a></p></td>
 <td><p>Plots the phase portrait for a 2D dynamical system in the u-v plane.</p></td>
@@ -257,12 +233,8 @@
 </table>
 </section>
 <section id="regulatory-functions">
-<h2>Regulatory functions<a class="headerlink" href="#regulatory-functions" title="Permalink to this headline"></a></h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<h2>Regulatory functions<a class="headerlink" href="#regulatory-functions" title="Permalink to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/biocircuits.act_hill.html#biocircuits.act_hill" title="biocircuits.act_hill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">act_hill</span></code></a></p></td>
 <td><p>Dimensionless production rate for a gene activated by x.</p></td>
@@ -304,12 +276,8 @@
 </table>
 </section>
 <section id="interactive-applications">
-<h2>Interactive applications<a class="headerlink" href="#interactive-applications" title="Permalink to this headline"></a></h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
+<h2>Interactive applications<a class="headerlink" href="#interactive-applications" title="Permalink to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/apps/biocircuits.apps.ffl_app.html#biocircuits.apps.ffl_app" title="biocircuits.apps.ffl_app"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ffl_app</span></code></a></p></td>
 <td><p>Create a Bokeh app for exploring the dynamics of feed-forward loops in response to a step input.</p></td>
@@ -334,11 +302,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad37078d30> 
+   <jinja2.runtime.BlockReference object at 0x7feca58d7bb0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

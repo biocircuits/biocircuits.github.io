@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem 9.2: The KaiABC clock &mdash; Biological Circuit Design  documentation</title>
@@ -17,6 +17,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -26,8 +27,8 @@
         <script src="../../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -40,12 +41,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../index.html">
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -98,8 +103,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul>
@@ -119,9 +135,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a> &raquo;</li>
-      <li>Problem 9.2: The KaiABC clock</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
+      <li class="breadcrumb-item active">Problem 9.2: The KaiABC clock</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -138,32 +154,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Problem-9.2:-The-KaiABC-clock">
-<h1>Problem 9.2: The KaiABC clock<a class="headerlink" href="#Problem-9.2:-The-KaiABC-clock" title="Permalink to this headline"></a></h1>
+  <section id="Problem-9.2:-The-KaiABC-clock">
+<h1>Problem 9.2: The KaiABC clock<a class="headerlink" href="#Problem-9.2:-The-KaiABC-clock" title="Permalink to this heading"></a></h1>
 <hr><p><em>This problem was edited from a contribution from Joe Markson, based on</em><a class="reference external" href="https://doi.org/10.1126/science.1148596">his paper on the KaiABC clock (Science, 2007)</a><em>. This problem is still a draft.</em></p>
 <p>The KaiABC circuit is a protein-based circadian oscillator found in cyanobacteria. The main protein, KaiC, has two distinct phosphorylation sites. Therefore it has four possible states: unphosphorylated (U), phosphorylated at the threonine site (T), phosphorylated at the serine site (S), or phosphorylated at both sites (D).</p>
 <p><strong>a)</strong> Consider the following KaiC reaction scheme. At first glance, a system like this appears like it might be able to support self-sustaining oscillations:</p>
@@ -187,11 +179,6 @@ A_\mathrm{act} &= \text{max}\{ 0, A_\mathrm{tot}-2S \} .
 \end{align}</span></p>
 <p>The constants <span class="math notranslate nohighlight">\(C_\mathrm{tot}\)</span>, <span class="math notranslate nohighlight">\(A_\mathrm{act}\)</span>, <span class="math notranslate nohighlight">\(k^{\text{basal}}_\mathrm{XY}\)</span>, <span class="math notranslate nohighlight">\(k^\mathrm{a}_\mathrm{XY}\)</span>, and <span class="math notranslate nohighlight">\(K_{1/2}\)</span> are given in the following table.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 59%" />
-<col style="width: 15%" />
-<col style="width: 26%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
 <th class="head"><p>Value</p></th>
@@ -323,11 +310,11 @@ instantaneous (for the sake of simplicity), describe a scheme for synchronizing 
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad37477a60> 
+   <jinja2.runtime.BlockReference object at 0x7fec666b3460> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

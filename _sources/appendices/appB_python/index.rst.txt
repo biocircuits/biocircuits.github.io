@@ -1,0 +1,22 @@
+************************************
+Appendix B: Introduction to Python
+************************************
+
+
+.. toctree::
+   :maxdepth: 1
+
+   b01_hello_world.ipynb
+   b02_variables_operators_types.ipynb
+   b03_lists_and_tuples.ipynb
+   b04_iteration.ipynb
+   b05_intro_to_functions.ipynb
+   b06_string_methods.ipynb
+   b07_dictionaries.ipynb
+   b08_comprehensions.ipynb
+   b09_packages_and_modules.ipynb
+   b10_exceptions_and_error_handling.ipynb
+   b11_intro_to_numpy_and_scipy.ipynb
+   b12_intro_to_pandas.ipynb
+   b13_split_apply_combine.ipynb
+   b14_plotting.ipynb

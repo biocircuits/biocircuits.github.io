@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5. Incoherent feed-forward loops serve as dosage compensators &mdash; Biological Circuit Design  documentation</title>
@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -17,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -26,8 +28,8 @@
         <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -98,8 +104,19 @@
 <li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul>
@@ -119,8 +136,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>5. Incoherent feed-forward loops serve as dosage compensators</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">5. Incoherent feed-forward loops serve as dosage compensators</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -137,286 +154,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="5.-Incoherent-feed-forward-loops-serve-as-dosage-compensators">
-<h1>5. Incoherent feed-forward loops serve as dosage compensators<a class="headerlink" href="#5.-Incoherent-feed-forward-loops-serve-as-dosage-compensators" title="Permalink to this headline"></a></h1>
+  <section id="5.-Incoherent-feed-forward-loops-serve-as-dosage-compensators">
+<h1>5. Incoherent feed-forward loops serve as dosage compensators<a class="headerlink" href="#5.-Incoherent-feed-forward-loops-serve-as-dosage-compensators" title="Permalink to this heading"></a></h1>
 <p><em>Development of this chapter on dosage compensation benefited greatly from discussions with Michael Flynn.</em></p>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
@@ -764,7 +503,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <section id="Cells-respond-to-an-unpredictable-world-with-unpredictable-components">
-<h2>Cells respond to an unpredictable world with unpredictable components<a class="headerlink" href="#Cells-respond-to-an-unpredictable-world-with-unpredictable-components" title="Permalink to this headline"></a></h2>
+<h2>Cells respond to an unpredictable world with unpredictable components<a class="headerlink" href="#Cells-respond-to-an-unpredictable-world-with-unpredictable-components" title="Permalink to this heading"></a></h2>
 <p>Throughout this and the following three chapters, we will begin to explore the concept of robustness. You have likely heard the word “robustness” used in biology. You may have a feeling for what is meant when we talk about robustness. Nevertheless, its precise meaning may seem fuzzy.</p>
 <p>Living cells find themselves in a world that is constantly changing. For a soil microbe, such as <em>Bacillus subtilis</em>, nutrients deplete, temperatures fluctuate, humidity levels can vary drastically. A given cell may need to contend with antibiotics produced by other bacteria, among other challenges. Other bacteria, such as <em>Escherichia coli</em>, alternate between very different environments: the gut of an animal, a sewer, an uncooked hamburger. In a multicellular organism, cells have to deal with a
 huge variety of dynamically changing states. In animals, we have inflammation, circadian and hormonal cycles, as well as developmental and morphological changes. Plants deal with weather, pests, seasons, variations in the soil microbiome, and many other unpredictable variables. In addition to all this external variation, the internal molecular components of cells also fluctuate. For example, the concentration of a protein within a cell can fluctuate stochastically, through a phenomenon called
@@ -776,13 +515,13 @@ robustness can provide key insights into why one circuit design may be preferabl
 <p>Over these next four chapters, we will explore a number of different biological systems that exhibit robust and fine-tuned in various forms. Through these examples, our goal is to develop a deeper and more precise understanding of the principle of robustness, and become proficient in clearly and precisely describing the nature of robustness in various biological systems. Let us begin with the principle of robustness.</p>
 </section>
 <section id="The-principle-of-robustness">
-<h2>The principle of robustness<a class="headerlink" href="#The-principle-of-robustness" title="Permalink to this headline"></a></h2>
+<h2>The principle of robustness<a class="headerlink" href="#The-principle-of-robustness" title="Permalink to this heading"></a></h2>
 <p>Here, we will begin with the following operational definition.</p>
 <blockquote>
 <div><p>A property of a biological circuit is <strong>robust</strong> if it is nearly independent of some of the biochemical parameters that vary unavoidably from cell to cell or system to system.</p>
 </div></blockquote>
 <section id="How-to-make-statements-about-robustness">
-<h3>How to make statements about robustness<a class="headerlink" href="#How-to-make-statements-about-robustness" title="Permalink to this headline"></a></h3>
+<h3>How to make statements about robustness<a class="headerlink" href="#How-to-make-statements-about-robustness" title="Permalink to this heading"></a></h3>
 <p>It is important to be precise about what system properties are robust to what potential perturbations, as well as the operating regime or context one is considering. We say <em>Property X of the system is robust to variations in Y in operating regime Z.</em> That is, we specify</p>
 <ol class="arabic simple">
 <li><p>The property (X);</p></li>
@@ -793,13 +532,13 @@ robustness can provide key insights into why one circuit design may be preferabl
 <p>Often the term is used more loosely or colloquially in biology. You may encounter statements that omit a description of the regime Z or even the variation Y. But here we will try to be as precise as possible.</p>
 </section>
 <section id="The-opposite-of-robustness:-fine-tuned-properties">
-<h3>The opposite of robustness: fine-tuned properties<a class="headerlink" href="#The-opposite-of-robustness:-fine-tuned-properties" title="Permalink to this headline"></a></h3>
+<h3>The opposite of robustness: fine-tuned properties<a class="headerlink" href="#The-opposite-of-robustness:-fine-tuned-properties" title="Permalink to this heading"></a></h3>
 <p>A system or property of a system that is <em>not</em> robust can be said to be <strong>fine-tuned</strong>. A fine-tuned property of a circuit requires precise adjustment of biochemical parameters to maintain its function. For example, in open loop gene expression, the steady-state protein concentration is fine-tuned by the parameters <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>. Just like robustness, we need to define X, Y, and Z as above: what property we are talking about, what parameter variations affect its function, and
 in what regime do those variations have that effect.</p>
 </section>
 </section>
 <section id="Gene-dosage-varies-in-bacteria">
-<h2>Gene dosage varies in bacteria<a class="headerlink" href="#Gene-dosage-varies-in-bacteria" title="Permalink to this headline"></a></h2>
+<h2>Gene dosage varies in bacteria<a class="headerlink" href="#Gene-dosage-varies-in-bacteria" title="Permalink to this heading"></a></h2>
 <p>As a first example of robusteness we will consider the phenomenon of <strong>gene dosage compensation</strong>—the ability of a system to maintain constant protein expression despite variation in the number of DNA copies, or “dosage,” of the underlying gene. Systems for gene gene dosage compensation are essential if the cell needs to maintain a protein concentration at a fixed value despite variation in its gene dosage.</p>
 <p>We tend to think of gene dosage as fairly stable—usually there are 2 copies of each gene in a diploid organism like ourselves—but in fact dosage varies a lot across different cellular contexts. For one thing, even in a “standard” diploid eukaryotic cell, gene dosage doubles during the cell cycle. But other systems show more complex types of dosage variation. The X chromosome can be present in one or two copies in a cell. Some cell types, such as muscle myotubes, are polyploid, with many copies
 of each gene. And mutations that inactivate one copy of a gene can effectively halve its copy number relative to other genes.</p>
@@ -811,7 +550,7 @@ the origin of replication and the growth rate and other conditions, different ge
 <p>In addition to this level of dosage variation, plasmids (self-replicating circular DNA molecules) in bacteria can exist at a widely varying range of copy numbers depending on growth conditions, and can be transferred (in some cases) laterally from one cell to another. Thus, genes on a plasmid may also need mechanisms to compensate for variations in their own dosage.</p>
 </section>
 <section id="Gene-dosage-also-varies-in-eukaryotic-cells">
-<h2>Gene dosage also varies in eukaryotic cells<a class="headerlink" href="#Gene-dosage-also-varies-in-eukaryotic-cells" title="Permalink to this headline"></a></h2>
+<h2>Gene dosage also varies in eukaryotic cells<a class="headerlink" href="#Gene-dosage-also-varies-in-eukaryotic-cells" title="Permalink to this heading"></a></h2>
 <p>Eukaryotic cells also experience another form of gene dosage variation: changes in ploidy. For instance, chromosome numbers double in the G2 phase (after replication) compared to G1 (before replication). Ploidy can also vary in other contexts. Muscle, liver, heart, bone marrow, and placenta all contain polyploid cells with multiple copies of chromosomes. In these cases, the copy number of the whole genome is altered in the same proportion. And sometimes this comes along with an increase in total
 cell volume.</p>
 <p>Sex chromosomes can be present at different numbers in males and females, leading to variation in gene dosage. For example, in humans, the X chromosome exists at one copy per cell in males but two in females. This is solved through randomly silencing, or “inactivating,” one of the two X chromosomes in each cell. (The “calico” coat pattern in cats is partly explained by mosaic clones in which different X chromosomes, carrying coat color genes, are inactivated this way.)</p>
@@ -819,7 +558,7 @@ cell volume.</p>
 <p>In cancer, certain chromosomal regions can be duplicated multiple times, amplifying their copy number. These amplifications can drive cancer cell survival and replication. This is a different, aberrant, context in which gene dosage can similarly vary.</p>
 </section>
 <section id="Gene-dosage-compensation-is-important-for-synthetic-biology-and-gene-therapy-applications.">
-<h2>Gene dosage compensation is important for synthetic biology and gene therapy applications.<a class="headerlink" href="#Gene-dosage-compensation-is-important-for-synthetic-biology-and-gene-therapy-applications." title="Permalink to this headline"></a></h2>
+<h2>Gene dosage compensation is important for synthetic biology and gene therapy applications.<a class="headerlink" href="#Gene-dosage-compensation-is-important-for-synthetic-biology-and-gene-therapy-applications." title="Permalink to this heading"></a></h2>
 <p>In synthetic biology and metabolic engineering, there is interest in designing genetic systems that can operate predictably across different contexts, despite all of this dosage variation.</p>
 <p>Gene therapies seek to provide cells with a replacement copy of a gene that is otherwise mutated or inactivated in the patient. This gene could be inserted into cells in different ways. One currently popular approach uses adeno-associated virus (AAV) vectors, which can efficiently enter cells and allow expression of their DNA cargo. With these systems, it is impossible to precisely control the number of copies of the gene that are delivered to each cell—some cells may receive many copies, while
 others receive fewer, or none. Furthermore, with vectors that integrate in the genome, the precise location of integration can influence the level of expression of the gene. As a result, even if each cell received the same number of copies, those copies might express at different levels in different cells. Thus, without some mechanism to compensate for dosage variation, the gene therapy will be expressed at a range of different levels in different cells.</p>
@@ -827,7 +566,7 @@ others receive fewer, or none. Furthermore, with vectors that integrate in the g
 condition known as MeCP2 duplication syndrome. For these reasons, gene dosage compensation could be important for gene therapy as well as for endogenous organismal regulation.</p>
 </section>
 <section id="The-transcriptional-IFFL-can-provide-gene-dosage-compensation">
-<h2>The transcriptional IFFL can provide gene dosage compensation<a class="headerlink" href="#The-transcriptional-IFFL-can-provide-gene-dosage-compensation" title="Permalink to this headline"></a></h2>
+<h2>The transcriptional IFFL can provide gene dosage compensation<a class="headerlink" href="#The-transcriptional-IFFL-can-provide-gene-dosage-compensation" title="Permalink to this heading"></a></h2>
 <p>Recent work has shown that the incoherent feed-forward loop (IFFL) can provide a remarkably simple mechanism for gene dosage compensation. Here, we will explore two different IFFL designs that use either transcriptional or post-transcriptional (micro-RNA) regulation in bacteria or mammalian cells, respectively.</p>
 <p>We start with a beautiful demonstration of dosage compensation in bacteria by <a class="reference external" href="https://doi.org/10.1038/nbt.4111">Segall-Shapiro, Sontag, and Voigt (2018)</a>.</p>
 <p>The authors created a synthetic system that ensures that the concentration of an expressed protein in the cell is robust to variation in the copy number of its gene. Consider our usual gene expression system, except we now explicitly include the gene copy number, denoted <span class="math notranslate nohighlight">\(C\)</span>, as a parameter. Assuming the gene copies are independent of one another and otherwise identical, the dynamics of our constitutively expressed gene can be written,</p>
@@ -987,7 +726,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div></blockquote>
 </section>
 <section id="Synthetic-biology-enables-experimental-tests-of-dosage-compensation-in-bacteria">
-<h2>Synthetic biology enables experimental tests of dosage compensation in bacteria<a class="headerlink" href="#Synthetic-biology-enables-experimental-tests-of-dosage-compensation-in-bacteria" title="Permalink to this headline"></a></h2>
+<h2>Synthetic biology enables experimental tests of dosage compensation in bacteria<a class="headerlink" href="#Synthetic-biology-enables-experimental-tests-of-dosage-compensation-in-bacteria" title="Permalink to this heading"></a></h2>
 <p>To test the prediction that the IFFL can dosage compensate expression, Voigt and colleagues designed a synthetic gene regulatory system incorporating a variety of designed regulatory elements. As a repressor, they used Transcription activator-like effector (TALE) proteins derived from <em>Xanthamonas</em> bacteria that infect plants. These proteins exhibit a programmable structure based on modular ≈34 amino acid units that recognize different DNA dinucleotides. By concatenating these modules, one can
 design TALE proteins that target desired DNA binding sites. (Before the emergence of CRISPR as a supremely powerful and versatile programmable gene editing system, TALEs were poised to allow many similar functions.) For the purposes of this experiment, key properties of the TALE repressors include their ability to tightly (≈100-fold) repress target promoters in bacteria and their ability, demonstrated in this paper, to provide linearly sensitive (<span class="math notranslate nohighlight">\(n=1\)</span>) repression. To control the copy
 number, the authors expressed each system from a series of plasmids with different copy numbers. The following plot from their paper demonstrates the remarkable ability of this system to eliminate dosage-dependence.</p>
@@ -1011,7 +750,7 @@ Also: Fang Xiao and I have found that when you simulate the model fully, there i
 </div>
 
 --><section id="Dosage-compensation-through-ultra-sensitive-negative-feedback">
-<h3>Dosage compensation through ultra-sensitive negative feedback<a class="headerlink" href="#Dosage-compensation-through-ultra-sensitive-negative-feedback" title="Permalink to this headline"></a></h3>
+<h3>Dosage compensation through ultra-sensitive negative feedback<a class="headerlink" href="#Dosage-compensation-through-ultra-sensitive-negative-feedback" title="Permalink to this heading"></a></h3>
 <p>It’s worth mentioning that the IFFL is not the only way to achieve dosage compensated expression. Consider a negative autoregulatory feedback loop, similar to the ones we considered in Chapter 2, but with very high ultrasensitivity. In this system, changes in gene dosage that strongly affect the protein production rate can have much more modest effects on the steady-state protein level. The reason can be seen graphically in the following plot. Across varying gene dosages, the intersection of
 production and removal rates occurs when <span class="math notranslate nohighlight">\(x\approx k\)</span>, since that is when production rate suddenly drops off and crosses the removal line.</p>
 <div class="nbinput toggle docutils container">
@@ -1123,7 +862,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="Single-gene-miRNA-based-IFFLs-provide-dosage-compensation-in-mammalian-cells">
-<h2>Single-gene miRNA-based IFFLs provide dosage compensation in mammalian cells<a class="headerlink" href="#Single-gene-miRNA-based-IFFLs-provide-dosage-compensation-in-mammalian-cells" title="Permalink to this headline"></a></h2>
+<h2>Single-gene miRNA-based IFFLs provide dosage compensation in mammalian cells<a class="headerlink" href="#Single-gene-miRNA-based-IFFLs-provide-dosage-compensation-in-mammalian-cells" title="Permalink to this heading"></a></h2>
 <p>The strategy above appears to provide nearly ideal dosage compensation in bacteria. But several features make it unsuitable for mammalian gene therapies. For one thing, TALEs are large genes that take up a lot of the limited real estate of gene therapy vectors such as AAVs. Another issues is that it is generally more difficult in mammalian cells to isolate adjacent genes. A constitutive “<span class="math notranslate nohighlight">\(X\)</span>” could lead to undesired expression of an adjacent target gene, <span class="math notranslate nohighlight">\(Y\)</span>. Finally, in a mammalian
 cell, gene regulation can be bursty (as we shall see soon in this course) and there can be delays of many hours for the transcription and translation of the constitutively expressed repressor, potentially leading to pulses and other dynamic behaviors.</p>
 <p>In 2011, Kobe Benenson and colleagues published a paper entitled, <a class="reference external" href="https://doi.org/10.1038/msb.2011.49">“Synthetic incoherent feedforward circuits show adaptation to the amount of their genetic template”</a>, which examined several different IFFL designs in mammalian cells. Two of their circuits used microRNA (miRNA) to post-transcriptionally implement the inhibition of Y by X. The most compact circuit is shown here:</p>
@@ -1134,7 +873,7 @@ through a process called splicing. Within the element is a micro-RNA that can be
 <p>In this astonishingly compact unit, increasing gene copy number should produce more mRNA encoding the red fluorescent protein as well as more miRNA to repress it. Does this design produce dosage compensation?</p>
 <p>Addressing this question rigorously would require analyzing the various steps of splicing and processing of the miRNA. For simplicity here, we will consider a simplified model that suggests dosage compensation might be possible.</p>
 <p>Because the relevant dynamics occur at the RNA level, we will change notation slightly. We will assume that the processed miRNA in its active RISC complex, denoted <span class="math notranslate nohighlight">\(r\)</span>, is produced at a rate proportional to gene dosage, <span class="math notranslate nohighlight">\(C\)</span>, and is degraded at a constant rate, <span class="math notranslate nohighlight">\(\gamma_r\)</span>. Similarly, we assume the mRNA, denoted <span class="math notranslate nohighlight">\(m\)</span>, is also produced at a rate proportional to copy number. In general, the production rates for the two species can differ, since producing mature mRNA and
-producing a mature RISC-miRNA complex involve distinct steps. We further assume that miRNA and mRNA interact at a rate governed by mass action kinetics, i.e. proportional to <span class="math notranslate nohighlight">\(r \times m\)</span> , with rate constant k, and that this interaction enzymatically destroys <span class="math notranslate nohighlight">\(m\)</span> but does not affect <span class="math notranslate nohighlight">\(r\)</span>. (Depending on the miRNA system, this need not be the case.) Finally, we assume that the mRNA can degrade with a rate constant <span class="math notranslate nohighlight">\(m\)</span>. With these assumptions, we can write down ordinary
+producing a mature RISC-miRNA complex involve distinct steps. We further assume that miRNA and mRNA interact at a rate governed by mass action kinetics, i.e. proportional to <span class="math notranslate nohighlight">\(r \times m\)</span> , with rate constant k, and that this interaction enzymatically destroys <span class="math notranslate nohighlight">\(m\)</span> but does not affect <span class="math notranslate nohighlight">\(r\)</span>. (Depending on the miRNA system, this need not be the case.) Finally, we assume that the mRNA can degrade with a rate constant <span class="math notranslate nohighlight">\(m\)</span>. With these assumptions, we can write down ordinary
 differential equations for the system:</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}r}{\mathrm{d}t} &= \beta_r C - \gamma_r r, \\[1em]
@@ -1177,14 +916,14 @@ compensation can be achieved with a single, post-transcriptionally self-regulati
 </div><p><em>Image from</em><a class="reference external" href="https://doi.org/10.1038/msb.2011.49">Bleris et al, Molecular Systems Biology, 2011</a></p>
 </section>
 <section id="Conclusions">
-<h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this headline"></a></h2>
+<h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this heading"></a></h2>
 <p>At first glance, the incoherent feed-forward loop is as mysterious as it is prevalent. Why would one want to regulate the same target gene in two opposite ways? The examples above and those in the previous chapter suggest a few of its many dynamic functions: generating adaptive responses to step increases in input, accelerating responses, and, perhaps most dramatically, making gene expression independent of the dosage of the gene itself. IFFLs have also been shown to play other, related, roles
 as well, such as implementing <a class="reference external" href="https://doi.org/10.1016/j.molcel.2009.11.018">fold-change detection</a>, which occurs in systems whose outputs depend only on the fold increase of their inputs, irrespective of their absolute values.</p>
 <p>Now that we know that an IFFL can provide dosage compensation, one can also ask why <em>every</em> gene is not dosage compensated? Is it enough to merely dosage compensate regulatory proteins and not their targets? Is the cost of implementing the added regulation so high that it can only be justified for those genes for which too much activity would be especially deleterious? Are there distinct, dosage compensating mechanisms that might also be operating in some genes?</p>
 <p>We have also now encountered our first formal introduction to the principle of robustness. We have learned that robustness properties can be some of the most striking functions a system can perform, but also that such behaviors always carry with them caveats about the regimes in which the robustnesses can actually hold. In the following chapters we will continue to explore this theme further across examples as diverse as bacterial motility and error correction in gene expression machinery.</p>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1213,7 +952,7 @@ jupyterlab: 3.0.14
 </div>
 <hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this headline"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/05/problem_5.1.html">5.1: Robustness in a C1-FFL</a></li>
@@ -1234,11 +973,11 @@ jupyterlab: 3.0.14
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad370de7c0> 
+   <jinja2.runtime.BlockReference object at 0x7fec668cc310> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

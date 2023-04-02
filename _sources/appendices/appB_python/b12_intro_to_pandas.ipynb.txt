@@ -1,0 +1,681 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# B12. Introduction to Pandas\n",
+    "\n",
+    "<hr>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Colab setup ------------------\n",
+    "import os, sys\n",
+    "if \"google.colab\" in sys.modules:\n",
+    "    data_path = \"https://biocircuits.github.io/chapters/data/\"\n",
+    "else:\n",
+    "    data_path = \"data/\"\n",
+    "# ------------------------------\n",
+    "\n",
+    "import os\n",
+    "import numpy as np\n",
+    "\n",
+    "# Pandas, conventionally imported as pd\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<hr>\n",
+    "\n",
+    "Pandas is the primary tool in the Python ecosystem for handling data. Its primary object, the `DataFrame` is extremely useful for loading and wrangling data. In this book, we primarily use Pandas for loading in and accessing data sets, which is what we describe here. Pandas's functionality extend _far_ beyond these simple applications."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## The data set\n",
+    "\n",
+    "We will explore using Pandas the data set from [the chapter on noise](../chapters/15_noise.ipynb), acquired by Elowitz and coworkers ([Elowitz, et al., 2000](https://doi.org/10.1126/science.1070919)). The data are available in [this CSV file](../chapters/data/elowitz_et_al_2002_fig_3a.csv). \n",
+    "\n",
+    "You will notice in the first cell of this notebook that we set a different path to where data sets are located, stored in the `data_path` variable. If you running this notebook on Colab, the path to the data set goes directly to the URL where it is hosted. If you are running locally on your own machine, be sure to download the CSV file and move it to a `data` directory in your current directory.\n",
+    "\n",
+    "To access the directory, we can use the convenient `os.path.join()` function to give the full path."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'data/elowitz_et_al_2002_fig_3a.csv'"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "os.path.join(data_path, \"elowitz_et_al_2002_fig_3a.csv\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We will use this convenient way of specifying paths when we load in data files.\n",
+    "\n",
+    "The data set contains normalized fluorescence levels and measured noise for collections of bacterial cells in separate experiments featuring varying levels of inducer.\n",
+    "\n",
+    "Let's look at the first few lines of the file."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "strain,CFP,YFP\n",
+      "m22,2438,1409\n",
+      "m22,2316,1391\n",
+      "m22,2521,1511\n",
+      "m22,2646,1460\n",
+      "m22,2830,1638\n",
+      "m22,2567,1572\n",
+      "m22,2636,1450\n",
+      "m22,2644,1335\n",
+      "m22,2897,1689\n"
+     ]
+    }
+   ],
+   "source": [
+    "with open(os.path.join(data_path, \"elowitz_et_al_2002_fig_3a.csv\"), \"r\") as f:\n",
+    "    for i, line in enumerate(f):\n",
+    "        if i < 10:\n",
+    "            print(line.rstrip())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The first line contains the **headers** for each column. In this case, the first column contains the strain, the second the intensity of the CFP channel, and the third the intensity of the YFP channel.\n",
+    "\n",
+    "To load in the data in this file, Pandas has a very powerful function, `pd.read_csv()` that can read in a CSV file and store the contents in a convenient data structure called a **data frame**. In Pandas, the data type for a data frame is `DataFrame`, and we will use \"data frame\" and \"`DataFrame`\" interchangeably."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Reading in data\n",
+    "\n",
+    "Take a look at the [doc string of pd.read_csv()](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html). Holy cow! There are so many options we can specify for reading in a CSV file. You will likely find reasons to use many of these throughout your research. We do not really need to specify keyword arguments for this data set, fortunately. So, let's proceed to load in the data set."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "pandas.core.frame.DataFrame"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df = pd.read_csv(os.path.join(data_path, \"elowitz_et_al_2002_fig_3a.csv\"))\n",
+    "\n",
+    "# Check the type\n",
+    "type(df)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We now have the data stored in a data frame. We can look at it in the Jupyter notebook, since Jupyter will display it in a well-organized, pretty way."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>strain</th>\n",
+       "      <th>CFP</th>\n",
+       "      <th>YFP</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2438</td>\n",
+       "      <td>1409</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2316</td>\n",
+       "      <td>1391</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2521</td>\n",
+       "      <td>1511</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2646</td>\n",
+       "      <td>1460</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2830</td>\n",
+       "      <td>1638</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>529</th>\n",
+       "      <td>d22</td>\n",
+       "      <td>2249</td>\n",
+       "      <td>1561</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>530</th>\n",
+       "      <td>d22</td>\n",
+       "      <td>2241</td>\n",
+       "      <td>1673</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>531</th>\n",
+       "      <td>d22</td>\n",
+       "      <td>2345</td>\n",
+       "      <td>1659</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>532</th>\n",
+       "      <td>d22</td>\n",
+       "      <td>2776</td>\n",
+       "      <td>1960</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>533</th>\n",
+       "      <td>d22</td>\n",
+       "      <td>2114</td>\n",
+       "      <td>1555</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>534 rows × 3 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "    strain   CFP   YFP\n",
+       "0      m22  2438  1409\n",
+       "1      m22  2316  1391\n",
+       "2      m22  2521  1511\n",
+       "3      m22  2646  1460\n",
+       "4      m22  2830  1638\n",
+       "..     ...   ...   ...\n",
+       "529    d22  2249  1561\n",
+       "530    d22  2241  1673\n",
+       "531    d22  2345  1659\n",
+       "532    d22  2776  1960\n",
+       "533    d22  2114  1555\n",
+       "\n",
+       "[534 rows x 3 columns]"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "This is a nice representation of the data, but we really do not need to display that many rows of the data frame in order to understand its structure. Instead, we can use the `head()` method of data frames to look at the first few rows."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>strain</th>\n",
+       "      <th>CFP</th>\n",
+       "      <th>YFP</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2438</td>\n",
+       "      <td>1409</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2316</td>\n",
+       "      <td>1391</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2521</td>\n",
+       "      <td>1511</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2646</td>\n",
+       "      <td>1460</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>m22</td>\n",
+       "      <td>2830</td>\n",
+       "      <td>1638</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "  strain   CFP   YFP\n",
+       "0    m22  2438  1409\n",
+       "1    m22  2316  1391\n",
+       "2    m22  2521  1511\n",
+       "3    m22  2646  1460\n",
+       "4    m22  2830  1638"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "This is more manageable and gives us an overview of what the columns are."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Indexing data frames\n",
+    "\n",
+    "The data frame is a convenient data structure for many reasons that will become clear as we start exploring. Let's start by looking at how data frames are indexed. Let's try to look at the first row."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "KeyError",
+     "evalue": "0",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+      "File \u001b[0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py:3802\u001b[0m, in \u001b[0;36mIndex.get_loc\u001b[0;34m(self, key, method, tolerance)\u001b[0m\n\u001b[1;32m   3801\u001b[0m \u001b[38;5;28;01mtry\u001b[39;00m:\n\u001b[0;32m-> 3802\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43m_engine\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mget_loc\u001b[49m\u001b[43m(\u001b[49m\u001b[43mcasted_key\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m   3803\u001b[0m \u001b[38;5;28;01mexcept\u001b[39;00m \u001b[38;5;167;01mKeyError\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m err:\n",
+      "File \u001b[0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx:138\u001b[0m, in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/_libs/index.pyx:165\u001b[0m, in \u001b[0;36mpandas._libs.index.IndexEngine.get_loc\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32mpandas/_libs/hashtable_class_helper.pxi:5745\u001b[0m, in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32mpandas/_libs/hashtable_class_helper.pxi:5753\u001b[0m, in \u001b[0;36mpandas._libs.hashtable.PyObjectHashTable.get_item\u001b[0;34m()\u001b[0m\n",
+      "\u001b[0;31mKeyError\u001b[0m: 0",
+      "\nThe above exception was the direct cause of the following exception:\n",
+      "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[7], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m \u001b[43mdf\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;241;43m0\u001b[39;49m\u001b[43m]\u001b[49m\n",
+      "File \u001b[0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py:3807\u001b[0m, in \u001b[0;36mDataFrame.__getitem__\u001b[0;34m(self, key)\u001b[0m\n\u001b[1;32m   3805\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mcolumns\u001b[38;5;241m.\u001b[39mnlevels \u001b[38;5;241m>\u001b[39m \u001b[38;5;241m1\u001b[39m:\n\u001b[1;32m   3806\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_getitem_multilevel(key)\n\u001b[0;32m-> 3807\u001b[0m indexer \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mcolumns\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mget_loc\u001b[49m\u001b[43m(\u001b[49m\u001b[43mkey\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m   3808\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m is_integer(indexer):\n\u001b[1;32m   3809\u001b[0m     indexer \u001b[38;5;241m=\u001b[39m [indexer]\n",
+      "File \u001b[0;32m~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/indexes/base.py:3804\u001b[0m, in \u001b[0;36mIndex.get_loc\u001b[0;34m(self, key, method, tolerance)\u001b[0m\n\u001b[1;32m   3802\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_engine\u001b[38;5;241m.\u001b[39mget_loc(casted_key)\n\u001b[1;32m   3803\u001b[0m \u001b[38;5;28;01mexcept\u001b[39;00m \u001b[38;5;167;01mKeyError\u001b[39;00m \u001b[38;5;28;01mas\u001b[39;00m err:\n\u001b[0;32m-> 3804\u001b[0m     \u001b[38;5;28;01mraise\u001b[39;00m \u001b[38;5;167;01mKeyError\u001b[39;00m(key) \u001b[38;5;28;01mfrom\u001b[39;00m \u001b[38;5;21;01merr\u001b[39;00m\n\u001b[1;32m   3805\u001b[0m \u001b[38;5;28;01mexcept\u001b[39;00m \u001b[38;5;167;01mTypeError\u001b[39;00m:\n\u001b[1;32m   3806\u001b[0m     \u001b[38;5;66;03m# If we have a listlike key, _check_indexing_error will raise\u001b[39;00m\n\u001b[1;32m   3807\u001b[0m     \u001b[38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise\u001b[39;00m\n\u001b[1;32m   3808\u001b[0m     \u001b[38;5;66;03m#  the TypeError.\u001b[39;00m\n\u001b[1;32m   3809\u001b[0m     \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_check_indexing_error(key)\n",
+      "\u001b[0;31mKeyError\u001b[0m: 0"
+     ]
+    }
+   ],
+   "source": [
+    "df[0]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Yikes! Lots of errors. The problem is that we tried to index numerically by row. **We index DataFrames by columns.** And there is no column that has the name `0` in this data frame, though there could be. Instead, a might want to look at the column with the CFP intensity."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[\"CFP\"]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "This gave us the numbers we were after. Notice that when it was printed, the index of the rows came along with it. If we wanted to pull out a fluorescence value, say corresponding to index `4`, we can do that."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[\"CFP\"][4]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "However, this is **not** the preferred way to do this. It is better to use `.loc`. This give the location in the data frame we want."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.loc[4, \"CFP\"]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Note that following `.loc`, we have the index by row then column, separated by a comma, in brackets. It is also important to note that **row indices need not be integers**. And you should not count on them being integers. In practice you will almost never use row indices, but rather use **Boolean indexing**."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Boolean indexing of data frames\n",
+    "\n",
+    "Let's say I wanted the CFP fluorescent intensity only for the m22 strain. I can use Boolean indexing to specify the rows of interest. Specifically, I want the row for which `df['strain'] == 'm22'`. You can essentially plop this syntax directly when using `.loc`."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.loc[df[\"strain\"] == \"m22\", \"CFP\"]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We can extend this to ask for even more specific records, like the record for each bacterium from the m22 strain with CFP fluorescence above 2500 and YFP fluorescence below 1200. We can again use Boolean indexing, but we need to use an `&` operator. We did not cover this bitwise operator before, but the syntax is self-explanatory in the example below. Note that it is important that each Boolean operation you are doing is in parentheses because of the precedence of the operators involved."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.loc[\n",
+    "    (df[\"strain\"] == \"m22\") & (df[\"CFP\"] > 2500) & (df[\"YFP\"] < 1200),\n",
+    "    :,\n",
+    "]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "There were only two records. The syntax to accomplish this is a bit cumbersome. The code is clearer if we set up our Boolean indexing first, as follows."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "inds = (df[\"strain\"] == \"m22\") & (df[\"CFP\"] > 2500) & (df[\"YFP\"] < 1200)\n",
+    "\n",
+    "df.loc[inds, :]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Note that if we want all columns, we can use `:` for the column index. Similarly, if we want all rows, we use `:` for the row index.\n",
+    "\n",
+    "Notice also that `inds` is an array (actually a Pandas `Series`, essentially a `DataFrame` with one column) of `True`s and `False`s. When we index with it using `.loc`, we get back rows where `inds` is `True`.\n",
+    "\n",
+    "Of interest in this exercise in Boolean indexing is that we never had to write a loop. To produce our indices, we could have done the following."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Initialize array of Boolean indices\n",
+    "inds = [False] * len(df)\n",
+    "\n",
+    "# Iterate over the rows of the DataFrame to check if the row should be included\n",
+    "for i, r in df.iterrows():\n",
+    "    if r[\"strain\"] == \"m22\" and r[\"CFP\"] > 2500 and r[\"YFP\"] < 1200:\n",
+    "        inds[i] = True\n",
+    "\n",
+    "# Make our seleciton with Boolean indexing\n",
+    "df.loc[inds, :]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "This feature, where the looping is done automatically on Pandas objects like data frames, is very powerful and saves us writing lots of lines of code. This example also showed how to use the `iterrows()` method of a data frame to iterate over the rows of a data frame. It is actually rare that you will need to do that, as we'll show next when computing with data frames."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Calculating with data frames\n",
+    "\n",
+    "We can do elementwise calculations on elements of a data frame just like we could with NumPy arrays."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Do silly, arbitrary calculations\n",
+    "df[\"CFP divided by 1000\"] = df[\"CFP\"] / 1000\n",
+    "df[\"CFP + YPF\"] = df[\"CFP\"] + df[\"YFP\"]\n",
+    "\n",
+    "# Take a look\n",
+    "df.head()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We can also apply NumPy functions, e.g. to compute the mean CFP fluorescence (irrespective of strain)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "np.mean(df[\"CFP\"])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Extracting data as NumPy arrays\n",
+    "\n",
+    "We sometimes want to take a column or other subset of a data frame and have it available as a NumPy array (usually for performance reasons). The `values` attribute of a data frame allows for this. As an example, if we want to take out all of the CFP fluorescence values for the d22 strain as a NumPy array, we can do the following."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.loc[df[\"strain\"]==\"d22\", \"CFP\"].values"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Computing environment"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "tags": [
+     "hide-input"
+    ]
+   },
+   "outputs": [],
+   "source": [
+    "%load_ext watermark\n",
+    "%watermark -v -p numpy,pandas,jupyterlab"
+   ]
+  }
+ ],
+ "metadata": {
+  "anaconda-cloud": {},
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.16"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}

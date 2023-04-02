@@ -1703,7 +1703,7 @@
     "Strictly speaking, $r$ can be non-integer, so\n",
     "\n",
     "\\begin{align}\n",
-    "P(n;r,b) = \\frac{\\Gamma(n+r)}{n!\\Gamma(r)!}\\,\\frac{b^n}{(1+b)^{n+r}},\n",
+    "P(n;r,b) = \\frac{\\Gamma(n+r)}{n!\\Gamma(r)}\\,\\frac{b^n}{(1+b)^{n+r}},\n",
     "\\end{align}\n",
     "\n",
     "where $\\Gamma(x)$ is the gamma function.\n",
@@ -1769,7 +1769,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.9.12"
+   "version": "3.8.13"
   },
   "toc": {
    "base_numbering": 1,

@@ -41,3 +41,13 @@ table.docutils td li {
         overflow: visible !important;
     }
 }
+
+/* Use the below (maybe?) for toggle color
+button.toggle-button {
+  color: #24AA4A;
+}
+
+.toggle-button summary {
+  color: #24AA4A;
+}
+*/

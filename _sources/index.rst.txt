@@ -2,6 +2,15 @@ Biological Circuit Design
 =============================================================
 
 
+.. .. toctree::
+..    :maxdepth: 1
+..    :caption: Front matter
+
+..    front_matter/preface.rst
+..    front_matter/technique_toc.rst
+
+
+
 .. toctree::
    :maxdepth: 1
    :caption: Chapters
@@ -28,8 +37,25 @@ Biological Circuit Design
    chapters/20_lateral_inhibition.ipynb
    chapters/21_turing.ipynb
    chapters/22_scaling_morphogens.ipynb
-   chapters/appA_regulatory_functions.ipynb
-   chapters/appB_gillespie.ipynb
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Technical Appendices
+
+   technical_appendices/02a_numerical_odes.ipynb
+   technical_appendices/02b_interactive_plotting.ipynb
+   technical_appendices/03a_nondimensionalization.ipynb
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Appendices
+
+   appendices/appA_math/index.rst
+   appendices/appB_python/index.rst
+   appendices/appC_numerical_odes.ipynb
+   appendices/appD_regulatory_functions.ipynb
+   .. appendices/appE_gillespie.ipynb
 
 
 .. toctree::
@@ -37,3 +63,4 @@ Biological Circuit Design
    :caption: Package docs 
 
    package_docs/index
+

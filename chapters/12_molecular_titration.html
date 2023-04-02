@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>12. Molecular titration generates ultrasensitive responses in biological circuits &mdash; Biological Circuit Design  documentation</title>
@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -17,6 +18,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -26,8 +28,8 @@
         <script src="../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -40,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -72,7 +78,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#Ultrasensitivity-≠-gain">Ultrasensitivity ≠ gain</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#Molecular-titration-“subtracts”-one-protein-concentration-from-another.">Molecular titration “subtracts” one protein concentration from another.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Molecular-titration-%22subtracts%22-one-protein-concentration-from-another.">Molecular titration “subtracts” one protein concentration from another.</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Molecular-titration-occurs-in-diverse-contexts">Molecular titration occurs in diverse contexts</a></li>
 </ul>
 </li>
@@ -99,8 +105,19 @@
 <li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appA_regulatory_functions.html">Appendix A: Regulatory functions and their derivatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appB_gillespie.html">Appendix B: Gillespie simulation example with speed considerations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appA_math/index.html">Appendix A: Mathematical review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appB_python/index.html">Appendix B: Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appC_numerical_odes.html">Appendix C: Numerical solutions of ODES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/appD_regulatory_functions.html">Appendix D: Regulatory functions and their derivatives</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Package docs</span></p>
 <ul>
@@ -120,8 +137,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>12. Molecular titration generates ultrasensitive responses in biological circuits</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">12. Molecular titration generates ultrasensitive responses in biological circuits</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -138,286 +155,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="12.-Molecular-titration-generates-ultrasensitive-responses-in-biological-circuits">
-<h1>12. Molecular titration generates ultrasensitive responses in biological circuits<a class="headerlink" href="#12.-Molecular-titration-generates-ultrasensitive-responses-in-biological-circuits" title="Permalink to this headline"></a></h1>
+  <section id="12.-Molecular-titration-generates-ultrasensitive-responses-in-biological-circuits">
+<h1>12. Molecular titration generates ultrasensitive responses in biological circuits<a class="headerlink" href="#12.-Molecular-titration-generates-ultrasensitive-responses-in-biological-circuits" title="Permalink to this heading"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
 <li><p>Molecular titration provides a simple, versatile mechanism to generate ultrasensitive responses in molecular circuits</p></li>
@@ -756,12 +495,12 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <section id="Introduction:-Molecular-titration-as-an-ultrasensitivity-module">
-<h2>Introduction: Molecular titration as an ultrasensitivity module<a class="headerlink" href="#Introduction:-Molecular-titration-as-an-ultrasensitivity-module" title="Permalink to this headline"></a></h2>
+<h2>Introduction: Molecular titration as an ultrasensitivity module<a class="headerlink" href="#Introduction:-Molecular-titration-as-an-ultrasensitivity-module" title="Permalink to this heading"></a></h2>
 <p>Biological circuits rely heavily on “switches,” systems in which a change in the level or state of an input molecule can strongly alter the level or state of the output molecules it controls. When we say a process is “switch-like”, we usually mean that a small change in the input can generate a much larger and more complete change in output. In other words, switches are <strong>ultrasensitive</strong>. (In some contexts, we go further to demand that switches have a toggle-like, or hysteretic, behavior based
 on bistability.)</p>
 <p>Biological circuits are replete with such ultrasensitive switches: The cell cycle uses switches to click decisively from one phase to another. Signal transduction systems require ultrasensitivity to amplify small but important input signals into large responses. Multistable cell fate control systems use switches to enforce distinct cellular states. Natural and synthetic oscillators such as the circadian clock and the repressilator, as we have seen, also require ultrasensitive switches.</p>
 <p>Are there simple, generalizable, engineerable circuit-level design strategies that could confer ultrasensitivity? For instance, consider a simple gene regulatory system, in which an input activator, <span class="math notranslate nohighlight">\(A\)</span>, controls the expression of a target protein <span class="math notranslate nohighlight">\(Y\)</span>:</p>
-<center><p><img alt="e2ff8d50378e4d6098a1e166be271393" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
+<center><p><img alt="a0ad797a120640ca9bcf08710acd2f7d" class="no-scaled-link" src="../_images/simple_gene_regulation.png" style="width: 175px;" /></p>
 </center><p>Let’s pause to ask:</p>
 <ol class="arabic simple">
 <li><p>How could you ensure ultrasensitivity in the transcription response function (dependence of Y on A)?</p></li>
@@ -769,7 +508,7 @@ on bistability.)</p>
 </ol>
 </section>
 <section id="Defining-sensitivity-and-ultrasensitivity">
-<h2>Defining sensitivity and ultrasensitivity<a class="headerlink" href="#Defining-sensitivity-and-ultrasensitivity" title="Permalink to this headline"></a></h2>
+<h2>Defining sensitivity and ultrasensitivity<a class="headerlink" href="#Defining-sensitivity-and-ultrasensitivity" title="Permalink to this heading"></a></h2>
 <p>Thus far, we have used the term ultrasensitivity a bit loosely, roughly taking ultrasensitivity to mean a “switch-like” response, quantified by having a Hill coefficient greater than one. Here is a precise definition: An <strong>ultrasensitive</strong> response is one in which a given <strong>fold change</strong> in the concentration or activity of an input molecule produces a larger fold change in the level or activity of an output molecule. Because a fold change in a quantity means an incremental change in its
 logarithm (e.g., <span class="math notranslate nohighlight">\(x \to a x\)</span> means that <span class="math notranslate nohighlight">\(x\)</span> changes by a <em>factor</em> of <span class="math notranslate nohighlight">\(a\)</span>, and correspondingly <span class="math notranslate nohighlight">\(\ln x \to \ln a x = \ln a + \ln x\)</span> means that <span class="math notranslate nohighlight">\(\ln x\)</span> changes by an <em>additive</em> amount <span class="math notranslate nohighlight">\(\ln a\)</span>), we define the <strong>sensitivity</strong> <span class="math notranslate nohighlight">\(s\)</span> of the input-output relationship as</p>
 <p><span class="math">\begin{align}
@@ -777,7 +516,7 @@ s = \left|\frac{\mathrm{d} \ln y}{\mathrm{d} \ln x}\right| = \frac{x}{y}\left|\f
 \end{align}</span></p>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are the concentrations of the respective molecules. If a regulatory interaction is ultrasensitive, then <span class="math notranslate nohighlight">\(s &gt; 1\)</span> for at least some values of <span class="math notranslate nohighlight">\(x\)</span>. When discussing ultrasensitivity, we need make clear what operating point we are considering—for example, the “EC50” or point at which the function is half maximal, or, alternatively, the point at which the sensitivity itself is maximized.</p>
 <section id="Sensitivity-of-Hill-functions">
-<h3>Sensitivity of Hill functions<a class="headerlink" href="#Sensitivity-of-Hill-functions" title="Permalink to this headline"></a></h3>
+<h3>Sensitivity of Hill functions<a class="headerlink" href="#Sensitivity-of-Hill-functions" title="Permalink to this heading"></a></h3>
 <p>The Hill function provides a versatile way to parameterize ultrasensitive responses.</p>
 <p><span class="math">\begin{align}
 &y = \frac{(x/k)^{n}}{1 + (x/k)^{n}} \text{ for X activating Y},\\[1em]
@@ -1234,7 +973,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Ultrasensitivity-≠-gain">
-<h3>Ultrasensitivity ≠ gain<a class="headerlink" href="#Ultrasensitivity-≠-gain" title="Permalink to this headline"></a></h3>
+<h3>Ultrasensitivity ≠ gain<a class="headerlink" href="#Ultrasensitivity-≠-gain" title="Permalink to this heading"></a></h3>
 <p>Note that ultrasensitivity is different than <strong>gain</strong>. A system in which <span class="math notranslate nohighlight">\(y = 100 x\)</span> has high gain, but still responds linearly to its input, and is therefore <em>not</em> ultrasensitive.</p>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -1322,14 +1061,14 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 </section>
-<section id="Molecular-titration-“subtracts”-one-protein-concentration-from-another.">
-<h2>Molecular titration “subtracts” one protein concentration from another.<a class="headerlink" href="#Molecular-titration-“subtracts”-one-protein-concentration-from-another." title="Permalink to this headline"></a></h2>
+<section id="Molecular-titration-%22subtracts%22-one-protein-concentration-from-another.">
+<h2>Molecular titration “subtracts” one protein concentration from another.<a class="headerlink" href="#Molecular-titration-%22subtracts%22-one-protein-concentration-from-another." title="Permalink to this heading"></a></h2>
 <p><strong>Molecular titration</strong> is a simple, general mechanism that provides tunable ultrasensitivity across diverse natural systems, and allows engineering of ultrasensitive responses in synthetic circuits. It takes advantage of the ability of biological molecules to form strong and specific complexes with one another. Depending on the system, the complex itself may provide a particular activity, such as gene regulation. Or, alternatively, one of the monomers may provide an activity, with the complex
 inhibiting it.</p>
-<center><p><img alt="1d9d397988364a428c091931e66934d3" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
+<center><p><img alt="8c14bb7b490a44188dd0a62de76e1340" class="no-scaled-link" src="../_images/molecular_titration2.png" style="width: 250px;" /></p>
 </center><p>In this example, molecular titration performs a kind of “subtraction” operation. The inhibitor effectively “subtracts off” a fraction of otherwise active molecules. As we will soon demonstrate, molecular titration can provide ultrasensitive responses of activator to inhibitor concentrations.</p>
 <section id="Molecular-titration-occurs-in-diverse-contexts">
-<h3>Molecular titration occurs in diverse contexts<a class="headerlink" href="#Molecular-titration-occurs-in-diverse-contexts" title="Permalink to this headline"></a></h3>
+<h3>Molecular titration occurs in diverse contexts<a class="headerlink" href="#Molecular-titration-occurs-in-diverse-contexts" title="Permalink to this heading"></a></h3>
 <p>Examples where molecular titration plays a central role in circuit function include:</p>
 <ul class="simple">
 <li><p>In bacterial gene regulation, specialized transcription factors called sigma factors are stoichiometrically inhibited by cognate anti-sigma factors, making their activity ultrasensitive to their concentration in the cell.</p></li>
@@ -1342,7 +1081,7 @@ inhibiting it.</p>
 </section>
 </section>
 <section id="Molecular-titration:-a-minimal-model">
-<h2>Molecular titration: a minimal model<a class="headerlink" href="#Molecular-titration:-a-minimal-model" title="Permalink to this headline"></a></h2>
+<h2>Molecular titration: a minimal model<a class="headerlink" href="#Molecular-titration:-a-minimal-model" title="Permalink to this heading"></a></h2>
 <p>To see how molecular titration produces ultrasensitivity consider two proteins, A and B, that can bind to form a complex, C, which is inactive for both A and B activities. This system can be described by the following reaction.</p>
 <p><span class="math">\begin{align}
 \require{mhchem}
@@ -1658,7 +1397,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Ultrasensitivity-in-threshold-linear-response-functions">
-<h2>Ultrasensitivity in threshold-linear response functions<a class="headerlink" href="#Ultrasensitivity-in-threshold-linear-response-functions" title="Permalink to this headline"></a></h2>
+<h2>Ultrasensitivity in threshold-linear response functions<a class="headerlink" href="#Ultrasensitivity-in-threshold-linear-response-functions" title="Permalink to this heading"></a></h2>
 <p>Threshold-linear responses differ qualitatively from what we had with a Hill function. Unlike the sigmoidal, or “S-shaped,” Hill function, which saturates at a maximum “ceiling,” the threshold-linear function increases without bound, maintaining a constant slope as input values increase.</p>
 <p>Despite these differences, we can still quantify the sensitivity of this response, which as a reminder is defined as the fold change in output for a given fold change in input, evaluated at a particular operating point. The plots below show this sensitivity plotted for varying <span class="math notranslate nohighlight">\(a_\mathrm{tot}\)</span>, and for different values of <span class="math notranslate nohighlight">\(K_\mathrm{d}\)</span>. Note the peak in sensitivity right around the transition, whose strength grows with tighter binding (lower <span class="math notranslate nohighlight">\(K_\mathrm{d}\)</span>). This peak
 highlights what we see in the input-output function: Ultrasensitivity can be very strong for tight binding (small <span class="math notranslate nohighlight">\(K_\mathrm{d}\)</span>) when <span class="math notranslate nohighlight">\(a_\mathrm{tot} \approx b_\mathrm{tot}\)</span>.</p>
@@ -1713,7 +1452,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="A-synthetic-demonstration-of-molecular-titration">
-<h2>A synthetic demonstration of molecular titration<a class="headerlink" href="#A-synthetic-demonstration-of-molecular-titration" title="Permalink to this headline"></a></h2>
+<h2>A synthetic demonstration of molecular titration<a class="headerlink" href="#A-synthetic-demonstration-of-molecular-titration" title="Permalink to this heading"></a></h2>
 <p>Simple models like the ones above can help us think about what behaviors we should expect in a system. But how do we know if they accurately describe the real behavior of a complex molecular system, particularly one operating in the more complex milieu of the living cell? In the spirit of building-to-understand, <a class="reference external" href="https://doi.org/10.1038/msb.2009.30">Buchler and Cross</a> used a synthetic biology approach to investigate how this simple scheme could indeed generate the predicted ultrasensitivity.</p>
 <p>They engineered yeast cells to express a transcription factor, a stoichiometric inhibitor of that factor, and a target reporter gene to readout the level of the transcription factor. As a transcription factor, they used the mammalian bZip family activator CEBP/<span class="math notranslate nohighlight">\(\alpha\)</span>, which homodimerizes to activate target genes, and does not exist in yeast. As the inhibitor, they used a dominant negative mutant of CEBP/<span class="math notranslate nohighlight">\(\alpha\)</span> that binds to it with a tight <span class="math notranslate nohighlight">\(K_\mathrm{d} \approx 0.04\)</span> nM to
 form an inactive complex. As a reporter, they used yellow fluorescent protein expressed from a CEBAα-dependent promoter. To vary the relative levels of the activator and inhibitor, they expressed each of them from a set of distinct promoters of different strengths. The entire circuit was integrated in the yeast genome. As a control, they also constructed yeast strains without the inhibitor.</p>
@@ -1729,7 +1468,7 @@ activate other genes.)</p>
 <p>We now turn to non-engineered contexts in which molecular titration appears.</p>
 </section>
 <section id="Small-RNA-regulation-can-generate-ultrasensitive-responses-through-molecular-titration">
-<h2>Small RNA regulation can generate ultrasensitive responses through molecular titration<a class="headerlink" href="#Small-RNA-regulation-can-generate-ultrasensitive-responses-through-molecular-titration" title="Permalink to this headline"></a></h2>
+<h2>Small RNA regulation can generate ultrasensitive responses through molecular titration<a class="headerlink" href="#Small-RNA-regulation-can-generate-ultrasensitive-responses-through-molecular-titration" title="Permalink to this heading"></a></h2>
 <p>The last few decades have revealed different classes of RNA molecules that play a wide range of regulatory roles within the cell. In particular, small RNA molecules regulate gene expression in systems from bacteria to mammalian cells. microRNA (miRNA) represents a major class of regulatory RNA molecules in eukaryotes. Humans have <a class="reference external" href="https://bionumbers.hms.harvard.edu/bionumber.aspx?s=n&amp;v=3&amp;id=114541">hundreds</a> of miRNAs, with individual miRNAs typically targeting hundreds of genes.
 <a class="reference external" href="https://bionumbers.hms.harvard.edu/bionumber.aspx?id=102584&amp;ver=5&amp;trm=miRNA&amp;org=">30-90%</a> of human protein-coding genes are targets of one or more miRNAs. Individual miRNAs can also be highly expressed (as many as <a class="reference external" href="https://www.cell.com/fulltext/S0092-8674(04)00045-5">50,000 copies per cell in C. elegans</a>). Many miRNAs exhibit strong sequence conservation across species, suggesting selection for function.</p>
 <p>Confusingly, however, at the cell population average level, they sometimes appear to generate <a class="reference external" href="https://doi.org/10.1186/s12864-018-4757-z">relatively weak</a> repression. To more quantitatively understand how miRNA regulation operates, Mukherji et al developed a system to analyze miRNA regulation at the level of single cells (<a class="reference external" href="https://doi.org/10.1038/ng.905">Mukherji, S., et al, Nat. Methods, 2011</a>).</p>
@@ -1742,7 +1481,7 @@ with the binding site, mCherry expression is suppressed at lower YFP expression 
 <div style="margin: auto; width: 300px;"><img alt="Mukherji_YFP_mCherry.png" src="../_images/Mukherji_YFP_mCherry.png" />
 </div><p>Here, the YFP x-axis is analogous to our <span class="math notranslate nohighlight">\(a_\mathrm{tot}\)</span>, above, while the mCherry y-axis is analogous to <span class="math notranslate nohighlight">\(a\)</span>.</p>
 <section id="Modeling-the-miRNA-system">
-<h3>Modeling the miRNA system<a class="headerlink" href="#Modeling-the-miRNA-system" title="Permalink to this headline"></a></h3>
+<h3>Modeling the miRNA system<a class="headerlink" href="#Modeling-the-miRNA-system" title="Permalink to this heading"></a></h3>
 <p>So far, we considered a static pool of A and B, but in a cell, both proteins undergo continuous synthesis as well as degradation and/or dilution. To explain the miRNA system, several papers, including <a class="reference external" href="https://doi.org/10.1038/ng.905">Mukherji, et al., 2011</a>, as well as <a class="reference external" href="https://doi.org/10.1016/j.jmb.2008.09.079">Buchler &amp; Louis, 2008</a>, <a class="reference external" href="https://doi.org/10.1371/journal.pbio.0050229">Levine, et al., 2007</a>, and <a class="reference external" href="https://doi.org/10.1038/msb.2008.58">Mehta, et al., 2008</a> use similar
 representations. The following analysis follows the treatment in the supplementary material of Mukherji, et al., but with altered notation.</p>
 <div style="margin: auto; width: 400px;"><img alt="miRNA_model_diagram.png" src="../_images/miRNA_model_diagram.png" />
@@ -1993,12 +1732,12 @@ similar to those observed in the experimental data shown above.</p>
 <p>That makes sense: when miRNAs are unsaturated, they can have a relatively strong effect on their target expression levels, essentially keeping them “off.” On the other hand, when targets are expressed highly enough, the relative effect of the miRNA on expression becomes much weaker, effectively just shifting it to slightly slower values.</p>
 <div style="margin: auto; width: 400px;"><img alt="miRNA_relative_change.png" src="../_images/miRNA_relative_change.png" />
 </div><p>Returning to the question posed earlier, we now see that inserting a constitutive, inhibitory miRNA provides an elegant way to threshold a gene regulatory interaction.</p>
-<center><p><img alt="ec07f6157a7042ee98454785c7344e82" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
+<center><p><img alt="799cad1b90544fc9bcdb168f15299ccd" class="no-scaled-link" src="../_images/gene_regulation_with_miRNA.png" style="width: 300px;" /></p>
 </center><p>Note that in addition to its general regulatory abilities and thresholding effects, miRNA regulation can also reduce noise in target gene expression. See <a class="reference external" href="https://doi.org/10.1126/science.aaa1738">Schmiedel et al, “MicroRNA control of protein expression noise,” Science (2015)</a>.</p>
 </section>
 </section>
 <section id="Molecular-titration-in-antibiotic-persistence">
-<h2>Molecular titration in antibiotic persistence<a class="headerlink" href="#Molecular-titration-in-antibiotic-persistence" title="Permalink to this headline"></a></h2>
+<h2>Molecular titration in antibiotic persistence<a class="headerlink" href="#Molecular-titration-in-antibiotic-persistence" title="Permalink to this heading"></a></h2>
 <p>In an upcoming chapter, we will analyze a phenomenon known as antibiotic persistence, in which individual bacteria spontaneously and stochastically enter slow-growing persistent states that tolerate antibiotics, even in the absence of those antibiotics. One such system in E. coli is controlled by the hipAB circuit, which comprises a toxin protein, HipA, and a cognate anti-toxin, HipB. The two proteins are expressed from a single operon. They form tight complexes that also act to repress their
 own promoter. If the levels of the HipA toxin exceed those of the HipB anti-toxin, for example due to stochastic fluctuations in expession, it can trigger a transition into the persistent state.</p>
 <div style="margin: auto; width: 250px;"><img alt="The hipAB toxin-antitoxin_circuit" src="../_images/toxin-antitoxin_circuit.png" />
@@ -2011,12 +1750,12 @@ own promoter. If the levels of the HipA toxin exceed those of the HipB anti-toxi
 <p>We will come back to this circuit later once we have the tools to analyze and simulate noise, and understand how noise combines with molecular titration to enable this important phenomenon.</p>
 </section>
 <section id="Beyond-pairwise-titration">
-<h2>Beyond pairwise titration<a class="headerlink" href="#Beyond-pairwise-titration" title="Permalink to this headline"></a></h2>
+<h2>Beyond pairwise titration<a class="headerlink" href="#Beyond-pairwise-titration" title="Permalink to this heading"></a></h2>
 <p>Today we talked about molecular titration arising from interactions between protein pairs. However, proteins often form more complex, and even combinatorial, networks of homo- and hetero-dimerizing components. One example occurs in the control of cell death (apoptosis) by Bcl2-family proteins, a process that naturally should be performed in an all-or-none way. In the next chapter, we will learn about a synthetic circuit that takes advantage of these interactions to generate multistability in
 mammalian cells.</p>
 </section>
 <section id="Conclusions">
-<h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this headline"></a></h2>
+<h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this heading"></a></h2>
 <p>Today we have seen that molecular titration provides a powerful, elegant way to generate ultrasensitive responses across different types of molecular systems:</p>
 <ul class="simple">
 <li><p>The general principle of molecular titration: formation of a tight complex between two species makes the concentration of a “free” protein species depend in a threshold-linear manner on its total level or rate of production.</p></li>
@@ -2025,7 +1764,7 @@ mammalian cells.</p>
 </ul>
 </section>
 <section id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this headline"></a></h2>
+<h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Molecular titration can generate ultrasensitive switches:</p>
 <ul>
@@ -2037,7 +1776,7 @@ mammalian cells.</p>
 </li>
 <li><p>Molecular titration in regulation by small RNAs:</p>
 <ul>
-<li><p><a class="reference external" href="https://doi.org/10.1038/ng.905">S. Mukherji et al, “MicroRNAs can generate thresholds in target gene expression”, Nat. Gen. 2011</a></p></li>
+<li><p><a class="reference external" href="https://doi.org/10.1038/ng.905">S. Mukherji et al, “MicroRNAs can generate thresholds in target gene expression”, Nat. Gen. 2011</a></p></li>
 <li><p><a class="reference external" href="https://doi.org/10.1371/journal.pbio.0050229">Levine et al, PLoS Biol, 2007, Quantitative Characteristics of Gene Regulation by Small RNA</a></p></li>
 </ul>
 </li>
@@ -2050,7 +1789,7 @@ mammalian cells.</p>
 </ul>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this headline"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -2091,11 +1830,11 @@ jupyterlab : 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 26, 2022.
+      <span class="lastupdated">Last updated on Apr 02, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fad45ee7bb0> 
+   <jinja2.runtime.BlockReference object at 0x7fec9ecf4c70> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
