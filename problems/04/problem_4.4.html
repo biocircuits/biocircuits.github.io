@@ -23,7 +23,7 @@
         <script src="../../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
-        <script>let toggleOpenOnPrint = 'true';</script>
+        <script>let toggleOpenOnPrint = 'false';</script>
         <script src="../../_static/togglebutton.js"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -32,7 +32,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Incoherent feed-forward loops serve as dosage compensators" href="../../chapters/05_dosage_compensation.html" />
+    <link rel="next" title="4a. Numerical solution of FFLs" href="../../technical_appendices/04a_numerical_solutions_of_ffls.html" />
     <link rel="prev" title="Problem 4.3: Statistics of random genetic circuits" href="problem_4.3.html" /> 
 </head>
 
@@ -72,12 +72,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#Regulatory-functions-and-their-derivatives">Regulatory functions and their derivatives</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#The-biocircuits-package-and-regulatory-functions">The biocircuits package and regulatory functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#Dynamical-equations-for-FFLs">Dynamical equations for FFLs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#Numerical-solution-of-the-FFL-circuits">Numerical solution of the FFL circuits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#The-C1-FFL-circuit-enables-sign-sensitive-delay">The C1-FFL circuit enables sign-sensitive delay</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#The-I1-FFL-with-AND-logic-is-a-pulse-generator">The I1-FFL with AND logic is a pulse generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#A-dashboard-for-exploring-FFLs">A dashboard for exploring FFLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#References">References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#Computing-environment">Computing environment</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/04_ffls.html#Problems">Problems</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="problem_4.1.html">4.1: Accelerated responses with FFLs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="problem_4.2.html">4.2: A tri-stable cell-fate determinant circuit</a></li>
@@ -85,6 +83,8 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">4.4: XOR gates</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#Technical-appendix">Technical appendix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/04_ffls.html#Computing-environment">Computing environment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
@@ -203,18 +203,18 @@ your circuit? How about feedback loops?</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="problem_4.3.html" class="btn btn-neutral float-left" title="Problem 4.3: Statistics of random genetic circuits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../chapters/05_dosage_compensation.html" class="btn btn-neutral float-right" title="5. Incoherent feed-forward loops serve as dosage compensators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../technical_appendices/04a_numerical_solutions_of_ffls.html" class="btn btn-neutral float-right" title="4a. Numerical solution of FFLs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 05, 2023.
+      <span class="lastupdated">Last updated on Apr 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fab9c142aa0> 
+   <jinja2.runtime.BlockReference object at 0x7fe9acd5ce50> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
