@@ -34,7 +34,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Problem 3.1: Modes of bistability" href="../problems/03/problem_3.1.html" />
-    <link rel="prev" title="3. Bistability through positive feedback" href="../chapters/03_bistability.html" /> 
+    <link rel="prev" title="3. Stcky switches: bistability through positive feedback" href="../chapters/03_bistability.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -62,7 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/00_setting_up_python_computing_environment.html">0. Configuring your computer to use Python for scientific computing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/02_response_time.html">2. Design principles governing the rate of gene expression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/03_bistability.html">3. Bistability through positive feedback</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/03_bistability.html">3. Stcky switches: bistability through positive feedback</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
@@ -84,8 +84,9 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="02a_numerical_odes.html">2a. Numerical solutions to ODEs with SciPy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02b_interactive_plotting.html">2b. Interactive plotting with Bokeh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02a_approximate_autorepression_dynamics.html">2a. Approximate solutions to autorepressive dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02b_numerical_odes.html">2b. Numerical solutions to ODEs with SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02c_interactive_plotting.html">2c. Interactive plotting with Bokeh</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3a. Nondimensionalization</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Why-nondimensionalize?">Why nondimensionalize?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#The-Buckingham-π-Theorem">The Buckingham π Theorem</a></li>
@@ -96,6 +97,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#Computing-environment">Computing environment</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="04a_numerical_solutions_of_ffls.html">4a. Numerical solution of FFLs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04a_numerical_solutions_of_ffls.html#Computing-environment">Computing environment</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul>
@@ -123,7 +126,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../chapters/03_bistability.html">3. Bistability through positive feedback</a></li>
+          <li class="breadcrumb-item"><a href="../chapters/03_bistability.html">3. Stcky switches: bistability through positive feedback</a></li>
       <li class="breadcrumb-item active">3a. Nondimensionalization</li>
   <li class="wy-breadcrumbs-aside">
     
@@ -202,8 +205,8 @@ see below, it is convenient to choose them to be <span class="math notranslate n
 </section>
 <section id="Procedure-for-nondimensionalization">
 <h2>Procedure for nondimensionalization<a class="headerlink" href="#Procedure-for-nondimensionalization" title="Permalink to this heading"></a></h2>
-<p>Those the Buckingham π Theorem gives how many dimensionless groups will be present, there is no one way to determine those groups to nondimensionalize a set of dynamical equations. In the context of systems biology, we have found the following procedure to be generally effective. Let <span class="math notranslate nohighlight">\(\theta\)</span> be one of the variables in a dynamical equation, including space and time. In the above dynamical equations, <span class="math notranslate nohighlight">\(\theta\)</span> could be either <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(t\)</span>. (There are no spatial variables in
-this problem. Also, recall that <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(n\)</span> are system <em>parameters</em>, not variables.)</p>
+<p>Although the Buckingham π Theorem tells us many dimensionless groups will be present, there is no single algorithmic procedure to determine those groups for a given set of dynamical equations. In the context of systems biology, we have found the following procedure to be generally effective.</p>
+<p>Let <span class="math notranslate nohighlight">\(\theta\)</span> be one of the variables in a dynamical equation, including space and time. In the above dynamical equations, <span class="math notranslate nohighlight">\(\theta\)</span> could be either <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(t\)</span>. (There are no spatial variables in this problem. Also, recall that <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(n\)</span> are system <em>parameters</em>, not variables.)</p>
 <ol class="arabic simple">
 <li><p>For each variable (including time), define a dimensionless version (which we will usually mark with a tilde) such that <span class="math notranslate nohighlight">\(\theta = \theta_d \tilde{\theta}\)</span>, where <span class="math notranslate nohighlight">\(\theta\)</span> is some variable. Here, <span class="math notranslate nohighlight">\(\tilde{\theta}\)</span> is called a <strong>dimensionless variable</strong>, and the constant <span class="math notranslate nohighlight">\(\theta_d\)</span> imparts the dimension of <span class="math notranslate nohighlight">\(\theta\)</span> (hence the subscript <em>d</em>).</p></li>
 <li><p>Substitute these expressions into the dynamical equations.</p></li>
@@ -241,7 +244,7 @@ this problem. Also, recall that <span class="math notranslate nohighlight">\(\be
 \end{align}</span></p>
 <p>We now see that the entire nondimensional dynamics of our system can be described using only two parameters, <span class="math notranslate nohighlight">\(\tilde{\beta}\)</span> and <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>As an added bonus, nondimensionalization makes clear what dimensionless parameters, which are ratios of dimensional parameters, are important for the dynamics. It is always important to reason about what the dimensionless parameters represent. In this case, we already know that <span class="math notranslate nohighlight">\(n\)</span> is the Hill coefficient, which represents the ultrasensitivity of the gene’s regulation. We see from its definition that <span class="math notranslate nohighlight">\(\tilde{\beta} = \beta/\gamma k\)</span> is the ratio of the gene’s unregulated steady state
-(which we know from <a class="reference internal" href="../chapters/01_intro_to_circuit_design.html"><span class="doc">Chapter 1</span></a> to be <span class="math notranslate nohighlight">\(\beta/\gamma\)</span>) and the Hill activation parameter <span class="math notranslate nohighlight">\(k\)</span>, the concentration of X at which the activation of its regulated gene is half-maximal. In other words, <span class="math notranslate nohighlight">\(\tilde{\beta}\)</span> can be interpreted as a ratio of X’s expression level to the level of X necessary to activate itself.</p>
+(which we know from <a class="reference internal" href="../chapters/01_intro_to_circuit_design.html"><span class="doc">Chapter 1</span></a> to be <span class="math notranslate nohighlight">\(\beta/\gamma\)</span>) and the Hill activation parameter <span class="math notranslate nohighlight">\(k\)</span>, the concentration of X at which the activation of its regulated gene is half-maximal. In other words, <span class="math notranslate nohighlight">\(\tilde{\beta}\)</span> can be interpreted as a ratio of X’s unregulated steady state expression level to the level of X necessary to activate itself.</p>
 <p>Because tildes can be notionally cumbersome, we will often drop them for convenience, writing redefinition of parameters and variables as, for this example,</p>
 <p><span class="math">\begin{align}
 &t \leftarrow \gamma t,\\[1em]
@@ -483,7 +486,7 @@ jupyterlab: 3.5.3
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../chapters/03_bistability.html" class="btn btn-neutral float-left" title="3. Bistability through positive feedback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../chapters/03_bistability.html" class="btn btn-neutral float-left" title="3. Stcky switches: bistability through positive feedback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../problems/03/problem_3.1.html" class="btn btn-neutral float-right" title="Problem 3.1: Modes of bistability" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -491,11 +494,11 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 06, 2023.
+      <span class="lastupdated">Last updated on Apr 10, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fe9aeff1480> 
+   <jinja2.runtime.BlockReference object at 0x7fbf944e8040> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

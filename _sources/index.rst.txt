@@ -42,10 +42,11 @@ Biological Circuit Design
    :maxdepth: 1
    :caption: Technical Appendices
 
-   technical_appendices/02a_numerical_odes.ipynb
-   technical_appendices/02b_interactive_plotting.ipynb
+   technical_appendices/02a_approximate_autorepression_dynamics.ipynb
+   technical_appendices/02b_numerical_odes.ipynb
+   technical_appendices/02c_interactive_plotting.ipynb
    technical_appendices/03a_nondimensionalization.ipynb
-
+   technical_appendices/04a_numerical_solutions_of_ffls.ipynb
 
 .. toctree::
    :maxdepth: 1
