@@ -85,6 +85,7 @@
 <p class="caption" role="heading"><span class="caption-text">Technical Appendices</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2a. Approximate solutions to autorepressive dynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Dynamics-of-an-autorepression-circuit-with-strong-ultrasensitivity">Dynamics of an autorepression circuit with strong ultrasensitivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Approximate-solution-with-small-n">Approximate solution with small <span class="math notranslate nohighlight">\(n\)</span></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Computing-environment">Computing environment</a></li>
 </ul>
@@ -466,11 +467,17 @@ if (force === true) {
 }(window));
 </script></div>
 </div>
-<p>While there is no analytical solution for the dynamics of <span class="math notranslate nohighlight">\(x(t)\)</span>, we can determine the steady state. It is found by setting the time derivative to zero, or</p>
+<section id="Dynamics-of-an-autorepression-circuit-with-strong-ultrasensitivity">
+<h2>Dynamics of an autorepression circuit with strong ultrasensitivity<a class="headerlink" href="#Dynamics-of-an-autorepression-circuit-with-strong-ultrasensitivity" title="Permalink to this heading"></a></h2>
+<p>Recall that the differential equation describing the dynamics of autorepressive gene expression is</p>
+<p><span class="math">\begin{align}
+\frac{\mathrm{d}x}{\mathrm{d}t} = \frac{\beta}{1+(x/k)^n} - \gamma x.
+\end{align}</span></p>
+<p>We begin our path toward an approximate solution by examining the steady state. It is found by setting the time derivative to zero, or</p>
 <p><span class="math">\begin{align}
 \frac{\beta}{1+(x_\mathrm{ss}/k)^n} - \gamma x_\mathrm{ss} = 0.
 \end{align}</span></p>
-<p>The can be rearranged as</p>
+<p>This can be rearranged as</p>
 <p><span class="math">\begin{align}
 \left(\frac{x_\mathrm{ss}}{k}\right)^{n+1} + \frac{x_\mathrm{ss}}{k} - \frac{\beta}{\gamma k} = 0.
 \label{eq:polynomial_xss}
@@ -479,8 +486,12 @@ if (force === true) {
 <p><span class="math">\begin{align}
 \frac{x_\mathrm{ss}}{k} \approx \frac{\beta}{\gamma k}.
 \end{align}</span></p>
-<p>Thus, we see that having <span class="math notranslate nohighlight">\(x_\mathrm{ss} &lt; k\)</span> requires that <span class="math notranslate nohighlight">\(\beta/\gamma k &lt; 1\)</span>. This is the case for weak repression; the concentration of repressor necessary to invoke repression, <span class="math notranslate nohighlight">\(k\)</span>, is less than the steady state level for unregulated expression, <span class="math notranslate nohighlight">\(\beta/\gamma\)</span>. Conversely, if we have strong repression (<span class="math notranslate nohighlight">\(\beta/\gamma k &gt; 1\)</span>), we must also have <span class="math notranslate nohighlight">\(x_\mathrm{ss}/k &gt; 1\)</span>. However, <span class="math notranslate nohighlight">\(x_\mathrm{ss}/k\)</span> must not be <em>much</em> greater than one, since the first term
-in equation <span class="math">\eqref{eq:polynomial_xss}</span> will get to be very large for large <span class="math notranslate nohighlight">\(n\)</span>. Therefore, for strong ultrasensitivity and for strong repression, the steady state is <span class="math notranslate nohighlight">\(x_\mathrm{ss} \approx k\)</span>.</p>
+<p>Thus, we see that having <span class="math notranslate nohighlight">\(x_\mathrm{ss} &lt; k\)</span> requires that <span class="math notranslate nohighlight">\(\beta/\gamma k &lt; 1\)</span>. This is the case for weak repression; the concentration of repressor necessary to invoke repression, <span class="math notranslate nohighlight">\(k\)</span>, is less than the steady state level for unregulated expression, <span class="math notranslate nohighlight">\(\beta/\gamma\)</span>. Conversely, if we have strong repression (<span class="math notranslate nohighlight">\(\beta/\gamma k &gt; 1\)</span>), we must also have <span class="math notranslate nohighlight">\(x_\mathrm{ss}/k &gt; 1\)</span>. In this case, the first term in equation <span class="math">\eqref{eq:polynomial_xss}</span>
+dominates over the second and</p>
+<p><span class="math">\begin{align}
+x_\mathrm{ss} \approx k\left(\frac{\beta}{\gamma k}\right)^{\frac{1}{n+1}}
+\end{align}</span></p>
+<p>If <span class="math notranslate nohighlight">\(n\)</span> is very large, the n-plus-first root of <span class="math notranslate nohighlight">\(\beta/\gamma k\)</span> is close to one, even if <span class="math notranslate nohighlight">\(\beta/\gamma k\)</span> is large. Therefore, for very strong ultrasensitivity, the steady state is <span class="math notranslate nohighlight">\(x_\mathrm{ss} \approx k\)</span>.</p>
 <p>For <em>very</em> strong repression, <span class="math notranslate nohighlight">\(\beta/\gamma k \gg 1\)</span> (again along with strong autorepression), we expect the level of <span class="math notranslate nohighlight">\(x\)</span> to rise as if it is unregulated until it hits <span class="math notranslate nohighlight">\(k\)</span>, at which point strong repression kicks in. The resulting approximate dynamics are described by</p>
 <p><span class="math">\begin{align}
 x(t) \approx \left\{\begin{array}{lll}
@@ -534,7 +545,7 @@ k & & t \ge k/\beta
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="06775869-31b0-4690-8744-9e1ab129d1d5" data-root-id="p1002" style="display: contents;"></div></div>
+<div id="5987e1dc-64ff-4aeb-b7f7-72245f296f2c" data-root-id="p1002" style="display: contents;"></div></div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
@@ -545,8 +556,8 @@ k & & t \ge k/\beta
 var element = document.currentScript.previousSibling.previousSibling;
 (function(root) {
   function embed_document(root) {
-  const docs_json = {"f803e78d-2485-461b-b2f0-3f6eb16029e9":{"version":"3.1.0","title":"Bokeh Application","defs":[],"roots":[{"type":"object","name":"Figure","id":"p1002","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1011","attributes":{"end":2}},"y_range":{"type":"object","name":"DataRange1d","id":"p1004"},"x_scale":{"type":"object","name":"LinearScale","id":"p1015"},"y_scale":{"type":"object","name":"LinearScale","id":"p1017"},"title":{"type":"object","name":"Title","id":"p1006"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1058","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1052","attributes":{"selected":{"type":"object","name":"Selection","id":"p1054","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1053"},"data":{"type":"map","entries":[["x",[0,1,2]],["y",[0,1,1]]]}}},"view":{"type":"object","name":"CDSView","id":"p1059","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1060"}}},"glyph":{"type":"object","name":"Line","id":"p1055","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1056","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1057","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1067","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1061","attributes":{"selected":{"type":"object","name":"Selection","id":"p1063","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1062"},"data":{"type":"map","entries":[["x",[0.2,0.2,0.3]],["y",[0.2,0.3,0.3]]]}}},"view":{"type":"object","name":"CDSView","id":"p1068","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1069"}}},"glyph":{"type":"object","name":"Line","id":"p1064","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"}}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1065","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_alpha":0.1}},"muted_glyph":{"type":"object","name":"Line","id":"p1066","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_alpha":0.2}}}},{"type":"object","name":"GlyphRenderer","id":"p1076","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1070","attributes":{"selected":{"type":"object","name":"Selection","id":"p1072","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1071"},"data":{"type":"map","entries":[["x",[0.125]],["y",[0.25]],["text",["\u03b2"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1077","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1078"}}},"glyph":{"type":"object","name":"Text","id":"p1073","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"text":{"type":"field","field":"text"},"text_color":{"type":"value","value":"black"},"text_font_size":{"type":"value","value":"12pt"}}},"nonselection_glyph":{"type":"object","name":"Text","id":"p1074","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"text":{"type":"field","field":"text"},"text_color":{"type":"value","value":"black"},"text_alpha":{"type":"value","value":0.1},"text_font_size":{"type":"value","value":"12pt"}}},"muted_glyph":{"type":"object","name":"Text","id":"p1075","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"text":{"type":"field","field":"text"},"text_color":{"type":"value","value":"black"},"text_alpha":{"type":"value","value":0.2},"text_font_size":{"type":"value","value":"12pt"}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1010","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1033"},{"type":"object","name":"WheelZoomTool","id":"p1034"},{"type":"object","name":"BoxZoomTool","id":"p1035","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1036","attributes":{"syncable":false,"level":"overlay","visible":false,"left_units":"canvas","right_units":"canvas","bottom_units":"canvas","top_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"SaveTool","id":"p1037"},{"type":"object","name":"ResetTool","id":"p1038"},{"type":"object","name":"HelpTool","id":"p1039"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1026","attributes":{"ticker":{"type":"object","name":"FixedTicker","id":"p1050","attributes":{"ticks":[0,1],"minor_ticks":[]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1029"},"axis_label":"x(t)","major_label_overrides":{"type":"map","entries":[[1,"$$k$$"]]},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1019","attributes":{"ticker":{"type":"object","name":"FixedTicker","id":"p1048","attributes":{"ticks":[0,1],"minor_ticks":[]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"time","major_label_overrides":{"type":"map","entries":[[1,"$$k/\\beta$$"]]},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1021"}}}],"center":[{"type":"object","name":"Grid","id":"p1025","attributes":{"axis":{"id":"p1019"}}},{"type":"object","name":"Grid","id":"p1032","attributes":{"dimension":1,"axis":{"id":"p1026"}}}],"frame_width":300,"frame_height":175}}],"callbacks":{"type":"map"}}};
-  const render_items = [{"docid":"f803e78d-2485-461b-b2f0-3f6eb16029e9","roots":{"p1002":"06775869-31b0-4690-8744-9e1ab129d1d5"},"root_ids":["p1002"]}];
+  const docs_json = {"8878b488-80ea-456c-8bf7-0ead39fc4017":{"version":"3.1.0","title":"Bokeh Application","defs":[],"roots":[{"type":"object","name":"Figure","id":"p1002","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1011","attributes":{"end":2}},"y_range":{"type":"object","name":"DataRange1d","id":"p1004"},"x_scale":{"type":"object","name":"LinearScale","id":"p1015"},"y_scale":{"type":"object","name":"LinearScale","id":"p1017"},"title":{"type":"object","name":"Title","id":"p1005"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1058","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1052","attributes":{"selected":{"type":"object","name":"Selection","id":"p1053","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1054"},"data":{"type":"map","entries":[["x",[0,1,2]],["y",[0,1,1]]]}}},"view":{"type":"object","name":"CDSView","id":"p1059","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1060"}}},"glyph":{"type":"object","name":"Line","id":"p1055","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1056","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1057","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1067","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1061","attributes":{"selected":{"type":"object","name":"Selection","id":"p1062","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1063"},"data":{"type":"map","entries":[["x",[0.2,0.2,0.3]],["y",[0.2,0.3,0.3]]]}}},"view":{"type":"object","name":"CDSView","id":"p1068","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1069"}}},"glyph":{"type":"object","name":"Line","id":"p1064","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"}}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1065","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_alpha":0.1}},"muted_glyph":{"type":"object","name":"Line","id":"p1066","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_alpha":0.2}}}},{"type":"object","name":"GlyphRenderer","id":"p1076","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1070","attributes":{"selected":{"type":"object","name":"Selection","id":"p1071","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1072"},"data":{"type":"map","entries":[["x",[0.125]],["y",[0.25]],["text",["\u03b2"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1077","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1078"}}},"glyph":{"type":"object","name":"Text","id":"p1073","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"text":{"type":"field","field":"text"},"text_color":{"type":"value","value":"black"},"text_font_size":{"type":"value","value":"12pt"}}},"nonselection_glyph":{"type":"object","name":"Text","id":"p1074","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"text":{"type":"field","field":"text"},"text_color":{"type":"value","value":"black"},"text_alpha":{"type":"value","value":0.1},"text_font_size":{"type":"value","value":"12pt"}}},"muted_glyph":{"type":"object","name":"Text","id":"p1075","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"text":{"type":"field","field":"text"},"text_color":{"type":"value","value":"black"},"text_alpha":{"type":"value","value":0.2},"text_font_size":{"type":"value","value":"12pt"}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1006","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1033"},{"type":"object","name":"WheelZoomTool","id":"p1034"},{"type":"object","name":"BoxZoomTool","id":"p1035","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1036","attributes":{"syncable":false,"level":"overlay","visible":false,"left_units":"canvas","right_units":"canvas","bottom_units":"canvas","top_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"SaveTool","id":"p1037"},{"type":"object","name":"ResetTool","id":"p1038"},{"type":"object","name":"HelpTool","id":"p1039"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1026","attributes":{"ticker":{"type":"object","name":"FixedTicker","id":"p1050","attributes":{"ticks":[0,1],"minor_ticks":[]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"x(t)","major_label_overrides":{"type":"map","entries":[[1,"$$k$$"]]},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1019","attributes":{"ticker":{"type":"object","name":"FixedTicker","id":"p1048","attributes":{"ticks":[0,1],"minor_ticks":[]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1020"},"axis_label":"time","major_label_overrides":{"type":"map","entries":[[1,"$$k/\\beta$$"]]},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1021"}}}],"center":[{"type":"object","name":"Grid","id":"p1025","attributes":{"axis":{"id":"p1019"}}},{"type":"object","name":"Grid","id":"p1032","attributes":{"dimension":1,"axis":{"id":"p1026"}}}],"frame_width":300,"frame_height":175}}],"callbacks":{"type":"map"}}};
+  const render_items = [{"docid":"8878b488-80ea-456c-8bf7-0ead39fc4017","roots":{"p1002":"5987e1dc-64ff-4aeb-b7f7-72245f296f2c"},"root_ids":["p1002"]}];
   root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
   }
   if (root.Bokeh !== undefined) {
@@ -569,9 +580,42 @@ var element = document.currentScript.previousSibling.previousSibling;
 })(window);
 </script></div>
 </div>
+</section>
 <section id="Approximate-solution-with-small-n">
 <h2>Approximate solution with small <span class="math notranslate nohighlight">\(n\)</span><a class="headerlink" href="#Approximate-solution-with-small-n" title="Permalink to this heading"></a></h2>
-<p>This section to be added.</p>
+<p>If we now relax the assumption of strong ultrasensitivity. If <span class="math notranslate nohighlight">\(n\)</span> is not too large, we still have, for strong repression,</p>
+<p><span class="math">\begin{align}
+x_\mathrm{ss} \approx k\left(\frac{\beta}{\gamma k}\right)^{\frac{1}{n+1}}.
+\end{align}</span></p>
+<p>For moderate <span class="math notranslate nohighlight">\(n\)</span> and strong repression,</p>
+<p><span class="math">\begin{align}
+\left(\frac{\beta}{\gamma k}\right)^{\frac{1}{n+1}} \gg 1,
+\end{align}</span></p>
+<p>such that <span class="math notranslate nohighlight">\(x_\mathrm{ss} \gg k\)</span>. Unlike the above case where <span class="math notranslate nohighlight">\(n \gg 1\)</span>, now most of the change in <span class="math notranslate nohighlight">\(x\)</span> happens when <span class="math notranslate nohighlight">\(x &gt; k\)</span>, since the steady state value of <span class="math notranslate nohighlight">\(x\)</span> is so much bigger than <span class="math notranslate nohighlight">\(k\)</span>. If we only consider these later dynamics, that is in the regime where <span class="math notranslate nohighlight">\(x \gg k\)</span>, we have <span class="math notranslate nohighlight">\(1 + (x/k)^n \approx (x/k)^n\)</span> giving the approximate ODE</p>
+<p><span class="math">\begin{align}
+\frac{\mathrm{d}x}{\mathrm{d}t} \approx \frac{\beta}{(x/k)^n} - \gamma x.
+\end{align}</span></p>
+<p>This is a separable differential equation such that</p>
+<p><span class="math">\begin{align}
+\frac{\mathrm{d}x}{\frac{\beta}{(x/k)^n} - \gamma x} = \mathrm{d}t.
+\end{align}</span></p>
+<p>We can integrate both sides of this equation to solve. The right hand side is trivial.</p>
+<p><span class="math">\begin{align}
+\int_0^t\mathrm{d}t' = t.
+\end{align}</span></p>
+<p>The left hand side is integrated as</p>
+<p><span class="math">\begin{align}
+\int_0^x\,\frac{\mathrm{d}x'}{\frac{\beta}{(x'/k)^n} - \gamma x'}
+&= \int_0^x\,\frac{\mathrm{d}x'}{\beta k^n - \gamma (x')^(n+1)} \\[1em]
+&= -\frac{1}{(n+1)\gamma}\int_{\beta k^n}^{\beta k^n - \gamma x^{n+1}}\,\frac{\mathrm{d}u}{u} \\[1em]
+&= -\frac{1}{(n+1)\gamma}\,\ln\left(\frac{\beta k^n - \gamma x^{n+1}}{\beta k^n}\right) \\[1em]
+&= -\frac{1}{(n+1)\gamma}\,\ln\left(1 - \frac{\gamma k}{\beta}\,(x/k)^{n+1}\right).
+\end{align}</span></p>
+<p>Setting the two integrals equal and rearranging to solve for <span class="math notranslate nohighlight">\(x(t)\)</span> gives</p>
+<p><span class="math">\begin{align}
+x(t) \approx k\left(\frac{\beta}{\gamma k}\left(1 - \mathrm{e}^{-(n+1)\gamma t}\right)\right)^{\frac{1}{n+1}},
+\end{align}</span></p>
+<p>the approximate result given in <a class="reference internal" href="../chapters/02_response_time.html"><span class="doc">Chapter 2</span></a>.</p>
 </section>
 <section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
@@ -614,11 +658,11 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 10, 2023.
+      <span class="lastupdated">Last updated on Apr 12, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fbfa3570400> 
+   <jinja2.runtime.BlockReference object at 0x7f890fe61c00> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
