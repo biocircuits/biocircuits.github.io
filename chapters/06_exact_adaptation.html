@@ -174,48 +174,374 @@
 **Systems**
 
 - Bacterial chemotaxis
---><hr><hr><section id="Exact-adaptation-enables-gradient-sensing">
+--><hr><div class="nbinput toggle docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">bokeh.io</span>
+<span class="kn">import</span> <span class="nn">bokeh.plotting</span>
+
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">output_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<style>
+        .bk-notebook-logo {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+        }
+    </style>
+    <div>
+        <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
+        <span id="p1001">Loading BokehJS ...</span>
+    </div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+    // Clean up Bokeh references
+    if (id != null && id in Bokeh.index) {
+      Bokeh.index[id].model.document.clear();
+      delete Bokeh.index[id];
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim();
+            if (id in Bokeh.index) {
+              Bokeh.index[id].model.document.clear();
+              delete Bokeh.index[id];
+            }
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded() {
+    const el = document.getElementById("p1001");
+    if (el != null) {
+      el.textContent = "BokehJS is loading...";
+    }
+    if (root.Bokeh !== undefined) {
+      if (el != null) {
+        el.textContent = "BokehJS " + root.Bokeh.version + " successfully loaded.";
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(display_loaded, 100)
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.1.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.1.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.1.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.1.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.1.0.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+          for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById("p1001")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script></div>
+</div>
+<hr><section id="Exact-adaptation-enables-gradient-sensing">
 <h2>Exact adaptation enables gradient sensing<a class="headerlink" href="#Exact-adaptation-enables-gradient-sensing" title="Permalink to this heading"></a></h2>
-<p>The previous chapter provided a first glimpse of robustness. We saw how the simple IFFL circuit architecture could, under the right conditions, make a protein’s concentration independent of the number of copies of its own gene. Today, we will extend the concept of robustness in two ways: First, we will shift from static steady state protein expression systems to dynamic signal transduction systems that can sense rates of change in their input. Second, we will shift from the level of gene
-expression circuits that has captured our attention so far to the level of circuits of interacting proteins. To do this, we will focus on one of the best studied signaling systems in biology: bacterial chemotaxis and its ability to exactly adapt biochemical pathway activity to the same constant level across a wide range of input concentrations.</p>
-<p>Before we get started, consider a familiar example of adaptation in our own visual system. Outdoors, your eyes are sensitive to relative differences in light intensity, allowing you to clearly see the world around you. Step inside, and ambient light intensities decrease by orders of magnitude. Initially, everything looks dim. But over the next ~15 or so minutes, your eyes increase their “gain” and soon enough objects look bright again. Your visual system has adapted to lower light by increasing
-amplification. This allows it to remain sensitive to variations in light intensity around the ambient level. Even when blind to light, bacteria can achieve something similar.</p>
-<p>Bacterial cells are sensitive, hungry, and frightened. They navigate through space towards regions of higher concentrations of some molecules, termed attractants, and away from others, termed repellents. (Here, we will focus on attractants, but similar behaviors are observed for repellents.) Navigation requires that bacteria sense local gradients of attractant and move up them.</p>
-<p>Due to their small size, they must infer these spatial gradients by swimming for a little while, and then checking whether attractant concentrations are increasing or decreasing. In other words, they use swimming to convert spatial gradients into temporal gradients. When conditions are improving (attractant is increasing) they tend to keep swimming in the same direction. Otherwise, they under go a directional randomization process called “tumbling” and set off in a new direction. Remarkably,
-they are able to sense spatial gradients in attractants over five orders of magnitude of ambient concentrations. For a beautiful description of how bacteria swim up gradients, you should read the classic paper by Berg and Purcell (<a class="reference external" href="https://doi.org/10.1016/S0006-3495(77)85544-6">Berg and Purcell, 1977</a>).</p>
-<p>For this to work, bacteria must constantly adapt their basal signal perception to the ambient environment. If they did not, their sensory system would either be flooded, at high attractant concentration, or be completely shut off, at low attractant concentration. In either extreme, they would be “blind” to local variations. More precisely, the signaling system must exhibit <strong>exact adaptation</strong>, meaning its value should always returns to the same initial steady state level after a change in its
-input value.</p>
-<div style="width: 400px; margin: auto;"><img alt="CheA system" src="../_images/ExactAdaptationSchematic.png" />
-</div><p>In this chapter, we will explore various models of the <em>E. coli</em> Che (pronounced “key”) system, which governs its chemotaxis, to understand how this exact adaptation is accomplished. This treatment is largely based on Chapter 9 of Uri Alon’s <em>Systems Biology</em>, 2nd Ed., which should be consulted for a deeper treatment of each molecular model.</p>
+<p>The previous chapter provided a first glimpse of how robustness can emerge from circuit architecture. We saw how an incoherent feed-forward loop (IFFL) could, under the right conditions, make a protein’s concentration independent of the number of copies of its own gene. Today, we will extend the concept of robustness in two ways: First, we will shift from static steady state protein expression systems to dynamic signal transduction systems, which sense the rate of change of their inputs. Second,
+we will shift from the level of gene regulation, which we have focused on so far, to circuits of interacting proteins. To do this, we will analyze one of the best studied signaling systems in biology—bacterial chemotaxis—to understand how and why it adapts is output activity to a constant level across a wide range of input concentrations.</p>
+<p>Before we get started, consider a familiar example of adaptation in our own visual system. Outdoors, your eyes are sensitive to relative differences in light intensity, allowing you to perceive variations. Step inside, and ambient light intensities decrease by orders of magnitude. Initially, everything looks dim. But over the next ~15 or so minutes, your eyes increase their “gain” and soon enough objects look bright again. Your visual system has adapted to lower light by increasing
+amplification. This allows it to remain sensitive to variations in light intensity around the new ambient level.</p>
+<p>Bacteria achieve something similar in their sensing of chemical stimuli. Bacterial cells are sensitive, hungry, and frightened. They navigate through space towards regions of higher concentrations of some molecules, termed attractants, and away from others, termed repellents. (Here, we will focus on attractants, but similar behaviors are observed for repellents.) Navigation requires that bacteria move up local attractant concentration gradients.</p>
+<p>Due to their small size, bacteria cannot make independent measurements of concentration at two different points to estimate the local gradient. Insteady, they estimate spatial gradients by swimming for a little while, and checking whether attractant concentrations are increasing or decreasing over time. When conditions are improving (attractant is increasing) they tend to keep swimming for longer in the same direction. Otherwise, they under go a directional randomization process called
+“tumbling” and set off in a new direction. In other words, bacteria use swimming to convert spatial gradients into temporal gradients. Remarkably, they are able to sense spatial gradients in attractants over five orders of magnitude of ambient concentrations. A classic paper by Berg and Purcell (<a class="reference external" href="https://doi.org/10.1016/S0006-3495(77)85544-6">Berg and Purcell, 1977</a>) provides a beautiful, engaging description of how bacteria swim up gradients.</p>
+<p>For this approach to work, bacteria must constantly adapt their basal signal perception to the ambient environment. If they did not, their sensory system would either be flooded, at high ambient attractant concentration, or be completely shut off, at low ambient attractant concentration. In either extreme, they would be “blind” to local variations. More precisely, the signaling system must exhibit <strong>exact adaptation</strong>, meaning its value should always returns to the same initial steady state
+level after a change in its input value.</p>
+<div style="width: 400px; margin: auto;"><img alt="CheA system" src="../_images/exact_adaptation_schematic.png" />
+</div><p>In this chapter, we will explore various models of the <em>E. coli</em> Che (pronounced “key”) system, which governs its chemotaxis, to understand how this exact adaptation is accomplished. This treatment is based on Chapter 9 of Uri Alon’s <em>Systems Biology</em>, 2nd Ed., which provides a deeper treatment of the molecular models and much additional perspective.</p>
 </section>
 <section id="The-molecular-sources-of-robustness-in-the-E.-coli-chemotaxis-system">
 <h2>The molecular sources of robustness in the <em>E. coli</em> chemotaxis system<a class="headerlink" href="#The-molecular-sources-of-robustness-in-the-E.-coli-chemotaxis-system" title="Permalink to this heading"></a></h2>
-<p>To understand how <em>E. coli</em> perform chemotaxis, we must first understand how <em>E. coli</em> swim. Their flagellar motors spin in an anticlockwise direction when they are being propelled forward in a so-called “run.” Occasionally, a few of the motors switch to a clockwise rotation, which causes the bacterium to stall and spin in a so-called “tumble.” When the motors switch to spinning anticlockwise, the bacterium runs again in a new, random direction.</p>
-<p>If a bacterium is swimming up a gradient of attractant, its switching frequency decreases and it continues up the gradient. If however, there is no <em>gradient</em>, but rather a more uniform concentration of attractant, the switching frequency returns back to the level it was before detecting the gradient. This leads to a statement about robustness: <strong>The steady state tumbling frequency of the Che system is robust to variations in total attractant concentration</strong> over an operating regime that spans
-over five orders of magnitude of total attractant concentration!</p>
+<p>To understand how <em>E. coli</em> perform chemotaxis, we must first understand how <em>E. coli</em> swim. They propel themselves forward in “runs” by spinning their flagellar motors in a counter-clockwise direction for timescales of order ~1 second. Occasionally, and stochastically, a few of the motors switch to a clockwise rotation. This causes the flagella to fly apart, stalling the run, and initiating a distinct movement, termed a “tumble,” in which the bacterium flails around erratically for about ~0.1
+seconds. Eventually the motors switch to spinning anticlockwise, and the bacterium runs again in a new, random direction.</p>
+<p>If a bacterium is swimming up a gradient of attractant, its switching frequency decreases, biasing its motion in the direction of the gradient. In the absence of a gradient, the switching frequency returns, or adapts, back to its value before entering the gradient, producing an approximately constant frequency of tumbles. The bias in the tumbling frequency leads to a bias in the mean direction of the motion, towards regions of higher attractant concentration.</p>
+<p>Remarkably, <strong>the steady state tumbling frequency of the Che system is robust to variations in total attractant concentration</strong> over an operating regime that spans over five orders of magnitude of total attractant concentration!</p>
 <p>The switching frequency is controlled by the Che system, shown in the image below.</p>
 <div style="width: 400px; margin: auto;"><img alt="CheA system" src="../_images/chea_system.png" />
-</div><p>The CheA receptor complex, which we shall call X, is autophosphorylated. CheA can transfer its phosphate to an effector protein called CheY. Phosphorylated CheY can interact with the flagellar motor to induce tumbling. Attractants inhibit autophosphorylation, reducing phosphorylation of CheY, and thereby suppressing tumbles.</p>
-<p>Within the model, making the steady state tumbling frequency invariant to total attractant concentration requires that the level of phosphorylated CheA return to the same steady state <em>regardless of the attractant concentration</em>.</p>
+</div><p>The CheA receptor complex, which we shall call X, consists of one of a family of chemotaxis receptors that recognize different ligands (attractants or repellents) together with the CheA histidine kinase. Like many histidine kinases, CheA can autophosphorylate. Here, the rate of autophosphorylation depends on whether the associated receptor is or is not bound to its ligand. For an attractant receptor, ligand binding reduces CheA autophosphorylation. As with many allosteric modulation mechanisms,
+ligands are thought to modulate activity by altering the dynamics with which CheA switches between active and inactive conformations.</p>
+<p>Once phosphorylated, CheA can transfer its phosphate group to an effector protein called CheY. Phosphorylated CheY can then interact with the flagellar motor to induce tumbling.</p>
+<p>Because attractants inhibit autophosphorylation, they reduce phosphorylation of CheY, and thereby suppress tumbles. Thus, at the most basic level, the chemotaxis system responds to ligands by modulating tumbling frequency.</p>
+<p>However, in this picture, the ligand concentration directly and rapidly controls the tumbling frequency, but provides no obvious means of adaptation. How then does the system adapt?</p>
+<p>The mechanism for adaptation involves a second, and distinct control mechanism based on receptor methylation. Two enzymes, CheR and CheB respectively methylate and demethylate chemotaxis receptors. Methylation increases receptor activity. (See <a class="reference external" href="http://doi.org/10.1016/j.tim.2015.03.003">Parkinson, et al., 2015</a> for a review of the molecules involved in the circuit.)</p>
+<p>Adaptation occurs through a negative feedback loop: CheA not only phosphorylates CheY, it also phosphorylates CheB as well. CheB phosphorylation increases CheB’s demethylation activity, and thereby reduces receptor methylation, leading to a corresponding reduction in receptor complex activity. This negative feedback loop operates on a slower timescale than the response of the receptor to a change in ligand concentration, and is responsible for adaptation.</p>
+<div style="width: 400px; margin: auto;"><img alt="chemotaxis-methylation" src="../_images/chemotaxis-methylation.png" />
+</div><p>Thus, we can imagine a possible dynamic sequence of events. Suppose the cell is in an environment with constant ligand concentration. Suddenly, it encounters an increase in ligand concentration. This reduces CheA autophosphorylation, diminishing phosphotransfer to CheY to reduce tumble frequency, while also diminishing phosphotransfer to CheB to reduce demethylation, and thereby increase methylation, restoring activity to its pre-stimulus level.</p>
 <section id="The-CheA-circuit">
 <h3>The CheA circuit<a class="headerlink" href="#The-CheA-circuit" title="Permalink to this heading"></a></h3>
-<p>In our analysis of the Che circuit, we will zoom in on the CheA portion of the circuit in the orange box in the figure above. We will consider a simplified version of the circuit that omits some states and interactions but allows undderstanding of the key feature of exact adaptation.</p>
-<p>Activation of the CheA receptor complex involves multiple molecules and states. The CheA receptor complex has active and inactive states, with attractant binding favoring the inactive state. Furthermore, CheA can be methylated by a methyltransferase called CheR or demethylated by an opposing methylesterase, CheB. (See <a class="reference external" href="http://doi.org/10.1016/j.tim.2015.03.003">Parkinson, et al., 2015</a> for a review of the molecules involved in the circuit.) A simplified schematic of these interactions is shown
-in the image below.</p>
-<p>We will consider the activity in the purple box phenomenologically, positing that</p>
-<p><span class="math">\begin{align}
-\text{tumbling frequency} \equiv f = g(a)\,x_m^*,
-\end{align}</span></p>
-<p>where <span class="math notranslate nohighlight">\(g(a)\)</span> is some function of the attractant concentration, <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(x_m^*\)</span> is the concentration of the active methylated CheA receptor complex.</p>
+<p>This picture is appealing. However, making it perform perfect adaptation is not trivial. After all it requires not only that methylation change in the right direction, but also that it change exactly the right amount to perfectly compensate for the change in CheA activity due to addition of ligand and that it do so <em>regardless of the initial or final attractant concentration</em>.</p>
+<p>To see why this is difficult, we will zoom in a little more into the dynamics of the CheA histidine kinase that associates with various chemotaxis receptors. We will use a simplified model that omits some states and interactions, but provides insight into the origins of exact adaptation.</p>
+<p>The key entity that we will focus on is the CheA receptor complex. Its activity can be modulated both by ligands and methylation. Putting these two dimensions of regulation together, we obtain a diagram like the following:</p>
 <div style="width: 600px; margin: auto;"><img alt="fine-tuned Che system" src="../_images/finetuned_che.png" />
-</div><p>The combination of being in the active and methylated state results in a much more active receptor, so we will be most interested in the concentration of <span class="math notranslate nohighlight">\(\mathrm{X}_m^*\)</span>.</p>
+</div><p>Thus, we consider four distinct states of the CheA receptor. It can be methylated or unmethylated. It can also be in a more active or less active conformation. Ligands shift the bias between these conformations, which can also depend on the methylation state. These four states can be denoted <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(X_m\)</span>, <span class="math notranslate nohighlight">\(X^*\)</span>, and <span class="math notranslate nohighlight">\(X_m^*\)</span>, with the subscript <span class="math notranslate nohighlight">\(m\)</span> denoting methylation state, and superscript <span class="math notranslate nohighlight">\(*\)</span> denoting the more active conformational state. We use lower case
+variables, <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(x_m\)</span>, <span class="math notranslate nohighlight">\(x^*\)</span>, and <span class="math notranslate nohighlight">\(x^*_m\)</span>, to denote the concentrations of complexes in the corresponding states. (We are considering a simplified case with just a single methylation site, but in real life, the receptor has multiple methylation sites.) To further simplify the analysis, we will make an additional assumption that <em>only</em> receptor complexes that all activity comes from methylated receptors.</p>
+<p>With these definitions and assumptions, we can assume that the output of the system, tumbling frequency, is a function of the concentration of active methylated receptor complexes, <span class="math notranslate nohighlight">\(x_m^*\)</span>, which in turn depends on <span class="math notranslate nohighlight">\(a\)</span>:</p>
+<p><span class="math">\begin{align}
+\text{tumbling frequency} = f(x_m^*).
+\end{align}</span></p>
+<p>For simplicity, we will assume that <span class="math notranslate nohighlight">\(f\)</span> is monotonic.</p>
 </section>
 <section id="Approximate-dynamics-of-the-Che-signaling-system">
 <h3>Approximate dynamics of the Che signaling system<a class="headerlink" href="#Approximate-dynamics-of-the-Che-signaling-system" title="Permalink to this heading"></a></h3>
-<p>We will use Michaelis-Menten kinetics to describe the dynamics of the Che system. You can read about the principles behind this kinetics scheme and the resulting equations in <a class="reference internal" href="../technical_appendices/06a_michaelis_menten.html"><span class="doc">Technical Appendix 6a</span></a>.</p>
-<p>Because of the more verbose names of the species (e.g., “<span class="math notranslate nohighlight">\(\mathrm{X}_m^*\)</span>” instead of “S”), we will denote concentrations of respective species with lower case letters, e.g. <span class="math notranslate nohighlight">\(x_m^*\)</span> instead of <span class="math notranslate nohighlight">\(c_\mathrm{X_m^*}\)</span>.</p>
-<p>We will assume that the quasi-steady state approximation holds for all enzyme-catalyzed reactions. We assume further that CheR operates at saturation. This means that there is so much substrate (in this case methylated and unmethlyated CheA receptor complex) such that the rate of methylation by CheR is directly proportional to the CheR concentration.</p>
-<p>We can write ODEs for the concentration of each of the methylated species.</p>
+<p>The first question we can ask about this simple model is whether or under what circumstances it can perform exact adaptation at all. On the one hand, the methylation-dependent negative feedback loop could compensate for changes in activity, and thereby restore basal activity after a stimulus. On the other hand, it is not immediately obvious whether or how this effect would <em>exactly</em> compensate a sudden change in ligand concentration.</p>
+<p>To proceed, we use Michaelis-Menten kinetics to describe the dynamics of the Che system. You can read about the principles behind this kinetic scheme and the resulting equations in <a class="reference internal" href="../technical_appendices/06a_michaelis_menten.html"><span class="doc">Technical Appendix 6a</span></a>.</p>
+<p>We will assume that the quasi-steady state approximation holds for all enzyme-catalyzed reactions. We assume further that CheR operates at saturation. This means that there is so much substrate (in this case methylated and unmethlyated CheA receptor complex) relative to the CheR enzyme that the rate of methylation by CheR is directly proportional to the CheR concentration. As we will see below, this turns out to be an important assumption.</p>
+<p>We can begin by writing down ODEs for the concentration of each of the methylated species.</p>
 <p><span class="math">\begin{align}
 &\frac{\mathrm{d}x^*_m}{\mathrm{d}t} = k_\mathrm{cat}^\mathrm{R} r - k_\mathrm{cat}^\mathrm{B} b^*\,\frac{x_m^*/K_\mathrm{M}}{1 + x_m^*/K_\mathrm{M}}, \\[1em]
 &\frac{\mathrm{d}x_m}{\mathrm{d}t} = k_\mathrm{cat}^\mathrm{R} r - k_\mathrm{cat}^\mathrm{B} b^*\,\frac{x_m/\kappa_\mathrm{M}}{1 + x_m/\kappa_\mathrm{M}},
@@ -232,11 +558,7 @@ x_m^* = K_\mathrm{M}\,\frac{2 k_\mathrm{cat}^\mathrm{R} r - k_\mathrm{cat}^\math
 </section>
 <section id="Fine-tuned-exact-adaptation">
 <h3>Fine-tuned exact adaptation<a class="headerlink" href="#Fine-tuned-exact-adaptation" title="Permalink to this heading"></a></h3>
-<p>We recall that we model the tumbling frequency as</p>
-<p><span class="math">\begin{align}
-f = g(a)\,x_m^*.
-\end{align}</span></p>
-<p>Before the attractant is present, we have a tumbling frequency of <span class="math notranslate nohighlight">\(f_0 = g_0 x_{m,0}^*\)</span>, and after we have <span class="math notranslate nohighlight">\(f_1 = g_1 x_{m,1}^*\)</span>, where <span class="math notranslate nohighlight">\(g_0 = g(a_0)\)</span> and <span class="math notranslate nohighlight">\(g_1 = g(a_1)\)</span>. Note that addition of attractant also shifts the balance between methylated and unmethylated CheA receptor complex, so <span class="math notranslate nohighlight">\(x_m\)</span> is affected. We define</p>
+<p>We recall that we model the tumbling frequency as a function of <span class="math notranslate nohighlight">\(x_m^*\)</span>. Before the attractant is present, we have a tumbling frequency of <span class="math notranslate nohighlight">\(f_0 = f(x_{m,0}^*)\)</span>, and after we have <span class="math notranslate nohighlight">\(f_1 = f(x_{m,1}^*)\)</span>. Note that addition of attractant also shifts the balance between methylated and unmethylated CheA receptor complex, so <span class="math notranslate nohighlight">\(x_m\)</span> is affected as well as <span class="math notranslate nohighlight">\(x_m^*\)</span>. We define</p>
 <p><span class="math">\begin{align}
 \theta = 2k_\mathrm{cat}^\mathrm{R} r - k_\mathrm{cat}^\mathrm{B} b_0\,\frac{x_m/\kappa_m}{1 + x_m/\kappa_m}.
 \end{align}</span></p>
@@ -246,12 +568,12 @@ x_m^* = K_\mathrm{M}\,\frac{\theta}{k_\mathrm{cat}^\mathrm{B} b_0 - \theta}.
 \end{align}</span></p>
 <p>With this expression, we can write down the two tumbling frequencies.</p>
 <p><span class="math">\begin{align}
-f_0 = g_0 x_{m,0}^* = g_0 K_\mathrm{M} \,\frac{\theta_0}{k_\mathrm{cat}^\mathrm{B} b_0 - \theta_0}, \\[1em]
-f_1 = g_1 x_{m,1}^* = g_1 K_\mathrm{M} \,\frac{\theta_1}{k_\mathrm{cat}^\mathrm{B} b_0 - \theta_1}.
+f_0 = f\left(K_\mathrm{M} \,\frac{\theta_0}{k_\mathrm{cat}^\mathrm{B} b_0 - \theta_0}\right), \\[1em]
+f_1 = f\left(K_\mathrm{M} \,\frac{\theta_1}{k_\mathrm{cat}^\mathrm{B} b_0 - \theta_1}\right).
 \end{align}</span></p>
 <p>For exact adaptation for this particular concentration of attractant, we must have <span class="math notranslate nohighlight">\(f_0 = f_1\)</span>, or</p>
 <p><span class="math">\begin{align}
-\frac{f_1}{f_0} = \frac{\theta_1(k_\mathrm{cat}^\mathrm{B} b_0 - \theta_0)}{\theta_0(k_\mathrm{cat}^\mathrm{B} b_0 - \theta_1)} = 1.
+\frac{\theta_1(k_\mathrm{cat}^\mathrm{B} b_0 - \theta_0)}{\theta_0(k_\mathrm{cat}^\mathrm{B} b_0 - \theta_1)} = 1.
 \end{align}</span></p>
 <p>The problem is that this ratio must hold for <em>any</em> <span class="math notranslate nohighlight">\(a_0\)</span> and <span class="math notranslate nohighlight">\(a_1\)</span> within an operating regime if exact adaptation is to be robust. This results in a delicate balancing act, since <span class="math notranslate nohighlight">\(\theta\)</span> changes with varying attractant concentration. This is an example of <strong>fine-tuning</strong>. Exact adaptation is only possible by precisely setting parameters for a given pair of attractant concentrations, and the exact adaptation is lost if those attractant concentrations change at all.</p>
 </section>
@@ -268,7 +590,7 @@ f_1 = g_1 x_{m,1}^* = g_1 K_\mathrm{M} \,\frac{\theta_1}{k_\mathrm{cat}^\mathrm{
 x_m^* = K_\mathrm{M}\,\frac{k_\mathrm{cat}^\mathrm{R} r}{k_\mathrm{cat}^\mathrm{B} b_0 - k_\mathrm{cat}^\mathrm{R} r},
 \end{align}</span></p>
 <p>where we have again assumed the <span class="math notranslate nohighlight">\(b^* \approx b_0\)</span>.</p>
-<p>This is independent of <span class="math notranslate nohighlight">\(x_m\)</span>, and is dependent only on the parameters and concentrations pertaining to the CheB and CheR enzymes. If we have the simplest model where <span class="math notranslate nohighlight">\(g(a) = \text{constant}\)</span>, then exact adaptation is achieved over all attractant concentrations. Furthermore, exact adaptation is robust to variations in parameter values (like CheR concentration, <span class="math notranslate nohighlight">\(k_\mathrm{cat}^\mathrm{B}\)</span>, etc.), provided the Michaelis-Menten kinetics are valid and CheR operates at saturation.</p>
+<p>This is independent of <span class="math notranslate nohighlight">\(x_m\)</span>, and is dependent only on the parameters and concentrations pertaining to the CheB and CheR enzymes. Assuming the tumbling frequency is monotonic in <span class="math notranslate nohighlight">\(x_m^*\)</span>, exact adaptation is achieved over all attractant concentrations. Furthermore, exact adaptation is robust to variations in parameter values (like CheR concentration, <span class="math notranslate nohighlight">\(k_\mathrm{cat}^\mathrm{B}\)</span>, etc.), provided the Michaelis-Menten kinetics are valid and CheR operates at saturation.</p>
 <!--
 Let us relax the $b^* \approx b_0$ approximation. Assuming Michaelis-Menten kinetics for phosphorylation,
 
@@ -294,7 +616,7 @@ If the dynamics of CheB phosphorylation are fast compared to the other CheA dyna
 \begin{align}
 b^* = b_0\,\frac{x_m^*/k_x}{1+x_m^*/k_x}.
 \end{align}
---><p>While exact adaptation is robust to variation in parameter values, the steady state tumbling frequency is <em>not</em>. As you can see in the expression above, it explicitly depends on several parameters.</p>
+--><p>While exact adaptation is robust to variation in parameter values, the steady state tumbling frequency is <em>not</em>. As you can see in the expression above, the concentration of active methylated CheA complex explicitly depends on several parameters.</p>
 </section>
 </section>
 <section id="A-more-complex-model-for-chemotaxis">
@@ -314,48 +636,148 @@ b^* = b_0\,\frac{x_m^*/k_x}{1+x_m^*/k_x}.
 <section id="Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally">
 <h2>Exact adaptation in the Che system is robust to CheR levels, as shown experimentally<a class="headerlink" href="#Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally" title="Permalink to this heading"></a></h2>
 <p>How do the tumbling frequency, the adaptation time, and the precision of adaptation depend on CheR expression in real cells? To find out, Alon et al engineered bacteria in which CheR expression could be controlled by an inducer called IPTG (<a class="reference external" href="https://doi.org/10.1038/16483">Alon, et al., 1999</a>). They then used time-lapse microscopy to observe the tumbling behavior of cells before and after adding a saturating amount of chemoattractant. They quantified the frequency of tumbling events (tumbling
-frequency), the time required for that frequency to return to its initial value after adding attractant (adaptation time), and the precision of adaptation.</p>
-<div style="width: 450px; margin: auto;"><img alt="robustness tumbling" src="../_images/alon_leibler_robustness.png" />
-</div><p>Consistent with the model predictions, the precision of adaptation is robust to varying levels of CheR over about two orders of magnitude. They also found that steady-state tumbling frequency and adaptation time were <em>not</em> robust to varying levels of CheR, as the model predicts.</p>
-<!-- JB: I think we should cut integral feedback entirely or make it its own chapter.
-
-## Integral feedback
-
-The chemotaxis system we have studied in this lesson achieves exact adaptation robustly via a mechanism called **integral feedback control**, as first noticed by [Yi and coworkers](https://doi.org/10.1073/pnas.97.9.4649). The key features of integral feedback control are:
-
-- The steady state is independent of external perturbation.
-- The system tends toward steady state as time tends toward infinity; i.e., it is asymptotically stable.
-- The time integral of error is fed back into the system.
-
-A block diagram for integral control is shown below. The desired output is $y_0$ and the actual output is $y$, so the error is $e = y_0 - y$. This error is integrated over time, multiplied by a gain $k$, and then added to the a perturbation $u$. In the context of the chemotaxis system, the perturbation is the change in attractant concentration.
-
-<div style="width: 550px; margin: auto;">
-
-![integral feedback](figs/integral_feedback.png)
-
+frequency), the time required for that frequency to return to its initial value after adding attractant (adaptation time), and the precision of adaptation. The results, digitized from the paper, are shown below.</p>
+<div class="nbinput toggle docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
 </div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cheR_fold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="mf">0.0</span><span class="p">,</span>
+        <span class="mf">0.394</span><span class="p">,</span>
+        <span class="mf">0.788</span><span class="p">,</span>
+        <span class="mf">0.996</span><span class="p">,</span>
+        <span class="mf">1.204</span><span class="p">,</span>
+        <span class="mf">2.233</span><span class="p">,</span>
+        <span class="mf">3.262</span><span class="p">,</span>
+        <span class="mf">4.500</span><span class="p">,</span>
+        <span class="mf">5.737</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 
-Image from Del Vecchio and Murray, *Biomolecular Feedback Systems*, Princeton University Press, 2015.
+<span class="n">adaptation_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+        <span class="mf">22.025</span><span class="p">,</span>
+        <span class="mf">12.987</span><span class="p">,</span>
+        <span class="mf">10.285</span><span class="p">,</span>
+        <span class="mf">8.987</span><span class="p">,</span>
+        <span class="mf">4.935</span><span class="p">,</span>
+        <span class="mf">3.012</span><span class="p">,</span>
+        <span class="mf">1.454</span><span class="p">,</span>
+        <span class="mf">0.987</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 
-<br />
+<span class="n">adaptation_precision</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="mf">0.0</span><span class="p">,</span>
+        <span class="mf">1.125</span><span class="p">,</span>
+        <span class="mf">1.163</span><span class="p">,</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+        <span class="mf">0.817</span><span class="p">,</span>
+        <span class="mf">0.832</span><span class="p">,</span>
+        <span class="mf">0.990</span><span class="p">,</span>
+        <span class="mf">0.915</span><span class="p">,</span>
+        <span class="mf">0.982</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 
-If we write ODEs for this diagram, we have that
+<span class="n">tumbling_freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="mf">0.189</span><span class="p">,</span>
+        <span class="mf">0.350</span><span class="p">,</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>
+        <span class="mf">0.402</span><span class="p">,</span>
+        <span class="mf">0.504</span><span class="p">,</span>
+        <span class="mf">0.501</span><span class="p">,</span>
+        <span class="mf">0.640</span><span class="p">,</span>
+        <span class="mf">0.650</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 
-\begin{align}
-\frac{\mathrm{d}z}{\mathrm{d}t} = e(t) = y_0 - y,
-\end{align}
+<span class="n">p1</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">frame_width</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span>
+    <span class="n">frame_height</span><span class="o">=</span><span class="mi">135</span><span class="p">,</span>
+    <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;adaptation precision&#39;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;save&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">adaptation_precision</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">major_label_text_font_size</span> <span class="o">=</span> <span class="s1">&#39;0pt&#39;</span>
 
-with $y = kz + u$, giving
+<span class="n">p2</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">frame_width</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span>
+    <span class="n">frame_height</span><span class="o">=</span><span class="mi">135</span><span class="p">,</span>
+    <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;tumbling frequency (Hz)&#39;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;save&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">tumbling_freq</span><span class="p">)</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">major_label_text_font_size</span> <span class="o">=</span> <span class="s1">&#39;0pt&#39;</span>
 
-\begin{align}
-\frac{\mathrm{d}z}{\mathrm{d}t} = e(t) = y_0 - kz - u.
-\end{align}
+<span class="n">p3</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
+    <span class="n">frame_width</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span>
+    <span class="n">frame_height</span><span class="o">=</span><span class="mi">135</span><span class="p">,</span>
+    <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="n">x_axis_label</span><span class="o">=</span><span class="s1">&#39;CheE fold expression compared to wild type&#39;</span><span class="p">,</span>
+    <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;adaptation time (min)&#39;</span><span class="p">,</span>
+    <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;save&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">p3</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">adaptation_time</span><span class="p">)</span>
 
-The steady state is then $y = y_0$, which is asymptotically stable if the gain $k$ is positive and the perturbation is constant (such as a change in attractant concentration). In the present case, the term $kz$ represents the linearized balance between methylated and unmethylated CheA receptor complex. Importantly, the integral feedback ensures that the steady state is independent of the perturbation $u$.
+<span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+    <span class="n">bokeh</span><span class="o">.</span><span class="n">layouts</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div id="47fe5a6e-f4e5-4e1d-be01-3a82990a78bf" data-root-id="p1131" style="display: contents;"></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="output_javascript"></div>
+<script type="text/javascript">
+var element = document.currentScript.previousSibling.previousSibling;
+(function(root) {
+  function embed_document(root) {
+  const docs_json = {"f3d583ab-4882-442e-85d0-eacb985d9dde":{"version":"3.1.0","title":"Bokeh Application","defs":[],"roots":[{"type":"object","name":"Column","id":"p1131","attributes":{"children":[{"type":"object","name":"Figure","id":"p1002","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1011","attributes":{"start":-0.2,"end":6}},"y_range":{"type":"object","name":"DataRange1d","id":"p1004"},"x_scale":{"type":"object","name":"LinearScale","id":"p1015"},"y_scale":{"type":"object","name":"LinearScale","id":"p1017"},"title":{"type":"object","name":"Title","id":"p1006"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1042","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1036","attributes":{"selected":{"type":"object","name":"Selection","id":"p1037","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1038"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAACe76fGSzfZP57vp8ZLN+k/rBxaZDvf7z/dJAaBlUPzP3e+nxov3QFAf2q8dJMYCkAAAAAAAAASQKabxCCw8hZA"},"shape":[9],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAAAAAAAAAADyP8/3U+Olm/I/AAAAAAAA+H++nxov3STqPzm0yHa+n+o/rkfhehSu7z9I4XoUrkftPwaBlUOLbO8/"},"shape":[9],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1043","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1044"}}},"glyph":{"type":"object","name":"Circle","id":"p1039","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"fill_color":{"type":"value","value":"#1f77b4"}}},"nonselection_glyph":{"type":"object","name":"Circle","id":"p1040","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Circle","id":"p1041","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1008","attributes":{"tools":[{"type":"object","name":"SaveTool","id":"p1033"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1026","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1027","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1028"},"axis_label":"adaptation precision","major_label_policy":{"type":"object","name":"AllLabels","id":"p1029"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1019","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1020","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1021"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1022"},"major_label_text_font_size":"0pt"}}],"center":[{"type":"object","name":"Grid","id":"p1025","attributes":{"axis":{"id":"p1019"}}},{"type":"object","name":"Grid","id":"p1032","attributes":{"dimension":1,"axis":{"id":"p1026"}}}],"frame_width":350,"frame_height":135}},{"type":"object","name":"Figure","id":"p1045","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1054","attributes":{"start":-0.2,"end":6}},"y_range":{"type":"object","name":"DataRange1d","id":"p1047"},"x_scale":{"type":"object","name":"LinearScale","id":"p1058"},"y_scale":{"type":"object","name":"LinearScale","id":"p1060"},"title":{"type":"object","name":"Title","id":"p1049"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1085","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1079","attributes":{"selected":{"type":"object","name":"Selection","id":"p1080","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1081"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAACe76fGSzfZP57vp8ZLN+k/rBxaZDvf7z/dJAaBlUPzP3e+nxov3QFAf2q8dJMYCkAAAAAAAAASQKabxCCw8hZA"},"shape":[9],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAAD+1HjpJjHIP2ZmZmZmZtY/AAAAAAAA+H/ufD81XrrZP1TjpZvEIOA/1XjpJjEI4D97FK5H4XrkP83MzMzMzOQ/"},"shape":[9],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1086","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1087"}}},"glyph":{"type":"object","name":"Circle","id":"p1082","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"fill_color":{"type":"value","value":"#1f77b4"}}},"nonselection_glyph":{"type":"object","name":"Circle","id":"p1083","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Circle","id":"p1084","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1051","attributes":{"tools":[{"type":"object","name":"SaveTool","id":"p1076"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1069","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1070","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1071"},"axis_label":"tumbling frequency (Hz)","major_label_policy":{"type":"object","name":"AllLabels","id":"p1072"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1062","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1063","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1064"},"major_label_policy":{"type":"object","name":"AllLabels","id":"p1065"},"major_label_text_font_size":"0pt"}}],"center":[{"type":"object","name":"Grid","id":"p1068","attributes":{"axis":{"id":"p1062"}}},{"type":"object","name":"Grid","id":"p1075","attributes":{"dimension":1,"axis":{"id":"p1069"}}}],"frame_width":350,"frame_height":135}},{"type":"object","name":"Figure","id":"p1088","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1097","attributes":{"start":-0.2,"end":6}},"y_range":{"type":"object","name":"DataRange1d","id":"p1090"},"x_scale":{"type":"object","name":"LinearScale","id":"p1101"},"y_scale":{"type":"object","name":"LinearScale","id":"p1103"},"title":{"type":"object","name":"Title","id":"p1092"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1128","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1122","attributes":{"selected":{"type":"object","name":"Selection","id":"p1123","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1124"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAAAACe76fGSzfZP57vp8ZLN+k/rBxaZDvf7z/dJAaBlUPzP3e+nxov3QFAf2q8dJMYCkAAAAAAAAASQKabxCCw8hZA"},"shape":[9],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAAA+H9mZmZmZgY2QNNNYhBY+SlAUrgeheuRJEDTTWIQWPkhQD0K16NwvRNAf2q8dJMYCEDdJAaBlUP3Py/dJAaBle8/"},"shape":[9],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1129","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1130"}}},"glyph":{"type":"object","name":"Circle","id":"p1125","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"fill_color":{"type":"value","value":"#1f77b4"}}},"nonselection_glyph":{"type":"object","name":"Circle","id":"p1126","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Circle","id":"p1127","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":{"type":"value","value":"#1f77b4"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"#1f77b4"},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1094","attributes":{"tools":[{"type":"object","name":"SaveTool","id":"p1119"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1112","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1113","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1114"},"axis_label":"adaptation time (min)","major_label_policy":{"type":"object","name":"AllLabels","id":"p1115"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1105","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1106","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1107"},"axis_label":"CheE fold expression compared to wild type","major_label_policy":{"type":"object","name":"AllLabels","id":"p1108"}}}],"center":[{"type":"object","name":"Grid","id":"p1111","attributes":{"axis":{"id":"p1105"}}},{"type":"object","name":"Grid","id":"p1118","attributes":{"dimension":1,"axis":{"id":"p1112"}}}],"frame_width":350,"frame_height":135}}]}}],"callbacks":{"type":"map"}}};
+  const render_items = [{"docid":"f3d583ab-4882-442e-85d0-eacb985d9dde","roots":{"p1131":"47fe5a6e-f4e5-4e1d-be01-3a82990a78bf"},"root_ids":["p1131"]}];
+  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script></div>
+</div>
+<!-- <div style="width: 450px; margin: auto;">
 
-You can read more about integral feedback in [section 3.2 of Del Vecchio and Murray's book](http://www.cds.caltech.edu/~murray/books/AM08/pdf/bfs-dynamics_14Sep14.pdf) and in [this very nice primer on control theory in synthetic biology](https://doi.org/10.1109/MCS.2018.2810459) by Swaminathan, Hsiao, and Murray.
+    ![robustness tumbling](figs/alon_leibler_robustness.png)
 
---><hr></section>
+</div> --><p>Consistent with the model predictions, the precision of adaptation is robust to varying levels of CheR over about two orders of magnitude. They also found that steady-state tumbling frequency and adaptation time were <em>not</em> robust to varying levels of CheR, as the model predicts.</p>
+<hr></section>
 <section id="References">
 <h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
 <ul class="simple">
@@ -384,11 +806,11 @@ You can read more about integral feedback in [section 3.2 of Del Vecchio and Mur
 <section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> watermark
-<span class="o">%</span><span class="k">watermark</span> -v -p jupyterlab
+<span class="o">%</span><span class="k">watermark</span> -v -p numpy,bokeh,jupyterlab
 </pre></div>
 </div>
 </div>
@@ -399,8 +821,10 @@ You can read more about integral feedback in [section 3.2 of Del Vecchio and Mur
 <div class="highlight"><pre>
 Python implementation: CPython
 Python version       : 3.10.10
-IPython version      : 8.10.0
+IPython version      : 8.12.0
 
+numpy     : 1.23.5
+bokeh     : 3.1.0
 jupyterlab: 3.5.3
 
 </pre></div></div>
@@ -420,11 +844,11 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Apr 14, 2023.
+      <span class="lastupdated">Last updated on Apr 17, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f7b7a2bee00> 
+   <jinja2.runtime.BlockReference object at 0x7fdac4d5ff40> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
