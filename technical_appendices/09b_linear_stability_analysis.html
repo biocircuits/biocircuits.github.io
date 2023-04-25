@@ -89,10 +89,9 @@
 <li class="toctree-l1"><a class="reference internal" href="02c_interactive_plotting.html">2c. Interactive plotting with Bokeh</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04a_numerical_solutions_of_ffls.html">4a. Numerical solution of FFLs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04a_numerical_solutions_of_ffls.html#Computing-environment">Computing environment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09a_composite_functions_to_find_fixed_point.html">9a. Fixed points and composite functions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">9b. Linear stability analysis</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#A-miniam-introduction-to-linear-stability-analysis">A miniam introduction to linear stability analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#A-minimal-introduction-to-linear-stability-analysis">A minimal introduction to linear stability analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Handy-Taylor-series-of-Hill-functions">Handy Taylor series of Hill functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Linear-stability-analysis-for-the-repressilator">Linear stability analysis for the repressilator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Linear-stability-diagram">Linear stability diagram</a></li>
@@ -475,8 +474,8 @@ if (force === true) {
 </div>
 <hr><p>Thus far, we have assessed the stability of fixed points of a dynamical system graphically. We have drawn plots of production rates and degradation rates of gene products, with the crossing of these respective plots being fixed points. We then investigated when degradation was faster than production, and vice versa, to determine whether a system is attracted toward or repelled away from a fixed point. We also did similar nullcline-based analysis.</p>
 <p>In this technical appendix, we present a more general, and very useful, approach called <strong>linear stability analysis</strong>. We first give a minimal introduction to the technique, and then apply it to the repressilator. You can read about the technique in greater depth in <a class="reference external" href="https://doi.org/10.1201/9780429492563">Strogatz’s book</a>.</p>
-<section id="A-miniam-introduction-to-linear-stability-analysis">
-<h2>A miniam introduction to linear stability analysis<a class="headerlink" href="#A-miniam-introduction-to-linear-stability-analysis" title="Permalink to this heading"></a></h2>
+<section id="A-minimal-introduction-to-linear-stability-analysis">
+<h2>A minimal introduction to linear stability analysis<a class="headerlink" href="#A-minimal-introduction-to-linear-stability-analysis" title="Permalink to this heading"></a></h2>
 <p>The main idea behind linear stability analysis is to locally approximate a <em>nonlinear</em> dynamical system by its Taylor series to first order near the fixed point, and then examine the behavior of the resulting simpler linear system. The <strong>Hartman-Grobman theorem</strong> (which we will not derive here) ensures that the linearized system faithfully represents the phase portrait of the full nonlinear system near the fixed point.</p>
 <p>Say we have a dynamical system with variables <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> with</p>
 <p><span class="math">\begin{align}
@@ -751,7 +750,7 @@ jupyterlab: 3.5.3
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7fda87329660> 
+   <jinja2.runtime.BlockReference object at 0x7fa36baa18d0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

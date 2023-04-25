@@ -5,7 +5,7 @@
    "id": "6db486e6-359f-49d1-9d05-c914e29d71a2",
    "metadata": {},
    "source": [
-    "## 4a. Numerical solution of FFLs\n",
+    "# 4a. Numerical solution of FFLs\n",
     "\n",
     "<hr>"
    ]
