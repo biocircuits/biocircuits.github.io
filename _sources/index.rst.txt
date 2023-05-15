@@ -50,6 +50,11 @@ Biological Circuit Design
    technical_appendices/09a_composite_functions_to_find_fixed_point.ipynb
    technical_appendices/09b_linear_stability_analysis.ipynb
    technical_appendices/09c_1d_root_finding.ipynb
+   .. technical_appendices/10a_brute_force_linear_stability_analysis.ipynb
+   .. technical_appendices/10b_linear_stability_analysis_ddes.ipynb
+   .. technical_appendices/10c_numerical_ddes.ipynb
+   technical_appendices/16a_gillespie.ipynb
+   technical_appendices/16b_profiling_for_speed.ipynb
 
 .. toctree::
    :maxdepth: 1
@@ -59,7 +64,6 @@ Biological Circuit Design
    appendices/appB_python/index.rst
    appendices/appC_numerical_odes.ipynb
    appendices/appD_regulatory_functions.ipynb
-   .. appendices/appE_gillespie.ipynb
 
 
 .. toctree::
