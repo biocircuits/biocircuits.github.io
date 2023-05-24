@@ -10,7 +10,6 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -42,16 +41,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-
-          
-          
-          <a href="../index.html">
-            
-              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -142,8 +137,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -160,7 +155,285 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation">
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation">
 <h1>15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation<a class="headerlink" href="#15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation" title="Permalink to this heading"></a></h1>
 <hr><section id="Concepts">
 <h2>Concepts<a class="headerlink" href="#Concepts" title="Permalink to this heading"></a></h2>
@@ -175,7 +448,7 @@
 <li><p>Pairs bootstrap</p></li>
 <li><p>Generative Bayesian modeling</p></li>
 </ul>
-<hr><div class="nbinput toggle docutils container">
+<hr><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -528,7 +801,7 @@ As evident in the figure, half of repressors have copy numbers below 100 and 90%
 --><p>Roughly speaking, we can call random deviations from what we might expect in a deterministic view of gene expression <strong>stochasticity</strong>, or <strong>noise</strong>. Nearly all cellular processes are susceptible to noise for a host of reasons, especially low copy numbers of molecular regulators of gene expression. We will provide a more careful definition of noise momentarily.</p>
 <p>But first, consider the “model” of an <em>E. coli</em> cell depicted below. From the outside (left image), it appears as a simple rod-shaped object, encapsulating what one might incorrectly assume is a homogeneous well-mixed continuum of biochemical mush inside. However, if we were to slice open the cell (right image), the low copy numbers of certain molecules and their spatial heterogenetiy become apparent. Within each cell, the copy numbers and locations of different molecules can vary dramatically
 over time, just as they vary from cell to cell. Like burritos, no two cells are completely identical. (Unlike this burrito, most bacteria lack cheese in their periplasm.)</p>
-<div style="margin: auto; width: 500px"><img alt="Michael's epiphanic burrito" src="../_images/burrito.jpg" />
+<div style="margin: auto; width: 500px"><img alt="Michael’s epiphanic burrito" src="../_images/burrito.jpg" />
 </div></section>
 <section id="Early-approaches-to-detecting-and-quantifying-cellular-variation">
 <h3>Early approaches to detecting and quantifying cellular variation<a class="headerlink" href="#Early-approaches-to-detecting-and-quantifying-cellular-variation" title="Permalink to this heading"></a></h3>
@@ -641,10 +914,10 @@ V_\mathrm{ext} = V_\mathrm{tot} - V_\mathrm{int} = \overline{cy} - \frac{1}{2}\l
 </section>
 <section id="Computing-the-intrinsic-and-extrinsic-noise-from-experimental-data">
 <h4>Computing the intrinsic and extrinsic noise from experimental data<a class="headerlink" href="#Computing-the-intrinsic-and-extrinsic-noise-from-experimental-data" title="Permalink to this heading"></a></h4>
-<p>As an example, let us compute the intrinsic and extrinsic noise from experimental data. We will consider two data sets from the <a class="reference external" href="https://doi.org/10.1126/science.1070919">Elowitz, et al. paper</a>, both of which are contained in <a class="reference external" href="data/elowitz_et_al_2002_fig_3a.csv">this CSV file</a>. One set of measurements is for the M22 strain, which has the CFP/YFP under control of LacI setup in <em>E. coli</em> we have previously described. The other set of measurements is for the D22 strain, which has a deletion of
+<p>As an example, let us compute the intrinsic and extrinsic noise from experimental data. We will consider two data sets from the <a class="reference external" href="https://doi.org/10.1126/science.1070919">Elowitz, et al. paper</a>, both of which are contained in <a class="reference external" href="data/elowitz_et_al_2002_fig_3a.csv">this CSV file</a>. One set of measurements is for the M22 strain, which has the CFP/YFP under control of LacI setup in <em>E. coli</em> we have previously described. The other set of measurements is for the D22 strain, which has a deletion of
 the <em>recA</em> gene, which is responsible for rescuing stalled replication forks.</p>
 <p>Let’s plot the two data sets and compare.</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
@@ -737,7 +1010,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plugin_noise</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Plug-in estimates for noise&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plug-in estimates for noise&quot;&quot;&quot;</span>
     <span class="n">Vtot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">y</span><span class="p">)),</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">Vext</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">Vint</span> <span class="o">=</span> <span class="n">Vtot</span> <span class="o">-</span> <span class="n">Vext</span>
@@ -751,7 +1024,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 
 <span class="c1"># Print the result</span>
 <span class="nb">print</span><span class="p">(</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">M22</span>
 <span class="sd">---</span>
 <span class="sd">intrinsic: {0:.4f}</span>
@@ -817,7 +1090,7 @@ total:     0.1147
 </div>
 </div>
 <p>Now that we have the confidence intervals, we can plot our estimates for the noise with the 95% confidence interval.</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
@@ -891,7 +1164,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <p>It is also interesting to plot our bootstrap samples to see how the intrinsic and extrinsic noise are correlated.</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
@@ -969,7 +1242,7 @@ number differences between different parts of the chromosome.</p>
 <p>In some of the two-color experiments, the authors sought to control the expression of both genes by using an inducible system, in which both promoters were repressed by the LacI protein, which could in turn be inhibited by the inducer IPTG.</p>
 <div style="margin: auto; width: 100px"><img alt="LacI-CFP-YFP circuit" src="../_images/laci_cfp_yfp_circuit.png" />
 </div><p>By titrating the amount of IPTG, the expression levels of both YFP and CFP gene products may be controlled. Systematically varying ITPG concentration produced the results shown below:</p>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
@@ -1114,7 +1387,7 @@ P(\{\mu_i\}, \mu, \sigma, \sigma_\mu\mid \{c_i, y_i\}) \propto \left(\prod_{i=1}
 </ul>
 <section id="Computing-environment">
 <h4>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h4>
-<div class="nbinput toggle docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
@@ -1160,7 +1433,7 @@ jupyterlab: 3.3.2
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f93aa8f54e0> 
+   <jinja2.runtime.BlockReference object at 0x7faf1a6ee310> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

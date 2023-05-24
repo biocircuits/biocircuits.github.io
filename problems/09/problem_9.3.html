@@ -41,16 +41,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-
-          
-          
-          <a href="../../index.html">
-            
-              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+            <a href="../../index.html">
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -85,7 +81,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/09_repressilator.html#Problems">Problems</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="problem_9.1.html">9.1: Coupled repressilators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="problem_9.2.html">9.2: The KaiABC clock</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">9.3: Linear stability analysis of the repressilator with mRNA</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">9.3: Linear stability analysis of the repressilator withmRNA</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/09_repressilator.html#Computing-environment">Computing environment</a></li>
@@ -142,9 +138,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
-      <li class="breadcrumb-item active">Problem 9.3: Linear stability analysis of the repressilator with mRNA</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a> &raquo;</li>
+      <li>Problem 9.3: Linear stability analysis of the repressilator with mRNA</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -161,7 +157,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="Problem-9.3:-Linear-stability-analysis-of-the-repressilator-with-mRNA">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Problem-9.3:-Linear-stability-analysis-of-the-repressilator-with-mRNA">
 <h1>Problem 9.3: Linear stability analysis of the repressilator with mRNA<a class="headerlink" href="#Problem-9.3:-Linear-stability-analysis-of-the-repressilator-with-mRNA" title="Permalink to this heading"></a></h1>
 <hr><p>The dimensionless dynamical equations we used for the repressilator system including mRNA are</p>
 <p><span class="math">\begin{align}
@@ -198,7 +218,7 @@ f_0 = \frac{\beta n x_0^{n-1}}{(1+x_0^n)^2}.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f93bc6353c0> 
+   <jinja2.runtime.BlockReference object at 0x7faf19bf8460> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -39,16 +39,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-
-          
-          
-          <a href="../../index.html">
-            
-              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+            <a href="../../index.html">
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -117,8 +113,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Problem 14.1: A tri-stable cell-fate determinant circuit</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Problem 14.1: A tri-stable cell-fate determinant circuit</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -135,7 +131,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="Problem-14.1:-A-tri-stable-cell-fate-determinant-circuit">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Problem-14.1:-A-tri-stable-cell-fate-determinant-circuit">
 <h1>Problem 14.1: A tri-stable cell-fate determinant circuit<a class="headerlink" href="#Problem-14.1:-A-tri-stable-cell-fate-determinant-circuit" title="Permalink to this heading"></a></h1>
 <hr><p>Common myeloid precursor (CMP) cells are stem cells that can either differentiate into an erythroid (red blood cell) cell or a myeloid (bone marrow) cell. Such a binary differentiation may be regulated by a genetic circuit akin to the toggle circuits we have already encountered. However, the progenitor state of the CMP cells is also stable, which suggests tristability of the underlying circuit. In particular, the transcription factors GATA1 (which we will call X for convenience) and PU.1 (which
 we will call Y) are mutually repressive, which gives them the toggle-like behavior. They also are autoactivating. These interactions are summarized in the circuit below.</p>
@@ -158,7 +178,7 @@ we will call Y) are mutually repressive, which gives them the toggle-like behavi
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f93b1f0da80> 
+   <jinja2.runtime.BlockReference object at 0x7faf3b160130> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

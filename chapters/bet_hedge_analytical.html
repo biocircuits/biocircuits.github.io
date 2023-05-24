@@ -39,16 +39,12 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-
-          
-          
-          <a href="../index.html">
-            
-              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+            <a href="../index.html">
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -117,8 +113,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Master equation</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Master equation</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -135,7 +131,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="Master-equation">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Master-equation">
 <h1>Master equation<a class="headerlink" href="#Master-equation" title="Permalink to this heading"></a></h1>
 <p>Let the states of cells be indexed by <span class="math notranslate nohighlight">\(i\)</span> (and <span class="math notranslate nohighlight">\(j\)</span> as needed) and the states of the environment be indexed by <span class="math notranslate nohighlight">\(k\)</span> (and <span class="math notranslate nohighlight">\(l\)</span> as needed). Let there be <span class="math notranslate nohighlight">\(n_i\)</span> cells in state <span class="math notranslate nohighlight">\(i\)</span>. There is no need to subscript environmental states, so we wil let <span class="math notranslate nohighlight">\(k\)</span> (and <span class="math notranslate nohighlight">\(l\)</span> as needed) denote environmental states. Let <span class="math notranslate nohighlight">\(\beta_{ik}\)</span> be the growth rate of cells in state <span class="math notranslate nohighlight">\(i\)</span> in environment <span class="math notranslate nohighlight">\(k\)</span>. Let <span class="math notranslate nohighlight">\(\gamma_{ik}\)</span> be the rate of death of cells in state
 <span class="math notranslate nohighlight">\(i\)</span> in environment <span class="math notranslate nohighlight">\(k\)</span>. Let <span class="math notranslate nohighlight">\(P(n_1, n_2, \ldots, e;t)\)</span> be the probability have having <span class="math notranslate nohighlight">\(n_1\)</span> cells in state <span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span> cells in state 2, etc., with the environment in state <span class="math notranslate nohighlight">\(e\)</span> at time <span class="math notranslate nohighlight">\(t\)</span>. We have the understanding that if any of the <span class="math notranslate nohighlight">\(n_i\)</span> values are negative, the probability of that state is zero. For ease of notation, let</p>
@@ -274,7 +294,7 @@ s & 0 & \beta_\mathrm{slow} - \gamma - s - \sigma & \sigma \\
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f93cb996a10> 
+   <jinja2.runtime.BlockReference object at 0x7faf1b79e940> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
