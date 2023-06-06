@@ -41,12 +41,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../index.html">
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -60,17 +64,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Developing-intuition:-Steady-state-expression-levels-depend-on-protein-production-and-removal-rates.">Developing intuition: Steady state expression levels depend on protein production and removal rates.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Repressors-enable-gene-regulation">Repressors enable gene regulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Properties-of-the-simple-binding-curve">Properties of the simple binding curve</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Gene-expression-can-be-“leaky”">Gene expression can be “leaky”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Gene-expression-can-be-%22leaky%22">Gene expression can be “leaky”</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Activators-enable-positive-regulation">Activators enable positive regulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Hill-functions-enable-analysis-of-ultrasensitivity">Hill functions enable analysis of ultrasensitivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#When-should-a-circuit-use-an-activator-and-when-should-it-use-a-repressor?">When should a circuit use an activator and when should it use a repressor?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#References">References</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Problems">Problems</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="problem_1.1.html">1.1: Strategies for controlling proteinexpression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_1.1.html">1.1: Strategies for controlling protein expression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="problem_1.2.html">1.2: Separation of time scales</a></li>
-<li class="toctree-l3"><a class="reference internal" href="problem_1.3.html">1.3: Rate of production of gene product by anactivator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="problem_1.4.html">1.4: Activators vs. repressors</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">1.5: Bound and unbound promoterregions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_1.3.html">1.3: Rate of production of gene product by an activator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="problem_1.4.html">1.4: Activators vs. repressors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.5: Bound and unbound promoter regions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/01_intro_to_circuit_design.html#Computing-environment">Computing environment</a></li>
@@ -135,9 +139,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a> &raquo;</li>
-      <li>Problem 1.5: Bound and unbound promoter regions</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../chapters/01_intro_to_circuit_design.html">1. Introduction to biological circuit design</a></li>
+      <li class="breadcrumb-item active">Problem 1.5: Bound and unbound promoter regions</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -154,31 +158,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Problem-1.5:-Bound-and-unbound-promoter-regions">
+  <section id="Problem-1.5:-Bound-and-unbound-promoter-regions">
 <h1>Problem 1.5: Bound and unbound promoter regions<a class="headerlink" href="#Problem-1.5:-Bound-and-unbound-promoter-regions" title="Permalink to this heading"></a></h1>
 <hr><p><em>This problem is still a draft.</em></p>
 <p>Construct a model of the system that explicitly accounts for bound/unbound states in order to reveal the values that various system variables would take under the different regimes. (This would help you come up with potential experiments to distinguish these regimes.)</p>
@@ -196,11 +176,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf3a5fe7f0> 
+   <jinja2.runtime.BlockReference object at 0x7f7ed4031ab0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

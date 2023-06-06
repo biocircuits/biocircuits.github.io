@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -41,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -95,7 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="appA_math/index.html">Appendix A: Mathematical review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appB_python/index.html">Appendix B: Introduction to Python</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Appendix C: Numerical solutions of ODES</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Euler’s-method-as-an-introduction-to-numerical-methods">Euler’s method as an introduction to numerical methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Euler's-method-as-an-introduction-to-numerical-methods">Euler’s method as an introduction to numerical methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#An-example-problem:-reversible-dimerization">An example problem: reversible dimerization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Variable-step-sizes-can-help-speed-the-solution">Variable step sizes can help speed the solution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Stiffness-presents-additional-challenges">Stiffness presents additional challenges</a></li>
@@ -126,8 +131,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Appendix C: Numerical solutions of ODES</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Appendix C: Numerical solutions of ODES</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -144,287 +149,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Appendix-C:-Numerical-solutions-of-ODES">
+  <section id="Appendix-C:-Numerical-solutions-of-ODES">
 <h1>Appendix C: Numerical solutions of ODES<a class="headerlink" href="#Appendix-C:-Numerical-solutions-of-ODES" title="Permalink to this heading"></a></h1>
-<hr><div class="nbinput docutils container">
+<hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -745,8 +472,8 @@ if (force === true) {
 </div>
 <hr><p>In <a class="reference external" href="../technical_appendices/02a_numerical_odes.ipynb">Technical Appendix 2a</a>, we learned basic syntax of how to use <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> to perform numerical integration of ordinary differential equations. We gave a cursory description of how it works, but the integration was more or less treated like a black box. Here, we give a more pedagogical introduction to how numerical solution of systems of ODEs works and why it is necessary to use a package like <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code>.</p>
 <p>In our examples, we mostly use dynamical equations for chemical kinetics. Many of the dynamical equations we encounter in the study of biological circuits are equations describing chemical kinetics or are otherwise similar with similar issues.</p>
-<section id="Euler’s-method-as-an-introduction-to-numerical-methods">
-<h2>Euler’s method as an introduction to numerical methods<a class="headerlink" href="#Euler’s-method-as-an-introduction-to-numerical-methods" title="Permalink to this heading"></a></h2>
+<section id="Euler's-method-as-an-introduction-to-numerical-methods">
+<h2>Euler’s method as an introduction to numerical methods<a class="headerlink" href="#Euler's-method-as-an-introduction-to-numerical-methods" title="Permalink to this heading"></a></h2>
 <p>A classic introduction to numerical methods for solving system of time-based ODEs involves <strong>Euler’s method</strong>. Consider an ordinary differential equation</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}y}{\mathrm{d}t} = f(y, t),
@@ -781,7 +508,7 @@ y(2\Delta t) \approx y(\Delta t) + \Delta t f(y(\Delta t), \Delta t).
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Solve an ODE defined by y&#39;(t) = f(y, t, *args)</span>
+    <span class="sd">&quot;&quot;&quot;Solve an ODE defined by y&#39;(t) = f(y, t, *args)</span>
 <span class="sd">    using Euler&#39;s method.&quot;&quot;&quot;</span>
     <span class="c1"># Initialize output array</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">t_max</span> <span class="o">/</span> <span class="n">delta_t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y0</span><span class="p">)))</span>
@@ -826,7 +553,7 @@ c_\mathrm{A}^0 = c_\mathrm{A} + 2c_\mathrm{AA},
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dimerization_rhs</span><span class="p">(</span><span class="n">cA</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">k_plus</span><span class="p">,</span> <span class="n">k_minus</span><span class="p">,</span> <span class="n">cA_total</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Right hand side of dimerization ODE</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">k_minus</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">k_plus</span> <span class="o">*</span> <span class="n">cA</span><span class="p">)</span> <span class="o">*</span> <span class="n">cA</span> <span class="o">+</span> <span class="n">k_minus</span> <span class="o">*</span> <span class="n">cA_total</span>
@@ -962,17 +689,17 @@ c_\mathrm{A}(t) = \frac{1}{4}\frac{k_-}{k_+}\left(\zeta^{-1} \coth\left[\frac{k_
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coth</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hyperbolic cotangent function.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Hyperbolic cotangent function.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">arccoth</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hyberbolic arccotangent function.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Hyberbolic arccotangent function.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
 
 
 <span class="k">def</span> <span class="nf">cA_theor</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">k_plus</span><span class="p">,</span> <span class="n">k_minus</span><span class="p">,</span> <span class="n">cA_total</span><span class="p">,</span> <span class="n">cA0</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Analytical result for concentration of monomer over time</span>
+    <span class="sd">&quot;&quot;&quot;Analytical result for concentration of monomer over time</span>
 <span class="sd">    for reversible dimerization.&quot;&quot;&quot;</span>
     <span class="n">zeta</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">k_plus</span> <span class="o">/</span> <span class="n">k_minus</span> <span class="o">*</span> <span class="n">cA_total</span><span class="p">)</span>
     <span class="n">arc_arg</span> <span class="o">=</span> <span class="n">zeta</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">k_plus</span> <span class="o">/</span> <span class="n">k_minus</span> <span class="o">*</span> <span class="n">cA0</span><span class="p">)</span>
@@ -1204,7 +931,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">robertson_rhs</span><span class="p">(</span><span class="n">xyz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Right-hand-side of Robertson&#39;s stiff ODEs.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Right-hand-side of Robertson&#39;s stiff ODEs.&quot;&quot;&quot;</span>
     <span class="c1"># Unpack variables</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">xyz</span>
 
@@ -1342,7 +1069,7 @@ x = g(x).
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_backward_euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Solve an ODE defined by y&#39;(t) = f(y, t, *args)</span>
+    <span class="sd">&quot;&quot;&quot;Solve an ODE defined by y&#39;(t) = f(y, t, *args)</span>
 <span class="sd">    using backward Euler&#39;s method.&quot;&quot;&quot;</span>
     <span class="c1"># Initialize output array</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">t_max</span> <span class="o">/</span> <span class="n">delta_t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y0</span><span class="p">)))</span>
@@ -1550,7 +1277,7 @@ y = y_0 + \Delta t\left(-k_1 y(z_0 + \Delta t k_3 y^2) + \frac{k_2}{1 + \Delta t
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_timestep_robertson</span><span class="p">(</span><span class="n">xyz0</span><span class="p">,</span> <span class="n">delta_t</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">k3</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Solves for the implicit time step for use in backward</span>
+    <span class="sd">&quot;&quot;&quot;Solves for the implicit time step for use in backward</span>
 <span class="sd">    Euler for the Robertson problem.&quot;&quot;&quot;</span>
     <span class="c1"># Unpack previous time step</span>
     <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span> <span class="o">=</span> <span class="n">xyz0</span>
@@ -1587,7 +1314,7 @@ y = y_0 + \Delta t\left(-k_1 y(z_0 + \Delta t k_3 y^2) + \frac{k_2}{1 + \Delta t
 </section>
 <section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
@@ -1627,11 +1354,11 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf09e0fc40> 
+   <jinja2.runtime.BlockReference object at 0x7f7ed92cfee0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

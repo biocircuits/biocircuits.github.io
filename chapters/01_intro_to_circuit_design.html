@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -41,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -73,17 +78,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Repressors-enable-gene-regulation">Repressors enable gene regulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Properties-of-the-simple-binding-curve">Properties of the simple binding curve</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Gene-expression-can-be-“leaky”">Gene expression can be “leaky”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Gene-expression-can-be-%22leaky%22">Gene expression can be “leaky”</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Activators-enable-positive-regulation">Activators enable positive regulation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Hill-functions-enable-analysis-of-ultrasensitivity">Hill functions enable analysis of ultrasensitivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#When-should-a-circuit-use-an-activator-and-when-should-it-use-a-repressor?">When should a circuit use an activator and when should it use a repressor?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#References">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Problems">Problems</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.1.html">1.1: Strategies for controlling proteinexpression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.1.html">1.1: Strategies for controlling protein expression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.2.html">1.2: Separation of time scales</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.3.html">1.3: Rate of production of gene product by anactivator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.4.html">1.4: Activators vs. repressors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.5.html">1.5: Bound and unbound promoterregions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.3.html">1.3: Rate of production of gene product by an activator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.4.html">1.4: Activators vs. repressors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/01/problem_1.5.html">1.5: Bound and unbound promoter regions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Computing-environment">Computing environment</a></li>
@@ -148,8 +153,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>1. Introduction to biological circuit design</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">1. Introduction to biological circuit design</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -166,285 +171,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="1.-Introduction-to-biological-circuit-design">
+  <section id="1.-Introduction-to-biological-circuit-design">
 <h1>1. Introduction to biological circuit design<a class="headerlink" href="#1.-Introduction-to-biological-circuit-design" title="Permalink to this heading"></a></h1>
 <hr><p><strong>Concepts</strong></p>
 <ul class="simple">
@@ -460,7 +187,7 @@ div.rendered_html tbody tr:hover {
 <li><p>Gene regulation circuits can be analyzed in terms of binding of activators and repressors to binding sites in the promoter region.</p></li>
 <li><p>Executable Jupyter notebooks (like this one) enable interactive exploration of key concepts.</p></li>
 </ul>
-<hr><div class="nbinput docutils container">
+<hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -817,7 +544,7 @@ circuit. Somehow, a new field seems to have emerged, loosely defined by its focu
 <!-- ([Hanahan and Weinberg, _Cell_, 2000](https://doi.org/10.1016/S0092-8674%2800%2981683-9)).* --></section>
 <section id="Designing-biological-circuits">
 <h3>Designing biological circuits<a class="headerlink" href="#Designing-biological-circuits" title="Permalink to this heading"></a></h3>
-<p><strong>Circuit design problems</strong> emerge whenever one can build many different products from arrangements of the same elements. Electronic circuits are composed of a handful of different kinds of elements: transistors, resistors, capacitors, etc. that can be connected in different ways to produce circuits with different properties. Design requires comparing different circuit designs that may appear to perform similar functions, but in fact exhibit different tradeoffs, e.g. between power and
+<p><strong>Circuit design problems</strong> emerge whenever one can build many different products from arrangements of the same elements. Electronic circuits are composed of a handful of different kinds of elements: transistors, resistors, capacitors, etc. that can be connected in different ways to produce circuits with different properties. Design requires comparing different circuit designs that may appear to perform similar functions, but in fact exhibit different tradeoffs, e.g. between power and
 performance, or speed and precision. Design problems are also prevalent outside of science and engineering. For example, to make a movie poster one has to choose and arrange graphical elements in relation to one another.</p>
 <p>We now have much information about the molecular components of cells (genes, RNAs, proteins, metabolites, and many other molecules) and their interactions. In many cases, we know the sites at which transcription factors bind genome-wide, which proteins chemically modify which others, and which proteins function together in complexes. It might seem as if we ought to already be able to understand, predict, and control cellular circuits with great precision. However, fundamental questions about the
 designs of these circuits still remain unclear. For example:</p>
@@ -968,7 +695,7 @@ K_\mathrm{d} = \frac{k_-}{k_+}
 <section id="Properties-of-the-simple-binding-curve">
 <h2>Properties of the simple binding curve<a class="headerlink" href="#Properties-of-the-simple-binding-curve" title="Permalink to this heading"></a></h2>
 <p>This is our first encounter with a soon to be familiar function. Note that this function has two parameters: <span class="math notranslate nohighlight">\(K_\mathrm{d}\)</span> specifies the concentration of repressor at which the response is reduced to half its maximum value. The coefficient <span class="math notranslate nohighlight">\(\beta_0\)</span> is simply the maximum expression level, and is a parameter that multiples the rest of the function. Also notice that for small values of <span class="math notranslate nohighlight">\(r\)</span>, the slope is <span class="math notranslate nohighlight">\(-1/K_d\)</span></p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
@@ -1035,8 +762,8 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 </section>
-<section id="Gene-expression-can-be-“leaky”">
-<h2>Gene expression can be “leaky”<a class="headerlink" href="#Gene-expression-can-be-“leaky”" title="Permalink to this heading"></a></h2>
+<section id="Gene-expression-can-be-%22leaky%22">
+<h2>Gene expression can be “leaky”<a class="headerlink" href="#Gene-expression-can-be-%22leaky%22" title="Permalink to this heading"></a></h2>
 <p>In real life, many genes never get repressed all the way to zero expression, even when you add a lot of repressor. Instead, there is a baseline, or “basal”, expression level that still occurs. A simple way to model this is by adding an additional constant term, <span class="math notranslate nohighlight">\(\alpha_0\)</span> to the expression</p>
 <p><span class="math">\begin{align}
 \beta(R) = \alpha_0 + \beta_0 \frac{p}{p_\mathrm{tot}} = \alpha_0 + \frac{\beta_0}{1+r/K_\mathrm{d}}.
@@ -1051,7 +778,7 @@ Potential elaboration here: where does leak come from, molecularly? Is it the fa
 <div class="alert alert-block alert-info">
 JPM: I've added some commentary in the cell above.
 </div>
---><div class="nbinput docutils container">
+--><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
@@ -1134,7 +861,7 @@ quorum sensing system</a>, where the transcription factor LuxR acts as an activa
 \beta(a) = \beta_0 \frac{p_\mathrm{bound}}{p_\mathrm{tot}} = \beta_0\,\frac{a/K_\mathrm{d}}{1+a/K_\mathrm{d}}.
 \end{align}</span></p>
 <p>This produces the opposite, mirror image response compared to repression, shown below with no leakage.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
@@ -1229,7 +956,7 @@ ultrasensitive, responses. In the limit of <span class="math notranslate nohighl
 &\text{repressor-modulated production rate} = \beta \,\frac{1}{1 + (r/k)^n}.
 \end{align}</span></p>
 <p>To help visualize Hill functions, we plot them below for a various degrees of ultrasensitivity, with activating Hill functions in blue and repressing Hill functions in red.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
@@ -1492,17 +1219,17 @@ bound to proteins are intrinsically more susceptible to inappropriate, non-speci
 <h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.1.html">1.1: Strategies for controlling proteinexpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.1.html">1.1: Strategies for controlling protein expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.2.html">1.2: Separation of time scales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.3.html">1.3: Rate of production of gene product by anactivator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.4.html">1.4: Activators vs. repressors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.5.html">1.5: Bound and unbound promoterregions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.3.html">1.3: Rate of production of gene product by an activator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.4.html">1.4: Activators vs. repressors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/01/problem_1.5.html">1.5: Bound and unbound promoter regions</a></li>
 </ul>
 </div>
 <hr></section>
 <section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
@@ -1541,11 +1268,11 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf1a5ed0d0> 
+   <jinja2.runtime.BlockReference object at 0x7f7ea38a4820> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

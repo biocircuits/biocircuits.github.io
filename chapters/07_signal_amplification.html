@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -41,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -138,8 +143,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>7. Amplification of extracellular signals</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">7. Amplification of extracellular signals</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -156,285 +161,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="7.-Amplification-of-extracellular-signals">
+  <section id="7.-Amplification-of-extracellular-signals">
 <h1>7. Amplification of extracellular signals<a class="headerlink" href="#7.-Amplification-of-extracellular-signals" title="Permalink to this heading"></a></h1>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
@@ -450,7 +177,7 @@ div.rendered_html tbody tr:hover {
 <ul class="simple">
 <li><p>Applying conservation laws to simplify circuit analysis.</p></li>
 </ul>
-<hr><div class="nbinput docutils container">
+<hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -781,7 +508,7 @@ if (force === true) {
 <p>Living systems can perform incredible feats of amplification. Perhaps the most dramatic example is the ability of light-sensitive cells in the retina to amplify detection of a single photon into the hydrolysis of 10⁵ cyclic GMP molecules, which in turn leads to a response that blocks more 10⁶ sodium ions from entering the cell over a period of one second. In fact, this amplification process is strong enough to enable conscious perception of single photons (<a class="reference external" href="https://doi.org/10.1038/ncomms12172">Tinsley, et al.,
 2016</a>).</p>
 <p>In fact biological circuits are overflowing with amplifiers, which play a variety of essential roles in different circuits. First, linear amplifiers can increase the amplitude of a signal, effectively multiplying it by a number larger than one. This is important if an intrinsically weak input needs to be magnified to control a downstream cellular response. De-amplifiers (called attenuators) can do the opposite; they reduce the amplitude of a signal by a constant factor. Second, nonlinear
-amplifiers can reshape signals. For example, ultrasensitive systems can allow a system to respond in a switch-like manner when inputs exceed a defined threshold. A third, less obvious aspect of amplifiers is their ability to transform signals from one molecular form to another, e.g. from protein abundance to protein phosphorylation.</p>
+amplifiers can reshape signals. For example, ultrasensitive systems can allow a system to respond in a switch-like manner when inputs exceed a defined threshold. A third, less obvious aspect of amplifiers is their ability to transform signals from one molecular form to another, e.g. from protein abundance to protein phosphorylation.</p>
 <p>Amplifiers are like middle managers; they take results from one group, extract key features, manipulate them, and then pass them along to others in a new form, ideally adding some value along the way.</p>
 <p>In this chapter, we will explore several different types of amplifiers based on protein kinases. While gene regulation also functions as a kind of amplifier, with transcription factors serving as inputs to control the abundances of other genes, phosphorylation amplifiers can operate faster and more directly, and entirely at the protein level. They also play key roles in a variety of central biological processes.</p>
 <p>More specifically, we will focus on two of the most important classes of kinase amplifiers: two-component systems in prokaryotes and mitogen-activated protein (MAP) kinase cascades in eukaryotes. We will learn how these amplifiers can operate in a manner that is <strong>robust</strong> to their own component concentrations and how they can allow tuning of two key properties: <strong>gain</strong> and <strong>sensitivity.</strong></p>
@@ -810,7 +537,7 @@ y = f(x) = \frac{(x/k)^n}{1 + (x/k)^n}.
 &\mathrm{sensitivity} = \frac{n}{1 + (x/k)^n}.
 \end{align}</span></p>
 <p>These are plotted below.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
@@ -996,7 +723,7 @@ y_p(s) = \frac{v_1(s) x}{v_1(s)\,x + v_2 z}\,y_0 = \frac{v_1(s) x/v_2 z}{1 + v_1
 <p>Looking at our expression for <span class="math notranslate nohighlight">\(y_p(s)\)</span>, we see that it takes a similar functional form to a Hill activation function of <span class="math notranslate nohighlight">\(v_1(s)\)</span> with <span class="math notranslate nohighlight">\(n=1\)</span>, which can indeed be approximated by a linear function in the regime <span class="math notranslate nohighlight">\(v_1(s)/v_2 \ll z/x\)</span>.</p>
 <p>Notice, however, that the expression for this threshold value of <span class="math notranslate nohighlight">\(v(s_1)\)</span>, <span class="math notranslate nohighlight">\(v_2 z/x\)</span>, includes terms for the concentrations of Z and X. Normally in a Hill function, this threshold is given by a biochemical parameter, <span class="math notranslate nohighlight">\(k\)</span>, which represents the binding affinity of the regulator to its binding site. Such a parameter is not expected to change significantly within a given cellular environment. By contrast, in our <span class="math notranslate nohighlight">\(y_p(s)\)</span> expression, variations in the concentrations of Z and X
 will dynamically alter the location of the threshold for linearity, changing the overall shape of the response function itself! Since the target gene has no way to directly sense the concentrations of X and Z, this will significantly compromise the ability of the output to faithfully encode the concentration of the input. You can see how the response function changes as X and Z change in the interactive plot below.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
@@ -1135,7 +862,7 @@ y_0 & y_0 < \frac{v_1(s)}{v_2}.
 \end{cases}
 \end{align}</span></p>
 <p>Evidently, <span class="math notranslate nohighlight">\(y_p\)</span> depends only on <span class="math notranslate nohighlight">\(s\)</span>, and is <em>completely independent</em> of the total amounts of the proteins X and Y (up to the ceiling imposed by <span class="math notranslate nohighlight">\(y_0\)</span>). Importantly, the activity, as quantified by the concentration of phosphorylated Y, is linear in the input <span class="math notranslate nohighlight">\(v_1(s)\)</span>, with a slope of <span class="math notranslate nohighlight">\(1/v_2\)</span>. Thus, this system, at least before saturating, is a <strong>perfect linear amplifier</strong> of the input signal. We demonstrate what this function looks like in the plot below.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
@@ -1239,7 +966,7 @@ Potential exercise: Take the original non-paradoxical signaling system and inclu
 <div style="margin: auto; width: 250px;"><img alt="EnvZ-OmpR" src="../_images/EnvZ-OmpR.png" />
 </div><p>Batchelor and Goulian (<a class="reference external" href="https://doi.org/10.1073/pnas.0234782100">PNAS, 2003</a>) engineered <em>E. coli</em> cells to express OmpR under the control of the <em>lac</em> promoter so they could systematically vary its expression by titrating the lactose analog IPTG. They then monitored expression of fluorescent reporter proteins expressed from OmpR’s target promoters. The compared target promoter activity at low osmolarity (in a minimal medium) and at high osmolarity (minimal medium with 15% sucrose). The
 result of their experiment is shown below (using data digitized from the paper).</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
@@ -1361,14 +1088,14 @@ action of the MAPKK Kinase (MAPKKK). And MAPKKK too has active and inactive form
 <p>This core pathway is duplicated in some systems, typically embedded within larger circuits, and sometimes elaborated with additional regulatory inputs. Nevertheless, the core MAPK cascade architecture is strikingly conserved and provides critical functions across a huge range of different biological systems and contexts.</p>
 <p>Because of its central role in many critical cellular processes, the MAPK cascade has been well-studied by biologists for decades. This body of work has revealed that, in various organisms, the MAPK cascade can both exhibit an ultrasensitive response (see <a class="reference external" href="https://doi.org/10.1073/pnas.93.19.10078">Huang and Ferrel 1996, PNAS</a>) and a graded response (see <a class="reference external" href="https://doi.org/10.1002/yea.777">Poritz et al 2007, Yeast</a>), as well as many other interesting dynamical properties (<a class="reference external" href="https://doi.org/10.1126/science.1068873">Bhalla et al 2002,
 Science</a>). In particular, James Ferrell and colleagues did pioneering early studies that sought to <a class="reference external" href="http://dx.doi.org/10.1016/j.tibs.2014.10.002">quantitatively understand</a> the nature of amplification in kinase cascades.</p>
-<p>At first glance, the structure of this system appears puzzling. Why are all these intermediate kinases necessary? Can the first kinase not just directly active the downstream response, and skip the middle men (MAPKKK and MAPKK)? Has the MAPK cascade indeed evolved to produce different behaivors in each organism and context? Or, could it be that a key conserved function of this cascade is precisely its functional plasticity, i.e. its ability to operate in various different modes in different cell
+<p>At first glance, the structure of this system appears puzzling. Why are all these intermediate kinases necessary? Can the first kinase not just directly active the downstream response, and skip the middle men (MAPKKK and MAPKK)? Has the MAPK cascade indeed evolved to produce different behaivors in each organism and context? Or, could it be that a key conserved function of this cascade is precisely its functional plasticity, i.e. its ability to operate in various different modes in different cell
 contexts within each species.?</p>
-<p>In order to address this question, one would ideally like to to take a MAPK cascade and systematically analyze its input-output response across a wide range of different regimes, varying the levels of its components. <a class="reference external" href="https://doi.org/10.1016/j.cell.2010.12.014">O’Shaughnessy et al. (2011, Cell)</a> used a synthetic biology approach to do just this. They built a minimal mammalian MAPK cascade in yeast. This transplantation approach helped to insulate the core motif from the many complicating
+<p>In order to address this question, one would ideally like to to take a MAPK cascade and systematically analyze its input-output response across a wide range of different regimes, varying the levels of its components. <a class="reference external" href="https://doi.org/10.1016/j.cell.2010.12.014">O’Shaughnessy et al. (2011, Cell)</a> used a synthetic biology approach to do just this. They built a minimal mammalian MAPK cascade in yeast. This transplantation approach helped to insulate the core motif from the many complicating
 regulatory interactions it would otherwise have in its native mammalian context. Importantly, the authors designed their system so that they could quantitatively control the concentration of each of the system components. Using these “control knobs,” they investigated the response profile of the cascade across these different regimes. They then compared the observed experimental behavior with expectations from a mathematical model, which we will now explore.</p>
 <p>We will see that the extra steps in the cascade provide ‘control knobs’ that allow it to operate it as a tunable amplifier.</p>
 <section id="A-mathematical-model-of-the-MAP-kinase-cascade">
 <h3>A mathematical model of the MAP kinase cascade<a class="headerlink" href="#A-mathematical-model-of-the-MAP-kinase-cascade" title="Permalink to this heading"></a></h3>
-<p>O’Shaughnessy et al. developed a mass action ODE model based on the following reaction scheme, where the environmental signal (S) propagates down through the sequential kinases until the final MAP kinase, ERK, reaches its active form (ERKpp).</p>
+<p>O’Shaughnessy et al. developed a mass action ODE model based on the following reaction scheme, where the environmental signal (S) propagates down through the sequential kinases until the final MAP kinase, ERK, reaches its active form (ERKpp).</p>
 <div style="width: 400px; margin: auto;"><img alt="MAP kinase cascade reaction schematic" src="../_images/MAPK_cascade.png" />
 </div><p>We denote the three cascade kinases as <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(M\)</span>, and <span class="math notranslate nohighlight">\(E\)</span>, respectively, for Raf, MEK, and ERK. To represent the input, the authors assume that S binds directly to R to create an active Raf kinase, denoted <span class="math notranslate nohighlight">\([R \cdot S]\)</span>. Each subsequent phosphorylation step is treated as a Michaelis-Menten reaction (see Chapter 6). For example, <span class="math notranslate nohighlight">\(M + [R \cdot S] \leftrightarrow [M \cdot R \cdot S] \rightarrow M_p + [R \cdot S]\)</span>, where <span class="math notranslate nohighlight">\(M_p\)</span> denotes a singly phosphorylated state
 of MEK. <span class="math notranslate nohighlight">\(M_p\)</span> can similarly be phosphorylated to produce the active, doubly phosphorylated state, <span class="math notranslate nohighlight">\(M_{pp}\)</span>.</p>
@@ -1401,7 +1128,7 @@ cascade circuit can exhibit a variety of response profiles (marked as symbols on
 <!--
 JB:
 We need to generate our own figure for the heat maps above.
---><p>To visualize the response of the concentration of doubly phosphorylated ERK to total input substrate (S) concentration. This can be calculated by integrating the above dynamical equations for various substrate concentrations and evaluating the steady states. We do this for total concentration of MEK1 and ERK that are indicated by the circle and square in the left heatmap, above. We use the same parameters as in the O’Shaughnessy et al. paper.</p>
+--><p>To visualize the response of the concentration of doubly phosphorylated ERK to total input substrate (S) concentration. This can be calculated by integrating the above dynamical equations for various substrate concentrations and evaluating the steady states. We do this for total concentration of MEK1 and ERK that are indicated by the circle and square in the left heatmap, above. We use the same parameters as in the O’Shaughnessy et al. paper.</p>
 <!--
 Previous text:
 
@@ -1410,7 +1137,7 @@ Edited out by JB.
 Let's see what actual response curves for the model look like at these (and other) points. To do this, we'll need to code up the ODE system above. While in previous chapters we simulated systems of ODEs to determine the evolution of the system over time from its initial condition, in this case we are interested in determining the shape of the *steady-state response profile* of $[Epp]$ to $[S]$. We will therefore need to write another function that will act as a wrapper around the numerical integration function we are already familiar with.
 
 Now let's run this function using parameters from the paper, specifically simulating the system at concentrations of $M_{tot}$ and $E_{tot}$ that were indicated by the circle and square on the paper's heatmap.
---><div class="nbinput docutils container">
+--><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
@@ -1759,7 +1486,7 @@ amplification abilities compared to phosphorylation cascades?</p>
 </section>
 <section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
@@ -1799,11 +1526,11 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf1b79daf0> 
+   <jinja2.runtime.BlockReference object at 0x7f7ee8018eb0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

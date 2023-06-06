@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -41,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../index.html">
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -70,7 +75,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Cell-cell-communication-systems-use-families-of-partly-redundant-ligands-and-receptors">Cell-cell communication systems use families of partly redundant ligands and receptors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#The-Bone-Morphogenetic-Protein-(BMP)-pathways-signals-through-a-set-of-promiscuously-interacting-ligands-and-receptors">The Bone Morphogenetic Protein (BMP) pathways signals through a set of promiscuously interacting ligands and receptors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Do-BMPs-“compute?”">Do BMPs “compute?”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Do-BMPs-%22compute?%22">Do BMPs “compute?”</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#A-simple-model-of-promsiscuous-ligand-receptor-interactions-can-explain-pathway-computations">A simple model of promsiscuous ligand-receptor interactions can explain pathway computations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#The-EQTK-python-package-enables-solution-of-coupled-equilibria">The EQTK python package enables solution of coupled equilibria</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Scanning-ligand-concentrations-and-receptor-expression-levels">Scanning ligand concentrations and receptor expression levels</a></li>
@@ -80,10 +85,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Determining-the-causes-of-the-response-functions">Determining the causes of the response functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Removing-the-trimolecular-binding-assumption-from-the-model">Removing the trimolecular binding assumption from the model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Ligand-receptor-promiscuity-enables-cellular-addressing">Ligand-receptor promiscuity enables cellular addressing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Looking-forward:-what-is-the-‘grammar’-of-BMP-signaling?">Looking forward: what is the ‘grammar’ of BMP signaling?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Looking-forward:-what-is-the-'grammar'-of-BMP-signaling?">Looking forward: what is the ‘grammar’ of BMP signaling?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Computing-environment">Computing environment</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/13_promiscuous_binding.html#Problems">Problems</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">13.1: Programming cellularresponse</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">13.1: Programming cellular response</a></li>
 </ul>
 </li>
 </ul>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../chapters/13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a> &raquo;</li>
-      <li>Problem 13.1: Programming cellular response</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../chapters/13_promiscuous_binding.html">13. Promiscuous receptor-ligand interactions increase the bandwidth and specificity of cell-cell communication systems</a></li>
+      <li class="breadcrumb-item active">Problem 13.1: Programming cellular response</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -154,285 +159,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Problem-13.1:-Programming-cellular-response">
+  <section id="Problem-13.1:-Programming-cellular-response">
 <h1>Problem 13.1: Programming cellular response<a class="headerlink" href="#Problem-13.1:-Programming-cellular-response" title="Permalink to this heading"></a></h1>
 <hr><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -460,7 +187,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_rxns</span><span class="p">(</span><span class="n">nA</span><span class="p">,</span> <span class="n">nB</span><span class="p">,</span> <span class="n">nL</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+    <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Generate trimolecular binding reactions for a system with</span>
 <span class="sd">    nA, nB, and nL types of Type A receptors, Type B receptors,</span>
 <span class="sd">    and ligands, respectively. Returns a single string.</span>
@@ -474,7 +201,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 
 
 <span class="k">def</span> <span class="nf">make_N</span><span class="p">(</span><span class="n">nA</span><span class="p">,</span> <span class="n">nB</span><span class="p">,</span> <span class="n">nL</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a stoichiometric matrix for ligand-receptor binding with</span>
+    <span class="sd">&quot;&quot;&quot;Generate a stoichiometric matrix for ligand-receptor binding with</span>
 <span class="sd">    nA, nB, and nL types of Type A receptors, Type B receptors, and</span>
 <span class="sd">    ligands, respectively.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -492,7 +219,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 
 
 <span class="k">def</span> <span class="nf">readout</span><span class="p">(</span><span class="n">epsilon</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Readout function of a set of complex concentrations. This</span>
+    <span class="sd">&quot;&quot;&quot;Readout function of a set of complex concentrations. This</span>
 <span class="sd">    is the expression level of the genes under regulation of</span>
 <span class="sd">    singaling from the receptors.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -500,9 +227,33 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 </pre></div>
 </div>
 </div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">make_rxns</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+A_1 + L_1 + B_1 &lt;=&gt; T_1_1_1
+A_2 + L_1 + B_1 &lt;=&gt; T_2_1_1
+A_1 + L_2 + B_1 &lt;=&gt; T_1_2_1
+A_2 + L_2 + B_1 &lt;=&gt; T_2_2_1
+A_1 + L_1 + B_2 &lt;=&gt; T_1_1_2
+A_2 + L_1 + B_2 &lt;=&gt; T_2_1_2
+A_1 + L_2 + B_2 &lt;=&gt; T_1_2_2
+A_2 + L_2 + B_2 &lt;=&gt; T_2_2_2
+
+</pre></div></div>
+</div>
 <p>We can make a stoichiometric matrix using these functions; it will be the same for all calculations we do.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">make_N</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -563,11 +314,11 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 </table>
 <p>These indices also correspond to the species in our inputted initial concentrations and in the output of EQTK’s solver for the equilibrium concentrations. With that in mind, we can write a function to generate our initial concentration values for a given set of initial ligand concentrations, <code class="docutils literal notranslate"><span class="pre">cL0</span></code>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_c0_grid</span><span class="p">(</span><span class="n">cL0</span><span class="p">,</span> <span class="n">cA10</span><span class="p">,</span> <span class="n">cA20</span><span class="p">,</span> <span class="n">cB10</span><span class="p">,</span> <span class="n">cB20</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an array of initial concentrations.</span>
+    <span class="sd">&quot;&quot;&quot;Create an array of initial concentrations.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -617,7 +368,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 </div>
 <p>In trying to find parameters, we will use the ligand concentrations below.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cL0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">32.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">])</span>
@@ -626,7 +377,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 </div>
 <p>Next, in order to do the calculation, we need to specify the prescribed target response of the various cell types and for which ligand words the target response is relevant (ignoring the hatches areas in the graphic above). We refer to the latter as <code class="docutils literal notranslate"><span class="pre">active_words</span></code>, defined below.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ligand words from top diagram</span>
@@ -636,7 +387,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 </div>
 <p>You can see how it corresponds to the words by comparing to our target ligand concantrations.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c0</span> <span class="o">=</span> <span class="n">make_c0_grid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -658,7 +409,7 @@ active words: [False False  True False False False  True False  True]
 </div>
 <p>We can now specify a list of target responses.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targets</span> <span class="o">=</span> <span class="p">[</span>
@@ -683,7 +434,7 @@ active words: [False False  True False False False  True False  True]
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_norm_response</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Solve for normalized response. Returns a one-dimensional array</span>
+    <span class="sd">&quot;&quot;&quot;Solve for normalized response. Returns a one-dimensional array</span>
 <span class="sd">    containing signal levels corresponding to each row in `c0`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
@@ -711,7 +462,7 @@ active words: [False False  True False False False  True False  True]
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">residuals</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cL0</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">active_words</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return array of residuals.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Return array of residuals.&quot;&quot;&quot;</span>
     <span class="c1"># Unpack x, log K&#39;s, then log epsilons, then receptor concs</span>
     <span class="n">K</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>
     <span class="n">epsilon</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">16</span><span class="p">]</span>
@@ -753,7 +504,7 @@ active words: [False False  True False False False  True False  True]
 </pre></div>
 </div>
 </div>
-<p>Finally, we must provide a guess of the parameter values. Su, et al. used the strategy that the initial guess of all receptor concentrations were one and randomly chose values for <span class="math notranslate nohighlight">\(K_{ijk}\)</span> and <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> from a uniform distribution on the interval [0, 1]. You can try this strategy as in the code cell below or adopt one of your own.</p>
+<p>Finally, we must provide a guess of the parameter values. Su, et al. used the strategy that the initial guess of all receptor concentrations were one and randomly chose values for <span class="math notranslate nohighlight">\(K_{ijk}\)</span> and <span class="math notranslate nohighlight">\(\epsilon_{ijk}\)</span> from a uniform distribution on the interval [0, 1]. You can try this strategy as in the code cell below or adopt one of your own.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -783,6 +534,75 @@ receptor_conc = res.x[16:]
 <p>Find a set of parameters that give the desired cell types. Make a plot like the triptych above for the various cell types to demonstrate that you parameter set does indeed give the desired orthogonal cell types. Also report the respective receptor concentration profiles of each of the three cell types.</p>
 <p><em>Hint:</em> The optimization will converge to a local minimum, which may not hit your target addressing very well. There are <em>lots</em> of local minima. You can try rerunning the optimization with a different set of starting guesses for the parameters and receptor concentrations. You may have to do this several times.</p>
 <p><strong>d)</strong> If you like, try coming up with parameter values for other word sets and/or target responses.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c0</span>
+
+<span class="c1"># Set up fixed concentrations</span>
+<span class="n">fixed_c</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">c0</span><span class="p">)</span>
+<span class="n">fixed_c</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">c0</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+
+<span class="c1"># # Solve for the concentrations</span>
+<span class="c1"># c = eqtk.fixed_value_solve(c0=c0, fixed_c=fixed_c, N=N, K=K)</span>
+
+<span class="c1"># # Build and return normalized response</span>
+<span class="c1"># s = readout(epsilon, c)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c0</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(9, 14)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed_c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[  -1.,   -1.,   -1.,   -1.,    1.,    1.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.],
+       [  -1.,   -1.,   -1.,   -1.,   32.,    1.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.],
+       [  -1.,   -1.,   -1.,   -1., 1000.,    1.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.],
+       [  -1.,   -1.,   -1.,   -1.,    1.,   32.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.],
+       [  -1.,   -1.,   -1.,   -1.,   32.,   32.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.],
+       [  -1.,   -1.,   -1.,   -1., 1000.,   32.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.],
+       [  -1.,   -1.,   -1.,   -1.,    1., 1000.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.],
+       [  -1.,   -1.,   -1.,   -1.,   32., 1000.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.],
+       [  -1.,   -1.,   -1.,   -1., 1000., 1000.,   -1.,   -1.,   -1.,
+          -1.,   -1.,   -1.,   -1.,   -1.]])
+</pre></div></div>
+</div>
 </section>
 
 
@@ -797,11 +617,11 @@ receptor_conc = res.x[16:]
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf1b531fa0> 
+   <jinja2.runtime.BlockReference object at 0x7f7edf664a00> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

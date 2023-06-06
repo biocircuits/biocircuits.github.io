@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -41,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -144,8 +149,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>14. MultiFate enables expandable and controllable multistability</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">14. MultiFate enables expandable and controllable multistability</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -162,285 +167,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="14.-MultiFate-enables-expandable-and-controllable-multistability">
+  <section id="14.-MultiFate-enables-expandable-and-controllable-multistability">
 <h1>14. MultiFate enables expandable and controllable multistability<a class="headerlink" href="#14.-MultiFate-enables-expandable-and-controllable-multistability" title="Permalink to this heading"></a></h1>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
@@ -831,7 +558,7 @@ BMP (which we covered in a previous chapter) and others, in specific sequences. 
 </div><p>As a result, we now know, more than ever before, what cell types are out there and how to obtain them. Nevertheless, it has remained challenging to understand the cell fate control circuits that makes all of these incredible behaviors possible. More specifically, what architectures do those circuits use, how do they determine the repertoire of cell state that can exist in an organism? How do they control which states can differentiate to which others? And so on. In short, how do circuits specify
 what states can exist and how they can be controlled?</p>
 <p>Much of our thinking has been guided by an evocative and iconic illustration from Conrad Waddington’s 1957 book, <em>The Strategy of the Genes</em>.</p>
-<div style="width: 600px; margin: auto;"><img alt="Waddington’s Landscape" src="../_images/WaddingtonLandscape.png" />
+<div style="width: 600px; margin: auto;"><img alt="Waddington's Landscape" src="../_images/WaddingtonLandscape.png" />
 </div><p>This drawing provides a wonderful intuitive metaphor for the way in which a cell, figuratively represented by a marble, might progressively commit to ever more specific cell states, by rolling deeper and deeper into alternative valleys from which is cannot easily emerge, until it eventually comes to rest in a terminally differentiated state. In the right-hand illustration, Waddington further imagined how underlying genes might control the shape of this landscape, influencing which valleys the
 marble is more or less likely to fall into. He represented this idea abstractly with genes (black rectangles) attached to the landscape controlling the shape of the landscape via wires (black lines). However, while these drawings are intuitively appealing and conceptually useful, they do not by themselves explain how circuits of interacting molecuels could establish and control cell fate decision-making within an organism.</p>
 <p>One way to address this questions is by identifying the genes that specify natural cell fates and working out the ways in which they interact with one another to control cell fates. Such approaches have provided critical insights into many cell fate control systems, such as the pluripotency system that maintains embryonic stem cells in a unique ‘pluripotent’ state with the potential to differentiate into almost any cell type in the organism. A complementary approach is to try to design and build
@@ -857,7 +584,7 @@ a synthetic cell fate control system “from scratch” and to see what lessons 
 <li><p>Enable progressive commitment and reprogramming.</p></li>
 <li><p>Expand to generate more states with additional genes.</p></li>
 </ol>
-<p>This last feature—expandability—means that one could scale up the circuit by adding to it, e.g. incorporating additional genes, without re-engineering existing circuitry. It is important if we want the system to be able to scale to produce complex tissues or organisms with many states.</p>
+<p>This last feature—expandability—means that one could scale up the circuit by adding to it, e.g. incorporating additional genes, without re-engineering existing circuitry. It is important if we want the system to be able to scale to produce complex tissues or organisms with many states.</p>
 <p>These features are diagrammed schematically here:</p>
 <div style="width: 600px; margin: auto;"><img alt="Ideal features of a synthetic differentiation circuit" src="../_images/MultiFate_Ideals_Schematic.png" />
 </div><p>The first multistable circuit that may come to mind is the classic two component toggle switch, which we analyzed in Chapter 3. In principle, this circuit might be extended by incorporating many transcription factors that all repress one another. However, this would be difficult to achieve. With <span class="math notranslate nohighlight">\(N\)</span> transcription factors, the promoter controlling each repressor gene would have to be repressed by <span class="math notranslate nohighlight">\(N-1\)</span> repressors. This could become impractical given the limited available space in a
@@ -866,7 +593,7 @@ promoter for effective repression. More fundamentally, however, it does not expa
 </section>
 <section id="Inspiration:-natural-circuits-use-combinatorial-dimerization-and-positive-autoregulation">
 <h2>Inspiration: natural circuits use combinatorial dimerization and positive autoregulation<a class="headerlink" href="#Inspiration:-natural-circuits-use-combinatorial-dimerization-and-positive-autoregulation" title="Permalink to this heading"></a></h2>
-<p>Inspiration for the design of a synthetic cell fate control system can come from looking at what is known about natural cell fate control systems. Zhu et al. (<a class="reference external" href="https://doi.org/10.1126/science.abg9765">2022, Science</a>) noticed that many natural fate control systems share two critical features:</p>
+<p>Inspiration for the design of a synthetic cell fate control system can come from looking at what is known about natural cell fate control systems. Zhu et al. (<a class="reference external" href="https://doi.org/10.1126/science.abg9765">2022, Science</a>) noticed that many natural fate control systems share two critical features:</p>
 <p>First, they are based on sets of transcription factors that combinatorially dimerize to form many possible complexes. (This is reminescent of the combinatorial complex formation explored in the previous chapter on BMP.) Certain dimers activate downstream genes, whie others may be inactive. Formation of inactive complexes sequesters certain transcription factors, preventing them from forming alternative, active dimers with other proteins. This is analogous to the molecular titration motif we
 analyzed in Chapter 12.</p>
 <p>Second, these circuits contain positive autoregulatory feedback loops, in which transcription factor dimers activate expression of one or more of their own constituents.</p>
@@ -876,7 +603,7 @@ transcription factor Oct4, which can dimerize with either Sox2 or Sox17. Sox2-Oc
 </div></section>
 <section id="MultiFate:-a-naturally-inspired-synthetic-cell-fate-control-circuit">
 <h2>MultiFate: a naturally inspired synthetic cell fate control circuit<a class="headerlink" href="#MultiFate:-a-naturally-inspired-synthetic-cell-fate-control-circuit" title="Permalink to this heading"></a></h2>
-<p>Intrigued and inspired by these architectures, Zhu et al. desigend a circuit called MultiFate, which incorporates the two themes of combinatorial dimerizaton among a set of transcription factors and positive autoregulation. We will see that the MultiFate architecture can generate multistability and the other features enough, but is simple enough to be constructed and analyzed synthetically within cells.</p>
+<p>Intrigued and inspired by these architectures, Zhu et al. desigend a circuit called MultiFate, which incorporates the two themes of combinatorial dimerizaton among a set of transcription factors and positive autoregulation. We will see that the MultiFate architecture can generate multistability and the other features enough, but is simple enough to be constructed and analyzed synthetically within cells.</p>
 <p>We will start by analzying a minimal version of the MultiFate architecture, termed MultiFate-2, comprising just two transcription factors, which we label A and B. A and B can each form homodimers. They can also heterodimerize with one another. The homodimers positively activate their own gene, while heterodimers are inactive. The reason that homodimers can activate their own genes, while the corresponding monomers cannot is that the DNA binding site for the dimer is effectively double the length
 of that of the monomer, providing approximately twice the binding energy.</p>
 <p>The schematic drawing below explains the structure of MultiFate-2.</p>
@@ -919,7 +646,7 @@ dimeric form, leading to the removal terms <span class="math notranslate nohighl
 obtain an expression that represents <span class="math notranslate nohighlight">\([A_2]\)</span> and <span class="math notranslate nohighlight">\([B_2]\)</span> as a function of <span class="math notranslate nohighlight">\([A_{\mathrm{tot}}]\)</span> and <span class="math notranslate nohighlight">\([B_{\mathrm{tot}}]\)</span>.</p>
 <p>We accomplish this by the following procedure:</p>
 <ol class="arabic simple">
-<li><p>Rewrite the equilibrium binding relations so that everything is a function of the homodimer concentrations, i.e. <span class="math">\begin{align}&[A] = \sqrt{K_d[A_2]} \\ &[AB] = 2[A][B]/K_d =  2\sqrt{[A_2][B_2]}\end{align}</span></p></li>
+<li><p>Rewrite the equilibrium binding relations so that everything is a function of the homodimer concentrations, i.e. <span class="math">\begin{align}&[A] = \sqrt{K_d[A_2]} \\ &[AB] = 2[A][B]/K_d =  2\sqrt{[A_2][B_2]}\end{align}</span></p></li>
 <li><p>Substitute these expressions into the conservation law to obtain an equation relating the total concentrations to the homodimer concentrations only.</p></li>
 <li><p>Rearrange the terms and solve the resulting system of equations to obtain expressions for the homodimer concentrations as a function of just the total concentrations.</p></li>
 </ol>
@@ -965,7 +692,7 @@ corresponding to all of the points in the plane where <span class="math notransl
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BSParams</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Container for parameters for homodimeric bistable circuits.</span>
 <span class="sd">    Includes asymmetry parameters r, m, kappa, gamma.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -985,7 +712,7 @@ corresponding to all of the points in the plane where <span class="math notransl
             <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">entry</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">df_dt</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ODE of A and B based on parameters p.</span>
 <span class="sd">    Includes asymmetry parameters r, m, kappa, gamma</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -997,7 +724,7 @@ corresponding to all of the points in the plane where <span class="math notransl
             <span class="n">p</span><span class="o">.</span><span class="n">alpha</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">beta</span> <span class="o">*</span> <span class="n">B2</span><span class="o">**</span><span class="n">p</span><span class="o">.</span><span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">**</span><span class="n">p</span><span class="o">.</span><span class="n">n</span> <span class="o">+</span> <span class="n">B2</span><span class="o">**</span><span class="n">p</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">Btot</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">get_nullclines</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate nullclines for Atot and Btot based on parameters.</span>
 <span class="sd">    Includes asymmetry parameters r, m, kappa, gamma</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1282,7 +1009,7 @@ Note that contexts like these, where we are finding symbolic expressions solely 
     <span class="k">return</span> <span class="n">jmat</span>
 
 <span class="k">def</span> <span class="nf">stability</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns True if stable</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># x0, y0 = fixed point coord</span>
@@ -1666,7 +1393,7 @@ separatrix, therefore, we must start at the fixed point, take a very small stepp
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d95f02&quot;</span><span class="p">,</span>
     <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot separatrix on phase portrait.</span>
 <span class="sd">    Takes bokeh plot p as an input and returns p with</span>
 <span class="sd">    separatrix plot overlaid.</span>
@@ -1840,7 +1567,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 <section id="Building-MultiFate">
 <h2>Building MultiFate<a class="headerlink" href="#Building-MultiFate" title="Permalink to this heading"></a></h2>
-<p>Will MultiFate indeed generate multistability in cells? And, could it provide some of the key capabilities expected of an ideal cell differentiation circuit, such as multistability, state-switching, control of state stability, and expandability? To find out, Zhu et al. constructed an experimental implementation of the MultiFate-2 circuit.</p>
+<p>Will MultiFate indeed generate multistability in cells? And, could it provide some of the key capabilities expected of an ideal cell differentiation circuit, such as multistability, state-switching, control of state stability, and expandability? To find out, Zhu et al. constructed an experimental implementation of the MultiFate-2 circuit.</p>
 <p>The key components required to build MultiFate are transcription factors that activate only as homodimers and inhibit each other through heterodimerization. Zinc finger DNA-binding proteins (below, left) provided an ideal type of engineerable DNA binding protein. They are comprised of modular domains (fingers) that bind to specific 3bp sequences an can be concatenated to recognize longer sites. They can thus be designed to recognize specific DNA binding sites.</p>
 <p>In MultiFate, only the homodimers activate. To achieve this, the authors took 3-finger proteins that recognize 9bp target sites, and fused them to a transcriptional activation domain. As shown schematically (below, middle), 9bp is too short for efficient binding by the monomeric proteins. However, further incorporating a homodimerization domain caused the proteins to pair up as homodimers that efficiently recognize the combined 18bp double target site, and therefore activate efficiently. In
 fact, the homodimers activated more strongly than the monomers (leftmost pair of bars, below right). Furthermore, incorporation of a additional mutations in the DNA binding domains reduced activation by the monomers while preserving activation by the homodimers. In particular, notice how two arginine to alanine mutations (R2AR39A) reduced activation by monomers but not dimers.</p>
@@ -1898,7 +1625,7 @@ attractors in the system now have A or B expression but not both. With no other 
 </video></div><p>Does this really happen? To find out, Zhu et al added a third zinc finger, in a third color (displayed in the blue channel) to the existing MultiFate-2 circuit. Indeed, all 7 predicted states occurred, and were stable, as you can see in this movie, where the three proteins are displayed in the red, green, and blue channels and each state therefore has a unique color combination:</p>
 <p>MultiFate-3-MovieS5_MF3movie.mp4</p>
 <div style="margin: auto; width: 450px;"><video src="figs/MultiFate-3-MovieS5_MF3movie.mp4" style="width: 450px;" controls><p>Your browser does not support display of this video.</p>
-</video></div><p>Having demonstrated that a 2-gene MultiFate circuit exhibits the desired stability and controllability properties for a differentiation circuit, Zhu et al. then demonstrated the MultiFate architecture’s expandability by constructing and measuring the performance of a 3-gene MultiFate circuit. Through mathematical modeling they were able to determine that the 3-gene circuit could exhibit septastability (the coexistence of seven stable fixed points), and through experimental measurements they were
+</video></div><p>Having demonstrated that a 2-gene MultiFate circuit exhibits the desired stability and controllability properties for a differentiation circuit, Zhu et al. then demonstrated the MultiFate architecture’s expandability by constructing and measuring the performance of a 3-gene MultiFate circuit. Through mathematical modeling they were able to determine that the 3-gene circuit could exhibit septastability (the coexistence of seven stable fixed points), and through experimental measurements they were
 able to determine that cells that started in each of these seven states persisted within these states for at least 18 days in the absence of external control signals.</p>
 <div style="width: 800px; margin: auto;"><img alt="Various multistable regimes for a 3-gene MultiFate circuit" src="../_images/MultiFate3_Modeling.png" />
 </div><p>With MultiFate, in experiments as well as in the model, the number of states increases faster than the number of transcription factors. This is essential to achieve very large numbers of states.</p>
@@ -1947,11 +1674,11 @@ dynamics autonomously or in response to signals from other cells, similar to the
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf3b150e50> 
+   <jinja2.runtime.BlockReference object at 0x7f7ed1e88e80> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

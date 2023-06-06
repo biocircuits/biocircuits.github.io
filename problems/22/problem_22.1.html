@@ -41,12 +41,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../index.html">
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -80,7 +84,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html#Numerical-solution-to-R-D-equations-for-simple-degradation">Numerical solution to R-D equations for simple degradation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html#Computing-environment">Computing environment</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html#Problems">Problems</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">22.1: Turing patterns withexpanders</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">22.1: Turing patterns with expanders</a></li>
 </ul>
 </li>
 </ul>
@@ -124,9 +128,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a> &raquo;</li>
-      <li>Problem 22.1: Turing patterns with expanders</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
+      <li class="breadcrumb-item active">Problem 22.1: Turing patterns with expanders</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -143,33 +147,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Problem-22.1:-Turing-patterns-with-expanders">
+  <section id="Problem-22.1:-Turing-patterns-with-expanders">
 <h1>Problem 22.1: Turing patterns with expanders<a class="headerlink" href="#Problem-22.1:-Turing-patterns-with-expanders" title="Permalink to this heading"></a></h1>
-<hr><p>In this problem, we will explore scaling of Turing patterns, described by Werner, et al. (<a class="reference external" href="http://doi.org/10.1103/PhysRevLett.114.138101">PRL, 2015</a>).</p>
+<hr><p>In this problem, we will explore scaling of Turing patterns, described by Werner, et al. (<a class="reference external" href="http://doi.org/10.1103/PhysRevLett.114.138101">PRL, 2015</a>).</p>
 <p>As discussed in lecture, Turing patterns tend to have a wavelength that is independent of the size of the system, which means that they do not scale. Werner and coworkers proposed a model for interactions of an expander (E) with the classical Turing activator (A)-inhibitor (B) components. The model is shown below.</p>
 <div style="margin: auto; width: 200px;"><img alt="Werner Turing circuit" src="../../_images/werner_turing_circuit.png" />
 </div><p>The color coding of the species will be useful to use in your plots. The <a class="reference external" href="https://colorbrewer2.org/?type=qualitative&amp;scheme=Dark2&amp;n=3">hex codes</a> are <code class="docutils literal notranslate"><span class="pre">['#1b9e77',</span> <span class="pre">'#d95f02',</span> <span class="pre">'#7570b3']</span></code>, respectively, for A, B, and E.</p>
@@ -237,11 +217,11 @@ Plot the resulting steady state concentration profiles for <span class="math not
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf3b141df0> 
+   <jinja2.runtime.BlockReference object at 0x7f7ed1e05210> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

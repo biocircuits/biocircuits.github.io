@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -41,12 +42,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -73,17 +78,17 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#References">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Technical-appendix">Technical appendix</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a.Nondimensionalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Problems">Problems</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.1.html">3.1: Modes of bistability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.2.html">3.2: Controlling an autoactivationcircuit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.3.html">3.3: Autoactivation, bistability, and the importance ofleakage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.4.html">3.4: Modeling inducers in a toggleswitch</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.5.html">3.5: Negative autoregulation including mRNAdynamics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.6.html">3.6: Noncooperative bistability with a growth-determined positivefeedback circuit</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.7.html">3.7: Design principles fortoggles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.2.html">3.2: Controlling an autoactivation circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.3.html">3.3: Autoactivation, bistability, and the importance of leakage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.4.html">3.4: Modeling inducers in a toggle switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.5.html">3.5: Negative autoregulation including mRNA dynamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.6.html">3.6: Noncooperative bistability with a growth-determined positive feedback circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/03/problem_3.7.html">3.7: Design principles for toggles</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Computing-environment">Computing environment</a></li>
@@ -146,8 +151,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>3. Sticky switches: bistability through positive feedback</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">3. Sticky switches: bistability through positive feedback</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -164,285 +169,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="3.-Sticky-switches:-bistability-through-positive-feedback">
+  <section id="3.-Sticky-switches:-bistability-through-positive-feedback">
 <h1>3. Sticky switches: bistability through positive feedback<a class="headerlink" href="#3.-Sticky-switches:-bistability-through-positive-feedback" title="Permalink to this heading"></a></h1>
 <hr><p><strong>Concepts</strong></p>
 <ul class="simple">
@@ -459,7 +186,7 @@ div.rendered_html tbody tr:hover {
 <li><p>Nullcline analysis identifies fixed points and provides insight into the structure of dynamical systems.</p></li>
 <li><p>Nondimensionalization simplifies analysis of a model’s parameter space.</p></li>
 </ul>
-<hr><div class="nbinput docutils container">
+<hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -823,7 +550,7 @@ we will show how positive autoregulation can, under some conditions, generate bi
 \end{align}</span></p>
 <p>We can get some intuition about this system’s behavior without diving straight into solving the ODE or even finding its steady states. First, we notice that <span class="math notranslate nohighlight">\(\mathrm{d}x/\mathrm{d}t\)</span> vanishes for <span class="math notranslate nohighlight">\(x = 0\)</span>, regardless of the parameter values, so <span class="math notranslate nohighlight">\(x = 0\)</span> is always a steady state. If the activator is absent, it stays absent.</p>
 <p>To go further, we will turn to graphical methods and plot the values of the production term (the activating Hill function) and the degradation term (<span class="math notranslate nohighlight">\(\gamma x\)</span>) for various values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
@@ -986,7 +713,7 @@ fixed point is all <span class="math notranslate nohighlight">\(x\)</span>-value
 <p>Since this system has two stable fixed points, we can describe it as <strong>bistable</strong>. As long as noise or other perturbations are not too strong, the cell can happily remain at either a low or high value of x. Bistability is a special case of the more general phenomenon of <strong>multistability</strong>, which is one of the most important properties in biology, underlying the ability of a single genome to produce a vast array of distinct cell types in a multicellular organism. (We will discuss a larger
 multistable circuit later in the course.)</p>
 <p>This simple analysis shows us that a single positive autoregulatory gene can generate bistability! However, positive feedback by itself <em>is not enough</em>. Bistabiity also requires an <strong>ultrasensitive</strong> response to <span class="math notranslate nohighlight">\(x\)</span>. (In the context of the Hill function, ultrasensitivity can be defined as <span class="math notranslate nohighlight">\(n&gt;1\)</span>). If we reduce the Hill coefficient to 1, keeping other parameters the same, you can see that we now have only a single stable fixed point (and one unstable fixed point at <span class="math notranslate nohighlight">\(x=0\)</span>).</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
@@ -1066,7 +793,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <p>In an end-of-chapter problem, you can prove that no matter how we change the other parameters in this model, the system will never be able to obtain bistability unless it has ultrasensitivity (<span class="math notranslate nohighlight">\(n&gt;1\)</span>).</p>
 <p>Nevertheless, ultrasensitivity does <em>not</em> guarantee bistability in this system. It also requires tuning of the system’s other parameters relative to one another. We can explore this relationship between the parameter values in the interactive plot below.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
@@ -1189,7 +916,7 @@ x_{\mathrm{min}} = \beta \,\frac{n-1}{n}.
 <p>So, the function <span class="math notranslate nohighlight">\(g(x)\)</span> decreases from unity at <span class="math notranslate nohighlight">\(x = 0\)</span>, hits a minimum, and then grows to infinity with increasing <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\(g(x_{\mathrm{min}}) &gt; 0\)</span>, then we know that <span class="math notranslate nohighlight">\(g(x)\)</span> never dips low enough to satisfy <span class="math notranslate nohighlight">\(g(x) = 0\)</span>, and <span class="math notranslate nohighlight">\(x=0\)</span> is our only fixed point. On the other hand, if <span class="math notranslate nohighlight">\(g(x_{\mathrm{min}}) &lt; 0\)</span>, then we know that there must be at least two nonzero fixed points, since <span class="math notranslate nohighlight">\(g(x)\)</span> had to cross the <span class="math notranslate nohighlight">\(x\)</span>-axis to get from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(g(x_{\mathrm{min}})\)</span> and must cross it again to get from <span class="math notranslate nohighlight">\(g(x_{\mathrm{min}})\)</span> to <span class="math notranslate nohighlight">\(+\infty\)</span>.</p>
 <p>To make this more clear, in the plot below, we visualize the known limiting behavior at the edges using dark lines and potential behaviors of <span class="math notranslate nohighlight">\(g(x)\)</span> in the interior using faint lines.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
@@ -1312,7 +1039,7 @@ line in parameter space represents a <strong>bifurcation</strong>, where the qua
 <h3>A bifurcation diagram<a class="headerlink" href="#A-bifurcation-diagram" title="Permalink to this heading"></a></h3>
 <p>We have now analyzed the system fully and shown that the system is monostable for <span class="math notranslate nohighlight">\(n\leq 1\)</span>. For <span class="math notranslate nohighlight">\(n&gt;1\)</span>, the system is bistable when <span class="math notranslate nohighlight">\(\beta &gt; n(n-1)^{(1-n)/n}\)</span>, monostable when <span class="math notranslate nohighlight">\(\beta &lt; n(n-1)^{(1-n)/n}\)</span>, and undergoes a bifurcation between these two regimes when <span class="math notranslate nohighlight">\(\beta = n(n-1)^{(1-n)/n}\)</span>.</p>
 <p>Thanks to the fact that we nondimensionalized our system, its bifurcation behavior can be fully explained using only two dimensionless parameters. This allows us to visualize it with the nature of the steady states of the system with a <strong>bifurcation diagram</strong>, shown below.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
@@ -1392,7 +1119,7 @@ the regime where <span class="math notranslate nohighlight">\(1 &lt; \beta &lt; 
 <p>Consider the postive autoregulation circuit in its bistable regime, with <span class="math notranslate nohighlight">\(x\)</span> at the upper stable fixed point. Now, suppose some transient perturbation occurs. Perhaps the value of <span class="math notranslate nohighlight">\(\gamma\)</span> is suddenly increased because the cell has begun dividing at a much faster rate. If this perturbation is large enough to cross the bifurcation boundary, then the system becomes monostable, and <span class="math notranslate nohighlight">\(x\)</span> will be driven to the only stable fixed point, at a value closer to what was previously the
 lower fixed point in the bistable regime. Once the perturbation ends, <span class="math notranslate nohighlight">\(\gamma\)</span> returns to its original value, and the system regains bistability. But, if the perturbed value of <span class="math notranslate nohighlight">\(x\)</span> lies within the basin of attraction of the lower bistable state, then the system will remain in the lower state. In this scenario, a transient perturbation will have led to a permanent state switch. In this sense the system has a “memory” of the transient event.</p>
 <p>This scenario is illustrated in the series of plots below.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
@@ -1622,7 +1349,7 @@ circuit with a 2-gene mutual repression circuit.</p>
 bistable regime, but, due to hysteresis, its expression states remained largely unchanged. In this way, they showed that the toggle circuit could record a minimal 1 bit memory of the last signal that it experienced.</p>
 <p>The figure below, featuring data digitized from the paper, shows the toggling behavior. IPTG is an inducer that inhibits repression by LacI, one of the two repressors they used in the toggle. In a control experiment without the toggle architecture, expression of the gene under control of the promoter repressed by LacI grows steadily with increasing IPTG concentration. Conversely, for the toggle architecture, there is a sharp jump in expression at an intermediate IPTG concentration, marking the
 “switch” of the toggle.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
@@ -1715,7 +1442,7 @@ x\text{ nullcline: }& x = \frac{\beta_x}{1 + y^n}, \\[1em]
 y\text{ nullcline: }& y= \frac{\beta_y}{1 + x^n}.
 \end{align}</span></p>
 <p>Wherever these two lines cross, one has a fixed point, since both time derivatives vanish simultaneously. The stability of that fixed point can be determined by <strong>linear stability analysis</strong>, which we will introduce in <a class="reference internal" href="09_repressilator.html"><span class="doc">Chapter 9</span></a>. For now, we will plot the two nullclines and investigate their behavior by varying the dimensionless parameters <span class="math notranslate nohighlight">\(\beta_x\)</span> and <span class="math notranslate nohighlight">\(\beta_y\)</span>, as well as the Hill coefficient <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
@@ -1791,7 +1518,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <h2>Technical appendix<a class="headerlink" href="#Technical-appendix" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a.Nondimensionalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
 </ul>
 </div>
 <hr></section>
@@ -1800,18 +1527,18 @@ var element = document.currentScript.previousSibling.previousSibling;
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.1.html">3.1: Modes of bistability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.2.html">3.2: Controlling an autoactivationcircuit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.3.html">3.3: Autoactivation, bistability, and the importance ofleakage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.4.html">3.4: Modeling inducers in a toggleswitch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.5.html">3.5: Negative autoregulation including mRNAdynamics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.6.html">3.6: Noncooperative bistability with a growth-determined positivefeedback circuit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.7.html">3.7: Design principles fortoggles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.2.html">3.2: Controlling an autoactivation circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.3.html">3.3: Autoactivation, bistability, and the importance of leakage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.4.html">3.4: Modeling inducers in a toggle switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.5.html">3.5: Negative autoregulation including mRNA dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.6.html">3.6: Noncooperative bistability with a growth-determined positive feedback circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.7.html">3.7: Design principles for toggles</a></li>
 </ul>
 </div>
 </section>
 <section id="Computing-environment">
 <h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
-<div class="nbinput docutils container">
+<div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
@@ -1852,11 +1579,11 @@ jupyterlab : 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf1ac57820> 
+   <jinja2.runtime.BlockReference object at 0x7f7ed9742b90> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

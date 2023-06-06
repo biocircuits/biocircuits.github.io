@@ -39,12 +39,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../index.html">
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -120,9 +124,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">biocircuits package documentation</a> &raquo;</li>
-      <li>Purpose and contents</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">biocircuits package documentation</a></li>
+      <li class="breadcrumb-item active">Purpose and contents</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -139,31 +143,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="purpose-and-contents">
+  <section id="purpose-and-contents">
 <span id="purpose"></span><h1>Purpose and contents<a class="headerlink" href="#purpose-and-contents" title="Permalink to this heading"></a></h1>
 <p>This package contains convenient functions for learners of analysis and design of biological circuits. It is meant to complement the book <em>Biological Circuit Design</em> by <a class="reference external" href="https://www.elowitz.caltech.edu">Michael Elowitz</a> and <a class="reference external" href="http://bois.caltech.edu/">Justin Bois</a> and the associate courses at <a class="reference external" href="http://caltech.edu/">Caltech</a>.</p>
 <p>The package consists of a set of separate functions, most of which are developed and described in the <em>Biological Circuit Design</em> book. Nearly every function in the package is developed and described in the book. As such, the package consists of a set of functions meant to do specific tasks in analysis of biological circuits. The structure of the package is simple; few if any classes are defined and the functions are fairly isolated from each other. The code is structured to be instructional, as opposed to optimized for speed. For example, the stochastic simulation algorithms employ a straightforward implementation of Gillespie’s original formulation and do not use more modern speed-ups. Nonetheless, former students have found the package to use useful in real research contexts.</p>
@@ -190,11 +170,11 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf3acd2d60> 
+   <jinja2.runtime.BlockReference object at 0x7f7ed93d1090> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

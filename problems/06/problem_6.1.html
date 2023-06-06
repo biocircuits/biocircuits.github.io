@@ -41,12 +41,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../../index.html">
-            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../../index.html">
+            
+              <img src="../../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -130,9 +134,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a> &raquo;</li>
-      <li>Problem 6.1: Co-substrate compensation</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
+      <li class="breadcrumb-item active">Problem 6.1: Co-substrate compensation</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -149,31 +153,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="Problem-6.1:-Co-substrate-compensation">
+  <section id="Problem-6.1:-Co-substrate-compensation">
 <h1>Problem 6.1: Co-substrate compensation<a class="headerlink" href="#Problem-6.1:-Co-substrate-compensation" title="Permalink to this heading"></a></h1>
 <hr><p><em>This problem derived from discussions with H. Y. Kueh, and is based on his paper</em> (<a class="reference external" href="https://doi.org/10.1016/j.bpj.2013.01.030">Biophys J., 104, 1338–1348, 2013</a>).</p>
 <p>To put this problem in context, let us think about an intriguing question. Oxygen is delivered to the cells of your body through your blood. Naturally, cells are situated at difference distances from blood vessels. As oxygen diffuses away from the blood vessels, different cells experience different local oxygen concentrations, often very different concentrations. How, then, do cells respire at the same rate, despite the large difference in oxygen concentration?</p>
@@ -224,7 +204,7 @@ v_0 = k_0 \, c_1\,\frac{c_{\mathrm{O}_2}/K_0}{1 + c_{\mathrm{O}_2}/K_0},
 <p><strong>c)</strong> Write down an expression for the rate of oxygen consumption, <span class="math notranslate nohighlight">\(v_0\)</span>, at steady state.</p>
 <p><strong>d)</strong> In what operating regime is the steady state oxygen consumption rate independent of oxygen concentration? On other words, what parameter values ensure robustness of the oxygen consumption rate to variations in oxygen levels?</p>
 <p><strong>e)</strong> You have shown that for some operating regime, the rate of oxygen consumption is robust to variation of oxygen concentration. Now imagine that the system is in steady state and there is a sudden step in oxygen concentration. In looking at your differential equation in part (b), you should be able to identify the time scale for recovery to steady state consumption rate. Is the time to recovery robust to variations in oxygen concentration? If so, over what operating regime?</p>
-<p><strong>f)</strong> Define the oxygen concentration for which the steady state oxygen consumption rate is half-maximal as <span class="math notranslate nohighlight">\(K_\mathrm{m}\)</span>. The Chance relationship <a class="reference external" href="https://doi.org/10.1085/jgp.49.1.163">Chance, J. Gen. Physiol., 1965</a> says that <span class="math notranslate nohighlight">\(K_\mathrm{m}\)</span> scales linearly with the maximal rate of electron transfer (the maximal <span class="math notranslate nohighlight">\(v_1\)</span>), and inversely with the reaction rate constant for oxygen reduction (<span class="math notranslate nohighlight">\(k_0\)</span>). In the regime where oxygen consumption rate is independent of oxygen
+<p><strong>f)</strong> Define the oxygen concentration for which the steady state oxygen consumption rate is half-maximal as <span class="math notranslate nohighlight">\(K_\mathrm{m}\)</span>. The Chance relationship <a class="reference external" href="https://doi.org/10.1085/jgp.49.1.163">Chance, J. Gen. Physiol., 1965</a> says that <span class="math notranslate nohighlight">\(K_\mathrm{m}\)</span> scales linearly with the maximal rate of electron transfer (the maximal <span class="math notranslate nohighlight">\(v_1\)</span>), and inversely with the reaction rate constant for oxygen reduction (<span class="math notranslate nohighlight">\(k_0\)</span>). In the regime where oxygen consumption rate is independent of oxygen
 concentration, does this system satisfy the Chance relation?</p>
 </section>
 
@@ -240,11 +220,11 @@ concentration, does this system satisfy the Chance relation?</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf0aad71c0> 
+   <jinja2.runtime.BlockReference object at 0x7f7ed1e9fe80> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

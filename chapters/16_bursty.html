@@ -41,12 +41,16 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: #F1F1F1" >
-            <a href="../index.html">
-            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -81,14 +85,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">The steady state distribution for bursty expression is Negative Binomial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#References">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Technical-Appendices">Technical Appendices</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie)simulation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespiealgorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespie algorithm</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Problems">Problems</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.1.html">16.1: Dynamics of noise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.2.html">16.2: Noise in a switchablepromoter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty geneexpression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.2.html">16.2: Noise in a switchable promoter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty gene expression</a></li>
 </ul>
 </li>
 </ul>
@@ -137,8 +141,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>16. Bursty gene expression</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">16. Bursty gene expression</li>
   <li class="wy-breadcrumbs-aside">
     
         
@@ -155,31 +159,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="16.-Bursty-gene-expression">
+  <section id="16.-Bursty-gene-expression">
 <h1>16. Bursty gene expression<a class="headerlink" href="#16.-Bursty-gene-expression" title="Permalink to this heading"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
@@ -367,7 +347,7 @@ P(k;p_0) = (1-p_0)^k p_0.
 <h2>Master equation for bursty gene expression<a class="headerlink" href="#Master-equation-for-bursty-gene-expression" title="Permalink to this heading"></a></h2>
 <p>We also see from the experimental results tracking β-galactosidase copy number that the time scale of the bursty gene expression is much shorter than the typical decay time. So, per unit time, we can have many gene products made, not just a single gene product as we have considered thus far. So, we can re-write our transition probabilities per unit time as</p>
 <p><span class="math">\begin{align}
-W(n\mid n') &= \beta' \xi_{n-n'} - \gamma (n+1) \delta_{n+1,n'},
+W(n\mid n') &= \beta' \xi_{n-n'} + \gamma (n+1) \delta_{n+1,n'},
 \end{align}</span></p>
 <p>where <span class="math notranslate nohighlight">\(\xi_{j}\)</span> is the probability of making <span class="math notranslate nohighlight">\(j\)</span> molecules in a burst and <span class="math notranslate nohighlight">\(\beta'\)</span> is the probability per unit time of initiating production of molecules. If <span class="math notranslate nohighlight">\(\xi_{j} = 0\)</span> for all <span class="math notranslate nohighlight">\(j\ne 1\)</span>, then <span class="math notranslate nohighlight">\(\beta' = \beta\)</span>, and we have the same equations as before. So, our model is only slightly changed; we just allow for more transitions in and out of state <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p>We just have to specify <span class="math notranslate nohighlight">\(\xi_{j}\)</span>. We can reason that the number of molecules per burst is geometrically distributed by matching the story. We can imagine that once a burst starts,</p>
@@ -443,8 +423,8 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 <h2>Technical Appendices<a class="headerlink" href="#Technical-Appendices" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie)simulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespiealgorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespie algorithm</a></li>
 </ul>
 </div>
 <hr></section>
@@ -453,8 +433,8 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.1.html">16.1: Dynamics of noise</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.2.html">16.2: Noise in a switchablepromoter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty geneexpression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.2.html">16.2: Noise in a switchable promoter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.3.html">16.3: A possible mechanism for bursty gene expression</a></li>
 </ul>
 </div>
 </section>
@@ -472,11 +452,11 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on May 24, 2023.
+      <span class="lastupdated">Last updated on Jun 06, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7faf3b0cae50> 
+   <jinja2.runtime.BlockReference object at 0x7f7edf5d3c10> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
