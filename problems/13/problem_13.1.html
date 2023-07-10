@@ -112,6 +112,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09a_composite_functions_to_find_fixed_point.html">9a. Fixed points and composite functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09b_linear_stability_analysis.html">9b. Linear stability analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09c_1d_root_finding.html">9c. Numerical one-dimensional bounded root finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10a_brute_force_linear_stability_analysis.html">10a. Stability diagrams by numerical computation of eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10b_gershgorin.html">10b. The Greshgorin circle theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10c_numerical_ddes.html">10c. Numerical solution of delay differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10d_linear_stability_analysis_ddes.html">10d. Linear stability analysis of delay differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespie algorithm</a></li>
 </ul>
@@ -187,7 +191,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_rxns</span><span class="p">(</span><span class="n">nA</span><span class="p">,</span> <span class="n">nB</span><span class="p">,</span> <span class="n">nL</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Generate trimolecular binding reactions for a system with</span>
 <span class="sd">    nA, nB, and nL types of Type A receptors, Type B receptors,</span>
 <span class="sd">    and ligands, respectively. Returns a single string.</span>
@@ -201,7 +205,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 
 
 <span class="k">def</span> <span class="nf">make_N</span><span class="p">(</span><span class="n">nA</span><span class="p">,</span> <span class="n">nB</span><span class="p">,</span> <span class="n">nL</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate a stoichiometric matrix for ligand-receptor binding with</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a stoichiometric matrix for ligand-receptor binding with</span>
 <span class="sd">    nA, nB, and nL types of Type A receptors, Type B receptors, and</span>
 <span class="sd">    ligands, respectively.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -219,7 +223,7 @@ denoted by the red circles, (1, 1000), (1000, 1), and (1000, 1000).</p>
 
 
 <span class="k">def</span> <span class="nf">readout</span><span class="p">(</span><span class="n">epsilon</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Readout function of a set of complex concentrations. This</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Readout function of a set of complex concentrations. This</span>
 <span class="sd">    is the expression level of the genes under regulation of</span>
 <span class="sd">    singaling from the receptors.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -318,7 +322,7 @@ A_2 + L_2 + B_2 &lt;=&gt; T_2_2_2
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_c0_grid</span><span class="p">(</span><span class="n">cL0</span><span class="p">,</span> <span class="n">cA10</span><span class="p">,</span> <span class="n">cA20</span><span class="p">,</span> <span class="n">cB10</span><span class="p">,</span> <span class="n">cB20</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Create an array of initial concentrations.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an array of initial concentrations.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -434,7 +438,7 @@ active words: [False False  True False False False  True False  True]
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">solve_norm_response</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">epsilon</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Solve for normalized response. Returns a one-dimensional array</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Solve for normalized response. Returns a one-dimensional array</span>
 <span class="sd">    containing signal levels corresponding to each row in `c0`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
@@ -462,7 +466,7 @@ active words: [False False  True False False False  True False  True]
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">residuals</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">cL0</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">active_words</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Return array of residuals.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return array of residuals.&quot;&quot;&quot;</span>
     <span class="c1"># Unpack x, log K&#39;s, then log epsilons, then receptor concs</span>
     <span class="n">K</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:</span><span class="mi">8</span><span class="p">]</span>
     <span class="n">epsilon</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">16</span><span class="p">]</span>
@@ -617,11 +621,11 @@ array([[  -1.,   -1.,   -1.,   -1.,    1.,    1.,   -1.,   -1.,   -1.,
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jun 08, 2023.
+      <span class="lastupdated">Last updated on Jul 10, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f81e39ee080> 
+   <jinja2.runtime.BlockReference object at 0x134af2750> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

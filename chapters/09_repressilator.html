@@ -135,6 +135,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09a_composite_functions_to_find_fixed_point.html">9a. Fixed points and composite functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09b_linear_stability_analysis.html">9b. Linear stability analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09c_1d_root_finding.html">9c. Numerical one-dimensional bounded root finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10a_brute_force_linear_stability_analysis.html">10a. Stability diagrams by numerical computation of eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10b_gershgorin.html">10b. The Greshgorin circle theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10c_numerical_ddes.html">10c. Numerical solution of delay differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10d_linear_stability_analysis_ddes.html">10d. Linear stability analysis of delay differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespie algorithm</a></li>
 </ul>
@@ -646,7 +650,7 @@ numbers. The increased repressor 2 concentration leads to less repressor 3. Then
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">protein_repressilator_rhs</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns 3-array of (dx_1/dt, dx_2/dt, dx_3/dt)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">x_1</span><span class="p">,</span> <span class="n">x_2</span><span class="p">,</span> <span class="n">x_3</span> <span class="o">=</span> <span class="n">x</span>
@@ -960,7 +964,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <span class="n">n_slider</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">125</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">repressilator_rhs</span><span class="p">(</span><span class="n">mx</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns 6-array of (dm_1/dt, dm_2/dt, dm_3/dt, dx_1/dt, dx_2/dt, dx_3/dt)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">m_1</span><span class="p">,</span> <span class="n">m_2</span><span class="p">,</span> <span class="n">m_3</span><span class="p">,</span> <span class="n">x_1</span><span class="p">,</span> <span class="n">x_2</span><span class="p">,</span> <span class="n">x_3</span> <span class="o">=</span> <span class="n">mx</span>
@@ -1160,7 +1164,7 @@ rates must be similar enough to one another (<span class="math notranslate nohig
 <span class="n">colors</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">palettes</span><span class="o">.</span><span class="n">Blues9</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">fixed_point</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Function derived in technical appendix 9c for finding fixed point.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Function derived in technical appendix 9c for finding fixed point.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">_root_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">beta</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span> <span class="o">**</span> <span class="n">n</span><span class="p">)</span>
 
@@ -1505,11 +1509,11 @@ jupyterlab : 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jun 08, 2023.
+      <span class="lastupdated">Last updated on Jul 10, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f81e3f37bb0> 
+   <jinja2.runtime.BlockReference object at 0x134f74d90> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

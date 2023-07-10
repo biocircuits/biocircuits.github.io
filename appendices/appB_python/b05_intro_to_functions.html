@@ -92,6 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09a_composite_functions_to_find_fixed_point.html">9a. Fixed points and composite functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09b_linear_stability_analysis.html">9b. Linear stability analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09c_1d_root_finding.html">9c. Numerical one-dimensional bounded root finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10a_brute_force_linear_stability_analysis.html">10a. Stability diagrams by numerical computation of eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10b_gershgorin.html">10b. The Greshgorin circle theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10c_numerical_ddes.html">10c. Numerical solution of delay differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10d_linear_stability_analysis_ddes.html">10d. Linear stability analysis of delay differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespie algorithm</a></li>
 </ul>
@@ -184,7 +188,7 @@ f(x, y) = \frac{x}{y}
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ratio</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The ratio of `x` to `y`.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The ratio of `x` to `y`.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
 </pre></div>
 </div>
@@ -299,7 +303,7 @@ ratio(x, y)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">answer_to_the_ultimate_question_of_life_the_universe_and_everything</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Simpler program than Deep Thought&#39;s, I bet.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simpler program than Deep Thought&#39;s, I bet.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="mi">42</span>
 </pre></div>
 </div>
@@ -331,7 +335,7 @@ ratio(x, y)
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">think_too_much</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Express Caesar&#39;s skepticism about Cassius&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Express Caesar&#39;s skepticism about Cassius&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Yond Cassius has a lean and hungry look,</span>
 <span class="s2">He thinks too much; such men are dangerous.&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
@@ -379,7 +383,7 @@ None
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complement_base</span><span class="p">(</span><span class="n">base</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the Watson-Crick complement of a base.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the Watson-Crick complement of a base.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="s1">&#39;Aa&#39;</span><span class="p">:</span>
         <span class="k">return</span> <span class="s1">&#39;T&#39;</span>
     <span class="k">elif</span> <span class="n">base</span> <span class="ow">in</span> <span class="s1">&#39;Tt&#39;</span><span class="p">:</span>
@@ -391,7 +395,7 @@ None
 
 
 <span class="k">def</span> <span class="nf">reverse_complement</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute reverse complement of a sequence.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute reverse complement of a sequence.&quot;&quot;&quot;</span>
     <span class="c1"># Initialize reverse complement</span>
     <span class="n">rev_seq</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
@@ -427,7 +431,7 @@ None
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">display_complements</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Print sequence above its reverse complement.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Print sequence above its reverse complement.&quot;&quot;&quot;</span>
     <span class="c1"># Compute the reverse complement</span>
     <span class="n">rev_comp</span> <span class="o">=</span> <span class="n">reverse_complement</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span>
 
@@ -487,7 +491,7 @@ CGTCAACGT
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complement_base</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s1">&#39;DNA&#39;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Returns the Watson-Crick complement of a base.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns the Watson-Crick complement of a base.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">base</span> <span class="ow">in</span> <span class="s1">&#39;Aa&#39;</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">material</span> <span class="o">==</span> <span class="s1">&#39;DNA&#39;</span><span class="p">:</span>
             <span class="k">return</span> <span class="s1">&#39;T&#39;</span>
@@ -501,7 +505,7 @@ CGTCAACGT
         <span class="k">return</span> <span class="s1">&#39;G&#39;</span>
 
 <span class="k">def</span> <span class="nf">reverse_complement</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">material</span><span class="o">=</span><span class="s1">&#39;DNA&#39;</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Compute reverse complement of a sequence.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute reverse complement of a sequence.&quot;&quot;&quot;</span>
     <span class="c1"># Initialize reverse complement</span>
     <span class="n">rev_seq</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
@@ -562,7 +566,7 @@ CGTCAACGT
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_almost_right</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Checks to see if a triangle with side lengths</span>
 <span class="sd">    `a`, `b`, and `c` is right.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -711,11 +715,11 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jun 08, 2023.
+      <span class="lastupdated">Last updated on Jul 10, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f81e6294dc0> 
+   <jinja2.runtime.BlockReference object at 0x135020090> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

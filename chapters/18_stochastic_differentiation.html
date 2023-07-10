@@ -114,6 +114,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09a_composite_functions_to_find_fixed_point.html">9a. Fixed points and composite functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09b_linear_stability_analysis.html">9b. Linear stability analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09c_1d_root_finding.html">9c. Numerical one-dimensional bounded root finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10a_brute_force_linear_stability_analysis.html">10a. Stability diagrams by numerical computation of eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10b_gershgorin.html">10b. The Greshgorin circle theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10c_numerical_ddes.html">10c. Numerical solution of delay differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10d_linear_stability_analysis_ddes.html">10d. Linear stability analysis of delay differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespie algorithm</a></li>
 </ul>
@@ -649,7 +653,7 @@ m_S &= m_\mathrm{total}\,\frac{s/\Gamma_s}{1 + k/\Gamma_k + s/\Gamma_s},
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dk_dt</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;p is a CompetenceParams instance&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;p is a CompetenceParams instance&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">(</span>
         <span class="n">p</span><span class="o">.</span><span class="n">a_k</span>
         <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">b_k</span> <span class="o">*</span> <span class="n">k</span> <span class="o">**</span> <span class="n">p</span><span class="o">.</span><span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">kappa_k</span> <span class="o">**</span> <span class="n">p</span><span class="o">.</span><span class="n">n</span> <span class="o">+</span> <span class="n">k</span> <span class="o">**</span> <span class="n">p</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
@@ -714,7 +718,7 @@ A = a_s + \frac{b_s}{(1 + (k/\kappa_s)^p}.
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_nullclines</span><span class="p">(</span><span class="n">k_range</span><span class="p">,</span> <span class="n">s_range</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Compute and plot the nullclines.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
@@ -1111,7 +1115,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Right-hand-side of ODEs</span>
 <span class="k">def</span> <span class="nf">rhs</span><span class="p">(</span><span class="n">ks</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Right-hand side of dynamical system.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">k</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="n">ks</span>
@@ -1798,7 +1802,7 @@ SSA</a>.</p>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
 <span class="k">def</span> <span class="nf">gillespie_draw</span><span class="p">(</span><span class="n">propensities</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Draws a reaction and the time it took to do that reaction.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Update propensities</span>
@@ -2125,11 +2129,11 @@ jupyterlab : 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jun 08, 2023.
+      <span class="lastupdated">Last updated on Jul 10, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f81e9826bc0> 
+   <jinja2.runtime.BlockReference object at 0x134909390> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

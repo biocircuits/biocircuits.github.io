@@ -90,6 +90,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09a_composite_functions_to_find_fixed_point.html">9a. Fixed points and composite functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09b_linear_stability_analysis.html">9b. Linear stability analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/09c_1d_root_finding.html">9c. Numerical one-dimensional bounded root finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10a_brute_force_linear_stability_analysis.html">10a. Stability diagrams by numerical computation of eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10b_gershgorin.html">10b. The Greshgorin circle theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10c_numerical_ddes.html">10c. Numerical solution of delay differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/10d_linear_stability_analysis_ddes.html">10d. Linear stability analysis of delay differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespie algorithm</a></li>
 </ul>
@@ -967,7 +971,7 @@ multidimensional arrays are possible). <code class="docutils literal notranslate
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cascade_rhs</span><span class="p">(</span><span class="n">yz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">n_x</span><span class="p">,</span> <span class="n">n_y</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Right hand side for cascade X -&gt; Y -&gt; Z.  Return dy/dt and dz/dt.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Unpack y and z</span>
@@ -1062,7 +1066,7 @@ maximum concentration is one.</p>
     <span class="n">t_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate a plot showing response of the cascade circuit</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a plot showing response of the cascade circuit</span>
 <span class="sd">    to a step in x0.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Package parameters into a tuple</span>
@@ -1089,7 +1093,7 @@ maximum concentration is one.</p>
         <span class="n">frame_width</span><span class="o">=</span><span class="mi">325</span><span class="p">,</span>
         <span class="n">frame_height</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
         <span class="n">x_axis_label</span><span class="o">=</span><span class="s2">&quot;dimensionless time&quot;</span><span class="p">,</span>
-        <span class="n">y_axis_label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;normalized &#39;</span> <span class="k">if</span> <span class="n">normalize</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">dimensionless y, z&quot;</span><span class="p">,</span>
+        <span class="n">y_axis_label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;normalized &#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">normalize</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">dimensionless y, z&quot;</span><span class="p">,</span>
         <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_max</span><span class="p">],</span>
     <span class="p">)</span>
 
@@ -1302,7 +1306,7 @@ var element = document.currentScript.previousSibling.previousSibling;
         <span class="n">frame_width</span><span class="o">=</span><span class="mi">325</span><span class="p">,</span>
         <span class="n">frame_height</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
         <span class="n">x_axis_label</span><span class="o">=</span><span class="s2">&quot;dimensionless time&quot;</span><span class="p">,</span>
-        <span class="n">y_axis_label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;normalized &#39;</span> <span class="k">if</span> <span class="n">normalize</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">dimensionless y, z&quot;</span><span class="p">,</span>
+        <span class="n">y_axis_label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;normalized &#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">normalize</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">dimensionless y, z&quot;</span><span class="p">,</span>
         <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">t_max</span><span class="p">],</span>
     <span class="p">)</span>
 
@@ -1599,7 +1603,7 @@ Watcher(inst=FloatSlider(end=10, name=&#39;n&#39;, start=0.1, value=1, value_thr
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">x_pulse</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">t_0</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">x_0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns x value for a pulse beginning at t = 0</span>
 <span class="sd">    and ending at t = t_0 + tau.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1670,7 +1674,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cascade_rhs_x_fun</span><span class="p">(</span><span class="n">yz</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">n_x</span><span class="p">,</span> <span class="n">n_y</span><span class="p">,</span> <span class="n">x_fun</span><span class="p">,</span> <span class="n">x_args</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Right hand side for cascade X -&gt; Y -&gt; Z.  Return dy/dt and dz/dt.</span>
 
 <span class="sd">    x_fun is a function of the form x_fun(t, *x_args), so x_args is a tuple</span>
@@ -2036,7 +2040,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">x_periodic</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">x_0</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns x value for periodic forcing of amplitude x_0 and frequency f.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
@@ -2458,11 +2462,11 @@ jupyterlab: 3.0.11
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jun 08, 2023.
+      <span class="lastupdated">Last updated on Jul 10, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f81e396b910> 
+   <jinja2.runtime.BlockReference object at 0x133623390> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

@@ -121,6 +121,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09a_composite_functions_to_find_fixed_point.html">9a. Fixed points and composite functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09b_linear_stability_analysis.html">9b. Linear stability analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/09c_1d_root_finding.html">9c. Numerical one-dimensional bounded root finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10a_brute_force_linear_stability_analysis.html">10a. Stability diagrams by numerical computation of eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10b_gershgorin.html">10b. The Greshgorin circle theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10c_numerical_ddes.html">10c. Numerical solution of delay differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technical_appendices/10d_linear_stability_analysis_ddes.html">10d. Linear stability analysis of delay differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16b_profiling_for_speed.html">16b. Profiling code for speed and an application of the Gillespie algorithm</a></li>
 </ul>
@@ -692,7 +696,7 @@ corresponding to all of the points in the plane where <span class="math notransl
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">BSParams</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Container for parameters for homodimeric bistable circuits.</span>
 <span class="sd">    Includes asymmetry parameters r, m, kappa, gamma.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -712,7 +716,7 @@ corresponding to all of the points in the plane where <span class="math notransl
             <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">entry</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">df_dt</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    ODE of A and B based on parameters p.</span>
 <span class="sd">    Includes asymmetry parameters r, m, kappa, gamma</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -724,7 +728,7 @@ corresponding to all of the points in the plane where <span class="math notransl
             <span class="n">p</span><span class="o">.</span><span class="n">alpha</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">beta</span> <span class="o">*</span> <span class="n">B2</span><span class="o">**</span><span class="n">p</span><span class="o">.</span><span class="n">n</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">**</span><span class="n">p</span><span class="o">.</span><span class="n">n</span> <span class="o">+</span> <span class="n">B2</span><span class="o">**</span><span class="n">p</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="o">-</span> <span class="n">Btot</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">get_nullclines</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate nullclines for Atot and Btot based on parameters.</span>
 <span class="sd">    Includes asymmetry parameters r, m, kappa, gamma</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1009,7 +1013,7 @@ Note that contexts like these, where we are finding symbolic expressions solely 
     <span class="k">return</span> <span class="n">jmat</span>
 
 <span class="k">def</span> <span class="nf">stability</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns True if stable</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># x0, y0 = fixed point coord</span>
@@ -1393,7 +1397,7 @@ separatrix, therefore, we must start at the fixed point, take a very small stepp
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d95f02&quot;</span><span class="p">,</span>
     <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot separatrix on phase portrait.</span>
 <span class="sd">    Takes bokeh plot p as an input and returns p with</span>
 <span class="sd">    separatrix plot overlaid.</span>
@@ -1674,11 +1678,11 @@ dynamics autonomously or in response to signals from other cells, similar to the
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jun 08, 2023.
+      <span class="lastupdated">Last updated on Jul 10, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f81e66e5360> 
+   <jinja2.runtime.BlockReference object at 0x13476b910> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 

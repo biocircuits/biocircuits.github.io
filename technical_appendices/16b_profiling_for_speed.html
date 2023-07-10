@@ -92,6 +92,10 @@
 <li class="toctree-l1"><a class="reference internal" href="09a_composite_functions_to_find_fixed_point.html">9a. Fixed points and composite functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09b_linear_stability_analysis.html">9b. Linear stability analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09c_1d_root_finding.html">9c. Numerical one-dimensional bounded root finding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10a_brute_force_linear_stability_analysis.html">10a. Stability diagrams by numerical computation of eigenvalues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10b_gershgorin.html">10b. The Greshgorin circle theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10c_numerical_ddes.html">10c. Numerical solution of delay differential equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10d_linear_stability_analysis_ddes.html">10d. Linear stability analysis of delay differential equations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">16b. Profiling code for speed and an application of the Gillespie algorithm</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Simulating-the-repressilator">Simulating the repressilator</a></li>
@@ -906,7 +910,7 @@ p \rightarrow p-1, \;\;\;\; & \gamma p.
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simple_propensity</span><span class="p">(</span><span class="n">propensities</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta_m</span><span class="p">,</span> <span class="n">beta_p</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Updates an array of propensities given a set of parameters</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Updates an array of propensities given a set of parameters</span>
 <span class="sd">    and an array of populations.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Unpack population</span>
@@ -944,7 +948,7 @@ p \rightarrow p-1, \;\;\;\; & \gamma p.
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_discrete</span><span class="p">(</span><span class="n">probs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Randomly sample an index with probability given by probs.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Randomly sample an index with probability given by probs.&quot;&quot;&quot;</span>
     <span class="c1"># Generate random number</span>
     <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
 
@@ -959,7 +963,7 @@ p \rightarrow p-1, \;\;\;\; & \gamma p.
 
 
 <span class="k">def</span> <span class="nf">gillespie_draw</span><span class="p">(</span><span class="n">propensity_func</span><span class="p">,</span> <span class="n">propensities</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Draws a reaction and the time it took to do that reaction.</span>
 
 <span class="sd">    Parameters</span>
@@ -1003,7 +1007,7 @@ p \rightarrow p-1, \;\;\;\; & \gamma p.
 
 
 <span class="k">def</span> <span class="nf">gillespie_ssa</span><span class="p">(</span><span class="n">propensity_func</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">population_0</span><span class="p">,</span> <span class="n">time_points</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Uses the Gillespie stochastic simulation algorithm to sample</span>
 <span class="sd">    from probability distribution of particle counts over time.</span>
 
@@ -1266,7 +1270,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 <span class="k">def</span> <span class="nf">simple_propensity_numba</span><span class="p">(</span>
     <span class="n">propensities</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta_m</span><span class="p">,</span> <span class="n">beta_p</span><span class="p">,</span> <span class="n">gamma</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Updates an array of propensities given a set of parameters</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Updates an array of propensities given a set of parameters</span>
 <span class="sd">    and an array of populations.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Unpack population</span>
@@ -1384,7 +1388,7 @@ Results from numba&#39;d version:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gillespie_draw_fast</span><span class="p">(</span><span class="n">propensity_func</span><span class="p">,</span> <span class="n">propensities</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Draws a reaction and the time it took to do that reaction.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Compute propensities</span>
@@ -1430,7 +1434,7 @@ Fast Gillespie draw:
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gillespie_ssa_fast</span><span class="p">(</span>
     <span class="n">propensity_func</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">population_0</span><span class="p">,</span> <span class="n">time_points</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">()</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Uses the Gillespie stochastic simulation algorithm to sample</span>
 <span class="sd">    from proability distribution of particle counts over time.</span>
 
@@ -1537,7 +1541,7 @@ and the <code class="docutils literal notranslate"><span class="pre">biocircuits
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
 <span class="k">def</span> <span class="nf">prop_func</span><span class="p">(</span><span class="n">propensities</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">beta_m</span><span class="p">,</span> <span class="n">beta_p</span><span class="p">,</span> <span class="n">gamma</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Updates an array of propensities given a set of parameters</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Updates an array of propensities given a set of parameters</span>
 <span class="sd">    and an array of populations.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Unpack population</span>
@@ -1552,7 +1556,7 @@ and the <code class="docutils literal notranslate"><span class="pre">biocircuits
 
 <span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
 <span class="k">def</span> <span class="nf">gillespie_draw_numba</span><span class="p">(</span><span class="n">propensities</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Draws a reaction and the time it took to do that reaction.</span>
 
 <span class="sd">    Assumes that there is a globally scoped function</span>
@@ -1575,7 +1579,7 @@ and the <code class="docutils literal notranslate"><span class="pre">biocircuits
 
 <span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
 <span class="k">def</span> <span class="nf">gillespie_ssa_numba</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">population_0</span><span class="p">,</span> <span class="n">time_points</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Uses the Gillespie stochastic simulation algorithm to sample</span>
 <span class="sd">    from proability distribution of particle counts over time.</span>
 
@@ -1693,7 +1697,7 @@ drop-in replacement for <code class="docutils literal notranslate"><span class="
 
 <span class="k">def</span> <span class="nf">gillespie_parallel</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">population_0</span><span class="p">,</span> <span class="n">time_points</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span>
                        <span class="n">n_simulations</span><span class="p">,</span> <span class="n">n_threads</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convenience function to do parallel Gillespie simulations.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">input_args</span> <span class="o">=</span> <span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">population_0</span><span class="p">,</span> <span class="n">time_points</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
@@ -1794,11 +1798,11 @@ jupyterlab   : 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jun 08, 2023.
+      <span class="lastupdated">Last updated on Jul 10, 2023.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x7f81e37f53c0> 
+   <jinja2.runtime.BlockReference object at 0x1341e67d0> 
 
 <p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
