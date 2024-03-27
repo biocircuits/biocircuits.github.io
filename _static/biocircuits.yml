@@ -26,6 +26,7 @@ dependencies:
     - blackcellmagic
     - eqtk
     - iqplot
+    - intersect
     - jupyterlab-spellchecker
     - multiprocess
     - rdsolver
