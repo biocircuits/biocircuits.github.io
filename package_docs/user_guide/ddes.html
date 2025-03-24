@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solving delay differential equations &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -64,7 +67,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -76,7 +78,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -141,7 +143,7 @@
            <div itemprop="articleBody">
              
   <section id="Solving-delay-differential-equations">
-<h1>Solving delay differential equations<a class="headerlink" href="#Solving-delay-differential-equations" title="Permalink to this heading"></a></h1>
+<h1>Solving delay differential equations<a class="headerlink" href="#Solving-delay-differential-equations" title="Link to this heading"></a></h1>
 <hr><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -869,7 +871,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </pre></div></div>
 </div>
 <section id="Our-model-system">
-<h2>Our model system<a class="headerlink" href="#Our-model-system" title="Permalink to this heading"></a></h2>
+<h2>Our model system<a class="headerlink" href="#Our-model-system" title="Link to this heading"></a></h2>
 <p>As we learn how to use some Python-based tools for analysis of genetic circuits, we will learn an important design principle about <em>cascades</em>. A three-component cascade is illustrated below.</p>
 <p><span class="math">\begin{align}
 \mathrm{X} \longrightarrow \mathrm{Y} \longrightarrow \mathrm{Z}
@@ -878,7 +880,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 accumulate enough to enhance production of Z, then the level of Z does not change appreciably. Thus, Z shows no response to a brief pulse.</p>
 </section>
 <section id="The-dynamical-equations">
-<h2>The dynamical equations<a class="headerlink" href="#The-dynamical-equations" title="Permalink to this heading"></a></h2>
+<h2>The dynamical equations<a class="headerlink" href="#The-dynamical-equations" title="Link to this heading"></a></h2>
 <p>We will model the circuit by writing down a system of ordinary differential equations and solving them. We will assume Hill-like behavior for the activation of Y by X and of Z by Y. We also neglect leakage. We define the concentrations of X, Y, and Z, respectively as <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span>. The system of ODEs describing this system is then</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}y}{\mathrm{d}t} &= \beta_y\,\frac{(x/k_x)^{n_x}}{1+(x/k_x)^{n_x}} - \gamma_y y, \\[1em]
@@ -887,7 +889,7 @@ accumulate enough to enhance production of Z, then the level of Z does not chang
 <p>Note that the imposed <span class="math notranslate nohighlight">\(x(t)\)</span> is in general a function of time.</p>
 </section>
 <section id="Nondimensionalization">
-<h2>Nondimensionalization<a class="headerlink" href="#Nondimensionalization" title="Permalink to this heading"></a></h2>
+<h2>Nondimensionalization<a class="headerlink" href="#Nondimensionalization" title="Link to this heading"></a></h2>
 <p>As is generally a good idea for analysis of these systems, we will <strong>nondimensionalize</strong> the dynamical equations. The variables and parameters in the problem have <strong>dimension</strong>. For example, <span class="math notranslate nohighlight">\(y\)</span> has dimension of concentration, or number of particles per cubic length, written as</p>
 <p><span class="math">\begin{align}
 y = \left[\frac{N}{L^3}\right].
@@ -948,7 +950,7 @@ y = \left[\frac{N}{L^3}\right].
 the decay rate of Z to that of Y. If dilution is the primary mode of concentration depletion for both Y and Z, then <span class="math notranslate nohighlight">\(\gamma \approx 1\)</span>. We now have a clear picture of which dimensionless parameters dictate the dynamics and what they mean physically.</p>
 </section>
 <section id="The-scipy.intergrate-module">
-<h2>The scipy.intergrate module<a class="headerlink" href="#The-scipy.intergrate-module" title="Permalink to this heading"></a></h2>
+<h2>The scipy.intergrate module<a class="headerlink" href="#The-scipy.intergrate-module" title="Link to this heading"></a></h2>
 <p>Now that we have our dimensionless dynamical equations, we will move to solving them.</p>
 <p><strong>The</strong><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">SciPy Library</a> is a Python library for scientific computing. It contains many modules, including <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.special</span></code>, and <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>, which respectively have functions to perform statistical calculations, special functions, and optimization routines. There are many more. We will use the <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> module to integrate systems of ODEs.</p>
 <p>There are three main APIs for solving real-valued initial value problems in the module. They are <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp">solve_ivp()</a>, <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.integrate.ode.html#scipy.integrate.ode">ode()</a>, and <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.integrate.odeint.html#scipy.integrate.odeint">odeint()</a>. According to the SciPy developers, <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code> is the
@@ -963,7 +965,7 @@ multidimensional arrays are possible). <code class="docutils literal notranslate
 <p>As is often the case, use of this function is best seen by example, and we will now apply it to the cascade circuit.</p>
 </section>
 <section id="Solving-for-a-constant-input-X">
-<h2>Solving for a constant input X<a class="headerlink" href="#Solving-for-a-constant-input-X" title="Permalink to this heading"></a></h2>
+<h2>Solving for a constant input X<a class="headerlink" href="#Solving-for-a-constant-input-X" title="Link to this heading"></a></h2>
 <p>We will first consider the case where we initially have no X, Y, or Z present. At time <span class="math notranslate nohighlight">\(t = 0\)</span>, we suddenly have a concentration of X of <span class="math notranslate nohighlight">\(x_0\)</span>. So, we need five parameters for the right hand side of our ODEs, <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(n_x\)</span>, <span class="math notranslate nohighlight">\(n_y\)</span>, and <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
 <p>We now define the function for the right hand side of the ODEs.</p>
 <div class="nbinput nblast docutils container">
@@ -1038,7 +1040,7 @@ multidimensional arrays are possible). <code class="docutils literal notranslate
 <p>The first column of the output <code class="docutils literal notranslate"><span class="pre">yz</span></code> gives <span class="math notranslate nohighlight">\(y(t)\)</span> at the specified time points and the second column gives <span class="math notranslate nohighlight">\(z(t)\)</span>. We would now like to plot the results.</p>
 </section>
 <section id="Plotting-results">
-<h2>Plotting results<a class="headerlink" href="#Plotting-results" title="Permalink to this heading"></a></h2>
+<h2>Plotting results<a class="headerlink" href="#Plotting-results" title="Link to this heading"></a></h2>
 <p>We will use <a class="reference external" href="https://docs.bokeh.org/">Bokeh</a> to plot the results. The syntax is pretty self-explanatory from the example below. Note that you can save a plot as a PNG by clicking the disk icon next to the plot, which might be helpful for incorporating your plots into your presentations. (Note that for publications, you should usually save your figures in a vector graphics format, which <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/user_guide/export.html">Bokeh supports</a>, but is not necessary, and
 in fact discouraged, for display of plots in the browser.)</p>
 <p>Before building the plot, we will load in the color scheme we will use. The <a class="reference external" href="https://colorcet.holoviz.org/">colorcet package</a> is good for this. I like to use the Category10 color palette for categorical colors.</p>
@@ -1164,7 +1166,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>We see that the cascade acts as a delay for changes in <span class="math notranslate nohighlight">\(z\)</span> as a result of input <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </section>
 <section id="Interactive-plotting-and-varying-parameters">
-<h2>Interactive plotting and varying parameters<a class="headerlink" href="#Interactive-plotting-and-varying-parameters" title="Permalink to this heading"></a></h2>
+<h2>Interactive plotting and varying parameters<a class="headerlink" href="#Interactive-plotting-and-varying-parameters" title="Link to this heading"></a></h2>
 <p>Plotting with Bokeh in Jupyter notebooks allows for interactivity with plots that can help to rapidly gain insights about how parameter values might affect the dynamics. We have found that this is a useful tool to rapidly explore parameter dependence on circuit behavior. We will construct an interactive plot for the cascade circuit to demonstrate how it is done.</p>
 <p>For our interactivity, we will use <a class="reference external" href="https://panel.holoviz.org">Panel</a>. (Note that we imported Panel as <code class="docutils literal notranslate"><span class="pre">pn</span></code> at the beginning of this notebook and executed <code class="docutils literal notranslate"><span class="pre">pn.extension()</span></code> to enable Panel to work.) Panel allows convenient functionality for making interactive graphics. As you will see throughout the course, interactive graphics make it easier to explore how circuits work; you can interact directly with plots instead of having to re-run calculations and manually re-plot.</p>
 <div class="admonition note">
@@ -1410,7 +1412,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Note that the above conclusions are clearer when we plot the normalized curves.</p>
 </section>
 <section id="Speeding-up-interactions-and-Hill-functions">
-<h2>Speeding up interactions and Hill functions<a class="headerlink" href="#Speeding-up-interactions-and-Hill-functions" title="Permalink to this heading"></a></h2>
+<h2>Speeding up interactions and Hill functions<a class="headerlink" href="#Speeding-up-interactions-and-Hill-functions" title="Link to this heading"></a></h2>
 <p>The process of building the interactive plot may have seemed like a lot of steps. However, if we look back at what we did to build it, we did the following.</p>
 <ol class="arabic simple">
 <li><p>Wrote a function to make a plot.</p></li>
@@ -1596,7 +1598,7 @@ Watcher(inst=FloatSlider(end=10, name=&#39;n&#39;, start=0.1, value=1, value_thr
 <p>The response of sliders constructed this way can be much quicker than in the simpler method we did before, which regenerates the plot each time the slider changes value. However, as you can see from this example, you have to write more code to implement the faster-responding sliders. Going forward, we will almost always use the simpler construction, where we simple write a function that generates a plot and include that in our Panel layout, though in some applications, speed matters.</p>
 </section>
 <section id="Duration-of-input">
-<h2>Duration of input<a class="headerlink" href="#Duration-of-input" title="Permalink to this heading"></a></h2>
+<h2>Duration of input<a class="headerlink" href="#Duration-of-input" title="Link to this heading"></a></h2>
 <p>Coming back to our cascade circuit, now imagine that the input is a pulse of duration <span class="math notranslate nohighlight">\(\tau\)</span>. We can write a function for this and plot it.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -1849,7 +1851,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>We see that Z basically does not respond strongly to a short pulse. The delay of the circuit allows short pulses to be ignored, but large pulses to be detected and responded to.</p>
 </section>
 <section id="Really-short-pulses-and-a-lesson-about-scipy.integrate.odeint()">
-<h2>Really short pulses and a lesson about scipy.integrate.odeint()<a class="headerlink" href="#Really-short-pulses-and-a-lesson-about-scipy.integrate.odeint()" title="Permalink to this heading"></a></h2>
+<h2>Really short pulses and a lesson about scipy.integrate.odeint()<a class="headerlink" href="#Really-short-pulses-and-a-lesson-about-scipy.integrate.odeint()" title="Link to this heading"></a></h2>
 <p>Now, we will take a brief interlude to learn an important lesson about the algorithm of <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> and its use in these applications. We will consider a very brief pulse, <span class="math notranslate nohighlight">\(1 \le t \le 1.05\)</span>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
@@ -2032,7 +2034,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Note that <code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp()</span></code> <em>does</em> have event handling capabilities. However, we will seldom need event handing for our purposes, and it is still advantages to use <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> due to its low overhead.</p>
 </section>
 <section id="Periodic-input">
-<h2>Periodic input<a class="headerlink" href="#Periodic-input" title="Permalink to this heading"></a></h2>
+<h2>Periodic input<a class="headerlink" href="#Periodic-input" title="Link to this heading"></a></h2>
 <p>Finally, we will consider the case where we have periodic forcing of the circuit. We will do this for highly cooperative activation by Y, taking <span class="math notranslate nohighlight">\(n_y = 10\)</span>. Recall that this gives a longer time delay.</p>
 <p>We first write a function for the forcing, <code class="docutils literal notranslate"><span class="pre">x_fun</span></code>, which is periodic with frequency <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <div class="nbinput docutils container">
@@ -2418,11 +2420,11 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Even though the high frequency part of the forcing has a bigger amplitude, the signal in <em>z</em> responds predominantly to the low frequency part of the signal.</p>
 </section>
 <section id="A-challenge">
-<h2>A challenge<a class="headerlink" href="#A-challenge" title="Permalink to this heading"></a></h2>
+<h2>A challenge<a class="headerlink" href="#A-challenge" title="Link to this heading"></a></h2>
 <p>In the above analysis of periodic forcing, I made a fresh plot each time of the response to an oscillating input so that the plots would display nicely in the HTML rendered version of this notebook. Can you make the sample plot(s) by making a single interactive plot?</p>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
@@ -2462,13 +2464,13 @@ jupyterlab: 3.0.11
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x133623390> 
+   <jinja2.runtime.BlockReference object at 0x16f3e3c90> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

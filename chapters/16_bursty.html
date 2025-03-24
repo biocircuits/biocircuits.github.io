@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>16. Bursty gene expression &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -65,7 +68,6 @@
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -99,7 +101,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -164,7 +166,7 @@
            <div itemprop="articleBody">
              
   <section id="16.-Bursty-gene-expression">
-<h1>16. Bursty gene expression<a class="headerlink" href="#16.-Bursty-gene-expression" title="Permalink to this heading"></a></h1>
+<h1>16. Bursty gene expression<a class="headerlink" href="#16.-Bursty-gene-expression" title="Link to this heading"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
 <li><p>Bursty gene expression enables cells to regulate the mean and cell-cell variability of protein levels by controlling burst frequency and burst size.</p></li>
@@ -187,7 +189,7 @@
 the entire probability distribution of copy number, <span class="math notranslate nohighlight">\(P(n;t)\)</span>, the probability of having <span class="math notranslate nohighlight">\(n\)</span> molecules at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
 <p>The formalism we develop will enable us to assess temporal dynamics of expressions of individual genes in individual cells and reason quantitatively about the experimental observation that gene expression occurs in <strong>bursts</strong>, where many copies of gene product are made followed by periods of quiescence.</p>
 <section id="Master-equations">
-<h2>Master equations<a class="headerlink" href="#Master-equations" title="Permalink to this heading"></a></h2>
+<h2>Master equations<a class="headerlink" href="#Master-equations" title="Link to this heading"></a></h2>
 <p>We will use <strong>master equations</strong> to describe the dynamics of <span class="math notranslate nohighlight">\(P(n;t)\)</span>. Generally, a master equation is a loss-gain equation for probabilities of states governed by a Markov process. (To see where it gets its name, you can read <a class="reference external" href="https://quantumfrontiers.com/2015/06/21/hello-my-name-is-quantum-master-equation/">this amusing blog post by Nicole Yunger Halpern</a>.) In our case, the “state” is the set of copy numbers of molecular species of interest. The values of <span class="math notranslate nohighlight">\(n\)</span> are discrete, so we
 have a separate differential equation for each <span class="math notranslate nohighlight">\(P(n;t)\)</span>. Specifically,</p>
 <p><span class="math">\begin{align}
@@ -201,7 +203,7 @@ in <a class="reference internal" href="../technical_appendices/16a_gillespie.htm
 things like molecular collisions. Implicit in the assumption that state changes are modeled as Poisson processes is that the binding or dissociation (or any other event) happens essentially instantaneously with pauses between them. This is yet another instance of where a separation of time scales is important.</p>
 </section>
 <section id="The-Master-equation-for-unregulated-gene-expression">
-<h2>The Master equation for unregulated gene expression<a class="headerlink" href="#The-Master-equation-for-unregulated-gene-expression" title="Permalink to this heading"></a></h2>
+<h2>The Master equation for unregulated gene expression<a class="headerlink" href="#The-Master-equation-for-unregulated-gene-expression" title="Link to this heading"></a></h2>
 <p>As we have seen, unregulated gene expression is described by the macroscale equation</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}x}{\mathrm{d}t} = \beta - \gamma x,
@@ -290,7 +292,7 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n \mathrm{e}^{-\beta/\gamma
 <p>The <strong>Fano factor</strong> is a parameter you may not be familiar with. It is the ratio of the variance to mean, and is widely used as a measure of “Poisson-ness” of a distribution. Poisson distributions have a Fano factor of one, indicating a light tail to the distribution, while heavier-tailed distributions have larger Fano factors.</p>
 </section>
 <section id="Dynamics-of-the-moments">
-<h2>Dynamics of the moments<a class="headerlink" href="#Dynamics-of-the-moments" title="Permalink to this heading"></a></h2>
+<h2>Dynamics of the moments<a class="headerlink" href="#Dynamics-of-the-moments" title="Link to this heading"></a></h2>
 <p>From the master equation, we can derive an ODE describing the dynamics of the mean copy number of time, <span class="math notranslate nohighlight">\(\langle n(t) \rangle\)</span>. To do this, we multiply both sides of the master equations by <span class="math notranslate nohighlight">\(n\)</span> and then sum over <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <p><span class="math">\begin{align}
 &\sum_{n=0}^\infty n \left[
@@ -320,17 +322,17 @@ P(n) = \frac{1}{n!}\left(\frac{\beta}{\gamma}\right)^n \mathrm{e}^{-\beta/\gamma
 <p>which is precisely the macroscale ODE we are used to. It is now clear that it describes the mean of the full probability distribution. The assumptions behind our ODE models are now also clear. They describe the dynamics of the expectation value of copy number (or concentration when divided by the total volume) whose probability distribution is described by a master equation.</p>
 </section>
 <section id="Sampling-out-of-master-equations">
-<h2>Sampling out of master equations<a class="headerlink" href="#Sampling-out-of-master-equations" title="Permalink to this heading"></a></h2>
+<h2>Sampling out of master equations<a class="headerlink" href="#Sampling-out-of-master-equations" title="Link to this heading"></a></h2>
 <p>We have managed to derive the steady state solution to a master equation, but we would like to know the full dynamics. In nearly all cases we may come across in modeling biological circuits, an exact analytical expression for <span class="math notranslate nohighlight">\(P(n;t)\)</span> is not accessible. We therefore turn to <strong>sampling</strong> out of <span class="math notranslate nohighlight">\(P(n;t)\)</span>. This is achieved via a <strong>Gillespie algorithm</strong>, otherwise known as a <strong>stochastic simulation algorithm (SSA)</strong>. A discussion and demonstration of this algorithm is in <a class="reference internal" href="../technical_appendices/16a_gillespie.html"><span class="doc">Technical
 Appendix 16a</span></a>. This is a very widely used technique, and we will put it to use repeatedly in future chapters.</p>
 </section>
 <section id="Experimental-Fano-factors-are-greater-than-one">
-<h2>Experimental Fano factors are greater than one<a class="headerlink" href="#Experimental-Fano-factors-are-greater-than-one" title="Permalink to this heading"></a></h2>
+<h2>Experimental Fano factors are greater than one<a class="headerlink" href="#Experimental-Fano-factors-are-greater-than-one" title="Link to this heading"></a></h2>
 <p>Both or theoretical analysis and the Gillespie simulation (at least of the mRNA) showed us that the Fano factor for simple gene expression is one. So, if we see Fano factors of unity in experiment, we know our model for gene transcription is at least plausible.</p>
 <p>Gene expression in individual cells typically results in a Fano factor greater than one! There are many ways this could come about, such as explicitly considering the multiple steps involved in making a protein, or by having a switchable promoter, as you can explore in an end-of-chapter problem in forthcoming chapters. Today, we will focus on a key experimental result: <strong>gene expression occurs in bursts.</strong></p>
 </section>
 <section id="Observations-of-bursty-gene-expression">
-<h2>Observations of bursty gene expression<a class="headerlink" href="#Observations-of-bursty-gene-expression" title="Permalink to this heading"></a></h2>
+<h2>Observations of bursty gene expression<a class="headerlink" href="#Observations-of-bursty-gene-expression" title="Link to this heading"></a></h2>
 <p>In a beautiful set of experiments, <a class="reference external" href="https://doi.org/10.1038/nature04599">Cai, Friedman, and Xie</a> discovered that gene expression is bursty. (We will come to understand what we mean by “bursty” in a moment.)</p>
 <p>Through a clever experimental setup (we encourage you to read the paper), Cai, Friedman, and Xie were able to get accurate counts of the number of β-galactosidase molecules in individual cells over time. They found that the number of molecules was constant over long stretches of time, and then the number suddenly increased. The figure below, taken from the paper, shows the number of β-galactosidase molecules present in a single cell over time (black) and a blank background (red). This shows that
 expression of the β-<em>gal</em> gene happens in bursts. In each burst, many molecules are made, and then there is a period between bursts where no molecules are made.</p>
@@ -348,7 +350,7 @@ P(k;p_0) = (1-p_0)^k p_0.
 <p>Considering this story, this implies that a burst is turned on, and then it turns off by a random process after some time.</p>
 </section>
 <section id="Master-equation-for-bursty-gene-expression">
-<h2>Master equation for bursty gene expression<a class="headerlink" href="#Master-equation-for-bursty-gene-expression" title="Permalink to this heading"></a></h2>
+<h2>Master equation for bursty gene expression<a class="headerlink" href="#Master-equation-for-bursty-gene-expression" title="Link to this heading"></a></h2>
 <p>We also see from the experimental results tracking β-galactosidase copy number that the time scale of the bursty gene expression is much shorter than the typical decay time. So, per unit time, we can have many gene products made, not just a single gene product as we have considered thus far. So, we can re-write our transition probabilities per unit time as</p>
 <p><span class="math">\begin{align}
 W(n\mid n') &= \beta' \xi_{n-n'} + \gamma (n+1) \delta_{n+1,n'},
@@ -377,7 +379,7 @@ W(n\mid n') &= \beta' \xi_{n-n'} + \gamma (n+1) \delta_{n+1,n'},
 <p>As we might expect, an analytical solution for this master equation is difficult. We are left to simulate it using SSA.</p>
 </section>
 <section id="The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial">
-<h2>The steady state distribution for bursty expression is Negative Binomial<a class="headerlink" href="#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial" title="Permalink to this heading"></a></h2>
+<h2>The steady state distribution for bursty expression is Negative Binomial<a class="headerlink" href="#The-steady-state-distribution-for-bursty-expression-is-Negative-Binomial" title="Link to this heading"></a></h2>
 <p>We could derive the steady state distribution of copy numbers under the bursty master equation, but we will instead take a story matching approach to guess the solution. The story of the <a class="reference external" href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">Negative Binomial distribution</a> is as follows.</p>
 <blockquote>
 <div><p>We perform a series of Bernoulli trials with a success rate <span class="math notranslate nohighlight">\(p_0\)</span> until we get <span class="math notranslate nohighlight">\(r\)</span> successes. The number of failures, <span class="math notranslate nohighlight">\(n\)</span>, before we get <span class="math notranslate nohighlight">\(r\)</span> successes is Negative Binomially distributed.</p>
@@ -417,14 +419,14 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 <!-- Problem idea: Derive the Neg. Binomial distribution for bursty gene expression using similar arguments as used in the above for Poisson distributed.
 --><hr></section>
 <section id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
+<h2>References<a class="headerlink" href="#References" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Cai, L., Friedman, N, Xie, X. S., Stochastic protein expression in individual cells at the single molecule level, <em>Nature</em>, 440, 358–362, 2006. (<a class="reference external" href="https://doi.org/10.1038/nature04599">link</a>)</p></li>
 <li><p>Novick, A. and Weiner, M., Enxyme induction as an all-or-none phenomenon. <em>Proc. Natl. Acad. Sci. USA</em>, 43, 553–566, 1957. (<a class="reference external" href="https://doi.org/10.1073/pnas.43.7.553">link</a>)</p></li>
 </ul>
 <hr></section>
 <section id="Technical-Appendices">
-<h2>Technical Appendices<a class="headerlink" href="#Technical-Appendices" title="Permalink to this heading"></a></h2>
+<h2>Technical Appendices<a class="headerlink" href="#Technical-Appendices" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/16a_gillespie.html">16a. Stochastic (Gillespie) simulation</a></li>
@@ -433,7 +435,7 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 </div>
 <hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/16/problem_16.1.html">16.1: Dynamics of noise</a></li>
@@ -456,13 +458,13 @@ the mean and cell-to-cell variability of protein levels by controlling burst fre
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134517210> 
+   <jinja2.runtime.BlockReference object at 0x302b05390> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

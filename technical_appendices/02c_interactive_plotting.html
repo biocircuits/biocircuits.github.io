@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2c. Interactive plotting with Bokeh &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -168,7 +170,7 @@
            <div itemprop="articleBody">
              
   <section id="2c.-Interactive-plotting-with-Bokeh">
-<h1>2c. Interactive plotting with Bokeh<a class="headerlink" href="#2c.-Interactive-plotting-with-Bokeh" title="Permalink to this heading"></a></h1>
+<h1>2c. Interactive plotting with Bokeh<a class="headerlink" href="#2c.-Interactive-plotting-with-Bokeh" title="Link to this heading"></a></h1>
 <hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -574,7 +576,7 @@ if (force === true) {
 </div>
 </div>
 <section id="Interactive-plotting-with-Bokeh">
-<h2>Interactive plotting with Bokeh<a class="headerlink" href="#Interactive-plotting-with-Bokeh" title="Permalink to this heading"></a></h2>
+<h2>Interactive plotting with Bokeh<a class="headerlink" href="#Interactive-plotting-with-Bokeh" title="Link to this heading"></a></h2>
 <p>To make an interactive plot in Bokeh, there are three major components.</p>
 <ol class="arabic simple">
 <li><p>The plot or plots themselves.</p></li>
@@ -590,10 +592,10 @@ if (force === true) {
 rendering of this book), and does not require <em>that</em> much more effort compared to Panel. Typically, in our own work, we use base Bokeh for our dashboards.</p>
 </div>
 <section id="A-simple-example:-Varying-the-properties-of-the-input-signal">
-<h3>A simple example: Varying the properties of the input signal<a class="headerlink" href="#A-simple-example:-Varying-the-properties-of-the-input-signal" title="Permalink to this heading"></a></h3>
+<h3>A simple example: Varying the properties of the input signal<a class="headerlink" href="#A-simple-example:-Varying-the-properties-of-the-input-signal" title="Link to this heading"></a></h3>
 <p>To demonstrate dashboard construction, we will first build a simple example that lets you interactively change the properties of the input signal’s time course, without incorporating it into the ODE model just yet.</p>
 <section id="Step-1:-Make-the-widgets">
-<h4>Step 1: Make the widgets<a class="headerlink" href="#Step-1:-Make-the-widgets" title="Permalink to this heading"></a></h4>
+<h4>Step 1: Make the widgets<a class="headerlink" href="#Step-1:-Make-the-widgets" title="Link to this heading"></a></h4>
 <p>Because we need parameter values to generate any curve on the plot, we first need to make widgets that define the parameter values. In this case, where we are simply plotting the input signal <span class="math notranslate nohighlight">\(s\)</span>, we only need two sliders, one to for the value <span class="math notranslate nohighlight">\(t_0\)</span> and one for the value of <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -611,7 +613,7 @@ rendering of this book), and does not require <em>that</em> much more effort com
 <p>The sliders are instantiated using <code class="docutils literal notranslate"><span class="pre">bokeh.models.Slider()</span></code>, with keyword arguments whose meaning should be obvious from their names. The <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute of the slider is the present value of the slider.</p>
 </section>
 <section id="Step-2:-Generate-the-plot-(but-don't-show-it)">
-<h4>Step 2: Generate the plot (but don’t show it)<a class="headerlink" href="#Step-2:-Generate-the-plot-(but-don't-show-it)" title="Permalink to this heading"></a></h4>
+<h4>Step 2: Generate the plot (but don’t show it)<a class="headerlink" href="#Step-2:-Generate-the-plot-(but-don't-show-it)" title="Link to this heading"></a></h4>
 <p>Now that we have access to parameters we will generate the plot. We can pull the values of the sliders using their <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute, e.g., <code class="docutils literal notranslate"><span class="pre">tau_slider.value</span></code>. When we generate the plot, we specify the data in a <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code> so that we can change the data in the plot without re-rendering it.</p>
 <p>We cannot show the plot here, since we will show it in the app. A Bokeh plot can only be in a single document, in our case the app (which as far as Bokeh is concerned is separate from showing it in the JupyterLab cell below).</p>
 <div class="nbinput nblast docutils container">
@@ -642,7 +644,7 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </div>
 </section>
 <section id="Step-3:-Make-the-callbacks">
-<h4>Step 3: Make the callbacks<a class="headerlink" href="#Step-3:-Make-the-callbacks" title="Permalink to this heading"></a></h4>
+<h4>Step 3: Make the callbacks<a class="headerlink" href="#Step-3:-Make-the-callbacks" title="Link to this heading"></a></h4>
 <p>Next, we specify the callback function that will be used to update the plot as the slider changes. The callback function for a slider must take three arguments, the attribute that changes, its old value, and its new one. We will not directly use these arguments (though we could), but will rather directly read the value from the slider using its <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute. Our callback function simply updates the <code class="docutils literal notranslate"><span class="pre">y</span></code> data values of the <code class="docutils literal notranslate"><span class="pre">ColumnDataSource</span></code>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -665,7 +667,7 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </div>
 </section>
 <section id="Step-4:-Build-the-layout">
-<h4>Step 4: Build the layout<a class="headerlink" href="#Step-4:-Build-the-layout" title="Permalink to this heading"></a></h4>
+<h4>Step 4: Build the layout<a class="headerlink" href="#Step-4:-Build-the-layout" title="Link to this heading"></a></h4>
 <p>Now that we have a slider and a plot and have linked the data source of the plot to the slider, we can lay out the dashboard. We will put the sliders in a column next to the plot, putting a spacer in between.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -681,7 +683,7 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </div>
 </section>
 <section id="Step-5:-Make-the-app">
-<h4>Step 5: Make the app<a class="headerlink" href="#Step-5:-Make-the-app" title="Permalink to this heading"></a></h4>
+<h4>Step 5: Make the app<a class="headerlink" href="#Step-5:-Make-the-app" title="Link to this heading"></a></h4>
 <p>Now we are ready to make a function to produce the app. The function needs to have call signature <code class="docutils literal notranslate"><span class="pre">app(doc)</span></code>, where <code class="docutils literal notranslate"><span class="pre">doc</span></code> represents the document that Bokeh will build into an app. The purpose of this function is to add the layout we have just build to the document.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -694,7 +696,7 @@ rendering of this book), and does not require <em>that</em> much more effort com
 </div>
 </section>
 <section id="Step-6:-Enjoy-your-interactive-plot!">
-<h4>Step 6: Enjoy your interactive plot!<a class="headerlink" href="#Step-6:-Enjoy-your-interactive-plot!" title="Permalink to this heading"></a></h4>
+<h4>Step 6: Enjoy your interactive plot!<a class="headerlink" href="#Step-6:-Enjoy-your-interactive-plot!" title="Link to this heading"></a></h4>
 <p>And we are finally ready to see the app! When we call <code class="docutils literal notranslate"><span class="pre">bokeh.io.show()</span></code>, we pass the <code class="docutils literal notranslate"><span class="pre">app()</span></code> function as the first argument. We also need to use the <code class="docutils literal notranslate"><span class="pre">notebook_url</span></code> keyword argument to specify where the notebook is being hosted. This is usually <code class="docutils literal notranslate"><span class="pre">&quot;localhost:8888&quot;</span></code>, but the number may change (e.g., <code class="docutils literal notranslate"><span class="pre">8889</span></code> or <code class="docutils literal notranslate"><span class="pre">8890</span></code>). You can look in the navigation bar of your browser to make sure you get the right number. In this and all other chapters, we specify <code class="docutils literal notranslate"><span class="pre">notebook_url</span></code> in the first cell of
 the notebook along with the imports.</p>
 <div class="admonition note">
@@ -759,7 +761,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Serving-an-app">
-<h4>Serving an app<a class="headerlink" href="#Serving-an-app" title="Permalink to this heading"></a></h4>
+<h4>Serving an app<a class="headerlink" href="#Serving-an-app" title="Link to this heading"></a></h4>
 <p>If you wanted to have a stand-alone interactive plot on its own browser tab, you can put all of the code necessary to generate it in a single <code class="docutils literal notranslate"><span class="pre">.py</span></code> file and then serve it from the command line. For this example, we could have a file <code class="docutils literal notranslate"><span class="pre">pulse_signal.py</span></code> with the following contents.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">bokeh.plotting</span>
@@ -830,10 +832,10 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="An-app-for-the-negative-autoregulation-model">
-<h3>An app for the negative autoregulation model<a class="headerlink" href="#An-app-for-the-negative-autoregulation-model" title="Permalink to this heading"></a></h3>
+<h3>An app for the negative autoregulation model<a class="headerlink" href="#An-app-for-the-negative-autoregulation-model" title="Link to this heading"></a></h3>
 <p>Now that we have gained some familiarity with interactive plotting via Bokeh, we will make a dashboard to allow us to interactively explore the negative autoregulation model. To do so, we will incorporate scipy’s ODE integration into the plotting function itself, and we will also demonstrate how to create a button that can toggle a categorical property (like normalization of the results).</p>
 <section id="Step-1:-Build-the-widgets">
-<h4>Step 1: Build the widgets<a class="headerlink" href="#Step-1:-Build-the-widgets" title="Permalink to this heading"></a></h4>
+<h4>Step 1: Build the widgets<a class="headerlink" href="#Step-1:-Build-the-widgets" title="Link to this heading"></a></h4>
 <p>We will build sliders, one for each parameter. We are interested in varying the parameters <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, and <span class="math notranslate nohighlight">\(x_0\)</span> on a logarithmic scale, so we will set up the sliders to specify <span class="math notranslate nohighlight">\(\log_{10} \beta\)</span>, <span class="math notranslate nohighlight">\(\log_{10}\gamma\)</span> and <span class="math notranslate nohighlight">\(\log_{10} x_0\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -886,7 +888,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Step-2:-Build-the-plot">
-<h4>Step 2: Build the plot<a class="headerlink" href="#Step-2:-Build-the-plot" title="Permalink to this heading"></a></h4>
+<h4>Step 2: Build the plot<a class="headerlink" href="#Step-2:-Build-the-plot" title="Link to this heading"></a></h4>
 <p>We will build the plot as before. For convenience, we make a function to packages the slider values into tuples to be passed into the right-hand-side functions for the ODE solver.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
@@ -971,7 +973,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Step-3:-Build-the-callbacks">
-<h4>Step 3: Build the callbacks<a class="headerlink" href="#Step-3:-Build-the-callbacks" title="Permalink to this heading"></a></h4>
+<h4>Step 3: Build the callbacks<a class="headerlink" href="#Step-3:-Build-the-callbacks" title="Link to this heading"></a></h4>
 <p>We can now build our callback. This callback will be a bit more complicated. For each new slider value, we need to re-integrate the dynamical equations. We also need to check to see if the normalization toggle button is clicked and appropriately scale the data and change the y-axis label. We also will need to recalculate the result if the range of the time axis changes, so we need to read the time points off of the <code class="docutils literal notranslate"><span class="pre">x_range</span></code> property of the plot.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -1039,7 +1041,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Step-4:-The-layout">
-<h4>Step 4: The layout<a class="headerlink" href="#Step-4:-The-layout" title="Permalink to this heading"></a></h4>
+<h4>Step 4: The layout<a class="headerlink" href="#Step-4:-The-layout" title="Link to this heading"></a></h4>
 <p>We can now lay things out. I will put the sliders and normalization toggle in a column next to the plot.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
@@ -1068,7 +1070,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Step-5:-The-app">
-<h4>Step 5: The app<a class="headerlink" href="#Step-5:-The-app" title="Permalink to this heading"></a></h4>
+<h4>Step 5: The app<a class="headerlink" href="#Step-5:-The-app" title="Link to this heading"></a></h4>
 <p>And now for the app! (Note again that the app in the HTML rendering of this notebook will be using JavaScript. To use the Python-based app, be sure <code class="docutils literal notranslate"><span class="pre">interactive_python_plots</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> in the top cell of this notebook.)</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -1128,7 +1130,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
@@ -1171,13 +1173,13 @@ jupyterlab : 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x1350f4c90> 
+   <jinja2.runtime.BlockReference object at 0x16e50c990> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

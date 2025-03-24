@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>biocircuits.xyt_plot &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=31524dda" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-        <script src="../../../_static/jquery.js"></script>
-        <script src="../../../_static/underscore.js"></script>
-        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/clipboard.min.js"></script>
-        <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../../../_static/togglebutton.js"></script>
+        <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -63,7 +66,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -75,7 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -163,23 +165,23 @@
            <div itemprop="articleBody">
              
   <section id="biocircuits-xyt-plot">
-<h1>biocircuits.xyt_plot<a class="headerlink" href="#biocircuits-xyt-plot" title="Permalink to this heading"></a></h1>
+<h1>biocircuits.xyt_plot<a class="headerlink" href="#biocircuits-xyt-plot" title="Link to this heading"></a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="biocircuits.xyt_plot">
-<span class="sig-prename descclassname"><span class="pre">biocircuits.</span></span><span class="sig-name descname"><span class="pre">xyt_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'line'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'top_right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_slider_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#biocircuits.xyt_plot" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">biocircuits.</span></span><span class="sig-name descname"><span class="pre">xyt_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'line'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'top_right'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">glyph_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_slider_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'time'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#biocircuits.xyt_plot" title="Link to this definition"></a></dt>
 <dd><p>Create an interactive plot some the output of <cite>rd_solve()</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x</strong> (<em>1D Numpy array</em>) – x-values for plot.</p></li>
-<li><p><strong>y</strong> (<em>tuple of 2D Numpy arrays</em>) – y-values for plot. <cite>y[i][j, k]</cite> is the y-value for curve i at
+<li><p><strong>y</strong> (<em>tuple</em><em> of </em><em>2D Numpy arrays</em>) – y-values for plot. <cite>y[i][j, k]</cite> is the y-value for curve i at
 time point j and position x[k].</p></li>
 <li><p><strong>t</strong> (<em>Numpy array</em>) – y-values for plot.</p></li>
 <li><p><strong>glyph</strong> (<em>str</em><em>, </em><em>either &quot;line&quot;</em><em> or </em><em>&quot;circle&quot;</em>) – What kind of glyph to use in plot.</p></li>
 <li><p><strong>legend_names</strong> (<em>list</em><em> or </em><em>None</em><em>, </em><em>default None</em>) – Names for legend in plot.</p></li>
 <li><p><strong>legend_location</strong> (<em>str</em><em>, </em><em>default 'top_right'</em>) – Position of legend using Bokeh’s specifications for legend
 position. Ignored if <cite>legend_names</cite> is None.</p></li>
-<li><p><strong>palette</strong> (<em>List of colors default bokeh.palettes.d3</em><em>[</em><em>'Category10'</em><em>]</em><em>[</em><em>10</em><em>]</em>) – Color palette to use for curves.</p></li>
+<li><p><strong>palette</strong> (<em>List</em><em> of </em><em>colors default bokeh.palettes.d3</em><em>[</em><em>'Category10'</em><em>]</em><em>[</em><em>10</em><em>]</em>) – Color palette to use for curves.</p></li>
 <li><p><strong>glyph_kwargs</strong> (<em>dict</em>) – Keyword arguments to be passed to the glyph renderer, e.g.,
 <cite>p.line(**glyph_kwargs)</cite>.</p></li>
 <li><p><strong>time_slider_title</strong> (<em>str</em><em>, </em><em>default &quot;time&quot;</em>) – Title for the slider for time.</p></li>
@@ -210,13 +212,13 @@ creating the figure.</p></li>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134db7e50> 
+   <jinja2.runtime.BlockReference object at 0x16f7318d0> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

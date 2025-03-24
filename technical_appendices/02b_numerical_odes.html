@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2b. Numerical solutions to ODEs with SciPy &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -152,7 +154,7 @@
            <div itemprop="articleBody">
              
   <section id="2b.-Numerical-solutions-to-ODEs-with-SciPy">
-<h1>2b. Numerical solutions to ODEs with SciPy<a class="headerlink" href="#2b.-Numerical-solutions-to-ODEs-with-SciPy" title="Permalink to this heading"></a></h1>
+<h1>2b. Numerical solutions to ODEs with SciPy<a class="headerlink" href="#2b.-Numerical-solutions-to-ODEs-with-SciPy" title="Link to this heading"></a></h1>
 <hr><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -487,7 +489,7 @@ if (force === true) {
 \end{align}</span></p>
 <p>In this technical appendix, we solve this ODE numerically to generate the plots shown in the chapter.</p>
 <section id="The-scipy.integrate-module">
-<h2>The scipy.integrate module<a class="headerlink" href="#The-scipy.integrate-module" title="Permalink to this heading"></a></h2>
+<h2>The scipy.integrate module<a class="headerlink" href="#The-scipy.integrate-module" title="Link to this heading"></a></h2>
 <p>The <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/">SciPy Library</a> is a Python library for scientific computing. It contains many modules, including <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy.special</span></code>, and <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>, which respectively include functions to perform statistical calculations, “special functions,” and optimization routines, among many others. We will use the <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> module to integrate systems of ODEs.</p>
 <p>There are three main APIs for solving real-valued initial value problems in the module. They are <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp">solve_ivp()</a>, <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.integrate.ode.html#scipy.integrate.ode">ode()</a>, and <a class="reference external" href="https://scipy.github.io/devdocs/generated/scipy.integrate.odeint.html#scipy.integrate.odeint">odeint()</a>. According to the SciPy developers, <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code> is the
 preferred method, with the others labeled as having an “old” API. The <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code> function has the flexibility of allowing choice of multiple numerical algorithms for solving ODEs. However, for the kinds of problems we encounter in this class, we favor the generic LSODA algorithm developed by Linda Petzold and Alan Hindmarsh that handles both stiff and non-stiff problems with variable time stepping. This is also the only solver offered in the <code class="docutils literal notranslate"><span class="pre">odeint()</span></code> function. If we compare the two
@@ -501,7 +503,7 @@ multidimensional arrays are possible). <code class="docutils literal notranslate
 <p>As is often the case, use of this function is best seen by example, and we will now apply it to the negative autoregulation circuit.</p>
 </section>
 <section id="Solving-for-a-constant-input">
-<h2>Solving for a constant input<a class="headerlink" href="#Solving-for-a-constant-input" title="Permalink to this heading"></a></h2>
+<h2>Solving for a constant input<a class="headerlink" href="#Solving-for-a-constant-input" title="Link to this heading"></a></h2>
 <p>We first seek to solve the ODE where we have a sudden step in <span class="math notranslate nohighlight">\(s\)</span> at time <span class="math notranslate nohighlight">\(t = 0\)</span>. Since we are only simulating our system starting at <span class="math notranslate nohighlight">\(t=0\)</span>, we can treat <span class="math notranslate nohighlight">\(s\)</span> as a single, constant parameter, rather than a time-varying variable. So, we need seven parameters for the right hand side of our ODEs: <span class="math notranslate nohighlight">\(\beta_0\)</span>, <span class="math notranslate nohighlight">\(\gamma\)</span>, <span class="math notranslate nohighlight">\(k\)</span>, <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(k_s\)</span>, <span class="math notranslate nohighlight">\(n_s\)</span>, and <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <p>We now define the function for the right hand side of the ODEs.</p>
 <div class="nbinput nblast docutils container">
@@ -672,7 +674,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <section id="Solving-for-a-time-varying-input">
-<h3>Solving for a time-varying input<a class="headerlink" href="#Solving-for-a-time-varying-input" title="Permalink to this heading"></a></h3>
+<h3>Solving for a time-varying input<a class="headerlink" href="#Solving-for-a-time-varying-input" title="Link to this heading"></a></h3>
 <p>We consider now a pulsatile input signal,</p>
 <p><span class="math">\begin{align}
 s(t) = \exp\left[-\frac{4(t-t_0)^2}{\tau^2}\right].
@@ -798,7 +800,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Computing-environment">
-<h3>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h3>
+<h3>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h3>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -841,13 +843,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134ecaf50> 
+   <jinja2.runtime.BlockReference object at 0x16e048490> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

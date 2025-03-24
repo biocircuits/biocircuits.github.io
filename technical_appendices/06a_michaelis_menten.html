@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6a. Michaelis-Menten enzyme kinetics &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -87,7 +90,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapters/06_exact_adaptation.html#Computing-environment">Computing environment</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -99,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -165,7 +167,7 @@
            <div itemprop="articleBody">
              
   <section id="6a.-Michaelis-Menten-enzyme-kinetics">
-<h1>6a. Michaelis-Menten enzyme kinetics<a class="headerlink" href="#6a.-Michaelis-Menten-enzyme-kinetics" title="Permalink to this heading"></a></h1>
+<h1>6a. Michaelis-Menten enzyme kinetics<a class="headerlink" href="#6a.-Michaelis-Menten-enzyme-kinetics" title="Link to this heading"></a></h1>
 <hr><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -534,7 +536,7 @@ K_\mathrm{M} = \frac{k_{-1} + k_2}{k_1}.
 \frac{\mathrm{d}c_\mathrm{s}}{\mathrm{d}t}  \approx -\frac{\mathrm{d}c_p}{\mathrm{d}t} \approx -k_2 c_\mathrm{e}^0\, \frac{c_\mathrm{s}/K_\mathrm{M}}{1 + c_\mathrm{s}/K_\mathrm{M}}.
 \end{align}</span></p>
 <section id="Testing-the-accuracy-of-the-quasi-steady-state-approximation">
-<h2>Testing the accuracy of the quasi-steady state approximation<a class="headerlink" href="#Testing-the-accuracy-of-the-quasi-steady-state-approximation" title="Permalink to this heading"></a></h2>
+<h2>Testing the accuracy of the quasi-steady state approximation<a class="headerlink" href="#Testing-the-accuracy-of-the-quasi-steady-state-approximation" title="Link to this heading"></a></h2>
 <p>To test the accuracy of the quasi-steady state approximation, it helps, as usual, to nondimensionalize the variables, as follows:</p>
 <p><span class="math">\begin{align}
 t &\leftarrow \frac{k_2c_\mathrm{e}^0}{K_\mathrm{M}}\, t,\\[1em]
@@ -629,7 +631,7 @@ is also evident in the dimensionless equations. When <span class="math notransla
 <p>such that the dynamics are independent of <span class="math notranslate nohighlight">\(\kappa\)</span>.</p>
 </section>
 <section id="Operating-regimes">
-<h2>Operating regimes<a class="headerlink" href="#Operating-regimes" title="Permalink to this heading"></a></h2>
+<h2>Operating regimes<a class="headerlink" href="#Operating-regimes" title="Link to this heading"></a></h2>
 <p>Now that we know when the quasi-steady state approximation is valid such that the rate of production of product is</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}c_p}{\mathrm{d}t} \approx k_2 c_\mathrm{e}^0\, \frac{c_\mathrm{s}/K_\mathrm{M}}{1 + c_\mathrm{s}/K_\mathrm{M}},
@@ -646,7 +648,7 @@ is also evident in the dimensionless equations. When <span class="math notransla
 <p>which is apparently zero-order in the substrate concentration. An enzyme operating in this high substrate concentration regime is said to be <strong>operating at saturation</strong>. In this sense, the Michaelis constant sets the concentration scale of the substrate for which maximal conversion rate may be achieved.</p>
 </section>
 <section id="Reaction-velocity-and-k_\mathrm{cat}">
-<h2>Reaction velocity and <span class="math notranslate nohighlight">\(k_\mathrm{cat}\)</span><a class="headerlink" href="#Reaction-velocity-and-k_\mathrm{cat}" title="Permalink to this heading"></a></h2>
+<h2>Reaction velocity and <span class="math notranslate nohighlight">\(k_\mathrm{cat}\)</span><a class="headerlink" href="#Reaction-velocity-and-k_\mathrm{cat}" title="Link to this heading"></a></h2>
 <p>In many schemes for catalyzed conversion of substrate to product, we can write the approximate dynamics for the production rate of product as</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}c_\mathrm{p}}{\mathrm{d}t} = k_\mathrm{cat}\,c_\mathrm{e}^0\,\frac{c_\mathrm{s}/K_\mathrm{M}}{1 + c_\mathrm{s}/K_\mathrm{M}}.
@@ -669,7 +671,7 @@ K_\mathrm{M} = \frac{k_{-1} + k_2}{k_1}\left(1+\frac{k_3}{k_{-3}}\,c_\mathrm{i}\
 <p>where <span class="math notranslate nohighlight">\(c_\mathrm{i}\)</span> is the concentration of inhibitor. In the inhibited case, the Michaelis constant is larger, meaning that more substrate is necessary to get a faster production rate, as we would expect.</p>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -711,13 +713,13 @@ jupyterlab : 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134b0ae10> 
+   <jinja2.runtime.BlockReference object at 0x16b5c20d0> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

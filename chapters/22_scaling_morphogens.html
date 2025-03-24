@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>22. Scaling reaction-diffusion patterns &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">22. Scaling reaction-diffusion patterns</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Reaction-diffusion-models-for-morphogen-patterning">Reaction-diffusion models for morphogen patterning</a><ul>
@@ -164,7 +166,7 @@
            <div itemprop="articleBody">
              
   <section id="22.-Scaling-reaction-diffusion-patterns">
-<h1>22. Scaling reaction-diffusion patterns<a class="headerlink" href="#22.-Scaling-reaction-diffusion-patterns" title="Permalink to this heading"></a></h1>
+<h1>22. Scaling reaction-diffusion patterns<a class="headerlink" href="#22.-Scaling-reaction-diffusion-patterns" title="Link to this heading"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
 <li><p>Cooperative autodegradation of a morphogen retarded by a diffusing expander allows for scaled morphogen profiles.</p></li>
@@ -507,7 +509,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <section id="Reaction-diffusion-models-for-morphogen-patterning">
-<h2>Reaction-diffusion models for morphogen patterning<a class="headerlink" href="#Reaction-diffusion-models-for-morphogen-patterning" title="Permalink to this heading"></a></h2>
+<h2>Reaction-diffusion models for morphogen patterning<a class="headerlink" href="#Reaction-diffusion-models-for-morphogen-patterning" title="Link to this heading"></a></h2>
 <p>In the last lesson, we discussed <strong>morphogens</strong>, chemical species that determine cell fate in a concentration-dependent manner. Morphogens are spatially distributed throughout a developing organism, thereby imparting spatial variation in cell types. They present us with a great opportunity to connect our genetic network dynamics to spatial variation.</p>
 <p>We specifically discussed two-component systems that give what is now known as Turing patterns. More generally, we can consider a set of biochemical species, <span class="math notranslate nohighlight">\(\mathbf{M} = \{M_1, M_2, \ldots\}\)</span>. The set of concentrations of these biochemical species is <span class="math notranslate nohighlight">\(\mathbf{c} = \{c_1, c_2, \ldots\}\)</span>. We can write down a system of partial differential equations describing the dynamics of morphogen concentrations (which is more or less a statement of conservation of mass) as</p>
 <p><span class="math">\begin{align}
@@ -519,10 +521,10 @@ constant flux (usually no flux) boundary conditions at the ends of the domain. R
 j_i &= -D_i\,\frac{\partial c_i}{\partial x}.
 \end{align}</span></p>
 <section id="A-gradient-from-a-point-source">
-<h3>A gradient from a point source<a class="headerlink" href="#A-gradient-from-a-point-source" title="Permalink to this heading"></a></h3>
+<h3>A gradient from a point source<a class="headerlink" href="#A-gradient-from-a-point-source" title="Link to this heading"></a></h3>
 <p>We will begin by analyzing the simplest case of morphogen patterning. We have a single morphogen, <span class="math notranslate nohighlight">\(M\)</span>, which has a source at <span class="math notranslate nohighlight">\(x = 0\)</span>. We model the source as a constant flux, <span class="math notranslate nohighlight">\(\eta\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
 <section id="Simple-decay-of-the-morphogen">
-<h4>Simple decay of the morphogen<a class="headerlink" href="#Simple-decay-of-the-morphogen" title="Permalink to this heading"></a></h4>
+<h4>Simple decay of the morphogen<a class="headerlink" href="#Simple-decay-of-the-morphogen" title="Link to this heading"></a></h4>
 <p>We begin with the case where our morphogen only undergoes a single reaction, degradation which we would represent as <span class="math notranslate nohighlight">\(M \to \emptyset\)</span>, and has a constant diffusion coefficient. Our PDE is</p>
 <p><span class="math">\begin{align}
 &\frac{\partial c}{\partial t} = D \,\frac{\partial^2 c}{\partial x^2} - \gamma c, \\[1em]
@@ -539,7 +541,7 @@ c(x) &\approx \frac{\eta}{\sqrt{D\gamma}}\,\mathrm{e}^{-x/\lambda}.
 \end{align}</span></p>
 </section>
 <section id="Two-obvious-problems-with-this-expression">
-<h4>Two obvious problems with this expression<a class="headerlink" href="#Two-obvious-problems-with-this-expression" title="Permalink to this heading"></a></h4>
+<h4>Two obvious problems with this expression<a class="headerlink" href="#Two-obvious-problems-with-this-expression" title="Link to this heading"></a></h4>
 <p>Considering that morphogens determine cell fate in a concentration-dependent manner, there are two obvious problems with this expression. 1. The total level of the morphogen is set by the strength of the source, <span class="math notranslate nohighlight">\(\eta\)</span>, assuming <span class="math notranslate nohighlight">\(D\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> are constant. This would mean that cell fate would not be robust to the strength of the source. 2. The decay length of the concentration profile is independent of size. This means that a larger organism would have all of its morphogen
 highly concentrated near <span class="math notranslate nohighlight">\(x/L = 0\)</span>.</p>
 <p>Issue 2 is most clearly seen if we plot two profiles together versus the fraction length along the embryo, <span class="math notranslate nohighlight">\(x/L\)</span>.</p>
@@ -617,7 +619,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>We will consider a solution to these issues proposed by Ben-Zvi and Barkai (<a class="reference external" href="https://doi.org/10.1073/pnas.0912734107">PNAS, 2010</a>).</p>
 </section>
 <section id="The-concept-of-expansion-repression">
-<h4>The concept of expansion repression<a class="headerlink" href="#The-concept-of-expansion-repression" title="Permalink to this heading"></a></h4>
+<h4>The concept of expansion repression<a class="headerlink" href="#The-concept-of-expansion-repression" title="Link to this heading"></a></h4>
 <p>Consider another molecule, called an <em>expander</em>, that facilitates expansion of the morphogen. Specifically, the expander enhances diffusion of the morphogen and also prevents its degradation. However—and this is important because we need (you guessed it) feedback—the morphogen represses production of the expander. Our adjusted differential equations are now</p>
 <p><span class="math">\begin{align}
 &\frac{\partial m}{\partial t} =  \frac{\partial}{\partial x}\,D_m(m, e)\,\frac{\partial m}{\partial x} - \gamma_m(m, e)\, m \\[1em]
@@ -633,7 +635,7 @@ morphogen degradation. This sets the level at the distal end, thereby setting th
 </section>
 </section>
 <section id="Numerical-solution-to-R-D-equations-for-simple-degradation">
-<h2>Numerical solution to R-D equations for simple degradation<a class="headerlink" href="#Numerical-solution-to-R-D-equations-for-simple-degradation" title="Permalink to this heading"></a></h2>
+<h2>Numerical solution to R-D equations for simple degradation<a class="headerlink" href="#Numerical-solution-to-R-D-equations-for-simple-degradation" title="Link to this heading"></a></h2>
 <p>We will first solve the system with simple degradation before treating the expander. To solve R-D systems, we can use the <code class="docutils literal notranslate"><span class="pre">rd_solve()</span></code> function from the biocircuits package. The function is general for 1D RD systems with a diagonal mobility tensor, but allows for nonconstant diffusion coefficients. We therefore need to provide the solver with a function to compute the reaction terms and the diffusion coefficients. For the oft encountered scenario where the diffusion coefficients are constant,
 we can use <code class="docutils literal notranslate"><span class="pre">biocircuits.constant_diff_coeffs()</span></code> for the latter.</p>
 <p>We additionally need to provide the values of the derivatives at the boundaries to enforce the Neumann conditions. In this case, the flux is zero at the <span class="math notranslate nohighlight">\(x = L\)</span> boundary, but given by <span class="math notranslate nohighlight">\(-\left.\eta\middle/ \sqrt{D}\right.\)</span> at the <span class="math notranslate nohighlight">\(x = 0\)</span> boundary to give the constant flux of morphogen.</p>
@@ -734,7 +736,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <section id="Numerical-solution-of-degradation-with-expander">
-<h3>Numerical solution of degradation with expander<a class="headerlink" href="#Numerical-solution-of-degradation-with-expander" title="Permalink to this heading"></a></h3>
+<h3>Numerical solution of degradation with expander<a class="headerlink" href="#Numerical-solution-of-degradation-with-expander" title="Link to this heading"></a></h3>
 <p>To study the dynamics of the expander system, we will consider constant diffusion coefficients, and we take</p>
 <p><span class="math">\begin{align}
 \gamma_m(m, e) = (\gamma_{m,1} + \gamma_{m,2}m)\,\frac{m}{1+e}.
@@ -1024,7 +1026,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>As can be seen in the movie, the pattern is established rather quickly, with the expander moving toward its steady state (uniform) concentration.</p>
 </section>
 <section id="Numerical-solution-for-expander-with-non-cooperative-degradation">
-<h3>Numerical solution for expander with non-cooperative degradation<a class="headerlink" href="#Numerical-solution-for-expander-with-non-cooperative-degradation" title="Permalink to this heading"></a></h3>
+<h3>Numerical solution for expander with non-cooperative degradation<a class="headerlink" href="#Numerical-solution-for-expander-with-non-cooperative-degradation" title="Link to this heading"></a></h3>
 <p>We now consider the case where we do not have cooperative degradation. I.e., we have</p>
 <p><span class="math">\begin{align}
 \gamma_m(m, e) = \gamma_{m,1}\,\frac{m}{1+e}.
@@ -1215,7 +1217,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -1245,7 +1247,7 @@ jupyterlab : 3.3.2
 </div>
 <hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/22/problem_22.1.html">22.1: Turing patterns with expanders</a></li>
@@ -1266,13 +1268,13 @@ jupyterlab : 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134397b50> 
+   <jinja2.runtime.BlockReference object at 0x3093f8dd0> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

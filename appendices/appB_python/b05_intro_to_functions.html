@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B5. Introduction to functions &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -174,14 +176,14 @@
            <div itemprop="articleBody">
              
   <section id="B5.-Introduction-to-functions">
-<h1>B5. Introduction to functions<a class="headerlink" href="#B5.-Introduction-to-functions" title="Permalink to this heading"></a></h1>
+<h1>B5. Introduction to functions<a class="headerlink" href="#B5.-Introduction-to-functions" title="Link to this heading"></a></h1>
 <hr><p>A <strong>function</strong> is a key element in writing programs. You can think of a function in a computing language in much the same way you think of a mathematical function. The function takes in <strong>arguments</strong>, performs some operation based on the identities of the arguments, and then <strong>returns</strong> a result. For example, the mathematical function</p>
 <p><span class="math">\begin{align}
 f(x, y) = \frac{x}{y}
 \end{align}</span></p>
 <p>takes arguments <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and then returns the ratio between the two, <span class="math notranslate nohighlight">\(x/y\)</span>. Here, we will learn how to construct functions in Python.</p>
 <section id="Basic-function-syntax">
-<h2>Basic function syntax<a class="headerlink" href="#Basic-function-syntax" title="Permalink to this heading"></a></h2>
+<h2>Basic function syntax<a class="headerlink" href="#Basic-function-syntax" title="Link to this heading"></a></h2>
 <p>For our first example, we will translate the above function into Python. A function is <strong>defined</strong> using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. This is best seen by example.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -240,7 +242,7 @@ ratio(x, y)
 <div style="color: dodgerblue; text-align: center; font-weight: bold;"><p>All functions should have doc strings.</p>
 </div><p>In the next line of the function, we see a <strong>return</strong> keyword. Whatever is after the <strong>return</strong> statement is, you guessed it, returned by the function. Any code after the <strong>return</strong> is <em>not</em> executed because the function has already returned!</p>
 <section id="Calling-a-function">
-<h3>Calling a function<a class="headerlink" href="#Calling-a-function" title="Permalink to this heading"></a></h3>
+<h3>Calling a function<a class="headerlink" href="#Calling-a-function" title="Link to this heading"></a></h3>
 <p>Now that we have defined our function, we can <strong>call</strong> it.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -296,7 +298,7 @@ ratio(x, y)
 <p>In each case, the function returns a <code class="docutils literal notranslate"><span class="pre">float</span></code> with the ratio of its arguments.</p>
 </section>
 <section id="Functions-need-not-have-arguments">
-<h3>Functions need not have arguments<a class="headerlink" href="#Functions-need-not-have-arguments" title="Permalink to this heading"></a></h3>
+<h3>Functions need not have arguments<a class="headerlink" href="#Functions-need-not-have-arguments" title="Link to this heading"></a></h3>
 <p>A function does not need arguments. As a silly example, let’s consider a function that just returns 42 every time. Of course, it does not matter what its arguments are, so we can define a function without arguments.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -328,7 +330,7 @@ ratio(x, y)
 </div>
 </section>
 <section id="Functions-need-not-return-anything">
-<h3>Functions need not return anything<a class="headerlink" href="#Functions-need-not-return-anything" title="Permalink to this heading"></a></h3>
+<h3>Functions need not return anything<a class="headerlink" href="#Functions-need-not-return-anything" title="Link to this heading"></a></h3>
 <p>Just like they do not necessarily need arguments, functions also do not need to return anything. If a function does not have a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement (or it is never encountered in the execution of the function), the function runs to completion and returns <code class="docutils literal notranslate"><span class="pre">None</span></code> by default. <code class="docutils literal notranslate"><span class="pre">None</span></code> is a special Python keyword which basically means “nothing.” For example, a function could simply print something to the screen.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -370,13 +372,13 @@ None
 </section>
 </section>
 <section id="Built-in-functions-in-Python">
-<h2>Built-in functions in Python<a class="headerlink" href="#Built-in-functions-in-Python" title="Permalink to this heading"></a></h2>
+<h2>Built-in functions in Python<a class="headerlink" href="#Built-in-functions-in-Python" title="Link to this heading"></a></h2>
 <p>The Python programming language has several built-in functions. We have already encountered <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">id()</span></code>, <code class="docutils literal notranslate"><span class="pre">ord()</span></code>, <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">range()</span></code>, <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code>, <code class="docutils literal notranslate"><span class="pre">zip()</span></code>, and <code class="docutils literal notranslate"><span class="pre">reversed()</span></code>, in addition to type conversions such as <code class="docutils literal notranslate"><span class="pre">list()</span></code>. The complete set of <strong>built-in functions</strong> can be found <a class="reference external" href="https://docs.python.org/3/library/functions.html">here</a>. A word of warning about these functions and naming your own.</p>
 <div style="color: dodgerblue; text-align: center; font-weight: bold;"><p>Never define a function or variable with the same name as a built-in function.</p>
 </div><p>Additionally, Python has <strong>keywords</strong> (such as <code class="docutils literal notranslate"><span class="pre">def</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>, etc.), many of which we have already encountered. A complete list of them is <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#keywords">here</a>. The interpreter will throw an error if you try to define a function or variable with the same name as a keyword.</p>
 </section>
 <section id="An-example-function:-reverse-complement">
-<h2>An example function: reverse complement<a class="headerlink" href="#An-example-function:-reverse-complement" title="Permalink to this heading"></a></h2>
+<h2>An example function: reverse complement<a class="headerlink" href="#An-example-function:-reverse-complement" title="Link to this heading"></a></h2>
 <p>Let’s write a function that does not do something so trivial as computing ratios or giving us the Answer to the Ultimate Question of Life, the Universe, and Everything. We’ll write a function to compute the reverse complement of a sequence of DNA. Within the function, we’ll use some of our newly acquired iteration skills.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -484,7 +486,7 @@ CGTCAACGT
 <div style="color: dodgerblue; text-align: center; font-weight: bold;"><p>Write small functions that do single, simple tasks.</p>
 </div></section>
 <section id="Keyword-arguments">
-<h2>Keyword arguments<a class="headerlink" href="#Keyword-arguments" title="Permalink to this heading"></a></h2>
+<h2>Keyword arguments<a class="headerlink" href="#Keyword-arguments" title="Link to this heading"></a></h2>
 <p>Now let’s say that instead of the reverse DNA complement, we want the reverse RNA complement. We could re-write the <code class="docutils literal notranslate"><span class="pre">complement_base()</span></code> function to do this. Better yet, let’s modify it.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
@@ -559,7 +561,7 @@ CGTCAACGT
 </div>
 </section>
 <section id="Calling-a-function-with-a-splat">
-<h2>Calling a function with a splat<a class="headerlink" href="#Calling-a-function-with-a-splat" title="Permalink to this heading"></a></h2>
+<h2>Calling a function with a splat<a class="headerlink" href="#Calling-a-function-with-a-splat" title="Link to this heading"></a></h2>
 <p>Python offers another convenient way to call functions. Say a function takes three arguments, <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>, taken to be the sides of a triangle, and determines whether or not the triangle is a right triangle. I.e., it checks to see if <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2\)</span>.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
@@ -647,7 +649,7 @@ True
 <p>This can be very convenient.</p>
 </section>
 <section id="Anonymous-(a.k.a.-lambda)-functions">
-<h2>Anonymous (a.k.a. lambda) functions<a class="headerlink" href="#Anonymous-(a.k.a.-lambda)-functions" title="Permalink to this heading"></a></h2>
+<h2>Anonymous (a.k.a. lambda) functions<a class="headerlink" href="#Anonymous-(a.k.a.-lambda)-functions" title="Link to this heading"></a></h2>
 <p>So far, we have written functions using a <code class="docutils literal notranslate"><span class="pre">def</span></code> statement, followed by an indented block of code defining what will be executed when the function is called. Sometimes the functions are very short, like the <code class="docutils literal notranslate"><span class="pre">ratio()</span></code> function at the beginning of this notebook. We might wish to more succinctly define a short function like this. Python’s <code class="docutils literal notranslate"><span class="pre">lambda</span></code> keyword enables this. As an example, let’s look at how we could define the <code class="docutils literal notranslate"><span class="pre">ratio()</span></code> function from before.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
@@ -677,7 +679,7 @@ True
 <p>You may be thinking that anonymous functions run contrary to the idea that all functions should have doc strings. You’re right. Anonymous functions are typically only used when another function requires a function as an argument.</p>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
@@ -715,13 +717,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x135020090> 
+   <jinja2.runtime.BlockReference object at 0x16d501450> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>14. MultiFate enables expandable and controllable multistability &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -107,7 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -172,7 +174,7 @@
            <div itemprop="articleBody">
              
   <section id="14.-MultiFate-enables-expandable-and-controllable-multistability">
-<h1>14. MultiFate enables expandable and controllable multistability<a class="headerlink" href="#14.-MultiFate-enables-expandable-and-controllable-multistability" title="Permalink to this heading"></a></h1>
+<h1>14. MultiFate enables expandable and controllable multistability<a class="headerlink" href="#14.-MultiFate-enables-expandable-and-controllable-multistability" title="Link to this heading"></a></h1>
 <hr><p><strong>Design principles</strong></p>
 <ul class="simple">
 <li><p>Combinatorial dimerization and positive feedback generate multistability</p></li>
@@ -550,7 +552,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </script></div>
 </div>
 <section id="Multicellular-organisms-rely-on-a-repertoire-of-cell-states">
-<h2>Multicellular organisms rely on a repertoire of cell states<a class="headerlink" href="#Multicellular-organisms-rely-on-a-repertoire-of-cell-states" title="Permalink to this heading"></a></h2>
+<h2>Multicellular organisms rely on a repertoire of cell states<a class="headerlink" href="#Multicellular-organisms-rely-on-a-repertoire-of-cell-states" title="Link to this heading"></a></h2>
 <p>The cells in our bodies exist in thousands of different states, differing in morphology, functional capabilities, gene expression, and other features. This multitude of cell states is generated through the astonishing process of multicellular development. As the embryo develops, cells generally commit themselves and their descendants to ever more specific cell fates: initially they decide among the germ layers—endoderm, ectoderm, and mesoderm. Later on, they will further commit to more various
 tissue and organ-specific cell types.</p>
 <p>The late 2010s and early 2020s have witnessed a revolution in our understanding of cell states. Single cell “omics” techniques like single-cell RNA sequencing (scRNAseq) have revealed the molecular states of individual cells, allowing the creation of <a class="reference external" href="https://doi.org/10.1038/s41586-018-0590-4">“cell atlases” of entire adult organisms</a>. <a class="reference external" href="https://doi.org/10.1038/s41586-021-03634-9">Spatial transcriptomics</a> approaches have further shown where cells in those states are located within <a class="reference external" href="https://doi.org/10.1038/s41587-021-01006-2">complex
@@ -579,7 +581,7 @@ a synthetic cell fate control system “from scratch” and to see what lessons 
 </div><p>Can you ever imagine engineering a synthetic differentiation circuit that could rival the complexity of the complex multicellular organisms we see in nature? How would you design it?</p>
 </section>
 <section id="Circuit-architectures-for-cell-differentiation">
-<h2>Circuit architectures for cell differentiation<a class="headerlink" href="#Circuit-architectures-for-cell-differentiation" title="Permalink to this heading"></a></h2>
+<h2>Circuit architectures for cell differentiation<a class="headerlink" href="#Circuit-architectures-for-cell-differentiation" title="Link to this heading"></a></h2>
 <p>To begin to explore how these capabilities emerge from underlying circuits, we will shift from Waddington’s metaphorical diagram to a more directly applicable dynamical systems perspective.</p>
 <p>We imagine each cell state as a stable attractor in a phase space of concentrations of transcription factors or other regulators. This representation is more general and does not require an overall “slope” down which the marble will roll.</p>
 <p>Within this general framework, the ideal circuit should:</p>
@@ -596,7 +598,7 @@ promoter for effective repression. More fundamentally, however, it does not expa
 <p>Before reading further, take a moment to think about what kind of architecture you might use to create a cell fate control system providing the features above.</p>
 </section>
 <section id="Inspiration:-natural-circuits-use-combinatorial-dimerization-and-positive-autoregulation">
-<h2>Inspiration: natural circuits use combinatorial dimerization and positive autoregulation<a class="headerlink" href="#Inspiration:-natural-circuits-use-combinatorial-dimerization-and-positive-autoregulation" title="Permalink to this heading"></a></h2>
+<h2>Inspiration: natural circuits use combinatorial dimerization and positive autoregulation<a class="headerlink" href="#Inspiration:-natural-circuits-use-combinatorial-dimerization-and-positive-autoregulation" title="Link to this heading"></a></h2>
 <p>Inspiration for the design of a synthetic cell fate control system can come from looking at what is known about natural cell fate control systems. Zhu et al. (<a class="reference external" href="https://doi.org/10.1126/science.abg9765">2022, Science</a>) noticed that many natural fate control systems share two critical features:</p>
 <p>First, they are based on sets of transcription factors that combinatorially dimerize to form many possible complexes. (This is reminescent of the combinatorial complex formation explored in the previous chapter on BMP.) Certain dimers activate downstream genes, whie others may be inactive. Formation of inactive complexes sequesters certain transcription factors, preventing them from forming alternative, active dimers with other proteins. This is analogous to the molecular titration motif we
 analyzed in Chapter 12.</p>
@@ -606,7 +608,7 @@ transcription factor Oct4, which can dimerize with either Sox2 or Sox17. Sox2-Oc
 <div style="width: 600px; margin: auto;"><img alt="Natural differentiation circuits exhibit molecular titration" src="../_images/MultiFate_NaturalCircuits.png" />
 </div></section>
 <section id="MultiFate:-a-naturally-inspired-synthetic-cell-fate-control-circuit">
-<h2>MultiFate: a naturally inspired synthetic cell fate control circuit<a class="headerlink" href="#MultiFate:-a-naturally-inspired-synthetic-cell-fate-control-circuit" title="Permalink to this heading"></a></h2>
+<h2>MultiFate: a naturally inspired synthetic cell fate control circuit<a class="headerlink" href="#MultiFate:-a-naturally-inspired-synthetic-cell-fate-control-circuit" title="Link to this heading"></a></h2>
 <p>Intrigued and inspired by these architectures, Zhu et al. desigend a circuit called MultiFate, which incorporates the two themes of combinatorial dimerizaton among a set of transcription factors and positive autoregulation. We will see that the MultiFate architecture can generate multistability and the other features enough, but is simple enough to be constructed and analyzed synthetically within cells.</p>
 <p>We will start by analzying a minimal version of the MultiFate architecture, termed MultiFate-2, comprising just two transcription factors, which we label A and B. A and B can each form homodimers. They can also heterodimerize with one another. The homodimers positively activate their own gene, while heterodimers are inactive. The reason that homodimers can activate their own genes, while the corresponding monomers cannot is that the DNA binding site for the dimer is effectively double the length
 of that of the monomer, providing approximately twice the binding energy.</p>
@@ -614,7 +616,7 @@ of that of the monomer, providing approximately twice the binding energy.</p>
 <div style="width: 400px; margin: auto;"><img alt="MultiFate-2 Schematic" src="../_images/MultiFate-2.png" />
 </div></section>
 <section id="A-two-dimensional-model-of-MultiFate-dynamics">
-<h2>A two-dimensional model of MultiFate dynamics<a class="headerlink" href="#A-two-dimensional-model-of-MultiFate-dynamics" title="Permalink to this heading"></a></h2>
+<h2>A two-dimensional model of MultiFate dynamics<a class="headerlink" href="#A-two-dimensional-model-of-MultiFate-dynamics" title="Link to this heading"></a></h2>
 <p>How many states can this architecture generate? Can it be expanded? And what other dynamic properties does it possess? To find out, we will apply the approaches developed previously with additional phase plane analysis.</p>
 <p>To begin, we will define a few variables. The A and B transcription factors can each exist either in monomeric, homodimeric, or heterodimeric form. We will represent their concentrations by the variables <span class="math notranslate nohighlight">\([A]\)</span> (or <span class="math notranslate nohighlight">\([B]\)</span>), <span class="math notranslate nohighlight">\([A_2]\)</span> (or <span class="math notranslate nohighlight">\([B_2]\)</span>), and <span class="math notranslate nohighlight">\([AB]\)</span>, respectively.</p>
 <p>Transcription factors can interconvert between these forms via the binding reactions:</p>
@@ -642,7 +644,7 @@ heterodimer can form in two different ways (A+B and B+A). It prevents double-cou
 & [B_{\mathrm{tot}}] = [B] + 2 [B_2] + [AB]
 \end{align}</span></p>
 <section id="Conservation-of-mass-reduces-the-model-to-two-dimensions">
-<h3>Conservation of mass reduces the model to two dimensions<a class="headerlink" href="#Conservation-of-mass-reduces-the-model-to-two-dimensions" title="Permalink to this heading"></a></h3>
+<h3>Conservation of mass reduces the model to two dimensions<a class="headerlink" href="#Conservation-of-mass-reduces-the-model-to-two-dimensions" title="Link to this heading"></a></h3>
 <p>These equations make a few choices and assumptions. First, we chose to use <span class="math notranslate nohighlight">\([A_{\mathrm{tot}}]\)</span> and <span class="math notranslate nohighlight">\([B_{\mathrm{tot}}]\)</span> as the dynamical variables appearing in the <span class="math notranslate nohighlight">\(d/dt\)</span> terms on the left hand side. This decision will simplify the analysis below, and is reasonable because it is these “total” concentrations that vary over the slower timescsales we will be interested in. Second, we represented transcriptional regulation using a leaky Hill function regulated by the homodimeric
 form of the transcription factor, with leak term <span class="math notranslate nohighlight">\(\alpha\)</span> and half-activation constant <span class="math notranslate nohighlight">\(K_M\)</span>. The inclusion of this basal transcription is important for allowing the system to self-activate and avoiding a potential stable state in which both factors are off. (Such a state would be difficult to “read out” but could be physiologically useful in some contexts.) Finally, we assumed that removal of the two proteins occurs at the same rate regardless of whether they are in a monomeric or
 dimeric form, leading to the removal terms <span class="math notranslate nohighlight">\(\delta [A_{\mathrm{tot}}]\)</span> and <span class="math notranslate nohighlight">\(\delta [B_{\mathrm{tot}}]\)</span>.</p>
@@ -661,7 +663,7 @@ obtain an expression that represents <span class="math notranslate nohighlight">
 <p>If we substitute these expression back into our ODEs, then we now have a closed-form system where the rate of change of <span class="math notranslate nohighlight">\([A_{\mathrm{tot}}]\)</span> and <span class="math notranslate nohighlight">\([B_{\mathrm{tot}}]\)</span> are written as functions of only themselves.</p>
 </section>
 <section id="Nondimensionalizing-further-simplifies-the-MultiFate-model">
-<h3>Nondimensionalizing further simplifies the MultiFate model<a class="headerlink" href="#Nondimensionalizing-further-simplifies-the-MultiFate-model" title="Permalink to this heading"></a></h3>
+<h3>Nondimensionalizing further simplifies the MultiFate model<a class="headerlink" href="#Nondimensionalizing-further-simplifies-the-MultiFate-model" title="Link to this heading"></a></h3>
 <p>Since the above expressions contain many parameters, it will be useful to nondimensionalize the system. We can make the substitutions</p>
 <p><span class="math">\begin{align}
 \tilde{t} &\leftarrow t\delta \\
@@ -683,9 +685,9 @@ obtain an expression that represents <span class="math notranslate nohighlight">
 </section>
 </section>
 <section id="The-MultiFate-Phase-portrait">
-<h2>The MultiFate Phase portrait<a class="headerlink" href="#The-MultiFate-Phase-portrait" title="Permalink to this heading"></a></h2>
+<h2>The MultiFate Phase portrait<a class="headerlink" href="#The-MultiFate-Phase-portrait" title="Link to this heading"></a></h2>
 <section id="Calculating-nullclines">
-<h3>Calculating nullclines<a class="headerlink" href="#Calculating-nullclines" title="Permalink to this heading"></a></h3>
+<h3>Calculating nullclines<a class="headerlink" href="#Calculating-nullclines" title="Link to this heading"></a></h3>
 <p>Plotting nullclines can be used to identify steady states and provide insight into the structure of a dynamical system. Even better, we can make the nullcline plot interactive, allowing us to see directly how different features depend on biochemical parameters. Recall from our analysis of the Toggle Switch in Chapter 3 that for a two-dimensional ODE system there will be two nullclines, one corresponding to all of the points in the plane where <span class="math notranslate nohighlight">\(\mathrm{d}[A_{tot}]/\mathrm{d}t = 0\)</span>, and one
 corresponding to all of the points in the plane where <span class="math notranslate nohighlight">\(\mathrm{d}[B_{tot}]/\mathrm{d}t = 0\)</span>. When the nullclines intersect, both ODEs are equal to zero and the system is at a fixed point.</p>
 <p>The functional forms of the ODEs are complex, making it difficult to obtain a closed-form analytical expression for the nullclines. Instead, we will use numerical methods. Specifically, in order to find the <span class="math notranslate nohighlight">\(\mathrm{d}[A_{tot}]/\mathrm{d}t\)</span> nullcline we will calculate the value of <span class="math notranslate nohighlight">\(\mathrm{d}[A_{tot}]/\mathrm{d}t\)</span> across a grid of points in the plane, and then use the <code class="docutils literal notranslate"><span class="pre">find_countours</span></code> function from the <code class="docutils literal notranslate"><span class="pre">scikit-measure</span></code> package to find the points where
@@ -915,7 +917,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Determining-the-stability-of-the-fixed-points">
-<h3>Determining the stability of the fixed points<a class="headerlink" href="#Determining-the-stability-of-the-fixed-points" title="Permalink to this heading"></a></h3>
+<h3>Determining the stability of the fixed points<a class="headerlink" href="#Determining-the-stability-of-the-fixed-points" title="Link to this heading"></a></h3>
 <p>With the default parameters in the plot, you can count five nullcline intersections, or fixed points. For a cell fate control system we are interested in those that are stable. To determine their stability we return to Linear Stability Analysis (see Chapter 9).</p>
 <p>Recall that to determine stability we evaluate the Jacobian matrix of partial derivatives, <span class="math notranslate nohighlight">\(J\)</span>, at the fixed point of interest <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>:</p>
 <p><span class="math">\begin{align}
@@ -1071,7 +1073,7 @@ Note that contexts like these, where we are finding symbolic expressions solely 
 <span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">cdsA</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Anull_Avals&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Anull_Bvals&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s1">&#39;A_tot nullcline&#39;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">cdsB</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Bnull_Avals&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Bnull_Bvals&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s1">&#39;B_tot nullcline&#39;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">cds_stable_fps</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
@@ -1079,7 +1081,7 @@ Note that contexts like these, where we are finding symbolic expressions solely 
     <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">cds_unstable_fps</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
@@ -1206,7 +1208,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Plotting-a-flow-field">
-<h3>Plotting a flow field<a class="headerlink" href="#Plotting-a-flow-field" title="Permalink to this heading"></a></h3>
+<h3>Plotting a flow field<a class="headerlink" href="#Plotting-a-flow-field" title="Link to this heading"></a></h3>
 <p>To investigate the behavior near the fixed points, and indeed away from them as well, we can plot the <strong>phase portrait</strong>. A phase portrait is a plot displaying possible trajectories of a dynamical system in <strong>phase space</strong>, in this case on the <span class="math notranslate nohighlight">\(A_\mathrm{tot}\)</span>-<span class="math notranslate nohighlight">\(B_\mathrm{tot}\)</span> plane. Let’s generate a phase portrait using the <code class="docutils literal notranslate"><span class="pre">biocircuits</span></code> package (with the nullclines overlaid).</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">biocircuits.phase_portrait()</span></code> function requires explicit functions for <span class="math notranslate nohighlight">\(\mathrm{d}[A_{tot}]/\mathrm{d}t\)</span> and <span class="math notranslate nohighlight">\(\mathrm{d}[B_{tot}]/\mathrm{d}t\)</span>.</p>
 <div class="nbinput nblast docutils container">
@@ -1282,7 +1284,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">cdsA</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Anull_Avals&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Anull_Bvals&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s1">&#39;A_tot nullcline&#39;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">cdsB</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Bnull_Avals&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Bnull_Bvals&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s1">&#39;B_tot nullcline&#39;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">cds_stable_fps</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
@@ -1290,7 +1292,7 @@ var element = document.currentScript.previousSibling.previousSibling;
     <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">cds_unstable_fps</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
@@ -1367,7 +1369,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Plotting-separatrices">
-<h3>Plotting separatrices<a class="headerlink" href="#Plotting-separatrices" title="Permalink to this heading"></a></h3>
+<h3>Plotting separatrices<a class="headerlink" href="#Plotting-separatrices" title="Link to this heading"></a></h3>
 <p>Notice how two trajectories can start very close to each other yet diverge and end up at different stable fixed points. The set of all starting points that eventually land on a given attractor (stable fixed point) is known as its <strong>basin of attraction</strong>. The boundary between two basins of attraction is called a <strong>separatrix</strong>.</p>
 <p>We can calculaute the separatrices by making use of the fact that a separatrix is the one-dimensional stable manifold of a particular saddle fixed point— while trajectories on either side of a separatrix will converge to a stable fixed point, trajectories that start exactly <em>on</em> a separatrix will converge to a saddle point.</p>
 <p>Recall from our exploration of Linear Stability Analysis in Chapter 9 that a saddle fixed point has one stable eigendirection and one unstable eigendirection. Near the fixed point, one eigenvector, <span class="math notranslate nohighlight">\(\boldsymbol{v}\)</span>, and its inverse <span class="math notranslate nohighlight">\(-\boldsymbol{v}\)</span>, point outwards from the fixed point. This eigenvector is parallel to the separatrix close to the fixed point. However, moving away from the fixed point, the eigenvector and the separatrix will begin to diverge. In order to follow the
@@ -1496,7 +1498,7 @@ separatrix, therefore, we must start at the fixed point, take a very small stepp
 <span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">cdsA</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Anull_Avals&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Anull_Bvals&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s1">&#39;A_tot nullcline&#39;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">cdsB</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;Bnull_Avals&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Bnull_Bvals&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s1">&#39;B_tot nullcline&#39;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">cds_stable_fps</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
@@ -1504,7 +1506,7 @@ separatrix, therefore, we must start at the fixed point, take a very small stepp
     <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">line_width</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">cds_unstable_fps</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span>
@@ -1570,7 +1572,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="Building-MultiFate">
-<h2>Building MultiFate<a class="headerlink" href="#Building-MultiFate" title="Permalink to this heading"></a></h2>
+<h2>Building MultiFate<a class="headerlink" href="#Building-MultiFate" title="Link to this heading"></a></h2>
 <p>Will MultiFate indeed generate multistability in cells? And, could it provide some of the key capabilities expected of an ideal cell differentiation circuit, such as multistability, state-switching, control of state stability, and expandability? To find out, Zhu et al. constructed an experimental implementation of the MultiFate-2 circuit.</p>
 <p>The key components required to build MultiFate are transcription factors that activate only as homodimers and inhibit each other through heterodimerization. Zinc finger DNA-binding proteins (below, left) provided an ideal type of engineerable DNA binding protein. They are comprised of modular domains (fingers) that bind to specific 3bp sequences an can be concatenated to recognize longer sites. They can thus be designed to recognize specific DNA binding sites.</p>
 <p>In MultiFate, only the homodimers activate. To achieve this, the authors took 3-finger proteins that recognize 9bp target sites, and fused them to a transcriptional activation domain. As shown schematically (below, middle), 9bp is too short for efficient binding by the monomeric proteins. However, further incorporating a homodimerization domain caused the proteins to pair up as homodimers that efficiently recognize the combined 18bp double target site, and therefore activate efficiently. In
@@ -1585,7 +1587,7 @@ binding sites.</p>
 <div style="width: 400px; margin: auto;"><img alt="Design of the synthetic transcription factors for MultiFate" src="../_images/MultiFate_TF_Design.png" />
 </div></section>
 <section id="Testing-MultiFate">
-<h2>Testing MultiFate<a class="headerlink" href="#Testing-MultiFate" title="Permalink to this heading"></a></h2>
+<h2>Testing MultiFate<a class="headerlink" href="#Testing-MultiFate" title="Link to this heading"></a></h2>
 <p>To test out the circuit, Zhu et al integrated two such cassettes with two distinct zinc finger proteins and fluorescent proteins (the greenish mCitrine and the red mCherry) into cells. Different cells received different numbers of copies of these genes integrated at different locations. In this way, each cell and its clonal descendants probed different values of the <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> parameters for each of the two genes.</p>
 <div style="width: 600px; margin: auto;"><img alt="Inserting MultiFate-2 into cells" src="../_images/circuit_into_CHO.png" />
 </div><p>With these cells, the moment of truth was at hand: would MultiFate-2 provide multistability? When the cells were cultured without the inducers, both proteins were quite low, as seen in flow cytometry measurements. But when AP1903 and TMP were added to turn on dimerization and stabilize the proteins—voila!—the cells shifted into three distinct clusters:</p>
@@ -1597,7 +1599,7 @@ binding sites.</p>
 <div style="margin: auto; width: 600px;"><video src="figs/MF2_wholefield_compressed.mp4" style="width: 600px;" controls><p>Your browser does not support display of this video.</p>
 </video></div><p>Evidently, MultiFate-2 can indeed produce tristability. And other MultiFate-2 clones produced other behaviors as well.</p>
 <section id="Irreversible-differentiation-(hysteresis)">
-<h3>Irreversible differentiation (hysteresis)<a class="headerlink" href="#Irreversible-differentiation-(hysteresis)" title="Permalink to this heading"></a></h3>
+<h3>Irreversible differentiation (hysteresis)<a class="headerlink" href="#Irreversible-differentiation-(hysteresis)" title="Link to this heading"></a></h3>
 <p>A striking feature in natural cell fate control systems is the appearance of irreversible or hysteretic transitions, in which a cell can differentiate into one or more new fates, perhaps in response to a signal, but does not (under normal conditions) de-differentiate back to its previous state. One of the best studied examples of this is the <a class="reference external" href="https://doi.org/10.1016/j.febslet.2009.10.068">maturation of Xenopus oocytes</a> in response to the hormone progesterone, beautifully studied by James
 Ferrell and colleauges. Another example is the differentiation of embryonic stem cells.</p>
 <p>MultiFate can produce a similar type of irreversible differentiation.</p>
@@ -1609,7 +1611,7 @@ attractors in the system now have A or B expression but not both. With no other 
 </div></section>
 </section>
 <section id="MultiFate-expands">
-<h2>MultiFate expands<a class="headerlink" href="#MultiFate-expands" title="Permalink to this heading"></a></h2>
+<h2>MultiFate expands<a class="headerlink" href="#MultiFate-expands" title="Link to this heading"></a></h2>
 <p>Three states is nice. Seven states is nicer. One of the key advantages of the MultiFate architecture is that it can be expanded by plugging in additional transcription factors to an existing circuit. This works because all of the interactions between factors occur at the protein level (rather than through transcriptional regulation).</p>
 <div style="width: 350px; margin: auto;"><img alt="MultiFate-3" src="../_images/MultiFate-3.png" />
 </div><p>The model for MultiFate-3 can be obtained by extending the MultiFate-2 model in a straightforward way. First, we add one new differential equation for the third transcription factor, <span class="math notranslate nohighlight">\(C\)</span>, exactly like those for <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>:</p>
@@ -1635,7 +1637,7 @@ able to determine that cells that started in each of these seven states persiste
 </div><p>With MultiFate, in experiments as well as in the model, the number of states increases faster than the number of transcription factors. This is essential to achieve very large numbers of states.</p>
 </section>
 <section id="Progressive-differentiation">
-<h2>Progressive differentiation<a class="headerlink" href="#Progressive-differentiation" title="Permalink to this heading"></a></h2>
+<h2>Progressive differentiation<a class="headerlink" href="#Progressive-differentiation" title="Link to this heading"></a></h2>
 <p>A classic theme in natural cell fate control systems is the occurrence of branching fate decisions, exemplified by this illustration of cell fate diversification in the hematopoietic system (<a class="reference external" href="https://doi.org/10.1002/sctm.17-0192">Antoniani et al</a>):</p>
 <div style="width: 400px; margin: auto;"><img alt="HSC_differentiation.png" src="../_images/HSC_differentiation.png" />
 </div><p>MultiFate-3 can perform something roughly similar. If we progressively reduce protein stability by increasing <span class="math notranslate nohighlight">\(\delta\)</span> in the model, then we progressively destabilize certain states, forcing binary decisions. To see this, we can plot the MultiFate-3 phase diagram at different stabilities. The following simulation starts in the full septastable regime. Then stability is suddenly reduced, eliminating the triple positive ABC state. Cells starting in that state migrate to the double positive
@@ -1643,7 +1645,7 @@ states: AB, BC, and AC. Then, just as they are getting comfortable, we can furth
 <div style="margin: auto; width: 650px;"><video src="figs/MovieS6_MF3Bifurcation.mp4" style="width: 650px;" controls><p>Your browser does not support display of this video.</p>
 </video></div><p>Remarkably, this occurs not only in the model but in the real system as well (see <a class="reference external" href="https://doi.org/10.1126/science.abg9765">Zhu et al</a>).</p>
 <section id="Scaling:-how-far-can-it-go?">
-<h3>Scaling: how far can it go?<a class="headerlink" href="#Scaling:-how-far-can-it-go?" title="Permalink to this heading"></a></h3>
+<h3>Scaling: how far can it go?<a class="headerlink" href="#Scaling:-how-far-can-it-go?" title="Link to this heading"></a></h3>
 <p>A final question we can ask in the model is how far can MultiFate scale? How many states can it generate? To address this question, one can analyze MultiFate models with increasing numbers of transcription factors. In addition to counting the number of stable fixed points, we can also quantify the relative sizes of their basins of attraction to make sure they are really accessible. Zhu et al performed this analysis. As shown in the next plot, the number of states initially grows exponentially
 with the number of factors. Eventually it starts to saturate. The reason for this turns out to be interesting. In the MultiFate architecture, only the homodimers are active. For a state with a certain number, <span class="math notranslate nohighlight">\(m\)</span> of transcription factors simultaneously expressed, there are <span class="math notranslate nohighlight">\(~m^2\)</span> dimer complexes but only <span class="math notranslate nohighlight">\(m\)</span> of those are active. So the fraction of all species that are active decreases as <span class="math notranslate nohighlight">\(~1/m\)</span>. This eventually limits the total number of states. Nevertheless, for the
 parameters in the model, it still reaches hundreds of states!</p>
@@ -1659,7 +1661,7 @@ We have that
 \end{align} --></section>
 </section>
 <section id="Conclusion">
-<h2>Conclusion<a class="headerlink" href="#Conclusion" title="Permalink to this heading"></a></h2>
+<h2>Conclusion<a class="headerlink" href="#Conclusion" title="Link to this heading"></a></h2>
 <p>Multicellular organisms are built from multiple cells in multiple states. Understanding how those states are established, stabilized, and controlled remains a fundamental biological challenge. Natural circuits appear to combine combinatorial dimerization and positive autoregulation—two circuit level features we have already encountered. The synthetic MultiFate circuit shows that these two features together provide a scalable architecture for multistability with many features that are reminescent
 of natural cell fate control systems. Additional mechanisms are almost certain to play critical roles. Nevertheless, this approach reveals that multistability can be engineered, and provokes a range of questions about how combinations of transcription factors work to specify fates and their transitions. Above, the knobs used to experimentally control the state of the MultiFate circuit were external, based on small molecules. In future iterations, a larger circuit may be able to control these
 dynamics autonomously or in response to signals from other cells, similar to the behaviors observed during the development of multicellular organisms. Achieving this vision will likely require uncovering additional design principles for multicellularity.</p>
@@ -1678,13 +1680,13 @@ dynamics autonomously or in response to signals from other cells, similar to the
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13476b910> 
+   <jinja2.runtime.BlockReference object at 0x309563890> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

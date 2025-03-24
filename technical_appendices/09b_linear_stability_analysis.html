@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9b. Linear stability analysis &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -152,7 +154,7 @@
            <div itemprop="articleBody">
              
   <section id="9b.-Linear-stability-analysis">
-<h1>9b. Linear stability analysis<a class="headerlink" href="#9b.-Linear-stability-analysis" title="Permalink to this heading"></a></h1>
+<h1>9b. Linear stability analysis<a class="headerlink" href="#9b.-Linear-stability-analysis" title="Link to this heading"></a></h1>
 <hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -481,7 +483,7 @@ if (force === true) {
 <hr><p>Thus far, we have assessed the stability of fixed points of a dynamical system graphically. We have drawn plots of production rates and degradation rates of gene products, with the crossing of these respective plots being fixed points. We then investigated when degradation was faster than production, and vice versa, to determine whether a system is attracted toward or repelled away from a fixed point. We also did similar nullcline-based analysis.</p>
 <p>In this technical appendix, we present a more general, and very useful, approach called <strong>linear stability analysis</strong>. We first give a minimal introduction to the technique, and then apply it to the repressilator. You can read about the technique in greater depth in <a class="reference external" href="https://doi.org/10.1201/9780429492563">Strogatz’s book</a>.</p>
 <section id="A-minimal-introduction-to-linear-stability-analysis">
-<h2>A minimal introduction to linear stability analysis<a class="headerlink" href="#A-minimal-introduction-to-linear-stability-analysis" title="Permalink to this heading"></a></h2>
+<h2>A minimal introduction to linear stability analysis<a class="headerlink" href="#A-minimal-introduction-to-linear-stability-analysis" title="Link to this heading"></a></h2>
 <p>The main idea behind linear stability analysis is to locally approximate a <em>nonlinear</em> dynamical system by its Taylor series to first order near the fixed point, and then examine the behavior of the resulting simpler linear system. The <strong>Hartman-Grobman theorem</strong> (which we will not derive here) ensures that the linearized system faithfully represents the phase portrait of the full nonlinear system near the fixed point.</p>
 <p>Say we have a dynamical system with variables <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> with</p>
 <p><span class="math">\begin{align}
@@ -529,7 +531,7 @@ if (force === true) {
 <p>So, if we can assess the dynamics of the linearized system near the fixed point, we can get an idea what is happening with the full system.</p>
 </section>
 <section id="Handy-Taylor-series-of-Hill-functions">
-<h2>Handy Taylor series of Hill functions<a class="headerlink" href="#Handy-Taylor-series-of-Hill-functions" title="Permalink to this heading"></a></h2>
+<h2>Handy Taylor series of Hill functions<a class="headerlink" href="#Handy-Taylor-series-of-Hill-functions" title="Link to this heading"></a></h2>
 <p>Because we model dynamics using Hill function so often, we will write the linearization of them here for you to memorize.</p>
 <p><span class="math">\begin{align}
 \frac{x^n}{1+x^n} &= \frac{x_0^n}{1+x_0^n} + \frac{n x_0^{n-1}}{(1+x_0^n)^2}\,\delta x + \text{higher order terms}, \\[1em]
@@ -538,7 +540,7 @@ if (force === true) {
 <p>In the following analysis of the repressilator, we only need the second, repressing case.</p>
 </section>
 <section id="Linear-stability-analysis-for-the-repressilator">
-<h2>Linear stability analysis for the repressilator<a class="headerlink" href="#Linear-stability-analysis-for-the-repressilator" title="Permalink to this heading"></a></h2>
+<h2>Linear stability analysis for the repressilator<a class="headerlink" href="#Linear-stability-analysis-for-the-repressilator" title="Link to this heading"></a></h2>
 <p>In <a class="reference internal" href="09a_composite_functions_to_find_fixed_point.html"><span class="doc">Technical Appendix 9a</span></a>, we wrote the dimensionless dynamical equations of the repressilator as</p>
 <p><span class="math">\begin{align}
 &\frac{\mathrm{d}x_1}{\mathrm{d}t} = \frac{\beta}{1 + x_3^n} - x_1, \\[1em]
@@ -630,7 +632,7 @@ x_0^n = \frac{2}{n-2}.
 <p>we have imaginary eigenvalues with positive real parts. This is therefore an <strong>oscillatory instability</strong>.</p>
 </section>
 <section id="Linear-stability-diagram">
-<h2>Linear stability diagram<a class="headerlink" href="#Linear-stability-diagram" title="Permalink to this heading"></a></h2>
+<h2>Linear stability diagram<a class="headerlink" href="#Linear-stability-diagram" title="Link to this heading"></a></h2>
 <p>When analyzing stability of dynamical systems, it is useful to make a <strong>linear stability diagram</strong>, which is a map of parameter space highlighting stable and unstable regions. We know the bifurcation line is</p>
 <p><span class="math">\begin{align}
 \beta = \frac{n}{2}\left(\frac{n}{2} - 1\right)^{-\frac{n+1}{n}}.
@@ -706,13 +708,13 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <hr></section>
 <section id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
+<h2>References<a class="headerlink" href="#References" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Strogatz, S. H., <em>Nonlinear Dynamics and Chaos With Applications to Physics, Biology, Chemistry, and Engineering, 2nd Ed.</em>, CRC Press, 2015. (<a class="reference external" href="https://doi.org/10.1201/9780429492563">link</a>)</p></li>
 </ul>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -752,13 +754,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134c61d90> 
+   <jinja2.runtime.BlockReference object at 0x300baf850> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

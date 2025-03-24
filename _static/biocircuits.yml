@@ -17,6 +17,7 @@ dependencies:
   - numpy
   - pandas
   - pip
+  - scikit-image
   - scipy
   - sympy
   - tqdm

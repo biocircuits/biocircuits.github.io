@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Appendix C: Numerical solutions of ODES &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -154,7 +156,7 @@
            <div itemprop="articleBody">
              
   <section id="Appendix-C:-Numerical-solutions-of-ODES">
-<h1>Appendix C: Numerical solutions of ODES<a class="headerlink" href="#Appendix-C:-Numerical-solutions-of-ODES" title="Permalink to this heading"></a></h1>
+<h1>Appendix C: Numerical solutions of ODES<a class="headerlink" href="#Appendix-C:-Numerical-solutions-of-ODES" title="Link to this heading"></a></h1>
 <hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -477,7 +479,7 @@ if (force === true) {
 <hr><p>In <a class="reference external" href="../technical_appendices/02a_numerical_odes.ipynb">Technical Appendix 2a</a>, we learned basic syntax of how to use <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> to perform numerical integration of ordinary differential equations. We gave a cursory description of how it works, but the integration was more or less treated like a black box. Here, we give a more pedagogical introduction to how numerical solution of systems of ODEs works and why it is necessary to use a package like <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code>.</p>
 <p>In our examples, we mostly use dynamical equations for chemical kinetics. Many of the dynamical equations we encounter in the study of biological circuits are equations describing chemical kinetics or are otherwise similar with similar issues.</p>
 <section id="Euler's-method-as-an-introduction-to-numerical-methods">
-<h2>Euler’s method as an introduction to numerical methods<a class="headerlink" href="#Euler's-method-as-an-introduction-to-numerical-methods" title="Permalink to this heading"></a></h2>
+<h2>Euler’s method as an introduction to numerical methods<a class="headerlink" href="#Euler's-method-as-an-introduction-to-numerical-methods" title="Link to this heading"></a></h2>
 <p>A classic introduction to numerical methods for solving system of time-based ODEs involves <strong>Euler’s method</strong>. Consider an ordinary differential equation</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}y}{\mathrm{d}t} = f(y, t),
@@ -536,7 +538,7 @@ y(2\Delta t) \approx y(\Delta t) + \Delta t f(y(\Delta t), \Delta t).
 </div>
 </section>
 <section id="An-example-problem:-reversible-dimerization">
-<h2>An example problem: reversible dimerization<a class="headerlink" href="#An-example-problem:-reversible-dimerization" title="Permalink to this heading"></a></h2>
+<h2>An example problem: reversible dimerization<a class="headerlink" href="#An-example-problem:-reversible-dimerization" title="Link to this heading"></a></h2>
 <p>To have a concrete example problem, let us consider the dimerization of <a class="reference external" href="https://en.wikipedia.org/wiki/Hexokinase">hexokinase</a>. Hexokinases phosphorylate six-carbon sugars and are important metabolic enzymes. They exist in yeast cells in high concentration, being present in both monomeric and dimeric forms. The two forms bind glucose differently, so the relative concentrations of the monomeric and dimeric forms are of interest. Denoting A as a hexokinase monomer, the chemical reaction is
 <span class="math notranslate nohighlight">\(\mathrm{A} + \mathrm{A} \rightleftharpoons AA\)</span>, with the forward reaction having rate constant <span class="math notranslate nohighlight">\(k_+\)</span> and the reverse reaction having rate constant <span class="math notranslate nohighlight">\(k_-\)</span>. The dynamical equations for this system are</p>
 <p><span class="math">\begin{align}
@@ -847,7 +849,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Much better!</p>
 </section>
 <section id="Variable-step-sizes-can-help-speed-the-solution">
-<h2>Variable step sizes can help speed the solution<a class="headerlink" href="#Variable-step-sizes-can-help-speed-the-solution" title="Permalink to this heading"></a></h2>
+<h2>Variable step sizes can help speed the solution<a class="headerlink" href="#Variable-step-sizes-can-help-speed-the-solution" title="Link to this heading"></a></h2>
 <p>If we look at the above solution, we are still not quite hitting the analytical solution at short times, though we do well as the system approaches steady state. It makes sense, then, to take shorter time steps when the solution is changing rapidly and longer time steps when it is changing slowly. We would therefore employ a <strong>variable step size algorithm</strong>.</p>
 <p>Such an algorithm is employed in <code class="docutils literal notranslate"><span class="pre">scipy.optimize.odeint()</span></code>. It uses the Hindmarsh-Petzold algorithm, as implemented in LSODA as part of ODEPACK. (That word salad is mostly so you know what to enter into search engines to find more information about the algorithm.) We will discuss some other features of the algorithm momentarily.</p>
 <p>The interface for <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> is the same as for the Euler integration function we just developed, except in place of <code class="docutils literal notranslate"><span class="pre">delta_t</span></code> and <code class="docutils literal notranslate"><span class="pre">t_max</span></code>, you specify for which time points you want the solution evaluated. Because <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> does automatic variable time stepping, it chooses its <em>own</em> <span class="math notranslate nohighlight">\(\Delta t\)</span>’s for each time step. It then interpolates its solutions to give you the values at the time points you ask for.</p>
@@ -910,7 +912,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>The <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> function much more closely matches the analytical solution at all time points.</p>
 </section>
 <section id="Stiffness-presents-additional-challenges">
-<h2>Stiffness presents additional challenges<a class="headerlink" href="#Stiffness-presents-additional-challenges" title="Permalink to this heading"></a></h2>
+<h2>Stiffness presents additional challenges<a class="headerlink" href="#Stiffness-presents-additional-challenges" title="Link to this heading"></a></h2>
 <p>Systems of ODEs that have a wide spread in time scales of dynamics are said to be <strong>stiff</strong>. Stiff ODEs offer challenges beyond the accuracy and time-stepping issues we have already explored with Euler’s method. Stiff ODEs have different dynamical modes that occur at vastly different time scales. This usually arises from big differences in coefficients in the dynamical equations.</p>
 <p>We will consider a classic example of a stiff chemical reaction system proposed by H. H. Robertson, known as the Robertson problem. The chemical reactions and their rate constants are</p>
 <p><span class="math">\begin{align}
@@ -1044,7 +1046,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>The concentration axis is on a log scale, so where the <span class="math notranslate nohighlight">\(y\)</span> (orange) curve is missing, we are getting negative values. Importantly, looking right around 9.34 seconds, we see the solution explode. This is an example of <strong>instability</strong> that can plague explicit methods with stiff systems.</p>
 </section>
 <section id="Implicit-methods-can-handle-stiffness,-but-are-slower-and-harder-to-implement">
-<h2>Implicit methods can handle stiffness, but are slower and harder to implement<a class="headerlink" href="#Implicit-methods-can-handle-stiffness,-but-are-slower-and-harder-to-implement" title="Permalink to this heading"></a></h2>
+<h2>Implicit methods can handle stiffness, but are slower and harder to implement<a class="headerlink" href="#Implicit-methods-can-handle-stiffness,-but-are-slower-and-harder-to-implement" title="Link to this heading"></a></h2>
 <p>In contrast to explicit methods, implicit methods are much less susceptible to the types of catastrophic failures due to stiffness we see with explicit methods. Implicit methods employ a different kind of differencing formula. Recall that for Euler’s method, we approximated the time derivative using the forward differencing as</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}y}{\mathrm{d}t} \approx \frac{y(t+\Delta t) - y(t)}{\Delta t},
@@ -1170,7 +1172,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>The numerical stability issues are gone. The cost, though, is that the calculation takes much longer per step. We only integrated for 10 seconds, but the level of <span class="math notranslate nohighlight">\(z\)</span> is still very far from its steady state value, so we have a lot more integrating to do! Our implementation of backward Euler would take too long to integrate.</p>
 </section>
 <section id="The-Hindmarsh-Petzold-algorithm-is-the-best-of-both-worlds">
-<h2>The Hindmarsh-Petzold algorithm is the best of both worlds<a class="headerlink" href="#The-Hindmarsh-Petzold-algorithm-is-the-best-of-both-worlds" title="Permalink to this heading"></a></h2>
+<h2>The Hindmarsh-Petzold algorithm is the best of both worlds<a class="headerlink" href="#The-Hindmarsh-Petzold-algorithm-is-the-best-of-both-worlds" title="Link to this heading"></a></h2>
 <p>As we have seen some of the challenges of numerically solving systems of ODEs, we desire and ODE solver that can:</p>
 <ol class="arabic simple">
 <li><p>Take small steps when the dynamics are changing rapidly and large steps when they are not.</p></li>
@@ -1251,7 +1253,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>So, going forward, <code class="docutils literal notranslate"><span class="pre">scipy.integrate.odeint()</span></code> is a very powerful tool for numerically solving chemical systems. For situations where it has troubles, you would need to dig much deeper into the structure of the problem to choose or develop the appropriate numerical methods.</p>
 </section>
 <section id="Afterthought:-A-note-about-the-solving-the-backward-difference-equation">
-<h2>Afterthought: A note about the solving the backward difference equation<a class="headerlink" href="#Afterthought:-A-note-about-the-solving-the-backward-difference-equation" title="Permalink to this heading"></a></h2>
+<h2>Afterthought: A note about the solving the backward difference equation<a class="headerlink" href="#Afterthought:-A-note-about-the-solving-the-backward-difference-equation" title="Link to this heading"></a></h2>
 <p>Generally, the methods for solving <span class="math notranslate nohighlight">\(y(t+\Delta t) = y(t) + \Delta t f(y(t+\Delta t), t+\Delta t)\)</span> involve techniques in numerical optimization, classically including fixed point iterations, but for illustrative purposes, I show how to solve for time steps with backward Euler for the Robertson system.</p>
 <p>For ease of notation, temporarily let <span class="math notranslate nohighlight">\(x = x(t+\Delta t)\)</span>, <span class="math notranslate nohighlight">\(y = y(t+\Delta t)\)</span>, <span class="math notranslate nohighlight">\(z = z(t+\Delta t)\)</span>, and <span class="math notranslate nohighlight">\(x_0 = x(t)\)</span>, <span class="math notranslate nohighlight">\(y_0 = y(t)\)</span>, <span class="math notranslate nohighlight">\(z_0 = z(t)\)</span>. Then, to update the solution from <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span> tp <span class="math notranslate nohighlight">\((x, y, z)\)</span>, we have to solve</p>
 <p><span class="math">\begin{align}
@@ -1310,14 +1312,14 @@ y = y_0 + \Delta t\left(-k_1 y(z_0 + \Delta t k_3 y^2) + \frac{k_2}{1 + \Delta t
 <p>It is not necessary to use this, since fixed point iteration works fine.</p>
 <hr></section>
 <section id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
+<h2>References<a class="headerlink" href="#References" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Hoggett, J. G. and Kellett, G. L., Kinetics of the monomer-dimer reaction of yeast hexokinase PI, <em>Biochem. J.</em>, 287, 567–572, 1992. (<a class="reference external" href="https://doi.org/10.1042/bj2870567">link</a>)</p></li>
 <li><p>Robertson, H. H., The soluton of a set of reaction rate equations, In <em>Numerical Analysis: An Introduction</em>, Walsh, J., Ed., Academic Press, 178–182, 1967.</p></li>
 </ul>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1358,13 +1360,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x1344be0d0> 
+   <jinja2.runtime.BlockReference object at 0x301e7be50> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

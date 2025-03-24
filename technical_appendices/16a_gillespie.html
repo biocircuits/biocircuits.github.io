@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>16a. Stochastic (Gillespie) simulation &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -163,7 +165,7 @@
            <div itemprop="articleBody">
              
   <section id="16a.-Stochastic-(Gillespie)-simulation">
-<h1>16a. Stochastic (Gillespie) simulation<a class="headerlink" href="#16a.-Stochastic-(Gillespie)-simulation" title="Permalink to this heading"></a></h1>
+<h1>16a. Stochastic (Gillespie) simulation<a class="headerlink" href="#16a.-Stochastic-(Gillespie)-simulation" title="Link to this heading"></a></h1>
 <hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -503,7 +505,7 @@ if (force === true) {
 </script></div>
 </div>
 <section id="Sampling-out-of-probability-distributions">
-<h2>Sampling out of probability distributions<a class="headerlink" href="#Sampling-out-of-probability-distributions" title="Permalink to this heading"></a></h2>
+<h2>Sampling out of probability distributions<a class="headerlink" href="#Sampling-out-of-probability-distributions" title="Link to this heading"></a></h2>
 <p>Sampling out of a distribution involves using a random number generator to <em>simulate</em> the <strong>story</strong> that generates the distribution. So, if you know the story and you have a computer handy, you can sample to be able to get a plot of your distribution, though you will not get the analytical form.</p>
 <p>Let’s demonstrate this with the Binomial distribution. We know that if we flip a coin that has probability <span class="math notranslate nohighlight">\(p\)</span> of landing heads, the number of heads in <span class="math notranslate nohighlight">\(n\)</span> flips is Binomially distributed. Imagine for a moment that we did not know that, but will instead take to sampling using the story. We will take <span class="math notranslate nohighlight">\(n = 25\)</span> and <span class="math notranslate nohighlight">\(p = 0.25\)</span> and compute <span class="math notranslate nohighlight">\(P(h \mid n, p)\)</span>, the probability of getting <span class="math notranslate nohighlight">\(h\)</span> heads in <span class="math notranslate nohighlight">\(n\)</span> flips, each with probability <span class="math notranslate nohighlight">\(p\)</span> of landing heads. We
 will draw 10, 30, 100, and 300 samples by simulating the story of the Binomial distribution and plot the result obtained by sampling along with the expected Binomial distribution.</p>
@@ -537,9 +539,9 @@ will draw 10, 30, 100, and 300 samples by simulating the story of the Binomial d
         <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n_samp</span><span class="si">}</span><span class="s2"> samples&quot;</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">h</span> <span class="o">=</span> <span class="n">simulate_coinflips</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n_samp</span><span class="p">)</span>
-    <span class="n">plot</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">h_plot</span><span class="p">,</span> <span class="n">theor_dist</span><span class="p">)</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">h_plot</span><span class="p">,</span> <span class="n">theor_dist</span><span class="p">)</span>
     <span class="n">plot</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span><span class="n">x0</span><span class="o">=</span><span class="n">h_plot</span><span class="p">,</span> <span class="n">x1</span><span class="o">=</span><span class="n">h_plot</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y1</span><span class="o">=</span><span class="n">theor_dist</span><span class="p">)</span>
-    <span class="n">plot</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+    <span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_samp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tomato&quot;</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">plots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
@@ -591,17 +593,17 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Sampling is such a powerful strategy that highly efficient algorithms with convenient APIs have been developed to sample out of named probability distributions. For example, we could have used <code class="docutils literal notranslate"><span class="pre">np.random.binom()</span></code> as a drop-in (and <em>much</em> more efficient) replacement for the <code class="docutils literal notranslate"><span class="pre">simulate_coinflips()</span></code> function above.</p>
 </section>
 <section id="Sampling-out-of-distributions-defined-by-master-equations">
-<h2>Sampling out of distributions defined by master equations<a class="headerlink" href="#Sampling-out-of-distributions-defined-by-master-equations" title="Permalink to this heading"></a></h2>
+<h2>Sampling out of distributions defined by master equations<a class="headerlink" href="#Sampling-out-of-distributions-defined-by-master-equations" title="Link to this heading"></a></h2>
 <p>We will use the same strategy for solving master equations. We will find a way to <em>sample</em> out of the distribution that is governed by the master equation. This technique was pioneered by Dan Gillespie in the late 1970s. For that reason, these sampling techniques are often called <strong>Gillespie simulations</strong>. The algorithm is sometimes referred to as a <strong>stochastic simulation algorithm</strong>, or SSA.</p>
 <section id="Example:-Unregulated-gene-expression">
-<h3>Example: Unregulated gene expression<a class="headerlink" href="#Example:-Unregulated-gene-expression" title="Permalink to this heading"></a></h3>
+<h3>Example: Unregulated gene expression<a class="headerlink" href="#Example:-Unregulated-gene-expression" title="Link to this heading"></a></h3>
 <p>Here will explore how this algorithm works by looking at simple production of a protein. We will include the production of RNA to demonstrate how this is done with a master equation that has more than one species.</p>
 <p>For simple protein production, we have the following reactions.</p>
 <p><span class="math">\begin{align}
 \text{DNA} \rightarrow \text{mRNA} \rightarrow \text{protein}
 \end{align}</span></p>
 <section id="Macroscale-equations">
-<h4>Macroscale equations<a class="headerlink" href="#Macroscale-equations" title="Permalink to this heading"></a></h4>
+<h4>Macroscale equations<a class="headerlink" href="#Macroscale-equations" title="Link to this heading"></a></h4>
 <p>As we have seen before, the deterministic dynamics, which describe mean concentrations over a large population of cells, are described by the ODEs</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}m}{\mathrm{d}t} &= \beta_m - \gamma_m m, \\[1em]
@@ -621,7 +623,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>with <span class="math notranslate nohighlight">\(\gamma = \gamma_p/\gamma_m\)</span>.</p>
 </section>
 <section id="The-Master-equation">
-<h4>The Master equation<a class="headerlink" href="#The-Master-equation" title="Permalink to this heading"></a></h4>
+<h4>The Master equation<a class="headerlink" href="#The-Master-equation" title="Link to this heading"></a></h4>
 <p>We can write a master equation for these dynamics. In this case, each state is defined by an mRNA copy number <span class="math notranslate nohighlight">\(m\)</span> and a protein copy number <span class="math notranslate nohighlight">\(p\)</span>. So, we will write a master equation for <span class="math notranslate nohighlight">\(P(m, p, t)\)</span>.</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}P(m,p;t)}{\mathrm{d}t} &= \beta_m P(m-1,p;t) + (m+1)P(m+1,p;t) - \beta_m P(m,p;t) - mP(m,p;t) \nonumber \\[1em]
@@ -631,7 +633,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="The-Gillespie-algorithm">
-<h3>The Gillespie algorithm<a class="headerlink" href="#The-Gillespie-algorithm" title="Permalink to this heading"></a></h3>
+<h3>The Gillespie algorithm<a class="headerlink" href="#The-Gillespie-algorithm" title="Link to this heading"></a></h3>
 <p>The Gillespie algorithm, also called a stochastic simulation algorithm (SSA), is a way to sample the story behind a master equation, as will become clear momentarily as we work through the algorithm and introduce some terminology.</p>
 <p>The transition probabilities are also called <strong>propensities</strong> in the context of stochastic simulation. The propensity for a given transition, say indexed <span class="math notranslate nohighlight">\(i\)</span>, is denoted as <span class="math notranslate nohighlight">\(a_i\)</span>. The equivalence to notation we introduced for master equations is that if transition <span class="math notranslate nohighlight">\(i\)</span> results in the change of state from <span class="math notranslate nohighlight">\(n'\)</span> to <span class="math notranslate nohighlight">\(n\)</span>, then <span class="math notranslate nohighlight">\(a_i = W(n\mid n')\)</span>.</p>
 <p>To cast this problem for a Gillespie simulation, we can write each change of state (moving either the copy number of mRNA or protein up or down by 1 in this case) and their respective propensities.</p>
@@ -679,7 +681,7 @@ P(t_1 > \Delta t) P(t_2 > \Delta t) \cdots =
 <p>Gillespie proved that this algorithm samples the probability distribution described by the master equation in his seminal papers in <a class="reference external" href="https://doi.org/10.1016/0021-9991(76)90041-3">1976</a> and <a class="reference external" href="http://doi.org/10.1021/j100540a008">1977</a>. (We recommend reading the latter.) You can also read a concise discussion of how the algorithm samples the master equation in <a class="reference external" href="http://www.cds.caltech.edu/~murray/books/AM08/pdf/bfs-stochastic_14Sep14.pdf">section 4.2 of Del Vecchio and Murray</a>.</p>
 </section>
 <section id="Coding-up-a-Gillespie-simulation">
-<h3>Coding up a Gillespie simulation<a class="headerlink" href="#Coding-up-a-Gillespie-simulation" title="Permalink to this heading"></a></h3>
+<h3>Coding up a Gillespie simulation<a class="headerlink" href="#Coding-up-a-Gillespie-simulation" title="Link to this heading"></a></h3>
 <p>To code up the Gillespie simulation of the simple gene expression example, we first make an an array that gives the changes in the counts of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(p\)</span> for each of the four reactions. This is a way of encoding the updates in the particle counts that we get from choosing the respective state changes.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -721,7 +723,7 @@ also be a function of time, so we explicitly allow for time dependence (even tho
 </div>
 </section>
 <section id="Making-a-draw">
-<h3>Making a draw<a class="headerlink" href="#Making-a-draw" title="Permalink to this heading"></a></h3>
+<h3>Making a draw<a class="headerlink" href="#Making-a-draw" title="Link to this heading"></a></h3>
 <p>Finally, we write a general function that draws a choice of reaction and the time interval for that reaction. This is the heart of the Gillespie algorithm, so we will take some time to discuss speed. First, to get the time interval, we sample a random number from an exponential distribution with mean <span class="math notranslate nohighlight">\(\left(\sum_i a_i\right)^{-1}\)</span>. This is easily done using the <code class="docutils literal notranslate"><span class="pre">np.random.exponential()</span></code> function.</p>
 <p>Next, we have to select which reaction will take place. This amounts to drawing a sample over the discrete distribution where <span class="math notranslate nohighlight">\(P_i = a_i\left(\sum_i a_i\right)^{-1}\)</span>, or the probability of each reaction is proportional to its propensity. This can be done using <code class="docutils literal notranslate"><span class="pre">scipy.stats.rv_discrete</span></code>, which allows specification of an arbitrary discrete distribution. We will write a function to do this.</p>
 <div class="nbinput nblast docutils container">
@@ -841,7 +843,7 @@ Result from hand-coded method:
 </div>
 </section>
 <section id="Gillespie-time-stepping">
-<h3>Gillespie time stepping<a class="headerlink" href="#Gillespie-time-stepping" title="Permalink to this heading"></a></h3>
+<h3>Gillespie time stepping<a class="headerlink" href="#Gillespie-time-stepping" title="Link to this heading"></a></h3>
 <p>Now we are ready to write our main loop. We will only keep the counts at pre-specified time points. This saves on RAM, and we really only care about the values at given time points anyhow.</p>
 <p>Note that this function is generic. All we need to specify our system is the following.</p>
 <ul class="simple">
@@ -922,7 +924,7 @@ Result from hand-coded method:
 </div>
 </section>
 <section id="Running-and-parsing-results">
-<h3>Running and parsing results<a class="headerlink" href="#Running-and-parsing-results" title="Permalink to this heading"></a></h3>
+<h3>Running and parsing results<a class="headerlink" href="#Running-and-parsing-results" title="Link to this heading"></a></h3>
 <p>We can now run a set of SSA simulations and plot the results. We will run 100 trajectories and store them, using <span class="math notranslate nohighlight">\(\beta_p = \beta_m = 10\)</span> and <span class="math notranslate nohighlight">\(\gamma = 0.4\)</span>. We will also use the nifty package <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> to give a progress bar so we know how long it is taking.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -1083,7 +1085,7 @@ protein noise = 0.18402023679851773
 <span class="p">)</span>
 
 <span class="c1"># Theoretial mRNA CDF (Poisson)</span>
-<span class="n">p_m</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p_m</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span> <span class="n">st</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span>
 <span class="p">)</span>
 
@@ -1144,7 +1146,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="Implementation-in-the-biocircuits-package">
-<h2>Implementation in the biocircuits package<a class="headerlink" href="#Implementation-in-the-biocircuits-package" title="Permalink to this heading"></a></h2>
+<h2>Implementation in the biocircuits package<a class="headerlink" href="#Implementation-in-the-biocircuits-package" title="Link to this heading"></a></h2>
 <p>This algorithm is implemented in the biocircuits package. A significant speed boost is achieved by <a class="reference external" href="https://en.wikipedia.org/wiki/Just-in-time_compilation">just-in-time compliation</a> using <a class="reference external" href="http://numba.pydata.org">Numba</a>. To utilize this feature, you need to just-in-time compile (JIT) your propensity function. You can insist that everything is compiled (and therefore skips the comparably slow Python interpreter) by using the &#64;numba.njit decorator. In many cases, like in this one for simple
 gene expression, that is all you have to do.</p>
 <div class="nbinput nblast docutils container">
@@ -1356,7 +1358,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <hr></section>
 <section id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
+<h2>References<a class="headerlink" href="#References" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Del Vecchio, D. and Murray, R. M., <em>Biomolecular Feedback Systems</em>, Princeton University Press, 2014. (<a class="reference external" href="http://www.cds.caltech.edu/~murray/books/AM08/pdf/bfs-stochastic_14Sep14.pdf">link</a>)</p></li>
 <li><p>Gillespie, D. T., A general method for numerically simulating the stochastic time evolution of coupled chemical reactions, <em>J. Comput. Phys.</em>, 22, 403–434, 1976. (<a class="reference external" href="https://doi.org/10.1016/0021-9991(76)90041-3">link</a>)</p></li>
@@ -1364,7 +1366,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </ul>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
@@ -1410,13 +1412,13 @@ jupyterlab  : 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134f44710> 
+   <jinja2.runtime.BlockReference object at 0x309647350> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

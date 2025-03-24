@@ -638,7 +638,7 @@
     "C = np.arange(201)\n",
     "y = C / (1 + (beta * C) ** n)\n",
     "cds = bokeh.models.ColumnDataSource(dict(C=C, y=y))\n",
-    "p.circle(source=cds, x=\"C\", y=\"y\")\n",
+    "p.scatter(source=cds, x=\"C\", y=\"y\")\n",
     "\n",
     "# Sliders for controlling parameters\n",
     "beta_slider = bokeh.models.Slider(\n",
@@ -797,8 +797,8 @@
     "    y_axis_type=\"log\",\n",
     ")\n",
     "\n",
-    "p.circle(copy_number, constitutive, legend_label=\"unregulated\")\n",
-    "p.circle(\n",
+    "p.scatter(copy_number, constitutive, legend_label=\"unregulated\")\n",
+    "p.scatter(\n",
     "    copy_number, tale_stabilized, color=\"orange\", legend_label=\"stabilized with IFFL\"\n",
     ")\n",
     "p.legend.location = \"bottom_right\"\n",
@@ -905,7 +905,7 @@
     ")\n",
     "\n",
     "for color, y in zip(bokeh.palettes.Blues7[:5], [dnsp1w, sp1w, dnsp1, sp1, upsp1]):\n",
-    "    p.circle(copy_number, y, color=color)\n",
+    "    p.scatter(copy_number, y, color=color)\n",
     "\n",
     "bokeh.io.show(p)"
    ]

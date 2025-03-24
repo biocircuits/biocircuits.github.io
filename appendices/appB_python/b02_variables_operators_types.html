@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B2. Variables, operators, and types &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -192,12 +194,12 @@
            <div itemprop="articleBody">
              
   <section id="B2.-Variables,-operators,-and-types">
-<h1>B2. Variables, operators, and types<a class="headerlink" href="#B2.-Variables,-operators,-and-types" title="Permalink to this heading"></a></h1>
+<h1>B2. Variables, operators, and types<a class="headerlink" href="#B2.-Variables,-operators,-and-types" title="Link to this heading"></a></h1>
 <hr/><p>Whether you are programming in Python or pretty much any other language, you will be working with <strong>variables</strong>. While the precise definition of a variable will vary from language to language, we’ll focus on Python variables here.</p>
 <p>We will talk more about <strong>objects</strong> later, but a variable, like everything in Python, is an object. For now, you can think of it in the following way. The following can be properties of a variable: 1. The <strong>type</strong> of variable. E.g., is it an integer, like <code class="docutils literal notranslate"><span class="pre">2</span></code>, or a string, like <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">world.'</span></code>? 2. The <strong>value</strong> of the variable.</p>
 <p>Depending on the type of the variable, you can do different things to it and other variables of similar type. This, as with most things, is best explored by example. We will go through some of the properties of variables and things you can do to them.</p>
 <section id="Determining-the-type">
-<h2>Determining the type<a class="headerlink" href="#Determining-the-type" title="Permalink to this heading"></a></h2>
+<h2>Determining the type<a class="headerlink" href="#Determining-the-type" title="Link to this heading"></a></h2>
 <p>First, we will use Python’s built-in <code class="docutils literal notranslate"><span class="pre">type()</span></code> function to determine the type of some variables.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -270,7 +272,7 @@ float
 </pre></div></div>
 </div>
 <section id="A-note-on-strings">
-<h3>A note on strings<a class="headerlink" href="#A-note-on-strings" title="Permalink to this heading"></a></h3>
+<h3>A note on strings<a class="headerlink" href="#A-note-on-strings" title="Link to this heading"></a></h3>
 <p>We just saw that strings can be enclosed in single quotes. In Python, we can equivalently enclose them in double quotes. E.g.,</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;my string&#39;
 </pre></div>
@@ -334,7 +336,7 @@ it was the worst of times...
 </section>
 </section>
 <section id="Operators">
-<h2>Operators<a class="headerlink" href="#Operators" title="Permalink to this heading"></a></h2>
+<h2>Operators<a class="headerlink" href="#Operators" title="Link to this heading"></a></h2>
 <p><strong>Operators</strong> allow you to do things with variables, like add them. They are represented by special symbols, like <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code>. For now, we will focus on <strong>arithmetic</strong> operators. Python’s arithmetic operators are</p>
 <table class="docutils align-default">
 <thead>
@@ -426,7 +428,7 @@ it was the worst of times...
 </pre></div></div>
 </div>
 <section id="Operations-on-integers">
-<h3>Operations on integers<a class="headerlink" href="#Operations-on-integers" title="Permalink to this heading"></a></h3>
+<h3>Operations on integers<a class="headerlink" href="#Operations-on-integers" title="Link to this heading"></a></h3>
 <p>Let’s see how these operators work on integers.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -550,7 +552,7 @@ it was the worst of times...
 <p>This is what we would expect. An import note, though. If you are using Python 2, division of integers defaults to floor division. Some legacy code is written in Python 2, though it officially sunset on New Years Day 2020.</p>
 </section>
 <section id="Operations-on-floats">
-<h3>Operations on floats<a class="headerlink" href="#Operations-on-floats" title="Permalink to this heading"></a></h3>
+<h3>Operations on floats<a class="headerlink" href="#Operations-on-floats" title="Link to this heading"></a></h3>
 <p>Let’s try floats.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
@@ -736,7 +738,7 @@ Cell <span class="ansi-green-fg">In[25], line 1</span>
 </div>
 </section>
 <section id="Operations-on-integers-and-floats">
-<h3>Operations on integers and floats<a class="headerlink" href="#Operations-on-integers-and-floats" title="Permalink to this heading"></a></h3>
+<h3>Operations on integers and floats<a class="headerlink" href="#Operations-on-integers-and-floats" title="Link to this heading"></a></h3>
 <p>This proceeds as we think it should.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
@@ -860,7 +862,7 @@ Cell <span class="ansi-green-fg">In[25], line 1</span>
 <p>And again we have the rounding errors, but everything is otherwise intuitive.</p>
 </section>
 <section id="Operations-on-strings">
-<h3>Operations on strings<a class="headerlink" href="#Operations-on-strings" title="Permalink to this heading"></a></h3>
+<h3>Operations on strings<a class="headerlink" href="#Operations-on-strings" title="Link to this heading"></a></h3>
 <p>Now let’s try some of these operations on strings. This idea of applying mathematical operations to strings seems strange, but let’s just mess around and see what we get.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -941,7 +943,7 @@ Cell <span class="ansi-green-fg">In[34], line 1</span>
 <p>The result is <em>not</em> <code class="docutils literal notranslate"><span class="pre">6</span></code>, but it is a string containing the characters <code class="docutils literal notranslate"><span class="pre">'4'</span></code> and <code class="docutils literal notranslate"><span class="pre">'2'</span></code>.</p>
 </section>
 <section id="Order-of-operations">
-<h3>Order of operations<a class="headerlink" href="#Order-of-operations" title="Permalink to this heading"></a></h3>
+<h3>Order of operations<a class="headerlink" href="#Order-of-operations" title="Link to this heading"></a></h3>
 <p>The order of operations is also as we would expect. Exponentiation comes first, followed by multiplication and division, floor division, and modulo. Next comes addition and subtraction. In order of precedence, our arithmetic operator table is</p>
 <table class="docutils align-default">
 <thead>
@@ -1035,7 +1037,7 @@ Cell <span class="ansi-green-fg">In[34], line 1</span>
 </section>
 </section>
 <section id="Variables-and-assignment-operators">
-<h2>Variables and assignment operators<a class="headerlink" href="#Variables-and-assignment-operators" title="Permalink to this heading"></a></h2>
+<h2>Variables and assignment operators<a class="headerlink" href="#Variables-and-assignment-operators" title="Link to this heading"></a></h2>
 <p>So far, we have essentially just used Python as an oversized desktop calculator. We would really like to be able to think about our computational problems symbolically. We mentioned <strong>variables</strong> at the beginning of the tutorial, but in practice we were just using numbers and strings directly. We would like to say that a variable, <code class="docutils literal notranslate"><span class="pre">a</span></code>, represents an integer and another variable <code class="docutils literal notranslate"><span class="pre">b</span></code> represents another integer. Then, we could do things like add <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. So, we see immediately that the
 variables have to have a type associated with them so the Python interpreter knows what to do when we use operators with them. A variable should also have a <strong>value</strong> associated with it, so the interpreter knows, e.g., what to add.</p>
 <p>In order to create, or <strong>instantiate</strong>, a variable, we can use an <strong>assignment operator</strong>. This operator is the equals sign. So, let’s make variables <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> and add them.</p>
@@ -1078,7 +1080,7 @@ variables have to have a type associated with them so the Python interpreter kno
 </div>
 <p>Now, we might be tempted to say, “<code class="docutils literal notranslate"><span class="pre">a</span></code> is two.” No. <code class="docutils literal notranslate"><span class="pre">a</span></code> is not two. <code class="docutils literal notranslate"><span class="pre">a</span></code> is a variable that <em>has a value of 2</em>. A variable in Python is not just its value. A variable also carries with it a type. It also has more associated with it under the hood of the interpreter that we will not get into. So, you can think about a variable as a map to an address in RAM (called a <strong>pointer</strong> in computer-speak) that stores information, including a type and a value.</p>
 <section id="Assignment/increment-operators">
-<h3>Assignment/increment operators<a class="headerlink" href="#Assignment/increment-operators" title="Permalink to this heading"></a></h3>
+<h3>Assignment/increment operators<a class="headerlink" href="#Assignment/increment-operators" title="Link to this heading"></a></h3>
 <p>Now, let’s say we wanted to update the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> by adding <code class="docutils literal notranslate"><span class="pre">4.1</span></code> to it. Python will do some magic for us.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
@@ -1145,7 +1147,7 @@ variables have to have a type associated with them so the Python interpreter kno
 </section>
 </section>
 <section id="Type-conversion">
-<h2>Type conversion<a class="headerlink" href="#Type-conversion" title="Permalink to this heading"></a></h2>
+<h2>Type conversion<a class="headerlink" href="#Type-conversion" title="Link to this heading"></a></h2>
 <p>Suppose you have a variable of one type, and you want to convert it to another. For example, say you have a string, <code class="docutils literal notranslate"><span class="pre">'42'</span></code>, and you want to convert it to an integer. This would happen if you were reading information from a text file, which by definition is full of strings, and you wanted to convert some string to a number. This is done as follows.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
@@ -1222,10 +1224,10 @@ variables have to have a type associated with them so the Python interpreter kno
 </div>
 </section>
 <section id="Relational-operators">
-<h2>Relational operators<a class="headerlink" href="#Relational-operators" title="Permalink to this heading"></a></h2>
+<h2>Relational operators<a class="headerlink" href="#Relational-operators" title="Link to this heading"></a></h2>
 <p>Suppose we want to compare the values of two numbers. We may want to know if they are equal for example. The operator used to test for equality is <code class="docutils literal notranslate"><span class="pre">==</span></code>, an example of a <strong>relational operator</strong> (also called a <strong>comparison operator</strong>).</p>
 <section id="The-equality-relational-operator">
-<h3>The equality relational operator<a class="headerlink" href="#The-equality-relational-operator" title="Permalink to this heading"></a></h3>
+<h3>The equality relational operator<a class="headerlink" href="#The-equality-relational-operator" title="Link to this heading"></a></h3>
 <p>Let’s test out the <code class="docutils literal notranslate"><span class="pre">==</span></code> to see how it works.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
@@ -1392,7 +1394,7 @@ True
 <div style="color: tomato; text-align: center; font-weight: bold;"><p>Never use the == operator with floats.</p>
 </div></section>
 <section id="Other-relational-operators">
-<h3>Other relational operators<a class="headerlink" href="#Other-relational-operators" title="Permalink to this heading"></a></h3>
+<h3>Other relational operators<a class="headerlink" href="#Other-relational-operators" title="Link to this heading"></a></h3>
 <p>As you might expect, there are other relational operators. The relational operators are</p>
 <table class="docutils align-default">
 <thead>
@@ -1476,7 +1478,7 @@ True
 <p>Whoa. What happened on that last one? The Python interpreter has weighed in on the debate about the greatest basketball player of all time. It clearly thinks Michael Jordan is better than LeBron James, but that seems kind of subjective. To understand what the interpreter is doing, we need to understand how it compares strings.</p>
 </section>
 <section id="A-brief-aside-on-Unicode">
-<h3>A brief aside on Unicode<a class="headerlink" href="#A-brief-aside-on-Unicode" title="Permalink to this heading"></a></h3>
+<h3>A brief aside on Unicode<a class="headerlink" href="#A-brief-aside-on-Unicode" title="Link to this heading"></a></h3>
 <p>In Python, characters are encoded with <a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a>. This is a standardized library of characters from many languages around the world that contains over 100,000 characters. Each character has a unique number associated with it. We can access what number is assigned to a character using Python’s built-in <code class="docutils literal notranslate"><span class="pre">ord()</span></code> function.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
@@ -1584,7 +1586,7 @@ False
 </div>
 </section>
 <section id="Chaining-relational-operators">
-<h3>Chaining relational operators<a class="headerlink" href="#Chaining-relational-operators" title="Permalink to this heading"></a></h3>
+<h3>Chaining relational operators<a class="headerlink" href="#Chaining-relational-operators" title="Link to this heading"></a></h3>
 <p>Python allow chaining of relational operators.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
@@ -1661,7 +1663,7 @@ True
 </div></section>
 </section>
 <section id="Identity-operators">
-<h2>Identity operators<a class="headerlink" href="#Identity-operators" title="Permalink to this heading"></a></h2>
+<h2>Identity operators<a class="headerlink" href="#Identity-operators" title="Link to this heading"></a></h2>
 <p>Identity operators check to see if two variables occupy the same space in memory; i.e., they are the same object (we’ll learn more about objects as we go along). This is different that the equality relational operator, <code class="docutils literal notranslate"><span class="pre">==</span></code>, which checks to see if two variables have the same <strong>value</strong>. The two identity operators are in the table below.</p>
 <table class="docutils align-default">
 <thead>
@@ -1853,7 +1855,7 @@ False
 programmer whether or not two variables are in the same location in memory.</p>
 </section>
 <section id="Logical-operators">
-<h2>Logical operators<a class="headerlink" href="#Logical-operators" title="Permalink to this heading"></a></h2>
+<h2>Logical operators<a class="headerlink" href="#Logical-operators" title="Link to this heading"></a></h2>
 <p><strong>Logical operators</strong> can be used to connect relational and identity operators. Python has three logical operators.</p>
 <table class="docutils align-default">
 <thead>
@@ -2090,11 +2092,11 @@ False
 </table>
 </section>
 <section id="Operators-we-left-out">
-<h2>Operators we left out<a class="headerlink" href="#Operators-we-left-out" title="Permalink to this heading"></a></h2>
+<h2>Operators we left out<a class="headerlink" href="#Operators-we-left-out" title="Link to this heading"></a></h2>
 <p>We have left out a few operators in Python. Two that we left out are the <strong>membership operators</strong>, <code class="docutils literal notranslate"><span class="pre">in</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>, which we will visit in forthcoming sections of this appendix. The others we left out are <strong>bitwise operators</strong> and operators on <strong>sets</strong>, which we will not be covering.</p>
 </section>
 <section id="The-numerical-values-of-True-and-False">
-<h2>The numerical values of True and False<a class="headerlink" href="#The-numerical-values-of-True-and-False" title="Permalink to this heading"></a></h2>
+<h2>The numerical values of True and False<a class="headerlink" href="#The-numerical-values-of-True-and-False" title="Link to this heading"></a></h2>
 <p>As we move to conditionals, it is important to take a moment to evaluate the numerical values of the keywords <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>. They have numerical values of <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code>, respectively.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
@@ -2167,7 +2169,7 @@ int
 </div>
 </section>
 <section id="Conditionals">
-<h2>Conditionals<a class="headerlink" href="#Conditionals" title="Permalink to this heading"></a></h2>
+<h2>Conditionals<a class="headerlink" href="#Conditionals" title="Link to this heading"></a></h2>
 <p><strong>Conditionals</strong> are used to tell your computer to do a set of instructions depending on whether or not a Boolean is <code class="docutils literal notranslate"><span class="pre">True</span></code>. In other words, we are telling the computer:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if something is true:
     do task a
@@ -2305,7 +2307,7 @@ This codon is neither a start nor stop codon.
 </div>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[100]:
 </pre></div>
@@ -2343,13 +2345,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13529f190> 
+   <jinja2.runtime.BlockReference object at 0x300d43f90> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

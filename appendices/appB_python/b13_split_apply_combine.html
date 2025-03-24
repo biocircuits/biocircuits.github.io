@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B13: Tidy data and split-apply-combine &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -173,7 +175,7 @@
            <div itemprop="articleBody">
              
   <section id="B13:-Tidy-data-and-split-apply-combine">
-<h1>B13: Tidy data and split-apply-combine<a class="headerlink" href="#B13:-Tidy-data-and-split-apply-combine" title="Permalink to this heading"></a></h1>
+<h1>B13: Tidy data and split-apply-combine<a class="headerlink" href="#B13:-Tidy-data-and-split-apply-combine" title="Link to this heading"></a></h1>
 <hr><div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -193,7 +195,7 @@
 </div>
 <hr><p>In the last lesson, we learned about Pandas and dipped our toe in to see its power. In this lesson, we will continue to harness the power of Pandas to pull out subsets of data we are interested in.</p>
 <section id="Tidy-data">
-<h2>Tidy data<a class="headerlink" href="#Tidy-data" title="Permalink to this heading"></a></h2>
+<h2>Tidy data<a class="headerlink" href="#Tidy-data" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Hadley_Wickham">Hadley Wickham</a> wrote a <a class="reference external" href="http://dx.doi.org/10.18637/jss.v059.i10">great article</a> in favor of “tidy data.” Tidy data frames follow the rules:</p>
 <ol class="arabic simple">
 <li><p>Each variable is a column.</p></li>
@@ -218,7 +220,7 @@ possibility of misinterpretation or mistakes.</p>
 <p><strong>Conclusion:</strong> I really think that tidying a data set allows for fluid exploration. We will focus on tidy data sets going forward. The techniques for bringing untidy data into tidy format use many of Pandas’s functions, but are largely beyond the scope of this bootcamp. You will explore that a little bit in the exercises, but for most of the bootcamp, our data sets are already tidy.</p>
 </section>
 <section id="The-data-set">
-<h2>The data set<a class="headerlink" href="#The-data-set" title="Permalink to this heading"></a></h2>
+<h2>The data set<a class="headerlink" href="#The-data-set" title="Link to this heading"></a></h2>
 <p>We will use the same data set as in the <a class="reference internal" href="b12_intro_to_pandas.html"><span class="doc">previous section</span></a>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -297,7 +299,7 @@ possibility of misinterpretation or mistakes.</p>
 <p>This data set is in tidy format. Each row represents a measurement of a single cell. Each cell is from a specific strain and has an associated CFP and YFP fluorescent intensity. We already saw the power of having the data in this format when we did Boolean indexing in the last lesson. Now, we will see how this format allows use to easily do an operation we do again and again with data sets, <strong>split-apply-combine</strong>.</p>
 </section>
 <section id="Split-apply-combine">
-<h2>Split-apply-combine<a class="headerlink" href="#Split-apply-combine" title="Permalink to this heading"></a></h2>
+<h2>Split-apply-combine<a class="headerlink" href="#Split-apply-combine" title="Link to this heading"></a></h2>
 <p>Let’s say we want to compute the median CFP intensity separately for the m22 and d22 strains. Ignoring for the second the mechanics of how we would do this with Python, let’s think about it in English. What do we need to do?</p>
 <ol class="arabic simple">
 <li><p><strong>Split</strong> the data set up according to the <code class="docutils literal notranslate"><span class="pre">'strain'</span></code> field, i.e., split it up so we have a separate data set for the two classes.</p></li>
@@ -308,7 +310,7 @@ possibility of misinterpretation or mistakes.</p>
 <p>Note that if the data are tidy, this procedure makes a lot of sense. Choose the column you want to use to split by. All rows with like entries in the splitting column are then grouped into a new data set. You can then apply any function you want into these new data sets. You can then combine the results into a new data frame.</p>
 <p>Pandas’s split-apply-combine operations are achieved using the <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method. You can think of <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> as the splitting part. You can then apply functions to the resulting <code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code> object. The <a class="reference external" href="http://pandas.pydata.org/pandas-docs/stable/groupby.html">Pandas documentation on split-apply-combine</a> is excellent and worth reading through. It is extensive though, so don’t let yourself get intimidated by it.</p>
 <section id="Aggregation:-Median-percent-correct">
-<h3>Aggregation: Median percent correct<a class="headerlink" href="#Aggregation:-Median-percent-correct" title="Permalink to this heading"></a></h3>
+<h3>Aggregation: Median percent correct<a class="headerlink" href="#Aggregation:-Median-percent-correct" title="Link to this heading"></a></h3>
 <p>Let’s go ahead and do our first split-apply-combine on this tidy data set. First, we will split the data set up by strain.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -456,7 +458,7 @@ possibility of misinterpretation or mistakes.</p>
 </section>
 </section>
 <section id="Transformation">
-<h2>Transformation<a class="headerlink" href="#Transformation" title="Permalink to this heading"></a></h2>
+<h2>Transformation<a class="headerlink" href="#Transformation" title="Link to this heading"></a></h2>
 <p>Instead of summarizing data in a group with single summary statistics by aggregation, we can also do a <strong>transformation</strong> in which each row gets a new entry within a given group. As a simple example, we could generate a column that gives the rank of each cell in terms of CFP intensity for each strain. That is, we perform a rank ordering within the m22 strain and within the d22 strain.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
@@ -694,7 +696,7 @@ Name: CFP, Length: 534, dtype: float64
 <p>Indeed it worked!</p>
 </section>
 <section id="Aggregating-and-transforming-with-custom-functions">
-<h2>Aggregating and transforming with custom functions<a class="headerlink" href="#Aggregating-and-transforming-with-custom-functions" title="Permalink to this heading"></a></h2>
+<h2>Aggregating and transforming with custom functions<a class="headerlink" href="#Aggregating-and-transforming-with-custom-functions" title="Link to this heading"></a></h2>
 <p>Let’s say we want to compute the coefficient of variation (CoV, the standard deviation divided by the mean) of data in columns of groups in the data frame. There is no built-in function to do this. We have to write our own function to compute the CoV and then use it with the <code class="docutils literal notranslate"><span class="pre">agg()</span></code> method of a <code class="docutils literal notranslate"><span class="pre">DataFrameGroupBy</span></code> object. In the function below, the values of each column are denoted by <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
 <p>To compute the coefficient of variation, we will use one more Numpy function beyond <code class="docutils literal notranslate"><span class="pre">np.mean()</span></code> that you have already seen, <code class="docutils literal notranslate"><span class="pre">np.std()</span></code>.</p>
 <div class="nbinput nblast docutils container">
@@ -766,7 +768,7 @@ Name: CFP, Length: 534, dtype: float64
 </div>
 </section>
 <section id="Looping-over-a-GroupBy-object">
-<h2>Looping over a GroupBy object<a class="headerlink" href="#Looping-over-a-GroupBy-object" title="Permalink to this heading"></a></h2>
+<h2>Looping over a GroupBy object<a class="headerlink" href="#Looping-over-a-GroupBy-object" title="Link to this heading"></a></h2>
 <p>While the <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> methods we have learned so far (like <code class="docutils literal notranslate"><span class="pre">transform()</span></code> and <code class="docutils literal notranslate"><span class="pre">agg()</span></code>) are useful and lead to concise code, we sometimes want to loop over the groups of a <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object. This often comes up in plotting applications. As an example, I will compute the mean CFP fluorescent intensity for each strain.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -789,7 +791,7 @@ m22 :  2597.5
 <p>By using the <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> object as an iterator, it yields the name of the group (which I assigned as <code class="docutils literal notranslate"><span class="pre">strain</span></code>) and the corresponding sub-data frame (which I assigned <code class="docutils literal notranslate"><span class="pre">group</span></code>).</p>
 </section>
 <section id="Normalizing-the-intensities">
-<h2>Normalizing the intensities<a class="headerlink" href="#Normalizing-the-intensities" title="Permalink to this heading"></a></h2>
+<h2>Normalizing the intensities<a class="headerlink" href="#Normalizing-the-intensities" title="Link to this heading"></a></h2>
 <p>With all of these skills in place, let us now do a useful calculation and normalize the fluorescent intensities for each fluorophore in each strain.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -887,7 +889,7 @@ m22 :  2597.5
 </div>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
@@ -927,13 +929,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134912e90> 
+   <jinja2.runtime.BlockReference object at 0x300949290> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

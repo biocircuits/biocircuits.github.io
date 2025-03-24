@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B6. String methods &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -176,12 +178,12 @@
            <div itemprop="articleBody">
              
   <section id="B6.-String-methods">
-<h1>B6. String methods<a class="headerlink" href="#B6.-String-methods" title="Permalink to this heading"></a></h1>
+<h1>B6. String methods<a class="headerlink" href="#B6.-String-methods" title="Link to this heading"></a></h1>
 <hr><p>In the last section, we wrote some functions to parse strings and compute things like reverse complements. This helped us practice using functions and the iteration skills we learned.</p>
 <p>You might think, “Hey, replacing characters in strings sounds like it may be pretty common.” You would be right. You might also think, “I bet someone, possibly someone who is a really good programmer, already has written code to do this.” You would again be right.</p>
 <p>There are often already methods for common tasks, and working with strings is no different. Here, we will explore some of the string processing tools that come with Python’s standard library.</p>
 <section id="Indexing-and-slicing-of-strings">
-<h2>Indexing and slicing of strings<a class="headerlink" href="#Indexing-and-slicing-of-strings" title="Permalink to this heading"></a></h2>
+<h2>Indexing and slicing of strings<a class="headerlink" href="#Indexing-and-slicing-of-strings" title="Link to this heading"></a></h2>
 <p>Before getting into string methods, we pause to note that indexing and slicing of strings works just as it does for lists and tuples.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -209,10 +211,10 @@ TeDd bds
 </div>
 </section>
 <section id="Revisiting-previous-examples-using-string-methods">
-<h2>Revisiting previous examples using string methods<a class="headerlink" href="#Revisiting-previous-examples-using-string-methods" title="Permalink to this heading"></a></h2>
+<h2>Revisiting previous examples using string methods<a class="headerlink" href="#Revisiting-previous-examples-using-string-methods" title="Link to this heading"></a></h2>
 <p>We’ll start by revisiting some of the examples we’ve seen so far.</p>
 <section id="Computing-GC-content">
-<h3>Computing GC content<a class="headerlink" href="#Computing-GC-content" title="Permalink to this heading"></a></h3>
+<h3>Computing GC content<a class="headerlink" href="#Computing-GC-content" title="Link to this heading"></a></h3>
 <p>If you remember from the <a class="reference internal" href="b04_iteration.html"><span class="doc">discussion on iteration</span></a>, we started by computing the GC content of a nucleic acid sequence. We counted the occurrences of <code class="docutils literal notranslate"><span class="pre">'G'</span></code> and <code class="docutils literal notranslate"><span class="pre">'C'</span></code> in the string using a <strong>``for``</strong> loop. We can use the <code class="docutils literal notranslate"><span class="pre">count()</span></code> string method do to this.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -296,7 +298,7 @@ TeDd bds
 </div>
 </section>
 <section id="Finding-the-index-of-a-start-codon">
-<h3>Finding the index of a start codon<a class="headerlink" href="#Finding-the-index-of-a-start-codon" title="Permalink to this heading"></a></h3>
+<h3>Finding the index of a start codon<a class="headerlink" href="#Finding-the-index-of-a-start-codon" title="Link to this heading"></a></h3>
 <p>Another task in the <a class="reference internal" href="b04_iteration.html"><span class="doc">section iteration</span></a> was to find the index of the start codon in an RNA sequence. Let’s do it with another string method.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
@@ -353,7 +355,7 @@ True
 </div>
 </section>
 <section id="Finding-the-last-index-of-a-substring">
-<h3>Finding the last index of a substring<a class="headerlink" href="#Finding-the-last-index-of-a-substring" title="Permalink to this heading"></a></h3>
+<h3>Finding the last index of a substring<a class="headerlink" href="#Finding-the-last-index-of-a-substring" title="Link to this heading"></a></h3>
 <p>Let’s say we wanted to find the last instance of the start codon. We basically want to search from the right. This is exactly what the <code class="docutils literal notranslate"><span class="pre">rfind()</span></code> method does.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -374,7 +376,7 @@ True
 </div>
 </section>
 <section id="Finding-the-complementary-base">
-<h3>Finding the complementary base<a class="headerlink" href="#Finding-the-complementary-base" title="Permalink to this heading"></a></h3>
+<h3>Finding the complementary base<a class="headerlink" href="#Finding-the-complementary-base" title="Link to this heading"></a></h3>
 <p>In our <a class="reference internal" href="b05_intro_to_functions.html"><span class="doc">discussion of functions</span></a>, we wrote a function to compute a complementary base comparing against both the capital and lowercase letter. Here is that function implemented with some handy string methods.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -433,7 +435,7 @@ True
 </div>
 </section>
 <section id="Converting-RNA-to-DNA">
-<h3>Converting RNA to DNA<a class="headerlink" href="#Converting-RNA-to-DNA" title="Permalink to this heading"></a></h3>
+<h3>Converting RNA to DNA<a class="headerlink" href="#Converting-RNA-to-DNA" title="Link to this heading"></a></h3>
 <p>We also updated the complementary base function to account for RNA or DNA. Perhaps an easier way is just to replace all <code class="docutils literal notranslate"><span class="pre">U</span></code>s in an RNA sequence with <code class="docutils literal notranslate"><span class="pre">T</span></code>s to get a DNA sequence. The <code class="docutils literal notranslate"><span class="pre">replace()</span></code> method makes this easy.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -473,7 +475,7 @@ True
 </section>
 </section>
 <section id="The-join()-method">
-<h2>The join() method<a class="headerlink" href="#The-join()-method" title="Permalink to this heading"></a></h2>
+<h2>The join() method<a class="headerlink" href="#The-join()-method" title="Link to this heading"></a></h2>
 <p>One of the most useful string methods is the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method. Say we have a list of words that we want to craft into a sentence.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
@@ -521,7 +523,7 @@ True
 </div>
 </section>
 <section id="The-format()-method">
-<h2>The format() method<a class="headerlink" href="#The-format()-method" title="Permalink to this heading"></a></h2>
+<h2>The format() method<a class="headerlink" href="#The-format()-method" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">format()</span></code> method is very powerful. We not go over all use cases here, but I’ll show you what I think is most intuitive and commonly used. Again, this is best learned by example.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
@@ -613,7 +615,7 @@ That rug really tied the room together.
 <p>Note the syntax. In the braces, we specify the name of the kwarg, and then we put a colon followed by the string conversion. Note also that I used double quotes on the outside of the string containing Avogadro’s number so that I could include an apostrophe in the string. Finally, note that we got a subscript zero using the <a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> character, <code class="docutils literal notranslate"><span class="pre">₀</span></code>.</p>
 </section>
 <section id="f-strings">
-<h2>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this heading"></a></h2>
+<h2>f-strings<a class="headerlink" href="#f-strings" title="Link to this heading"></a></h2>
 <p><strong>f-strings</strong> are strings that are prefixed with an <code class="docutils literal notranslate"><span class="pre">f</span></code> or <code class="docutils literal notranslate"><span class="pre">F</span></code> that allow convenient insertion of entries into strings. Here are some examples.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
@@ -653,11 +655,11 @@ That rug really tied the room together.
 </div>
 </section>
 <section id="There-are-many-more-string-methods">
-<h2>There are many more string methods<a class="headerlink" href="#There-are-many-more-string-methods" title="Permalink to this heading"></a></h2>
+<h2>There are many more string methods<a class="headerlink" href="#There-are-many-more-string-methods" title="Link to this heading"></a></h2>
 <p>You can find a complete list of string methods from <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">the Python doc pages</a>. Various methods will come in handy when parsing strings going forward.</p>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
@@ -695,13 +697,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134f6b190> 
+   <jinja2.runtime.BlockReference object at 0x300c08250> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

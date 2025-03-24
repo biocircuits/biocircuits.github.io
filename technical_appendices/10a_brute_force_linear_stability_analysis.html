@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10a. Stability diagrams by numerical computation of eigenvalues &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -149,7 +151,7 @@
            <div itemprop="articleBody">
              
   <section id="10a.-Stability-diagrams-by-numerical-computation-of-eigenvalues">
-<h1>10a. Stability diagrams by numerical computation of eigenvalues<a class="headerlink" href="#10a.-Stability-diagrams-by-numerical-computation-of-eigenvalues" title="Permalink to this heading"></a></h1>
+<h1>10a. Stability diagrams by numerical computation of eigenvalues<a class="headerlink" href="#10a.-Stability-diagrams-by-numerical-computation-of-eigenvalues" title="Link to this heading"></a></h1>
 <hr><div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -478,7 +480,7 @@ if (force === true) {
 </div>
 <hr><p>In this technical appendix, we demonstrate how to compute a linear stability diagram by “brute force,” in which we grid up parameter space, compute the linear stability matrix, and then numerically compute its eigenvalues and assess them.</p>
 <section id="Example-system:-A-simple-delay-circuit">
-<h2>Example system: A simple delay circuit<a class="headerlink" href="#Example-system:-A-simple-delay-circuit" title="Permalink to this heading"></a></h2>
+<h2>Example system: A simple delay circuit<a class="headerlink" href="#Example-system:-A-simple-delay-circuit" title="Link to this heading"></a></h2>
 <p>Recall in the <a class="reference internal" href="../chapters/10_delay_oscillators.html"><span class="doc">Chapter 10</span></a> that we consider a circuit with <span class="math notranslate nohighlight">\(N\)</span> intermediates between mRNA and the autorepressive protein product it codes for. Here, we will consider the simplest case with <span class="math notranslate nohighlight">\(N = 1\)</span>, shown below.</p>
 <div style="width: 200px; margin: auto;"><img alt="simple delay" src="../_images/simple_delay.png" />
 </div><p>The dimensionless ODEs for this system are</p>
@@ -525,7 +527,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 <p>This polynomial has no positive real roots and either one or three negative real roots according to the <a class="reference external" href="https://en.wikipedia.org/wiki/Descartes%27_rule_of_signs">Descartes Sign Rule</a>. We are interested in the case where we have one negative real root and two complex conjugate roots. If the real part of these complex conjugate roots is positive, we have an oscillatory instability.</p>
 </section>
 <section id="Computing-a-linear-stability-diagram-by-brute-force">
-<h2>Computing a linear stability diagram by brute force<a class="headerlink" href="#Computing-a-linear-stability-diagram-by-brute-force" title="Permalink to this heading"></a></h2>
+<h2>Computing a linear stability diagram by brute force<a class="headerlink" href="#Computing-a-linear-stability-diagram-by-brute-force" title="Link to this heading"></a></h2>
 <p>We can compute the eigenvalues of the linear stability matrix for various values of <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span> for fixed Hill coefficient <span class="math notranslate nohighlight">\(n\)</span>. We will take a “brute force” approach and grid up <span class="math notranslate nohighlight">\(\beta\)</span>-<span class="math notranslate nohighlight">\(\gamma\)</span> space and compute the eigenvalues for each set of parameter values and determine if that point is stable or not. We can then display the linear stability diagram as an image, where a pixel is light colored in a stable region and dark colored in an unstable region.</p>
 <p>The first step in this brute force calculation is finding the fixed point. We know that the fixed point satisfies <span class="math notranslate nohighlight">\(m_0(1+m_0^n) - \beta = 0\)</span>. The fixed point must lie between zero and <span class="math notranslate nohighlight">\(\beta\)</span>, so we can use Brent’s method, as discussed in <a class="reference internal" href="09c_1d_root_finding.html"><span class="doc">Technical Appendix 9c</span></a>, to find the root.</p>
 <div class="nbinput nblast docutils container">
@@ -741,7 +743,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>The unstable region got thinner as <span class="math notranslate nohighlight">\(n\)</span> decreased. In fact it vanishes for <span class="math notranslate nohighlight">\(n = 8\)</span>. Importantly, we see that we must have very high ultrasensitivity to get oscillatory instabilities for reasonable values of <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\gamma\)</span>. Furthermore, the sliver of parameter space that gives an oscillatory instability is small. For such a simple mechanism for delay, the presence of oscillations are not robust to variations in parameter values and high sensitivity is necessary.</p>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -782,13 +784,13 @@ jupyterlab: 3.6.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x133220d90> 
+   <jinja2.runtime.BlockReference object at 0x300d8bcd0> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

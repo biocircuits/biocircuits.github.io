@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>11. Time-based regulation in cells &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -108,7 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -173,7 +175,7 @@
            <div itemprop="articleBody">
              
   <section id="11.-Time-based-regulation-in-cells">
-<h1>11. Time-based regulation in cells<a class="headerlink" href="#11.-Time-based-regulation-in-cells" title="Permalink to this heading"></a></h1>
+<h1>11. Time-based regulation in cells<a class="headerlink" href="#11.-Time-based-regulation-in-cells" title="Link to this heading"></a></h1>
 <hr><p><strong>Design principle</strong></p>
 <ul class="simple">
 <li><p>Time-based regulation enables coordinated regulation of target genes</p></li>
@@ -506,18 +508,18 @@ if (force === true) {
 </script></div>
 </div>
 <hr><section id="Biological-circuits-can-be-strikingly-dynamic,-even-in-constant-conditions">
-<h2>Biological circuits can be strikingly dynamic, even in constant conditions<a class="headerlink" href="#Biological-circuits-can-be-strikingly-dynamic,-even-in-constant-conditions" title="Permalink to this heading"></a></h2>
+<h2>Biological circuits can be strikingly dynamic, even in constant conditions<a class="headerlink" href="#Biological-circuits-can-be-strikingly-dynamic,-even-in-constant-conditions" title="Link to this heading"></a></h2>
 <p>Even in a constant environment, biological circuits exhibit surprisingly dynamic behaviors. One can observe proteins activating and deactivating in repetitive pulses or or periodic oscillations across a wide range of timescales. Indeed, we have already seen how just a few genes can produce robust oscillations. In many cases, dynamics are <strong>coherent</strong>, involving simultaneous activation and deactivation of many molecules of a given species.</p>
 <p>Today we will ask what functional benefits dynamics can provide for a signaling system compared to non-dynamic alternatives. We will see that dynamics allows cells to control targets “in time” rather than in concentration, and that this <strong>time-based regulation</strong> can allow coordination of diverse target genes within the cell.</p>
 </section>
 <section id="Electrical-systems-also-use-dynamics">
-<h2>Electrical systems also use dynamics<a class="headerlink" href="#Electrical-systems-also-use-dynamics" title="Permalink to this heading"></a></h2>
+<h2>Electrical systems also use dynamics<a class="headerlink" href="#Electrical-systems-also-use-dynamics" title="Link to this heading"></a></h2>
 <p>Electrical circuit design utilizes dynamics for numerous operations. One of the simplest, and most familiar, examples is a classic “dimmer” switch. Dimmers control light intensity by rapidly chopping the voltage on and off, varying the fraction of time that the light is on.</p>
 <p>Our electrical devices are a mix of AC (alternating current) and DC (direct current) designs. The complementary benefits of the two paradigms are sometimes associated with the legendary conflict between Edison and Tesla, who advocated competing visions for DC and AC power distribution, respectively. The AC model prevailed for power distribution, while DC power is better for many digital electronic systems, such as laptop computers.</p>
 <div style="margin: auto; width: 400px;"><img alt="Edison_Tesla" src="../_images/Edison_Tesla.png" />
 </div></section>
 <section id="AM-and-FM-represent-distinct-signal-encoding-paradigms">
-<h2>AM and FM represent distinct signal encoding paradigms<a class="headerlink" href="#AM-and-FM-represent-distinct-signal-encoding-paradigms" title="Permalink to this heading"></a></h2>
+<h2>AM and FM represent distinct signal encoding paradigms<a class="headerlink" href="#AM-and-FM-represent-distinct-signal-encoding-paradigms" title="Link to this heading"></a></h2>
 <p>In communications, signals can be encoded either in the amplitude or frequency of oscillations. Car stereos usually offer both Amplitude Modulation (AM) and Frequency Modulation (FM) radio bands. In either case, one can tune the radio to a particular frequency or channel. AM radios encode signals in the amplitude of that frequency, while FM encodes signals via small shifts in frequency. The code below shows two very simple ways of encoding the same information:</p>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -609,7 +611,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Transcription-factors-can-be-regulated-in-concentration-or-in-time">
-<h2>Transcription factors can be regulated in concentration or in time<a class="headerlink" href="#Transcription-factors-can-be-regulated-in-concentration-or-in-time" title="Permalink to this heading"></a></h2>
+<h2>Transcription factors can be regulated in concentration or in time<a class="headerlink" href="#Transcription-factors-can-be-regulated-in-concentration-or-in-time" title="Link to this heading"></a></h2>
 <p>Cellular signaling systems can similarly encode inputs in qualitatively different ways:</p>
 <ul class="simple">
 <li><p>In an AM-like concentration-based encoding system, the input signals controls the concentration of an effector inside the cell. <em>This is how we typically assume most systems work.</em></p></li>
@@ -620,7 +622,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div><p>Note that in this schematic example of time-based regulation, we allow the input to modulate both the frequency and duration of pulses to change the fraction of time that the factor is active. But there are many ways to implement time-based regulation. And any given system may mix both of these or other types of regulation at the same time.</p>
 </section>
 <section id="Dynamic-pulsing-is-ubiquitous">
-<h2>Dynamic pulsing is ubiquitous<a class="headerlink" href="#Dynamic-pulsing-is-ubiquitous" title="Permalink to this heading"></a></h2>
+<h2>Dynamic pulsing is ubiquitous<a class="headerlink" href="#Dynamic-pulsing-is-ubiquitous" title="Link to this heading"></a></h2>
 <p>A large, and ever-growing, list of regulatory systems and pathways exhibit repetitive pulses of activity in constant conditions. In bacteria, sigma factors activate in pulses. In yeast, key transcription factors mediating stress response or glucose regulation, such as Msn2, Crz1, and Mig1, exhibit repetitive pulses of nuclear localization. In mammalian cells, core signaling pathways including NF-AT, NF-<span class="math notranslate nohighlight">\(\kappa\)</span>B, Erk, p53, and others all exhibit different types of pulsing even when cells
 are in constant conditions. Examples of these systems are summarized in this figure, which shows pulses from a broad variety of different cell types:</p>
 <div style="margin: auto; width: 700px;"><p><img alt="pulsing_is_ubiquitous" src="../_images/pulsing_is_ubiquitous.png" /></p>
@@ -633,20 +635,20 @@ are in constant conditions. Examples of these systems are summarized in this fig
 </video></div><center><p>Movie from C. Dalal et al (Current Biology, 2014).</p>
 </center></section>
 <section id="Crz1-mediates-the-response-to-calcium-through-nuclear-localization">
-<h2>Crz1 mediates the response to calcium through nuclear localization<a class="headerlink" href="#Crz1-mediates-the-response-to-calcium-through-nuclear-localization" title="Permalink to this heading"></a></h2>
+<h2>Crz1 mediates the response to calcium through nuclear localization<a class="headerlink" href="#Crz1-mediates-the-response-to-calcium-through-nuclear-localization" title="Link to this heading"></a></h2>
 <p>One of the best examples of this mode of control is the yeast transcription factor Crz1, whose name stands for calcineurin-responsive zinc finger 1, and is pronounced “crazy one.”</p>
 <p>In this system, calcium activates the phosphatase calcineurin, which dephosphorylates Crz1. The desporphorylated form localizes to the nucleus, where it can activae a large regulon of target genes. Crz1 is functionaly analogous to the NF-AT transcription factors that play critical roles in the immune system, among many other texts. (See Stathopoulos, et al. (<a class="reference external" href="https://doi.org/10.1101/gad.11.24.3432">Genes Dev., 1997</a>, <a class="reference external" href="https://dx.doi.org/10.1101%2Fgad.13.7.798">*Genes Dev., 1999</a>; and
 Matheos et al. (<a class="reference external" href="https://dx.doi.org/10.1101%2Fgad.11.24.3445">Genes Dev., 1997</a>).)</p>
 <div style="margin: auto; width: 300px;"><img alt="Crz1_diagram" src="../_images/Crz1_diagram.png" />
 </div></section>
 <section id="Crz1-pulses">
-<h2>Crz1 pulses<a class="headerlink" href="#Crz1-pulses" title="Permalink to this heading"></a></h2>
+<h2>Crz1 pulses<a class="headerlink" href="#Crz1-pulses" title="Link to this heading"></a></h2>
 <p>In the late 2000s, Crz1 earned its name. Here at Caltech, Long Cai and Chiraj Dalal, working in Elowitz lab, were making movies of individual yeast cells expressing Crz1 fused to a fluorescent protein. After addition of calcium to the media, they were struck by the mesmerizing and unexpected “twinkling” of individual cells. These twinkles represented events in which many Crz1 molecules simultaneously transited to the nucleus, concentrating their fluorescent signal. They lasted for a couple of
 minutes and then ended as the Crz1 proteins returned to the cytoplasm. These cycles of coherent, repetitive pulses of nuclear localization continued for hours. The <a class="reference external" href="figs/FMCoordination-mov.mp4">following movie</a> shows a typical example.</p>
 <div style="margin: auto; width: 768px;"><video width="768px" src="figs/FMCoordination-mov.mp4" controls><p>Your browser does not support display of this video.</p>
 </video></div></section>
 <section id="Pulses-appear-stochastic-and-(sometimes)-repetitive">
-<h2>Pulses appear stochastic and (sometimes) repetitive<a class="headerlink" href="#Pulses-appear-stochastic-and-(sometimes)-repetitive" title="Permalink to this heading"></a></h2>
+<h2>Pulses appear stochastic and (sometimes) repetitive<a class="headerlink" href="#Pulses-appear-stochastic-and-(sometimes)-repetitive" title="Link to this heading"></a></h2>
 <p>To get a better idea of what is going on in this system, one can plot traces of Crz1 nuclear localization over time. For example, here are traces from two neighboring cells:</p>
 <div style="margin: auto; width: 600px;"><img alt="Crz1_pulse_examples" src="../_images/Crz1_pulse_examples.png" />
 <center><p>Analysis of Crz1 pulse dynamics in two cells, from L. Cai et al. (Nature, 2008)</p>
@@ -662,7 +664,7 @@ minutes and then ended as the Crz1 proteins returned to the cytoplasm. These cyc
 </div><center><p>Average of Crz1 pulse dynamics in 42 cells, from L. Cai et al. (Nature, 2008).</p>
 </center></section>
 <section id="Dynamic-correlation-analysis-allows-extraction-of-key-features-of-stochastic-dynamics">
-<h2>Dynamic correlation analysis allows extraction of key features of stochastic dynamics<a class="headerlink" href="#Dynamic-correlation-analysis-allows-extraction-of-key-features-of-stochastic-dynamics" title="Permalink to this heading"></a></h2>
+<h2>Dynamic correlation analysis allows extraction of key features of stochastic dynamics<a class="headerlink" href="#Dynamic-correlation-analysis-allows-extraction-of-key-features-of-stochastic-dynamics" title="Link to this heading"></a></h2>
 <p>These observations present us with a frequently encountered challenge: How to condense a huge number of distinct, individual behaviors, each occurring in a different cell, into a small number of comprehensible parameters.</p>
 <p>One of the most versatile tools is correlation analysis.</p>
 <p>Consider the following two signals, which are generated synthetically by creating pulses at different points, and adding noise.</p>
@@ -859,7 +861,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>As a reality check, look back at the original traces and see if those two conclusions make sense. It’s worth playing with these functions on real and synthetic data to get a feeling for what they look like for different types of functions.</p>
 </section>
 <section id="Calcium-modulates-pulse-frequency-but-not-duration">
-<h2>Calcium modulates pulse frequency but not duration<a class="headerlink" href="#Calcium-modulates-pulse-frequency-but-not-duration" title="Permalink to this heading"></a></h2>
+<h2>Calcium modulates pulse frequency but not duration<a class="headerlink" href="#Calcium-modulates-pulse-frequency-but-not-duration" title="Link to this heading"></a></h2>
 <p>We can now see how calcium modulates the dynamics. First, we see that it strongly modulates mean pulse frequency but not mean pulse duration:</p>
 <div style="margin: auto; width: 400px;"><img alt="Crz1_pulse_duration_frequency" src="../_images/Crz1_pulse_duration_frequency.png" />
 </div><center><p>Average of Crz1 pulse dynamics in 42 cells, from L. Cai et al. (Nature, 2008)</p>
@@ -878,7 +880,7 @@ C_a = A_1 \mathrm{e}^{- \left(\frac{t}{\tau_{pulse}}\right)} + A_2 \mathrm{e}^{-
 </center><p>To summarize, calcium seems to modulate the frequency of individual pulses, pulse clusters, and even the appearance of initial responses, while <em>not</em> affecting the amplitude or duration of the same features!</p>
 </section>
 <section id="How-do-we-get-the-observed-autocorrelation?">
-<h2>How do we get the observed autocorrelation?<a class="headerlink" href="#How-do-we-get-the-observed-autocorrelation?" title="Permalink to this heading"></a></h2>
+<h2>How do we get the observed autocorrelation?<a class="headerlink" href="#How-do-we-get-the-observed-autocorrelation?" title="Link to this heading"></a></h2>
 <p>To show how pulse trains might give the observed biexponential mean autocorrelation function, we can build a simulated signal. We use the following simplified model. A cell can either be in a cluster state, in which it may have pulsed localization, or out of a cluster state, in which no localization occurs. Entry into a cluster state is a modeled as a Poisson process with time constant <span class="math notranslate nohighlight">\(\tau_1\)</span>, and exit from a cluster state is modeled as a Poisson process with time constant
 <span class="math notranslate nohighlight">\(\tau_2\)</span>. While in a cluster state, we may get localization events, also modeled as a Poisson process, with time constant <span class="math notranslate nohighlight">\(\tau_3\)</span>. We model each pulse as a Gaussian-like peak in time with width <span class="math notranslate nohighlight">\(2\sigma\)</span>. Finally, there is also noise in the signal.</p>
 <div style="margin: auto; width: 300px;"><img alt="Crz1_initial_response" src="../_images/pulse_model.png" />
@@ -1056,7 +1058,7 @@ var element = document.currentScript.previousSibling.previousSibling;
     <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">mean_autocorr</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">mean_autocorr</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">mean_autocorr</span><span class="p">)</span>
 
 <span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </pre></div>
@@ -1105,7 +1107,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>When trying to validate data analysis approaches, it can be helpful to generate ‘synthetic data’ with known properties and then see how well the analysis captures those properties.</p>
 </section>
 <section id="Why-FM-pulsing?">
-<h2>Why FM pulsing?<a class="headerlink" href="#Why-FM-pulsing?" title="Permalink to this heading"></a></h2>
+<h2>Why FM pulsing?<a class="headerlink" href="#Why-FM-pulsing?" title="Link to this heading"></a></h2>
 <p>These observations provoke the natural question: Why use FM pulsing instead of a seemingly simpler continuous regulation system?</p>
 <p>In non-biological contexts, FM or pulsatile regulatory systems offer a number of advantages compared to their AM counterparts:</p>
 <ul class="simple">
@@ -1119,7 +1121,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </center><p>Which, if any, of these possible explanations might be relevant for the cell? As we will see, the third example—bang bang control—could provide insight into some of the benefits of FM pulsing.</p>
 </section>
 <section id="FM,-but-not-AM,-regulation-allows-coordinated-activation-of-diverse-target-genes">
-<h2>FM, but not AM, regulation allows coordinated activation of diverse target genes<a class="headerlink" href="#FM,-but-not-AM,-regulation-allows-coordinated-activation-of-diverse-target-genes" title="Permalink to this heading"></a></h2>
+<h2>FM, but not AM, regulation allows coordinated activation of diverse target genes<a class="headerlink" href="#FM,-but-not-AM,-regulation-allows-coordinated-activation-of-diverse-target-genes" title="Link to this heading"></a></h2>
 <p>To think about the different effects of AM and FM-pulse regulation, we consider two hypothetical target genes that have different response functions to Crz1.</p>
 <div style="margin: auto; width: 300px;"><img alt="Crz1_two_targets" src="../_images/Crz1_two_targets.png" />
 </div><p>Consider two hypothetical Crz1 target genes with different response functions. These targets might have different sensitivities, different amplitudes, and different EC50s with respect to nuclear Crz1 concentration. Let’s imagine how these genes would respond to different levels of nuclear Crz1.</p>
@@ -1133,7 +1135,7 @@ range of expression levels:</p>
 </div><p>These considerations suggest a simple <strong>design principle</strong>: <em>FM pulsing enables coordinated regulation of diverse target genes.</em></p>
 </section>
 <section id="Crz1-target-genes-show-coordinated-regulation">
-<h2>Crz1 target genes show coordinated regulation<a class="headerlink" href="#Crz1-target-genes-show-coordinated-regulation" title="Permalink to this heading"></a></h2>
+<h2>Crz1 target genes show coordinated regulation<a class="headerlink" href="#Crz1-target-genes-show-coordinated-regulation" title="Link to this heading"></a></h2>
 <p>Does the real system in fact exhibit coordination regulation of its targets? If so, one would certainly expect to see target expression track pulse frequency. In fact, that does seem to occur:</p>
 <div style="margin: auto; width: 350px;"><img alt="Crz1_target_tracks_frequency" src="../_images/Crz1_target_tracks_frequency.png" />
 </div><center><p>From L. Cai et al. (Nature, 2008).</p>
@@ -1145,42 +1147,42 @@ range of expression levels:</p>
 </div><center><p>Natural target genes (black) and pulse frequency (red) show similar responses to calcium dose. From L. Cai et al. (Nature, 2008). Additional targets shown in paper.</p>
 </center></section>
 <section id="What-about-%22fine-tuning?%22">
-<h2>What about “fine-tuning?”<a class="headerlink" href="#What-about-%22fine-tuning?%22" title="Permalink to this heading"></a></h2>
+<h2>What about “fine-tuning?”<a class="headerlink" href="#What-about-%22fine-tuning?%22" title="Link to this heading"></a></h2>
 <p>In a fine-tuned model, all the promoters have the same dependence on Crz1 concentration, at least up to a scale factor for each promoter. That is, <span class="math notranslate nohighlight">\(P_i\)</span>(Crz1) <span class="math notranslate nohighlight">\(= \alpha_i P_0\)</span>(Crz1), where the index <span class="math notranslate nohighlight">\(i\)</span> labels each target promoter and <span class="math notranslate nohighlight">\(P_0\)</span> refers to a reference promoter.</p>
 <p>If this were the case, then increasing the concentration of Crz1 should change all promoters to the same extent. Contrary to this expectation, experiments revealed that different promoters were affected to differing extents by Crz1 overexpression, suggesting that the observed coordination results from FM pulsing rather than from fine-tuning of target promoters.</p>
 </section>
 <section id="Other-%22histogram-preserving%22-modulations-can-also-enable-coordination.">
-<h2>Other “histogram-preserving” modulations can also enable coordination.<a class="headerlink" href="#Other-%22histogram-preserving%22-modulations-can-also-enable-coordination." title="Permalink to this heading"></a></h2>
+<h2>Other “histogram-preserving” modulations can also enable coordination.<a class="headerlink" href="#Other-%22histogram-preserving%22-modulations-can-also-enable-coordination." title="Link to this heading"></a></h2>
 <p>Coordination can occur with multiple types of time-based regulation. It does not require frequency modulation <em>per se.</em> Any “histogram preserving” modulation in which input signals control only the fraction of time the factor spends in a distribution of ‘high’ states, but not the distribution of activities in either the low or high activity states, should work.</p>
 <p>Here are some examples. In each case, top and bottom illustrations show, schematically, how time traces would be affected by a change in input.</p>
 <div style="margin: auto; width: 550px;"><img alt="Crz1_diverse_modulation" src="../_images/Crz1_diverse_modulation.png" />
 </div></section>
 <section id="Multiple-pulsers:-from-frequency-to-phasing">
-<h2>Multiple pulsers: from frequency to phasing<a class="headerlink" href="#Multiple-pulsers:-from-frequency-to-phasing" title="Permalink to this heading"></a></h2>
+<h2>Multiple pulsers: from frequency to phasing<a class="headerlink" href="#Multiple-pulsers:-from-frequency-to-phasing" title="Link to this heading"></a></h2>
 <p>So far we have focused on a single transcription factor, pulsing away in a single condition. But in reality there are likely to be multiple pulsatile transcription factors operating in the same cell at the same time, and potentially co-regulating many common target genes, something like <a class="reference external" href="figs/phase_pulsing_animation.m4v">this</a>:</p>
 <div style="margin: auto; width: 768px;"><video width="768px" src="figs/phase_pulsing_animation.m4v" controls><p>Your browser does not support display of this video.</p>
 </video></div><p>This leads to the next question: how do multiple pulsatile systems interact <em>in time</em> to control targets? Could cells use <strong>relative timing</strong> or <strong>phasing</strong> of dynamics between different transcription factors to control target genes in new ways?</p>
 </section>
 <section id="Phasing-matters">
-<h2>Phasing matters<a class="headerlink" href="#Phasing-matters" title="Permalink to this heading"></a></h2>
+<h2>Phasing matters<a class="headerlink" href="#Phasing-matters" title="Link to this heading"></a></h2>
 <p>The relative timing, or <strong>phasing</strong>, of different events – say, stoplights – can make a big difference in many contexts. What about the relative timing of pulses of different transcription factors in the same cell?</p>
 <div style="margin: auto; width: 500px;"><p><img alt="phasing_matters_1" src="../_images/phasing_matters_1.png" /> <img alt="phasing_matters_2" src="../_images/phasing_matters_2.png" /></p>
 </div></section>
 <section id="Msn2-and-Mig1-pulse-and-co-regulate-common-target-genes">
-<h2>Msn2 and Mig1 pulse and co-regulate common target genes<a class="headerlink" href="#Msn2-and-Mig1-pulse-and-co-regulate-common-target-genes" title="Permalink to this heading"></a></h2>
+<h2>Msn2 and Mig1 pulse and co-regulate common target genes<a class="headerlink" href="#Msn2-and-Mig1-pulse-and-co-regulate-common-target-genes" title="Link to this heading"></a></h2>
 <p>Msn2 and Mig1, two major transcription factors in yeast, respond to overlapping stresses, including glucose limitation, and co-regulate some common target genes:</p>
 <div style="margin: auto; width: 400px;"><img alt="Msn2_Mig1_diagram" src="../_images/Msn2_Mig1_diagram.png" />
 </div><p>Msn2 is an activator, while Mig1 is generally a repressor.</p>
 <p>You can imagine that if only Msn2 is present, it can easily activate the gene, but if both Msn2 and Mig1 are simultaneously present, it is a bit like stepping on both the accelerator (Msn2) and brake (Mig1) at the same time. If you do that, ideally, the brake will dominate and the car (target gene), will not move (activate).</p>
 </section>
 <section id="Three-color-strains-enable-simultaneous-analysis-of-two-transcription-factors-and-one-target">
-<h2>Three-color strains enable simultaneous analysis of two transcription factors and one target<a class="headerlink" href="#Three-color-strains-enable-simultaneous-analysis-of-two-transcription-factors-and-one-target" title="Permalink to this heading"></a></h2>
+<h2>Three-color strains enable simultaneous analysis of two transcription factors and one target<a class="headerlink" href="#Three-color-strains-enable-simultaneous-analysis-of-two-transcription-factors-and-one-target" title="Link to this heading"></a></h2>
 <p>To be able to visualize Msn2 and Mig1 dynamics, along with their effects on a target gene, Y. Lin et al. (<a class="reference external" href="https://doi.org/10.1038/nature15710">Nature, 2105</a>) engineered a three color reporter system in yeast.</p>
 <div style="margin: auto; width: 500px;"><img alt="three_color_strain" src="../_images/three_color_strain.png" />
 </div><p>In this system, Msn2 and Mig1 are fused to distinct fluorescent protein colors. In addition, the RNA-binding protein PP7, fused to a third fluorescent protein, enables rapid and direct tracking of target transcription from synthetic and natural target genes; see Larson, et al. (<a class="reference external" href="https://doi.org/10.1126/science.1202142">Science, 2011</a>).</p>
 </section>
 <section id="Different-inputs-activate-with-different-relative-timing">
-<h2>Different inputs activate with different relative timing<a class="headerlink" href="#Different-inputs-activate-with-different-relative-timing" title="Permalink to this heading"></a></h2>
+<h2>Different inputs activate with different relative timing<a class="headerlink" href="#Different-inputs-activate-with-different-relative-timing" title="Link to this heading"></a></h2>
 <p>In these movies, we can see that exposure of cells to either salt or ethanol each activate both transcription factors. However, they do so with different relative timing, either “out of phase” or “in phase”. Because M</p>
 <p>For example, in <a class="reference external" href="figs/NaCl_out_of_phase.mp4">this movie</a> note that adding NaCl causes a sequential activation (nuclear localization) of Msn2 <em>followed by</em> Mig1, leading to increase in target expression.</p>
 <div style="margin: auto; width: 600px;"><video width="600px" src="figs/NaCl_out_of_phase.mp4" controls><p>Your browser does not support display of this video.</p>
@@ -1192,7 +1194,7 @@ range of expression levels:</p>
 <p>What we can see here is amazing: Different inputs activate the same transcription factors with different <strong>relative timing</strong> and this in turn determines whether target genes are activated or not.</p>
 </section>
 <section id="Relative-timing-can-be-continuously-modulated-by-glucose-concentration">
-<h2>Relative timing can be continuously modulated by glucose concentration<a class="headerlink" href="#Relative-timing-can-be-continuously-modulated-by-glucose-concentration" title="Permalink to this heading"></a></h2>
+<h2>Relative timing can be continuously modulated by glucose concentration<a class="headerlink" href="#Relative-timing-can-be-continuously-modulated-by-glucose-concentration" title="Link to this heading"></a></h2>
 <p>Another way to modulate this system is to vary glucose concentration. If one then tracks the dynamics of the two transcription factors, and computes the cross-correlation functions, one can see the relative amplitude of in phase and out of phase peaks gradually shifting:</p>
 <div style="margin: auto; width: 600px;"><img alt="glucose_titration_ccf" src="../_images/glucose_titration_ccf.png" />
 </div><center><p>Glucose concentration determines relative timing of Msn2 and Mig1 pulses. See Lin et al, Nature, 2015.</p>
@@ -1200,7 +1202,7 @@ range of expression levels:</p>
 <p>Imagine if we could somehow image the dynamic responses of all regulators in the same cell over time, while also observing their targets. It would be like hearing a whole symphony at once, rather than just a couple of instruments at a time. Perhaps we could gain a better understanding of how the dynamics of many regulators play out in time to control the cell.</p>
 </section>
 <section id="Conclusions">
-<h2>Conclusions<a class="headerlink" href="#Conclusions" title="Permalink to this heading"></a></h2>
+<h2>Conclusions<a class="headerlink" href="#Conclusions" title="Link to this heading"></a></h2>
 <p>Today we have seen that cells are organized not only in space but also in time. Perhaps we should not be surprised: just as electrical circuits have long made use of the time domain for complex regulation, so too do living cells. While we have examined a few core regulatory systems in yeast, similar types of dynamic regulatory strategies are likely to be quite general across pathways, cell types, and species.</p>
 <p>To recap:</p>
 <ul class="simple">
@@ -1210,7 +1212,7 @@ range of expression levels:</p>
 </ul>
 <hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/11/problem_11.1.html">11.1: Temporal gene expression and inferring a circuit</a></li>
@@ -1218,7 +1220,7 @@ range of expression levels:</p>
 </div>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -1259,13 +1261,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134febe90> 
+   <jinja2.runtime.BlockReference object at 0x309133290> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

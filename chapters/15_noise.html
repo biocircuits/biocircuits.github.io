@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -100,7 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -165,15 +167,15 @@
            <div itemprop="articleBody">
              
   <section id="15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation">
-<h1>15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation<a class="headerlink" href="#15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation" title="Permalink to this heading"></a></h1>
+<h1>15. The noisy, noisy nature of gene expression: How stochastic fluctuations create variation<a class="headerlink" href="#15.-The-noisy,-noisy-nature-of-gene-expression:-How-stochastic-fluctuations-create-variation" title="Link to this heading"></a></h1>
 <hr><section id="Concepts">
-<h2>Concepts<a class="headerlink" href="#Concepts" title="Permalink to this heading"></a></h2>
+<h2>Concepts<a class="headerlink" href="#Concepts" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Intrinsic and extrinsic noise</p></li>
 </ul>
 </section>
 <section id="Techniques">
-<h2>Techniques<a class="headerlink" href="#Techniques" title="Permalink to this heading"></a></h2>
+<h2>Techniques<a class="headerlink" href="#Techniques" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Plug-in estimates</p></li>
 <li><p>Pairs bootstrap</p></li>
@@ -514,7 +516,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 molecular species. However, most living cells are not macroscopic. They are small — a bacterial cell has a volume of a femtoliter (<span class="math notranslate nohighlight">\(10^{-15}\)</span> liters). Small size has consequences. Unpredictable fluctuations in the number of copies of a protein—biological “<strong>noise</strong>”—can dramatically affect the behavior of the cell. To detect, quantify, and model systems with noise, we will need new experimental, computational, and mathematical approaches.</p>
 <p>Over the next chapters we will focus on understanding the sources and dynamics of noise, methods to analyze noise, and the potentially useful functional roles of noise in biological systems. To do so, we will use the mathematical machinery of probability, which is an essential tool for diverse problems in biology.</p>
 <section id="Noise-is-present-in-genetic-circuits,-and-cells-are-like-burritos">
-<h3>Noise is present in genetic circuits, and cells are like burritos<a class="headerlink" href="#Noise-is-present-in-genetic-circuits,-and-cells-are-like-burritos" title="Permalink to this heading"></a></h3>
+<h3>Noise is present in genetic circuits, and cells are like burritos<a class="headerlink" href="#Noise-is-present-in-genetic-circuits,-and-cells-are-like-burritos" title="Link to this heading"></a></h3>
 <p>One cell may seem at first glance identical to any other cell living alongside it in the same conditions. However, if we could somehow look inside each cell, and observe the various molecular species populating each cell, we would notice dramatic variations from cell to cell. In part, this is because the number of copies of many proteins and mRNA molecules in the cell are small. <a class="reference external" href="http://dx.doi.org/10.1016/j.cell.2014.02.033">Wi and coworkers (Cell, 2014)</a> used ribosome profiling to obtain
 estimates for absolute protein counts of various transcription factors in bacteria. They found that half of repressors have copy numbers below 100 per genome equivalent and 90% of activators do as well. About 10% of repressors and 50% of activators have copy numbers of 10 or below. These numbers are small, difficult for the cell to control precisely, and therefore susceptible to fluctuations.</p>
 <!--
@@ -535,7 +537,7 @@ over time, just as they vary from cell to cell. Like burritos, no two cells are 
 <div style="margin: auto; width: 500px"><img alt="Michael's epiphanic burrito" src="../_images/burrito.jpg" />
 </div></section>
 <section id="Early-approaches-to-detecting-and-quantifying-cellular-variation">
-<h3>Early approaches to detecting and quantifying cellular variation<a class="headerlink" href="#Early-approaches-to-detecting-and-quantifying-cellular-variation" title="Permalink to this heading"></a></h3>
+<h3>Early approaches to detecting and quantifying cellular variation<a class="headerlink" href="#Early-approaches-to-detecting-and-quantifying-cellular-variation" title="Link to this heading"></a></h3>
 <p>An early non-cellular demonstration of how fluctuations in molecule numbers between cells could produce large fluctuations in molecular states was performed by Boris Rotman (<a class="reference external" href="https://doi.org/10.1073/pnas.47.12.1981">PNAS, 1961</a>). Seeking to test whether individual enzyme molecules had identical activities, he diluted β-D-galactosidase down in liquid droplets, with a mean concentration of ~1 molecule per droplet and then assayed their activitity in each droplet. The activity measurement used a
 fluorescent substrate 6HFP, which glows green when it is cleaved by β-D-galactosidase.</p>
 <div style="margin: auto; width: 250px"><img alt="Rotman drops" src="../_images/rotman_drops.png" />
@@ -551,7 +553,7 @@ fluorescent protein and a growing palette of multi-colored derivatives revealed 
 that would continue to generate heterogeneity, even if environmental conditions could somehow be held perfectly constant.</p>
 </section>
 <section id="Two-colors-allow-analysis-of-stochastic-noise-in-gene-expression">
-<h3>Two colors allow analysis of stochastic noise in gene expression<a class="headerlink" href="#Two-colors-allow-analysis-of-stochastic-noise-in-gene-expression" title="Permalink to this heading"></a></h3>
+<h3>Two colors allow analysis of stochastic noise in gene expression<a class="headerlink" href="#Two-colors-allow-analysis-of-stochastic-noise-in-gene-expression" title="Link to this heading"></a></h3>
 <p>Consider the following thought experiment: Imagine a population of exactly identical cells, all placed in identical environments. A little while later, we check back on these cells and see what has happened to them. If cellular behavior is deterministic, then the cells might have changed—grown longer, for example, or added a few flagella—but they would have all changed in precisely the same way and therefore remained identical to one another. On the other hand, stochasticity, or noise, could
 cause the properties of these cells to diverge over time. For instance, a stochastic fluctuation in the concentration of a transcription factor in one cell could activate genes that would not be activated in another cell. Thus, if we could prepare two cells in identical states, place them in identical environments, and then monitor them over time, we could detect the effects of noise on their development.</p>
 <p>This is an appealing conceptual way to define noise, but infeasible experimentally. The problem is that there is no way to prepare two cells in the same state. Even two sister cells—as closely related as cells can be—show clear observable differences in size, shape, and other properties.</p>
@@ -566,7 +568,7 @@ numbers. They also verified that the overall fluorescence distributions across t
 <p>The rest of this chapter addresses how measurements like these can be used to discriminate and measure different sources of noise.</p>
 </section>
 <section id="Two-flavors-of-noise:-intrinsic-and-extrinsic">
-<h3>Two flavors of noise: intrinsic and extrinsic<a class="headerlink" href="#Two-flavors-of-noise:-intrinsic-and-extrinsic" title="Permalink to this heading"></a></h3>
+<h3>Two flavors of noise: intrinsic and extrinsic<a class="headerlink" href="#Two-flavors-of-noise:-intrinsic-and-extrinsic" title="Link to this heading"></a></h3>
 <p>Now that we have a framework for experimentally analyzing gene expression noise, we can think more carefully about how to define it.</p>
 <p>Consider one gene product of interest in these cells (such as YFP in the image above). We can define the <strong>total noise</strong>, <span class="math notranslate nohighlight">\(\eta_\mathrm{tot}\)</span>, as the <strong>coefficient of variation</strong> of the copy numbers of the gene product. The coefficient of variation is the standard deviation of the copy number divided by the mean copy number, or</p>
 <p><span class="math">\begin{align}
@@ -593,7 +595,7 @@ It is difficult to know a priori how intrinsically noisy gene expression will be
 Delineating intrinsic and extrinsic noise is difficult, if not impossible, by measuring expression of a single gene in a cell. To construct an experiment to study this, we can conduct another thought experiment. Say we put two perfectly molecularly identical cells in the exact same environment and see if they behave similarly. Unfortunately, we cannot do this, because we cannot prepare two perfectly identical cells.
 
 --><section id="Segmentation-and-scaling-of-fluorescence">
-<h4>Segmentation and scaling of fluorescence<a class="headerlink" href="#Segmentation-and-scaling-of-fluorescence" title="Permalink to this heading"></a></h4>
+<h4>Segmentation and scaling of fluorescence<a class="headerlink" href="#Segmentation-and-scaling-of-fluorescence" title="Link to this heading"></a></h4>
 <p>We will now consider the problem of experimentally quantifying noise from the two-color experiment images, like those above. First, the images must be <strong>segmented</strong>, which means that each pixel in the image needs to be labeled with a unique number corresponding to which bacterium (or background) it belongs. The phase contrast image is used for this purpose to avoid segmenting on the same signal you are trying to measure. Next, the intensities of the pixels in each channel (CFP and YFP) for each
 bacterium are summed to give a total intensity. The integrated CFP intensity for cell <span class="math notranslate nohighlight">\(i\)</span> is</p>
 <p><span class="math">\begin{align}
@@ -621,7 +623,7 @@ y_i \leftarrow y_i / \bar{y},
 <p>which enforces that the means are equal (and both arbitrarily equal to one). With these rescaled intensities, the prefactors connecting the fluorescent intensity to copy number are equal, or <span class="math notranslate nohighlight">\(c_0 = y_0\)</span>.</p>
 </section>
 <section id="Plug-in-estimates-for-intrinsic,-extrinsic,-and-total-noise">
-<h4>Plug-in estimates for intrinsic, extrinsic, and total noise<a class="headerlink" href="#Plug-in-estimates-for-intrinsic,-extrinsic,-and-total-noise" title="Permalink to this heading"></a></h4>
+<h4>Plug-in estimates for intrinsic, extrinsic, and total noise<a class="headerlink" href="#Plug-in-estimates-for-intrinsic,-extrinsic,-and-total-noise" title="Link to this heading"></a></h4>
 <p>As our first approach to estimating the intrinsic and extrinsic noise from our data set <span class="math notranslate nohighlight">\(\{c_i, y_i\}\)</span>, let us assume that we do not know the probability distribution describing <span class="math notranslate nohighlight">\(\{c_i, y_i\}\)</span>. Since we do not know the distribution, we will resort to making <strong>plug-in estimates</strong> of the moments of the distribution to estimate quantities such as <span class="math notranslate nohighlight">\(\langle n^2 \rangle\)</span>. Remember that going forward, we assume that the data have already been properly scaled to have the same mean.</p>
 <p>To compute the total noise, we need to compute the variance in gene expression. Since both CFP and YFP are on identical promoters, we can group them together as a single species in this calculation. The plug-in estimate for the total variance is then</p>
 <p><span class="math">\begin{align}
@@ -644,7 +646,7 @@ V_\mathrm{ext} = V_\mathrm{tot} - V_\mathrm{int} = \overline{cy} - \frac{1}{2}\l
 \end{align}</span></p>
 </section>
 <section id="Computing-the-intrinsic-and-extrinsic-noise-from-experimental-data">
-<h4>Computing the intrinsic and extrinsic noise from experimental data<a class="headerlink" href="#Computing-the-intrinsic-and-extrinsic-noise-from-experimental-data" title="Permalink to this heading"></a></h4>
+<h4>Computing the intrinsic and extrinsic noise from experimental data<a class="headerlink" href="#Computing-the-intrinsic-and-extrinsic-noise-from-experimental-data" title="Link to this heading"></a></h4>
 <p>As an example, let us compute the intrinsic and extrinsic noise from experimental data. We will consider two data sets from the <a class="reference external" href="https://doi.org/10.1126/science.1070919">Elowitz, et al. paper</a>, both of which are contained in <a class="reference external" href="data/elowitz_et_al_2002_fig_3a.csv">this CSV file</a>. One set of measurements is for the M22 strain, which has the CFP/YFP under control of LacI setup in <em>E. coli</em> we have previously described. The other set of measurements is for the D22 strain, which has a deletion of
 the <em>recA</em> gene, which is responsible for rescuing stalled replication forks.</p>
 <p>Let’s plot the two data sets and compare.</p>
@@ -684,8 +686,8 @@ the <em>recA</em> gene, which is responsible for rescuing stalled replication fo
     <span class="n">x_range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.675</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span>
     <span class="n">y_range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.675</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">m22_cfp</span><span class="p">,</span> <span class="n">m22_yfp</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;M22&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">d22_cfp</span><span class="p">,</span> <span class="n">d22_yfp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;D22&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">m22_cfp</span><span class="p">,</span> <span class="n">m22_yfp</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;M22&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">d22_cfp</span><span class="p">,</span> <span class="n">d22_yfp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;D22&quot;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;bottom_right&quot;</span>
 <span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">click_policy</span> <span class="o">=</span> <span class="s2">&quot;hide&quot;</span>
 <span class="n">p</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">background_fill_alpha</span> <span class="o">=</span> <span class="mf">0.7</span>
@@ -845,7 +847,7 @@ total:     0.1147
 
 <span class="c1"># Build the plot</span>
 <span class="n">p</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">y_range</span><span class="o">=</span><span class="n">y_range</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">x_axis_label</span><span class="o">=</span><span class="s2">&quot;noise&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;plugin&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;strain_noise&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;plugin&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;strain_noise&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_noise</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
     <span class="n">p</span><span class="o">.</span><span class="n">line</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;2.5&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;97.5&quot;</span><span class="p">]],</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;strain_noise&quot;</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
@@ -905,8 +907,8 @@ var element = document.currentScript.previousSibling.previousSibling;
     <span class="n">x_axis_label</span><span class="o">=</span><span class="s2">&quot;intrinsic noise&quot;</span><span class="p">,</span>
     <span class="n">y_axis_label</span><span class="o">=</span><span class="s2">&quot;extrinsic noise&quot;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">m22_reps</span><span class="p">[::</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">m22_reps</span><span class="p">[::</span><span class="mi">40</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;M22&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">m22_reps</span><span class="p">[::</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">m22_reps</span><span class="p">[::</span><span class="mi">40</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;M22&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">d22_reps</span><span class="p">[::</span><span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="n">d22_reps</span><span class="p">[::</span><span class="mi">40</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
@@ -963,13 +965,13 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>There is slight anticorrelation between intrinsic and extrinsic noise.</p>
 </section>
 <section id="Interpreting-the-results">
-<h4>Interpreting the results<a class="headerlink" href="#Interpreting-the-results" title="Permalink to this heading"></a></h4>
+<h4>Interpreting the results<a class="headerlink" href="#Interpreting-the-results" title="Link to this heading"></a></h4>
 <p>Apparently, for genes regulated by LacI in <em>E. coli</em>, the intrinsic and extrinsic noise are of similar magnitude. The D22 string is inherently noisier, with the noise being about 50% higher than the M22 strain. Importantly, this suggests that the difference in noise is genetically determined. That the role of <em>recA</em> in rescuing stalled replication forks and the fact that it is missing in the D22 strain suggests that the increased noise, both intrinsic and extrinsic, is due to transient copy
 number differences between different parts of the chromosome.</p>
 </section>
 </section>
 <section id="Lower-copy-numbers-lead-to-more-noise">
-<h3>Lower copy numbers lead to more noise<a class="headerlink" href="#Lower-copy-numbers-lead-to-more-noise" title="Permalink to this heading"></a></h3>
+<h3>Lower copy numbers lead to more noise<a class="headerlink" href="#Lower-copy-numbers-lead-to-more-noise" title="Link to this heading"></a></h3>
 <p>In some of the two-color experiments, the authors sought to control the expression of both genes by using an inducible system, in which both promoters were repressed by the LacI protein, which could in turn be inhibited by the inducer IPTG.</p>
 <div style="margin: auto; width: 100px"><img alt="LacI-CFP-YFP circuit" src="../_images/laci_cfp_yfp_circuit.png" />
 </div><p>By titrating the amount of IPTG, the expression levels of both YFP and CFP gene products may be controlled. Systematically varying ITPG concentration produced the results shown below:</p>
@@ -992,13 +994,13 @@ number differences between different parts of the chromosome.</p>
     <span class="n">x_axis_label</span><span class="o">=</span><span class="s2">&quot;normalized fluorescent intensity&quot;</span><span class="p">,</span>
     <span class="n">y_axis_label</span><span class="o">=</span><span class="s2">&quot;noise&quot;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">df_noise_int</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;normalized fluorescent intensity&quot;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intrinsic noise&quot;</span><span class="p">,</span>
     <span class="n">legend_label</span><span class="o">=</span><span class="s2">&quot;intrinsic&quot;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="n">source</span><span class="o">=</span><span class="n">df_noise_int</span><span class="p">,</span>
     <span class="n">x</span><span class="o">=</span><span class="s2">&quot;normalized fluorescent intensity&quot;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s2">&quot;extrinsic noise&quot;</span><span class="p">,</span>
@@ -1064,7 +1066,7 @@ numbers of LacI dampen out extrinsic noise, leading to its drop at low intensity
 <p>We note that at full induction, the total noise is somewhere around 0.1. By contrast, a “good” electronic circuit has a signal to noise ratio of about 25 or 30 dB, or a noise level of about 0.001, 100 times quieter than this example of gene expression.</p>
 </section>
 <section id="Generative-Bayesian-modeling-of-noise">
-<h3>Generative Bayesian modeling of noise<a class="headerlink" href="#Generative-Bayesian-modeling-of-noise" title="Permalink to this heading"></a></h3>
+<h3>Generative Bayesian modeling of noise<a class="headerlink" href="#Generative-Bayesian-modeling-of-noise" title="Link to this heading"></a></h3>
 <p>In the above analysis, we assumed we knew nothing about underlying probability distribution generating the data. This means we are not modeling the source of the noise, but are rather <em>defining</em> what we mean by intrinsic and extrinsic noise based on moments of the unknown distribution, which we then estimate with plug-in estimates. We now take an alternative approach, where we propose a <strong>generative model</strong> for the data. The parameters of this model then define what we mean by intrinsic and
 extrinsic noise. We use Bayes’s theorem to connect the experimental measurements to the noise, given the model.</p>
 <p>One of the beauties of generative modeling is that all assumptions are now, by necessity, explicit. We will again make the same assumptions we did when deriving the plug-in estimates, stating them more clearly here.</p>
@@ -1112,12 +1114,12 @@ P(\{\mu_i\}, \mu, \sigma, \sigma_\mu\mid \{c_i, y_i\}) \propto \left(\prod_{i=1}
 <p>Performance of full Bayesian inference on this model involves some sophisticated techniques involving Markov chain Monte Carlo, which we will not cover here, but you can explore in an end-of-chapter problem. Most important for this chapter is that we can build a generative model and directly and intuitively interpret its parameters.</p>
 </section>
 <section id="References">
-<h3>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h3>
+<h3>References<a class="headerlink" href="#References" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Elowitz, et al., Stochastic gene expression in a single cell, <em>Science</em>, 297, 1183–1186, 2002. (<a class="reference external" href="https://doi.org/10.1126/science.1070919">link</a>)</p></li>
 </ul>
 <section id="Computing-environment">
-<h4>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h4>
+<h4>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h4>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -1160,13 +1162,13 @@ jupyterlab: 3.3.2
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134421790> 
+   <jinja2.runtime.BlockReference object at 0x309543a90> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

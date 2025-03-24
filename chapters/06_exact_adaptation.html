@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6. Exact adaptation in the chemotaxis pathway &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -90,7 +93,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#Computing-environment">Computing environment</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -102,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -167,14 +169,14 @@
            <div itemprop="articleBody">
              
   <section id="6.-Exact-adaptation-in-the-chemotaxis-pathway">
-<h1>6. Exact adaptation in the chemotaxis pathway<a class="headerlink" href="#6.-Exact-adaptation-in-the-chemotaxis-pathway" title="Permalink to this heading"></a></h1>
-<hr><p><strong>Concepts</strong></p>
-<ul class="simple">
-<li><p>Exact adaptation allows a system to sense changes in signal across a wide dynamic range of ambient signal levels.</p></li>
-</ul>
-<p><strong>Design principles</strong></p>
+<h1>6. Exact adaptation in the chemotaxis pathway<a class="headerlink" href="#6.-Exact-adaptation-in-the-chemotaxis-pathway" title="Link to this heading"></a></h1>
+<hr><p><strong>Design principles</strong></p>
 <ul class="simple">
 <li><p>Activity dependent negative feedback enables exact adaptation.</p></li>
+</ul>
+<p><strong>Concepts</strong></p>
+<ul class="simple">
+<li><p>Exact adaptation allows a system to sense changes in signal across a wide dynamic range of ambient signal levels.</p></li>
 </ul>
 <p><strong>Techniques</strong></p>
 <ul class="simple">
@@ -502,7 +504,7 @@ if (force === true) {
 </script></div>
 </div>
 <hr><section id="Exact-adaptation-enables-gradient-sensing">
-<h2>Exact adaptation enables gradient sensing<a class="headerlink" href="#Exact-adaptation-enables-gradient-sensing" title="Permalink to this heading"></a></h2>
+<h2>Exact adaptation enables gradient sensing<a class="headerlink" href="#Exact-adaptation-enables-gradient-sensing" title="Link to this heading"></a></h2>
 <p>The previous chapter provided a first glimpse of how robustness can emerge from circuit architecture. We saw how an incoherent feed-forward loop (IFFL) could, under the right conditions, make a protein’s concentration independent of the number of copies of its own gene. Today, we will extend the concept of robustness in two ways: First, we will shift from static steady state protein expression systems to dynamic signal transduction systems, which sense the rate of change of their inputs. Second,
 we will shift from the level of gene regulation, which we have focused on so far, to circuits of interacting proteins. To do this, we will analyze one of the best studied signaling systems in biology—bacterial chemotaxis—to understand how and why it adapts is output activity to a constant level across a wide range of input concentrations.</p>
 <p>Before we get started, consider a familiar example of adaptation in our own visual system. Outdoors, your eyes are sensitive to relative differences in light intensity, allowing you to perceive variations. Step inside, and ambient light intensities decrease by orders of magnitude. Initially, everything looks dim. But over the next ~15 or so minutes, your eyes increase their “gain” and soon enough objects look bright again. Your visual system has adapted to lower light by increasing
@@ -516,14 +518,14 @@ level after a change in its input value.</p>
 </div><p>In this chapter, we will explore various models of the <em>E. coli</em> Che (pronounced “key”) system, which governs its chemotaxis, to understand how this exact adaptation is accomplished. This treatment is based on Chapter 9 of Uri Alon’s <em>Systems Biology</em>, 2nd Ed., which provides a deeper treatment of the molecular models and much additional perspective.</p>
 </section>
 <section id="Cells-chemotax-towards-higher-attractant-concentrations-through-a-biased-random-walk">
-<h2>Cells chemotax towards higher attractant concentrations through a biased random walk<a class="headerlink" href="#Cells-chemotax-towards-higher-attractant-concentrations-through-a-biased-random-walk" title="Permalink to this heading"></a></h2>
+<h2>Cells chemotax towards higher attractant concentrations through a biased random walk<a class="headerlink" href="#Cells-chemotax-towards-higher-attractant-concentrations-through-a-biased-random-walk" title="Link to this heading"></a></h2>
 <p>To understand how <em>E. coli</em> perform chemotaxis, we must first understand how <em>E. coli</em> swim. They propel themselves forward in “runs” by spinning their flagellar motors in a counter-clockwise direction for timescales of order ~1 second. Occasionally, and stochastically, a few of the motors switch to a clockwise rotation. This causes the flagella to fly apart, stalling the run, and initiating a distinct movement, termed a “tumble,” in which the bacterium flails around erratically for about ~0.1
 seconds. Eventually the motors switch to spinning anticlockwise, and the bacterium runs again in a new, random direction.</p>
 <p>If a bacterium is swimming up a gradient of attractant, its switching frequency decreases, biasing its motion in the direction of the gradient. In the absence of a gradient, the switching frequency returns, or adapts, back to its value before entering the gradient, producing an approximately constant frequency of tumbles. The bias in the tumbling frequency leads to a bias in the mean direction of the motion, towards regions of higher attractant concentration.</p>
 <p>Remarkably, <strong>the steady state tumbling frequency of the Che system is robust to variations in total attractant concentration</strong> over an operating regime that spans over five orders of magnitude of total attractant concentration!</p>
 </section>
 <section id="A-receptor-kinase-complex-transmits-signals-from-attractants-to-the-flagellar-motor">
-<h2>A receptor kinase complex transmits signals from attractants to the flagellar motor<a class="headerlink" href="#A-receptor-kinase-complex-transmits-signals-from-attractants-to-the-flagellar-motor" title="Permalink to this heading"></a></h2>
+<h2>A receptor kinase complex transmits signals from attractants to the flagellar motor<a class="headerlink" href="#A-receptor-kinase-complex-transmits-signals-from-attractants-to-the-flagellar-motor" title="Link to this heading"></a></h2>
 <p>Chemotaxis is controlled by a protein circuit—the Che system. The core signal transduction pathway from ligand to motor response is is diagrammed here:</p>
 <div style="width: 400px; margin: auto;"><img alt="CheA system" src="../_images/chea_system.png" />
 </div><p>The CheA receptor complex, which we shall call X, consists of one of a family of chemotaxis receptors that recognize different ligands (attractants or repellents). The receptor associates with the CheA histidine kinase. Signaling begins with autophosphorylation of CheA. The rate of autophosphorylation depends on whether the associated receptor is or is not bound to its ligand. For an attractant receptor, ligand binding reduces CheA autophosphorylation.</p>
@@ -537,14 +539,14 @@ response to <span class="math notranslate nohighlight">\(a_1\)</span> has return
 </div><p>How does this adaptation system work? And what ensures that it is exact, i.e. that the shift of the response curve is just enough to restore the output to the same value it had before the increase in attractant?</p>
 </section>
 <section id="Receptor-methylation-controls-adaptation.">
-<h2>Receptor methylation controls adaptation.<a class="headerlink" href="#Receptor-methylation-controls-adaptation." title="Permalink to this heading"></a></h2>
+<h2>Receptor methylation controls adaptation.<a class="headerlink" href="#Receptor-methylation-controls-adaptation." title="Link to this heading"></a></h2>
 <p>Molecularly, the mechanism for adaptation involves a second, and distinct control mechanism, based on receptor methylation. Two enzymes, CheR and CheB respectively methylate and demethylate chemotaxis receptors, with methylation increasing receptor activity. (See <a class="reference external" href="http://doi.org/10.1016/j.tim.2015.03.003">Parkinson, et al., 2015</a> for a review of the molecules involved in the circuit.)</p>
 <p>This methylation circuit presents a possible mechanism for adaptation through a negative feedback loop: CheA not only phosphorylates CheY, but also phosphorylates CheB as well. Phosphorylation increases CheB’s demethylation activity, and thereby reduces receptor methylation, leading to a corresponding reduction in receptor complex activity. This negative feedback loop operates on a slower timescale than the response of the receptor to a change in ligand concentration, and therefore could be
 responsible for adaptation.</p>
 <div style="width: 400px; margin: auto;"><img alt="chemotaxis-methylation" src="../_images/chemotaxis-methylation.png" />
 </div><p>Thus, we can imagine a <em>possible</em> sequence of molecular events that produces the adaptation described above. At <span class="math notranslate nohighlight">\(t_1\)</span>, the increase in ligand concentration reduces CheA autophosphorylation, diminishing phosphotransfer to CheY to reduce tumble frequency. But this change also diminishes phosphotransfer to CheB, reduce receptor demethylation, and thereby increasing the fraction of methylated receptors. This increase in receptor methylation restores activity to its pre-stimulus level.</p>
 <section id="The-CheA-circuit">
-<h3>The CheA circuit<a class="headerlink" href="#The-CheA-circuit" title="Permalink to this heading"></a></h3>
+<h3>The CheA circuit<a class="headerlink" href="#The-CheA-circuit" title="Link to this heading"></a></h3>
 <p>This picture is appealing. However, making it perform perfect adaptation is not trivial. After all, it requires not only that methylation change in the right direction, but also that it change exactly the right amount to perfectly compensate for the change in CheA activity due to addition of ligand and that it do so <em>regardless of the initial or final attractant concentration</em>.</p>
 <p>To see why this is difficult, we will zoom in a little more into the dynamics of the CheA histidine kinase that associates with various chemotaxis receptors. We will use a simplified model that omits some states and interactions, but provides insight into the origins of exact adaptation.</p>
 <p>The key entity that we will focus on is the CheA receptor complex. Its activity can be modulated both by ligands and methylation. Putting these two dimensions of regulation together, we obtain a diagram like the following:</p>
@@ -557,7 +559,7 @@ responsible for adaptation.</p>
 \end{align}</span></p>
 </section>
 <section id="Approximate-dynamics-of-the-Che-signaling-system">
-<h3>Approximate dynamics of the Che signaling system<a class="headerlink" href="#Approximate-dynamics-of-the-Che-signaling-system" title="Permalink to this heading"></a></h3>
+<h3>Approximate dynamics of the Che signaling system<a class="headerlink" href="#Approximate-dynamics-of-the-Che-signaling-system" title="Link to this heading"></a></h3>
 <!-- The first question we can ask about this simple model is whether or under what circumstances it can perform exact adaptation at all. On the one hand, the  methylation-dependent negative feedback loop could compensate for changes in activity, and thereby restore basal activity after a stimulus. On the other hand, it is not immediately obvious whether or how this effect would _exactly_ compensate a sudden change in ligand concentration. --><p>We will use Michaelis-Menten kinetics to describe the enzymatic dynamics of the Che system. You can read about the principles behind this kinetic scheme and the resulting equations in <a class="reference internal" href="../technical_appendices/06a_michaelis_menten.html"><span class="doc">Technical Appendix 6a</span></a>.</p>
 <p>We assume that CheR operates at saturation. This means that there is so much substrate (in this case methylated and unmethlyated CheA receptor complex) that CheR is almost continuously in action, and therefore the rate of methylation by CheR is directly proportional to CheR concentration and independent of its substrate, unmethylated receptors. This assumption was driven in part by the empirical observation that there is only about one CheR molecule for every thenty signaling complexes in <em>E.
 coli</em> (<a class="reference external" href="https://doi.org/10.1128/JB.186.12.3687-3694.2004">Li and Hazelbauer, 2004</a>). As we will see below, this turns out to be an important assumption to explain robust exact adaptation.</p>
@@ -582,7 +584,7 @@ x_m^* = K_\mathrm{M}\,\frac{v_\mathrm{demeth}^*/k_\mathrm{cat}^\mathrm{B} b_0}{1
 in this model.</p>
 </section>
 <section id="Fine-tuned-exact-adaptation">
-<h3>Fine-tuned exact adaptation<a class="headerlink" href="#Fine-tuned-exact-adaptation" title="Permalink to this heading"></a></h3>
+<h3>Fine-tuned exact adaptation<a class="headerlink" href="#Fine-tuned-exact-adaptation" title="Link to this heading"></a></h3>
 <p>Recall that we model the tumbling frequency as a function of <span class="math notranslate nohighlight">\(x_m^*\)</span>. Before the attractant is present, we have a tumbling frequency of <span class="math notranslate nohighlight">\(f_0 = f(x_{m,0}^*)\)</span>, and after we have <span class="math notranslate nohighlight">\(f_1 = f(x_{m,1}^*)\)</span>.</p>
 <p>Addition of attractant ligand immediately shifts the balance toward more active conformations of the receptor complex. Suddenly, for the same total amount of methylation, the overall activity of the system is reduced. Adaptation requires that over a longer timescale, through the negative feedback loop, this reduction in activity reduces the demethylation rate, restoring CheA activity to its previous value. In other words, it shifts the balance between methylated and unmethylated CheA receptor
 complex, affecting both <span class="math notranslate nohighlight">\(x_m\)</span> and <span class="math notranslate nohighlight">\(x_m^*\)</span>.</p>
@@ -599,7 +601,7 @@ f_1 = f\left(K_\mathrm{M}\,\frac{v_\mathrm{demeth,1}^*/k_\mathrm{cat}^\mathrm{B}
 lost if those attractant concentrations change at all.</p>
 </section>
 <section id="Robust-exact-adaptation">
-<h3>Robust exact adaptation<a class="headerlink" href="#Robust-exact-adaptation" title="Permalink to this heading"></a></h3>
+<h3>Robust exact adaptation<a class="headerlink" href="#Robust-exact-adaptation" title="Link to this heading"></a></h3>
 <p>Let us now assume a different architecture of the Che circuit. We will assume that CheB only demethylates <em>active</em> receptors, rendering them inactive. The circuit diagram in this case is</p>
 <div style="width: 600px; margin: auto;"><img alt="robust CheA" src="../_images/chea_robust.png" />
 </div><p>Taking the same approach as before, we can again write down the dynamics for the total amount of methylated CheA complex. We will again assume that CheR is operating at saturation.</p>
@@ -643,7 +645,7 @@ b^* = b_0\,\frac{x_m^*/k_x}{1+x_m^*/k_x}.
 --></section>
 </section>
 <section id="A-more-complex-model-for-chemotaxis">
-<h2>A more complex model for chemotaxis<a class="headerlink" href="#A-more-complex-model-for-chemotaxis" title="Permalink to this heading"></a></h2>
+<h2>A more complex model for chemotaxis<a class="headerlink" href="#A-more-complex-model-for-chemotaxis" title="Link to this heading"></a></h2>
 <p>In the model for chemotaxis that we have considered, there are only two methylation states of the receptor, either unmethylated or methylated. In a more general model, we could consider multiple methylation states of the receptor. That is, it could be unmethylated, once methylated, twice methylated, …, m-times methylated. Such a system was analyzed computationally by <a class="reference external" href="https://doi.org/10.1038/43199">Barkai and Leibler (1997)</a>.</p>
 <p>Because the model for generic number of methylation states is not tractable analytically as the one we have considered, Barkai and Leibler instead did a computational exploration of the parameter space. They began with a set of <span class="math notranslate nohighlight">\(n\)</span> parameters <span class="math notranslate nohighlight">\(k_1^0\)</span>, <span class="math notranslate nohighlight">\(k_2^0\)</span>, …, <span class="math notranslate nohighlight">\(k_n^0\)</span>. They randomly varied these parameters to get a new set of parameters <span class="math notranslate nohighlight">\(k_1\)</span>, <span class="math notranslate nohighlight">\(k_2\)</span>, …, <span class="math notranslate nohighlight">\(k_n\)</span>. They defined the total parameter variation <span class="math notranslate nohighlight">\(K\)</span> according to</p>
 <p><span class="math">\begin{align}
@@ -657,7 +659,7 @@ b^* = b_0\,\frac{x_m^*/k_x}{1+x_m^*/k_x}.
 <p>Conversely, Barkai and Leibler found that the time to steady state is <em>not</em> robust to parameter variations.</p>
 </section>
 <section id="Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally">
-<h2>Exact adaptation in the Che system is robust to CheR levels, as shown experimentally<a class="headerlink" href="#Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally" title="Permalink to this heading"></a></h2>
+<h2>Exact adaptation in the Che system is robust to CheR levels, as shown experimentally<a class="headerlink" href="#Exact-adaptation-in-the-Che-system-is-robust-to-CheR-levels,-as-shown-experimentally" title="Link to this heading"></a></h2>
 <p>How do the tumbling frequency, the adaptation time, and the precision of adaptation depend on CheR expression in real cells? To find out, Alon et al engineered bacteria in which CheR expression could be controlled by an inducer called IPTG (<a class="reference external" href="https://doi.org/10.1038/16483">Alon, et al., 1999</a>). They then used time-lapse microscopy to observe the tumbling behavior of cells before and after adding a saturating amount of chemoattractant. They quantified the frequency of tumbling events (tumbling
 frequency), the time required for that frequency to return to its initial value after adding attractant (adaptation time), and the precision of adaptation. The results, digitized from the paper, are shown below.</p>
 <div class="nbinput toggle docutils container">
@@ -727,7 +729,7 @@ frequency), the time required for that frequency to return to its initial value 
     <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;adaptation precision&#39;</span><span class="p">,</span>
     <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;save&#39;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p1</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">adaptation_precision</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">adaptation_precision</span><span class="p">)</span>
 <span class="n">p1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">major_label_text_font_size</span> <span class="o">=</span> <span class="s1">&#39;0pt&#39;</span>
 
 <span class="n">p2</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
@@ -737,7 +739,7 @@ frequency), the time required for that frequency to return to its initial value 
     <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;tumbling frequency (Hz)&#39;</span><span class="p">,</span>
     <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;save&#39;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">tumbling_freq</span><span class="p">)</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">tumbling_freq</span><span class="p">)</span>
 <span class="n">p2</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">major_label_text_font_size</span> <span class="o">=</span> <span class="s1">&#39;0pt&#39;</span>
 
 <span class="n">p3</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span>
@@ -748,7 +750,7 @@ frequency), the time required for that frequency to return to its initial value 
     <span class="n">y_axis_label</span><span class="o">=</span><span class="s1">&#39;adaptation time (min)&#39;</span><span class="p">,</span>
     <span class="n">tools</span><span class="o">=</span><span class="s1">&#39;save&#39;</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p3</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">adaptation_time</span><span class="p">)</span>
+<span class="n">p3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cheR_fold</span><span class="p">,</span> <span class="n">adaptation_time</span><span class="p">)</span>
 
 <span class="n">bokeh</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
     <span class="n">bokeh</span><span class="o">.</span><span class="n">layouts</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
@@ -802,7 +804,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div> --><p>Consistent with the model predictions, the precision of adaptation is robust to varying levels of CheR over about two orders of magnitude. They also found that steady-state tumbling frequency and adaptation time were <em>not</em> robust to varying levels of CheR, as the model predicts.</p>
 <hr></section>
 <section id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
+<h2>References<a class="headerlink" href="#References" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Alon, et al., Robustness in bacterial chemotaxis, <em>Nature</em>, 397, 168–171, 1999. (<a class="reference external" href="https://doi.org/10.1038/16483">link</a>)</p></li>
 <li><p>Berg, H. C. and Purcell, E. M., Physics of chemoreception, <em>Biophys. J.</em>, 20, 193–219, 1977. (<a class="reference external" href="https://doi.org/10.1016/S0006-3495(77)85544-6">link</a>)</p></li>
@@ -811,7 +813,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </ul>
 <hr></section>
 <section id="Technical-appendix">
-<h2>Technical appendix<a class="headerlink" href="#Technical-appendix" title="Permalink to this heading"></a></h2>
+<h2>Technical appendix<a class="headerlink" href="#Technical-appendix" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/06a_michaelis_menten.html">6a. Michaelis-Menten kinetics</a></li>
@@ -819,7 +821,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/06/problem_6.1.html">6.1: Co-substrate compensation</a></li>
@@ -827,7 +829,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -867,13 +869,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x1352ca510> 
+   <jinja2.runtime.BlockReference object at 0x301e35bd0> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

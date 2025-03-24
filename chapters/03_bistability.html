@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3. Sticky switches: bistability through positive feedback &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -97,7 +100,6 @@
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -109,7 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -174,7 +176,7 @@
            <div itemprop="articleBody">
              
   <section id="3.-Sticky-switches:-bistability-through-positive-feedback">
-<h1>3. Sticky switches: bistability through positive feedback<a class="headerlink" href="#3.-Sticky-switches:-bistability-through-positive-feedback" title="Permalink to this heading"></a></h1>
+<h1>3. Sticky switches: bistability through positive feedback<a class="headerlink" href="#3.-Sticky-switches:-bistability-through-positive-feedback" title="Link to this heading"></a></h1>
 <hr><p><strong>Concepts</strong></p>
 <ul class="simple">
 <li><p>Bifurcations are critical points where small changes in a parameter cause large changes in system behavior.</p></li>
@@ -525,7 +527,7 @@ if (force === true) {
 </script></div>
 </div>
 <hr><section id="Sticky-switches-are-prevalent-in-biology">
-<h2>Sticky switches are prevalent in biology<a class="headerlink" href="#Sticky-switches-are-prevalent-in-biology" title="Permalink to this heading"></a></h2>
+<h2>Sticky switches are prevalent in biology<a class="headerlink" href="#Sticky-switches-are-prevalent-in-biology" title="Link to this heading"></a></h2>
 <p>One of the most amazing aspects of living cells is their ability to differentiate into different—sometimes radically different—types. In animals, neurons look and behave quite differently than skin or blood cells even though they all share the same genome. Single cell analysis and large scale cell atlas projects (see <a class="reference external" href="https://doi.org/10.7554/eLife.27041">Regev, et al., 2017</a>) are only beginning to reveal the full diversity of cell types. And, as we zoom in to examine individual cells of any
 one nominal type, we often find many sub-types, or state, with different morphologies, functions, spatial locations, and gene expression profiles. Something similar occurs in bacteria, where a given strain can often exist in different states that differ in function and gene expression.</p>
 <p>It is not straightforward to define what we mean by a cell “type” (See <a class="reference external" href="https://doi.org/10.1016/j.cels.2017.03.006">Clevers, et al., 2017</a>.) Nevertheless, one of their key properties is a kind of “stickiness” or memory. If you take a neural progenitor out of a developing embryo, and culture it in a dish, it largely retains its neural progenitor identity, including gene expression and the repertoire of cell types that it can differentiate into. Cell type identity is mitotically stable,
@@ -541,7 +543,7 @@ generations.</p>
 <p>As you can see, a huge diversity of biological systems seem to involve sticky switches and all-or-none, and sometimes irreversible, transitions between different states. While the components and interactions used by these systems are diverse, similar principles apply to all.</p>
 </section>
 <section id="Positive-autoregulation-enables-bistability">
-<h2>Positive autoregulation enables bistability<a class="headerlink" href="#Positive-autoregulation-enables-bistability" title="Permalink to this heading"></a></h2>
+<h2>Positive autoregulation enables bistability<a class="headerlink" href="#Positive-autoregulation-enables-bistability" title="Link to this heading"></a></h2>
 <p>What types of circuits can allow a cell to exist in two or more distinct states, each one stable on its own? In 1949, Max Delbrück noted that two metabolic pathways, if they cross-inhibited each other, could under some circumstances become bistable, such that either one or the other, but not both, would be active. He then <a class="reference external" href="https://doi.org/10.1063%2F5.0079700">speculated</a>, “Models of this kind can […] account for large numbers of alternative steady states […] similar to the phenomena of
 differentiation.”</p>
 <p>The key circuit property we will study is <strong>bistability</strong>, defined as the ability of a circuit to exist in two distinct stable states. We will see that bistability can be achieved with circuits as simple as a single gene, as long as they possess two key properties: positive feedback and ultrasensitivity.</p>
@@ -607,7 +609,7 @@ we will show how positive autoregulation can, under some conditions, generate bi
     <span class="k">else</span><span class="p">:</span>
         <span class="n">fill_color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
 
-    <span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="p">[</span><span class="n">fp</span><span class="p">],</span> <span class="p">[</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">fp</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fill_color</span><span class="o">=</span><span class="n">fill_color</span><span class="p">,</span>
     <span class="p">)</span>
 
@@ -748,7 +750,7 @@ multistable circuit later in the course.)</p>
 <span class="c1"># Plot fixed points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fixed_points</span><span class="p">):</span>
     <span class="n">fill_color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="s2">&quot;white&quot;</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="p">[</span><span class="n">fp</span><span class="p">],</span> <span class="p">[</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">fp</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fill_color</span><span class="o">=</span><span class="n">fill_color</span><span class="p">,</span>
     <span class="p">)</span>
 
@@ -850,10 +852,10 @@ that the system transitions between monostability and bistability, and within a 
 <p>But how can you know whether a given parametrization of the system is close to a bifurcation value or not? A simple way to find out for the positive autoregulation circuit is to determine the number of fixed points in the system and identify the boundary in parameter space between regimes that exhibit one fixed point and those that have three fixed points.</p>
 </section>
 <section id="Analytically-determining-the-number-of-fixed-points">
-<h2>Analytically determining the number of fixed points<a class="headerlink" href="#Analytically-determining-the-number-of-fixed-points" title="Permalink to this heading"></a></h2>
+<h2>Analytically determining the number of fixed points<a class="headerlink" href="#Analytically-determining-the-number-of-fixed-points" title="Link to this heading"></a></h2>
 <p>In this section, we will illustrate how we can mathematically manipulate the ODE for the positive autoregulation system to analytically determine the number of fixed points for a given parametrization. While the approach here is not universal—it cannot be applied directly to any system to analyze its behavior—it illustrates a useful style of reasoning that will help develop intuition for other circuits we encounter.</p>
 <section id="Using-nondimensionalization-to-simplify-the-system">
-<h3>Using nondimensionalization to simplify the system<a class="headerlink" href="#Using-nondimensionalization-to-simplify-the-system" title="Permalink to this heading"></a></h3>
+<h3>Using nondimensionalization to simplify the system<a class="headerlink" href="#Using-nondimensionalization-to-simplify-the-system" title="Link to this heading"></a></h3>
 <p>Recall our differential equation for the dynamics of an autoactivator:</p>
 <p><span class="math">\begin{align}
 \frac{\mathrm{d}x}{\mathrm{d}t} = \beta\, \frac{(x/k)^n} {1 + (x/k)^n} - \gamma x,
@@ -886,7 +888,7 @@ x = \left[\frac{N}{L^3}\right].
 <p>Nondimensionalization is often the first step in analyzing a model for circuit behavior, We will apply it again and again throughout this book.</p>
 </section>
 <section id="Analytical-methods-for-exploring-steady-states">
-<h3>Analytical methods for exploring steady states<a class="headerlink" href="#Analytical-methods-for-exploring-steady-states" title="Permalink to this heading"></a></h3>
+<h3>Analytical methods for exploring steady states<a class="headerlink" href="#Analytical-methods-for-exploring-steady-states" title="Link to this heading"></a></h3>
 <p>From our analysis above, we found that the system has the following properties.</p>
 <ol class="arabic simple">
 <li><p>The system always has a fixed point at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p></li>
@@ -1040,7 +1042,7 @@ line in parameter space represents a <strong>bifurcation</strong>, where the qua
 <p>We have not yet considered the <span class="math notranslate nohighlight">\(n \le 1\)</span> regime. In an end-of-chapter problem, you can prove that only one stable fixed point exists in this regime, regardless of the values of <span class="math notranslate nohighlight">\(\beta\)</span>. We will take that as given going forward.</p>
 </section>
 <section id="A-bifurcation-diagram">
-<h3>A bifurcation diagram<a class="headerlink" href="#A-bifurcation-diagram" title="Permalink to this heading"></a></h3>
+<h3>A bifurcation diagram<a class="headerlink" href="#A-bifurcation-diagram" title="Link to this heading"></a></h3>
 <p>We have now analyzed the system fully and shown that the system is monostable for <span class="math notranslate nohighlight">\(n\leq 1\)</span>. For <span class="math notranslate nohighlight">\(n&gt;1\)</span>, the system is bistable when <span class="math notranslate nohighlight">\(\beta &gt; n(n-1)^{(1-n)/n}\)</span>, monostable when <span class="math notranslate nohighlight">\(\beta &lt; n(n-1)^{(1-n)/n}\)</span>, and undergoes a bifurcation between these two regimes when <span class="math notranslate nohighlight">\(\beta = n(n-1)^{(1-n)/n}\)</span>.</p>
 <p>Thanks to the fact that we nondimensionalized our system, its bifurcation behavior can be fully explained using only two dimensionless parameters. This allows us to visualize it with the nature of the steady states of the system with a <strong>bifurcation diagram</strong>, shown below.</p>
 <div class="nbinput toggle docutils container">
@@ -1118,7 +1120,7 @@ the regime where <span class="math notranslate nohighlight">\(1 &lt; \beta &lt; 
 </section>
 </section>
 <section id="Bistability-enables-memory-through-hysteresis">
-<h2>Bistability enables memory through hysteresis<a class="headerlink" href="#Bistability-enables-memory-through-hysteresis" title="Permalink to this heading"></a></h2>
+<h2>Bistability enables memory through hysteresis<a class="headerlink" href="#Bistability-enables-memory-through-hysteresis" title="Link to this heading"></a></h2>
 <p>Bistability’s most direct function is supporting multiple phenotypically-distinct cell states. But a second function is its ability to enable irreversible responses to transient input signals, a feature known as <strong>hysteresis</strong>.</p>
 <p>Consider the postive autoregulation circuit in its bistable regime, with <span class="math notranslate nohighlight">\(x\)</span> at the upper stable fixed point. Now, suppose some transient perturbation occurs. Perhaps the value of <span class="math notranslate nohighlight">\(\gamma\)</span> is suddenly increased because the cell has begun dividing at a much faster rate. If this perturbation is large enough to cross the bifurcation boundary, then the system becomes monostable, and <span class="math notranslate nohighlight">\(x\)</span> will be driven to the only stable fixed point, at a value closer to what was previously the
 lower fixed point in the bistable regime. Once the perturbation ends, <span class="math notranslate nohighlight">\(\gamma\)</span> returns to its original value, and the system regains bistability. But, if the perturbed value of <span class="math notranslate nohighlight">\(x\)</span> lies within the basin of attraction of the lower bistable state, then the system will remain in the lower state. In this scenario, a transient perturbation will have led to a permanent state switch. In this sense the system has a “memory” of the transient event.</p>
@@ -1176,7 +1178,7 @@ lower fixed point in the bistable regime. Once the perturbation ends, <span clas
 <span class="c1"># Plot fixed points</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">fp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fixed_points</span><span class="p">):</span>
     <span class="n">fill_color</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="k">else</span> <span class="s2">&quot;black&quot;</span>
-    <span class="n">p1</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="p">[</span><span class="n">fp</span><span class="p">],</span>
         <span class="p">[</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">fp</span><span class="p">],</span>
         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
@@ -1184,7 +1186,7 @@ lower fixed point in the bistable regime. Once the perturbation ends, <span clas
         <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
         <span class="n">fill_color</span><span class="o">=</span><span class="n">fill_color</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">p3</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+    <span class="n">p3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="p">[</span><span class="n">fp</span><span class="p">],</span>
         <span class="p">[</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">fp</span><span class="p">],</span>
         <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
@@ -1215,7 +1217,7 @@ lower fixed point in the bistable regime. Once the perturbation ends, <span clas
 <span class="n">p2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">removal</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
 
 <span class="c1"># Plot fixed points</span>
-<span class="n">p2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
@@ -1225,7 +1227,7 @@ lower fixed point in the bistable regime. Once the perturbation ends, <span clas
 <span class="p">)</span>
 
 <span class="c1"># Add commentary</span>
-<span class="n">p1</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="p">[</span><span class="n">fp3</span><span class="p">],</span>
     <span class="p">[</span><span class="n">fp3</span><span class="p">],</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
@@ -1262,7 +1264,7 @@ lower fixed point in the bistable regime. Once the perturbation ends, <span clas
     <span class="n">text_align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
     <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
@@ -1279,7 +1281,7 @@ lower fixed point in the bistable regime. Once the perturbation ends, <span clas
     <span class="n">text_align</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
     <span class="n">angle</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">p3</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+<span class="n">p3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
@@ -1343,7 +1345,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>This is the principle of hysteresis—a dependence of the system state on its past history. We will now examine how a circuit can be designed to explicitly enable the recording of an external stimulus via hysteresis in a bistable system.</p>
 </section>
 <section id="The-toggle-switch:-a-two-gene-positive-feedback-system">
-<h2>The toggle switch: a two-gene positive feedback system<a class="headerlink" href="#The-toggle-switch:-a-two-gene-positive-feedback-system" title="Permalink to this heading"></a></h2>
+<h2>The toggle switch: a two-gene positive feedback system<a class="headerlink" href="#The-toggle-switch:-a-two-gene-positive-feedback-system" title="Link to this heading"></a></h2>
 <p>In natural circuits, positive feedback loops often include multiple regulators rather than just a single autoregulatory transcription factor. For example, the “genetic switch” in the bacterial virus, or bacteriophage, lambda involves reciprocal repression of the <em>cro</em> repressor by the <span class="math notranslate nohighlight">\(\lambda\)</span> <em>cI</em> repressor, and vice versa (see <a class="reference external" href="http://www.cshteaching.org/home_genetic_switch.php">Mark Ptashne’s classic book, A genetic switch</a>). This arrangement allows lambda to remain in its dormant
 “lysogenic” state, where <em>λcI</em> is expressed and represses <em>cro</em>, or switch to a “lytic” state in which <em>cro</em> is expressed, repressing <em>cI</em>. In the lytic phase, the phage replicates itself and lyses the host cell, enabling lambda to go on to infect other cells. Interestingly, cI is not only a repressor, but also an activator, and it activates its own expression in an ultrasensitive manner due to cooperative binding interactions. Thus, the natural circuit combines a 1-gene positive autoregulation
 circuit with a 2-gene mutual repression circuit.</p>
@@ -1369,7 +1371,7 @@ bistable regime, but, due to hysteresis, its expression states remained largely 
 
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#1f77b3&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">color</span><span class="p">,</span> <span class="p">(</span><span class="n">trial</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">colors</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;trial&quot;</span><span class="p">)):</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
         <span class="n">g</span><span class="p">[</span><span class="s2">&quot;iptg (mM)&quot;</span><span class="p">],</span> <span class="n">g</span><span class="p">[</span><span class="s2">&quot;normalized gfp expression&quot;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">legend_label</span><span class="o">=</span><span class="n">trial</span>
     <span class="p">)</span>
     <span class="n">p</span><span class="o">.</span><span class="n">segment</span><span class="p">(</span>
@@ -1498,7 +1500,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>Even at higher Hill coefficients, the strengths of the promoters must still be balanced. If <span class="math notranslate nohighlight">\(\beta_x\)</span> and <span class="math notranslate nohighlight">\(\beta_y\)</span> are very different from each other, we again have monostability. You can see this by setting <span class="math notranslate nohighlight">\(\beta_x = 10\)</span>, <span class="math notranslate nohighlight">\(\beta_y = 1.5\)</span>, and <span class="math notranslate nohighlight">\(n = 5\)</span> with the sliders.</p>
 <p>The classic synthetic toggle circuit provides an ideal example of how synthetic biology can be used to design, create, and test simple circuits in living cells.</p>
 <section id="Conclusions:-Bistability-and-hysteresis-are-powerful-features-that-can-be-generated-through-remarkably-simple-circuits.">
-<h3>Conclusions: Bistability and hysteresis are powerful features that can be generated through remarkably simple circuits.<a class="headerlink" href="#Conclusions:-Bistability-and-hysteresis-are-powerful-features-that-can-be-generated-through-remarkably-simple-circuits." title="Permalink to this heading"></a></h3>
+<h3>Conclusions: Bistability and hysteresis are powerful features that can be generated through remarkably simple circuits.<a class="headerlink" href="#Conclusions:-Bistability-and-hysteresis-are-powerful-features-that-can-be-generated-through-remarkably-simple-circuits." title="Link to this heading"></a></h3>
 <p>Taken together, our analysis of the positive autoregulatory and the toggle switch revealed some key design principles for bistability and hysteresis:</p>
 <ol class="arabic simple">
 <li><p>Positive transcriptional feedback loops of 1 or 2 repressors can generate bistability. (Although we did not show it here, the same principles extend to larger feedback loops as well.)</p></li>
@@ -1509,7 +1511,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <hr></section>
 </section>
 <section id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
+<h2>References<a class="headerlink" href="#References" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Clevers, et al., Voices: What is your conceptual definition of “cell type” in the context of a mature organism?, <em>Cell Systems</em>, 4, 255–259, 2017. (<a class="reference external" href="https://doi.org/10.1016/j.cels.2017.03.006">link</a>)</p></li>
 <li><p>Ferrell, J. E., <em>Xenopus</em> oocyte maturation: New lessons from a good egg, <em>BioEssays</em>, 21, 833–842, 1999. (<a class="reference external" href="https://doi.org/10.1002/(SICI)1521-1878(199910)21:10%3C833::AID-BIES5%3E3.0.CO;2-P">link</a>)</p></li>
@@ -1519,7 +1521,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </ul>
 <hr></section>
 <section id="Technical-appendix">
-<h2>Technical appendix<a class="headerlink" href="#Technical-appendix" title="Permalink to this heading"></a></h2>
+<h2>Technical appendix<a class="headerlink" href="#Technical-appendix" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/03a_nondimensionalization.html">3a. Nondimensionalization</a></li>
@@ -1527,7 +1529,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/03/problem_3.1.html">3.1: Modes of bistability</a></li>
@@ -1541,7 +1543,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -1583,13 +1585,13 @@ jupyterlab : 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x13429f410> 
+   <jinja2.runtime.BlockReference object at 0x301428d50> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

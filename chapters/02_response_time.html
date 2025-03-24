@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2. Design principles governing the rate of gene expression &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/clipboard.min.js"></script>
-        <script src="../_static/copybutton.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../_static/togglebutton.js"></script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../_static/js/theme.js"></script>
@@ -96,7 +99,6 @@
 <li class="toctree-l1"><a class="reference internal" href="04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -108,7 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -173,7 +175,7 @@
            <div itemprop="articleBody">
              
   <section id="2.-Design-principles-governing-the-rate-of-gene-expression">
-<h1>2. Design principles governing the rate of gene expression<a class="headerlink" href="#2.-Design-principles-governing-the-rate-of-gene-expression" title="Permalink to this heading"></a></h1>
+<h1>2. Design principles governing the rate of gene expression<a class="headerlink" href="#2.-Design-principles-governing-the-rate-of-gene-expression" title="Link to this heading"></a></h1>
 <hr><p><strong>Concept</strong></p>
 <ul class="simple">
 <li><p>Protein degradation rates determine response times for simple gene expression systems.</p></li>
@@ -523,7 +525,7 @@ if (force === true) {
 </script></div>
 </div>
 <hr><section id="Protein-stability-determines-the-response-time-to-a-change-in-gene-expression">
-<h2>Protein stability determines the response time to a change in gene expression<a class="headerlink" href="#Protein-stability-determines-the-response-time-to-a-change-in-gene-expression" title="Permalink to this heading"></a></h2>
+<h2>Protein stability determines the response time to a change in gene expression<a class="headerlink" href="#Protein-stability-determines-the-response-time-to-a-change-in-gene-expression" title="Link to this heading"></a></h2>
 <p>So far, we have focused on what happens to a system at steady state. However, biological circuits change dynamically, even in constant environmental conditions.</p>
 <p>Imagine a cell suddenly finds itself in a new environment, requiring it to turn up or down the expression of specific genes. How rapidly can it switch proteins to their new desired levels?</p>
 <p>Starting with our basic equation for gene expression, and neglecting the mRNA level for the moment, we write:</p>
@@ -566,7 +568,7 @@ the plots that follow.</p>
 <span class="n">source</span> <span class="o">=</span> <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ColumnDataSource</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">t0</span><span class="o">=</span><span class="p">[</span><span class="n">t0</span><span class="p">],</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="n">x0</span><span class="p">],</span> <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;response time = 1/γ&quot;</span><span class="p">])</span>
 <span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;x0&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;x0&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_layout</span><span class="p">(</span>
     <span class="n">bokeh</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">LabelSet</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;x0&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> <span class="n">x_offset</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y_offset</span><span class="o">=-</span><span class="mi">10</span>
@@ -627,7 +629,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="How-can-we-speed-up-responses?">
-<h2>How can we speed up responses?<a class="headerlink" href="#How-can-we-speed-up-responses?" title="Permalink to this heading"></a></h2>
+<h2>How can we speed up responses?<a class="headerlink" href="#How-can-we-speed-up-responses?" title="Link to this heading"></a></h2>
 <p>So far, it seems as if the cell’s ability to modulate the concentration of a stable protein is quite limited, apparently requiring timescales on the order of the cell cycle for both increases and decreases. This seems rather pathetic for such successful, billion year old creatures. You might think you could beat this timescale and up-regulate the protein level faster by cranking up the promoter strength (increasing <span class="math notranslate nohighlight">\(\beta\)</span>). Indeed, this would allow the cell to hit a specific threshold
 earlier. However, it would also increase the final steady state concentration (<span class="math notranslate nohighlight">\(\beta/\gamma\)</span>), and therefore leave the timescale over which the system reaches its new steady-state unaffected.</p>
 <p>One simple way to speed up the response time of the protein is to destabilize it, by increasing <span class="math notranslate nohighlight">\(\gamma\)</span>, while also increasing <span class="math notranslate nohighlight">\(\beta\)</span> by the same factor, and thereby preserving the steady state protein concentration. This strategy pays the cost of a <strong>futile cycle</strong> of protein synthesis and degradation to provide a benefit in terms of the speed with which the regulatory system can reach a new steady state.</p>
@@ -665,9 +667,9 @@ earlier. However, it would also increase the final steady state concentration (<
 <span class="c1"># Populate graphs</span>
 <span class="k">for</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
     <span class="n">p1</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">p1</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="n">beta_1</span> <span class="o">/</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">p1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="n">beta_1</span> <span class="o">/</span> <span class="n">g</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">p2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_vals</span> <span class="o">/</span> <span class="n">x_vals</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">p2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">p2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">g</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 
 <span class="c1"># Label lines</span>
@@ -745,7 +747,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <!-- The plots above show the same y axis label -- we need to indicate normalization --><p>This analysis reveals an important <strong>design principle</strong>: <em>Increased protein degradation can speed up the response time of a gene expression system, at the cost of additional protein production, to reach the same steady state concentration.</em></p>
 </section>
 <section id="Network-motifs-identify-functionally-important-circuits">
-<h2>Network motifs identify functionally important circuits<a class="headerlink" href="#Network-motifs-identify-functionally-important-circuits" title="Permalink to this heading"></a></h2>
+<h2>Network motifs identify functionally important circuits<a class="headerlink" href="#Network-motifs-identify-functionally-important-circuits" title="Link to this heading"></a></h2>
 <p>We have just seen that destabilizing a protein can speed its response time. However, most bacterial proteins, transcription factors in particular, are stable. Do they use other mechanisms to accelerate response times?</p>
 <p>The answer to this question will turn out to be yes, there is a circuit that can accelerate responses. But before we get there, let’s step back for a moment to ask how one can go about discovering such functionally important circuits in the first place. Do you have to guess them? It would be nice if there were some kind of catalog of important circuits and their functions that we could browse.</p>
 <p>The concept of <strong>network motifs</strong> is one way to obtain such a catalog. We define a network motif as a regulatory pattern, or sub-circuit, that is statistically over-represented in natural networks (circuits), compared to what one might expect from random networks with similar numbers of genes and regulatory interactions. In 2002, Alon and colleagues showed that network motif analysis could reveal recurring circuit modules with specific functions (<a class="reference external" href="https://doi.org/10.1038/ng881">Shen-Orr et al, Nat. Gen.
@@ -757,7 +759,7 @@ further consider whether the arrows are activating (+) or repressing (-), then w
 <p>The <strong>motif principle</strong> states that statistically over-represented patterns in networks have been selected repeatedly because they provide key cellular functions. A similar concept is useful in other aspects of biology. For example, sequence motifs are statistically over-represented sequences within the genome that are enriched for functionally important features, such as protein binding sites. Motifs of various kinds represent a cross-cutting concept in bioinformatics.</p>
 </section>
 <section id="Negative-autoregulation-accelerates-response-times">
-<h2>Negative autoregulation accelerates response times<a class="headerlink" href="#Negative-autoregulation-accelerates-response-times" title="Permalink to this heading"></a></h2>
+<h2>Negative autoregulation accelerates response times<a class="headerlink" href="#Negative-autoregulation-accelerates-response-times" title="Link to this heading"></a></h2>
 <p>Identifying motifs in regulatory networks is one way to discover functionally important circuits, and one of the strongest motifs of them all is autoregulation. Here, we will analyze autorepression (we will explore autoactivation in the next chapter). You can guess that since we are discussing speeding up circuit response that autorepression does just that. So, how does it work?</p>
 <p>We start by writing down a differential equation describing the dynamics of the concentration <span class="math notranslate nohighlight">\(x\)</span> of the repressor. We represent the regulation of production using a repressive Hill function.</p>
 <p><span class="math">\begin{align}
@@ -766,7 +768,7 @@ further consider whether the arrows are activating (+) or repressing (-), then w
 <p>For arbitrary <span class="math notranslate nohighlight">\(n\)</span>, this differential equation has no analytical solution. As is often the case when reasoning about circuits, it is worthwhile to consider extreme cases. We can obtain approximate expressions for the dynamics in the regime of, <span class="math notranslate nohighlight">\(\beta/\gamma k \gg 1\)</span>. This is a mathematical statement of strong repression; the concentration of repressor necessary to invoke repression, <span class="math notranslate nohighlight">\(k\)</span>, is less than the steady state level for unregulated expression, <span class="math notranslate nohighlight">\(\beta/\gamma\)</span>. Here,
 we summarize the results derived in <a class="reference external" href="02a_approximate_autorepression_dynamics.ipynb">Technical Appendix 2a</a>.</p>
 <section id="Highly-ultrasensitive,-strong-repression">
-<h3>Highly ultrasensitive, strong repression<a class="headerlink" href="#Highly-ultrasensitive,-strong-repression" title="Permalink to this heading"></a></h3>
+<h3>Highly ultrasensitive, strong repression<a class="headerlink" href="#Highly-ultrasensitive,-strong-repression" title="Link to this heading"></a></h3>
 <p>For the case where repression is highly ultrasensitive (<span class="math notranslate nohighlight">\(\beta/\gamma k \gg 1\)</span> and <span class="math notranslate nohighlight">\(n \gg 1\)</span>), we have</p>
 <p><span class="math">\begin{align}
 x(t) \approx \left\{\begin{array}{lll}
@@ -868,7 +870,7 @@ x(t) = \frac{\beta}{\gamma}\left(1 - \mathrm{e}^{-\gamma t}\right),
 <p>since <span class="math notranslate nohighlight">\(\beta/\gamma k \gg 1\)</span> for strong repression. Thus, the time to reach steady state is much shorter for the autorepressed circuit in the highly ultrasensitive, strong repression regime.</p>
 </section>
 <section id="Less-ultrasensitive-strong-autorepression">
-<h3>Less ultrasensitive strong autorepression<a class="headerlink" href="#Less-ultrasensitive-strong-autorepression" title="Permalink to this heading"></a></h3>
+<h3>Less ultrasensitive strong autorepression<a class="headerlink" href="#Less-ultrasensitive-strong-autorepression" title="Link to this heading"></a></h3>
 <p>If we relax the condition that <span class="math notranslate nohighlight">\(n \gg 1\)</span>, we can derive an approximate expression for the dynamics for approach to steady state, assuming that <span class="math notranslate nohighlight">\(x_\mathrm{ss} \gg k\)</span>, which is typically only valid for <span class="math notranslate nohighlight">\(n\)</span> not too large. The result, again derived in <a class="reference external" href="02a_approximate_autorepression_dynamics.ipynb">Technical Appendix 2a</a>, is</p>
 <p><span class="math">\begin{align}
 x(t) \approx k\left(\frac{\beta}{\gamma k}\right)^{\frac{1}{n+1}}\left(1 - \mathrm{e}^{-(n+1)\gamma t}\right)^{\frac{1}{n+1}},
@@ -893,7 +895,7 @@ t_{1/2} \approx \frac{1}{(n+1)\gamma}\,\ln\left(\frac{2^{n+1}}{2^{n+1}-1}\right)
 <p>These approximate solutions for the dynamics are quite useful for reasoning about the speed boosts given by autorepression, but we need to resort to numerical solutions of the ODE to get the complete dynamics. We do this in the following sections, pausing first to consider how we might explicitly model inducers in the dynamics.</p>
 </section>
 <section id="Incorporating-explicit-input-dependence-into-a-model-of-regulation">
-<h3>Incorporating explicit input dependence into a model of regulation<a class="headerlink" href="#Incorporating-explicit-input-dependence-into-a-model-of-regulation" title="Permalink to this heading"></a></h3>
+<h3>Incorporating explicit input dependence into a model of regulation<a class="headerlink" href="#Incorporating-explicit-input-dependence-into-a-model-of-regulation" title="Link to this heading"></a></h3>
 <p>Throughout this chapter we have been invoking a situation where the gene has been off for some time before it is suddenly turned on. We previously saw that it is possible for an inducer molecule to inhibit the action of a repressor, but it is also possible for there to be molecules that can activate the action of a repressor, or inhibit the action of an activator, or many other types of interactions. For now, we will ignore specific biomolecular details and simply write out a generic dependence
 of the autorepressive gene’s expression on the presence of some external signal, <span class="math notranslate nohighlight">\(s\)</span>.</p>
 <p><span class="math">\begin{align}
@@ -912,12 +914,12 @@ phenomenologically represents a complex process of enzymatic inactivation of the
 \end{align}</span></p>
 </section>
 <section id="Numerically-solving-for-the-dynamics">
-<h3>Numerically solving for the dynamics<a class="headerlink" href="#Numerically-solving-for-the-dynamics" title="Permalink to this heading"></a></h3>
+<h3>Numerically solving for the dynamics<a class="headerlink" href="#Numerically-solving-for-the-dynamics" title="Link to this heading"></a></h3>
 <p>As our dynamical equations become more complex, as they are starting to here, numerical solutions become essential. Indeed, numerical solution of ordinary differential equations is a ubiquitous technique in the study and design of biological circuits. We introduce this technique in <a class="reference internal" href="../technical_appendices/02b_numerical_odes.html"><span class="doc">Technical Appendix 2b</span></a> of this chapter.</p>
 <p>In our following analysis, we will consider the non-ultrasensitive case of <span class="math notranslate nohighlight">\(n = 1\)</span>.</p>
 </section>
 <section id="Solving-for-a-constant-input">
-<h3>Solving for a constant input<a class="headerlink" href="#Solving-for-a-constant-input" title="Permalink to this heading"></a></h3>
+<h3>Solving for a constant input<a class="headerlink" href="#Solving-for-a-constant-input" title="Link to this heading"></a></h3>
 <p>We will first consider the case where we initially have no <span class="math notranslate nohighlight">\(s\)</span> present, but a step increase in <span class="math notranslate nohighlight">\(s\)</span> at time <span class="math notranslate nohighlight">\(t=0\)</span> causes a corresponding step-like increase in the value of <span class="math notranslate nohighlight">\(\beta\)</span>, which we represent by having <span class="math notranslate nohighlight">\(n_s \gg 1\)</span> and <span class="math notranslate nohighlight">\(s \gg k_s\)</span>. After solving for <span class="math notranslate nohighlight">\(x(t)\)</span> numerically, we will plot it along with the unregulated case,</p>
 <p><span class="math">\begin{align}
 x(t) = \frac{\beta_0}{\gamma}\,\frac{(s/k_s)^{n_s}}{1 + (s/k_s)^{n_s}}\left(1 - \mathrm{e}^{-\gamma t}\right)
@@ -1131,12 +1133,12 @@ half time ratio = 0.23
 <p>This is close to the ratio of 0.2 that we derived from the approximate analytical solution above.</p>
 </section>
 <section id="Design-principle:-Negative-autoregulation-of-a-transcription-factor-accelerates-its-response-to-a-change-in-input">
-<h3>Design principle: Negative autoregulation of a transcription factor accelerates its response to a change in input<a class="headerlink" href="#Design-principle:-Negative-autoregulation-of-a-transcription-factor-accelerates-its-response-to-a-change-in-input" title="Permalink to this heading"></a></h3>
+<h3>Design principle: Negative autoregulation of a transcription factor accelerates its response to a change in input<a class="headerlink" href="#Design-principle:-Negative-autoregulation-of-a-transcription-factor-accelerates-its-response-to-a-change-in-input" title="Link to this heading"></a></h3>
 <p>Comparing the unnormalized and normalized plots exposes two related effects of autoregulation. First, adding negative autoregulation reduces the steady-state expression level. Second, as a consequence, the approach to steady state is accelerated. This can be seen in the second plot where all the concentrations are normalized to their steady state. All told, in this example, negative autoregulation accelerated the dynamics by about 5-fold compared to the unregulated system. We have thus arrived
 at another <strong>design principle</strong>: <em>Negative autoregulation of a transcription factor accelerates its response to a change in input</em>.</p>
 </section>
 <section id="Experimental-demonstration-of-negative-autoregulation-speeding-response-time">
-<h3>Experimental demonstration of negative autoregulation speeding response time<a class="headerlink" href="#Experimental-demonstration-of-negative-autoregulation-speeding-response-time" title="Permalink to this heading"></a></h3>
+<h3>Experimental demonstration of negative autoregulation speeding response time<a class="headerlink" href="#Experimental-demonstration-of-negative-autoregulation-speeding-response-time" title="Link to this heading"></a></h3>
 <p>Can this acceleration be observed experimentally? To find out, Rosenfeld and coworkers engineered a simple synthetic system based on a bacterial repressor called TetR, fused to a fluorescent protein for readout, and studied its turn-on dynamics in bacterial populations. The plot below show the response to sudden induction of gene expression of GFP-fused TetR, using data digitized from Fig. 3 of the <a class="reference external" href="https://doi.org/10.1016/S0022-2836(02)00994-4">Rosenfeld, et al. paper</a>.</p>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
@@ -1207,7 +1209,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </section>
 </section>
 <section id="Solving-for-a-time-varying-input">
-<h2>Solving for a time-varying input<a class="headerlink" href="#Solving-for-a-time-varying-input" title="Permalink to this heading"></a></h2>
+<h2>Solving for a time-varying input<a class="headerlink" href="#Solving-for-a-time-varying-input" title="Link to this heading"></a></h2>
 <p>This acceleration in response occurs when we turn the gene on. What happens when we turn the gene off, for example by suddenly stopping the gene’s expression at some later time point? We can address this question by including <span class="math notranslate nohighlight">\(s\)</span> as a time-varying signal.</p>
 <p>Let’s imagine that the input signal <span class="math notranslate nohighlight">\(s\)</span>, rather than turning on instantaneously at <span class="math notranslate nohighlight">\(t=0\)</span> and remaining constant for the rest of the simulation, instead occurs as a pulse of duration <span class="math notranslate nohighlight">\(\tau\)</span> that peaks at time <span class="math notranslate nohighlight">\(t_0\)</span>. Then <span class="math notranslate nohighlight">\(s\)</span> would be present roughly within the time window <span class="math notranslate nohighlight">\((t_0-\tau/2, t_0+\tau/2)\)</span>, but absent outside of this time window. We will model the peak as a Gaussian function of unit height,</p>
 <p><span class="math">\begin{align}
@@ -1491,7 +1493,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>meaning that the dynamics of the fall in gene expression will become identical between the two systems as <span class="math notranslate nohighlight">\(\beta(s)\)</span> approaches <span class="math notranslate nohighlight">\(0\)</span>.</p>
 </section>
 <section id="Interactive-plotting-and-varying-parameters">
-<h2>Interactive plotting and varying parameters<a class="headerlink" href="#Interactive-plotting-and-varying-parameters" title="Permalink to this heading"></a></h2>
+<h2>Interactive plotting and varying parameters<a class="headerlink" href="#Interactive-plotting-and-varying-parameters" title="Link to this heading"></a></h2>
 <p>Although we have now convincingly demonstrated that it is possible for negative autoregulation to speed the response time of a gene’s expression, we do not yet have a clear understanding of how the values of the parameters themselves, particularly <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(n\)</span>, affect the magnitude of this speed-up. To gain insight into these effects, we turn to interactive plotting.</p>
 <p>Plotting with Bokeh in Jupyter notebooks allows for interactivity with plots that can help to rapidly gain insights about how parameter values might affect the dynamics. We have found that this is a useful tool to rapidly explore parameter dependence on circuit behavior. We detail how to build an interactive plot in <a class="reference internal" href="../technical_appendices/02c_interactive_plotting.html"><span class="doc">Technical Appendix 2c</span></a>. The result is shown below.</p>
 <div class="nbinput toggle docutils container">
@@ -1544,14 +1546,14 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>By moving around the sliders, we can see that increasing the strength of the repression (by decreasing <span class="math notranslate nohighlight">\(k\)</span>) accentuates the speed-up provided by negative autoregulation. Furthermore, we see that increasing the cooperativitity of the repressor (by increasing <span class="math notranslate nohighlight">\(n\)</span>) makes the initial rise in <span class="math notranslate nohighlight">\(x\)</span> “sharper”. What other properties can you find through interacting with this plot?</p>
 <hr></section>
 <section id="References">
-<h2>References<a class="headerlink" href="#References" title="Permalink to this heading"></a></h2>
+<h2>References<a class="headerlink" href="#References" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Rosenfeld, et al., Negative autoregulation speeds the response times of transcription networks, <em>J. Molec. Biol.</em>, 323, 785–793, 2002. (<a class="reference external" href="https://doi.org/10.1016/S0022-2836(02)00994-4">link</a>)</p></li>
 <li><p>Shen-Orr S. S., et al., Network motifs in the transcriptional regulation network of <em>Escherichia coli</em>, <em>Nature Genetics</em>, 31, 64–68, 2002. (<a class="reference external" href="https://doi.org/10.1038/ng881">link</a>)</p></li>
 </ul>
 <hr></section>
 <section id="Technical-appendices">
-<h2>Technical appendices<a class="headerlink" href="#Technical-appendices" title="Permalink to this heading"></a></h2>
+<h2>Technical appendices<a class="headerlink" href="#Technical-appendices" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../technical_appendices/02a_approximate_autorepression_dynamics.html">2a. Approximate solution of autorepressor dynamics</a></li>
@@ -1561,7 +1563,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <hr></section>
 <section id="Problems">
-<h2>Problems<a class="headerlink" href="#Problems" title="Permalink to this heading"></a></h2>
+<h2>Problems<a class="headerlink" href="#Problems" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../problems/02/problem_2.1.html">2.1: The cost of a steady state</a></li>
@@ -1570,7 +1572,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 <hr></section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1614,13 +1616,13 @@ jupyterlab : 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x1335ea850> 
+   <jinja2.runtime.BlockReference object at 0x326915a10> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 

@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B14. Making plots &mdash; Biological Circuit Design  documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/nbsphinx-code-cells.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=31524dda" />
+      <link rel="stylesheet" type="text/css" href="../../_static/nbsphinx-code-cells.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/clipboard.min.js"></script>
-        <script src="../../_static/copybutton.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
         <script>let toggleHintShow = 'show code';</script>
         <script>let toggleHintHide = 'hide code';</script>
         <script>let toggleOpenOnPrint = 'false';</script>
-        <script src="../../_static/togglebutton.js"></script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
         <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -66,7 +69,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/04_ffls.html">4. Analysis of feedforward loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/05_dosage_compensation.html">5. Incoherent feed-forward loops serve as dosage compensators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/06_exact_adaptation.html">6. Exact adaptation in the chemotaxis pathway</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/07_signal_amplification.html">7. Amplification of extracellular signals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/08_kinetic_proofreading.html">8. Kinetic proofreading: Multi-step processes reduce error rates in molecular recognition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/09_repressilator.html">9. Blinking bacteria: The repressilator enables self-sustaining oscillations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/10_delay_oscillators.html">10. Uses, simplifications, and elaborations of negative feedback oscillators</a></li>
@@ -78,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/16_bursty.html">16. Bursty gene expression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/17_bet_hedging.html">17. Cellular bet-hedging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/18_stochastic_differentiation.html">18. Excitability enables probabilistic, transient differentiation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry breaking to form a spatial pattern of cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../chapters/20_lateral_inhibition.html">20. Lateral Inhibition: Spontaneous symmetry allows spontaneous developmental patterning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/21_turing.html">21. Turing patterns</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../chapters/22_scaling_morphogens.html">22. Scaling reaction-diffusion patterns</a></li>
 </ul>
@@ -168,7 +170,7 @@
            <div itemprop="articleBody">
              
   <section id="B14.-Making-plots">
-<h1>B14. Making plots<a class="headerlink" href="#B14.-Making-plots" title="Permalink to this heading"></a></h1>
+<h1>B14. Making plots<a class="headerlink" href="#B14.-Making-plots" title="Link to this heading"></a></h1>
 <hr><div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -508,7 +510,7 @@ if (force === true) {
 </div>
 <p>at the top of the notebook (as we have done). Finally, note that we also have to have installed the Bokeh JupyterLab extension, which we did in <a class="reference external" href="../chapters/00_setting_up_python_computing_environment.ipynb">Chapter 0</a>.</p>
 <section id="Bokeh's-grammar-and-our-first-plot-with-Bokeh">
-<h2>Bokeh’s grammar and our first plot with Bokeh<a class="headerlink" href="#Bokeh's-grammar-and-our-first-plot-with-Bokeh" title="Permalink to this heading"></a></h2>
+<h2>Bokeh’s grammar and our first plot with Bokeh<a class="headerlink" href="#Bokeh's-grammar-and-our-first-plot-with-Bokeh" title="Link to this heading"></a></h2>
 <p>Constructing a plot with Bokeh consists of four main steps.</p>
 <ol class="arabic simple">
 <li><p>Creating a figure on which to populate <strong>glyphs</strong> (symbols that represent data, e.g., dots for a scatter plot). Think of this figure as a “canvas” which sets the space on which you will “paint” your glyphs.</p></li>
@@ -637,11 +639,11 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>In looking at the plot, notice a toolbar to right of the plot that enables you to zoom and pan within the plot.</p>
 </section>
 <section id="The-importance-of-tidy-data-frames">
-<h2>The importance of tidy data frames<a class="headerlink" href="#The-importance-of-tidy-data-frames" title="Permalink to this heading"></a></h2>
+<h2>The importance of tidy data frames<a class="headerlink" href="#The-importance-of-tidy-data-frames" title="Link to this heading"></a></h2>
 <p>It might be clear for you now that building a plot in this way requires that the data frame you use be <a class="reference internal" href="b13_split_apply_combine.html"><span class="doc">tidy</span></a>. The organization of tidy data is really what enables this and high level plotting functionality. There is a well-specified organization of the data.</p>
 </section>
 <section id="Coloring-with-other-dimensions">
-<h2>Coloring with other dimensions<a class="headerlink" href="#Coloring-with-other-dimensions" title="Permalink to this heading"></a></h2>
+<h2>Coloring with other dimensions<a class="headerlink" href="#Coloring-with-other-dimensions" title="Link to this heading"></a></h2>
 <p>In the above plot, we did not distinguish the two strains. We really want m22 in one color and d22 in another. To do this, we take advantage of two features of Bokeh.</p>
 <ol class="arabic simple">
 <li><p>We can make multiple calls to <code class="docutils literal notranslate"><span class="pre">p.circle()</span></code> to populate more and more glyphs.</p></li>
@@ -765,7 +767,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 </div>
 </section>
 <section id="Saving-Bokeh-plots">
-<h2>Saving Bokeh plots<a class="headerlink" href="#Saving-Bokeh-plots" title="Permalink to this heading"></a></h2>
+<h2>Saving Bokeh plots<a class="headerlink" href="#Saving-Bokeh-plots" title="Link to this heading"></a></h2>
 <p>After you create your plot, you can save it to a variety of formats. Most commonly you would save them as PNG (for presentations), SVG (for publications in the paper of the past), and HTML (for interactivity or sharing with colleagues).</p>
 <p>To save as a PNG for quick use, you can click the download icon in the tool bar.</p>
 <p>To save to SVG, you first change the output backend to <code class="docutils literal notranslate"><span class="pre">'svg'</span></code> and then you can click the download icon again, and you will get an SVG rendering of the plot. After saving the SVG, you should change the output backend back to <code class="docutils literal notranslate"><span class="pre">'canvas'</span></code> because it has much better in-browser performance.</p>
@@ -851,7 +853,7 @@ var element = document.currentScript.previousSibling.previousSibling;
 <p>The resulting HTML page has all of the interactivity of the plot and you can, for example, email it to your collaborators for them to explore.</p>
 </section>
 <section id="Plotting-generated-data">
-<h2>Plotting generated data<a class="headerlink" href="#Plotting-generated-data" title="Permalink to this heading"></a></h2>
+<h2>Plotting generated data<a class="headerlink" href="#Plotting-generated-data" title="Link to this heading"></a></h2>
 <p>You’re now a pro at plotting measured data. But sometimes, you want to plot smooth functions. To do this, you can use Numpy and/or Scipy to generate arrays of values of smooth functions.</p>
 <p>We will plot the <a class="reference external" href="https://en.wikipedia.org/wiki/Airy_disk">Airy disk</a>, which we encounter in biology when doing microscopy as the diffraction pattern of light passing through a pinhole. Here is a picture of the diffraction pattern from a laser (with the main peak overexposed).</p>
 <div style="margin: auto; width: 300px;"><img alt="Airy disk" src="../../_images/airy_disk.png" />
@@ -1048,7 +1050,7 @@ nan
 </div>
 </section>
 <section id="Computing-environment">
-<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Permalink to this heading"></a></h2>
+<h2>Computing environment<a class="headerlink" href="#Computing-environment" title="Link to this heading"></a></h2>
 <div class="nbinput toggle docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -1088,13 +1090,13 @@ jupyterlab: 3.5.3
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Jul 10, 2023.
+      <span class="lastupdated">Last updated on Mar 23, 2025.
       </span></p>
   </div>
 
-   <jinja2.runtime.BlockReference object at 0x134c24dd0> 
+   <jinja2.runtime.BlockReference object at 0x309a0c9d0> 
 
-<p>© 2022 Michael Elowitz, Justin Bois, and John Marken. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<p>© 2023 Michael Elowitz and Justin Bois. With the exception of pasted graphics, where the source is noted, this work is licensed under a <a rel="license" href="hcreative commons licenses are an example of">Creative Commons Attribution License CC BY-NC-SA 4.0</a>. All code contained herein is licensed under an <a rel="license" href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <p>This document was prepared at <a rel="caltech" href="http://www.caltech.edu">Caltech</a> with financial support from the <a rel="rosen" href="http://rosen.caltech.edu">Donna and Benjamin M. Rosen Bioengineering Center</a>.</p>
 
