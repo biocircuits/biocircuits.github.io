@@ -1,6 +1,0 @@
-﻿biocircuits.rd\_solve
-=====================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: rd_solve

@@ -1,6 +1,0 @@
-﻿biocircuits.gillespie\_ssa
-==========================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: gillespie_ssa

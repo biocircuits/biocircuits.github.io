@@ -1,6 +1,0 @@
-﻿biocircuits.ar\_and
-===================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: ar_and

@@ -1,0 +1,23 @@
+.justify {
+  text-align: justify !important
+}
+
+/* Sidebar part headings (collapsible sections) are in bold */
+.sidebar-item.sidebar-item-section > .sidebar-item-container > .sidebar-item-text {
+  font-weight: bold;
+}
+
+/* Top-level standalone pages (Welcome, References) are in bold */
+.sidebar-menu-container > ul > li.sidebar-item:not(.sidebar-item-section) > .sidebar-item-container > .sidebar-item-text {
+  font-weight: bold;
+}
+
+
+.MathJax_Display {
+  text-align: left !important;
+}
+
+.output {
+  color: green;
+  background-color: black;
+}

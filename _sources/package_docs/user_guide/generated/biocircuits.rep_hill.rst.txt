@@ -1,6 +1,0 @@
-﻿biocircuits.rep\_hill
-=====================
-
-.. currentmodule:: biocircuits
-
-.. autofunction:: rep_hill
