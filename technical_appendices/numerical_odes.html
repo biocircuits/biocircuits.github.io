@@ -918,7 +918,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/numerical_odes.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/numerical_odes.ipynb">Download notebook</a></p>
 <hr>
-<div id="b2869c1a" class="cell" data-execution_count="1">
+<div id="9292c47c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -957,7 +957,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="solving-for-a-constant-input">Solving for a constant input</h3>
 <p>We first seek to solve the ODE where we have a sudden step in <span class="math inline">\(s\)</span> at time <span class="math inline">\(t = 0\)</span>. Since we are only simulating our system starting at <span class="math inline">\(t=0\)</span>, we can treat <span class="math inline">\(s\)</span> as a single, constant parameter, rather than a time-varying variable. So, we need seven parameters for the right hand side of our ODEs: <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\gamma\)</span>, <span class="math inline">\(k\)</span>, <span class="math inline">\(n\)</span>, <span class="math inline">\(k_s\)</span>, <span class="math inline">\(n_s\)</span>, and <span class="math inline">\(s\)</span>.</p>
 <p>We now define the function for the right hand side of the ODEs.</p>
-<div id="1c9d37f6" class="cell" data-execution_count="2">
+<div id="89413012" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_auto_rhs(x, t, beta0, gamma, k, n, ks, ns, s):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Right hand side for negative autoregulation motif with s dependence.</span></span>
@@ -969,7 +969,7 @@ window.Quarto = {
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can now define the initial conditions, our parameters (taking <span class="math inline">\(n_s = 10\)</span>), and the time points we want and use <code>scipy.integrate.odeint()</code> to solve.</p>
-<div id="e178263f" class="cell" data-execution_count="3">
+<div id="0bc94c5a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time points we want for the solution</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">200</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -992,11 +992,11 @@ window.Quarto = {
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> scipy.integrate.odeint(neg_auto_rhs, x0, t, args<span class="op">=</span>args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>That’s it! The integration is done. Let’s take a quick look at the output.</p>
-<div id="b89761d8" class="cell" data-execution_count="4">
+<div id="34139fce" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We see that the output of <code>odeint()</code> has each column corresponding to a given species and each row to a given time point. It is often convenient to transpose the output so that the each species is more easily index-able.</p>
-<div id="ae31a843" class="cell" data-execution_count="5">
+<div id="c23a6f51" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract time course for first (in this case only) species</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x.transpose()[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1013,7 +1013,7 @@ x(t) = \frac{\beta_0}{\gamma}\left(1 - \mathrm{e}^{-\gamma t}\right),
 \end{align}
 \tag{3}\]</span></span></p>
 <p>so we need to code up those solutions as well for plotting.</p>
-<div id="c07fd9dd" class="cell" data-execution_count="6">
+<div id="22488270" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unregulated solution</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x_unreg <span class="op">=</span> beta0 <span class="op">/</span> gamma <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span>gamma <span class="op">*</span> t))</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1021,7 +1021,7 @@ x(t) = \frac{\beta_0}{\gamma}\left(1 - \mathrm{e}^{-\gamma t}\right),
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>x_limiting <span class="op">=</span> x[<span class="op">-</span><span class="dv">1</span>] <span class="op">*</span> np.sqrt(<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span><span class="dv">2</span> <span class="op">*</span> gamma <span class="op">*</span> t))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now let’s plot the results. As a reminder, you can read about making plots with Bokeh in <a href="../appendices/python/plotting.html">Appendix B</a>.</p>
-<div id="9371c675" class="cell" data-execution_count="7">
+<div id="5901b893" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up color palette for this notebook</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> colorcet.b_glasbey_category10</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1060,7 +1060,7 @@ s(t) = \exp\left[-\frac{4(t-t_0)^2}{\tau^2}\right].
 \end{align}
 \tag{4}\]</span></span></p>
 <p>In order to incorporate these dynamics into our model, we can write a function for the pulse.</p>
-<div id="63263bc9" class="cell" data-execution_count="8">
+<div id="e3cbe9a6" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> s_pulse(t, t_0, tau):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns s value for a pulse centered at t_0 with duration tau.</span></span>
@@ -1069,7 +1069,7 @@ s(t) = \exp\left[-\frac{4(t-t_0)^2}{\tau^2}\right].
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span> <span class="cf">if</span> tau <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> np.exp(<span class="op">-</span><span class="dv">4</span> <span class="op">*</span> (t <span class="op">-</span> t_0) <span class="op">**</span> <span class="dv">2</span> <span class="op">/</span> tau <span class="op">**</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If we want to solve the ODEs for a varying input, we need to have a way to pass a function defining the variation as a parameter. Fortunately, we can pass functions as arguments in Python. So, we write a new function for the right-hand-side of our ODE that takes <code>s_fun</code>, the function describing <span class="math inline">\(s(t)\)</span> as an argument, as well as <code>s_args</code>, the set of parameters passed into <code>s_fun</code>.</p>
-<div id="958afc30" class="cell" data-execution_count="9">
+<div id="3b322bc6" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_auto_rhs_s_fun(x, t, beta0, gamma, k, n, ks, ns, s_fun, s_args):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Right hand side for negative autoregulation function, with s variable.</span></span>
@@ -1088,7 +1088,7 @@ s(t) = \exp\left[-\frac{4(t-t_0)^2}{\tau^2}\right].
 <span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> neg_auto_rhs(x, t, beta0, gamma, k, n, ks, ns, s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that we have this new function in hand, we can numerically integrate our ODEs as we did before. We’ll start with a pulse that is on from roughly <span class="math inline">\(t=2\)</span> to <span class="math inline">\(t=6\)</span>, as above.</p>
-<div id="b9d7fc49" class="cell" data-execution_count="10">
+<div id="7114df74" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up parameters for the pulse</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>s_args <span class="op">=</span> (<span class="fl">4.0</span>, <span class="fl">2.0</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1127,7 +1127,7 @@ s(t) = \exp\left[-\frac{4(t-t_0)^2}{\tau^2}\right].
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="b0f2d045" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="11">
+<div id="77309803" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,colorcet,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

@@ -919,7 +919,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/plotting.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/plotting.ipynb">Download notebook</a></p>
 <hr>
-<div id="8a44c806" class="cell" data-execution_count="1">
+<div id="7137cbc3" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -967,7 +967,7 @@ window.Quarto = {
 </div>
 </div>
 <p>Before plotting, we of course to load in the data set and compute the normalized intensity for each strain as we did in the <a href="../../appendices/python/split_apply_combine.html">previous section</a>.</p>
-<div id="e93f6abe" class="cell" data-execution_count="2">
+<div id="60364c0e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(os.path.join(data_path, <span class="st">"elowitz_et_al_2002_fig_3a.csv"</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"norm CFP"</span>, <span class="st">"norm YFP"</span>]] <span class="op">=</span> df.groupby(<span class="st">"strain"</span>, group_keys<span class="op">=</span><span class="va">False</span>)[</span>
@@ -979,7 +979,7 @@ window.Quarto = {
 <li>Our first step is creating a figure, our “canvas.” In creating the figure, we are implicitly thinking about what kind of representation for our data we want. That is, we have to specify axes and their labels. We might also want to specify the title of the figure, whether or not to have grid lines, and all sorts of other customizations. Naturally, we also want to specify the shape of the figure.</li>
 </ol>
 <p>(Almost) all of this is accomplished in Bokeh by making a call to <code>bokeh.plotting.figure()</code> with the appropriate keyword arguments. Note that we set the <code>x_range</code> and <code>y_range</code> keyword arguments such that the x- and y-axes have the same scale.</p>
-<div id="1db57717" class="cell" data-execution_count="3">
+<div id="a90d3f2a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the figure, stored in variable `p`</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> bokeh.plotting.figure(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">300</span>,</span>
@@ -994,7 +994,7 @@ window.Quarto = {
 <ol start="2" type="1">
 <li>Now that we have set up our canvas, we can decide on the data source. It is convenient to create a <strong>ColumnDataSource</strong>, a special Bokeh object that holds data to be displayed in a plot. (We will later see that we can change the data in a ColumnDataSource and the plot will automatically update!) Conveniently, we can instantiate a ColumnDataSource directly from a Pandas data frame.</li>
 </ol>
-<div id="3c90d3ba" class="cell" data-execution_count="4">
+<div id="2348eae3" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> bokeh.models.ColumnDataSource(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We could also instantiate a data source using a dictionary of arrays, like</p>
@@ -1004,7 +1004,7 @@ window.Quarto = {
 <li><p>We choose the <code>'norm CFP'</code> column to specify the <span class="math inline">\(x\)</span>-coordinate of the glyph and the <code>'norm YFP'</code> column to specify the <span class="math inline">\(y\)</span>-coordinate. We already made this decision when we set up our axis labels, but we did not necessarily have to make that decision at that point.</p></li>
 </ol>
 <p>Steps 3 and 4 are accomplished by calling one of the <strong>glyph methods</strong> of the Bokeh <code>Figure</code> instance, <code>p</code>. Since we are choosing dots, the appropriate method is <code>p.scatter()</code>, and we use the <code>source</code>, <code>x</code>, and <code>y</code> kwargs to specify the positions of the glyphs.</p>
-<div id="e155fee0" class="cell" data-execution_count="5">
+<div id="8c3a4d6f" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p.scatter(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    source<span class="op">=</span>source,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'norm CFP'</span>,</span>
@@ -1012,7 +1012,7 @@ window.Quarto = {
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that we have built the plot, we can render it in the notebook using <code>bokeh.io.show()</code>.</p>
-<div id="3b4bed0e" class="cell" data-execution_count="6">
+<div id="b34551f4" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In looking at the plot, notice a toolbar to right of the plot that enables you to zoom and pan within the plot.</p>
@@ -1029,7 +1029,7 @@ window.Quarto = {
 <li><code>p.scatter()</code>, like all of the glyph methods, has many keyword arguments, including <code>color</code> and <code>legend_label</code>, which will enable us to color the glyphs and include a legend.</li>
 </ol>
 <p>We can loop through the data frame grouped by <code>'strain'</code> and populate the glyphs as we go along. We will want different colors for the glyphs, depending on which strain they correspond to. The <a href="https://colorcet.holoviz.org/">colorcet package</a> conveniently provides nice color palettes for plots, and we will use the colors in its Category10 palette, since we are coloring according to strain, which is a categorical variable (as opposed to a quantitative variable).</p>
-<div id="c848624c" class="cell" data-execution_count="7">
+<div id="905294eb" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Color palette we will use, from colorcet</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> colorcet.b_glasbey_category10</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1050,7 +1050,7 @@ window.Quarto = {
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We got the plot we wanted, but we may want to move the legend. Fortunately, Bokeh allows us to set attributes of the figure whenever we like. (We will further discuss styling Bokeh plots in a future lesson.) We can therefore set the legend position to be in the upper left corner. We will also set the <code>click_policy</code> for the legend to be <code>'hide'</code>, which will hide glyphs if you click the legend, which can be convenient for viewing cluttered plots (though this one is not cluttered, really).</p>
-<div id="55ab058f" class="cell" data-execution_count="8">
+<div id="30ca429a" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p.legend.location <span class="op">=</span> <span class="st">'bottom_right'</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p.legend.click_policy <span class="op">=</span> <span class="st">'hide'</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1062,14 +1062,14 @@ window.Quarto = {
 <p>After you create your plot, you can save it to a variety of formats. Most commonly you would save them as PNG (for presentations), SVG (for publications in the paper of the past), and HTML (for interactivity or sharing with colleagues).</p>
 <p>To save as a PNG for quick use, you can click the download icon in the tool bar.</p>
 <p>To save to SVG, you first change the output backend to <code>'svg'</code> and then you can click the download icon again, and you will get an SVG rendering of the plot. After saving the SVG, you should change the output backend back to <code>'canvas'</code> because it has much better in-browser performance.</p>
-<div id="6666e007" class="cell" data-execution_count="9">
+<div id="51d14a8b" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>p.output_backend <span class="op">=</span> <span class="st">'svg'</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, click the disk icon in the plot above to save it.</p>
 <p>After saving, we should switch back to canvas.</p>
-<div id="d7c1c064" class="cell" data-execution_count="10">
+<div id="ac8dfb1d" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>p.output_backend <span class="op">=</span> <span class="st">'canvas'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can also save the figure programmatically using the <code>bokeh.io.export_svgs()</code> function. This requires additional installations, so we will not do it here, but show the code to do it. Again, this will only work if the output backed is <code>'svg'</code>.</p>
@@ -1077,7 +1077,7 @@ window.Quarto = {
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>bokeh.io.export_svgs(p, filename<span class="op">=</span><span class="st">'insomniac_confidence_correct.svg'</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>p.output_backend <span class="op">=</span> <span class="st">'canvas'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Finally, to save as HTML, you can use the <code>bokeh.io.save()</code> function. This saves your plot as a standalone HTML page. Note that the <code>title</code> kwarg is not the title of the plot, but the title of the web page that will appear on your Browser tab.</p>
-<div id="34f6597a" class="cell" data-execution_count="11">
+<div id="4dcbdcac" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>bokeh.io.save(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    p, </span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    filename<span class="op">=</span><span class="st">'our_first_bokeh_plot.html'</span>, </span>
@@ -1106,7 +1106,7 @@ window.Quarto = {
 <p>where <span class="math inline">\(I_0\)</span> is the maximum intensity (the intensity at the center of the image) and <span class="math inline">\(x\)</span> is the radial distance from the center. Here, <span class="math inline">\(J_1(x)\)</span> is the first order Bessel function of the first kind. Yeesh. How do we plot <em>that</em>?</p>
 <p>Fortunately, SciPy has lots of special functions available. Specifically, <code>scipy.special.j1()</code> computes exactly what we are after! We pass in a NumPy array that has the values of <span class="math inline">\(x\)</span> we want to plot and then compute the <span class="math inline">\(y\)</span>-values using the expression for the normalized intensity.</p>
 <p>To plot a smooth curve, we use the <code>np.linspace()</code> function with lots of points. We then connect the points with straight lines, which to the eye look like a smooth curve. Let’s try it. We’ll use 400 points, which I find is a good rule of thumb for not-too-oscillating functions.</p>
-<div id="67ae7c13" class="cell" data-execution_count="12">
+<div id="3058638c" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The x-values we want</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">15</span>, <span class="dv">15</span>, <span class="dv">400</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1114,7 +1114,7 @@ window.Quarto = {
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>norm_I <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> (scipy.special.j1(x) <span class="op">/</span> x)<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that we have the values we want to plot, we could construct a Pandas <code>DataFrame</code> to pass in as the <code>source</code> to <code>p.line()</code>. We do not need to take this extra step, though. If we instead leave <code>source</code> unspecified, and pass in NumPy arrays for <code>x</code> and <code>y</code>, Bokeh will directly use those in constructing the plot.</p>
-<div id="f5e3549e" class="cell" data-execution_count="13">
+<div id="4a87c5dc" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> bokeh.plotting.figure(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">250</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">550</span>,</span>
@@ -1132,7 +1132,7 @@ window.Quarto = {
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We could also plot dots (which doesn’t make sense here, but we’ll show it just to see how the line joining works to make a plot of a smooth function).</p>
-<div id="9718605c" class="cell" data-execution_count="14">
+<div id="b9494fe6" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p.scatter(</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>x,</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>norm_I,</span>
@@ -1143,7 +1143,7 @@ window.Quarto = {
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>There is one detail I swept under the rug here. What happens if we compute the function for <span class="math inline">\(x = 0\)</span>?</p>
-<div id="58317ac5" class="cell" data-execution_count="15">
+<div id="b3492bc0" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">*</span> (scipy.special.j1(<span class="dv">0</span>) <span class="op">/</span> <span class="dv">0</span>)<span class="op">**</span><span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We get a <code>RuntimeWarning</code> because we divided by zero. We know that</p>
@@ -1151,7 +1151,7 @@ window.Quarto = {
 \lim_{x\to 0} \frac{J_1(x)}{x} = \frac{1}{2},
 \end{align}\]</span></p>
 <p>so we could write a new function that checks if <span class="math inline">\(x = 0\)</span> and returns the appropriate limit for <span class="math inline">\(x = 0\)</span>. In the <code>x</code> array I constructed for the plot, we hopped over zero, so it was never evaluated. If we were being careful, we could write our own Airy function that deals with this.</p>
-<div id="027462c6" class="cell" data-execution_count="16">
+<div id="3b7bf9a5" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> airy_disk(x):</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Compute the Airy disk."""</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set up output array</span></span>
@@ -1172,7 +1172,7 @@ window.Quarto = {
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="0542d930" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="17">
+<div id="c98d939a" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p pandas,bokeh,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

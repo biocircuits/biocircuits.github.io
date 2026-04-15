@@ -918,7 +918,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/linear_stability_analysis.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/linear_stability_analysis.ipynb">Download notebook</a></p>
 <hr>
-<div id="e98147de" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:06.213619Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:06.190940Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="12762763" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:06.213619Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:06.190940Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -1145,7 +1145,7 @@ x_0^n = \frac{2}{n-2}.
 \end{align}
 \tag{26}\]</span></span></p>
 <p>We can plot this line and delineate the regions of stability and instability.</p>
-<div id="89c48515" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:06.901929Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:06.827613Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
+<div id="7abafce6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:06.901929Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:06.827613Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get bifurcation line</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> np.linspace(<span class="fl">2.01</span>, <span class="dv">5</span>, <span class="dv">200</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> n <span class="op">/</span> <span class="dv">2</span> <span class="op">*</span> (n <span class="op">/</span> <span class="dv">2</span> <span class="op">-</span> <span class="dv">1</span>) <span class="op">**</span> (<span class="op">-</span>(<span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span> <span class="op">/</span> n))</span>
@@ -1172,7 +1172,7 @@ x_0^n = \frac{2}{n-2}.
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="37251863" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:08.101915Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:08.094114Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="3">
+<div id="93e94dbb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:08.101915Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:08.094114Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,bokeh,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

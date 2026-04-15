@@ -918,7 +918,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/numerical_ddes.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/numerical_ddes.ipynb">Download notebook</a></p>
 <hr>
-<div id="c8844bcc" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="48243e86" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -961,7 +961,7 @@ y(t) = y_0(t) \text{ for }t_0-\tau &lt; t \le t_0.
 <p>Furthermore, instead of passing in a single initial condition, we need to pass in a <em>function</em> that computes <span class="math inline">\(y_0(t)\)</span>, as defined for initial conditions that go back in time. The function has call signature</p>
 <pre><code>y0(t, *y0_args)</code></pre>
 <p>We also need to specify <code>tau</code>, the longest time delay in the system. Finally, in addition to the additional arguments to <code>func</code> and to <code>y0</code>, we specify how many time points we wish to use for each step to build our interpolants. Note that even though we specify <code>tau</code> in the arguments of <code>ddeint()</code>, we still need to explicitly pass all time delays as extra <code>args</code> to <code>func</code>. This is because we could in general have more than one delay, and only the longest is pertinent for the integration.</p>
-<div id="a36a13af" class="cell" data-execution_count="2">
+<div id="4916b0fe" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ddeint(func, y0, t, tau, args<span class="op">=</span>(), y0_args<span class="op">=</span>(), n_time_points_per_step<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Integrate a system of delay differential equations.</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
@@ -1038,7 +1038,7 @@ y(t) = y_0(t) \text{ for }t_0-\tau &lt; t \le t_0.
 <span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y_return</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that we have a function to solve DDEs, let’s solve the simple delay oscillator.</p>
-<div id="0f7df12e" class="cell" data-execution_count="3">
+<div id="10da7e70" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Right hand side of simple delay oscillator</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> delay_rhs(x, t, x_past, beta, n, tau):</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> beta <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> x_past(t <span class="op">-</span> tau) <span class="op">**</span> n) <span class="op">-</span> x</span>
@@ -1076,7 +1076,7 @@ y(t) = y_0(t) \text{ for }t_0-\tau &lt; t \le t_0.
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="c3ae9848" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="4">
+<div id="6a70d7a0" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

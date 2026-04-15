@@ -905,21 +905,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dictionary-syntax" class="level2">
 <h2 class="anchored" data-anchor-id="dictionary-syntax">Dictionary syntax</h2>
 <p>The syntax for creating a dictionary, as usual, is best seen through example.</p>
-<div id="23069de3" class="cell" data-execution_count="1">
+<div id="a2f9f98a" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">6</span>, <span class="st">'b'</span>: <span class="dv">7</span>, <span class="st">'c'</span>: <span class="fl">27.6</span>}</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A dictionary is created using curly braces (<code>{}</code>). Each entry has a <strong>key</strong>, followed by a colon, and then the value associated with the key. In the example above, the keys are all strings, which is the most common use case. Note that the items can be of any type; in the above example, they are <code>int</code>s and a <code>float</code>.</p>
 <p>We could also create the dictionary using the built-in <code>dict()</code> function, which can take a tuple of 2-tuples, each one containing a key-value pair.</p>
-<div id="5b7151bf" class="cell" data-execution_count="2">
+<div id="1104b2b2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span>(((<span class="st">'a'</span>, <span class="dv">6</span>), (<span class="st">'b'</span>, <span class="dv">7</span>), (<span class="st">'c'</span>, <span class="fl">27.6</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, we can make a dictionary with keyword arguments to the <code>dict()</code> function.</p>
-<div id="7964cc5c" class="cell" data-execution_count="3">
+<div id="3e48e251" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span>(a<span class="op">=</span><span class="st">'yes'</span>, b<span class="op">=</span><span class="st">'no'</span>, c<span class="op">=</span><span class="st">'maybe'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We do not need to have strings as the keys. In fact, any <em>immutable</em> object can be a key.</p>
-<div id="00f55b43" class="cell" data-execution_count="4">
+<div id="1bf1c9c9" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="dv">0</span>: <span class="st">'zero'</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.7</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
@@ -930,7 +930,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>my_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>However, mutable objects cannot be used as keys.</p>
-<div id="b8124e79" class="cell" data-execution_count="5">
+<div id="9c172ce9" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"immutable is ok"</span>: <span class="dv">1</span>, </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"mutable"</span>, <span class="st">"not"</span>, <span class="st">"ok"</span>]: <span class="dv">5</span></span>
@@ -940,7 +940,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="indexing-dictionaries" class="level2">
 <h2 class="anchored" data-anchor-id="indexing-dictionaries">Indexing dictionaries</h2>
 <p>As mentioned at the beginning of the lesson, we index dictionaries by key.</p>
-<div id="4ceaa206" class="cell" data-execution_count="6">
+<div id="c2e41ed6" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a dictionary</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> <span class="bu">dict</span>(a<span class="op">=</span><span class="st">'yes'</span>, b<span class="op">=</span><span class="st">'no'</span>, c<span class="op">=</span><span class="st">'maybe'</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -952,7 +952,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a-dictionary-is-an-implementation-of-a-hash-table" class="level2">
 <h2 class="anchored" data-anchor-id="a-dictionary-is-an-implementation-of-a-hash-table">A dictionary is an implementation of a hash table</h2>
 <p>It is useful to stop and think about how a dictionary works. Let’s create a dictionary and look at where the values are stored in memory.</p>
-<div id="a61963ae" class="cell" data-execution_count="7">
+<div id="3de88a54" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create dictionary</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">6</span>, <span class="st">'b'</span>: <span class="dv">7</span>, <span class="st">'c'</span>:<span class="fl">12.6</span>}</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -964,7 +964,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>So, each entry in the dictionary is stored at a different location in memory. The dictionary itself also has its own address. So, when you index a dictionary with a key, how does the dictionary know which address in memory to use to fetch the value you are interested in?</p>
 <p>Dictionaries use a <strong>hash function</strong> to do this. A hash function converts its input to an integer. For example, we can use Python’s built-in hash function to convert the keys to integers.</p>
-<div id="de6e04ba" class="cell" data-execution_count="8">
+<div id="2a6273fd" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">hash</span>(<span class="st">'a'</span>), <span class="bu">hash</span>(<span class="st">'b'</span>), <span class="bu">hash</span>(<span class="st">'c'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Under the hood, Python then converts these integers to integers that could correspond to locations in memory. A collection of elements that can be indexed this way is called a <strong>hash table</strong>. This is a very common data structure in computing. Wikipedia has a <a href="https://en.wikipedia.org/wiki/Hash_table">good discussion on them</a>.</p>
@@ -973,7 +973,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dictionaries-are-mutable" class="level2">
 <h2 class="anchored" data-anchor-id="dictionaries-are-mutable">Dictionaries are mutable</h2>
 <p>Dictionaries are mutable. This means that they can be changed in place. For example, if we want to add an element to a dictionary, we use simple syntax.</p>
-<div id="74ea61e3" class="cell" data-execution_count="9">
+<div id="56ef5ce2" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remind ourselves what the dictionary is</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_dict)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -993,36 +993,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="membership-operators-with-dictionaries" class="level2">
 <h2 class="anchored" data-anchor-id="membership-operators-with-dictionaries">Membership operators with dictionaries</h2>
 <p>The <code>in</code> and <code>not in</code> operators work with dictionaries, but both only query keys and <em>not</em> values. We see this again by example.</p>
-<div id="781f9d89" class="cell" data-execution_count="10">
+<div id="4f2c9700" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a fresh my_dict</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">'a'</span>: <span class="dv">1</span>, <span class="st">'b'</span>: <span class="dv">2</span>, <span class="st">'c'</span>: <span class="dv">3</span>}</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># in works with keys</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">'b'</span> <span class="kw">in</span> my_dict, <span class="st">'d'</span> <span class="kw">in</span> my_dict, <span class="st">'e'</span> <span class="kw">not</span> <span class="kw">in</span> my_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="40589553" class="cell" data-execution_count="11">
+<div id="958e5468" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try it with values</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="kw">in</span> my_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Yup! We get <code>False</code>. Why? Because <code>2</code> is not a <em>key</em> in <code>my_dict</code>. We can also iterate over the keys in a dictionary.</p>
-<div id="fde6d1db" class="cell" data-execution_count="12">
+<div id="7777344c" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> my_dict:</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="st">':'</span>, my_dict[key])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The best, and preferred, method, is to iterate over <code>key</code>,<code>value</code> pairs in a dictionary using the <code>items()</code> method of a dictionary.</p>
-<div id="9c518dfc" class="cell" data-execution_count="13">
+<div id="f9b38eed" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> my_dict.items():</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="st">':'</span>, value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note, however, that like lists, the <code>item</code>s that come out of the <code>my_dict.items()</code> iterator are <em>not</em> items in the dictionary, but copies of them. If you make changes within the <code>for</code> loop, you will not change entries in the dictionary.</p>
-<div id="c3b345c2" class="cell" data-execution_count="14">
+<div id="7388ca71" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> my_dict.items():</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    value <span class="op">=</span> <span class="st">'this string will not be in dictionary.'</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>my_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You will, though, if you use the keys.</p>
-<div id="8c08ec43" class="cell" data-execution_count="15">
+<div id="2856b166" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, _ <span class="kw">in</span> my_dict.items():</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    my_dict[key] <span class="op">=</span> <span class="st">'this will be in the dictionary.'</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -1037,7 +1037,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>del d[k]</code> deletes entry with key <code>k</code> from dictionary <code>d</code></li>
 </ul>
 <p>This is the first time we’ve encountered the <code>del</code> keyword. This keyword is used to delete variables and their values from memory. The <code>del</code> keyword can also be to delete items from lists. Let’s see things in practice.</p>
-<div id="57d6931d" class="cell" data-execution_count="16">
+<div id="f0c8ed00" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create my_list and my_dict for reference</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> <span class="bu">dict</span>(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>, d<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
@@ -1061,7 +1061,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'post-deleted my_list:'</span>, my_list)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note, though, that you cannot delete an item from a tuple, since it’s immutable.</p>
-<div id="237cc195" class="cell" data-execution_count="17">
+<div id="1dac95f3" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>my_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> my_tuple[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1100,36 +1100,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Let’s try these out.</p>
-<div id="74f29206" class="cell" data-execution_count="18">
+<div id="ba1a9de7" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> <span class="bu">dict</span>(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>, d<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>my_dict.keys()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note that this is a <code>dict_keys</code> object. We cannot index it. If, say, we wanted to sort the keys and have them index-able, we would have to convert them to a list.</p>
-<div id="bdf96e94" class="cell" data-execution_count="19">
+<div id="437a3e00" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(<span class="bu">list</span>(my_dict.keys()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This is not a usual use case, though, and be warned that doing then when this is not explicitly what you want can lead to bugs. Now let’s try popping an entry out of the dictionary.</p>
-<div id="40d137b5" class="cell" data-execution_count="20">
+<div id="3c69f4d7" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>my_dict.pop(<span class="st">'c'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="602a8b99" class="cell" data-execution_count="21">
+<div id="054dd102" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>my_dict</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>…and, as we expect, key <code>'c'</code> is now deleted, and its value was returned in the call to <code>my_dict.pop('c')</code>. Now, let’s look at the values.</p>
-<div id="18d32dfd" class="cell" data-execution_count="22">
+<div id="f58b6d9d" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>my_dict.values()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We get a <code>dict_values</code> object, similar to the <code>dict_keys</code> object we got with the <code>my_dict.keys()</code> method. Finally, let’s consider <code>get()</code>.</p>
-<div id="d1f52e55" class="cell" data-execution_count="23">
+<div id="5d4ff2a1" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>my_dict.get(<span class="st">'d'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This is the same as <code>my_dict['d']</code>, except that if the key <code>'d'</code> is not there, it will return a default value. Let’s try using <code>my_dict.get()</code> with the deleted entry <code>'c'</code>.</p>
-<div id="187c4c6f" class="cell" data-execution_count="24">
+<div id="e1c84449" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>my_dict.get(<span class="st">'c'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note that there was no error (there would be if we did <code>my_dict['c']</code>), and we got <code>None</code>. We could specify a default value.</p>
-<div id="b6503b13" class="cell" data-execution_count="25">
+<div id="41befde5" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>my_dict.get(<span class="st">'c'</span>, <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You should think about what behavior you want when you attempt to get a value out of a dictionary by key. Do you want an error when the key is missing? Then use indexing. Do you want to have a (possibly <code>None</code>) default if the key is missing and no error? Then use <code>my_dict.get()</code>.</p>
@@ -1172,7 +1172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="using-dictionaries-as-kwargs" class="level2">
 <h2 class="anchored" data-anchor-id="using-dictionaries-as-kwargs">Using dictionaries as kwargs</h2>
 <p>A nifty feature of dictionaries is that they can be passed into functions as keyword arguments. We covered named keyword arguments in <a href="../../appendices/python/intro_to_functions.html">our discussion of functions</a>. In addition to the named keyword arguments, a function can take in arbitrary keyword arguments (<strong>not</strong> arbitrary non-keyword arguments). This is specified in the function definition by including a last argument with a double-asterisk, <code>**</code>. The kwargs with the double-asterisk get passed in as a dictionary.</p>
-<div id="ee520e62" class="cell" data-execution_count="26">
+<div id="0dc136e3" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> concatenate_sequences(a, b, <span class="op">**</span>kwargs):</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Concatenate (combine) 2 or more sequences."""</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    seq <span class="op">=</span> a <span class="op">+</span> b</span>
@@ -1183,15 +1183,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> seq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Let’s try it!</p>
-<div id="65e0d124" class="cell" data-execution_count="27">
+<div id="2756caa7" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>concatenate_sequences(<span class="st">'TGACAC'</span>, <span class="st">'CAGGGA'</span>, c<span class="op">=</span><span class="st">'GGGGGGGGG'</span>, d<span class="op">=</span><span class="st">'AAAATTTTT'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, imagine we have a dictionary that contains our values.</p>
-<div id="f3372485" class="cell" data-execution_count="28">
+<div id="36850200" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>my_dict <span class="op">=</span> {<span class="st">"a"</span>: <span class="st">"TGACAC"</span>, <span class="st">"b"</span>: <span class="st">"CAGGGA"</span>, <span class="st">"c"</span>: <span class="st">"GGGGGGGGG"</span>, <span class="st">"d"</span>: <span class="st">"AAAATTTTT"</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can now pass this directly into the function by preceding it with a double asterisk.</p>
-<div id="877a6cb1" class="cell" data-execution_count="29">
+<div id="9b15a30c" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>concatenate_sequences(<span class="op">**</span>my_dict)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Beautiful! This example is kind of trivial, but you can imagine that it can come in handy, e.g.&nbsp;with large sets of sequence fragments that you read in from a file. We use <code>**kwargs</code> extensively, particularly with arguments into plotting function.</p>
@@ -1200,7 +1200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="merging-dictionaries">Merging dictionaries</h2>
 <p>Say we have two dictionaries that have no like keys and we want to merge them together. This might be like considering two volumes of an encyclopedia; they do not have and like keys, and we might like to consider them as a single volume. How can we accomplish this?</p>
 <p>The <code>dict()</code> function, combined with the <code>**</code> operator in function calls allows for this. We simple call <code>dict()</code> with <code>**</code> before each dictionary argument.</p>
-<div id="2dc5b8e7" class="cell" data-execution_count="30">
+<div id="383fab47" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>restriction_dict <span class="op">=</span> {<span class="st">"KpnI"</span>: <span class="st">"GGTACC"</span>, <span class="st">"HindII"</span>: <span class="st">"AAGCTT"</span>, <span class="st">"ecoRI"</span>: <span class="st">"GAATTC"</span>}</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">dict</span>(<span class="op">**</span>my_dict, <span class="op">**</span>restriction_dict, another_seq<span class="op">=</span><span class="st">"AGTGTAGTG"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1208,7 +1208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="b1d5f87c" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="31">
+<div id="9da7c960" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

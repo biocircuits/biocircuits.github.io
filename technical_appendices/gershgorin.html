@@ -919,7 +919,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/gershgorin.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/gershgorin.ipynb">Download notebook</a></p>
 <hr>
-<div id="17d538cb" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="d7bbf4f1" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -1014,7 +1014,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 \end{align}
 \tag{6}\]</span></span></p>
 <p>It has one real eigenvalue at about <span class="math inline">\(5.7\)</span>, and two complex eigevalues near <span class="math inline">\(-4.9 \pm 1.5i\)</span>. The Gershgorin discs are all centered on the real axis (since the diagonal entries are all real), and the radii of the discs for the respective rows are 5, 2, and 6. The plot below shows the eigenvalues as ×’s in the complex plane along with the respective Gershgorin discs colored in blue, orange, and green.</p>
-<div id="ab6b06be" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
+<div id="f2603066" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gershgorin_plot(M, n_points<span class="op">=</span><span class="dv">400</span>, palette<span class="op">=</span>colorcet.b_glasbey_category10):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Plot Gershgorin discs with eigenvalues"""</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Centers and radii of Gershgorin discs</span></span>
@@ -1092,7 +1092,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 <section id="linear-stability-of-the-delay-circuit" class="level2">
 <h2 class="anchored" data-anchor-id="linear-stability-of-the-delay-circuit">Linear stability of the delay circuit</h2>
 <p>While the above analytical results are useful, we still need to use a brute-force approach to compute the linear stability diagram. First, we code up functions to compute the fixed point, the linear stability matrix, and eigenvalues to determine stability.</p>
-<div id="3f6ec42d" class="cell" data-tags="[]" data-execution_count="3">
+<div id="81836e96" class="cell" data-tags="[]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fixed_point(beta, n):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Computes fixed point for the m⟶r...⟶p autorepression system.</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
@@ -1135,7 +1135,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 <span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (lam.real <span class="op">&lt;</span> <span class="dv">0</span>).<span class="bu">all</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Before we proceed to computing the linear stability diagram, we take a moment to emphasize that the Gershgorin circle theorem only established that ultrasensitivity is only a <em>necessary</em> condition for an instability, not sufficient. Furthermore, having a Gershgorin disc cross the imaginary axis is a necessary, but not sufficient condition for an instability. We demonstrate that now for an illustrative parameter set with <span class="math inline">\(\beta = 2\)</span>, <span class="math inline">\(\gamma = 3\)</span>, <span class="math inline">\(\kappa = 2\)</span>, <span class="math inline">\(n = 3\)</span> and <span class="math inline">\(N = 5\)</span>.</p>
-<div id="393e24ff" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="4">
+<div id="94cca813" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters illustrating Gershgorin circle theorem</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="dv">3</span></span>
@@ -1149,7 +1149,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 </div>
 <p>The mid-sized gray circle is the overlay of <span class="math inline">\(N = 5\)</span> Gershgorin discs. The orange circle is the Gershgorin disc from the bottom row of the matric. The blue disc is from the first row and clearly could encompase eigenvalues with positive real parts. However, the two eigenvalues that lie with in the blue disc (and only within the blue disc, which can be seen by zooming in) do not have positive real parts.</p>
 <p>We now turn to performing linear stability analysis on the circuit. We have five(!) parameters to scan. We will make the plot in the <span class="math inline">\(\kappa\)</span>-<span class="math inline">\(\beta\)</span> plane. We will then allow for tuning of the ratio of decay rates of protein and mRNA <span class="math inline">\(\gamma\)</span>, the Hill coefficient <span class="math inline">\(n\)</span>, and the number of intermediates <span class="math inline">\(N\)</span> via sliders. To make the graphic more responsive, we will pre-compute the linear stability matrices for all of the values of <span class="math inline">\(\gamma\)</span>, <span class="math inline">\(n\)</span>, and <span class="math inline">\(N\)</span>. This takes a while to compute, since we are considering 500 different sets of <span class="math inline">\((\gamma, n, N)\)</span> values with 10,000 sets of <span class="math inline">\((\beta, \kappa)\)</span> values for a total of 5 million eigenvalue calculations.</p>
-<div id="adb7cca3" class="cell" data-tags="[]" data-execution_count="5">
+<div id="4d901b97" class="cell" data-tags="[]" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameter values to compute stability</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>log_gamma_vals <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n_vals <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>)</span>
@@ -1169,7 +1169,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    stab_diagrams[<span class="ss">f"</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>N<span class="sc">}</span><span class="ss">,</span><span class="sc">{</span>log_gamma<span class="sc">}</span><span class="ss">"</span>] <span class="op">=</span> stab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, we can make a figure. We will use the precomputed “images” for the stability in JavaScript callbacks for smooth interactivity. Again, we will color the unstable region in dark gray.</p>
-<div id="10527a17" class="cell" data-tags="[]" data-execution_count="6">
+<div id="7d746b0f" class="cell" data-tags="[]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the result (shaded region has oscillatory instability)</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> bokeh.plotting.figure(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">250</span>,</span>
@@ -1255,7 +1255,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="5f42bd49" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="7">
+<div id="125569de" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,tqdm,bokeh,colorcet,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

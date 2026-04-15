@@ -918,7 +918,9 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/michaelis_menten.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/michaelis_menten.ipynb">Download notebook</a></p>
 <hr>
-<div id="51d944b0" class="cell" data-execution_count="1">
+<div id="a927c7f3" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -933,6 +935,7 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> colorcet</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>bokeh.io.output_notebook()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <hr>
 <p>At the heart of a Michaelis-Menten description of enzyme kinetics is the following set of chemical reactions between the enzyme E and its substrate S to give product P.</p>
@@ -1029,10 +1032,10 @@ c_p &amp;\leftarrow \frac{c_p}{K_\mathrm{M}}.
 <p>This is the ratio of the rate of transitions into the enzyme-substrate complex to the rate of transitions out of the complex.</p>
 <p>It is apparent in looking at the dimensionless equations that the quasi-steady state approximation is valid when <span class="math inline">\(\zeta \kappa\)</span> is small. Because <span class="math inline">\(0 &lt; \kappa &lt; 1\)</span>, it is sufficient to have <span class="math inline">\(\zeta \ll 1\)</span> for the quasi-steady state approximation to hold. Thus, the approximation holds when the amount of enzyme is small compared to the Michaelis constant.</p>
 <p>To investigate this, we can make plots and compare the solution to the full dynamical equations and those using the quasi-steady state approximation. In the plot below, we show the approximate dynamics of the substrate and the product as fainter colored lines and the exact solution as darker, thinner lines. All concentrations and times are dimensionless.</p>
-<div id="8ac09f8e" class="cell" data-execution_count="2">
+<div id="3b97bc0c" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(biocircuits.jsplots.michaelis_menten_approx())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>By adjusting the parameters <span class="math inline">\(\zeta\)</span> and <span class="math inline">\(\kappa\)</span>, we find that provided <span class="math inline">\(\zeta \ll 1\)</span>, the solution of the Michaelis-Menten equation very closely matches the exact solution When <span class="math inline">\(\zeta\)</span> is large and the approximation breaks down, we see obvious problems with the approximate solution—the concentration of product goes negative because mass is not conserved. We also find that in the small <span class="math inline">\(\zeta\)</span> regime, the parameter <span class="math inline">\(\kappa\)</span> has no bearing on the solution. This is also evident in the dimensionless equations. When <span class="math inline">\(\zeta\)</span> is small, we have</p>
+<p>By adjusting the parameters <span class="math inline">\(\zeta\)</span> and <span class="math inline">\(\kappa\)</span>, we find that provided <span class="math inline">\(\zeta \ll 1\)</span>, the solution of the Michaelis-Menten equation very closely matches the exact solution when <span class="math inline">\(\zeta\)</span> is large and the approximation breaks down, we see obvious problems with the approximate solution—the concentration of product goes negative because mass is not conserved. We also find that in the small <span class="math inline">\(\zeta\)</span> regime, the parameter <span class="math inline">\(\kappa\)</span> has no bearing on the solution. This is also evident in the dimensionless equations. When <span class="math inline">\(\zeta\)</span> is small, we have</p>
 <p><span id="eq-dummy_label_JWzLc6lBjhLcHWx2"><span class="math display">\[
 \begin{align}
 \frac{\mathrm{d}\tilde{c}_\mathrm{es}}{\mathrm{d}\tilde{t}} \approx 0
@@ -1044,7 +1047,7 @@ c_p &amp;\leftarrow \frac{c_p}{K_\mathrm{M}}.
 (1 - \tilde{c}_\mathrm{es})\tilde{c}_\mathrm{s} \approx \tilde{c}_\mathrm{es}.
 \end{align}
 \tag{15}\]</span></span></p>
-<p>The, the ODE describing substrate dynamics is</p>
+<p>Then, the ODE describing substrate dynamics is</p>
 <p><span id="eq-dummy_label_3LRV6RqN5X2Jmwp8"><span class="math display">\[
 \begin{align}
 \kappa\,&amp;\frac{\mathrm{d}\tilde{c}_\mathrm{s}}{\mathrm{d}\tilde{t}} = -(1 - \tilde{c}_\mathrm{es})\tilde{c}_\mathrm{s} + (1-\kappa)\tilde{c}_\mathrm{es}
@@ -1093,7 +1096,7 @@ c_p &amp;\leftarrow \frac{c_p}{K_\mathrm{M}}.
 \end{align}
 \tag{21}\]</span></span></p>
 <p>Some authors refer to <span class="math inline">\(\mathrm{d}c_\mathrm{p}/\mathrm{d}t\)</span> as the reaction velocity, and the product <span class="math inline">\(k_\mathrm{cat}\,c_\mathrm{e}^0\)</span> as the <strong>maximum reaction velocity</strong>, denoted <span class="math inline">\(v_\mathrm{max}\)</span> or <span class="math inline">\(V_\mathrm{max}\)</span>.</p>
-<p>For the standard Michaelis-Menten chemical reaction scheme we have considered here, <span class="math inline">\(k_\mathrm{cat} = k_2\)</span> and <span class="math inline">\(K_\mathrm{M} = (k_{-1} + k_2) / k_{1})\)</span>. Other reaction schemes may have different expressions. For example, if an inhibitor is present that can bind teh enzyme, the reaction scheme is</p>
+<p>For the standard Michaelis-Menten chemical reaction scheme we have considered here, <span class="math inline">\(k_\mathrm{cat} = k_2\)</span> and <span class="math inline">\(K_\mathrm{M} = (k_{-1} + k_2) / k_{1}\)</span>. Other reaction schemes may have different expressions. For example, if an inhibitor is present that can bind the enzyme, the reaction scheme is</p>
 <p><span id="eq-dummy_label_ayKapis0eS84wn6n"><span class="math display">\[
 \begin{align}
 \require{mhchem}
@@ -1117,7 +1120,7 @@ K_\mathrm{M} = \frac{k_{-1} + k_2}{k_1}\left(1+\frac{k_3}{k_{-3}}\,c_\mathrm{i}\
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="48f31d93" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="3">
+<div id="afc1d80b" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,biocircuits,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

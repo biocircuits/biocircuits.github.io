@@ -918,7 +918,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/double_phos_double_cascade.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/double_phos_double_cascade.ipynb">Download notebook</a></p>
 <hr>
-<div id="feada946" class="cell" data-tags="[]" data-execution_count="1">
+<div id="5319678a" class="cell" data-tags="[]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -1139,7 +1139,7 @@ y_2 = y_\mathrm{tot}\,\frac{x_\mathrm{tot}^2 s^4}{(1+s+s^2)^2 + x_\mathrm{tot} s
 \end{align}
 \tag{23}\]</span></span></p>
 <p>The gain is easily calculated for this example as <span class="math inline">\(x_1 / s\)</span>.</p>
-<div id="c89a8c39" class="cell" data-tags="[]" data-execution_count="2">
+<div id="73d614fe" class="cell" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(s, n):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> np.inf:</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        output <span class="op">=</span> np.zeros_like(s)</span>
@@ -1188,7 +1188,7 @@ y_2 = y_\mathrm{tot}\,\frac{x_\mathrm{tot}^2 s^4}{(1+s+s^2)^2 + x_\mathrm{tot} s
 <span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    args <span class="op">=</span> (s,) <span class="cf">if</span> transfer_fun <span class="kw">in</span> (f1, f2) <span class="cf">else</span> (s, xtot)</span>
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s <span class="op">/</span> transfer_fun(<span class="op">*</span>args) <span class="op">*</span> deriv_fun(<span class="op">*</span>args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="db3b68e2" class="cell" data-tags="[]" data-execution_count="3">
+<div id="cc58f8da" class="cell" data-tags="[]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> np.logspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">400</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Styling for figures</span></span>
@@ -1346,7 +1346,7 @@ y_2 = y_\mathrm{tot}\,\frac{x_\mathrm{tot}^2 s^4}{(1+s+s^2)^2 + x_\mathrm{tot} s
 <span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(app)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we can make a plot for various values of <span class="math inline">\(n\)</span>.</p>
-<div id="92c0cca8" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="4">
+<div id="c66a4741" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Values of s and n for which we want a plot</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> np.logspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">400</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, np.inf]</span>
@@ -1484,7 +1484,7 @@ f_\infty'(z) = \frac{\mathrm{d}f_\infty}{\mathrm{d}z} = \left\{
 \text{sensitivity} = \frac{\mathrm{d}\ln y_n}{\mathrm{d} \ln s} = \frac{s}{y_n}\,\frac{\mathrm{d}y_n}{\mathrm{d}s} = \frac{s\,x_\mathrm{tot}\,f_n'(s)\,f_n'(x_\mathrm{tot} f_n(s))}{f_{n}(x_\mathrm{tot} f_{n}(s))}.
 \end{align}\]</span></p>
 <p>Finally, the gain is easily calculated as <span class="math inline">\(y_n / s\)</span>.</p>
-<div id="71b1b217" class="cell" data-execution_count="5">
+<div id="7b46825e" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_prime(x, n):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.isinf(n):</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> f_infinite_n(x)</span>
@@ -1535,7 +1535,7 @@ f_n'(z) = \frac{\mathrm{d}f_n}{\mathrm{d}z} = \left\{\begin{array}{ll}
 \frac{\mathrm{d} y_n}{\mathrm{d}s} = x_\mathrm{tot}\,y_\mathrm{tot}\,f'(s)\,f'(y_\mathrm{tot} f(s)).
 \end{align}\]</span></p>
 <p>Toward a goal of plotting the response <span class="math inline">\(y_n\)</span> as a function of input signal and also the sensitivity and gain, we can code up expressions for <span class="math inline">\(y_n\)</span> and <span class="math inline">\(\mathrm{d}y_n/\mathrm{d}s\)</span>. We can do it for more general expressions.</p>
-<div id="8522eaf8" class="cell" data-tags="[]" data-execution_count="6">
+<div id="2e1bda73" class="cell" data-tags="[]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cascade_signal(s, x_tot, n):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.isscalar(x_tot):</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> x_tot <span class="op">*</span> f(s, n)</span>
@@ -1563,7 +1563,7 @@ f_n'(z) = \frac{\mathrm{d}f_n}{\mathrm{d}z} = \left\{\begin{array}{ll}
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="1586b391" class="cell" data-tags="[]" data-execution_count="7">
+<div id="7b1810ea" class="cell" data-tags="[]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x_tot <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>y_tot <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> np.logspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">400</span>)</span>
@@ -1631,14 +1631,14 @@ f_n'(z) = \frac{\mathrm{d}f_n}{\mathrm{d}z} = \left\{\begin{array}{ll}
 <span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="c854820a" class="cell" data-execution_count="8">
+<div id="b42144ff" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(biocircuits.jsplots.phosphorylation_signal_cascade())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="4eac839e" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="9">
+<div id="0f2a2744" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,biocircuits,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

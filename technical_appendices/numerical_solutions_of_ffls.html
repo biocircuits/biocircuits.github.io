@@ -919,7 +919,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/numerical_solutions_of_ffls.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/numerical_solutions_of_ffls.ipynb">Download notebook</a></p>
 <hr>
-<div id="4afe6bb8" class="cell" data-execution_count="1">
+<div id="8c6f0131" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -960,7 +960,7 @@ window.Quarto = {
 \tag{1}\]</span></span></p>
 <p>where the function <span class="math inline">\(f_y\)</span> specifies how the expression of Y is regulated by the concentration of X and the function <span class="math inline">\(f_z\)</span> specifies how the expression of Z is regulated by the concentrations of X and Y. We can use the regulatory functions included in the <code>biocircuits</code> when we code up the ODEs for FFLs.</p>
 <p>It is convenient to define a function that will give back a function that we can use as the right-hand side we need to specify to <code>scipy.integrate.odeint()</code>. Remember that <code>odeint()</code> requires a function of the form <code>func(yz, t, *args)</code>, where <code>yz</code> is an array of length two containing the values of <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span>. For convenience, our function will return a function with call signature <code>rhs(yz, t, x)</code>, where <code>x</code> is the value of <span class="math inline">\(x\)</span> at a given time point.</p>
-<div id="7e656657" class="cell" data-execution_count="2">
+<div id="0288be2b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ffl_rhs(beta, gamma, kappa, n_xy, n_xz, n_yz, ffl, logic):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return a function with call signature fun(yz, x) that computes</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    the right-hand side of the dynamical system for an FFL. Here,</span></span>
@@ -1003,7 +1003,7 @@ window.Quarto = {
 </div>
 <p>To study the dynamics, we will investigate how the circuit responds to a step up in concentration of X, assuming all concentrations are initially zero, and how a circuit at steady state with nonzero concentration of X responds to a step down in X to zero. This case is particularly relevant for a C1-FFL and an I1-FFL, since in the absence of X (and leakage), the steady state levels of both Y and Z are zero. For other FFLs, the steady state concentrations of Y or Z absent X can be nonzero. In this case, you can think of the sudden rise in X being associated also with a sudden rise of effectors that allow Y and Z to turn on.</p>
 <p>Now we can write a function to solve the ODEs. Because the steps are discontinuous, we need to solve the ODEs in a piecewise manner. We specify that the step up starts at <span class="math inline">\(t = 0\)</span>, and we will allow the time of the step down to be specified. The magnitude of the step up, <span class="math inline">\(x_0\)</span> will also be specified.</p>
-<div id="655b85f9" class="cell" data-execution_count="3">
+<div id="04106b95" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solve_ffl(beta, gamma, kappa, n_xy, n_xz, n_yz, ffl, logic, t, t_step_down, x_0):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Solve an FFL. The dynamics are given by</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    `rhs`, the output of `ffl_rhs()`.</span></span>
@@ -1036,7 +1036,7 @@ window.Quarto = {
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> np.vstack((yz_during_step[:<span class="op">-</span><span class="dv">1</span>, :], yz_after_step[<span class="dv">1</span>:, :]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, we can write a function to solve and plot the dynamics of an FFL for a unit step.</p>
-<div id="b44050e4" class="cell" data-execution_count="4">
+<div id="d8015129" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_ffl(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    beta<span class="op">=</span><span class="fl">1.0</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    gamma<span class="op">=</span><span class="fl">1.0</span>,</span>
@@ -1099,7 +1099,7 @@ window.Quarto = {
 <span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can take this for a spin to see the response of an I1-FFL.</p>
-<div id="737b7c8d" class="cell" data-execution_count="5">
+<div id="f4c4975e" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameter values</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="dv">1</span></span>
@@ -1114,7 +1114,7 @@ window.Quarto = {
 <p>The functionality of the <code>solve_ffl()</code> and <code>plot_ffl()</code> functions are available in the <code>biocircuits</code> packages as <code>biocircuits.apps.solve_ffl()</code> and <code>biocircuits.apps.plot_ffl()</code>. The <code>biocircuits.apps.plot_ffl()</code> also outputs the <code>ColumnDataSource</code>s <code>cds</code> and <code>cds_x</code> that are used in constructing the FFL explorer app, so its API does differ from the function defined above.</p>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="aef3494a" class="cell" data-execution_count="6">
+<div id="83f07b65" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,biocircuits,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

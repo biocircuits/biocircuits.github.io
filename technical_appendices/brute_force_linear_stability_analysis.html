@@ -919,7 +919,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/brute_force_linear_stability_analysis.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/brute_force_linear_stability_analysis.ipynb">Download notebook</a></p>
 <hr>
-<div id="ec122dbc" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="104b6c35" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -1006,7 +1006,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 <h2 class="anchored" data-anchor-id="computing-a-linear-stability-diagram-by-brute-force">Computing a linear stability diagram by brute force</h2>
 <p>We can compute the eigenvalues of the linear stability matrix for various values of <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> for fixed Hill coefficient <span class="math inline">\(n\)</span>. We will take a “brute force” approach and grid up <span class="math inline">\(\beta\)</span>-<span class="math inline">\(\gamma\)</span> space and compute the eigenvalues for each set of parameter values and determine if that point is stable or not. We can then display the linear stability diagram as an image, where a pixel is light colored in a stable region and dark colored in an unstable region.</p>
 <p>The first step in this brute force calculation is finding the fixed point. We know that the fixed point satisfies <span class="math inline">\(m_0(1+m_0^n) - \beta = 0\)</span>. The fixed point must lie between zero and <span class="math inline">\(\beta\)</span>, so we can use Brent’s method, as discussed in <a href="../technical_appendices/1d_root_finding.html">Technical Appendix 9c</a>, to find the root.</p>
-<div id="c3c1ca3a" class="cell" data-tags="[]" data-execution_count="2">
+<div id="364cc62d" class="cell" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fixed_point(beta, n):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Computes fixed point for the m⟶r⟶p autorepression system.</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
@@ -1023,7 +1023,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 <li>Compute the eigenvalues of the linear stability matrix.</li>
 <li>Return <code>True</code> if the real parts of all eigenvalues are negative and <code>False</code> otherwise.</li>
 </ol>
-<div id="647f3309" class="cell" data-tags="[]" data-execution_count="3">
+<div id="b3a775b8" class="cell" data-tags="[]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lin_stab(beta, gamma, kappa, n):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Returns True if delay system is linearly stable and False</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    otherwise.</span></span>
@@ -1043,7 +1043,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 </div>
 <p>With this function in hand, we scan values of the parameters for stability. Unfortunately, this is a four-dimensional scan, since we have four dimensionless parameters to consider, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span>, <span class="math inline">\(\kappa\)</span>, and <span class="math inline">\(n\)</span>. To limit the parameters we will scan, we can make some physical arguments about <span class="math inline">\(\kappa\)</span>. Recall that <span class="math inline">\(\kappa = k_r / \gamma_m\)</span>, the ratio of the rate constant for production of intermediate from mRNA to the <em>total</em> rate constant for mRNA loss, including loss of mRNA due to possible conversion to the intermediate. If we assume that conversion to intermediate dominates mRNA loss, then <span class="math inline">\(\gamma_m \approx k_r\)</span> and <span class="math inline">\(\kappa \approx 1\)</span>. Conversely, if the mRNA is not converted to the intermediate, but rather the intermediate is some product derived from, but not consuming, the mRNA, then <span class="math inline">\(\gamma_m \ne k_r\)</span>. We may then have <span class="math inline">\(\kappa &lt; 1\)</span> if mRNA decay is rapid compared to formation of intermediates, and <span class="math inline">\(\kappa &gt; 1\)</span> if it is not.</p>
 <p>For our first calculation, we will take <span class="math inline">\(\kappa = 1\)</span> and <span class="math inline">\(n = 10\)</span> for high ultrasensitivity of repression.</p>
-<div id="75306f9e" class="cell" data-tags="[]" data-execution_count="4">
+<div id="65cf3164" class="cell" data-tags="[]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> stab_image(kappa, n):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Compute "image" of linear stability in the γ-β plane</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    for given values of κ and n.</span></span>
@@ -1065,7 +1065,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>stab <span class="op">=</span> stab_image(<span class="dv">1</span>, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To plot the results, we will use the <code>image()</code> method of a Bokeh figure. It expects a list of two-dimensional arrays to render as images. For us, we will include a single image, which we have defined as the 2D array <code>stab</code> in the above cell. The <code>image()</code> method also expects keyword arguments <code>x</code> and <code>y</code>, which specify the coordinates of the bottom left corner of the image as it sits on a set of axes. We also supply <code>dw</code> and <code>dh</code> keyword arguments to specify the width and height, respectively, of the image in the units of the axes in which it resides. These <code>x</code>, <code>y</code>, ,<code>dw</code>, and <code>dh</code> keyword arguments are crucial in this application because we need to properly match up the axis values (the values of <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span>) with the “image” of stability we are plotting. We will also pass a <code>palette</code> keyword argument to specify how the stable and unstable regions are colored and also an <code>alpha</code> keyword argument specifying the opacity of the displayed image.</p>
-<div id="3b81b735" class="cell" data-tags="[]" data-execution_count="5">
+<div id="e5ba2e58" class="cell" data-tags="[]" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the result (shaded region has oscillatory instability)</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> bokeh.plotting.figure(</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">250</span>,</span>
@@ -1089,7 +1089,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can repeat the calculation for less ultrasensitive repression, this time with <span class="math inline">\(n = 9\)</span>.</p>
-<div id="e5a144c3" class="cell" data-tags="[]" data-execution_count="6">
+<div id="5a810919" class="cell" data-tags="[]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute stability for kappa = 1 and n = 9</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>stab <span class="op">=</span> stab_image(<span class="dv">1</span>, <span class="dv">9</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1113,7 +1113,7 @@ b = \frac{\beta n m_0^{n-1}}{(1+m_0^n)^2} = \frac{n m_0^n}{1+m_0^n}.
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="710de3d7" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="7">
+<div id="41d6f746" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

@@ -918,7 +918,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/linear_stability_analysis_ddes.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/linear_stability_analysis_ddes.ipynb">Download notebook</a></p>
 <hr>
-<div id="51de3b96" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="99d599e5" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -1071,7 +1071,7 @@ b = \sqrt{a_{\tau}^2 - 1},
 \tag{18}\]</span></span></p>
 <p>The region of stability is below the bifurcation line in the <span class="math inline">\(\tau\)</span>-<span class="math inline">\(\beta\)</span> plane, since a smaller <span class="math inline">\(\tau\)</span> serves to decrease the real part of <span class="math inline">\(\lambda\)</span>.</p>
 <p>Now that we have worked it out analytically, we can compute and plot the linear stability diagram in the <span class="math inline">\(\tau\)</span>-<span class="math inline">\(\beta\)</span> plane.</p>
-<div id="75c9a79c" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
+<div id="647f847c" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fp_rhs(x, beta, n):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" Right-hand side of the fixed point equation."""</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> beta <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> x <span class="op">**</span> n)</span>
@@ -1136,7 +1136,7 @@ b = \sqrt{a_{\tau}^2 - 1},
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="ae12ebc3" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="3">
+<div id="3dea25bb" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

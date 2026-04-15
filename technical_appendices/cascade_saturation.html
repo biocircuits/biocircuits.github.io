@@ -918,7 +918,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/cascade_saturation.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/cascade_saturation.ipynb">Download notebook</a></p>
 <hr>
-<div id="b142f4a1" class="cell" data-tags="[]" data-execution_count="1">
+<div id="ee23eba1" class="cell" data-tags="[]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext autoreload</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -943,13 +943,13 @@ window.Quarto = {
 </div>
 <hr>
 <p>Talk about saturation.</p>
-<div id="e32e885f" class="cell" data-execution_count="2">
+<div id="a6c5da35" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(biocircuits.jsplots.phosphorylation_signal_cascade_22_14())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f442bb3b" class="cell" data-execution_count="3">
+<div id="e461fd1d" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> biocircuits.jsplots.phosphorylation_signal_cascade_22_14()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="d17919ba" class="cell" data-execution_count="4">
+<div id="038a93c3" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>bokeh.io.save(layout, <span class="st">'2x2_vs_1x4_with_sat.html'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="dynamics-of-multi-site-phosphorylation-by-a-signaling-molecule" class="level2">
@@ -1039,7 +1039,7 @@ f_{\infty}(s) = \lim_{n\to\infty} \frac{s^n(1-s)}{1-s^{n+1}} = \left\{
 x_n = x_\mathrm{tot}\,f_n(s).
 \end{align}\]</span></p>
 <p>Since <span class="math inline">\(x_n\)</span> is our quantity of interest, let us look at how it varies with signal intensity.</p>
-<div id="0ef3097d" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="5">
+<div id="64ba2185" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_infinite_n(s):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The result</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    res <span class="op">=</span> np.empty_like(s)</span>
@@ -1359,14 +1359,14 @@ x^{(m)}_{n_m} = x^{(m)}_\mathrm{tot} \left(1 - x^{(m-1)}_\mathrm{tot}\left(1 - x
 <section id="plotting-the-characterizations-of-the-circuit" class="level3">
 <h3 class="anchored" data-anchor-id="plotting-the-characterizations-of-the-circuit">Plotting the characterizations of the circuit</h3>
 <p>The above expressions for the transfer function, its derivative, the gain, and the sensitivity are challenging to code, and we will not show the details here. Rather, the interactive plot below shows how these functions vary with dimensionless input signal <span class="math inline">\(s\)</span>. The curves are colored for $n = 1, 2, 3, $ and <span class="math inline">\(4\)</span> going from light to dark blue. The gray curve represents the baseline response corresponding to the case where an input signal catalyzes a single phosphorylation of a single signaling molecule. (Note that some discontinuities will appear in plots of sensitivity for large cascade depths for small <span class="math inline">\(s\)</span>. This is an artifact due to machine precision and underflow issues.)</p>
-<div id="12c6ae78" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="6">
+<div id="fdbe380f" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(biocircuits.jsplots.phosphorylation_signal_cascade())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="c3468306" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="7">
+<div id="4c07dec0" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,bokeh,biocircuits,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

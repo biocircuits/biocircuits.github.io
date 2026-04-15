@@ -918,7 +918,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/interactive_plotting.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/interactive_plotting.ipynb">Download notebook</a></p>
 <hr>
-<div id="fe689306" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="8b2405cf" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -948,7 +948,7 @@ window.Quarto = {
 </div>
 <hr>
 <p>In this technical appendix, we make an interactive plot of the dynamics of an autorepressive gene to a pulse in its activating signal. Prior to proceeding to making interactive plots from the circuits, we need to define some functions and variables from <a href="../chapters/response_time.html" class="quarto-xref"><span>2&nbsp; Design principles governing the rate of gene expression</span></a> to make the plots. They are in the code cell below.</p>
-<div id="49fb047d" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
+<div id="6ffa8eb5" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> s_pulse(t, t_0, tau):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns s value for a pulse centered at t_0 with duration tau.</span></span>
@@ -1030,7 +1030,7 @@ window.Quarto = {
 <section id="step-1-make-the-widgets" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-make-the-widgets">Step 1: Make the widgets</h4>
 <p>Because we need parameter values to generate any curve on the plot, we first need to make widgets that define the parameter values. In this case, where we are simply plotting the input signal <span class="math inline">\(s\)</span>, we only need two sliders, one to for the value <span class="math inline">\(t_0\)</span> and one for the value of <span class="math inline">\(\tau\)</span>.</p>
-<div id="9718876e" class="cell" data-execution_count="3">
+<div id="7266bf36" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>t0_slider <span class="op">=</span> bokeh.models.Slider(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"t₀"</span>, start<span class="op">=</span><span class="dv">0</span>, end<span class="op">=</span><span class="dv">10</span>, step<span class="op">=</span><span class="fl">0.01</span>, value<span class="op">=</span><span class="fl">4.0</span>, width<span class="op">=</span><span class="dv">150</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -1044,7 +1044,7 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="step-2-generate-the-plot-but-dont-show-it">Step 2: Generate the plot (but don’t show it)</h4>
 <p>Now that we have access to parameters we will generate the plot. We can pull the values of the sliders using their <code>value</code> attribute, e.g., <code>tau_slider.value</code>. When we generate the plot, we specify the data in a <code>ColumnDataSource</code> so that we can change the data in the plot without re-rendering it.</p>
 <p>We cannot show the plot here, since we will show it in the app. A Bokeh plot can only be in a single document, in our case the app (which as far as Bokeh is concerned is separate from showing it in the JupyterLab cell below).</p>
-<div id="e4729d72" class="cell" data-execution_count="4">
+<div id="e7529ee9" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up time points</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">200</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1069,12 +1069,12 @@ window.Quarto = {
 <section id="step-3-make-the-callbacks" class="level4">
 <h4 class="anchored" data-anchor-id="step-3-make-the-callbacks">Step 3: Make the callbacks</h4>
 <p>Next, we specify the callback function that will be used to update the plot as the slider changes. The callback function for a slider must take three arguments, the attribute that changes, its old value, and its new one. We will not directly use these arguments (though we could), but will rather directly read the value from the slider using its <code>value</code> attribute. Our callback function simply updates the <code>y</code> data values of the <code>ColumnDataSource</code>.</p>
-<div id="a233ecba" class="cell" data-execution_count="5">
+<div id="ea0773ef" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> callback(attr, old, new):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    cds.data[<span class="st">"s"</span>] <span class="op">=</span> s_pulse(cds.data[<span class="st">"t"</span>], t0_slider.value, tau_slider.value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we need to alert Bokeh that it should trigger the callback function whenever the slider <code>value</code> changes.</p>
-<div id="d4efbc44" class="cell" data-execution_count="6">
+<div id="23414097" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>t0_slider.on_change(<span class="st">"value"</span>, callback)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tau_slider.on_change(<span class="st">"value"</span>, callback)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1082,7 +1082,7 @@ window.Quarto = {
 <section id="step-4-build-the-layout" class="level4">
 <h4 class="anchored" data-anchor-id="step-4-build-the-layout">Step 4: Build the layout</h4>
 <p>Now that we have a slider and a plot and have linked the data source of the plot to the slider, we can lay out the dashboard. We will put the sliders in a column next to the plot, putting a spacer in between.</p>
-<div id="30366c51" class="cell" data-execution_count="7">
+<div id="7fbed9f4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> bokeh.layouts.row(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    p,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    bokeh.models.Spacer(width<span class="op">=</span><span class="dv">30</span>),</span>
@@ -1093,7 +1093,7 @@ window.Quarto = {
 <section id="step-5-make-the-app" class="level4">
 <h4 class="anchored" data-anchor-id="step-5-make-the-app">Step 5: Make the app</h4>
 <p>Now we are ready to make a function to produce the app. The function needs to have call signature <code>app(doc)</code>, where <code>doc</code> represents the document that Bokeh will build into an app. The purpose of this function is to add the layout we have just build to the document.</p>
-<div id="63377554" class="cell" data-execution_count="8">
+<div id="076c5bf3" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> app(doc):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    doc.add_root(layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1106,7 +1106,7 @@ window.Quarto = {
 <p>In the static HTML rendering of this notebook, there is no Python instance running, so apps requiring Python will not be responsive. Also, Bokeh apps currently are not supported by Google Colab.</p>
 <p>Therefore, in chapters, technical appendices, and appendices with Bokeh apps requiring Python, we have a variable <code>interactive_python_plots</code>, which is set in the first code cell along with the imports. This is set to <code>False</code> for static HTML rendering. Where possible, we use a function in the <code>biocircuits.jsplots</code> module to generate a nearly identical interactive plot using pure JavaScript callbacks. The purpose here is to still allow the reader exploration of the plot without having to have a notebook running; the goal is not to teach JavaScript. When purely JavaScript-based interactivity is not possible, we do not link the sliders to callbacks (since there is no Python engine), and disable the control widgets.</p>
 </div>
-<div id="f0c5ab10" class="cell" data-execution_count="9">
+<div id="16e260aa" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> interactive_python_plots:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(app, notebook_url<span class="op">=</span>notebook_url)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
@@ -1190,7 +1190,7 @@ window.Quarto = {
 <section id="step-1-build-the-widgets" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-build-the-widgets">Step 1: Build the widgets</h4>
 <p>We will build sliders, one for each parameter. We are interested in varying the parameters <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span>, and <span class="math inline">\(x_0\)</span> on a logarithmic scale, so we will set up the sliders to specify <span class="math inline">\(\log_{10} \beta\)</span>, <span class="math inline">\(\log_{10}\gamma\)</span> and <span class="math inline">\(\log_{10} x_0\)</span>.</p>
-<div id="71ce5268" class="cell" data-execution_count="10">
+<div id="ad6d8942" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>log_beta0_slider <span class="op">=</span> bokeh.models.Slider(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"log₁₀ β₀"</span>, start<span class="op">=-</span><span class="dv">1</span>, end<span class="op">=</span><span class="dv">2</span>, step<span class="op">=</span><span class="fl">0.1</span>, value<span class="op">=</span>np.log10(<span class="fl">100.0</span>), width<span class="op">=</span><span class="dv">150</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -1217,18 +1217,18 @@ window.Quarto = {
 <span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We also want to be able to toggle between display of normalized versus unnormalized responses. We can make a toggle button for that.</p>
-<div id="d18ae842" class="cell" data-execution_count="11">
+<div id="a8f570a9" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>normalize_toggle <span class="op">=</span> bokeh.models.Toggle(label<span class="op">=</span><span class="st">'Normalize'</span>, active<span class="op">=</span><span class="va">True</span>, width<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, the legend may occasionally get in the way, so we want to toggle its visibility.</p>
-<div id="64aae24b" class="cell" data-execution_count="12">
+<div id="bfcfa64f" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>legend_toggle <span class="op">=</span> bokeh.models.Toggle(label<span class="op">=</span><span class="st">'Legend'</span>, active<span class="op">=</span><span class="va">True</span>, width<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-2-build-the-plot" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-build-the-plot">Step 2: Build the plot</h4>
 <p>We will build the plot as before. For convenience, we make a function to packages the slider values into tuples to be passed into the right-hand-side functions for the ODE solver.</p>
-<div id="50ba79fe" class="cell" data-execution_count="13">
+<div id="9711938a" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> package_args():</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Package slider values into tuples."""</span>    </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    s_args <span class="op">=</span> (t0_slider.value, tau_slider.value)</span>
@@ -1256,7 +1256,7 @@ window.Quarto = {
 <span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s_args, args, args_unreg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we proceed to integrate the ODE to get solutions for plotting.</p>
-<div id="71f06502" class="cell" data-execution_count="14">
+<div id="55dbd33f" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial condition</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="fl">0.0</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1303,7 +1303,7 @@ window.Quarto = {
 <section id="step-3-build-the-callbacks" class="level4">
 <h4 class="anchored" data-anchor-id="step-3-build-the-callbacks">Step 3: Build the callbacks</h4>
 <p>We can now build our callback. This callback will be a bit more complicated. For each new slider value, we need to re-integrate the dynamical equations. We also need to check to see if the normalization toggle button is clicked and appropriately scale the data and change the y-axis label. We also will need to recalculate the result if the range of the time axis changes, so we need to read the time points off of the <code>x_range</code> property of the plot.</p>
-<div id="0e22e6a9" class="cell" data-execution_count="15">
+<div id="8fbc7583" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_auto_callback(attr, old, new):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set up time values, keeping minimum at zero</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.linspace(<span class="dv">0</span>, p.x_range.end, <span class="dv">2000</span>)</span>
@@ -1340,7 +1340,7 @@ window.Quarto = {
 <span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>    cds.data <span class="op">=</span> <span class="bu">dict</span>(t<span class="op">=</span>t, x<span class="op">=</span>x, s<span class="op">=</span>s, x_unreg<span class="op">=</span>x_unreg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we link the callback to the sliders, and also to the normalization toggle and the range of the time axis.</p>
-<div id="1ab2209f" class="cell" data-execution_count="16">
+<div id="0aa7b1f9" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> slider <span class="kw">in</span> [</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    log_beta0_slider,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    log_gamma_slider,</span>
@@ -1361,7 +1361,7 @@ window.Quarto = {
 <section id="step-4-the-layout" class="level4">
 <h4 class="anchored" data-anchor-id="step-4-the-layout">Step 4: The layout</h4>
 <p>We can now lay things out. I will put the sliders and normalization toggle in a column next to the plot.</p>
-<div id="ca985e37" class="cell" data-execution_count="17">
+<div id="c3b13fec" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> bokeh.layouts.row(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    p,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    bokeh.layouts.Spacer(width<span class="op">=</span><span class="dv">30</span>),</span>
@@ -1385,7 +1385,7 @@ window.Quarto = {
 <section id="step-5-the-app" class="level4">
 <h4 class="anchored" data-anchor-id="step-5-the-app">Step 5: The app</h4>
 <p>And now for the app! (Note again that the app in the HTML rendering of this notebook will be using JavaScript. To use the Python-based app, be sure <code>interactive_python_plots</code> is <code>True</code> in the top cell of this notebook.)</p>
-<div id="215385d3" class="cell" data-execution_count="18">
+<div id="0d7534f0" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> app(doc):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    doc.add_root(layout)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1400,7 +1400,7 @@ window.Quarto = {
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="4a5c3e93" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="19">
+<div id="5d58b820" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,colorcet,biocircuits,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
