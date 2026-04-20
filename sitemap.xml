@@ -2,390 +2,390 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://biocircuits.github.io/index.html</loc>
-    <lastmod>2026-04-15T06:54:57.718Z</lastmod>
+    <lastmod>2026-04-20T15:28:55.679Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/intro_to_circuit_design.html</loc>
-    <lastmod>2026-04-15T06:55:13.030Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.525Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/response_time.html</loc>
-    <lastmod>2026-04-15T06:55:19.488Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.000Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/bistability.html</loc>
-    <lastmod>2026-04-15T06:55:19.491Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.021Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/ffls.html</loc>
-    <lastmod>2026-04-15T06:55:19.513Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.043Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/dosage_compensation.html</loc>
-    <lastmod>2026-04-15T06:55:13.064Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.561Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/exact_adaptation.html</loc>
-    <lastmod>2026-04-15T06:55:19.519Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.048Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/signal_amplification.html</loc>
-    <lastmod>2026-04-15T06:55:19.526Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.565Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/signaling_cascades.html</loc>
-    <lastmod>2026-04-15T06:55:00.386Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.053Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/kinetic_proofreading.html</loc>
-    <lastmod>2026-04-15T06:55:19.526Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.054Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/repressilator.html</loc>
-    <lastmod>2026-04-15T06:55:19.530Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.058Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/delay_oscillators.html</loc>
-    <lastmod>2026-04-15T06:55:19.829Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.333Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/time-based_regulation.html</loc>
-    <lastmod>2026-04-15T06:55:13.298Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.800Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/molecular_titration.html</loc>
-    <lastmod>2026-04-15T06:55:00.756Z</lastmod>
+    <lastmod>2026-04-20T15:28:58.427Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/promiscuous_binding.html</loc>
-    <lastmod>2026-04-15T06:55:13.302Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.805Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/multifate.html</loc>
-    <lastmod>2026-04-15T06:55:13.312Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.814Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/noise.html</loc>
-    <lastmod>2026-04-15T06:55:00.353Z</lastmod>
+    <lastmod>2026-04-20T15:28:58.072Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/bursty.html</loc>
-    <lastmod>2026-04-15T06:55:19.838Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.339Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/bet_hedging.html</loc>
-    <lastmod>2026-04-15T06:55:00.275Z</lastmod>
+    <lastmod>2026-04-20T15:28:58.017Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/stochastic_differentiation.html</loc>
-    <lastmod>2026-04-15T06:55:00.625Z</lastmod>
+    <lastmod>2026-04-20T15:28:58.297Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/lateral_inhibition.html</loc>
-    <lastmod>2026-04-15T06:55:19.964Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.452Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/turing.html</loc>
-    <lastmod>2026-04-15T06:55:00.343Z</lastmod>
+    <lastmod>2026-04-20T15:28:58.070Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/chapters/scaling_morphogens.html</loc>
-    <lastmod>2026-04-15T06:55:13.326Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.825Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/references.html</loc>
-    <lastmod>2026-04-15T06:54:57.719Z</lastmod>
+    <lastmod>2026-04-20T15:28:55.679Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/approximate_autorepression_dynamics.html</loc>
-    <lastmod>2026-04-15T06:55:17.889Z</lastmod>
+    <lastmod>2026-04-20T15:29:15.397Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/numerical_odes.html</loc>
-    <lastmod>2026-04-15T06:55:13.655Z</lastmod>
+    <lastmod>2026-04-20T15:29:11.164Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/interactive_plotting.html</loc>
-    <lastmod>2026-04-15T06:55:18.205Z</lastmod>
+    <lastmod>2026-04-20T15:29:15.718Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/nondimensionalization.html</loc>
-    <lastmod>2026-04-15T06:55:14.606Z</lastmod>
+    <lastmod>2026-04-20T15:29:12.114Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/numerical_solutions_of_ffls.html</loc>
-    <lastmod>2026-04-15T06:55:14.289Z</lastmod>
+    <lastmod>2026-04-20T15:29:11.799Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/michaelis_menten.html</loc>
-    <lastmod>2026-04-15T06:55:19.479Z</lastmod>
+    <lastmod>2026-04-20T15:29:16.991Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/double_phos_double_cascade.html</loc>
-    <lastmod>2026-04-15T06:55:17.576Z</lastmod>
+    <lastmod>2026-04-20T15:29:15.076Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/multiphos_multicascade.html</loc>
-    <lastmod>2026-04-15T06:55:18.526Z</lastmod>
+    <lastmod>2026-04-20T15:29:16.038Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/cascade_saturation.html</loc>
-    <lastmod>2026-04-15T06:55:19.161Z</lastmod>
+    <lastmod>2026-04-20T15:29:16.671Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/composite_functions_to_find_fixed_point.html</loc>
-    <lastmod>2026-04-15T06:55:16.514Z</lastmod>
+    <lastmod>2026-04-20T15:29:14.023Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/linear_stability_analysis.html</loc>
-    <lastmod>2026-04-15T06:55:17.258Z</lastmod>
+    <lastmod>2026-04-20T15:29:14.757Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/1d_root_finding.html</loc>
-    <lastmod>2026-04-15T06:55:14.923Z</lastmod>
+    <lastmod>2026-04-20T15:29:12.435Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/brute_force_linear_stability_analysis.html</loc>
-    <lastmod>2026-04-15T06:55:16.200Z</lastmod>
+    <lastmod>2026-04-20T15:29:13.708Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/gershgorin.html</loc>
-    <lastmod>2026-04-15T06:55:16.940Z</lastmod>
+    <lastmod>2026-04-20T15:29:14.436Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/numerical_ddes.html</loc>
-    <lastmod>2026-04-15T06:55:13.969Z</lastmod>
+    <lastmod>2026-04-20T15:29:11.482Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/linear_stability_analysis_ddes.html</loc>
-    <lastmod>2026-04-15T06:55:15.566Z</lastmod>
+    <lastmod>2026-04-20T15:29:13.076Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/gillespie.html</loc>
-    <lastmod>2026-04-15T06:55:15.883Z</lastmod>
+    <lastmod>2026-04-20T15:29:13.391Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/profiling_for_speed.html</loc>
-    <lastmod>2026-04-15T06:55:18.844Z</lastmod>
+    <lastmod>2026-04-20T15:29:16.356Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/technical_appendices/solving_delta_notch.html</loc>
-    <lastmod>2026-04-15T06:55:15.244Z</lastmod>
+    <lastmod>2026-04-20T15:29:12.759Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/strategies_for_controlling_protein_expression.html</loc>
-    <lastmod>2026-04-15T06:55:13.022Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.517Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/separation_of_time_scales.html</loc>
-    <lastmod>2026-04-15T06:55:13.022Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.517Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/rate_of_prod_by_activator.html</loc>
-    <lastmod>2026-04-15T06:55:13.022Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.516Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/activators_vs_respressors.html</loc>
-    <lastmod>2026-04-15T06:55:13.015Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.502Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/bound_and_unbound_promoter.html</loc>
-    <lastmod>2026-04-15T06:55:13.021Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.516Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/cost_of_steady_state.html</loc>
-    <lastmod>2026-04-15T06:55:13.018Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.506Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/event_handling_for_discontinuous_derivatives.html</loc>
-    <lastmod>2026-04-15T06:55:13.018Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.508Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/modes_of_bistability.html</loc>
-    <lastmod>2026-04-15T06:55:13.016Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.505Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/controlling_an_autoactivation_circuit.html</loc>
-    <lastmod>2026-04-15T06:55:13.015Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.502Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/autoactivation_bistability_leakage.html</loc>
-    <lastmod>2026-04-15T06:55:13.016Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.504Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/modeling_inducers_toggle.html</loc>
-    <lastmod>2026-04-15T06:55:13.012Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.499Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/autoregulation_including_mRNA.html</loc>
-    <lastmod>2026-04-15T06:55:13.019Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.509Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/bistability_with_growth_feedback.html</loc>
-    <lastmod>2026-04-15T06:55:13.017Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.505Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/design_principles_for_toggles.html</loc>
-    <lastmod>2026-04-15T06:55:13.016Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.503Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/accelerated_response_ffl.html</loc>
-    <lastmod>2026-04-15T06:55:13.020Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.514Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/statistics_random_genetic_circuits.html</loc>
-    <lastmod>2026-04-15T06:55:13.019Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.509Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/xor_gates.html</loc>
-    <lastmod>2026-04-15T06:55:13.020Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.514Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/robustness_c1ffl.html</loc>
-    <lastmod>2026-04-15T06:55:13.012Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.500Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/cosubstrate_compensation.html</loc>
-    <lastmod>2026-04-15T06:55:13.018Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.508Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/interpretations_of_sensistivity.html</loc>
-    <lastmod>2026-04-15T06:55:13.016Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.504Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/signal_propagation_kinase_cascade.html</loc>
-    <lastmod>2026-04-15T06:55:13.017Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.506Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/signaling-response-regulator-conc.html</loc>
-    <lastmod>2026-04-15T06:55:13.015Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.503Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/kinetic_proofreading_immune.html</loc>
-    <lastmod>2026-04-15T06:55:13.012Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.499Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/coupled_repressilators.html</loc>
-    <lastmod>2026-04-15T06:55:13.021Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.515Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/kaiabc_clock.html</loc>
-    <lastmod>2026-04-15T06:55:13.020Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.514Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/repressilator_with_rna_lsa.html</loc>
-    <lastmod>2026-04-15T06:55:13.019Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.509Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/coupled_delay_oscillators.html</loc>
-    <lastmod>2026-04-15T06:55:13.014Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.501Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/delay_oscillator_positive_feedback.html</loc>
-    <lastmod>2026-04-15T06:55:13.014Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.500Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/controlling_p53_levels.html</loc>
-    <lastmod>2026-04-15T06:55:13.017Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.505Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/temporal_gene_expression_inferring_circuit.html</loc>
-    <lastmod>2026-04-15T06:55:13.014Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.501Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/programming_cellular_response.html</loc>
-    <lastmod>2026-04-15T06:55:13.020Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.515Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/tristable_cell_fate_circuit.html</loc>
-    <lastmod>2026-04-15T06:55:13.021Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.515Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/dynamics_of_noise.html</loc>
-    <lastmod>2026-04-15T06:55:13.012Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.499Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/noise_in_a_switchable_promoter.html</loc>
-    <lastmod>2026-04-15T06:55:13.011Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.498Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/mechanism_for_bursty.html</loc>
-    <lastmod>2026-04-15T06:55:13.015Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.503Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/exercises/turing_with_expanders.html</loc>
-    <lastmod>2026-04-15T06:55:13.021Z</lastmod>
+    <lastmod>2026-04-20T15:29:10.516Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/setting_up_python_computing_environment.html</loc>
-    <lastmod>2026-04-15T06:55:00.762Z</lastmod>
+    <lastmod>2026-04-20T15:28:58.433Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/hello_world.html</loc>
-    <lastmod>2026-04-15T06:55:20.300Z</lastmod>
+    <lastmod>2026-04-20T15:29:17.781Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/variables_operators_types.html</loc>
-    <lastmod>2026-04-15T06:55:20.615Z</lastmod>
+    <lastmod>2026-04-20T15:29:18.100Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/lists_and_tuples.html</loc>
-    <lastmod>2026-04-15T06:55:20.931Z</lastmod>
+    <lastmod>2026-04-20T15:29:18.420Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/iteration.html</loc>
-    <lastmod>2026-04-15T06:55:21.252Z</lastmod>
+    <lastmod>2026-04-20T15:29:18.742Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/intro_to_functions.html</loc>
-    <lastmod>2026-04-15T06:55:21.571Z</lastmod>
+    <lastmod>2026-04-20T15:29:19.065Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/string_methods.html</loc>
-    <lastmod>2026-04-15T06:55:21.918Z</lastmod>
+    <lastmod>2026-04-20T15:29:19.382Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/dictionaries.html</loc>
-    <lastmod>2026-04-15T06:55:22.238Z</lastmod>
+    <lastmod>2026-04-20T15:29:19.702Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/comprehensions.html</loc>
-    <lastmod>2026-04-15T06:55:22.558Z</lastmod>
+    <lastmod>2026-04-20T15:29:20.019Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/packages_and_modules.html</loc>
-    <lastmod>2026-04-15T06:55:22.876Z</lastmod>
+    <lastmod>2026-04-20T15:29:20.341Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/exceptions_and_error_handling.html</loc>
-    <lastmod>2026-04-15T06:55:23.191Z</lastmod>
+    <lastmod>2026-04-20T15:29:20.717Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/intro_to_numpy_and_scipy.html</loc>
-    <lastmod>2026-04-15T06:55:23.507Z</lastmod>
+    <lastmod>2026-04-20T15:29:21.034Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/intro_to_pandas.html</loc>
-    <lastmod>2026-04-15T06:55:23.822Z</lastmod>
+    <lastmod>2026-04-20T15:29:21.349Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/split_apply_combine.html</loc>
-    <lastmod>2026-04-15T06:55:24.141Z</lastmod>
+    <lastmod>2026-04-20T15:29:21.660Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/python/plotting.html</loc>
-    <lastmod>2026-04-15T06:55:24.457Z</lastmod>
+    <lastmod>2026-04-20T15:29:21.978Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/math.html</loc>
-    <lastmod>2026-04-15T06:54:57.958Z</lastmod>
+    <lastmod>2026-04-20T15:28:55.948Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/numerical_odes.html</loc>
-    <lastmod>2026-04-15T06:55:00.761Z</lastmod>
+    <lastmod>2026-04-20T15:28:58.432Z</lastmod>
   </url>
   <url>
     <loc>https://biocircuits.github.io/appendices/regulatory_functions.html</loc>
-    <lastmod>2026-04-15T06:55:00.762Z</lastmod>
+    <lastmod>2026-04-20T15:28:58.433Z</lastmod>
   </url>
 </urlset>

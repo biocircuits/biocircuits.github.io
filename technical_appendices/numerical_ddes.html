@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -113,6 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.9.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -454,19 +457,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/double_phos_double_cascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7a: Signaling cascades</span></a>
+ <span class="menu-text">Technical Appendix 8a: Signaling cascades</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/multiphos_multicascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7b: Cascades of multiply phosphorylated signaling molecules</span></a>
+ <span class="menu-text">Technical Appendix 8b: Cascades of multiply phosphorylated signaling molecules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/cascade_saturation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7c: Phosphorylation cascade with saturation</span></a>
+ <span class="menu-text">Technical Appendix 8c: Phosphorylation cascade with saturation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -918,7 +921,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/numerical_ddes.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/numerical_ddes.ipynb">Download notebook</a></p>
 <hr>
-<div id="48243e86" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="27aa62d6" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -936,6 +939,336 @@ window.Quarto = {
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bokeh.plotting</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>bokeh.io.output_notebook()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+    <style>
+        .bk-notebook-logo {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+        }
+    </style>
+    <div>
+        <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
+        <span id="abc98ac0-7dfa-4dbf-8d99-0369660ee5b0">Loading BokehJS ...</span>
+    </div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+'use strict';
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    function drop(id) {
+      const view = Bokeh.index.get_by_id(id)
+      if (view != null) {
+        view.model.document.clear()
+        Bokeh.index.delete(view)
+      }
+    }
+
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+
+    // Clean up Bokeh references
+    if (id != null) {
+      drop(id)
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim()
+            drop(id)
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded(error = null) {
+    const el = document.getElementById("abc98ac0-7dfa-4dbf-8d99-0369660ee5b0");
+    if (el != null) {
+      const html = (() => {
+        if (typeof root.Bokeh === "undefined") {
+          if (error == null) {
+            return "BokehJS is loading ...";
+          } else {
+            return "BokehJS failed to load.";
+          }
+        } else {
+          const prefix = `BokehJS ${root.Bokeh.version}`;
+          if (error == null) {
+            return `${prefix} successfully loaded.`;
+          } else {
+            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
+          }
+        }
+      })();
+      el.innerHTML = html;
+
+      if (error != null) {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "auto";
+        wrapper.style.height = "5em";
+        wrapper.style.resize = "vertical";
+        const content = document.createElement("div");
+        content.style.fontFamily = "monospace";
+        content.style.whiteSpace = "pre-wrap";
+        content.style.backgroundColor = "rgb(255, 221, 221)";
+        content.textContent = error.stack ?? error.toString();
+        wrapper.append(content);
+        el.append(wrapper);
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(() => display_loaded(error), 100);
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.9.0.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+      try {
+            for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+
+      } catch (error) {display_loaded(error);throw error;
+      }if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById("abc98ac0-7dfa-4dbf-8d99-0369660ee5b0")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script>
+</div>
 </div>
 <hr>
 <section id="numerical-solution-of-ddes" class="level2">
@@ -961,7 +1294,7 @@ y(t) = y_0(t) \text{ for }t_0-\tau &lt; t \le t_0.
 <p>Furthermore, instead of passing in a single initial condition, we need to pass in a <em>function</em> that computes <span class="math inline">\(y_0(t)\)</span>, as defined for initial conditions that go back in time. The function has call signature</p>
 <pre><code>y0(t, *y0_args)</code></pre>
 <p>We also need to specify <code>tau</code>, the longest time delay in the system. Finally, in addition to the additional arguments to <code>func</code> and to <code>y0</code>, we specify how many time points we wish to use for each step to build our interpolants. Note that even though we specify <code>tau</code> in the arguments of <code>ddeint()</code>, we still need to explicitly pass all time delays as extra <code>args</code> to <code>func</code>. This is because we could in general have more than one delay, and only the longest is pertinent for the integration.</p>
-<div id="4916b0fe" class="cell" data-execution_count="2">
+<div id="4cbeecd2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ddeint(func, y0, t, tau, args<span class="op">=</span>(), y0_args<span class="op">=</span>(), n_time_points_per_step<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Integrate a system of delay differential equations.</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
@@ -1038,7 +1371,7 @@ y(t) = y_0(t) \text{ for }t_0-\tau &lt; t \le t_0.
 <span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y_return</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that we have a function to solve DDEs, let’s solve the simple delay oscillator.</p>
-<div id="10da7e70" class="cell" data-execution_count="3">
+<div id="31ec46a4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Right hand side of simple delay oscillator</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> delay_rhs(x, t, x_past, beta, n, tau):</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> beta <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> x_past(t <span class="op">-</span> tau) <span class="op">**</span> n) <span class="op">-</span> x</span>
@@ -1071,14 +1404,57 @@ y(t) = y_0(t) \text{ for }t_0-\tau &lt; t \le t_0.
 <span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>p.line(t, x[:, <span class="dv">0</span>], line_width<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+  <div id="bea45320-bef1-44cc-8547-37b67f40fd94" data-root-id="p1008" style="display: contents;"></div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+(function(root) {
+  function embed_document(root) {
+  const docs_json = {"a409c695-1284-4174-b476-37bd8cc866c3":{"version":"3.9.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1052","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1053"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1017","attributes":{"end":200.0}},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1015"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[400],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[400],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Line","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.2,"line_width":2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1016","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"x","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"time","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}}],"frame_width":450,"frame_height":200}}]}};
+  const render_items = [{"docid":"a409c695-1284-4174-b476-37bd8cc866c3","roots":{"p1008":"bea45320-bef1-44cc-8547-37b67f40fd94"},"root_ids":["p1008"]}];
+  void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script>
+</div>
 </div>
 <p>The <code>ddeint()</code> function is available as <code>biocircuits.ddeint()</code> in the biocircuits package for future use.</p>
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="6a70d7a0" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="4">
+<div id="ca1ce37f" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Python implementation: CPython
+Python version       : 3.13.13
+IPython version      : 9.12.0
+
+numpy     : 2.2.6
+scipy     : 1.17.1
+bokeh     : 3.9.0
+jupyterlab: 4.5.6
+</code></pre>
+</div>
 </div>
 
 

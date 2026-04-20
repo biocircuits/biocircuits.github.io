@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -419,19 +438,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/double_phos_double_cascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7a: Signaling cascades</span></a>
+ <span class="menu-text">Technical Appendix 8a: Signaling cascades</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/multiphos_multicascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7b: Cascades of multiply phosphorylated signaling molecules</span></a>
+ <span class="menu-text">Technical Appendix 8b: Cascades of multiply phosphorylated signaling molecules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/cascade_saturation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7c: Phosphorylation cascade with saturation</span></a>
+ <span class="menu-text">Technical Appendix 8c: Phosphorylation cascade with saturation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -884,16 +903,18 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/cosubstrate_compensation.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/cosubstrate_compensation.ipynb">Download notebook</a></p>
 <hr>
-<p><em>This problem derived from discussions with H. Y. Kueh, and is based on his paper</em> (<a href="https://doi.org/10.1016/j.bpj.2013.01.030">Biophys J., <em><strong>104</strong>, 1338–1348, 2013</em></a>).</p>
+<p><em>This problem derived from discussions with H. Y. Kueh, and is based on his paper</em> <span class="citation" data-cites="kueh:2013a">(<a href="../references.html#ref-kueh:2013a" role="doc-biblioref">Kueh et al. 2013</a>)</span>.</p>
 <p>To put this problem in context, let us think about an intriguing question. Oxygen is delivered to the cells of your body through your blood. Naturally, cells are situated at difference distances from blood vessels. As oxygen diffuses away from the blood vessels, different cells experience different local oxygen concentrations, often very different concentrations. How, then, do cells respire at the same rate, despite the large difference in oxygen concentration?</p>
 <p>This is a question of robustness. Is rate of respiration robust to differences in oxygen concentration over a physiologically relevant operating regime? To address this question consider a simple model of the mitochondrial electron transport chain (ETC) consisting of a single electron carrier C and two reactions that catalyze its oxidation and reduction, shown in below.</p>
-<div style="margin: auto; width: 200px;" class="page-columns page-full">
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="kueh_oxygen.svg" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">co-substrate competition schematic</figcaption>
-</figure>
+<div id="fig-cosubstrate-competition-schematic" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-cosubstrate-competition-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="kueh_oxygen.svg" class="img-fluid figure-img" width="350">
 </div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-cosubstrate-competition-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Schematic of a mechanism for co-substrate competition
+</figcaption>
+</figure>
 </div>
 <p>The carrier can exist in an oxidized state C₀ and in a reduced state C₁. The oxidation reaction is catalyzed by enzyme E₀, and the reduction reaction is catalyzed by enzyme E₁.</p>
 <p><strong>a)</strong> In this part of the problem and in part (b), we will write down governing ODEs for the dynamics of this system. We will do so by first splitting the system into its two enzyme-catalyzed reactions. We start with the lower one. We can write the reaction as</p>
@@ -918,7 +939,7 @@ v_0 = \frac{\mathrm{d}c_0}{\mathrm{d}t}\;\text{considering only the top reaction
 <p>where <span class="math inline">\(c_0\)</span> is the concentration of C₀. This is the quantity we are most interested in; it is the rate of oxygen consumption. We can describe this reaction as follows. The substrate C₁ cannot bind oxygen unless complexed with the enzyme E₀, to which is binds reversibly. The C₁·E₀ complex can them reversibly bind oxygen. Finally, the C₁·E₀·O₂ complex gets irreversibly converted to oxidized substrate C₀, freeing the enzyme E₀ and producing water in the process. We can write these steps as follows.</p>
 <p><span class="math display">\[\begin{align}
 \require{mhchem}
-\ce{C_1 + E_0 &lt;=&gt;[k_1][k_{-1}] C_1\cdot E_0 + O_2 &lt;=&gt;[k_2][k_{-2}] C_1\cdot E_0 \cdot O_2 -&gt;[v] C_0 + E_0 + H_2O}.
+\ce{C_1 + E_0 &lt;=&gt;[$k_1$][$k_{-1}$] C_1\cdot E_0 + O_2 &lt;=&gt;[$k_2$][$k_{-2}$] C_1\cdot E_0 \cdot O_2 -&gt;[$v$] C_0 + E_0 + H_2O}.
 \end{align}\]</span></p>
 <!--
 1. C₁ + E₀ ⇌ C₁·E₀; forward rate constant $k_1$, reverse rate constant $k_{-1}$
@@ -942,10 +963,18 @@ v_0 = k_0 \, c_1\,\frac{c_{\mathrm{O}_2}/K_0}{1 + c_{\mathrm{O}_2}/K_0},
 <p><strong>c)</strong> Write down an expression for the rate of oxygen consumption, <span class="math inline">\(v_0\)</span>, at steady state.</p>
 <p><strong>d)</strong> In what operating regime is the steady state oxygen consumption rate independent of oxygen concentration? On other words, what parameter values ensure robustness of the oxygen consumption rate to variations in oxygen levels?</p>
 <p><strong>e)</strong> You have shown that for some operating regime, the rate of oxygen consumption is robust to variation of oxygen concentration. Now imagine that the system is in steady state and there is a sudden step in oxygen concentration. In looking at your differential equation in part (b), you should be able to identify the time scale for recovery to steady state consumption rate. Is the time to recovery robust to variations in oxygen concentration? If so, over what operating regime?</p>
-<p><strong>f)</strong> Define the oxygen concentration for which the steady state oxygen consumption rate is half-maximal as <span class="math inline">\(K_\mathrm{m}\)</span>. The Chance relationship <a href="https://doi.org/10.1085/jgp.49.1.163">Chance, J. Gen.&nbsp;Physiol., 1965</a> says that <span class="math inline">\(K_\mathrm{m}\)</span> scales linearly with the maximal rate of electron transfer (the maximal <span class="math inline">\(v_1\)</span>), and inversely with the reaction rate constant for oxygen reduction (<span class="math inline">\(k_0\)</span>). In the regime where oxygen consumption rate is independent of oxygen concentration, does this system satisfy the Chance relation?</p>
+<p><strong>f)</strong> Define the oxygen concentration for which the steady state oxygen consumption rate is half-maximal as <span class="math inline">\(K_\mathrm{m}\)</span>. The Chance relationship <span class="citation" data-cites="chance:1965a">(<a href="../references.html#ref-chance:1965a" role="doc-biblioref">Chance 1965</a>)</span> says that <span class="math inline">\(K_\mathrm{m}\)</span> scales linearly with the maximal rate of electron transfer (the maximal <span class="math inline">\(v_1\)</span>), and inversely with the reaction rate constant for oxygen reduction (<span class="math inline">\(k_0\)</span>). In the regime where oxygen consumption rate is independent of oxygen concentration, does this system satisfy the Chance relation?</p>
 <p><br></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-chance:1965a" class="csl-entry" role="listitem">
+Chance, Britton. 1965. <span>“Reaction of Oxygen with the Respiratory Chain in Cells and Tissues.”</span> <em>The Journal of General Physiology</em> 49 (1): 163–88. <a href="https://doi.org/10.1085/jgp.49.1.163">https://doi.org/10.1085/jgp.49.1.163</a>.
+</div>
+<div id="ref-kueh:2013a" class="csl-entry" role="listitem">
+Kueh, Hao Yuan, Philipp Niethammer, and Timothy J. Mitchison. 2013. <span>“Maintenance of Mitochondrial Oxygen Homeostasis by Cosubstrate Compensation.”</span> <em>Biophysical Journal</em> 104 (6): 1338–48. <a href="https://doi.org/10.1016/j.bpj.2013.01.030">https://doi.org/10.1016/j.bpj.2013.01.030</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script>

@@ -454,19 +454,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/double_phos_double_cascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7a: Signaling cascades</span></a>
+ <span class="menu-text">Technical Appendix 8a: Signaling cascades</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/multiphos_multicascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7b: Cascades of multiply phosphorylated signaling molecules</span></a>
+ <span class="menu-text">Technical Appendix 8b: Cascades of multiply phosphorylated signaling molecules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/cascade_saturation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7c: Phosphorylation cascade with saturation</span></a>
+ <span class="menu-text">Technical Appendix 8c: Phosphorylation cascade with saturation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -919,7 +919,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/programming_cellular_response.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/programming_cellular_response.ipynb">Download notebook</a></p>
 <hr>
-<div id="8cd4dde7" class="cell" data-execution_count="1">
+<div id="fba45f12" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> eqtk</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -949,7 +949,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>In working this problem, it helps to have some handy functions from the chapter.</p>
-<div id="8cf84608" class="cell" data-execution_count="2">
+<div id="68e8bcfb" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_rxns(nA, nB, nL):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Generate trimolecular binding reactions for a system with</span></span>
@@ -990,7 +990,7 @@ window.Quarto = {
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.dot(epsilon, c[:, <span class="op">-</span><span class="bu">len</span>(epsilon):].transpose())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can make a stoichiometric matrix using these functions; it will be the same for all calculations we do.</p>
-<div id="fda50410" class="cell" data-execution_count="3">
+<div id="45c212b0" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> make_N(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Half of the battle in problems like these is keeping track of indices to know what species is what. The columns of the stoichiometric matrix correspond to the following species.</p>
@@ -1061,7 +1061,7 @@ window.Quarto = {
 </tbody>
 </table>
 <p>These indices also correspond to the species in our inputted initial concentrations and in the output of EQTK’s solver for the equilibrium concentrations. With that in mind, we can write a function to generate our initial concentration values for a given set of initial ligand concentrations, <code>cL0</code>.</p>
-<div id="587c26f0" class="cell" data-execution_count="4">
+<div id="4fedf29d" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_c0_grid(cL0, cA10, cA20, cB10, cB20):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Create an array of initial concentrations.</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
@@ -1110,16 +1110,16 @@ window.Quarto = {
 <span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In trying to find parameters, we will use the ligand concentrations below.</p>
-<div id="5183317b" class="cell" data-execution_count="5">
+<div id="6154fcc4" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cL0 <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">32.0</span>, <span class="fl">1000.0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Next, in order to do the calculation, we need to specify the prescribed target response of the various cell types and for which ligand words the target response is relevant (ignoring the hatches areas in the graphic above). We refer to the latter as <code>active_words</code>, defined below.</p>
-<div id="a36419e6" class="cell" data-execution_count="6">
+<div id="c611b7c4" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ligand words from top diagram</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>active_words <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>], dtype<span class="op">=</span><span class="bu">bool</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can see how it corresponds to the words by comparing to our target ligand concantrations.</p>
-<div id="0bb1e388" class="cell" data-execution_count="7">
+<div id="ee184bee" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>c0 <span class="op">=</span> make_c0_grid(np.array([<span class="dv">1</span>, <span class="dv">32</span>, <span class="dv">1000</span>]), <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ligand 1:    "</span>, c0[:, <span class="dv">4</span>])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ligand 2:    "</span>, c0[:, <span class="dv">5</span>])</span>
@@ -1131,7 +1131,7 @@ active words: [False False  True False False False  True False  True]</code></pr
 </div>
 </div>
 <p>We can now specify a list of target responses.</p>
-<div id="8994f4c1" class="cell" data-execution_count="8">
+<div id="014b238b" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>targets <span class="op">=</span> [</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>]), <span class="co"># Ligand 1 low, ligand 2 high</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]), <span class="co"># Ligand 1 high, ligand 2 low</span></span>
@@ -1147,7 +1147,7 @@ active words: [False False  True False False False  True False  True]</code></pr
 &amp;s_\mathrm{norm}(l_1,l_2) = \frac{s(l_1, l_2)}{\text{maximal }s\text{ over all ligand concentrations}}.
 \end{align}\]</span></p>
 <p><strong>a)</strong> Complete the function below.</p>
-<div id="51226153" class="cell" data-execution_count="9">
+<div id="ab4ce6d4" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solve_norm_response(c0, N, K, epsilon):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Solve for normalized response. Returns a one-dimensional array</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    containing signal levels corresponding to each row in `c0`.</span></span>
@@ -1166,7 +1166,7 @@ active words: [False False  True False False False  True False  True]</code></pr
 <pre><code>residuals(x, *args),</code></pre>
 <p>where <code>x</code> is an array of the parameters being optimized and <code>args</code> is a tuple of any other arguments the function needs. To keep things organized, we will take the first eight entries in <code>x</code> to be the <span class="math inline">\(K_{ijk}\)</span> values, the next eight entries to be the <span class="math inline">\(\varepsilon_{ijk}\)</span> values, and the remaining twelve entries to be the receptor concentrations for the respective cell types.</p>
 <p>Complete the function below.</p>
-<div id="99ecb4c3" class="cell" data-execution_count="10">
+<div id="7d559a6d" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> residuals(x, cL0, targets, active_words, N):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return array of residuals."""</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Unpack x, log K's, then log epsilons, then receptor concs</span></span>
@@ -1177,15 +1177,15 @@ active words: [False False  True False False False  True False  True]</code></pr
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Given our function residuals, we can define <code>args</code> to match its call signature.</p>
-<div id="c31a56b9" class="cell" data-execution_count="11">
+<div id="679d863e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> (cL0, targets, active_words, N)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>c)</strong> To complete the optimization, we need to two more pieces. First, we need to provide bounds for all of the parameters. All of the <span class="math inline">\(K_{ijk}\)</span>, <span class="math inline">\(\varepsilon_{ijk}\)</span>, and receptor concentrations must be positive, so we have the following for the lower bounds.</p>
-<div id="681102b2" class="cell" data-execution_count="12">
+<div id="b3b7f0e0" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lower_bounds <span class="op">=</span> np.zeros(<span class="dv">16</span> <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> n_cell_types)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For the upper bounds, Su, et al., specified that all <span class="math inline">\(K_{ijk}\)</span> and <span class="math inline">\(\varepsilon_{ijk}\)</span> must be between zero and one. This effectively sets the arbitrary units of the ligand and receptor concentrations. (We do not require that the sum of the <span class="math inline">\(K_{ijk}\)</span>’s and the sum of the <span class="math inline">\(\varepsilon_{ijk}\)</span>’s sum to one.) The receptor concentrations are unbounded, so we can set the upper bounds, recalling the ordering of our parameter array.</p>
-<div id="720921d3" class="cell" data-execution_count="13">
+<div id="86de00a8" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>upper_bounds <span class="op">=</span> np.concatenate(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    (</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        np.ones(<span class="dv">16</span>),  <span class="co"># Upper bounds on K's and ε's</span></span>
@@ -1194,7 +1194,7 @@ active words: [False False  True False False False  True False  True]</code></pr
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, we must provide a guess of the parameter values. Su, et al.&nbsp;used the strategy that the initial guess of all receptor concentrations were one and randomly chose values for <span class="math inline">\(K_{ijk}\)</span> and <span class="math inline">\(\epsilon_{ijk}\)</span> from a uniform distribution on the interval [0, 1]. You can try this strategy as in the code cell below or adopt one of your own.</p>
-<div id="516dbda8" class="cell" data-execution_count="14">
+<div id="c0dd02e5" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial guesses of parameter values</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>K0 <span class="op">=</span> np.random.uniform(size<span class="op">=</span><span class="dv">8</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>epsilon0 <span class="op">=</span> np.random.uniform(size<span class="op">=</span><span class="dv">8</span>)</span>

@@ -61,6 +61,7 @@ zarr = ">=3.1.0,<4"
 nodejs = ">=24.4.1,<24.5"
 fastexcel = ">=0.14.0,<0.15"
 ipynbname = ">=2023.2.0.0,<2024"
+line_profiler = ">=5.0.2,<6"
 
 [pypi-dependencies]
 accessible-pygments = ">=0.0.5, <0.0.6"

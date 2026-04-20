@@ -454,19 +454,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../technical_appendices/double_phos_double_cascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7a: Signaling cascades</span></a>
+ <span class="menu-text">Technical Appendix 8a: Signaling cascades</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../technical_appendices/multiphos_multicascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7b: Cascades of multiply phosphorylated signaling molecules</span></a>
+ <span class="menu-text">Technical Appendix 8b: Cascades of multiply phosphorylated signaling molecules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../technical_appendices/cascade_saturation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7c: Phosphorylation cascade with saturation</span></a>
+ <span class="menu-text">Technical Appendix 8c: Phosphorylation cascade with saturation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -933,7 +933,7 @@ window.Quarto = {
 <p>We will first write and run this little program using a JupyterLab console. After launching JupyterLab, you probably already have the Launcher in your JupyterLab window. If you do not, you can expand the <code>Files</code> tab at the left of your JupyterLab window (if it is not already expanded) by clicking on that tab, or alternatively hit <code>ctrl+b</code> (or <code>cmd+b</code> on macOS). At the top of the <code>Files</code> tab is a <code>+</code> sign, which gives you a Jupyter Launcher.</p>
 <p>In the Jupyter Launcher, click the <code>Python 3</code> icon under <code>Console</code>. This will launch a console, which has a large white space above a prompt that says <code>In []:</code>. You can enter Python code in this prompt, and it will be executed.</p>
 <p>To print <code>Hello, world.</code>, enter the code below. To execute the code, hit <code>shift+enter</code>.</p>
-<div id="cde7ebfb" class="cell" data-execution_count="1">
+<div id="565cc3c2" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello, world.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Hooray! We just printed <code>Hello, world.</code> to the screen. To do this, we used Python’s built-in <code>print()</code> function. The <code>print()</code> function takes a <strong>string</strong> as an <strong>argument</strong>. It then prints that string to the screen. We will learn more about function syntax later, but we can already see the rough syntax with the <code>print()</code> function.</p>
@@ -941,7 +941,7 @@ window.Quarto = {
 <section id="py-files" class="level2">
 <h2 class="anchored" data-anchor-id="py-files">.py files</h2>
 <p>Now let’s use our new knowledge of the <code>print()</code> function to have our computer say a bit more than just <code>Hello, world.</code> Type these lines in at the prompt, hitting <code>enter</code> each time you need a new line. After you’ve typed them all in, hit <code>shift+enter</code> to run them.</p>
-<div id="cf4ee1a3" class="cell" data-execution_count="2">
+<div id="3944390e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The first few lines from The Zen of Python by Tim Peters</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Beautiful is better than ugly.'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Explicit is better than implicit.'</span>)</span>
@@ -955,7 +955,7 @@ window.Quarto = {
 <pre><code>python zen.py</code></pre>
 <p>at the command line. Note that when you run code this way, the interpreter exits after completion of running the code, and you do not get a prompt.</p>
 <p>To run the code in this file using the Jupyter console, you can use the <code>%run</code> <strong>magic function</strong>.</p>
-<div id="f9fa7208" class="cell" data-execution_count="3">
+<div id="a9bd4cb8" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>run zen.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To shut down the console, you can click on the <code>Running</code> tab at the left of the JupyterLab window and click on <code>SHUTDOWN</code> next to the console.</p>
@@ -1014,12 +1014,12 @@ f(x) = \frac{(x/k)^n}{1 + (x/k)^n}.
 <section id="code-cells" class="level2">
 <h2 class="anchored" data-anchor-id="code-cells">Code cells</h2>
 <p>Below is an example of a code cell printing <code>hello, world.</code> Notice that the output of the print statement appears in the same cell, though separate from the code block.</p>
-<div id="71136147" class="cell" data-execution_count="4">
+<div id="2d593aaa" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Say hello to the world.</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'hello, world.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If you evaluate a Python expression that returns a value, that value is displayed as output of the code cell. This only happens for the last line of the code cell.</p>
-<div id="16ceb6ed" class="cell" data-execution_count="5">
+<div id="6efd136d" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Would show 9 if this were the last line, but it is not, so shows nothing</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">+</span> <span class="dv">5</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1027,11 +1027,11 @@ f(x) = \frac{(x/k)^n}{1 + (x/k)^n}.
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">+</span> <span class="dv">6</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note, however, if the last line does not return a value, such as if we assigned value to a variable, there is no visible output from the code cell.</p>
-<div id="8c75f8ee" class="cell" data-execution_count="6">
+<div id="410f0c90" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable assignment, so no visible output.</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">6</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cce8fa1f" class="cell" data-execution_count="7">
+<div id="8131b20e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># However, now if we ask for a, its value will be displayed</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1088,7 +1088,7 @@ f(x) = \frac{(x/k)^n}{1 + (x/k)^n}.
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="16185e98" class="cell" data-execution_count="8">
+<div id="d3bca452" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

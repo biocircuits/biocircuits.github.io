@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -113,6 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.9.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -454,19 +457,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/double_phos_double_cascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7a: Signaling cascades</span></a>
+ <span class="menu-text">Technical Appendix 8a: Signaling cascades</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/multiphos_multicascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7b: Cascades of multiply phosphorylated signaling molecules</span></a>
+ <span class="menu-text">Technical Appendix 8b: Cascades of multiply phosphorylated signaling molecules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/cascade_saturation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7c: Phosphorylation cascade with saturation</span></a>
+ <span class="menu-text">Technical Appendix 8c: Phosphorylation cascade with saturation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -918,7 +921,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/profiling_for_speed.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/profiling_for_speed.ipynb">Download notebook</a></p>
 <hr>
-<div id="4ac8e0cd" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="192c86a3" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -945,6 +948,336 @@ window.Quarto = {
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Line profiler</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext line_profiler</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+    <style>
+        .bk-notebook-logo {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+        }
+    </style>
+    <div>
+        <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
+        <span id="c87868af-1b9a-40f0-8a9d-86c243ed5677">Loading BokehJS ...</span>
+    </div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+'use strict';
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    function drop(id) {
+      const view = Bokeh.index.get_by_id(id)
+      if (view != null) {
+        view.model.document.clear()
+        Bokeh.index.delete(view)
+      }
+    }
+
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+
+    // Clean up Bokeh references
+    if (id != null) {
+      drop(id)
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim()
+            drop(id)
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded(error = null) {
+    const el = document.getElementById("c87868af-1b9a-40f0-8a9d-86c243ed5677");
+    if (el != null) {
+      const html = (() => {
+        if (typeof root.Bokeh === "undefined") {
+          if (error == null) {
+            return "BokehJS is loading ...";
+          } else {
+            return "BokehJS failed to load.";
+          }
+        } else {
+          const prefix = `BokehJS ${root.Bokeh.version}`;
+          if (error == null) {
+            return `${prefix} successfully loaded.`;
+          } else {
+            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
+          }
+        }
+      })();
+      el.innerHTML = html;
+
+      if (error != null) {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "auto";
+        wrapper.style.height = "5em";
+        wrapper.style.resize = "vertical";
+        const content = document.createElement("div");
+        content.style.fontFamily = "monospace";
+        content.style.whiteSpace = "pre-wrap";
+        content.style.backgroundColor = "rgb(255, 221, 221)";
+        content.textContent = error.stack ?? error.toString();
+        wrapper.append(content);
+        el.append(wrapper);
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(() => display_loaded(error), 100);
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.9.0.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+      try {
+            for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+
+      } catch (error) {display_loaded(error);throw error;
+      }if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById("c87868af-1b9a-40f0-8a9d-86c243ed5677")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script>
+</div>
 </div>
 <p>It helps to have complete examples as starting points for building systems to simulate with the Gillespie algorithm. In this appendix, we set up a Gillespie simulation of the <a href="../chapters/repressilator.html">repressilator</a>. We will then return to a simple example of gene expression to demonstrate how to assess the speed of the calculation and improve it.</p>
 <section id="simulating-the-repressilator" class="level2">
@@ -1214,7 +1547,7 @@ window.Quarto = {
 </table>
 <p>We have now clearly defined all of our parameters, updates, and propensities. With the initial population, out simulation is not completely defined. In practice, we recommend constructing tables like this (and including them in your publications!) if you are going to do Gillespie simulations in your work.</p>
 <p>We are now tasked with coding up the propensities and the updates. Starting with the propensities, we recall that the biocircuits module requires a call signature of <code>propensity(propensities, population, t, *args)</code>, where the <code>args</code> are the parameters. We find that it is clearest to list the arguments one at a time in the function definition. It is also much clearer to unpack the population into individual variables than to use indexing. Finally, when returning the array of propensities, we recommend having one propensity for each line indexed in order.</p>
-<div id="c9fc9db1" class="cell" data-execution_count="2">
+<div id="10b35918" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> repressilator_propensity(</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    propensities, population, t, kmu, kmo, kp, gamma_m, gamma_p, kr, ku1, ku2</span>
@@ -1244,7 +1577,7 @@ window.Quarto = {
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">20</span>] <span class="op">=</span> ku1 <span class="op">*</span> (n2 <span class="op">==</span> <span class="dv">1</span>) <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> ku2 <span class="op">*</span> (n2 <span class="op">==</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we can code up the update. The update is a matrix where entry <code>i,j</code> is the change in species <code>i</code> due to move <code>j</code>. Since we have indexes both the species and the moves (in the update/propensity table), we can include the indices when we define the update for clarity.</p>
-<div id="1e3a7de5" class="cell" data-execution_count="3">
+<div id="af35a281" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>repressilator_update <span class="op">=</span> np.array(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    [   <span class="co"># 0   1   2   3   4   5   6   7   8</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        [ <span class="dv">1</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">0</span>], <span class="co"># 0</span></span>
@@ -1272,7 +1605,7 @@ window.Quarto = {
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    dtype<span class="op">=</span><span class="bu">int</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Next, we specify the parameter values according to the parameter table. Remember that we need to package them in a tuple, after defining them.</p>
-<div id="fa1cf8f9" class="cell" data-execution_count="4">
+<div id="7490623f" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameter values</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>kmu <span class="op">=</span> <span class="fl">0.5</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>kmo <span class="op">=</span> <span class="fl">5e-4</span></span>
@@ -1286,14 +1619,14 @@ window.Quarto = {
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>repressilator_args <span class="op">=</span> (kmu, kmo, kp, gamma_m, gamma_p, kr, ku1, ku2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, we specify the initial population and the time points we want for the sampling.</p>
-<div id="0846f769" class="cell" data-execution_count="5">
+<div id="11625538" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># State with 10 copies of everything, nothing bound to operators</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>repressilator_pop_0 <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>], dtype<span class="op">=</span>np.int64)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>repressilator_time_points <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">80_000</span>, <span class="dv">4001</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>And we are all set to perform the calculation. We will make a single trace and then plot it.</p>
-<div id="7ff4273c" class="cell" data-execution_count="6">
+<div id="65951eef" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform the Gillespie simulation</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> biocircuits.gillespie_ssa(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    repressilator_propensity,</span>
@@ -1317,6 +1650,38 @@ window.Quarto = {
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    p.line(repressilator_time_points <span class="op">/</span> <span class="dv">60</span>, pop[<span class="dv">0</span>, :, i], color<span class="op">=</span>colors[c])</span>
 <span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+  <div id="ee4f05c1-96d4-4626-90f0-0a302c27d8d7" data-root-id="p1008" style="display: contents;"></div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+(function(root) {
+  function embed_document(root) {
+  const docs_json = {"65e10d97-14d3-4d75-b577-312db4ec1017":{"version":"3.9.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1070","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1071"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"height":250,"x_range":{"type":"object","name":"Range1d","id":"p1017","attributes":{"end":1333.3333333333333}},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1015"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[4001],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[4001],"dtype":"int32","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Line","id":"p1046","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4"}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1047","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.1}},"muted_glyph":{"type":"object","name":"Line","id":"p1048","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b4","line_alpha":0.2}}}},{"type":"object","name":"GlyphRenderer","id":"p1058","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1052","attributes":{"selected":{"type":"object","name":"Selection","id":"p1053","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1054"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[4001],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[4001],"dtype":"int32","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1059","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1060"}}},"glyph":{"type":"object","name":"Line","id":"p1055","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7f0e"}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1056","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7f0e","line_alpha":0.1}},"muted_glyph":{"type":"object","name":"Line","id":"p1057","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7f0e","line_alpha":0.2}}}},{"type":"object","name":"GlyphRenderer","id":"p1067","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1061","attributes":{"selected":{"type":"object","name":"Selection","id":"p1062","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1063"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[4001],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/13bedhVU/sH8IekhMo8k0pzmcsQSqVEJSGE0qBBMitEqVSKUmTWoDI2mEKmJFMZMw8v0YAo8/yG3+f7u/a5rud6//hca5/znGGfvde+73utvZ4qZWVlh3IR8/mDgzcqK+vJtTzGZ3zHFhuXle1KHfbhSFpyKC04hIOKv++m3YXt2IrN+NNnfM9KPuINlpDvuJup3MpEJnEd44t2tHYkExjDKPLcuGJ7uPZKBnMevTiDbpxOVzpzAifSkfa04FAOYl8aUoc92Ynt2JyN+N2x+Yn1rOYz/sN7vMMyXuBJFvI4j/Ig9zKDqdzCFK7nOsYzimEM5TIu5RIuLlyozTk6j3M4m7705HS6ckq59iTbXTiOTnQsHKONowtttUfRjjbk8bHkPZHP6E6+K/uT/RvBWK7hBm5nFg/zLEt4hdfJcfqVSo5fXZqTY59zlHP9OO/zC9vrI/U5mj4M504W8z07VCgrO4BuDOMulrCeLTbRH+nHVF6nUkXnlguZx08csmlZ2fks4Dv2qlRWdjzDWUadyvoID1N1M8eAG3iMtVSpUlbWgTMYwlAm8yBLeYP1bLa5fsP21KIBR9CWXoUztR04hL2oQt63CV/7jA95jrvJ9/SiM0ezD1vyp336Dwu4kVFcxIk0pyabsMHv+YoveYVFzOEBbuY2pnMPt3I9M7mFKziHLrThcBqyHf84Zut5gye4nTGcQQM2yt8c5zlM5lyOYg/+dj7+wxPcwZWcRFO25Rfn8DOWcC+jGMRpHE4dtuS/zv8aXuUhpjOGc0lf6UBz9mQb/tKX1vEZy3iMmVzPCC6iFydyDIltiXe12ZHEso34WZ9dywqW8zKJZfeQWDaZxKrEpks4h7NIPDqZ4zmKwygff2p6vAuJPdtQhQr813WUGPQD3xbX1grtx7zPcpbyPE+RGJT48xD3M4sZzOQuEotuJtdwYtG1XMMYRjKcXO+JRYMLiQGJQ+eTOBQDGVC0Z2n7kJiRuNStcKo2MekEOtOB9rQtHKVtRQuaF5KXmnIgB7Av+9CERjSgPvWoXaijrVVs1yy299Lm+f99T96X5yPvT5vX5jPzPfnu7MMRtCT7fCL5LWfQi/ze6MvZnMsFJF7nuOX45ZhOIMc4birk2Cd25jzkvNzDA+R8LWAROZfPFNvJK8kpaR9hLnMKib2Rv+fcP83iwpLicZ5LfH6J9JNlJHetZD3J/elnW1GbpiRHJneeRvpt6oLzC8m/03iSz/mX1Aat6Me1PMoKNrCTa687k3iZ76jh+u3NGN5hU9d9a85hGp9QbVPngH7cxFvUEFeu4BWqi0NHcgmJaWuoLOYl/l3JIrYWKzvyAH/QVIw9nUdZTa0t5CRuYzk7benaZwz38h7rqVZVDOQkunMbC1nDRtX0EwYznSdYxV7V9QXm8gPVtvIch9OPIczgAZ5kGS+xgIXcwRjOJO9b6zMWMYl+NKcyn/iu2bRlnf15kAFsywr7fi0Hs8bvm0oXNuJpv38kh/KbY/MadzKI1mzDp47h/QzgMKqx1nF+mXu5nOSHpmzGcuflNs6nDbX40XlbyiyGczrNqMo3zvPLTGcU3Uk/qMfGrNE33uJuxnIOJ3EEjdiaP/Wnb/iI53mYO7mUPhzLIdQlfTG5oBL/6Js/sooPeZvUHPOYRvrxlQzgDI6jNY2oSXXS9//LT6S+/ZRSTlhoex7JC7lekheu4SqGkOupH6lZT6EDbUheaMb+NCE16Y5sSzUqU8YGzc98y2pSl35Cru13ebOwVPsSiQOJIYkxD3E/s7mLGUzjDm5jCjcykQmMZhQjCkO0pbr0PNsD6UsfenImPYrt5IPTSPyMk0k8LdWqnW0fz7EcTXvacSStivZwbeJxqc3z0ZKjCm2L9hhtPiOP2xSvyfsO5jAOKbbzOBLvm5F8k+3Yn/3Yl8aFhtr61KNusZ3n8pp8Zr4j+5z96UBq6Eh9nt+fYzOIS0h+uIIczxzbjAHKH+ORxXOlHJy8kvxyMTn2ee9wxpBzNJ6cp2tJnsn5i5zLW5nOQpbxIR/zBev4jX/JeCd9bAfS5zIezBipFSeRGmYE6cf3sYjU8Kv5nU1dD9vShFwrQ5jO0+Qaq+Kaa0J7zuNe3uM3ch3Xpw2p80bzNL+TeHA9K0n9eBlvsp3YMpRnqCD2tCC54BG+oK5YdRyXcwdfUkNM68IwnmEdyQnTWcc+4uLRDGYOX7KL2NmR0Szle+qLrT15hE+oKPYeyumMYwZP8in/UlOcbkt/xnMzL7CCCmL7ESQnPM93/MOfbLm1Op5vbX/G27zMfVxH3nM6R9GWfanMVz73Ua4iOagbLalHcsbyYh8v0Ga/N/gNixlDNxrxm9/5DMPoRI7DB47HXEZzLFX5wnG7jws5jEq867hO4CRq87tj/ywTOYkdyTl6jKGcRBMyrnid2cW5TQ7Zg8qsd85f526u4xw6ciBb85v+8R4v8hCTGMIptKAmf+tPX7CMBdzEEDJ+PJGML9IPd2Qj1umbH/M6TzGfW7maQZxJRw6iPhmrVuAP/T1jjeSV11jC4yS33MGNXMGF9OZkjqI5+1OXjIsr8YdrK/MnX5Exx3tkzJH8MpfZ3Mkt3MaNpEa7nAvJ+ONU2nIEua4bUZfUe7uyMxlzbEHGHRuTmJDa8Hu+ZhXJMe+znFdYQmrL1J6PkdySGjU16f3cw3TuJPllJncV8vzU4m+JUTcwiQlcyzjGMpqRXEniZuJfKf8kLp7HuQzinMLZ2v70oRdn0p0zSDxODirloc62j6MT2e5Au0Ib7ZG0JPmnlDPSHkRyxj40KaeR7YbUo345eU1ySt6T8UVyUQuak/wReT6Pk0vyt9J35/tbFY9LeTCvzz4kd5Xa0nZyWL4nj/MZ+T3tOYaO5Dcm53YluSnHqC/nk7yePBOlHHWd7fFcT/JKzlXyTCm/5PzdUjxOm/FNznfa1BQ55/NIv8i4Zilv8zm/krpmexqQMfGxZPyR2ij9eArp68/wEZmX3EBqsH1JvkmdNoZbuIeHWEpyz3+p7LqsQSdSGz7Aa1RwnTdmAJNZzKdUFy8ak7mJjEsmkrFJ6tVNxJv96Mx4HuUbqopTxzGah3ifjcW1XTmY/mSOZR4f8RsNxMK29OY6lrGO1N+Z80m+Op2BZD4o8093sJCneJtf2FTc3aKIvxW1eRwb/O0nymxXY6dCbe1BtKArfejJGXTiQBqyHXXZjerkffU4gBNJ3L+BycxmEkPJPNeR5HU1yX6s4hPmcyP5PckR+7JD/u53P8U1dGNvMh+XOazF3MQFdKAeVfjUMb6HEZzKfmzNz87HcuaTfHE27difbci84Ocs4l6mcCm9OYpaVCTzUatZyhySMy7jdI4jOWMvqpO+tFafepfki8xV3shIzudEWpHxyF5sT0WSL77mXV7mSWYzmYxBBlHKEc1sZ7ydufbMsVch18KvfMsaPuZ1lvI0D5EckXn0kVxB5qZS0yU3dCFj/pbk+su4ox57kLFHrs/NSF74Q1f6mXWsZw0r+ZzkhxXF47T/KaTezPZHJH+8yTJeYDHJIU+S3DGf+5hdSBxJTMl4ZDITSX4Yz9hy24lNkb+P4xpGM6ZoR2iHcSmJbYlzpViXPJLnEv/iApJTkluSU/oVemvjzELyScY3yS096EXPQl9t3p/PzeflcwaQz+pTvKb8e/P3wWQfs9+jyO9IPszvKh2Dm20nBud4JF/mmJTa/Pa8vtTmb3ld3pt4PZPE4Rzr53mDD1nFt2QskHOc8516IOe/PgeSmJy5y8Tki8hYdhbpW6/wNqvIHOkOpI45gaHM4ClSC6UuSp/fkV2oSSMakPFB5m1PI7VVxu8XcxETmMYjZP7/A/5Dxv6ZA8i9gKpkbnhXGpC43oRcn2nbcTQ9OJ+LuIIRZMwxgdt4iMw7vMEHfEdtseAwzuAyRpKccAMzyb2G2SSWPMKrvMWHZJ6jgphTnYxhGrFLYXvtjjRgT5JXGpPX5fW/e++XxeflO5KDxpL5kqEMoBcdyRx6fXZnc36134ld+R35TdOZyDCS7zrRilL8+tVx/ITnmMNt5J5Lat2unEQ7DqMOyadbkrHdD87rGt7nWVLrZvyXeZRLSX5Of2jP4WScuCc7kRj2j76TcWTm19fzDV+Smjc5/y1eIDVA+lzmVVLvTiL17jAS0/qTPpp7fplTaUdrUvsewr7kfl8tUvsmvqWvZ/y7KZlb+bO4Fn7QfsPq4hpZpf2cXDPvkOvnZZ4ndc0TJIbN4R5mM4u7SA2ceqn8tZtrtVTrJk4lno1mBCNJzZt4dQnlY1biSiRWJW4Moj9nU4ovvW33oSfZjsSk/L3X/zyXv51V/C2fl9iXz87nDiSfm9iVx/lbJKZFKXYOsZ34lX2+msSu/Nb87gdZzJsk/kfyQ47t9/xI6sB/yPH/q9iuYDt5J/Eo90XqkHOYXJX7ubnXO5DMqY0jfSKx6APSd/5ly6KP5V5O7l2fygWkVsxY7BEyPvuE9OHEpYznMm/Ym8Fcyy08SOJOYk7izEF0YSDDSex4mPf4i61cgwfTlcu5h7k8y/tknvsXKrvOEw8akjFtVwYxjNtIDZNa5mt+Z4tK+ioNqUlLenA245jP47zHOjZVJ+1Na3pyGcO5kbnk3uBn/MXO6q1DGchtvMbH/E1ZFX9nf1rQlfZ059TicVvt4ezIpmTe5SOmknn5FtTmF9/1BBPpTnO24Sv7+yJTyG9qRhXW+t1LmM0oenI4tdmI9Y5javMHuJHE6MTqNmQ+uSo/Oifv8gi3kLF/X0p1XPLFTpSR+xTvkDrufiaSvpCc1JlmJP5VZ2N+0nc+JTXc8+QeyCwy1h/HVVxCf7rTiXa0Yj8aU4OM+0trJzaxnbruRzL+/5wPeYPUd8/zLE8xn7uZRu6xl+Jiar1zGUBPck8nsTHXUOaak9tL8bCG7Z3ItbYVVcmcQOacN+Ffh+Z3Uvd9xWoy55x4+B5v8RKLSDxMnfEo87mXu5hKxoWpSUq1TOJg6rkx/2O0x6MKI7V5fHXRll57jcdjyfsTS0sxNY8zbk0tlO08X3pcirl5PvKa1FCJVxnbZr+yf4nXGb9G6tDZzGJG8Tjj3vyW/KZsp8ZKzZV6rXycL42V83l5/UwSE+PxQvJGjlWeS/6YxwPkuN1P3lP67hzH8vtT2q/8fTql77jbdj4rnxtPs5hXWMbLRfuGNrV5zuUqviPnfDcyJj+c4+jDWDIWTz9Mvk6tlz6c/j2HN8h4u55r4jjOJmOg1BNL+YParq+WpP66i0Ws5Ce2cZ1m7JV539MYRsZmD/IuX7CaX6npus/83wlczDSeYQV/kHUeB5M4cjGTWcDbVBJrGnMo/biBKWQNyELeJPcUf6eWeLU7GavvxyHkflh7WheaavdnB3If8k/v+5G3eY4F3EniXdZW9KIHmfvM2opGZG3F1mzCt/Yx8wcPM57cU2tHPTLPkDUWK/3G5IV5JE+MozfHcgCpLZNfVvAKC0n9OIGL6UZqxt3Y4NivI3Vv5kaznmYovUjNvD81qMTXzmHGuM+QtRd3MJYL6EHOe9ZeZE4099wSI8v4Tr/4iFdYyP3cymiSk8+hB13IvbYDyVzojqRG/Et/S224lsTC3H9IHMwY91HSL2dyMzeQdWRZM3YpF5AYeCankPrhaJqTe96Jg7nndgCpERuTsU/WZKRGrE6uidSIpfnRDX7W3/xBapa0GRv/QuqZbH/LV6xiNRkj51pLvFzOa7xIrs3SGDgxYC73cg8zyfWemJT4VBoHJ54lrpViWx6PI/GsFONKfy/FxTw/ujBGO4KryLhzaNHmcZ7P5yWW5ftKcS4xaSGvspJvyG+t6Likho7kjtxLynFLjZ28kmOZeefMLeT+Zo53jnvquZKjbGecmRzVm+70YxAZc15GzmXW/MXwoh2qHUzmCq8l5z/z4BO5nvSD3LfKeDV9ZTEZT6wkcyZ/k3tXqREzD5/7vWczguTvuWReZi2ZR9yHoxnCDSSu/UBN18YJZEw5g/cpc23V4QTOI3NMGb/NITVgxoc/sKVrdVfqk7VSWfeQdVMTeJDUPuvYwXXfnmtZSkWxIve+slZrLFkLsZx1bCQOVSTtdjQkcesYTqA//RhET7rQmbymCYl5W1GBb33e+2QeLt9xO1eTevIYmrEDW/G3/UrdmfUAHxTtXG3WiQ3nTBKXtyK/aVnxGydq+3Ioie0ZM3/q2CR2zWAMPWlOcsS/jm/yxqvcx/VcQDeSX2pRjYxrsz4g5ynxKvdwhtOf0vqA2ra34HfneDWJU5k/zv3L+WRN4vUkz11E+seZJFZlvVjiVfJgYlbWCOxM6rjMUW9B7o9u0M9yL+frou99po2MV16kNLZNP83YNn0345rM2Q0h93My3sm1cSqlebsWtnMN5braj1xre1GT1HMZ325JJTKmyjgr12xk7LWWlXzKx3xA+di0xOPEp6fItf8wiU+JBWkTr1JfpIZJrXc3s5hOxn+pn1IPpcZKPEkMuoaxjGE0IxlBxo9XFC7TRsa/GWtm3DmIgYX+2n4M4Cx605MedCt01XahMx04hva0oVWhhfYI0h7GoTSnWTkH2j6gnH1t78/eNKFxoZG2AQ2pX2zX1ZbUsb0XtajNnsV2Htcs1NDGboU9ym3vantndinaHbTbs21hG+1WpC1vJ4/zOZF9KH13vjP7UPqutPmO2L14ffYtrynJb8lvyOfsR45LjlWOWwtyXDtyMt3pS87h1dzIdBbwBMl5i3mFN0j/W8WfZMyR8UfyyZ4kf2TMkrFL6tHkh7PIdZFxTnL+HTzAc+S6ytgp69FzbzVrOy/nXpbzCztXcO5oTe7lnsVlXMNkZpJxf8aCWXPaUDzpSNavXcJ0Mr+2hsT5zlxA1iy8TWJY1h+nPr2ff+kk7l3NSo4QL7P+NnE666xepJlx8yyyPnga224hXrGedlu6DmlcVW4ga766VvPZlFXXr5lF1gDU0RGG8gQv8g4Vt9Zv6cuVzGYZq6mhw3RmCIMZUGxfpx1Df06hC504jVOL7TwXrWjGNrzrM59gEmM5kxbsQx0q8LN9+oBHuYETOJAN9v91ptOXw8j6hRr86Lf+QtbZvUrW3N3MVVzMMTRlT752fFbwLi/yNDczhDM4hAOpxQbH9QOe4wYG0Jm9qcznjv88buEKWrNFzotztJgZjOY8upP7a7nn9oVzuYAp5D5e1tdtcJ7fYRYjSR7O3Mg2ZNyRHHslGR/UpTIZE7xG5ncyz5P11pkf2Yysa3+PrHHP/a7k0dbU4B/9sDQGmG/7OvrQgf3YnswVf0zuf+Y+182kf/cgc8RZF7E9G1wD60g+fZ7cR83c2CVknWfm71uQufw9qErub31L1kMsI/cCUlPdzkRyjytrITI314Hk0oNoyO5sTer/zOdlzJkxQOaFXy2u8ye0c0jenMEUxpA54dSF+b+D5MyT6UBrsrYpNWip1s/cYmJM7kOX8mVq/cSgf11aqel/Zi2p4TPnkXnM13iJ53iG5MeM6R9kLg9wX2GmNvkwtXRq+clcz3iu5qrC5dohnMdABhT6aHvTs2jP0p5dvCav60cvEnNP41SS/07keDpxLO05utBWW9LGdhxJy0ILbXJjYntyY/Ji5PHBHFRsH67Ne1qR1+dx5LWl1zW1HYfQgnxXO/L92Z/sV/bxuHJOsJ39T9ulnFOK50/SJtefQem49LVdOlZpc5xyDHN8Io8vJMd5OCMYxbXczDTu5zGeIjkq7bPkHL/Ku6RO+ohPWMk3he+16Su/kzHh30WbeqvUj7Kd3Ja5ttRrLelEclry2TVkLJtx7RJSH2asu5zXCslvn5BxTHxePE6NmWuldB8u91wGkOvsAXIfLtdjNdfm/mSeO/ObWTub/6dYw780db3nnlnulWX97e0sJPPbqb0zb9CKzCVM53EyR7OpmJP7WMfTg/MYwRQyf/s4+f+QNfxFXfHrQPpwDYlvmbvOeCJji6t4kI3Fxqwfe4iKYmgnJpH/mckag3NZzmZi8uW8xg7i9kUspIEYfwkLqCw3NKMfd/AVWbN9Os+wnRyUtXVT+YGD5KqBPMVBctt0/qaFwmsy/7Dvdvoh03ie/y/M+Md2Ne1m7MGeVGdnqlCx+Fv+/pvXvsbjjOIAPi2+o4e2Ki/43ktpwwb78yjJ57vzln29ir351u+YzYGs9ftm0YvtWOYYjONYstZvLsl3TVjpuE2jD8lv7zqmEziF/E/Td473PSSXZe3G187H8wwmY8fMf73jfN1FxqWZY8t8W9ZqZByY9TEn0IS/i76QfpE+cipZH74TmePLPdRSzupvO/P5+7A1P+iDGWNnvirz+VcxiKzlS9/NPGMVftGX3+cJkqvGcyE9yHrUrMfIPehtyb3pX10bGQNmLr80V5X1GJkLyFxVclVfupG1Ry1pSsZ9e5AxXwVyHa4ic6W5dl+gNFefazt5KmsyriZzG5mnT57qSvJU7l0mLmSeJHmqNE+fednkqdTFiSGZe0mMScxZz1q+4nNST7/NmyzjFZbwHOVjW+JaHkfq8qcLyWcLeIg5hVna6UzlDm5lCpOYwHjGMIoRDGNo4VLtJYULtOcykAH0pQ896cHpJK4nlyXGl2RccSIdC8dq29GWo2hDK46kRTnJR4eSPBbJS3mcfBTJZU3Zn71pTJOibahtQD3qFm0d7V7ULtTUlrenx1GD3alF3pPPyGeV5HHpc/PZ+cxSW/qO8t+T78tn5bvSlr6n/PfV8Hy+M+O93Qq7aGMn8t4a/2NXj0vymii9Z8dyj/O+7N9+5BjmuKUtaWE756ALqT9yHnNOz2cwVzGa9JWbmMl83mI1f5K+vTuZz8hcbQ9Sx2WcN4rUd5kbyTxfxnyp/5IbvyT3fPck99Uyn5frNGuobmIRWYOScV8brmABX7CHWNGd2SSu/EnWDWcN4E1kHmo3cSl57VIW8RmbV9KfSD0+idy/zLzXCnLvtTZ9mUbm5v6hsRg5mtxb3VUM7cU8qoqvp/EYa6kt/macMYwVtBGfp5Kxyilid9ZtVxfPz+IRGor1g3mM/N9QH+bxNcfKD4OZx3r+YFs5pCkZ951I8sr9LOITvmFzOacNF7GQz6klL53GDH6ildw1gqk8ylI+YpMdnAdOZQrPsor/Ayzjz1yEPgAA"},"shape":[4001],"dtype":"int32","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1068","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1069"}}},"glyph":{"type":"object","name":"Line","id":"p1064","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#2ca02c"}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1065","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#2ca02c","line_alpha":0.1}},"muted_glyph":{"type":"object","name":"Line","id":"p1066","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#2ca02c","line_alpha":0.2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1016","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"protein copy number","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"time (min)","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}}]}}]}};
+  const render_items = [{"docid":"65e10d97-14d3-4d75-b577-312db4ec1017","roots":{"p1008":"ee4f05c1-96d4-4626-90f0-0a302c27d8d7"},"root_ids":["p1008"]}];
+  void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script>
+</div>
 </div>
 <p>We observe the oscillations, but the amplitudes are highly variable.</p>
 </section>
@@ -1343,7 +1708,7 @@ p \rightarrow p-1, \;\;\;\; &amp; \gamma p.
 \end{align}
 \tag{2}\]</span></span></p>
 <p>We will first remake the non-JITted version of the propensity function to test its speed.</p>
-<div id="2fa893f7" class="cell" data-execution_count="7">
+<div id="f4f37bd5" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simple_propensity(propensities, population, t, beta_m, beta_p, gamma):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Updates an array of propensities given a set of parameters</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">    and an array of populations.</span></span>
@@ -1358,7 +1723,7 @@ p \rightarrow p-1, \;\;\;\; &amp; \gamma p.
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">3</span>] <span class="op">=</span> gamma <span class="op">*</span> p  <span class="co"># Degrade protein</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We also need the updates.</p>
-<div id="a49059d2" class="cell" data-execution_count="8">
+<div id="0fd60c6f" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Column 0 is change in m, column 1 is change in p</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>simple_update <span class="op">=</span> np.array(</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    [</span>
@@ -1371,7 +1736,7 @@ p \rightarrow p-1, \;\;\;\; &amp; \gamma p.
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We also need functions from <a href="../technical_appendices/gillespie.html">when we introduced the Gillespie algorithm</a> to enable non-JITted profiling and to provide a basis of comparison going forward. These function are are in the cell below.</p>
-<div id="78695eba" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="9">
+<div id="7b6179d2" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sample_discrete(probs):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Randomly sample an index with probability given by probs."""</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate random number</span></span>
@@ -1496,7 +1861,7 @@ p \rightarrow p-1, \;\;\;\; &amp; \gamma p.
 <span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pop_out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Let’s do some profiling to see what took so long. We will use the magic function <code>%lprun</code> to profile runs of SSAs. The output has line wrapping, so it is kind of hard to read in a Jupyter notebook, unfortunately.</p>
-<div id="78ba7504" class="cell" data-execution_count="10">
+<div id="49f5af30" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify parameters for calculation</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> (<span class="fl">10.0</span>, <span class="fl">10.0</span>, <span class="fl">0.4</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>time_points <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">101</span>)</span>
@@ -1504,14 +1869,22 @@ p \rightarrow p-1, \;\;\;\; &amp; \gamma p.
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>lprun <span class="op">-</span>T lp_results.txt <span class="op">-</span>f gillespie_ssa gillespie_ssa(<span class="op">\</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        simple_propensity, simple_update, population_0, time_points, args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+*** Profile printout saved to text file 'lp_results.txt'.</code></pre>
+</div>
 </div>
 <p>We see that 80% of the time is spent doing draws. Nothing else is really worth looking at. Let’s see how we can improve our draw speed.</p>
-<div id="32136d05" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>propensities <span class="op">=</span> np.ones(<span class="dv">4</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>lprun <span class="op">-</span>T lp_results.txt <span class="op">-</span>f gillespie_draw <span class="op">\</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        [gillespie_draw(simple_propensity, propensities, population_0, <span class="dv">0</span>, args) <span class="op">\</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10_000</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2824dba3" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>propensities <span class="op">=</span> np.ones(<span class="dv">4</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>lprun <span class="op">-</span>T lp_results.txt <span class="op">-</span>f gillespie_draw <span class="op">\</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        [gillespie_draw(simple_propensity, propensities, population_0, <span class="dv">0</span>, args) <span class="op">\</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10_000</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+*** Profile printout saved to text file 'lp_results.txt'.</code></pre>
+</div>
 </div>
 <p>The propensity function is taking the most time. We will focus on improving that.</p>
 <section id="speed-boost-by-jit-compilation-with-numba" class="level3">
@@ -1520,302 +1893,348 @@ p \rightarrow p-1, \;\;\;\; &amp; \gamma p.
 <pre><code>@numba.jit()</code></pre>
 <p>and that is it. If possible, we can use the <code>nopython=True</code> keyword argument to get more speed because the compiler can assume that all of the code is JIT-able. Note that using <font style="font-family:monospace;"><span class="citation" data-cites="numba.njit">(<a href="../references.html#ref-numba.njit" role="doc-biblioref"><strong>numba.njit?</strong></a>)</span></font> is equivalent to using <font style="font-family:monospace;"><span class="citation" data-cites="numba.jit">(<a href="../references.html#ref-numba.jit" role="doc-biblioref"><strong>numba.jit?</strong></a>)</span>(nopython=True)</font>.</p>
 <p>We can speed that up by sacrificing some readability and directly accessing the arrays instead of setting up views, as we have been doing.</p>
-<div id="94184558" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simple_propensity_numba(</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    propensities, population, t, beta_m, beta_p, gamma</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>):</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Updates an array of propensities given a set of parameters</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">    and an array of populations.</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Unpack population</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    m, p <span class="op">=</span> population</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update propensities</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">0</span>] <span class="op">=</span> beta_m  <span class="co"># Make mRNA transcript</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">1</span>] <span class="op">=</span> m  <span class="co"># Degrade mRNA</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">2</span>] <span class="op">=</span> beta_p <span class="op">*</span> m  <span class="co"># Make protein</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">3</span>] <span class="op">=</span> gamma <span class="op">*</span> p  <span class="co"># Degrade protein</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Check speeds</span></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Old propensity function:'</span>)</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit simple_propensity(propensities, population_0, <span class="dv">0</span>, <span class="op">*</span>args)</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Numba</span><span class="ch">\'</span><span class="st">d propensity function:'</span>)</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit simple_propensity_numba(propensities, population_0, <span class="dv">0</span>, <span class="op">*</span>args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4c82c031" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simple_propensity_numba(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    propensities, population, t, beta_m, beta_p, gamma</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Updates an array of propensities given a set of parameters</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co">    and an array of populations.</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Unpack population</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    m, p <span class="op">=</span> population</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update propensities</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">0</span>] <span class="op">=</span> beta_m  <span class="co"># Make mRNA transcript</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">1</span>] <span class="op">=</span> m  <span class="co"># Degrade mRNA</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">2</span>] <span class="op">=</span> beta_p <span class="op">*</span> m  <span class="co"># Make protein</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">3</span>] <span class="op">=</span> gamma <span class="op">*</span> p  <span class="co"># Degrade protein</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Check speeds</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Old propensity function:'</span>)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit simple_propensity(propensities, population_0, <span class="dv">0</span>, <span class="op">*</span>args)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Numba</span><span class="ch">\'</span><span class="st">d propensity function:'</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit simple_propensity_numba(propensities, population_0, <span class="dv">0</span>, <span class="op">*</span>args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Old propensity function:
+1.64 μs ± 14.9 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+
+Numba'd propensity function:
+165 ns ± 1.38 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)</code></pre>
+</div>
 </div>
 <p>We got some speed up! Nice!</p>
 <p>Now, we also saw that the sums and division of arrays are slow. Let’s optimize the sum operation using <code>numba</code>.</p>
-<div id="986c70a2" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_numba(ar):</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ar.<span class="bu">sum</span>()</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Make dummy array for testing</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>ar <span class="op">=</span> np.array([<span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="fl">0.15</span>])</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">NumPy sum:'</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit ar.<span class="bu">sum</span>()</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Numba sum:'</span>)</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit sum_numba(ar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3a669e3a" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_numba(ar):</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ar.<span class="bu">sum</span>()</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Make dummy array for testing</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>ar <span class="op">=</span> np.array([<span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="fl">0.15</span>])</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">NumPy sum:'</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit ar.<span class="bu">sum</span>()</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Numba sum:'</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit sum_numba(ar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+NumPy sum:
+415 ns ± 4.13 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+
+Numba sum:
+72.2 ns ± 0.592 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)</code></pre>
+</div>
 </div>
 <p>We get another speed boost, though we should note that this speed boost in the sum is due to <code>numba</code> optimizing sums of a certain size. For sums over large numbers of entries, <code>numba</code>’s performance will not exceed NumPy’s by much at all.</p>
 <p>Finally, we will speed up the sampling of the discrete distribution. We will do this in two ways. First, we notice that the division operation on the propensities took a fair amount of time when we profiled the code. We do not need it; we can instead sample from an unnormalized discrete distribution. Secondly, we can use <code>numba</code> to accelerate the while loop in the sampling.</p>
-<div id="e4ff2291" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sample_discrete_numba(probs, probs_sum):</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> np.random.rand() <span class="op">*</span> probs_sum</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    p_sum <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> p_sum <span class="op">&lt;</span> q:</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>        p_sum <span class="op">+=</span> probs[i]</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> i <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Make dummy unnormalized probs</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>probs <span class="op">=</span> np.array([<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.05</span>, <span class="fl">0.15</span>, <span class="fl">0.6</span>])</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>probs_sum <span class="op">=</span> sum_numba(probs)</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Result from non-JITted method:'</span>)</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit sample_discrete(probs)</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Results from numba'd version:"</span>)</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit sample_discrete_numba(probs, probs_sum)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="82017633" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sample_discrete_numba(probs, probs_sum):</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> np.random.rand() <span class="op">*</span> probs_sum</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    p_sum <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> p_sum <span class="op">&lt;</span> q:</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        p_sum <span class="op">+=</span> probs[i]</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        i <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> i <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Make dummy unnormalized probs</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>probs <span class="op">=</span> np.array([<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.05</span>, <span class="fl">0.15</span>, <span class="fl">0.6</span>])</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>probs_sum <span class="op">=</span> sum_numba(probs)</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Result from non-JITted method:'</span>)</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit sample_discrete(probs)</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Results from numba'd version:"</span>)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit sample_discrete_numba(probs, probs_sum)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Result from non-JITted method:
+356 ns ± 3.2 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+
+Results from numba'd version:
+89.7 ns ± 1.02 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)</code></pre>
+</div>
 </div>
 <p>We get a speed-up of about a factor of three. Let’s now make a new <code>gillespie_draw()</code> function that is faster. The fast propensity function is just an argument to the fast draw-er.</p>
-<div id="308b2aab" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_draw_fast(propensity_func, propensities, population, t, args):</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Draws a reaction and the time it took to do that reaction.</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute propensities</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    propensity_func(propensities, population, t, <span class="op">*</span>args)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sum of propensities</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    props_sum <span class="op">=</span> sum_numba(propensities)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute time</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.random.exponential(<span class="dv">1</span> <span class="op">/</span> props_sum)</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Draw reaction given propensities</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    rxn <span class="op">=</span> sample_discrete_numba(propensities, props_sum)</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rxn, time</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Old Gillespie draw:'</span>)</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_draw(simple_propensity, propensities, population_0, <span class="fl">0.0</span>, args)</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Fast Gillespie draw:'</span>)</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_draw_fast(simple_propensity_numba, propensities, population_0, <span class="fl">0.0</span>, args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="0b1cd3ee" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_draw_fast(propensity_func, propensities, population, t, args):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Draws a reaction and the time it took to do that reaction.</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute propensities</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    propensity_func(propensities, population, t, <span class="op">*</span>args)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sum of propensities</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    props_sum <span class="op">=</span> sum_numba(propensities)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute time</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.random.exponential(<span class="dv">1</span> <span class="op">/</span> props_sum)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Draw reaction given propensities</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    rxn <span class="op">=</span> sample_discrete_numba(propensities, props_sum)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rxn, time</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Old Gillespie draw:'</span>)</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_draw(simple_propensity, propensities, population_0, <span class="fl">0.0</span>, args)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Fast Gillespie draw:'</span>)</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_draw_fast(simple_propensity_numba, propensities, population_0, <span class="fl">0.0</span>, args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Old Gillespie draw:
+3.34 μs ± 35.6 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+
+Fast Gillespie draw:
+584 ns ± 14.9 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)</code></pre>
+</div>
 </div>
 <p>So, our optimization got us another speed boost. Let’s adjust our SSA function to include the fast draws.</p>
-<div id="cc89c133" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_ssa_fast(</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    propensity_func, update, population_0, time_points, args<span class="op">=</span>()</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>):</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Uses the Gillespie stochastic simulation algorithm to sample</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co">    from proability distribution of particle counts over time.</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">    propensity_func : function</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co">        Function of the form f(params, population) that takes the current</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co">        population of particle counts and return an array of propensities</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co">        for each reaction.</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co">    update : ndarray, shape (num_reactions, num_chemical_species)</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co">        Entry i, j gives the change in particle counts of species j</span></span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co">        for chemical reaction i.</span></span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="co">    population_0 : array_like, shape (num_chemical_species)</span></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co">        Array of initial populations of all chemical species.</span></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="co">    time_points : array_like, shape (num_time_points,)</span></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="co">        Array of points in time for which to sample the probability</span></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="co">        distribution.</span></span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="co">    args : tuple, default ()</span></span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a><span class="co">        The set of parameters to be passed to propensity_func. </span></span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a><span class="co">    rxn : int</span></span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="co">        Index of reaction that occured.</span></span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a><span class="co">    time : float</span></span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a><span class="co">        Time it took for the reaction to occur.        </span></span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a><span class="co">    sample : ndarray, shape (num_time_points, num_chemical_species)</span></span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="co">        Entry i, j is the count of chemical species j at time</span></span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="co">        time_points[i].</span></span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize output</span></span>
-<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>    pop_out <span class="op">=</span> np.empty((<span class="bu">len</span>(time_points), update.shape[<span class="dv">1</span>]), dtype<span class="op">=</span>np.int64)</span>
-<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize and perform simulation</span></span>
-<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>    i_time <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> time_points[<span class="dv">0</span>]</span>
-<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>    population <span class="op">=</span> population_0.copy()</span>
-<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>    pop_out[<span class="dv">0</span>, :] <span class="op">=</span> population</span>
-<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>    propensities <span class="op">=</span> np.zeros(update.shape[<span class="dv">0</span>])</span>
-<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(time_points):</span>
-<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> t <span class="op">&lt;</span> time_points[i_time]:</span>
-<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>            <span class="co"># draw the event and time step</span></span>
-<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>            event, dt <span class="op">=</span> gillespie_draw_fast(</span>
-<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>                propensity_func, propensities, population, t, args</span>
-<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a>            )</span>
-<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Update the population</span></span>
-<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>            population_previous <span class="op">=</span> population.copy()</span>
-<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>            population <span class="op">+=</span> update[event, :]</span>
-<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Increment time</span></span>
-<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>            t <span class="op">+=</span> dt</span>
-<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the index</span></span>
-<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> np.searchsorted(time_points <span class="op">&gt;</span> t, <span class="va">True</span>)</span>
-<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the population</span></span>
-<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a>        pop_out[i_time : <span class="bu">min</span>(i, <span class="bu">len</span>(time_points))] <span class="op">=</span> population_previous</span>
-<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Increment index</span></span>
-<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a>        i_time <span class="op">=</span> i</span>
-<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pop_out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7d4d71fa" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_ssa_fast(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    propensity_func, update, population_0, time_points, args<span class="op">=</span>()</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>):</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Uses the Gillespie stochastic simulation algorithm to sample</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">    from proability distribution of particle counts over time.</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">    propensity_func : function</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">        Function of the form f(params, population) that takes the current</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co">        population of particle counts and return an array of propensities</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co">        for each reaction.</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co">    update : ndarray, shape (num_reactions, num_chemical_species)</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co">        Entry i, j gives the change in particle counts of species j</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co">        for chemical reaction i.</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co">    population_0 : array_like, shape (num_chemical_species)</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co">        Array of initial populations of all chemical species.</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="co">    time_points : array_like, shape (num_time_points,)</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="co">        Array of points in time for which to sample the probability</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="co">        distribution.</span></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="co">    args : tuple, default ()</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="co">        The set of parameters to be passed to propensity_func. </span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="co">    rxn : int</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="co">        Index of reaction that occured.</span></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="co">    time : float</span></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="co">        Time it took for the reaction to occur.        </span></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a><span class="co">    sample : ndarray, shape (num_time_points, num_chemical_species)</span></span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a><span class="co">        Entry i, j is the count of chemical species j at time</span></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="co">        time_points[i].</span></span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize output</span></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>    pop_out <span class="op">=</span> np.empty((<span class="bu">len</span>(time_points), update.shape[<span class="dv">1</span>]), dtype<span class="op">=</span>np.int64)</span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize and perform simulation</span></span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>    i_time <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> time_points[<span class="dv">0</span>]</span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>    population <span class="op">=</span> population_0.copy()</span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a>    pop_out[<span class="dv">0</span>, :] <span class="op">=</span> population</span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>    propensities <span class="op">=</span> np.zeros(update.shape[<span class="dv">0</span>])</span>
+<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(time_points):</span>
+<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> t <span class="op">&lt;</span> time_points[i_time]:</span>
+<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a>            <span class="co"># draw the event and time step</span></span>
+<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a>            event, dt <span class="op">=</span> gillespie_draw_fast(</span>
+<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a>                propensity_func, propensities, population, t, args</span>
+<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Update the population</span></span>
+<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a>            population_previous <span class="op">=</span> population.copy()</span>
+<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a>            population <span class="op">+=</span> update[event, :]</span>
+<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Increment time</span></span>
+<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a>            t <span class="op">+=</span> dt</span>
+<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the index</span></span>
+<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> np.searchsorted(time_points <span class="op">&gt;</span> t, <span class="va">True</span>)</span>
+<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the population</span></span>
+<span id="cb23-66"><a href="#cb23-66" aria-hidden="true" tabindex="-1"></a>        pop_out[i_time : <span class="bu">min</span>(i, <span class="bu">len</span>(time_points))] <span class="op">=</span> population_previous</span>
+<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Increment index</span></span>
+<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a>        i_time <span class="op">=</span> i</span>
+<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pop_out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we can test the speed of the two SSAs.</p>
-<div id="81c17bba" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Gillespie SSA:'</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa(simple_propensity, simple_update, <span class="op">\</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                      population_0, time_points, args)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Fast Gillespie SSA:'</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa_fast(simple_propensity_numba, simple_update,<span class="op">\</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                           population_0, time_points, args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3ce21e55" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Gillespie SSA:'</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa(simple_propensity, simple_update, <span class="op">\</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                      population_0, time_points, args)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Fast Gillespie SSA:'</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa_fast(simple_propensity_numba, simple_update,<span class="op">\</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>                           population_0, time_points, args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gillespie SSA:
+43 ms ± 1.03 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+Fast Gillespie SSA:
+12.3 ms ± 108 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)</code></pre>
+</div>
 </div>
 <p>So, we are now faster with not too much work. This is still a general solver that you can use with any propensity function and update.</p>
 <p>We have constructed a generic tool for doing Gillespie simulations. Specifically, we pass a propensity function into the algorithm. Passing a function as an argument precludes use of <code>numba</code>. This means that we cannot just-in-time compile the entire Gillespie simulation. We could insist that our propensity function be encoded in a global function <code>prop_func()</code>, then we can fully JIT compile the entire simulation. (Note that there are ways to get around this insistence on a global function, and the <code>biocircuits.gillespie_ssa()</code> function does not rely on such a global function, but for the purposes of this demonstration, it is convenient.)</p>
-<div id="b70ef4dc" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prop_func(propensities, population, t, beta_m, beta_p, gamma):</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Updates an array of propensities given a set of parameters</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">    and an array of populations.</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Unpack population</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    m, p <span class="op">=</span> population</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update propensities</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">0</span>] <span class="op">=</span> beta_m      <span class="co"># Make mRNA transcript</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">1</span>] <span class="op">=</span> m           <span class="co"># Degrade mRNA</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">2</span>] <span class="op">=</span> beta_p <span class="op">*</span> m  <span class="co"># Make protein</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">3</span>] <span class="op">=</span> gamma <span class="op">*</span> p   <span class="co"># Degrade protein</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_draw_numba(propensities, population, t, args):</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co">    Draws a reaction and the time it took to do that reaction.</span></span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="co">    Assumes that there is a globally scoped function</span></span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co">    `prop_func` that is Numba'd with nopython=True.</span></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute propensities</span></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>    prop_func(propensities, population, t, <span class="op">*</span>args)</span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sum of propensities</span></span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    props_sum <span class="op">=</span> np.<span class="bu">sum</span>(propensities)</span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute time</span></span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.random.exponential(<span class="dv">1</span> <span class="op">/</span> props_sum)</span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Draw reaction given propensities</span></span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>    rxn <span class="op">=</span> sample_discrete_numba(propensities, props_sum)</span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rxn, time</span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
-<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_ssa_numba(update, population_0, time_points, args):</span>
-<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a><span class="co">    Uses the Gillespie stochastic simulation algorithm to sample</span></span>
-<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a><span class="co">    from proability distribution of particle counts over time.</span></span>
-<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
-<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
-<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a><span class="co">    update : ndarray, shape (num_reactions, num_chemical_species)</span></span>
-<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a><span class="co">        Entry i, j gives the change in particle counts of species j</span></span>
-<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a><span class="co">        for chemical reaction i.</span></span>
-<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a><span class="co">    population_0 : array_like, shape (num_chemical_species)</span></span>
-<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a><span class="co">        Array of initial populations of all chemical species.</span></span>
-<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a><span class="co">    time_points : array_like, shape (num_time_points,)</span></span>
-<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a><span class="co">        Array of points in time for which to sample the probability</span></span>
-<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a><span class="co">        distribution.</span></span>
-<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a><span class="co">    args : tuple, default ()</span></span>
-<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a><span class="co">        The set of parameters to be passed to propensity_func.</span></span>
-<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
-<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
-<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a><span class="co">    sample : ndarray, shape (num_time_points, num_chemical_species)</span></span>
-<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a><span class="co">        Entry i, j is the count of chemical species j at time</span></span>
-<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a><span class="co">        time_points[i].</span></span>
-<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
-<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a><span class="co">    Notes</span></span>
-<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a><span class="co">    -----</span></span>
-<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a><span class="co">    .. Assumes that there is a globally scoped function</span></span>
-<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a><span class="co">       `propensity_func` that is Numba'd with nopython=True.</span></span>
-<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize output</span></span>
-<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a>    pop_out <span class="op">=</span> np.empty((<span class="bu">len</span>(time_points), update.shape[<span class="dv">1</span>]), dtype<span class="op">=</span>np.int64)</span>
-<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize and perform simulation</span></span>
-<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a>    i_time <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> time_points[<span class="dv">0</span>]</span>
-<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a>    population <span class="op">=</span> population_0.copy()</span>
-<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a>    pop_out[<span class="dv">0</span>,:] <span class="op">=</span> population</span>
-<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a>    propensities <span class="op">=</span> np.zeros(update.shape[<span class="dv">0</span>])</span>
-<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(time_points):</span>
-<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> t <span class="op">&lt;</span> time_points[i_time]:</span>
-<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a>            <span class="co"># draw the event and time step</span></span>
-<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a>            event, dt <span class="op">=</span> gillespie_draw_numba(propensities, population, t, args)</span>
-<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb19-84"><a href="#cb19-84" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Update the population</span></span>
-<span id="cb19-85"><a href="#cb19-85" aria-hidden="true" tabindex="-1"></a>            population_previous <span class="op">=</span> population.copy()</span>
-<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a>            population <span class="op">+=</span> update[event,:]</span>
-<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Increment time</span></span>
-<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a>            t <span class="op">+=</span> dt</span>
-<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the index (Have to be careful about types for Numba)</span></span>
-<span id="cb19-92"><a href="#cb19-92" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> np.searchsorted((time_points <span class="op">&gt;</span> t).astype(np.int64), <span class="dv">1</span>)</span>
-<span id="cb19-93"><a href="#cb19-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-94"><a href="#cb19-94" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the population</span></span>
-<span id="cb19-95"><a href="#cb19-95" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> np.arange(i_time, <span class="bu">min</span>(i, <span class="bu">len</span>(time_points))):</span>
-<span id="cb19-96"><a href="#cb19-96" aria-hidden="true" tabindex="-1"></a>            pop_out[j,:] <span class="op">=</span> population_previous</span>
-<span id="cb19-97"><a href="#cb19-97" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb19-98"><a href="#cb19-98" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Increment index</span></span>
-<span id="cb19-99"><a href="#cb19-99" aria-hidden="true" tabindex="-1"></a>        i_time <span class="op">=</span> i</span>
-<span id="cb19-100"><a href="#cb19-100" aria-hidden="true" tabindex="-1"></a>                           </span>
-<span id="cb19-101"><a href="#cb19-101" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pop_out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="df3953cd" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> prop_func(propensities, population, t, beta_m, beta_p, gamma):</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Updates an array of propensities given a set of parameters</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">    and an array of populations.</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Unpack population</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    m, p <span class="op">=</span> population</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update propensities</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">0</span>] <span class="op">=</span> beta_m      <span class="co"># Make mRNA transcript</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">1</span>] <span class="op">=</span> m           <span class="co"># Degrade mRNA</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">2</span>] <span class="op">=</span> beta_p <span class="op">*</span> m  <span class="co"># Make protein</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    propensities[<span class="dv">3</span>] <span class="op">=</span> gamma <span class="op">*</span> p   <span class="co"># Degrade protein</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_draw_numba(propensities, population, t, args):</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="co">    Draws a reaction and the time it took to do that reaction.</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a><span class="co">    Assumes that there is a globally scoped function</span></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="co">    `prop_func` that is Numba'd with nopython=True.</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute propensities</span></span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    prop_func(propensities, population, t, <span class="op">*</span>args)</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sum of propensities</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    props_sum <span class="op">=</span> np.<span class="bu">sum</span>(propensities)</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute time</span></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> np.random.exponential(<span class="dv">1</span> <span class="op">/</span> props_sum)</span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Draw reaction given propensities</span></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>    rxn <span class="op">=</span> sample_discrete_numba(propensities, props_sum)</span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> rxn, time</span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a><span class="at">@numba.njit</span></span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_ssa_numba(update, population_0, time_points, args):</span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a><span class="co">    Uses the Gillespie stochastic simulation algorithm to sample</span></span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a><span class="co">    from proability distribution of particle counts over time.</span></span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a><span class="co">    update : ndarray, shape (num_reactions, num_chemical_species)</span></span>
+<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a><span class="co">        Entry i, j gives the change in particle counts of species j</span></span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a><span class="co">        for chemical reaction i.</span></span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a><span class="co">    population_0 : array_like, shape (num_chemical_species)</span></span>
+<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a><span class="co">        Array of initial populations of all chemical species.</span></span>
+<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a><span class="co">    time_points : array_like, shape (num_time_points,)</span></span>
+<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a><span class="co">        Array of points in time for which to sample the probability</span></span>
+<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a><span class="co">        distribution.</span></span>
+<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a><span class="co">    args : tuple, default ()</span></span>
+<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a><span class="co">        The set of parameters to be passed to propensity_func.</span></span>
+<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a><span class="co">    sample : ndarray, shape (num_time_points, num_chemical_species)</span></span>
+<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a><span class="co">        Entry i, j is the count of chemical species j at time</span></span>
+<span id="cb26-62"><a href="#cb26-62" aria-hidden="true" tabindex="-1"></a><span class="co">        time_points[i].</span></span>
+<span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a><span class="co">    Notes</span></span>
+<span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a><span class="co">    -----</span></span>
+<span id="cb26-66"><a href="#cb26-66" aria-hidden="true" tabindex="-1"></a><span class="co">    .. Assumes that there is a globally scoped function</span></span>
+<span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a><span class="co">       `propensity_func` that is Numba'd with nopython=True.</span></span>
+<span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize output</span></span>
+<span id="cb26-70"><a href="#cb26-70" aria-hidden="true" tabindex="-1"></a>    pop_out <span class="op">=</span> np.empty((<span class="bu">len</span>(time_points), update.shape[<span class="dv">1</span>]), dtype<span class="op">=</span>np.int64)</span>
+<span id="cb26-71"><a href="#cb26-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-72"><a href="#cb26-72" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize and perform simulation</span></span>
+<span id="cb26-73"><a href="#cb26-73" aria-hidden="true" tabindex="-1"></a>    i_time <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb26-74"><a href="#cb26-74" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb26-75"><a href="#cb26-75" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> time_points[<span class="dv">0</span>]</span>
+<span id="cb26-76"><a href="#cb26-76" aria-hidden="true" tabindex="-1"></a>    population <span class="op">=</span> population_0.copy()</span>
+<span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a>    pop_out[<span class="dv">0</span>,:] <span class="op">=</span> population</span>
+<span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a>    propensities <span class="op">=</span> np.zeros(update.shape[<span class="dv">0</span>])</span>
+<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> i <span class="op">&lt;</span> <span class="bu">len</span>(time_points):</span>
+<span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> t <span class="op">&lt;</span> time_points[i_time]:</span>
+<span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a>            <span class="co"># draw the event and time step</span></span>
+<span id="cb26-82"><a href="#cb26-82" aria-hidden="true" tabindex="-1"></a>            event, dt <span class="op">=</span> gillespie_draw_numba(propensities, population, t, args)</span>
+<span id="cb26-83"><a href="#cb26-83" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb26-84"><a href="#cb26-84" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Update the population</span></span>
+<span id="cb26-85"><a href="#cb26-85" aria-hidden="true" tabindex="-1"></a>            population_previous <span class="op">=</span> population.copy()</span>
+<span id="cb26-86"><a href="#cb26-86" aria-hidden="true" tabindex="-1"></a>            population <span class="op">+=</span> update[event,:]</span>
+<span id="cb26-87"><a href="#cb26-87" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb26-88"><a href="#cb26-88" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Increment time</span></span>
+<span id="cb26-89"><a href="#cb26-89" aria-hidden="true" tabindex="-1"></a>            t <span class="op">+=</span> dt</span>
+<span id="cb26-90"><a href="#cb26-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-91"><a href="#cb26-91" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the index (Have to be careful about types for Numba)</span></span>
+<span id="cb26-92"><a href="#cb26-92" aria-hidden="true" tabindex="-1"></a>        i <span class="op">=</span> np.searchsorted((time_points <span class="op">&gt;</span> t).astype(np.int64), <span class="dv">1</span>)</span>
+<span id="cb26-93"><a href="#cb26-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-94"><a href="#cb26-94" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the population</span></span>
+<span id="cb26-95"><a href="#cb26-95" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> np.arange(i_time, <span class="bu">min</span>(i, <span class="bu">len</span>(time_points))):</span>
+<span id="cb26-96"><a href="#cb26-96" aria-hidden="true" tabindex="-1"></a>            pop_out[j,:] <span class="op">=</span> population_previous</span>
+<span id="cb26-97"><a href="#cb26-97" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb26-98"><a href="#cb26-98" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Increment index</span></span>
+<span id="cb26-99"><a href="#cb26-99" aria-hidden="true" tabindex="-1"></a>        i_time <span class="op">=</span> i</span>
+<span id="cb26-100"><a href="#cb26-100" aria-hidden="true" tabindex="-1"></a>                           </span>
+<span id="cb26-101"><a href="#cb26-101" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pop_out</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now let’s test the speed of all three of our functions.</p>
-<div id="70036cec" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Gillespie SSA:'</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa(simple_propensity, simple_update, <span class="op">\</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                      population_0, time_points, args)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Fast Gillespie SSA:'</span>)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa_fast(simple_propensity_numba, simple_update,<span class="op">\</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>                            population_0, time_points, args)</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Totally numba</span><span class="ch">\'</span><span class="st">d Gillespie SSA:'</span>)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa_numba(simple_update, population_0, time_points, args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="de7cb1fa" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Gillespie SSA:'</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa(simple_propensity, simple_update, <span class="op">\</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                      population_0, time_points, args)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Fast Gillespie SSA:'</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa_fast(simple_propensity_numba, simple_update,<span class="op">\</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>                            population_0, time_points, args)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Totally numba</span><span class="ch">\'</span><span class="st">d Gillespie SSA:'</span>)</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_ssa_numba(simple_update, population_0, time_points, args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gillespie SSA:
+43.6 ms ± 1.43 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+Fast Gillespie SSA:
+12.4 ms ± 111 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+
+Totally numba'd Gillespie SSA:
+472 μs ± 2.63 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)</code></pre>
+</div>
 </div>
 <p>We got an extra order of magnitude speed boost by totally JIT compiling everything. The speed up is significant, so we should probably use Numba’d code, which is what the <code>biocircuits.gillespie_ssa()</code> function uses when possible.</p>
 </section>
@@ -1827,34 +2246,42 @@ p \rightarrow p-1, \;\;\;\; &amp; \gamma p.
 <p>Note</p>
 <p>The <code>multiprocessing</code> module is part of the standard Python distribution. As of April 2022, <a href="https://github.com/ipython/ipython/issues/12396">multiprocessing hangs in IPython and Jupyter environments</a>. As an alternative, we will use the <a href="https://pypi.org/project/multiprocess/">multiprocess</a> package. It can be installed by running <code>pip install multiprocess</code> on the command line. In the contexts in which we are doing parallel calculation, the <code>multiprocess</code> package can be used as a drop-in replacement for <code>multiprocessing</code>.</p>
 </div>
-<div id="76917403" class="cell" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_fn(args):</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> gillespie_ssa_numba(<span class="op">*</span>args)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_parallel(fn, update, population_0, time_points, args,</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                       n_simulations, n_threads):</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Convenience function to do parallel Gillespie simulations.</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    input_args <span class="op">=</span> (update, population_0, time_points, args)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> multiprocess.Pool(n_threads) <span class="im">as</span> p:</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>        populations <span class="op">=</span> p.<span class="bu">map</span>(fn, [input_args]<span class="op">*</span>n_simulations)</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(populations)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a231d6cd" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_fn(args):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> gillespie_ssa_numba(<span class="op">*</span>args)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gillespie_parallel(fn, update, population_0, time_points, args,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>                       n_simulations, n_threads):</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Convenience function to do parallel Gillespie simulations.</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    input_args <span class="op">=</span> (update, population_0, time_points, args)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> multiprocess.Pool(n_threads) <span class="im">as</span> p:</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>        populations <span class="op">=</span> p.<span class="bu">map</span>(fn, [input_args]<span class="op">*</span>n_simulations)</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(populations)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We are paying some overhead in setting up the parallelization. Let’s time it to see how we do with two threads.</p>
-<div id="3fddc28a" class="cell" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>n_simulations <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">numba</span><span class="ch">\'</span><span class="st">d Gillespie SSA:'</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit [gillespie_ssa_numba(simple_update, population_0, time_points, args) <span class="op">\</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n_simulations)]</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Parallel numba</span><span class="ch">\'</span><span class="st">d Gillespie SSA:'</span>)</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_parallel(gillespie_fn, simple_update, population_0, time_points,<span class="op">\</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>                           args, n_simulations, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b4368f04" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>n_simulations <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">numba</span><span class="ch">\'</span><span class="st">d Gillespie SSA:'</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit [gillespie_ssa_numba(simple_update, population_0, time_points, args) <span class="op">\</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n_simulations)]</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Parallel numba</span><span class="ch">\'</span><span class="st">d Gillespie SSA:'</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>timeit gillespie_parallel(gillespie_fn, simple_update, population_0, time_points,<span class="op">\</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>                           args, n_simulations, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+numba'd Gillespie SSA:
+472 ms ± 2.04 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+
+Parallel numba'd Gillespie SSA:
+382 ms ± 18.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)</code></pre>
+</div>
 </div>
 <p>We get a factor of two speed boost from two cores. This brings our total speed boost from the optimization to nearly two orders of magnitude.</p>
 <p>If we insist on <em>exact</em> sampling out of a probability distribution defined by a master question, we can get significant speed boosts by switching to the <a href="http://doi.org/10.1021/jp993732q">Gibson and Bruck algorithm</a>, especially for more complicated systems and propensity functions. If we are willing to <em>approximately</em> sample out of the probability distribution, there are many fast, approximate methods (e.g., <a href="https://doi.org/10.1063%2F1.1835951">Salis and Kaznessis</a>) available.</p>
@@ -1862,9 +2289,25 @@ p \rightarrow p-1, \;\;\;\; &amp; \gamma p.
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="d99c03e7" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,numba,tqdm,line_profiler,multiprocess,biocircuits,bokeh,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="938a93af" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,numba,tqdm,line_profiler,multiprocess,biocircuits,bokeh,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Python implementation: CPython
+Python version       : 3.13.13
+IPython version      : 9.12.0
+
+numpy        : 2.2.6
+scipy        : 1.17.1
+numba        : 0.61.2
+tqdm         : 4.67.3
+line_profiler: 5.0.2
+multiprocess : 0.70.19
+biocircuits  : 0.1.19
+bokeh        : 3.9.0
+jupyterlab   : 4.5.6
+</code></pre>
+</div>
 </div>
 
 

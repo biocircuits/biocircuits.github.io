@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -113,6 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.9.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -454,19 +457,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/double_phos_double_cascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7a: Signaling cascades</span></a>
+ <span class="menu-text">Technical Appendix 8a: Signaling cascades</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/multiphos_multicascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7b: Cascades of multiply phosphorylated signaling molecules</span></a>
+ <span class="menu-text">Technical Appendix 8b: Cascades of multiply phosphorylated signaling molecules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/cascade_saturation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7c: Phosphorylation cascade with saturation</span></a>
+ <span class="menu-text">Technical Appendix 8c: Phosphorylation cascade with saturation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -918,7 +921,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/numerical_odes.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/numerical_odes.ipynb">Download notebook</a></p>
 <hr>
-<div id="9292c47c" class="cell" data-execution_count="1">
+<div id="150fcaed" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -936,6 +939,336 @@ window.Quarto = {
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> bokeh.plotting</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>bokeh.io.output_notebook()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+    <style>
+        .bk-notebook-logo {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+        }
+    </style>
+    <div>
+        <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
+        <span id="f32ea50d-d769-4d8c-beb1-d83559bb8d18">Loading BokehJS ...</span>
+    </div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+'use strict';
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    function drop(id) {
+      const view = Bokeh.index.get_by_id(id)
+      if (view != null) {
+        view.model.document.clear()
+        Bokeh.index.delete(view)
+      }
+    }
+
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+
+    // Clean up Bokeh references
+    if (id != null) {
+      drop(id)
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim()
+            drop(id)
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded(error = null) {
+    const el = document.getElementById("f32ea50d-d769-4d8c-beb1-d83559bb8d18");
+    if (el != null) {
+      const html = (() => {
+        if (typeof root.Bokeh === "undefined") {
+          if (error == null) {
+            return "BokehJS is loading ...";
+          } else {
+            return "BokehJS failed to load.";
+          }
+        } else {
+          const prefix = `BokehJS ${root.Bokeh.version}`;
+          if (error == null) {
+            return `${prefix} successfully loaded.`;
+          } else {
+            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
+          }
+        }
+      })();
+      el.innerHTML = html;
+
+      if (error != null) {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "auto";
+        wrapper.style.height = "5em";
+        wrapper.style.resize = "vertical";
+        const content = document.createElement("div");
+        content.style.fontFamily = "monospace";
+        content.style.whiteSpace = "pre-wrap";
+        content.style.backgroundColor = "rgb(255, 221, 221)";
+        content.textContent = error.stack ?? error.toString();
+        wrapper.append(content);
+        el.append(wrapper);
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(() => display_loaded(error), 100);
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.9.0.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+      try {
+            for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+
+      } catch (error) {display_loaded(error);throw error;
+      }if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById("f32ea50d-d769-4d8c-beb1-d83559bb8d18")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script>
+</div>
 </div>
 <p>In this chapter, we numerically solve the ODE for a negative autoregulatory circuit,</p>
 <p><span id="eq-dummy_label_fhEjFZKj7wnCY6rF"><span class="math display">\[
@@ -957,7 +1290,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="solving-for-a-constant-input">Solving for a constant input</h3>
 <p>We first seek to solve the ODE where we have a sudden step in <span class="math inline">\(s\)</span> at time <span class="math inline">\(t = 0\)</span>. Since we are only simulating our system starting at <span class="math inline">\(t=0\)</span>, we can treat <span class="math inline">\(s\)</span> as a single, constant parameter, rather than a time-varying variable. So, we need seven parameters for the right hand side of our ODEs: <span class="math inline">\(\beta_0\)</span>, <span class="math inline">\(\gamma\)</span>, <span class="math inline">\(k\)</span>, <span class="math inline">\(n\)</span>, <span class="math inline">\(k_s\)</span>, <span class="math inline">\(n_s\)</span>, and <span class="math inline">\(s\)</span>.</p>
 <p>We now define the function for the right hand side of the ODEs.</p>
-<div id="89413012" class="cell" data-execution_count="2">
+<div id="c160f9eb" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_auto_rhs(x, t, beta0, gamma, k, n, ks, ns, s):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Right hand side for negative autoregulation motif with s dependence.</span></span>
@@ -969,7 +1302,7 @@ window.Quarto = {
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can now define the initial conditions, our parameters (taking <span class="math inline">\(n_s = 10\)</span>), and the time points we want and use <code>scipy.integrate.odeint()</code> to solve.</p>
-<div id="0bc94c5a" class="cell" data-execution_count="3">
+<div id="55e748f1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time points we want for the solution</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">200</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -992,13 +1325,16 @@ window.Quarto = {
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> scipy.integrate.odeint(neg_auto_rhs, x0, t, args<span class="op">=</span>args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>That’s it! The integration is done. Let’s take a quick look at the output.</p>
-<div id="34139fce" class="cell" data-execution_count="4">
+<div id="6b16b838" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>(200, 1)</code></pre>
+</div>
 </div>
 <p>We see that the output of <code>odeint()</code> has each column corresponding to a given species and each row to a given time point. It is often convenient to transpose the output so that the each species is more easily index-able.</p>
-<div id="c23a6f51" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract time course for first (in this case only) species</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x.transpose()[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="db4cb32f" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract time course for first (in this case only) species</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> x.transpose()[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>When we plot the result, we would like to compare it both to the limiting result of <a href="https://doi.org/10.1016/S0022-2836(02)00994-4">Rosenfeld et al.</a>,</p>
 <p><span id="eq-dummy_label_KM2BmQwGarAim3ZG"><span class="math display">\[
@@ -1013,42 +1349,74 @@ x(t) = \frac{\beta_0}{\gamma}\left(1 - \mathrm{e}^{-\gamma t}\right),
 \end{align}
 \tag{3}\]</span></span></p>
 <p>so we need to code up those solutions as well for plotting.</p>
-<div id="22488270" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unregulated solution</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x_unreg <span class="op">=</span> beta0 <span class="op">/</span> gamma <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span>gamma <span class="op">*</span> t))</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Limiting analytical solution</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>x_limiting <span class="op">=</span> x[<span class="op">-</span><span class="dv">1</span>] <span class="op">*</span> np.sqrt(<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span><span class="dv">2</span> <span class="op">*</span> gamma <span class="op">*</span> t))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="01ba3ae8" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unregulated solution</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x_unreg <span class="op">=</span> beta0 <span class="op">/</span> gamma <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span>gamma <span class="op">*</span> t))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Limiting analytical solution</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>x_limiting <span class="op">=</span> x[<span class="op">-</span><span class="dv">1</span>] <span class="op">*</span> np.sqrt(<span class="dv">1</span> <span class="op">-</span> np.exp(<span class="op">-</span><span class="dv">2</span> <span class="op">*</span> gamma <span class="op">*</span> t))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now let’s plot the results. As a reminder, you can read about making plots with Bokeh in <a href="../appendices/python/plotting.html">Appendix B</a>.</p>
-<div id="5901b893" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up color palette for this notebook</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> colorcet.b_glasbey_category10</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up figure</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> bokeh.plotting.figure(</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">325</span>,</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">250</span>,</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    x_axis_label<span class="op">=</span><span class="st">"time"</span>,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    y_axis_label<span class="op">=</span><span class="st">"x"</span>,</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    x_range<span class="op">=</span>[np.<span class="bu">min</span>(t), np.<span class="bu">max</span>(t)],</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>cds <span class="op">=</span> bokeh.models.ColumnDataSource(</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">dict</span>(t<span class="op">=</span>t, x<span class="op">=</span>x, x_limiting<span class="op">=</span>x_limiting, x_unreg<span class="op">=</span>x_unreg)</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Populate glyphs</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>p.line(source<span class="op">=</span>cds, x<span class="op">=</span><span class="st">"t"</span>, y<span class="op">=</span><span class="st">"x"</span>, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">0</span>], legend_label<span class="op">=</span><span class="st">"numerical solution"</span>)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>p.line(source<span class="op">=</span>cds, x<span class="op">=</span><span class="st">"t"</span>, y<span class="op">=</span><span class="st">"x_limiting"</span>, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">1</span>], legend_label<span class="op">=</span><span class="st">"Rosenfeld limiting solution"</span>)</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>p.line(source<span class="op">=</span>cds, x<span class="op">=</span><span class="st">"t"</span>, y<span class="op">=</span><span class="st">"x_unreg"</span>, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">2</span>], legend_label<span class="op">=</span><span class="st">"unregulated"</span>)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Aesthetic tweaks</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>p.legend.location <span class="op">=</span> <span class="st">"center_right"</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>p.legend.click_policy <span class="op">=</span> <span class="st">"hide"</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>p.title.text <span class="op">=</span> <span class="st">"Constant-input dynamics"</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="be4eaa54" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up color palette for this notebook</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> colorcet.b_glasbey_category10</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up figure</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> bokeh.plotting.figure(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">325</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">250</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    x_axis_label<span class="op">=</span><span class="st">"time"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    y_axis_label<span class="op">=</span><span class="st">"x"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    x_range<span class="op">=</span>[np.<span class="bu">min</span>(t), np.<span class="bu">max</span>(t)],</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>cds <span class="op">=</span> bokeh.models.ColumnDataSource(</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">dict</span>(t<span class="op">=</span>t, x<span class="op">=</span>x, x_limiting<span class="op">=</span>x_limiting, x_unreg<span class="op">=</span>x_unreg)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Populate glyphs</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>p.line(source<span class="op">=</span>cds, x<span class="op">=</span><span class="st">"t"</span>, y<span class="op">=</span><span class="st">"x"</span>, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">0</span>], legend_label<span class="op">=</span><span class="st">"numerical solution"</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>p.line(source<span class="op">=</span>cds, x<span class="op">=</span><span class="st">"t"</span>, y<span class="op">=</span><span class="st">"x_limiting"</span>, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">1</span>], legend_label<span class="op">=</span><span class="st">"Rosenfeld limiting solution"</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>p.line(source<span class="op">=</span>cds, x<span class="op">=</span><span class="st">"t"</span>, y<span class="op">=</span><span class="st">"x_unreg"</span>, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">2</span>], legend_label<span class="op">=</span><span class="st">"unregulated"</span>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Aesthetic tweaks</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>p.legend.location <span class="op">=</span> <span class="st">"center_right"</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>p.legend.click_policy <span class="op">=</span> <span class="st">"hide"</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>p.title.text <span class="op">=</span> <span class="st">"Constant-input dynamics"</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+  <div id="abec3e68-1a6c-4eaf-b61b-be9d1655b8b3" data-root-id="p1008" style="display: contents;"></div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+(function(root) {
+  function embed_document(root) {
+  const docs_json = {"2036eba9-4c4e-4692-82f8-bbb9e7e77d59":{"version":"3.9.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1068","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1069"}}},"roots":[{"type":"object","name":"Figure","id":"p1008","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1017","attributes":{"end":10.0}},"y_range":{"type":"object","name":"DataRange1d","id":"p1010"},"x_scale":{"type":"object","name":"LinearScale","id":"p1018"},"y_scale":{"type":"object","name":"LinearScale","id":"p1019"},"title":{"type":"object","name":"Title","id":"p1015","attributes":{"text":"Constant-input dynamics"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1043","attributes":{"selected":{"type":"object","name":"Selection","id":"p1044","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1045"},"data":{"type":"map","entries":[["t",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/y2Ve1BVVRjFL++ncN/veznnXI0xSxmzB9PYXjllKqOWUdE7k6wsx9SaqMhHSRaZWaZEUTlTVkxGxZhkTGbhFBROPorJRxpBSIIKgYgk2N7udf+5s+/ZZ+/vW+u3vmuz6c/KVe/d9eLX1UJ/bxdz33/y+o6CBq6bxN7atvwN7j38fb/oXZ9x05XPt/D5AeF44rKHDvQe5r4/ReCTT7+d/Hkr97eJ6rev/XntsXa+1yHy1/zWcjTayff/EU2lD/+Vd2sXz+kWty8cPrHylZM8r0ecrmmUO3p4bq+Y/NHr8c5l//L8PlGmyg/0855+sbvioqx5X57mfQPCs65HVnyG9w6Ku+Xurd2DvP+s2LxCCTDEOv4TJ0pmjUkafY71nBOXL/bLjoZZ14h4VpV753nWZ0ObXC1/xgZdpw0pl1797s3T46B1iMO4sUZrri8euu54zFant8dD65yApebx+XtqE6D7SERF5JfqD1YkQuuWiHpZbcmsJOi+knDUUzlhZjgZ2odkJDiXLTGPJ0P3mYJc1X1dCrTOqShInzbYVJYK3XcqFiWrAtOg/U7DeqnmEjMdWod01I0M7Jx6Kh3alwwcGjqUEPomA1qXTJxXj8szoX3PRKxv80sNRaOgdRqFG06VN0sLoH3MwiNdi7If7c+C1i0brx4rnIPvs6G5suNgb9WM9Gl26mhHt9peY6eedoxIGo54HNTVAbt82ljqoL4OWEq+Ngd1dmKSpLFqhpN6OzG1o8C1+gsndXeiqHjHpMV+F/V3YYGyc7mLPrhQep8KgIt+uLH2iBLcTV/c2KRw2+qmP27UHlQCeeiTB7uKFMAe+uVBi6T9904PffOiU7U/20v/vBjat2vulm1e+uhFpkzXxoiPfvoQVTis8tFXH/Jmhn9Y0OWjv35MkekqnOOnz34UTo9LE9v99NuP+T8uvXisEaDvAZTIdLtWB+h/AOUNquAAOQiiSsW1MEgegqiRad5bHyQXQexUSytEPkLYV29JAkLkJIR2OS3W9YTISxgDdSlXPH1bmNyEkSpXxTvC5CeMoMJ7TIQcRXDJxHvfumpNhDxFcI26ri9CrqK4cfx1f2TeESVfUdy/ZZskNkrOonhcdtuam0PecvDCx2oA5ZC7HLx5YTzkkD8Dtyg7xhvk0MA9r52Vjhjk0cCDkq78DQa5NPCYwrPRIJ8GnrowLgxyauI5SWvlBJO8mnhZpWGeSW5NvKHG50aT/Jp4R9I/2GSSYxMfyjQtHDbJs4XP1PjLs8i1ha+UnMUW+bbwnUxjc4VFzi38VKYatsi7hf0KrxGL3MdwWKZ53MQY+Y/h7ym/7t70QIw5iOGkiltljHmI4YyKe3OMuYhB/2uMxv+RUt6XQAYAAA=="},"shape":[200],"dtype":"float64","order":"little"}],["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/yXNezTUeRgG8InShViJkomZ70iWzZlK1k6DV5KSXMZ9aKhc2hSFlbRZl8OuPeXkmDpKnUW2i0I6kci0IqncKoNJJWZJKtl1SQn7fn/7/PP553nOw2L9H4vigY9yUxVI1+3XV0aow6aqY1Nfl2hDkH9Z6IlqHUhUvVxV/k4Xxt/nrHtbtwz2nUrNdPLTB+EJATuyYgX4RK+dbzxoAJ/sL7yXjbHh9GQJe7h3JdxrXpNvddMQHqy6bOYQZQSZmrF/a6hzwK1upjTPmwPg1b01MocDeprZzZJ2DtjX2l4QLOLCYbG9VamAC50jJN4zjAvqxDDq6gku7PVk65mXcSFVEXTd+gkXyMXsmxbDXGjp0gnZuYBAStsGjgaHwJbX/IyEDQT0I9Kje7cSYC3NuhkjJhBvuqNHso/AUt06+eN4Ar0KB6+eNAKzqo2hVVkE6qriHyWcIxBI+KKNFwncdk0xX1pKoEEiNTW4ReCh5bPZPTICTX9tTmbdJ/CpOPwB6zGBzgZWSEwbgQNuN9JC5QSiMrhspYLA/bCoiYmXBK6tt+sp6iXgyPKrmN9PYOKGPF13kMBxUWVu9xABQcbTk8EfCKw5sD+s6COB4LjW47J/CDg8dRnLHyXwk57NMv9xAnEFJWqDEwSqKufFiCZxz1aU534mkGtbpGj4QmBbrl1+xxQBkUd0ZvNXAl5ar94UTxOosXwrOzJD4Mdu/bF1swT4vpuE3aiHOIgXy+KBDb9Qexb9Erbf9dgcHkgqpCojqOGIROinwoNpn/6RCnRSTzGjocoDbY1WfgC6gBtmW4BKtVpa+lCjq+1HVs7lgdcdp4cidGb5KUEqKjsXa1eKNuSK7TrRw2ddc6bQS+9y/2DP44G1+0iBANV4UT/ojX4Tb1wWiY6v9bBKQ2udOcVn0ACnQsdrqGjFSfMaVBCXmd6EujfVJjxHr/zcZfoG/TQZV/IveuxItck0asDdVqSmhj9rst200Dybu2bLUIXU2dUQlX4xe2yMdm+Pum6Ghg32qvNR/bPrhyzR1VerfX5AS9yeBNigszvmqNqjM9DptRn1li/2d0Kt5U16zmhZX6LUBdVJf9PpimYsCR9wR3NNRutFqFD27LAXWl76WcWH9uq19vmi02r7r/uhDo7jXf5ogCJkQIxmfQvdAWjaUN3tQDRF+jF1J6pnWrhRgq61P99HHcnzSwhCicxqbjDqa/tLMtWof9cotfxWm3gXOrextZIaWCTU3I0et+gOoA5pSgqou6ei+qirE4rZe1CPpEIP6qOytmTqqF5eMVWZFy2nNiae+Uy9mLR7RQh65YWFNdVftNmTmpT/MoJar/NdCrXJbu9paszClstUq8nfblO/1soaqb9znnZQXymtlVTBopxh6nD11CR1O/egSiiqrFFVp74dbV5C9Rzr0afytZw51Cwp24Sa1h5uTj0p/55PvXEh25Ja0/yrNbVniiOkOnVE2FGP9sduoi7fI3SkjgjvOVEP1Ws4UxduJy5UY7LQlTrUtMqd2taW6UEde/ZaRPXpMPCiTnTaeVPbu1x8qEdTHXypk2ITPyr7/DjjwLYyf6rfLn8x9aDyA+O5UwcDqB7ug4xDtd6B1PChSsYHD7V3UhcFBzMqy/5kXN/Yz+i0mCuhGiX7Mt7hZTCyx8sZ031fMa56rhpEjb5kwhh5dwvjchLCeKg1kXHr+GnG/wBeHi/uQAYAAA=="},"shape":[200],"dtype":"float64","order":"little"}],["x_limiting",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/yXPezTUaRgH8JloS8ykXWRCzDs5pZiiVq71VG5xhCWSMSqXcglF7gnbNFFS61Zy1G5WZ48ll1naLRtWiDqSEo4ok1rRTSii9nl/+/zzOd/nj+d8Hxbr//G38i/mnVwAsj7HrYVWqpAxPruyMvg7qGyxbPN+rg51n1ZzXo8shdVVe+pHCnhgGclWMlPWgvHWnA3GDtrAKv+YvttHB+wFHifuOS2HVCNhkYKuLqzSqOt269WFtGuWc1qb9SA5MbnL8aQe3OScytl/Rw/ehwjHoxT4oP+4Y8BxIx+ykp36rgby4aj+1wzDLD5sz8vVCpTxITWdX9H+iA9V/b6G7R/4sDz0QHQDl4CBjbIdeyUBf2FXfZcVgbiokrJ4VwL8xrM/Ge4j8FrzTKHuYQLeaZNBKSkE3KSSkthMAv0He28aXCAwOqRtVnuFwJ0Cza3WZQRGVuixu/8g0Fk/OXa+joCXoS/vYhMBSePd2LdtBBruRC65eh/3h45bdD4iwA7ov5XYR+DcBvHi6gECSoOKorQhAknc2boPw3hvwsFFdYRAx4X9tk9HCUg5pgtD3xBoSUq0q32HvbxdFraPE5gJKbxVOkHAM2DCUzxFQFU0tOnlRwL6ZDjecZpASc33V0/NEKhSSVAp/4z/lacUyWYJRJcvV/pljsBgnl1N3BcC146HPbT4SuDYqe2iV6jJca5GOksAFfVqRZpsAVy/yAsuQGskqq2L5wng3Zfc0Xh0xaDKy170hVd49ToFATTaPjQ+hrb+3GTUjE6a2vh9oyiAIlITBihLK3MsGtWZfhBUjM6ey/DsQHMlb1dPoSE78h148wVgkhGzyBydMbjXuBN1n/x8IwKVZ9maS1HxTFJsIbrO60rZNbT6TAynAbW3H//nPhqY2jQ9gBYtqO0aReeauFEf0SfTzybZ3wjgyNqgWGX0b5mpqhra4pPTrYUKdS4NENR6Y4aFAbrUtX1GiK5XtxVuQBuaDw6ZoW++PSywRiMueswCOi92UawNKv+UU2iP9rN4RxzR06oTC5zRXaIOHxc0U6kyxg11alYWu6NX5Hc1dqJRGsG/eqIs1r+cXaiw8I27NxpQ0ZqwGw13PyTxQQuKC2JE6NPbMldf1HnNhLoYHXbxaqX2D5QG+6GHxdmfqWcOSI/tQRWTnkxRQyLb9u1FA3MDm6inJaXa+9CVspQwavjNahl1S9zXSWqtXMXYH415EB1EtUpsyKNmPolopG6c/36EOiAs5QSgefdnjKjC9PVOTP50OZCa/6P0KLVHUT+bOhZWWULVcve7Tt0RJ2qlxls/6KbKuC/kVG7Tn2+pq6ZDZ6ihIk3FQPS3qccq1JHQBjXqPNMRLerZ3r2EOqputYoaqyo1ovYkuppQQ24Um1IdFLIsqB5HeJuoByydt1CXXDKxobJ1O+2oUWlrt1P/euXuRNWQb3OmakYoulCzlxa4Un2mFv5AfV7v4U7t6UzxoLYYn91JZV2SeFJ/z/H3opq5Ge6iCvqfMW5RPuFNTZAu201V67zMmL9tmQ/VjXeSMTV8lNHSxlZEnU7LY2TPDTLGRRJfqne6mHGNPIcxf1EzY2fyOOPLqmViqpy7mXHgnR/jeNlRRvXs84xDwxWMTsPNjJva+hjNW8cY2zhzjNzbyn5UbTUeo7+OPqMyax0j9JgzJtzayvgfvP8n8UAGAAA="},"shape":[200],"dtype":"float64","order":"little"}],["x_unreg",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/yXRezTUeRQAcI9ZRKFYSmTlkWoaSiKSa+waEUuY39WRTkVkpYcSI/IqKfQQIVObZ7KRldKLUkKRR2NLJIW01GKyEWLvOfv953O+577OPVdC4v8XxlvQm5KpAuWDLKsMbV0QHbERjU4tB79xnkyi6SpY1xhmeNdsDRw4Gux+SdYC1K6sSigpsALZyLBPOkkAyi/TQp4Zc4G9/undnipb2HE/vC7Q8heQXnZY2ivXDup8ShsyJ3nAa51UkeVugL6smx+DQx0AE4ykrl5yhAeZQTb+FRuBs/cy2+eRE5QYCnwcHjpDUWmjStWfv0JpWyfbaKMLtHAdGe/bLiBOnLxsouMKRwa+GYljXWHAcrq9/Z0rDNvfYJZYbgL52dM7VU9vAr+gDSMvuzeBe/pco/wVbqDwLLv+eogbiNPXTBrccwMn64hrptNuINVdkCZr5Q5W22U8akLdwaHNISG11B2aXGKHsvrdISf0dci0hgc0zKzADkcPSKxJWO4m8AClvalTsfkeYH5H0vtEswcsZEkdjh73gA3zu1bELuKDQkyBzBUuH+y5Wr6yvnz4aWldzK2jfIjP8IxpzOXDQUl+xJZqPpR1qpwRdPEhsVB9cM03PsxrFIly5jEQJdFR2bKMge7oQ47NNgzs6W/GYoaB8UVx8oJABkKb61ohigH2HN1wpRQGeAMFbHEuA5VbXx8aLWegKkrfS+cJ5fWMO8e2UbzlJFevl4G8i45/zBEz4OT27YT9DAMzaYLANwoIUXnbgkXqCAffGHmZ6iLcdeHHyHIQVp4d63U1RwgW7V6+kItgYZdeuMsRIe+AeIetO0IshqoUeyHcOuu5tMQHwWRdZKtjIELfqbcTx4MRstNvuvwmQCgYieGNRSE0Jg9qrIxHKPYPb9FMQnjfYmldeRZBU48jtyCd/t752cZChCSr455y2QjqZv7OOfkIGnVnwllFCFr80XJOCcLngbFivTIEyTGLrx9vIqyytJiMuIPQOtij+OE+9Zmr7qv7EMFwsbKa+WMEmZuPtA1qEXTtDP2G6hGM7+25ndqAEJq/slGjieY8P2Yb1YLA7lcrrH2BEDhrwSFxG0J/Gk9V6hVCGaeubawdIdpGTqKtAyHnr+TazDcItrMeuzq8RSipLC7v7UY4pFw4FfAeQdyloNvVQ3MmW+Zb9yHcczWpTv6AkCswH2/sR1BS5CV8/4iwen7B2kUDCONSUo+NBxHMeR3tpp8QXphI63E+IxSpsmw1/kHQkTjRNEHaJddsbh5CCL9dH3RhmO6h35fsNYLQxBozUxUjiF5VdVeTRWacCf8vCPmtBUMyowgS/c5LhORl3s9S7H8RnJZ96Cwjv3QrKJl+RUjJW/+phMwTDj3SG0OoNCt6l0I2shySvpMH2NoK28cRjmfqZT0kHaX0IzW/UV1rz+B+MmO1rVYNacDx56lMIGye7szaQjLPSp1yyU/lF+L7SW+/eSFLJinODuT6kB4l4yoXyYQdGsptpHKp9+ZZUwhVI+dULcmjTr3eAWRqXDdzniy7IdSsJvcbPKobIJM5wpC532kPDsd6DRlQvd7Ck9yptTtSQL69ZqmTSRZLa5tVkMHyJ1+IyGjhjNwwyYpU/XvWNIJ8WVzcYrJr89rBtWTuqBvbhewzNOf7kp7qqSFh5FejoMxEkiXUfX6RPGcr0LpOZmzNSXlAJjywtWwm9YsEi96Skr4f7T6TLbtv3J8gKwJSTsrOINjXNlSokO+UwEmb/CwX4LKMND+2q341eeoHVtV68rzSVTN7smJb+FpXsqHH4aknqRGYPbSNXOj+pHgXad9dMXsfaRZhpRhKyos6bkWSDhXv5xwlh4cDVE+S8V2eTafJHyV8uGmkFyrtu0CqlZd7/04K248p5pFbkk/EFpJ70rIfXCNzEhPrSkmDwh5hOfkf8zHjf0AGAAA="},"shape":[200],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Line","id":"p1046","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x"},"line_color":"#1f77b3","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1047","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x"},"line_color":"#1f77b3","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1048","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x"},"line_color":"#1f77b3","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1057","attributes":{"data_source":{"id":"p1043"},"view":{"type":"object","name":"CDSView","id":"p1058","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1059"}}},"glyph":{"type":"object","name":"Line","id":"p1054","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_limiting"},"line_color":"#ff7e0e","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1055","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_limiting"},"line_color":"#ff7e0e","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1056","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_limiting"},"line_color":"#ff7e0e","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1064","attributes":{"data_source":{"id":"p1043"},"view":{"type":"object","name":"CDSView","id":"p1065","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1066"}}},"glyph":{"type":"object","name":"Line","id":"p1061","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_unreg"},"line_color":"#2ba02b","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1062","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_unreg"},"line_color":"#2ba02b","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1063","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_unreg"},"line_color":"#2ba02b","line_alpha":0.2,"line_width":2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1016","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1030"},{"type":"object","name":"WheelZoomTool","id":"p1031","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1032","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1033","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1039","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1038","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1040"},{"type":"object","name":"ResetTool","id":"p1041"},{"type":"object","name":"HelpTool","id":"p1042"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1025","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1026","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1027"},"axis_label":"x","major_label_policy":{"type":"object","name":"AllLabels","id":"p1028"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1020","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1021","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1022"},"axis_label":"time","major_label_policy":{"type":"object","name":"AllLabels","id":"p1023"}}}],"center":[{"type":"object","name":"Grid","id":"p1024","attributes":{"axis":{"id":"p1020"}}},{"type":"object","name":"Grid","id":"p1029","attributes":{"dimension":1,"axis":{"id":"p1025"}}},{"type":"object","name":"Legend","id":"p1052","attributes":{"location":"center_right","click_policy":"hide","items":[{"type":"object","name":"LegendItem","id":"p1053","attributes":{"label":{"type":"value","value":"numerical solution"},"renderers":[{"id":"p1049"}]}},{"type":"object","name":"LegendItem","id":"p1060","attributes":{"label":{"type":"value","value":"Rosenfeld limiting solution"},"renderers":[{"id":"p1057"}]}},{"type":"object","name":"LegendItem","id":"p1067","attributes":{"label":{"type":"value","value":"unregulated"},"renderers":[{"id":"p1064"}]}}]}}],"frame_width":325,"frame_height":250}}]}};
+  const render_items = [{"docid":"2036eba9-4c4e-4692-82f8-bbb9e7e77d59","roots":{"p1008":"abec3e68-1a6c-4eaf-b61b-be9d1655b8b3"},"root_ids":["p1008"]}];
+  void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script>
+</div>
 </div>
 </section>
 <section id="solving-for-a-time-varying-input" class="level2">
@@ -1060,76 +1428,120 @@ s(t) = \exp\left[-\frac{4(t-t_0)^2}{\tau^2}\right].
 \end{align}
 \tag{4}\]</span></span></p>
 <p>In order to incorporate these dynamics into our model, we can write a function for the pulse.</p>
-<div id="e3cbe9a6" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> s_pulse(t, t_0, tau):</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns s value for a pulse centered at t_0 with duration tau.</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return 0 is tau is zero, otherwise Gaussian</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span> <span class="cf">if</span> tau <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> np.exp(<span class="op">-</span><span class="dv">4</span> <span class="op">*</span> (t <span class="op">-</span> t_0) <span class="op">**</span> <span class="dv">2</span> <span class="op">/</span> tau <span class="op">**</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="dafd5ee2" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> s_pulse(t, t_0, tau):</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns s value for a pulse centered at t_0 with duration tau.</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return 0 is tau is zero, otherwise Gaussian</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span> <span class="cf">if</span> tau <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> np.exp(<span class="op">-</span><span class="dv">4</span> <span class="op">*</span> (t <span class="op">-</span> t_0) <span class="op">**</span> <span class="dv">2</span> <span class="op">/</span> tau <span class="op">**</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>If we want to solve the ODEs for a varying input, we need to have a way to pass a function defining the variation as a parameter. Fortunately, we can pass functions as arguments in Python. So, we write a new function for the right-hand-side of our ODE that takes <code>s_fun</code>, the function describing <span class="math inline">\(s(t)\)</span> as an argument, as well as <code>s_args</code>, the set of parameters passed into <code>s_fun</code>.</p>
-<div id="3b322bc6" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_auto_rhs_s_fun(x, t, beta0, gamma, k, n, ks, ns, s_fun, s_args):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Right hand side for negative autoregulation function, with s variable.</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns dx/dt.</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">    s_fun is a function of the form s_fun(t, *s_args), so s_args is a tuple</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">    containing the arguments to pass to s_fun.</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute s</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> s_fun(t, <span class="op">*</span>s_args)</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Correct for x possibly being numerically negative as odeint() adjusts step size</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.maximum(<span class="dv">0</span>, x)</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plug in this value of s to the RHS of the negative autoregulation model</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> neg_auto_rhs(x, t, beta0, gamma, k, n, ks, ns, s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="90f654d1" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_auto_rhs_s_fun(x, t, beta0, gamma, k, n, ks, ns, s_fun, s_args):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Right hand side for negative autoregulation function, with s variable.</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns dx/dt.</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">    s_fun is a function of the form s_fun(t, *s_args), so s_args is a tuple</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">    containing the arguments to pass to s_fun.</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute s</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> s_fun(t, <span class="op">*</span>s_args)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Correct for x possibly being numerically negative as odeint() adjusts step size</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> np.maximum(<span class="dv">0</span>, x)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plug in this value of s to the RHS of the negative autoregulation model</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> neg_auto_rhs(x, t, beta0, gamma, k, n, ks, ns, s)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that we have this new function in hand, we can numerically integrate our ODEs as we did before. We’ll start with a pulse that is on from roughly <span class="math inline">\(t=2\)</span> to <span class="math inline">\(t=6\)</span>, as above.</p>
-<div id="7114df74" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up parameters for the pulse</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>s_args <span class="op">=</span> (<span class="fl">4.0</span>, <span class="fl">2.0</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Package parameters into a tuple</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> (beta0, gamma, k, n, ks, ns, s_pulse, s_args)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Integrate ODEs</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> scipy.integrate.odeint(neg_auto_rhs_s_fun, x0, t, args<span class="op">=</span>args).transpose()[<span class="dv">0</span>]</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the normalized values</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>x <span class="op">/=</span> x.<span class="bu">max</span>()</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Also calculate the pulse for plotting purposes</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> s_pulse(t, <span class="op">*</span>s_args)</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the results</span></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> bokeh.plotting.figure(</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">450</span>,</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">250</span>,</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    x_axis_label<span class="op">=</span><span class="st">"time"</span>,</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    y_axis_label<span class="op">=</span><span class="st">"normalized concentration"</span>,</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    x_range<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">10</span>],</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Populate glyphs</span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>p.line(t, s, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">0</span>], legend_label<span class="op">=</span><span class="st">"s"</span>)</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>p.line(t, x, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">1</span>], legend_label<span class="op">=</span><span class="st">"x"</span>)</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot aesthetics</span></span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>p.legend.location <span class="op">=</span> <span class="st">"top_right"</span></span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>p.legend.click_policy <span class="op">=</span> <span class="st">"hide"</span></span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Show plot</span></span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="36e9e46a" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up parameters for the pulse</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>s_args <span class="op">=</span> (<span class="fl">4.0</span>, <span class="fl">2.0</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Package parameters into a tuple</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>args <span class="op">=</span> (beta0, gamma, k, n, ks, ns, s_pulse, s_args)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Integrate ODEs</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> scipy.integrate.odeint(neg_auto_rhs_s_fun, x0, t, args<span class="op">=</span>args).transpose()[<span class="dv">0</span>]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the normalized values</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>x <span class="op">/=</span> x.<span class="bu">max</span>()</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Also calculate the pulse for plotting purposes</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> s_pulse(t, <span class="op">*</span>s_args)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the results</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> bokeh.plotting.figure(</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">450</span>,</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    frame_height<span class="op">=</span><span class="dv">250</span>,</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    x_axis_label<span class="op">=</span><span class="st">"time"</span>,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    y_axis_label<span class="op">=</span><span class="st">"normalized concentration"</span>,</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    x_range<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">10</span>],</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Populate glyphs</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>p.line(t, s, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">0</span>], legend_label<span class="op">=</span><span class="st">"s"</span>)</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>p.line(t, x, line_width<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>colors[<span class="dv">1</span>], legend_label<span class="op">=</span><span class="st">"x"</span>)</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot aesthetics</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>p.legend.location <span class="op">=</span> <span class="st">"top_right"</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>p.legend.click_policy <span class="op">=</span> <span class="st">"hide"</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Show plot</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>bokeh.io.show(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+  <div id="c0d8e273-5f05-4b5d-9ecc-93d8769f9f8a" data-root-id="p1074" style="display: contents;"></div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+(function(root) {
+  function embed_document(root) {
+  const docs_json = {"ee7d8866-5d6e-4ba6-936b-bad9d9368a4e":{"version":"3.9.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1130","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1131"}}},"roots":[{"type":"object","name":"Figure","id":"p1074","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1083","attributes":{"end":10}},"y_range":{"type":"object","name":"DataRange1d","id":"p1076"},"x_scale":{"type":"object","name":"LinearScale","id":"p1084"},"y_scale":{"type":"object","name":"LinearScale","id":"p1085"},"title":{"type":"object","name":"Title","id":"p1081"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1115","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1109","attributes":{"selected":{"type":"object","name":"Selection","id":"p1110","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1111"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/y2Ve1BVVRjFL++ncN/veznnXI0xSxmzB9PYXjllKqOWUdE7k6wsx9SaqMhHSRaZWaZEUTlTVkxGxZhkTGbhFBROPorJRxpBSIIKgYgk2N7udf+5s+/ZZ+/vW+u3vmuz6c/KVe/d9eLX1UJ/bxdz33/y+o6CBq6bxN7atvwN7j38fb/oXZ9x05XPt/D5AeF44rKHDvQe5r4/ReCTT7+d/Hkr97eJ6rev/XntsXa+1yHy1/zWcjTayff/EU2lD/+Vd2sXz+kWty8cPrHylZM8r0ecrmmUO3p4bq+Y/NHr8c5l//L8PlGmyg/0855+sbvioqx5X57mfQPCs65HVnyG9w6Ku+Xurd2DvP+s2LxCCTDEOv4TJ0pmjUkafY71nBOXL/bLjoZZ14h4VpV753nWZ0ObXC1/xgZdpw0pl1797s3T46B1iMO4sUZrri8euu54zFant8dD65yApebx+XtqE6D7SERF5JfqD1YkQuuWiHpZbcmsJOi+knDUUzlhZjgZ2odkJDiXLTGPJ0P3mYJc1X1dCrTOqShInzbYVJYK3XcqFiWrAtOg/U7DeqnmEjMdWod01I0M7Jx6Kh3alwwcGjqUEPomA1qXTJxXj8szoX3PRKxv80sNRaOgdRqFG06VN0sLoH3MwiNdi7If7c+C1i0brx4rnIPvs6G5suNgb9WM9Gl26mhHt9peY6eedoxIGo54HNTVAbt82ljqoL4OWEq+Ngd1dmKSpLFqhpN6OzG1o8C1+gsndXeiqHjHpMV+F/V3YYGyc7mLPrhQep8KgIt+uLH2iBLcTV/c2KRw2+qmP27UHlQCeeiTB7uKFMAe+uVBi6T9904PffOiU7U/20v/vBjat2vulm1e+uhFpkzXxoiPfvoQVTis8tFXH/Jmhn9Y0OWjv35MkekqnOOnz34UTo9LE9v99NuP+T8uvXisEaDvAZTIdLtWB+h/AOUNquAAOQiiSsW1MEgegqiRad5bHyQXQexUSytEPkLYV29JAkLkJIR2OS3W9YTISxgDdSlXPH1bmNyEkSpXxTvC5CeMoMJ7TIQcRXDJxHvfumpNhDxFcI26ri9CrqK4cfx1f2TeESVfUdy/ZZskNkrOonhcdtuam0PecvDCx2oA5ZC7HLx5YTzkkD8Dtyg7xhvk0MA9r52Vjhjk0cCDkq78DQa5NPCYwrPRIJ8GnrowLgxyauI5SWvlBJO8mnhZpWGeSW5NvKHG50aT/Jp4R9I/2GSSYxMfyjQtHDbJs4XP1PjLs8i1ha+UnMUW+bbwnUxjc4VFzi38VKYatsi7hf0KrxGL3MdwWKZ53MQY+Y/h7ym/7t70QIw5iOGkiltljHmI4YyKe3OMuYhB/2uMxv+RUt6XQAYAAA=="},"shape":[200],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1116","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1117"}}},"glyph":{"type":"object","name":"Line","id":"p1112","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1113","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1114","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#1f77b3","line_alpha":0.2,"line_width":2}}}},{"type":"object","name":"GlyphRenderer","id":"p1126","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1120","attributes":{"selected":{"type":"object","name":"Selection","id":"p1121","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1122"},"data":{"type":"map","entries":[["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/y2Ve1BVVRjFL++ncN/veznnXI0xSxmzB9PYXjllKqOWUdE7k6wsx9SaqMhHSRaZWaZEUTlTVkxGxZhkTGbhFBROPorJRxpBSIIKgYgk2N7udf+5s+/ZZ+/vW+u3vmuz6c/KVe/d9eLX1UJ/bxdz33/y+o6CBq6bxN7atvwN7j38fb/oXZ9x05XPt/D5AeF44rKHDvQe5r4/ReCTT7+d/Hkr97eJ6rev/XntsXa+1yHy1/zWcjTayff/EU2lD/+Vd2sXz+kWty8cPrHylZM8r0ecrmmUO3p4bq+Y/NHr8c5l//L8PlGmyg/0855+sbvioqx5X57mfQPCs65HVnyG9w6Ku+Xurd2DvP+s2LxCCTDEOv4TJ0pmjUkafY71nBOXL/bLjoZZ14h4VpV753nWZ0ObXC1/xgZdpw0pl1797s3T46B1iMO4sUZrri8euu54zFant8dD65yApebx+XtqE6D7SERF5JfqD1YkQuuWiHpZbcmsJOi+knDUUzlhZjgZ2odkJDiXLTGPJ0P3mYJc1X1dCrTOqShInzbYVJYK3XcqFiWrAtOg/U7DeqnmEjMdWod01I0M7Jx6Kh3alwwcGjqUEPomA1qXTJxXj8szoX3PRKxv80sNRaOgdRqFG06VN0sLoH3MwiNdi7If7c+C1i0brx4rnIPvs6G5suNgb9WM9Gl26mhHt9peY6eedoxIGo54HNTVAbt82ljqoL4OWEq+Ngd1dmKSpLFqhpN6OzG1o8C1+gsndXeiqHjHpMV+F/V3YYGyc7mLPrhQep8KgIt+uLH2iBLcTV/c2KRw2+qmP27UHlQCeeiTB7uKFMAe+uVBi6T9904PffOiU7U/20v/vBjat2vulm1e+uhFpkzXxoiPfvoQVTis8tFXH/Jmhn9Y0OWjv35MkekqnOOnz34UTo9LE9v99NuP+T8uvXisEaDvAZTIdLtWB+h/AOUNquAAOQiiSsW1MEgegqiRad5bHyQXQexUSytEPkLYV29JAkLkJIR2OS3W9YTISxgDdSlXPH1bmNyEkSpXxTvC5CeMoMJ7TIQcRXDJxHvfumpNhDxFcI26ri9CrqK4cfx1f2TeESVfUdy/ZZskNkrOonhcdtuam0PecvDCx2oA5ZC7HLx5YTzkkD8Dtyg7xhvk0MA9r52Vjhjk0cCDkq78DQa5NPCYwrPRIJ8GnrowLgxyauI5SWvlBJO8mnhZpWGeSW5NvKHG50aT/Jp4R9I/2GSSYxMfyjQtHDbJs4XP1PjLs8i1ha+UnMUW+bbwnUxjc4VFzi38VKYatsi7hf0KrxGL3MdwWKZ53MQY+Y/h7ym/7t70QIw5iOGkiltljHmI4YyKe3OMuYhB/2uMxv+RUt6XQAYAAA=="},"shape":[200],"dtype":"float64","order":"little"}],["y",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1127","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1128"}}},"glyph":{"type":"object","name":"Line","id":"p1123","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1124","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1125","attributes":{"x":{"type":"field","field":"x"},"y":{"type":"field","field":"y"},"line_color":"#ff7e0e","line_alpha":0.2,"line_width":2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1082","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1096"},{"type":"object","name":"WheelZoomTool","id":"p1097","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1098","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1099","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1105","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1104","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1106"},{"type":"object","name":"ResetTool","id":"p1107"},{"type":"object","name":"HelpTool","id":"p1108"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1091","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1092","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1093"},"axis_label":"normalized concentration","major_label_policy":{"type":"object","name":"AllLabels","id":"p1094"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1086","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1087","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1088"},"axis_label":"time","major_label_policy":{"type":"object","name":"AllLabels","id":"p1089"}}}],"center":[{"type":"object","name":"Grid","id":"p1090","attributes":{"axis":{"id":"p1086"}}},{"type":"object","name":"Grid","id":"p1095","attributes":{"dimension":1,"axis":{"id":"p1091"}}},{"type":"object","name":"Legend","id":"p1118","attributes":{"click_policy":"hide","items":[{"type":"object","name":"LegendItem","id":"p1119","attributes":{"label":{"type":"value","value":"s"},"renderers":[{"id":"p1115"}]}},{"type":"object","name":"LegendItem","id":"p1129","attributes":{"label":{"type":"value","value":"x"},"renderers":[{"id":"p1126"}]}}]}}],"frame_width":450,"frame_height":250}}]}};
+  const render_items = [{"docid":"ee7d8866-5d6e-4ba6-936b-bad9d9368a4e","roots":{"p1074":"c0d8e273-5f05-4b5d-9ecc-93d8769f9f8a"},"root_ids":["p1074"]}];
+  void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script>
+</div>
 </div>
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="77309803" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,colorcet,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="df2abc49" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,colorcet,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Python implementation: CPython
+Python version       : 3.13.13
+IPython version      : 9.12.0
+
+numpy     : 2.2.6
+scipy     : 1.17.1
+bokeh     : 3.9.0
+colorcet  : 3.1.0
+jupyterlab: 4.5.6
+</code></pre>
+</div>
 </div>
 
 

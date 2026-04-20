@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -113,6 +113,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.9.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -454,19 +457,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/double_phos_double_cascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7a: Signaling cascades</span></a>
+ <span class="menu-text">Technical Appendix 8a: Signaling cascades</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/multiphos_multicascade.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7b: Cascades of multiply phosphorylated signaling molecules</span></a>
+ <span class="menu-text">Technical Appendix 8b: Cascades of multiply phosphorylated signaling molecules</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_appendices/cascade_saturation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Appendix 7c: Phosphorylation cascade with saturation</span></a>
+ <span class="menu-text">Technical Appendix 8c: Phosphorylation cascade with saturation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -918,7 +921,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/interactive_plotting.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/interactive_plotting.ipynb">Download notebook</a></p>
 <hr>
-<div id="8b2405cf" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="140ddc25" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -945,10 +948,340 @@ window.Quarto = {
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>notebook_url <span class="op">=</span> <span class="st">"localhost:8888"</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>bokeh.io.output_notebook()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+    <style>
+        .bk-notebook-logo {
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAOkSURBVDiNjZRtaJVlGMd/1/08zzln5zjP1LWcU9N0NkN8m2CYjpgQYQXqSs0I84OLIC0hkEKoPtiH3gmKoiJDU7QpLgoLjLIQCpEsNJ1vqUOdO7ppbuec5+V+rj4ctwzd8IIbbi6u+8f1539dt3A78eXC7QizUF7gyV1fD1Yqg4JWz84yffhm0qkFqBogB9rM8tZdtwVsPUhWhGcFJngGeWrPzHm5oaMmkfEg1usvLFyc8jLRqDOMru7AyC8saQr7GG7f5fvDeH7Ej8CM66nIF+8yngt6HWaKh7k49Soy9nXurCi1o3qUbS3zWfrYeQDTB/Qj6kX6Ybhw4B+bOYoLKCC9H3Nu/leUTZ1JdRWkkn2ldcCamzrcf47KKXdAJllSlxAOkRgyHsGC/zRday5Qld9DyoM4/q/rUoy/CXh3jzOu3bHUVZeU+DEn8FInkPBFlu3+nW3Nw0mk6vCDiWg8CeJaxEwuHS3+z5RgY+YBR6V1Z1nxSOfoaPa4LASWxxdNp+VWTk7+4vzaou8v8PN+xo+KY2xsw6une2frhw05CTYOmQvsEhjhWjn0bmXPjpE1+kplmmkP3suftwTubK9Vq22qKmrBhpY4jvd5afdRA3wGjFAgcnTK2s4hY0/GPNIb0nErGMCRxWOOX64Z8RAC4oCXdklmEvcL8o0BfkNK4lUg9HTl+oPlQxdNo3Mg4Nv175e/1LDGzZen30MEjRUtmXSfiTVu1kK8W4txyV6BMKlbgk3lMwYCiusNy9fVfvvwMxv8Ynl6vxoByANLTWplvuj/nF9m2+PDtt1eiHPBr1oIfhCChQMBw6Aw0UulqTKZdfVvfG7VcfIqLG9bcldL/+pdWTLxLUy8Qq38heUIjh4XlzZxzQm19lLFlr8vdQ97rjZVOLf8nclzckbcD4wxXMidpX30sFd37Fv/GtwwhzhxGVAprjbg0gCAEeIgwCZyTV2Z1REEW8O4py0wsjeloKoMr6iCY6dP92H6Vw/oTyICIthibxjm/DfN9lVz8IqtqKYLUXfoKVMVQVVJOElGjrnnUt9T9wbgp8AyYKaGlqingHZU/uG2NTZSVqwHQTWkx9hxjkpWDaCg6Ckj5qebgBVbT3V3NNXMSiWSDdGV3hrtzla7J+duwPOToIg42ChPQOQjspnSlp1V+Gjdged7+8UN5CRAV7a5EdFNwCjEaBR27b3W890TE7g24NAP/mMDXRWrGoFPQI9ls/MWO2dWFAar/xcOIImbbpA3zgAAAABJRU5ErkJggg==);
+        }
+    </style>
+    <div>
+        <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
+        <span id="feabe843-4bde-4c6e-ada8-21202f18bda9">Loading BokehJS ...</span>
+    </div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+'use strict';
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  const force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+const JS_MIME_TYPE = 'application/javascript';
+  const HTML_MIME_TYPE = 'text/html';
+  const EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  const CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    const script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    function drop(id) {
+      const view = Bokeh.index.get_by_id(id)
+      if (view != null) {
+        view.model.document.clear()
+        Bokeh.index.delete(view)
+      }
+    }
+
+    const cell = handle.cell;
+
+    const id = cell.output_area._bokeh_element_id;
+    const server_id = cell.output_area._bokeh_server_id;
+
+    // Clean up Bokeh references
+    if (id != null) {
+      drop(id)
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      const cmd_clean = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd_clean, {
+        iopub: {
+          output: function(msg) {
+            const id = msg.content.text.trim()
+            drop(id)
+          }
+        }
+      });
+      // Destroy server and session
+      const cmd_destroy = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd_destroy);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    const output_area = handle.output_area;
+    const output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!Object.prototype.hasOwnProperty.call(output.data, EXEC_MIME_TYPE))) {
+      return
+    }
+
+    const toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      const bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      const script_attrs = bk_div.children[0].attributes;
+      for (let i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      const toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      const props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    const events = require('base/js/events');
+    const OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  const NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded(error = null) {
+    const el = document.getElementById("feabe843-4bde-4c6e-ada8-21202f18bda9");
+    if (el != null) {
+      const html = (() => {
+        if (typeof root.Bokeh === "undefined") {
+          if (error == null) {
+            return "BokehJS is loading ...";
+          } else {
+            return "BokehJS failed to load.";
+          }
+        } else {
+          const prefix = `BokehJS ${root.Bokeh.version}`;
+          if (error == null) {
+            return `${prefix} successfully loaded.`;
+          } else {
+            return `${prefix} <b>encountered errors</b> while loading and may not function as expected.`;
+          }
+        }
+      })();
+      el.innerHTML = html;
+
+      if (error != null) {
+        const wrapper = document.createElement("div");
+        wrapper.style.overflow = "auto";
+        wrapper.style.height = "5em";
+        wrapper.style.resize = "vertical";
+        const content = document.createElement("div");
+        content.style.fontFamily = "monospace";
+        content.style.whiteSpace = "pre-wrap";
+        content.style.backgroundColor = "rgb(255, 221, 221)";
+        content.textContent = error.stack ?? error.toString();
+        wrapper.append(content);
+        el.append(wrapper);
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(() => display_loaded(error), 100);
+    }
+  }
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error(url) {
+      console.error("failed to load " + url);
+    }
+
+    for (let i = 0; i < css_urls.length; i++) {
+      const url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    for (let i = 0; i < js_urls.length; i++) {
+      const url = js_urls[i];
+      const element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error.bind(null, url);
+      element.async = false;
+      element.src = url;
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  const js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.9.0.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-3.9.0.min.js"];
+  const css_urls = [];
+
+  const inline_js = [    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+function(Bokeh) {
+    }
+  ];
+
+  function run_inline_js() {
+    if (root.Bokeh !== undefined || force === true) {
+      try {
+            for (let i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+
+      } catch (error) {display_loaded(error);throw error;
+      }if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      const cell = $(document.getElementById("feabe843-4bde-4c6e-ada8-21202f18bda9")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));
+</script>
+</div>
 </div>
 <hr>
 <p>In this technical appendix, we make an interactive plot of the dynamics of an autorepressive gene to a pulse in its activating signal. Prior to proceeding to making interactive plots from the circuits, we need to define some functions and variables from <a href="../chapters/response_time.html" class="quarto-xref"><span>2&nbsp; Design principles governing the rate of gene expression</span></a> to make the plots. They are in the code cell below.</p>
-<div id="6ffa8eb5" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
+<div id="e2ccb6c3" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> s_pulse(t, t_0, tau):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns s value for a pulse centered at t_0 with duration tau.</span></span>
@@ -1030,7 +1363,7 @@ window.Quarto = {
 <section id="step-1-make-the-widgets" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-make-the-widgets">Step 1: Make the widgets</h4>
 <p>Because we need parameter values to generate any curve on the plot, we first need to make widgets that define the parameter values. In this case, where we are simply plotting the input signal <span class="math inline">\(s\)</span>, we only need two sliders, one to for the value <span class="math inline">\(t_0\)</span> and one for the value of <span class="math inline">\(\tau\)</span>.</p>
-<div id="7266bf36" class="cell" data-execution_count="3">
+<div id="56b5a9d2" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>t0_slider <span class="op">=</span> bokeh.models.Slider(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"t₀"</span>, start<span class="op">=</span><span class="dv">0</span>, end<span class="op">=</span><span class="dv">10</span>, step<span class="op">=</span><span class="fl">0.01</span>, value<span class="op">=</span><span class="fl">4.0</span>, width<span class="op">=</span><span class="dv">150</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -1044,7 +1377,7 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="step-2-generate-the-plot-but-dont-show-it">Step 2: Generate the plot (but don’t show it)</h4>
 <p>Now that we have access to parameters we will generate the plot. We can pull the values of the sliders using their <code>value</code> attribute, e.g., <code>tau_slider.value</code>. When we generate the plot, we specify the data in a <code>ColumnDataSource</code> so that we can change the data in the plot without re-rendering it.</p>
 <p>We cannot show the plot here, since we will show it in the app. A Bokeh plot can only be in a single document, in our case the app (which as far as Bokeh is concerned is separate from showing it in the JupyterLab cell below).</p>
-<div id="e7529ee9" class="cell" data-execution_count="4">
+<div id="cf3b75a9" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up time points</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">200</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1069,12 +1402,12 @@ window.Quarto = {
 <section id="step-3-make-the-callbacks" class="level4">
 <h4 class="anchored" data-anchor-id="step-3-make-the-callbacks">Step 3: Make the callbacks</h4>
 <p>Next, we specify the callback function that will be used to update the plot as the slider changes. The callback function for a slider must take three arguments, the attribute that changes, its old value, and its new one. We will not directly use these arguments (though we could), but will rather directly read the value from the slider using its <code>value</code> attribute. Our callback function simply updates the <code>y</code> data values of the <code>ColumnDataSource</code>.</p>
-<div id="ea0773ef" class="cell" data-execution_count="5">
+<div id="d9aa01ea" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> callback(attr, old, new):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    cds.data[<span class="st">"s"</span>] <span class="op">=</span> s_pulse(cds.data[<span class="st">"t"</span>], t0_slider.value, tau_slider.value)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we need to alert Bokeh that it should trigger the callback function whenever the slider <code>value</code> changes.</p>
-<div id="23414097" class="cell" data-execution_count="6">
+<div id="67b9f859" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>t0_slider.on_change(<span class="st">"value"</span>, callback)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>tau_slider.on_change(<span class="st">"value"</span>, callback)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1082,7 +1415,7 @@ window.Quarto = {
 <section id="step-4-build-the-layout" class="level4">
 <h4 class="anchored" data-anchor-id="step-4-build-the-layout">Step 4: Build the layout</h4>
 <p>Now that we have a slider and a plot and have linked the data source of the plot to the slider, we can lay out the dashboard. We will put the sliders in a column next to the plot, putting a spacer in between.</p>
-<div id="7fbed9f4" class="cell" data-execution_count="7">
+<div id="865ecda9" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> bokeh.layouts.row(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    p,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    bokeh.models.Spacer(width<span class="op">=</span><span class="dv">30</span>),</span>
@@ -1093,7 +1426,7 @@ window.Quarto = {
 <section id="step-5-make-the-app" class="level4">
 <h4 class="anchored" data-anchor-id="step-5-make-the-app">Step 5: Make the app</h4>
 <p>Now we are ready to make a function to produce the app. The function needs to have call signature <code>app(doc)</code>, where <code>doc</code> represents the document that Bokeh will build into an app. The purpose of this function is to add the layout we have just build to the document.</p>
-<div id="076c5bf3" class="cell" data-execution_count="8">
+<div id="de769b96" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> app(doc):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    doc.add_root(layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1106,11 +1439,43 @@ window.Quarto = {
 <p>In the static HTML rendering of this notebook, there is no Python instance running, so apps requiring Python will not be responsive. Also, Bokeh apps currently are not supported by Google Colab.</p>
 <p>Therefore, in chapters, technical appendices, and appendices with Bokeh apps requiring Python, we have a variable <code>interactive_python_plots</code>, which is set in the first code cell along with the imports. This is set to <code>False</code> for static HTML rendering. Where possible, we use a function in the <code>biocircuits.jsplots</code> module to generate a nearly identical interactive plot using pure JavaScript callbacks. The purpose here is to still allow the reader exploration of the plot without having to have a notebook running; the goal is not to teach JavaScript. When purely JavaScript-based interactivity is not possible, we do not link the sliders to callbacks (since there is no Python engine), and disable the control widgets.</p>
 </div>
-<div id="16e260aa" class="cell" data-execution_count="9">
+<div id="799f9f69" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> interactive_python_plots:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(app, notebook_url<span class="op">=</span>notebook_url)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(biocircuits.jsplots.gaussian_pulse())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+  <div id="f3646e3f-0f26-458a-b960-de23c5e72ae7" data-root-id="p1108" style="display: contents;"></div>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+(function(root) {
+  function embed_document(root) {
+  const docs_json = {"26746c52-76e4-43ee-bebe-cd856811f54b":{"version":"3.9.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1109","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1110"}}},"roots":[{"type":"object","name":"Row","id":"p1108","attributes":{"children":[{"type":"object","name":"Figure","id":"p1061","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1070","attributes":{"end":10}},"y_range":{"type":"object","name":"Range1d","id":"p1071","attributes":{"start":-0.02,"end":1.1}},"x_scale":{"type":"object","name":"LinearScale","id":"p1072"},"y_scale":{"type":"object","name":"LinearScale","id":"p1073"},"title":{"type":"object","name":"Title","id":"p1068"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1100","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1058","attributes":{"selected":{"type":"object","name":"Selection","id":"p1059","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1060"},"data":{"type":"map","entries":[["t",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/y2Ve1BVVRjFL++ncN/veznnXI0xSxmzB9PYXjllKqOWUdE7k6wsx9SaqMhHSRaZWaZEUTlTVkxGxZhkTGbhFBROPorJRxpBSIIKgYgk2N7udf+5s+/ZZ+/vW+u3vmuz6c/KVe/d9eLX1UJ/bxdz33/y+o6CBq6bxN7atvwN7j38fb/oXZ9x05XPt/D5AeF44rKHDvQe5r4/ReCTT7+d/Hkr97eJ6rev/XntsXa+1yHy1/zWcjTayff/EU2lD/+Vd2sXz+kWty8cPrHylZM8r0ecrmmUO3p4bq+Y/NHr8c5l//L8PlGmyg/0855+sbvioqx5X57mfQPCs65HVnyG9w6Ku+Xurd2DvP+s2LxCCTDEOv4TJ0pmjUkafY71nBOXL/bLjoZZ14h4VpV753nWZ0ObXC1/xgZdpw0pl1797s3T46B1iMO4sUZrri8euu54zFant8dD65yApebx+XtqE6D7SERF5JfqD1YkQuuWiHpZbcmsJOi+knDUUzlhZjgZ2odkJDiXLTGPJ0P3mYJc1X1dCrTOqShInzbYVJYK3XcqFiWrAtOg/U7DeqnmEjMdWod01I0M7Jx6Kh3alwwcGjqUEPomA1qXTJxXj8szoX3PRKxv80sNRaOgdRqFG06VN0sLoH3MwiNdi7If7c+C1i0brx4rnIPvs6G5suNgb9WM9Gl26mhHt9peY6eedoxIGo54HNTVAbt82ljqoL4OWEq+Ngd1dmKSpLFqhpN6OzG1o8C1+gsndXeiqHjHpMV+F/V3YYGyc7mLPrhQep8KgIt+uLH2iBLcTV/c2KRw2+qmP27UHlQCeeiTB7uKFMAe+uVBi6T9904PffOiU7U/20v/vBjat2vulm1e+uhFpkzXxoiPfvoQVTis8tFXH/Jmhn9Y0OWjv35MkekqnOOnz34UTo9LE9v99NuP+T8uvXisEaDvAZTIdLtWB+h/AOUNquAAOQiiSsW1MEgegqiRad5bHyQXQexUSytEPkLYV29JAkLkJIR2OS3W9YTISxgDdSlXPH1bmNyEkSpXxTvC5CeMoMJ7TIQcRXDJxHvfumpNhDxFcI26ri9CrqK4cfx1f2TeESVfUdy/ZZskNkrOonhcdtuam0PecvDCx2oA5ZC7HLx5YTzkkD8Dtyg7xhvk0MA9r52Vjhjk0cCDkq78DQa5NPCYwrPRIJ8GnrowLgxyauI5SWvlBJO8mnhZpWGeSW5NvKHG50aT/Jp4R9I/2GSSYxMfyjQtHDbJs4XP1PjLs8i1ha+UnMUW+bbwnUxjc4VFzi38VKYatsi7hf0KrxGL3MdwWKZ53MQY+Y/h7ym/7t70QIw5iOGkiltljHmI4YyKe3OMuYhB/2uMxv+RUt6XQAYAAA=="},"shape":[200],"dtype":"float64","order":"little"}],["s",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1101","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1102"}}},"glyph":{"type":"object","name":"Line","id":"p1097","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"s"},"line_color":"#1f77b4","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1098","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"s"},"line_color":"#1f77b4","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1099","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"s"},"line_color":"#1f77b4","line_alpha":0.2,"line_width":2}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1069","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1084"},{"type":"object","name":"WheelZoomTool","id":"p1085","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1086","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1087","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1093","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1092","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1094"},{"type":"object","name":"ResetTool","id":"p1095"},{"type":"object","name":"HelpTool","id":"p1096"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1079","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1080","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1081"},"axis_label":"input signal","major_label_policy":{"type":"object","name":"AllLabels","id":"p1082"}}}],"below":[{"type":"object","name":"LinearAxis","id":"p1074","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1075","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1076"},"axis_label":"time","major_label_policy":{"type":"object","name":"AllLabels","id":"p1077"}}}],"center":[{"type":"object","name":"Grid","id":"p1078","attributes":{"axis":{"id":"p1074"}}},{"type":"object","name":"Grid","id":"p1083","attributes":{"dimension":1,"axis":{"id":"p1079"}}}],"frame_width":400,"frame_height":200}},{"type":"object","name":"Spacer","id":"p1106","attributes":{"width":30}},{"type":"object","name":"Column","id":"p1107","attributes":{"children":[{"type":"object","name":"Slider","id":"p1103","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"type":"object","name":"CustomJS","id":"p1105","attributes":{"args":{"type":"map","entries":[["cds",{"id":"p1058"}],["t0_slider",{"id":"p1103"}],["tau_slider",{"type":"object","name":"Slider","id":"p1104","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1105"}]]]},"width":150,"title":"\u03c4","start":0,"end":10,"value":2.0,"step":0.01}}]]},"code":"\nfunction sPulse(t, t0, tau) {\n\treturn Math.exp(-4.0 * Math.pow((t - t0) / tau, 2));\n}\n\n\nfunction callback() {\n\tlet t0 = t0_slider.value;\n\tlet tau = tau_slider.value;\n\tlet t = cds.data['t'];\n\tlet s = cds.data['s'];\n\n\tfor (let i = 0; i < s.length; i++) {\n\t\ts[i] = sPulse(t[i], t0, tau);\n\t}\n\n\tcds.change.emit();\n}\ncallback()"}}]]]},"width":150,"title":"t\u2080","start":0,"end":10,"value":4.0,"step":0.01}},{"id":"p1104"}]}}]}}]}};
+  const render_items = [{"docid":"26746c52-76e4-43ee-bebe-cd856811f54b","roots":{"p1108":"f3646e3f-0f26-458a-b960-de23c5e72ae7"},"root_ids":["p1108"]}];
+  void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script>
+</div>
 </div>
 <div class="alert alert-warning">
 <p>Warning</p>
@@ -1190,7 +1555,7 @@ window.Quarto = {
 <section id="step-1-build-the-widgets" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-build-the-widgets">Step 1: Build the widgets</h4>
 <p>We will build sliders, one for each parameter. We are interested in varying the parameters <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\gamma\)</span>, and <span class="math inline">\(x_0\)</span> on a logarithmic scale, so we will set up the sliders to specify <span class="math inline">\(\log_{10} \beta\)</span>, <span class="math inline">\(\log_{10}\gamma\)</span> and <span class="math inline">\(\log_{10} x_0\)</span>.</p>
-<div id="ad6d8942" class="cell" data-execution_count="10">
+<div id="96adb6f6" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>log_beta0_slider <span class="op">=</span> bokeh.models.Slider(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"log₁₀ β₀"</span>, start<span class="op">=-</span><span class="dv">1</span>, end<span class="op">=</span><span class="dv">2</span>, step<span class="op">=</span><span class="fl">0.1</span>, value<span class="op">=</span>np.log10(<span class="fl">100.0</span>), width<span class="op">=</span><span class="dv">150</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -1217,18 +1582,18 @@ window.Quarto = {
 <span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We also want to be able to toggle between display of normalized versus unnormalized responses. We can make a toggle button for that.</p>
-<div id="a8f570a9" class="cell" data-execution_count="11">
+<div id="a36b014c" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>normalize_toggle <span class="op">=</span> bokeh.models.Toggle(label<span class="op">=</span><span class="st">'Normalize'</span>, active<span class="op">=</span><span class="va">True</span>, width<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, the legend may occasionally get in the way, so we want to toggle its visibility.</p>
-<div id="bfcfa64f" class="cell" data-execution_count="12">
+<div id="86a6b0b1" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>legend_toggle <span class="op">=</span> bokeh.models.Toggle(label<span class="op">=</span><span class="st">'Legend'</span>, active<span class="op">=</span><span class="va">True</span>, width<span class="op">=</span><span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-2-build-the-plot" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-build-the-plot">Step 2: Build the plot</h4>
 <p>We will build the plot as before. For convenience, we make a function to packages the slider values into tuples to be passed into the right-hand-side functions for the ODE solver.</p>
-<div id="9711938a" class="cell" data-execution_count="13">
+<div id="e41d4358" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> package_args():</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Package slider values into tuples."""</span>    </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    s_args <span class="op">=</span> (t0_slider.value, tau_slider.value)</span>
@@ -1256,7 +1621,7 @@ window.Quarto = {
 <span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> s_args, args, args_unreg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we proceed to integrate the ODE to get solutions for plotting.</p>
-<div id="55dbd33f" class="cell" data-execution_count="14">
+<div id="cf52937e" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial condition</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> <span class="fl">0.0</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1303,7 +1668,7 @@ window.Quarto = {
 <section id="step-3-build-the-callbacks" class="level4">
 <h4 class="anchored" data-anchor-id="step-3-build-the-callbacks">Step 3: Build the callbacks</h4>
 <p>We can now build our callback. This callback will be a bit more complicated. For each new slider value, we need to re-integrate the dynamical equations. We also need to check to see if the normalization toggle button is clicked and appropriately scale the data and change the y-axis label. We also will need to recalculate the result if the range of the time axis changes, so we need to read the time points off of the <code>x_range</code> property of the plot.</p>
-<div id="8fbc7583" class="cell" data-execution_count="15">
+<div id="4347fb83" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> neg_auto_callback(attr, old, new):</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Set up time values, keeping minimum at zero</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> np.linspace(<span class="dv">0</span>, p.x_range.end, <span class="dv">2000</span>)</span>
@@ -1340,7 +1705,7 @@ window.Quarto = {
 <span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>    cds.data <span class="op">=</span> <span class="bu">dict</span>(t<span class="op">=</span>t, x<span class="op">=</span>x, s<span class="op">=</span>s, x_unreg<span class="op">=</span>x_unreg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we link the callback to the sliders, and also to the normalization toggle and the range of the time axis.</p>
-<div id="0aa7b1f9" class="cell" data-execution_count="16">
+<div id="1373cb00" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> slider <span class="kw">in</span> [</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    log_beta0_slider,</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    log_gamma_slider,</span>
@@ -1361,7 +1726,7 @@ window.Quarto = {
 <section id="step-4-the-layout" class="level4">
 <h4 class="anchored" data-anchor-id="step-4-the-layout">Step 4: The layout</h4>
 <p>We can now lay things out. I will put the sliders and normalization toggle in a column next to the plot.</p>
-<div id="c3b13fec" class="cell" data-execution_count="17">
+<div id="d9e9c395" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> bokeh.layouts.row(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    p,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    bokeh.layouts.Spacer(width<span class="op">=</span><span class="dv">30</span>),</span>
@@ -1385,7 +1750,7 @@ window.Quarto = {
 <section id="step-5-the-app" class="level4">
 <h4 class="anchored" data-anchor-id="step-5-the-app">Step 5: The app</h4>
 <p>And now for the app! (Note again that the app in the HTML rendering of this notebook will be using JavaScript. To use the Python-based app, be sure <code>interactive_python_plots</code> is <code>True</code> in the top cell of this notebook.)</p>
-<div id="0d7534f0" class="cell" data-execution_count="18">
+<div id="d8cadc44" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> app(doc):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    doc.add_root(layout)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1393,6 +1758,39 @@ window.Quarto = {
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(app, notebook_url<span class="op">=</span>notebook_url)</span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(biocircuits.jsplots.autorepressor_response_to_pulse())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+  <div id="e0157aa5-1813-455a-b8fa-f6921b88ac23" data-root-id="p1261" style="display: contents;"></div>
+<p>Interactive app displaying dynamics of a negative autoregulatory circuit.</p>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/javascript">
+(function(root) {
+  function embed_document(root) {
+  const docs_json = {"5758c7ac-913d-499c-802d-200bfa6ee419":{"version":"3.9.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1262","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1263"}}},"roots":[{"type":"object","name":"Row","id":"p1261","attributes":{"children":[{"type":"object","name":"Figure","id":"p1190","attributes":{"x_range":{"type":"object","name":"Range1d","id":"p1199","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:end",[{"type":"object","name":"CustomJS","id":"p1257","attributes":{"args":{"type":"map","entries":[["cds",{"type":"object","name":"ColumnDataSource","id":"p1187","attributes":{"selected":{"type":"object","name":"Selection","id":"p1188","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1189"},"data":{"type":"map","entries":[["t",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/y2Ve1BVVRjFL++ncN/veznnXI0xSxmzB9PYXjllKqOWUdE7k6wsx9SaqMhHSRaZWaZEUTlTVkxGxZhkTGbhFBROPorJRxpBSIIKgYgk2N7udf+5s+/ZZ+/vW+u3vmuz6c/KVe/d9eLX1UJ/bxdz33/y+o6CBq6bxN7atvwN7j38fb/oXZ9x05XPt/D5AeF44rKHDvQe5r4/ReCTT7+d/Hkr97eJ6rev/XntsXa+1yHy1/zWcjTayff/EU2lD/+Vd2sXz+kWty8cPrHylZM8r0ecrmmUO3p4bq+Y/NHr8c5l//L8PlGmyg/0855+sbvioqx5X57mfQPCs65HVnyG9w6Ku+Xurd2DvP+s2LxCCTDEOv4TJ0pmjUkafY71nBOXL/bLjoZZ14h4VpV753nWZ0ObXC1/xgZdpw0pl1797s3T46B1iMO4sUZrri8euu54zFant8dD65yApebx+XtqE6D7SERF5JfqD1YkQuuWiHpZbcmsJOi+knDUUzlhZjgZ2odkJDiXLTGPJ0P3mYJc1X1dCrTOqShInzbYVJYK3XcqFiWrAtOg/U7DeqnmEjMdWod01I0M7Jx6Kh3alwwcGjqUEPomA1qXTJxXj8szoX3PRKxv80sNRaOgdRqFG06VN0sLoH3MwiNdi7If7c+C1i0brx4rnIPvs6G5suNgb9WM9Gl26mhHt9peY6eedoxIGo54HNTVAbt82ljqoL4OWEq+Ngd1dmKSpLFqhpN6OzG1o8C1+gsndXeiqHjHpMV+F/V3YYGyc7mLPrhQep8KgIt+uLH2iBLcTV/c2KRw2+qmP27UHlQCeeiTB7uKFMAe+uVBi6T9904PffOiU7U/20v/vBjat2vulm1e+uhFpkzXxoiPfvoQVTis8tFXH/Jmhn9Y0OWjv35MkekqnOOnz34UTo9LE9v99NuP+T8uvXisEaDvAZTIdLtWB+h/AOUNquAAOQiiSsW1MEgegqiRad5bHyQXQexUSytEPkLYV29JAkLkJIR2OS3W9YTISxgDdSlXPH1bmNyEkSpXxTvC5CeMoMJ7TIQcRXDJxHvfumpNhDxFcI26ri9CrqK4cfx1f2TeESVfUdy/ZZskNkrOonhcdtuam0PecvDCx2oA5ZC7HLx5YTzkkD8Dtyg7xhvk0MA9r52Vjhjk0cCDkq78DQa5NPCYwrPRIJ8GnrowLgxyauI5SWvlBJO8mnhZpWGeSW5NvKHG50aT/Jp4R9I/2GSSYxMfyjQtHDbJs4XP1PjLs8i1ha+UnMUW+bbwnUxjc4VFzi38VKYatsi7hf0KrxGL3MdwWKZ53MQY+Y/h7ym/7t70QIw5iOGkiltljHmI4YyKe3OMuYhB/2uMxv+RUt6XQAYAAA=="},"shape":[200],"dtype":"float64","order":"little"}],["x",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/yWTezTUiQPFPQpFlk0viVa7aldIXmOnmZtkw9JKE2Jlh0Sx/OhBiYwomplEJUmzg+lB41kxEuWxYVBkPCavpryZ+YpUm7Q/5+z9755zz7mf+8eVk/tPurGOzr9seGPm6yy3j+VmZ656RvYxuzvH/M9vp5ymiz5ZDRi88LhAIpGK60XLTWNcSZbeqlkRYl9SW+vpS8adoSRvHz0+RzuSVOmg9fXufCyJrmCUmf7sHClNvH+LbiCbVBTg3KcTlkrqfxdx83hGGsmNyfdYs+UGKfmPs0zhAwuywa3Qzw2uHuSr6zexxujB5DX31kOr6CS5u/c1TcUhnqzEmVM4HsQmX3Ca0rqrd4WsOFI/6OSbQbb6LS5SVMUl+1u36/QLeGTVEjcfW71ccmGZ6rqw5IuUNYvcl8vxaylT9tJG9aW9lN3izsG9DROUMhNyTbj2R0q586xGoas8leh6rHJihwqVsvbn73cZa1ALHiwbjWrVojqQxL+JlbWp6rczvXxEetSrke/ip2w3UCt+ccjeUmhFXe2iM6u+0ZPqRIvZx4xnUC03LXY/W8unntL0DwrhdlEvhhw2OvZQAQ477rknkjeD/WdmmpkhDYw+p9WM/FOI5Wj10NQ40DM+vS4nWABJ/5Mby82EMKAwC0ATgc/1EcbRX2HbmXjPJrsBdNqtPd/Lk8B/EcPvwN632FFaI5uoHkTOOUWmZH4IyoY15BqNETTFhT9Olx+FZTNVvbFjFORJVt2llDHsrH3Q5UEaR/KI+/hE8zi2OX/HubFnAnTz3epeDRNQnMrSfbl1EoL5m2+CUiehZlFxnT46iV1qjia1FlKo8AVT0VFSaOudHqM/kkJ/3XfWBjNShG4M/ivYQIb9jx2P1NFkC3vyR/kxMsSsZEZc48mwp0gXY89k0JdTLfgyJENTzLMqfQUCL2a3afDWEqAq2HZXbyXgtKy7tHQXgXrRiZAyTwJ2hyUJM0EEFs0NdFyNIqB+IF757yQCJg7rFXlpBDS0JS6u2QRSDiqHT/IXcnH5RqxSAhu8ajvtnxA4VS1/waqeQBTte/+g5wQK3XoEsyIC18U/Wgy/ItBV8Fbz19cEBJfiTU2HCHgb7rXhjRFgKGi/LJASsNJvDfR8R0CXeB1W+J6AT0CCzsOPBFQrVz0P/bzQf3QJt/fLApd0sH/gK4H/3jSFaQMPuT0L3mb/xc8bpwlkJI3TphZ4KC4n5/I2ERAFmKSmqsuw4choSf39SRQc+Ld1t+sEvnHkTIu+jME/K1C6uGwUjpGDO+diR3DHU0xf4zmMnBQGP9dmCI9nBrZ+shyE8V2FSg/rt2C9V3fbaP8GH0z2qDX4SvD1mX7K7cTXCLb4fD8ofAB3/OmsgZE+tCzLSs79Xy8Sjprod6n2wFa4n80QiMHuXHW45Xg3smekS8d3dKHlbIOypl4nnn6rW5iwpANOodGJV+RF8CvOHktVakeFoCShf9VLFDWZKfeZt2E47NCdud9bofSByfHWewG6BjXubXoLyPpV0awfmsG2nYkMrBPiZdJlncvHGjFM+mmnmUUDTAMloacW18NHw3cbb/BvXFeNHpttqwNvReWryuZaaDopGe4V1UDlzbGfV4xWw55Sah+kXA19u7XL60yfwoZ7Zvinlir0NlBXCBwrEcbY1GbRUwGHoy5RpdGPEJkvXO1hWg7d95NPbWfLYFP/aWV+Qyk2b3d42pb3EAYhiiOfMh7gVgC9Jjz9PuwalxilZ5fg35ClJkJBMdp3RWSEvSqCkffO/K9KRXhEqHi3RRVAeqVtq9c8HyW8cyk5KfeQ6Xnt1ydWeZBWnK94LruLbqNM0/mHd7CZbn4klnUbec6Tqulht3CoY+pH9kEeRM2Jz4sP5iDH+gDzj7BsNI+3qX1JysI3avKlsnwuLmqujKGV/4WA3FuFuw05iGm35gmLMrHPUshtt7+BlT+4DMVOX0eZe/rqWX465v65WeUdcQ0qh+h50y5pGPTF6VnSVZypv2xYbHwFv1tcSz5pehkaTduledtTIakUJ+d6peBE7IdDEsYldCixbZn+ydAs4eVxe9joq4pzXeTPAs22U7FOjony8mS/f/KTwHUu8GsMSkQeJ/6+n/V5/B9W/K6KQAYAAA=="},"shape":[200],"dtype":"float64","order":"little"}],["s",{"type":"ndarray","array":{"type":"bytes","data":"H4sIAAEAAAAA/w3MjT/TeRwA8Dw13LCmDtcDMqSHq1xzre33/RRyRKc8nKIOxyVPV6sbKUeJGg5L7SRiCKM18hzxmhCaa3RNHrbzvEbZrnnIJXX3/gPewiRFox85Dikli8IzSdeQb14U/V4NCwUex28p4N5GFnOqvpj1hWjugdPp64xytJUX4KekViPXIoZ644smxP4nLaRFqx1tipBpWfB6kLLxjsHGyJdoRucTUz4vQV5OpZ/HwifR519M8vjct8ji645NZurzyGzM/5NWzzLSDj/CJ9lpQAV7l/VSuC4kuq6zGDAkAq7rqylBrjHk1O1Oz7pvBq3aa2rHoq1gsHeHzwnzryGw9Yv1vSZ7QO+Egb1DxT7Ytjn1aXL+AXAhxm/F23wHsUeGrPjO34Or6aKnYbUnGAkXFYr445DrmBhSGx4Aeootg826P0ODMmZZ+VcY/M5742ytSQdSS2OB1UUGJGinpGQuXQRvsuR28uBl+BenQ4hXJcL14OCCeXkyzLat8TOcyIBu0ZPRzqSbcKpny93Rriwo3VHT//xlLhQ9or+Y/KkA1mQS2frSe5DX7+ayKOf+/8YeiMx6AHrUV2enYh/ChxIzyxesGmhTD4vdR2gAe4XLgVyNx3DvRiXzN4oAcm7wR0VVT8A8cKPd9NkOuH2z6bBzVBfszzcv57QLgZftl1VzQgRH22/tM87vg8GXAW7t1X9BoLQne3ZGDDwObSjcfgA8meeZP9QPQWLvI6tVTlLgGvlQFqdHIFS9eq+G+xjgFpP5JP440OVbg0wMJsExt2rY85cpKAz7eQ7fJYMnep26XsZyWNk5ftzcbxpsDgcvhv4+A3eONeHI3Dcwec7qxsPyt6Byb97uxpoF5hj/i3ZvBYx+ms9ASwoQs5uGjjGUYDvBbbATKqFMxAlNX1ICd79guPKjEu7ZEQjpr5TwemPcldpkJXhPXUzxWKsEaghnmhSjAMH3B7mMxlmIcTnboT38FhTBbZvxf7+BeItcJ83OGRj+8IZdnz0Nwr21lca+cgibj7m7C/8adj2PDtOpmYKhJ90j2d6TcPekc0/V/DiYqlwCFbfGgPRr+FIBZRQEY7txxUIpPE0fzfLZOwylInPiQvMAuLNsEzwC+mFD8gA7fvNL8C7Hzj1b/QI+PHDv7tTvhUFvpl5zVA8wtj9v4Zl0w9Wr3oQ+rafgWP30URGlDVrf0TOEVQLIvI8jJUkew2PtUOfF3gaoqI9UrKbWwrsF3WE3YhVETEWkWebywV2DMmMiLAN+TpYQzykG2cj7ZbxuIfzAc6Q2v7sL/nKmq2fjbSDnZBbZHb0FTQYTre9zWLCdVKAv10yFbZGr19VJk6C/kzd4KOcKiMnitFV2sZBPGpc0xUYB+dn5+UIxHdim25SXLCOgbKKP/Y3JKWhaXvCmOgSCuBaNp4l9wcGnId1X4AUeTseuTyrcoR50wOGcM8QZsK8M59lDpbBaYE2hwbT0j1ItZzLsembVl6vYCdL8eNFnsTVsqjPiKKvN4Qbh9IEem68gT/+U6izNEDwP2h5tIeGBPKGbN3tJE/yvmpqsub+C2vYURkQHLKC4WSolrESBBlJWbgokU4hzhmWwhBtBc/uNJ4KmxSiybp3aZPdzNG1RbJ+f1IHG64ksmbIZmV56v3yqvgbpl+sNyK/xUGdAyQZRShEK8PW4KCi6g5itlmUjhEw07xq63TaQicwEibofT15GImhJi5My0JmqzSJLQiTyd5BNdX0bhNpTuYR8l+MopYvCLEk7gqJlzl1qrIPo1/NrR3erqOia44VDjzVtkdnwnxNokzWSTUTTPiVsRBrf9FnKm4lIZRyVYV+B+/81vPOocwWzC5d8FHBU2Erftvqena+x3a0nW6n1EgxZW9FtHvZhZP6+L/+s7MBs3SwK4xmNGKXsW2qUfiX2R4LOnodBRVhHKteo3zULWygoYYQMpmL+eMnYTMZlTC2GTuRkn8fiyD+aEdeGYDvKQw/H6fhhPi35tbKr7pjygqXNaSd7LNQruDj2SzKmlqDhq2m3BSs+gSvdwF2PsXRVeavOGGBOaOWQokMNQzvYQUc/z9Fm6OqH3/0ko5mYBRl5KAdoq8NJKlKhkOb1yreNdqGFFjwqrWirq6T9B9cpJQpABgAA"},"shape":[200],"dtype":"float64","order":"little"}],["x_unreg",{"type":"ndarray","array":{"type":"bytes","data":"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"},"shape":[200],"dtype":"float64","order":"little"}]]}}}],["p",{"id":"p1190"}],["t0Slider",{"type":"object","name":"Slider","id":"p1253","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1257"}]]]},"width":150,"title":"t\u2080","start":0.01,"end":10,"value":4.0,"step":0.01}}],["tauSlider",{"type":"object","name":"Slider","id":"p1254","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1257"}]]]},"width":150,"title":"\u03c4","start":0.01,"end":10,"value":2.0,"step":0.01}}],["logBeta0Slider",{"type":"object","name":"Slider","id":"p1247","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1257"}]]]},"width":150,"title":"log\u2081\u2080 \u03b2\u2080","start":-1,"end":2,"value":2.0,"step":0.1}}],["logGammaSlider",{"type":"object","name":"Slider","id":"p1248","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1257"}]]]},"width":150,"title":"log\u2081\u2080 \u03b3","start":-1,"end":2,"value":0.0,"step":0.1}}],["logkSlider",{"type":"object","name":"Slider","id":"p1249","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1257"}]]]},"width":150,"title":"log\u2081\u2080 k","start":-1,"end":2,"value":0.0,"step":0.1}}],["nSlider",{"type":"object","name":"Slider","id":"p1250","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1257"}]]]},"width":150,"title":"n","start":0.1,"end":10,"value":1.0,"step":0.1}}],["logksSlider",{"type":"object","name":"Slider","id":"p1251","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1257"}]]]},"width":150,"title":"log\u2081\u2080 k\u209b","start":-2,"end":2,"value":-1.0,"step":0.1}}],["nsSlider",{"type":"object","name":"Slider","id":"p1252","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:value",[{"id":"p1257"}]]]},"width":150,"title":"n\u209b","start":0.1,"end":10,"value":10.0,"step":0.1}}],["normalizeToggle",{"type":"object","name":"Toggle","id":"p1255","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:active",[{"id":"p1257"}]]]},"width":50,"label":"Normalize","active":true}}],["legendToggle",{"type":"object","name":"Toggle","id":"p1256","attributes":{"js_property_callbacks":{"type":"map","entries":[["change:active",[{"id":"p1257"}]]]},"width":50,"label":"Legend","active":true}}],["xRange",{"id":"p1199"}],["yaxis",{"type":"object","name":"LinearAxis","id":"p1207","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1208","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1209"},"axis_label":"normalized concentration","major_label_policy":{"type":"object","name":"AllLabels","id":"p1210"}}}],["legend",{"type":"object","name":"Legend","id":"p1231","attributes":{"location":"top_left","items":[{"type":"object","name":"LegendItem","id":"p1232","attributes":{"label":{"type":"value","value":"x neg. auto."},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1228","attributes":{"data_source":{"id":"p1187"},"view":{"type":"object","name":"CDSView","id":"p1229","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1230"}}},"glyph":{"type":"object","name":"Line","id":"p1225","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x"},"line_color":"#ff7e0e","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1226","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x"},"line_color":"#ff7e0e","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1227","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x"},"line_color":"#ff7e0e","line_alpha":0.2,"line_width":2}}}}]}},{"type":"object","name":"LegendItem","id":"p1239","attributes":{"label":{"type":"value","value":"x unreg."},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1236","attributes":{"data_source":{"id":"p1187"},"view":{"type":"object","name":"CDSView","id":"p1237","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1238"}}},"glyph":{"type":"object","name":"Line","id":"p1233","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_unreg"},"line_color":"#2ba02b","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1234","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_unreg"},"line_color":"#2ba02b","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1235","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"x_unreg"},"line_color":"#2ba02b","line_alpha":0.2,"line_width":2}}}}]}},{"type":"object","name":"LegendItem","id":"p1246","attributes":{"label":{"type":"value","value":"s"},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1243","attributes":{"data_source":{"id":"p1187"},"view":{"type":"object","name":"CDSView","id":"p1244","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1245"}}},"glyph":{"type":"object","name":"Line","id":"p1240","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"s"},"line_color":"#1f77b3","line_width":2}},"nonselection_glyph":{"type":"object","name":"Line","id":"p1241","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"s"},"line_color":"#1f77b3","line_alpha":0.1,"line_width":2}},"muted_glyph":{"type":"object","name":"Line","id":"p1242","attributes":{"x":{"type":"field","field":"t"},"y":{"type":"field","field":"s"},"line_color":"#1f77b3","line_alpha":0.2,"line_width":2}}}}]}}]}}]]},"code":"\nfunction transpose(A) {\n    var m = A.length;\n    var n = A[0].length;\n    var AT = [];\n\n    for (var j = 0; j < n; j++) {\n        var ATj = [];\n        for (var i = 0; i < m; i++) {\n            ATj.push(A[i][j]);\n        }\n        AT.push(ATj);\n    }\n\n    return AT;\n}\n\n\nfunction dot(v1, v2) {\n    /*\n     * Compute dot product v1 . v2.\n     */\n\n    var n = v1.length;\n    var result = 0.0;\n    for (var i = 0; i < n; i++) result += v1[i] * v2[i];\n\n    return result;\n}\n\n\nfunction norm(v) {\n    /*\n     * 2-norm of a vector\n     */\n\n    return Math.sqrt(dot(v, v));\n}\n\n\nfunction mvMult(A, v, diagonalA=false) {\n    /*\n     * Compute dot product A . v, where A is a matrix.\n     * If diagonalA is true, then A must be a 1-D array.\n     */\n\n    if (diagonalA) return elementwiseVectorMult(A, v);\n    else {\n        return A.map(function (Arow) {\n            return dot(Arow, v);\n        });\n    }\n}\n\n\nfunction mvMultFlat(A, v) {\n    /*\n     * Compute dot product A . v, where A is a matrix\n     * that has been flattened where C-order is assumed.\n     * A is a 1D array of length v.length ** 2.\n     */\n\n    let res = []\n    for (let i = 0; i < v.length; i++) {\n        res.push(dot(A.slice(i * v.length, (i + 1) * v.length), v));\n    }\n\n    return res;\n}\n\n\n\nfunction svMult(a, v) {\n    /*\n     * Multiply vector v by scalar a.\n     */\n\n    return v.map(function (x) {\n        return a * x;\n    });\n}\n\n\nfunction smMult(a, A) {\n    /*\n     * Multiply matrix A by scalar a.\n     */\n\n    return A.map(function (Arow) {\n        return svMult(a, Arow);\n    });\n}\n\n\nfunction svAdd(a, v) {\n    /*\n     * Add a scalar a to every element of vector v.\n     */\n\n    return v.map(function (x) {\n        return a + x;\n    });\n}\n\n\nfunction vectorAdd() {\n    var m = arguments[0].length;\n    var n = arguments.length;\n\n    var result = [];\n    for (var i = 0; i < m; i++) {\n        var element = 0.0;\n        for (var j = 0; j < n; j++) {\n            element += arguments[j][i];\n        }\n        result.push(element);\n    }\n\n    return result;\n}\n\n\nfunction elementwiseVectorDivide(v1, v2) {\n    /*\n     * Compute v1 / v2 elementwise.\n     */\n\n    let result = [];\n    let n = v1.length;\n\n    for (let i = 0; i < n; i++) {\n        result.push(v1[i] / v2[i]);\n    }\n\n    return result;\n}\n\n\nfunction elementwiseVectorMult(v1, v2) {\n    /*\n     * Compute v1 * v2 elementwise.\n     */\n\n    let result = [];\n    let n = v1.length;\n\n    for (let i = 0; i < n; i++) {\n        result.push(v1[i] * v2[i]);\n    }\n\n    return result;\n}\n\n\nfunction svMultAdd(scalars, vectors) {\n    /*\n     * Add a set of vectors together, each multiplied by a scalar.\n     */\n\n    var m = vectors[0].length;\n    var n = scalars.length;\n\n    if (vectors.length != n) {\n        console.warn(\"svMultAdd: Difference number of scalars and vectors.\");\n        return null;\n    }\n\n    var result = [];\n    for (var i = 0; i < m; i++) {\n        var element = 0.0;\n        for (var j = 0; j < n; j++) {\n            element += scalars[j] * vectors[j][i];\n        }\n        result.push(element);\n    }\n\n    return result;\n}\n\n\nfunction absVector(v) {\n    var result = [];\n    for (var i = 0; i < v.length; i++) {\n        result[i] = Math.abs(v[i]);\n    }\n\n    return result;\n}\n\n\nfunction LUPDecompose(A, eps) {\n    /*\n     * LUP decomposition.\n     */\n\n    var i, j, k, imax;\n    var maxA, absA;\n    var Arow;\n    var p = [];\n    var n = A.length;\n    var LU = shallowCopyMatrix(A);\n\n    // Permutation matrix\n    for (i = 0; i <= n; i++) p.push(i);\n\n    for (i = 0; i < n; i++) {\n        maxA = 0.0;\n        imax = i;\n\n        for (k = i; k < n; k++) {\n            absA = Math.abs(LU[k][i]);\n            if (absA > maxA) {\n                maxA = absA;\n                imax = k;\n            }\n        }\n\n        // Failure; singular matrix\n        if (maxA < eps) return [null, null];\n\n        if (imax != i) {\n            // Pivot\n            j = p[i];\n            p[i] = p[imax];\n            p[imax] = j;\n\n            // Pivot rows of A\n            Arow = LU[i];\n            LU[i] = LU[imax];\n            LU[imax] = Arow;\n\n            // Count pivots\n            p[n]++;\n        }\n\n        for (j = i + 1; j < n; j++) {\n            LU[j][i] /= LU[i][i];\n\n            for (k = i + 1; k < n; k++) LU[j][k] -= LU[j][i] * LU[i][k];\n        }\n    }\n\n    return [LU, p];\n}\n\nfunction LUPSolve(LU, p, b) {\n    /*\n     * Solve a linear system where LU and p are stored as the\n     * output of LUPDecompose().\n     */\n\n    var n = b.length;\n    var x = [];\n\n    for (var i = 0; i < n; i++) {\n        x.push(b[p[i]]);\n        for (var k = 0; k < i; k++) x[i] -= LU[i][k] * x[k];\n    }\n\n    for (i = n - 1; i >= 0; i--) {\n        for (k = i + 1; k < n; k++) x[i] -= LU[i][k] * x[k];\n\n        x[i] /= LU[i][i];\n    }\n\n    return x;\n}\n\nfunction solve(A, b) {\n    /*\n     * Solve a linear system using LUP decomposition.\n     *\n     * Returns null if singular.\n     */\n\n    var eps = 1.0e-14;\n    var LU, p;\n\n    [LU, p] = LUPDecompose(A, eps);\n\n    // Return null if singular\n    if (LU === null) return null;\n\n    return LUPSolve(LU, p, b);\n}\n\n\nfunction rkf45(\n    f,\n    initialCondition,\n    timePoints,\n    args,\n    dt,\n    tol,\n    relStepTol,\n    maxDeadSteps,\n    sBounds,\n    hMin,\n    enforceNonnegative,\n    event,\n    eventArgs,\n    debugMode,\n) {\n    // event must be a function with call signature event(y, t, ...eventArgs)\n\n    // Set up return variables\n    let tSol = [timePoints[0]];\n    let t = timePoints[0];\n    let iMax = timePoints.length;\n    let y = [initialCondition];\n    let y0 = initialCondition;\n    let i = 1;\n    let nDeadSteps = 0;\n    let deadStep = false;\n\n    // DEBUG\n    let nSteps = 0;\n    // END EDEBUG\n\n    // Default parameters\n    let h;\n    if (dt === undefined) h = timePoints[1] - timePoints[0];\n    else h = dt;\n\n    if (tol === undefined) tol = 1e-7;\n    if (relStepTol === undefined) relStepTol = 0.0;\n    if (sBounds === undefined) sBounds = [0.1, 10.0];\n    if (hMin === undefined) hMin = 0.0;\n    if (enforceNonnegative === undefined) enforceNonnegative = true;\n    if (maxDeadSteps === undefined) maxDeadSteps = 10;\n    if (event === undefined) {\n        event = (function(y, t) {return true;});\n        eventArgs = [];\n    }\n    else if (eventArgs === undefined) {\n        eventArgs = [];\n    }\n    if (debugMode === undefined) debugMode = false;\n\n    while (i < iMax && nDeadSteps < maxDeadSteps && event(y, t, ...eventArgs)) {\n        nDeadSteps = 0;\n        while (t < timePoints[i] && nDeadSteps < maxDeadSteps && event(y, t, ...eventArgs)) {\n            [y0, t, h, deadStep] = rkf45Step(\n                f,\n                y0,\n                t,\n                args,\n                h,\n                tol,\n                relStepTol,\n                sBounds,\n                hMin\n            );\n            nDeadSteps = deadStep ? nDeadSteps + 1 : 0;\n            if (enforceNonnegative) {\n                y0 = y0.map(function (x) {\n                    if (x < 0.0) return 0.0;\n                    else return x;\n                });\n            }\n            // DEBUG\n            nSteps += 1;\n            // END DEBUG\n        }\n        if (t > tSol[tSol.length - 1]) {\n            y.push(y0);\n            tSol.push(t);\n        }\n        i += 1;\n    }\n\n    // DEBUG\n    if (debugMode) console.log(nSteps);\n    // END DEBUG\n\n    let yInterp;\n    if (nDeadSteps == maxDeadSteps) {\n    \tyInterp = nanArray(initialCondition.length, iMax);\n    }\n    else yInterp = interpolateSolution(timePoints, tSol, transpose(y));\n\n    return yInterp;\n}\n\n\nfunction rkf45Step(f, y, t, args, h, tol, relStepTol, sBounds, hMin) {\n    let k1 = svMult(h, f(y, t, ...args));\n\n    let y2 = svMultAdd([0.25, 1.0], [k1, y]);\n    let k2 = svMult(h, f(y2, t + 0.25 * h, ...args));\n\n    let y3 = svMultAdd([0.09375, 0.28125, 1.0], [k1, k2, y]);\n    let k3 = svMult(h, f(y3, t + 0.375 * h, ...args));\n\n    let y4 = svMultAdd(\n        [1932.0 / 2197.0, -7200.0 / 2197.0, 7296.0 / 2197.0, 1.0],\n        [k1, k2, k3, y]\n    );\n    let k4 = svMult(h, f(y4, t + (12.0 * h) / 13.0, ...args));\n\n    let y5 = svMultAdd(\n        [\n            8341.0 / 4104.0,\n            -32832.0 / 4104.0,\n            29440.0 / 4104.0,\n            -845.0 / 4104.0,\n            1.0,\n        ],\n        [k1, k2, k3, k4, y]\n    );\n    let k5 = svMult(h, f(y5, t + h, ...args));\n\n    let y6 = svMultAdd(\n        [\n            -6080.0 / 20520.0,\n            41040.0 / 20520.0,\n            -28352.0 / 20520.0,\n            9295.0 / 20520.0,\n            -5643.0 / 20520.0,\n            1.0,\n        ],\n        [k1, k2, k3, k4, k5, y]\n    );\n    let k6 = svMult(h, f(y6, t + h / 2.0, ...args));\n\n    // Calculate new step\n    let yNew = svMultAdd(\n        [\n            2375.0 / 20520.0,\n            11264.0 / 20520.0,\n            10985.0 / 20520.0,\n            -4104.0 / 20520.0,\n            1.0,\n        ],\n        [k1, k3, k4, k5, y]\n    );\n\n    // Relative difference between steps\n\tlet relChangeStep = norm(vectorAdd(yNew, svMult(-1.0, y))) / norm(yNew);\n\n    // Calculate error (note that k2's contribution to the error is zero)\n    let errorVector = svMultAdd(\n        [\n            209.0 / 75240.0,\n            -2252.8 / 75240.0,\n            -2197.0 / 75240.0,\n            1504.8 / 75240.0,\n            2736.0 / 75240.0,\n        ],\n        [k1, k3, k4, k5, k6]\n    );\n    let error = Math.max(...absVector(errorVector));\n\n    // Either don't take a step or use the RK4 step\n    let deadStep;\n    if (error < tol || relChangeStep < relStepTol || h <= hMin) {\n        t += h;\n        deadStep = false;\n    } else {\n        yNew = y;\n        deadStep = true;\n    }\n\n    // Compute scaling for new step size\n    let s;\n    if (error === 0.0) {\n        s = sBounds[1];\n    } else {\n        s = Math.pow((tol * h) / 2.0 / error, 0.25);\n    }\n    if (s < sBounds[0]) {\n        s = sBounds[0];\n    } else if (s > sBounds[1]) {\n        s = sBounds[1];\n    }\n\n    // Return new y-values, new time, and updated step size h\n    return [yNew, t, Math.max(s * h, hMin), deadStep];\n}\n\n\nfunction dydtIMEX(y, t, f, cfun, Afun, fArgs, cfunArgs, AfunArgs, diagonalA) {\n    /*\n     * Right hand side of ODEs for initializing IMEX method with RKF.\n     */\n\n    n = y.length;\n    let rhs = zeros(n);\n\n    let A = Afun(t, ...AfunArgs);\n    let c = cfun(t, ...cfunArgs);\n\n    // Linear part\n    let nonConstantLinear = diagonalA\n        ? elementwiseVectorMult(A, y)\n        : mvMult(A, y, diagonalA);\n    let linearPart = vectorAdd(nonConstantLinear, c);\n\n    // Nonlinear part\n    let nonlinearPart = f(y, t, ...fArgs);\n\n    return vectorAdd(nonlinearPart, linearPart);\n}\n\n\nfunction cnab2Step(u, c, A, f1, f0, g1, omega, k, diagonalA) {\n    /*\n     * Take a CNAB2 step.\n     *\n     * - u is the current value of the solution.\n     * - c is the constant term.\n     * - A is the matrix for the linear function.\n     * - f1 is the nonlinear function evaluated at the current value of y.\n     * - f0 is the nonlinear function evaluated at the previous value of y.\n     * - g1 is the linear function evaluated at the current value of y.\n     * - omega is the ratio of the most recent step size to the one before that.\n     * - k is the current step size.\n     * - diagonalA is true if A is diagonal. This leads to a *much* faster time step.\n     *   If diagonalA is true, then A is provided only as the diagonal.\n     */\n\n    let invk = 1.0 / k;\n    let b = vectorAdd(\n        svMult(0.5, c),\n        svMult(invk, u),\n        svMult(1.0 + omega / 2.0, f1),\n        svMult(-omega / 2.0, f0),\n        svMult(0.5, g1)\n    );\n\n    if (diagonalA) {\n        let Aaug = svAdd(invk, svMult(-0.5, A));\n        let result = elementwiseVectorDivide(b, Aaug);\n    } else {\n        let n = A.length;\n        let Aaug = smMult(-0.5, A);\n        for (i = 0; i < n; i++) {\n            Aaug[i][i] += invk;\n        }\n        let result = solve(Aaug, b);\n    }\n\n    return result;\n}\n\n\nfunction vsimexAdjustStepSizePID(\n    k,\n    relChange,\n    relChangeStep,\n    tol,\n    kP,\n    kI,\n    kD,\n    kBounds,\n    sBounds\n) {\n    /*\n     * Adjust step size using a PID controller.\n     */\n    let mult =\n        Math.pow(relChange[1] / relChangeStep, kP) *\n        Math.pow(tol / relChangeStep, kI) *\n        Math.pow(Math.pow(relChange[0], 2) / relChange[1] / relChangeStep, kD);\n    if (mult > sBounds[1]) mult = sBounds[1];\n    else if (mult < sBounds[0]) mult = sBounds[0];\n\n    let newk = mult * k;\n\n    if (newk > kBounds[1]) newk = kBounds[1];\n    else if (newk < kBounds[0]) newk = kBounds[0];\n\n    return newk;\n}\n\n\nfunction vsimexAdjustStepSizeRejectedStep(\n    k,\n    relChangeStep,\n    tol,\n    kBounds,\n    sBounds\n) {\n    /*\n     * Adjust step for rejected step\n     */\n\n    let mult = tol / relChangeStep;\n    if (mult < sBounds[0]) mult = sBounds[0];\n\n    let newk = mult * k;\n    if (newk < kBounds[0]) newk = kBounds[0];\n\n    return newk;\n}\n\n\nfunction vsimexAdjustStepSizeFailedSolve(k, failedSolveS) {\n    /*\n     * Adjust step for failed solve. Bringing step size down will\n     * eventually make matrix for linear solve positive definite.\n     */\n\n    return k * failedSolveS;\n}\n\n\nfunction vsimex(\n    f,\n    cfun,\n    Afun,\n    initialCondition,\n    timePoints,\n    fArgs,\n    cfunArgs,\n    AfunArgs,\n    diagonalA,\n    k0,\n    kBounds,\n    tol,\n    tolBuffer,\n    kP,\n    kI,\n    kD,\n    sBounds,\n    failedSolveS,\n    enforceNonnegative,\n    maxDeadSteps\n) {\n    /*\n     *\n     */\n\n    // Defaults\n    if (k0 === undefined) k0 = 1.0e-5;\n    if (kBounds === undefined) kBounds = [1.0e-6, 100.0];\n    if (tol === undefined) tol = 0.001;\n    if (tolBuffer === undefined) tolBuffer = 0.01;\n    if (kP === undefined) kP = 0.075;\n    if (kI === undefined) kI = 0.175;\n    if (kD === undefined) kD = 0.01;\n    if (sBounds === undefined) sBounds = [0.1, 10.0];\n    if (failedSolveS === undefined) failedSolveS = 0.1;\n    if (enforceNonnegative == undefined) enforceNonnegative = true;\n    if (maxDeadSteps === undefined) maxDeadSteps = 10;\n\n    // Do RKF to get the first few time points\n    let rkf45TimePoints = [\n        timePoints[0],\n        timePoints[0] + k0,\n        timePoints[0] + 2.0 * k0,\n    ];\n\n    let args = [f, cfun, Afun, fArgs, cfunArgs, AfunArgs, diagonalA];\n    let yRKF = rkf45(\n        dydtIMEX,\n        initialCondition,\n        rkf45TimePoints,\n        args,\n        k0 / 10.0,\n        tol,\n        sBounds,\n        0.0,\n        enforceNonnegative,\n        maxDeadSteps\n    );\n\n    yRKF = transpose(yRKF);\n\n    // Set up variables for running CNAB2 VSIMEX\n    let tSol = [timePoints[0]];\n    let iMax = timePoints.length;\n    let y = [initialCondition];\n    let k = 2.0 * k0;\n    let newk;\n    let t = rkf45TimePoints[2];\n    let y0 = yRKF[2];\n    let i = 1;\n    let nDeadSteps = 0;\n    let deadStep = false;\n    let c = cfun(t, ...cfunArgs);\n    let A = Afun(t, ...AfunArgs);\n    let f0 = f(initialCondition, timePoints[0], ...fArgs);\n    let f1 = f(y0, t, ...fArgs);\n    let g1 = vectorAdd(c, mvMult(A, y0, diagonalA));\n    let omega = 1.0;\n    let yStep;\n    let relChangeStep;\n    let relTol = tol * (1.0 + tolBuffer);\n    let relChange = [\n        norm(vectorAdd(y0, svMult(-1.0, yRKF[1]))) / norm(y0),\n        norm(vectorAdd(yRKF[1], svMult(-1.0, initialCondition))) /\n            norm(yRKF[1]),\n    ];\n\n    // DEBUG\n    let nSteps = 3;\n    // END EDEBUG\n\n    while (i < iMax && nDeadSteps < maxDeadSteps) {\n        nDeadSteps = 0;\n        while (t < timePoints[i] && nDeadSteps < maxDeadSteps) {\n            // Take CNAB2 step\n            yStep = cnab2Step(y0, c, A, f1, f0, g1, omega, k, diagonalA);\n\n            // Reject the step if failed to solve\n            if (yStep === null) {\n                newk = vsimexAdjustStepSizeFailedSolve(k, failedSolveS);\n                omega *= newk / k;\n                k = newk;\n                nDeadSteps += 1;\n                console.log(\"null yStep\");\n            } else {\n                // Relative change\n                relChangeStep =\n                    norm(vectorAdd(yStep, svMult(-1.0, y0))) / norm(yStep);\n\n                // Take step if below tolerance\n                if (relChangeStep <= relTol) {\n                    f0 = f(y0, t, ...fArgs);\n                    t += k;\n                    y0 = yStep;\n                    f1 = f(y0, t, ...fArgs);\n                    c = cfun(t, ...cfunArgs);\n                    A = Afun(t, ...AfunArgs);\n                    g1 = vectorAdd(c, mvMult(A, y0, diagonalA));\n                    newk = vsimexAdjustStepSizePID(\n                        k,\n                        relChange,\n                        relChangeStep,\n                        tol,\n                        kP,\n                        kI,\n                        kD,\n                        kBounds,\n                        sBounds\n                    );\n                    relChange = [relChange[1], relChangeStep];\n                    omega = newk / k;\n                    k = newk;\n                    nDeadSteps = 0;\n                }\n                // Reject the step is not within tolerance\n                else {\n                    newk = vsimexAdjustStepSizeRejectedStep(\n                        k,\n                        relChangeStep,\n                        tol,\n                        kBounds,\n                        sBounds\n                    );\n                    omega *= newk / k;\n                    k = newk;\n                    nDeadSteps += 1;\n                }\n            }\n            if (enforceNonnegative) {\n                y0 = y0.map(function (x) {\n                    if (x < 0.0) return 0.0;\n                    else return x;\n                });\n            }\n\n            // DEBUG\n\t\t    nSteps += 1;\n\t\t    // END DEBUG\n        }\n        if (t > tSol[tSol.length - 1]) {\n            y.push(y0);\n            tSol.push(t);\n        }\n        i += 1;\n    }\n\n    // DEBUG\n    console.log(nSteps);\n    // END DEBUG\n\n    if (nDeadSteps == maxDeadSteps) {\n        return nanArray(initialCondition, iMax);\n    }\n    let yInterp = interpolateSolution(timePoints, tSol, transpose(y));\n\n    return yInterp;\n}\n\n\nfunction interpolate1d(x, xs, ys) {\n    let y2s = naturalSplineSecondDerivs(xs, ys);\n\n    let yInterp = x.map(function (xVal) {\n        return splineEvaluate(xVal, xs, ys, y2s);\n    });\n\n    return yInterp;\n}\n\n\nfunction interpolateSolution(timePoints, t, y) {\n    // Interpolate each row of y\n    let yInterp = y.map(function (yi) {\n        return interpolate1d(timePoints, t, yi);\n    });\n\n    return yInterp;\n}\n\n\nfunction naturalSplineSecondDerivs(xs, ys) {\n    /*\n     * Compute the second derivatives for a cubic spline data\n     * measured at positions xs, ys.\n     *\n     * The second derivatives are then used to evaluate the spline.\n     */\n\n    let n = xs.length;\n\n    // Storage used in tridiagonal solve\n    let u = zeros(n);\n\n    // Return value\n    let y2s = zeros(n);\n\n    // Solve trigiadonal matrix by decomposition\n    for (let i = 1; i < n - 1; i++) {\n        let fracInterval = (xs[i] - xs[i - 1]) / (xs[i + 1] - xs[i - 1]);\n        let p = fracInterval * y2s[i - 1] + 2.0;\n        y2s[i] = (fracInterval - 1.0) / p;\n        u[i] =\n            (ys[i + 1] - ys[i]) / (xs[i + 1] - xs[i]) -\n            (ys[i] - ys[i - 1]) / (xs[i] - xs[i - 1]);\n        u[i] =\n            ((6.0 * u[i]) / (xs[i + 1] - xs[i - 1]) - fracInterval * u[i - 1]) /\n            p;\n    }\n\n    // Tridiagonal solve back substitution\n    for (let k = n - 2; k >= 0; k--) {\n        y2s[k] = y2s[k] * y2s[k + 1] + u[k];\n    }\n\n    return y2s;\n}\n\n\nfunction splineEvaluate(x, xs, ys, y2s) {\n    /*\n     * Evaluate a spline computed from points xs, ys, with second derivatives\n     * y2s, as compute by naturalSplineSecondDerivs().\n     *\n     * Assumes that x and xs are sorted.\n     */\n    let n = xs.length;\n\n    // Indices bracketing where x is\n    let lowInd = 0;\n    let highInd = n - 1;\n\n    // Perform bisection search to find index of x\n    while (highInd - lowInd > 1) {\n        let i = (highInd + lowInd) >> 1;\n        if (xs[i] > x) {\n            highInd = i;\n        } else {\n            lowInd = i;\n        }\n    }\n    let h = xs[highInd] - xs[lowInd];\n    let a = (xs[highInd] - x) / h;\n    let b = (x - xs[lowInd]) / h;\n\n    let y = a * ys[lowInd] + b * ys[highInd];\n    y +=\n        (((Math.pow(a, 3) - a) * y2s[lowInd] + (Math.pow(b, 3) - b) * y2s[highInd]) * Math.pow(h, 2)) /\n        6.0;\n\n    return y;\n}\n\n\n// module.exports = {\n//   vsimex,\n//   rkf45,\n//   zeros, \n//   linspace\n// };\n\n// vsimex(lotkaVolterra, [1.0, 3.0], linspace(0.0, 20.0, 200), [1.0, 2.0, 3.0, 4.0], 0.01, 1e-7, [0.1, 10.0], 0.0)\n// let lv = lotkaVolterraIMEX(1.0, 2.0, 3.0, 4.0);\n// let sol = vsimex(lv.f, lv.cfun, lv.Afun, [1.0, 3.0], linspace(0.0, 20.0, 200), [], [], [], lv.diagonalA)\n\n\nfunction ij(i, j, n) {\n    /*\n     * Lexicographic indexing of 2D array represented as 1D.\n     */\n\n    return i * n + j;\n}\n\n\nfunction twoDto1D(A) {\n    /*\n     * Convert a 2D matrix to a 1D representation with row-based (C)\n     * lexicographic ordering.\n     */\n\n    var m = A.length;\n    var n = A[0].length;\n\n    var A1d = [];\n    for (var i = 0; i < m; i++) {\n        for (var j = 0; j < n; j++) {\n            A1d.push(A[i][j]);\n        }\n    }\n\n    return A1d;\n}\n\n\nfunction linspace(start, stop, n) {\n    var x = [];\n    var currValue = start;\n    var step = (stop - start) / (n - 1);\n    for (var i = 0; i < n; i++) {\n        x.push(currValue);\n        currValue += step;\n    }\n    return x;\n}\n\n\nfunction zeros(n) {\n    var x = [];\n    for (var i = 0; i < n; i++) x.push(0.0);\n    return x;\n}\n\n\nfunction shallowCopyMatrix(A) {\n    /*\n     * Make a shallow copy of a matrix.\n     */\n\n    var Ac = [];\n    var n = A.length;\n    for (i = 0; i < n; i++) {\n        Ac.push([...A[i]]);\n    }\n\n    return Ac;\n}\n\n\nfunction nanArray() {\n    /*\n     * Return a NaN array of shape given by arguments.\n     */\n    if (arguments.length == 1) {\n        var x = [];\n        for (var i = 0; i < arguments[0]; i++) x.push(NaN);\n    }\n    else if (arguments.length == 2) {\n        var x = [];\n        for (var i = 0; i < arguments[0]; i++) {\n            var xRow = [];\n            for (var j = 0; j < arguments[1]; j++) xRow.push(NaN);\n            x.push(xRow);\n        }\n    }\n    else {\n        throw 'Must only have one or two arguments to nanArray().'\n    }\n\n    return x;\n}\n\n\nfunction isClose(x, y, epsilon) {\n    /*\n     * Return True if |x - y| are within epsilon of each other.\n     */\n    if (epsilon == null) {\n        epsilon = 0.0000001;\n    }\n    return Math.abs(x - y) < epsilon;\n}\n\nfunction negAutoRHS(x, t, beta0, gamma, k, n, ks, ns, sFun, sArgs=[]) {\n\tlet xScalar = x[0]\n\n\tlet s = sFun(t, ...sArgs);\n\n\t// Correct for x being numerically negative\n\tlet xCorr = (xScalar > 0.0) ? xScalar : 0.0;\n\n\tlet beta = beta0 * Math.pow(s / ks, ns) / (1 + Math.pow(s / ks, ns));\n\n\treturn [beta / (1 + Math.pow(xCorr / k, n)) - gamma * xCorr];\n} \n\n\nfunction unregRHS(x, t, beta0, gamma, ks, ns, sFun, sArgs=[]) {\n\tlet xScalar = x[0]\n\tlet s = sFun(t, ...sArgs);\n\n\tlet beta = beta0 * Math.pow(s / ks, ns) / (1 + Math.pow(s / ks, ns));\n\n\treturn [beta - gamma * xScalar];\n}\n\n\nfunction sPulse(t, t0, tau) {\n\treturn Math.exp(-4.0 * Math.pow((t - t0) / tau, 2));\n}\n\n\nfunction callback() {\n\tlet xRangeMax = xRange.end;\n\tlet dt = 0.01;\n\tlet x0 = [0.0];\n\tlet t0 = t0Slider.value;\n\tlet tau = tauSlider.value;\n\tlet s = cds.data['s'];\n\n\tlet t = linspace(0.0, xRangeMax, cds.data['t'].length);\n\tlet sArgs = [t0, tau];\n\tlet args = [\n\t\tMath.pow(10, logBeta0Slider.value),\n\t\tMath.pow(10, logGammaSlider.value),\n\t\tMath.pow(10, logkSlider.value),\n\t\tnSlider.value,\n\t\tMath.pow(10, logksSlider.value),\n\t\tnsSlider.value,\n\t\tsPulse,\n\t\tsArgs\n\t];\n\tlet argsUnreg = [args[0], args[1], args[4], args[5], args[6], args[7]];\n\n\t// Integrate ODES\n\tlet xSolve = rkf45(negAutoRHS, x0, t, args, dt)[0];\n\tlet xUnregSolve = rkf45(unregRHS, x0, t, argsUnreg)[0];\n\n\t// Pulse for plotting\n\tfor (let i = 0; i < t.length; i++) {\n\t\ts[i] = sPulse(t[i], t0, tau);\n\t}\n\n\t// Normalize if necessary\n\tif (normalizeToggle.active) {\n\t\tlet xMax = Math.max(...xSolve);\n\t\tif (xMax > 0.0) xSolve = svMult(1.0 / xMax, xSolve);\n\n\t\tlet xUnregMax = Math.max(...xUnregSolve);\n\t\tif (xUnregMax > 0.0) xUnregSolve = svMult(1.0 / xUnregMax, xUnregSolve);\n\n\t\tlet sMax = Math.max(...s);\n\t\tif (sMax > 0.0) s = svMult(1.0 / sMax, s);\n\n\t\tyaxis.axis_label = 'normalized concentration';\n\t}\n\telse yaxis.axis_label = 'concentration';\n\n\t// Toggle legend visibility\n\tlegend.visible = (legendToggle.active) ? true : false;\n\n\tcds.data['t'] = t;\n\tcds.data['x'] = xSolve;\n\tcds.data['x_unreg'] = xUnregSolve;\n\n\tcds.change.emit();\n}\n\ncallback()"}}]]]},"end":10.0}},"y_range":{"type":"object","name":"DataRange1d","id":"p1192"},"x_scale":{"type":"object","name":"LinearScale","id":"p1200"},"y_scale":{"type":"object","name":"LinearScale","id":"p1201"},"title":{"type":"object","name":"Title","id":"p1197"},"renderers":[{"id":"p1228"},{"id":"p1236"},{"id":"p1243"}],"toolbar":{"type":"object","name":"Toolbar","id":"p1198","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1212"},{"type":"object","name":"WheelZoomTool","id":"p1213","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1214","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1215","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1221","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1220","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"SaveTool","id":"p1222"},{"type":"object","name":"ResetTool","id":"p1223"},{"type":"object","name":"HelpTool","id":"p1224"}]}},"left":[{"id":"p1207"}],"below":[{"type":"object","name":"LinearAxis","id":"p1202","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1203","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1204"},"axis_label":"time","major_label_policy":{"type":"object","name":"AllLabels","id":"p1205"}}}],"center":[{"type":"object","name":"Grid","id":"p1206","attributes":{"axis":{"id":"p1202"}}},{"type":"object","name":"Grid","id":"p1211","attributes":{"dimension":1,"axis":{"id":"p1207"}}},{"id":"p1231"}],"frame_width":400,"frame_height":250}},{"type":"object","name":"Spacer","id":"p1258","attributes":{"width":30}},{"type":"object","name":"Column","id":"p1259","attributes":{"children":[{"id":"p1247"},{"id":"p1248"},{"id":"p1249"},{"id":"p1250"},{"id":"p1256"}]}},{"type":"object","name":"Column","id":"p1260","attributes":{"children":[{"id":"p1251"},{"id":"p1252"},{"id":"p1253"},{"id":"p1254"},{"id":"p1255"}]}}]}}]}};
+  const render_items = [{"docid":"5758c7ac-913d-499c-802d-200bfa6ee419","roots":{"p1261":"e0157aa5-1813-455a-b8fa-f6921b88ac23"},"root_ids":["p1261"]}];
+  void root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    let attempts = 0;
+    const timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);
+</script>
+</div>
 </div>
 <p>By moving around the sliders, we can see that increasing the strength of the repression (by decreasing <span class="math inline">\(k\)</span>) accentuates the speed-up provided by negative autoregulation. Furthermore, we see that increasing the cooperativitity of the repressor (by increasing <span class="math inline">\(n\)</span>) makes the initial rise in <span class="math inline">\(x\)</span> “sharper”. What other properties can you find through interacting with this plot?</p>
 </section>
@@ -1400,9 +1798,22 @@ window.Quarto = {
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="5d58b820" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="19">
+<div id="cb3afc66" class="cell" data-tags="[&quot;hide_input&quot;]" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,colorcet,biocircuits,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Python implementation: CPython
+Python version       : 3.13.13
+IPython version      : 9.12.0
+
+numpy      : 2.2.6
+scipy      : 1.17.1
+bokeh      : 3.9.0
+colorcet   : 3.1.0
+biocircuits: 0.1.19
+jupyterlab : 4.5.6
+</code></pre>
+</div>
 </div>
 
 
