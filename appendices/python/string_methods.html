@@ -669,20 +669,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/coupled_delay_oscillators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.1: Coupled delay oscillators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../exercises/delay_oscillator_positive_feedback.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.2: Tuning delay oscillators with positive feedback</span></a>
+ <span class="menu-text">Exercise 11.1: Tuning delay oscillators with positive feedback</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/controlling_p53_levels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.3: Controlling p53 levels</span></a>
+ <span class="menu-text">Exercise 11.2: Controlling p53 levels</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -895,7 +889,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="indexing-and-slicing-of-strings" class="level2">
 <h2 class="anchored" data-anchor-id="indexing-and-slicing-of-strings">Indexing and slicing of strings</h2>
 <p>Before getting into string methods, we pause to note that indexing and slicing of strings works just as it does for lists and tuples.</p>
-<div id="490c6d0f" class="cell" data-execution_count="1">
+<div id="ab889e22" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">'The Dude abides.'</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_str[<span class="dv">5</span>])</span>
@@ -910,7 +904,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="computing-gc-content" class="level3">
 <h3 class="anchored" data-anchor-id="computing-gc-content">Computing GC content</h3>
 <p>If you remember from the <a href="../../appendices/python/iteration.html">discussion on iteration</a>, we started by computing the GC content of a nucleic acid sequence. We counted the occurrences of <code>'G'</code> and <code>'C'</code> in the string using a <strong><code>for</code></strong> loop. We can use the <code>count()</code> string method do to this.</p>
-<div id="4015d886" class="cell" data-execution_count="2">
+<div id="b125b83b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define sequence</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>seq <span class="op">=</span> <span class="st">'GACAGACUCCAUGCACGUGGGUAUCAUGUC'</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -920,15 +914,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>seq.count()</code> method enabled us to count the number times <code>G</code> and <code>C</code> occurred in the string <code>seq</code>. This notation is new. We have a variable, followed by a dot (<code>.</code>), and then a function. These functions are called <strong>methods</strong> in the language of object-oriented programming (OOP). If you have a string <code>my_str</code>, and you want to execute one of Python’s built-in string methods on it, the syntax is</p>
 <pre><code>my_str.string_method_of_choice(*args)</code></pre>
 <p>In general, the <code>count</code> method gives the number of times a substring appears in a string. We can learn more about its behavior by playing with it.</p>
-<div id="6298bd32" class="cell" data-execution_count="3">
+<div id="c7248bb7" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Substrings of more than one characater</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>seq.count(<span class="st">'GAC'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ab36760a" class="cell" data-execution_count="4">
+<div id="462f9a59" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Substrings cannot overlap</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">'AAAAAAA'</span>.count(<span class="st">'AA'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="90a224bb" class="cell" data-execution_count="5">
+<div id="c6fe9828" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Something that's not there.</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>seq.count(<span class="st">'nonsense'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -936,29 +930,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="finding-the-index-of-a-start-codon" class="level3">
 <h3 class="anchored" data-anchor-id="finding-the-index-of-a-start-codon">Finding the index of a start codon</h3>
 <p>Another task in the <a href="../../appendices/python/iteration.html">section on iteration</a> was to find the index of the start codon in an RNA sequence. Let’s do it with another string method.</p>
-<div id="267027e6" class="cell" data-execution_count="6">
+<div id="cb2519fc" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>seq.find(<span class="st">'AUG'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Wow, that was easy. The <code>find()</code> method gives the index where the substring argument <em>first</em> appears. But, what if a substring is not in the string?</p>
-<div id="7efe94bb" class="cell" data-execution_count="7">
+<div id="3a829949" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>seq.find(<span class="st">'nonsense'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In this case, <code>find()</code> returns <code>-1</code>. This is not to be interpreted as index <code>-1</code>! <code>find()</code> always returns positive indices if it finds a substring. Note that you should not use <code>find()</code> to <em>test</em> if a substring is present. Use the <code>in</code> operator we already learned about.</p>
-<div id="8a265bcf" class="cell" data-execution_count="8">
+<div id="7de979f5" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">'AUG'</span> <span class="kw">in</span> seq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="finding-the-last-index-of-a-substring" class="level3">
 <h3 class="anchored" data-anchor-id="finding-the-last-index-of-a-substring">Finding the last index of a substring</h3>
 <p>Let’s say we wanted to find the last instance of the start codon. We basically want to search from the right. This is exactly what the <code>rfind()</code> method does.</p>
-<div id="613fbc2f" class="cell" data-execution_count="9">
+<div id="bb8e9daa" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>seq.rfind(<span class="st">'AUG'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="finding-the-complementary-base" class="level3">
 <h3 class="anchored" data-anchor-id="finding-the-complementary-base">Finding the complementary base</h3>
 <p>In our <a href="../../appendices/python/intro_to_functions.html">discussion of functions</a>, we wrote a function to compute a complementary base comparing against both the capital and lowercase letter. Here is that function implemented with some handy string methods.</p>
-<div id="6e91c358" class="cell" data-execution_count="10">
+<div id="f7a987a3" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> complement_base(base):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Returns the Watson-Crick complement of a base."""</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert to lowercase</span></span>
@@ -974,21 +968,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">'G'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We were able to avoid all the “<code>base in 'Tt'</code>”-style operations by just converting the base to lowercase using the <code>lower()</code> method. In general, the <code>lower()</code> method takes a string and converts any capital letters to lower case. The <code>upper()</code> function works analogously.</p>
-<div id="5734694a" class="cell" data-execution_count="11">
+<div id="e7741d25" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">'LeBron James'</span>.lower()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="f2a5d83c" class="cell" data-execution_count="12">
+<div id="cde6542c" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Make me aLl caPS.'</span>.upper()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="converting-rna-to-dna" class="level3">
 <h3 class="anchored" data-anchor-id="converting-rna-to-dna">Converting RNA to DNA</h3>
 <p>We also updated the complementary base function to account for RNA or DNA. Perhaps an easier way is just to replace all <code>U</code>s in an RNA sequence with <code>T</code>s to get a DNA sequence. The <code>replace()</code> method makes this easy.</p>
-<div id="c8603b9c" class="cell" data-execution_count="13">
+<div id="421475b5" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>seq.replace(<span class="st">'U'</span>, <span class="st">'T'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note that <code>seq</code> did not change. Remember, strings are immutable, so the <code>replace()</code> method <em>returns</em> a new string, as does <code>lower()</code>, <code>upper()</code>, and any other string method that returns a string. So, the characters stored in the variable <code>seq</code> are unchanged.</p>
-<div id="37bf525b" class="cell" data-execution_count="14">
+<div id="84653def" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>seq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -996,22 +990,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-join-method" class="level2">
 <h2 class="anchored" data-anchor-id="the-join-method">The join() method</h2>
 <p>One of the most useful string methods is the <code>join()</code> method. Say we have a list of words that we want to craft into a sentence.</p>
-<div id="cecd910c" class="cell" data-execution_count="15">
+<div id="5b041c78" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>word_tuple <span class="op">=</span> (<span class="st">'The'</span>, <span class="st">'Dude'</span>, <span class="st">'abides.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, we would like to concatenate them into a single string. (This is sort of like the opposite of taking a string and making a list of its characters by doing a <code>list()</code> type conversion.) We need to know what we want to put between each word. In this case, we want a space. Here’s the nifty syntax to do that.</p>
-<div id="5df40d8c" class="cell" data-execution_count="16">
+<div id="2369ce42" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">' '</span>.join(word_tuple)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We now have a single string with the elements of the tuple, separated by spaces. The string before the dot (<code>.</code>) specifies what goes between the strings in the list or tuple (or other iterable). If we wanted “<code>*</code>” between each word, we could do that, too.</p>
-<div id="3642052f" class="cell" data-execution_count="17">
+<div id="8cc1fd2e" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">' * '</span>.join(word_tuple)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="the-format-method" class="level2">
 <h2 class="anchored" data-anchor-id="the-format-method">The format() method</h2>
 <p>The <code>format()</code> method is very powerful. We not go over all use cases here, but I’ll show you what I think is most intuitive and commonly used. Again, this is best learned by example.</p>
-<div id="a2be77ad" class="cell" data-execution_count="18">
+<div id="47902b4c" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">"""</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="st">Let's do a Mad Lib!</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="st">Thinking about biological circuit design, I feel </span><span class="sc">{adjective}</span><span class="st">.</span></span>
@@ -1061,7 +1055,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Below are examples of all of these.</p>
-<div id="03aacd2c" class="cell" data-execution_count="19">
+<div id="f664a5e6" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'There are </span><span class="sc">{n:d}</span><span class="st"> states in the US.'</span>.<span class="bu">format</span>(n<span class="op">=</span><span class="dv">50</span>))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Your file number is </span><span class="sc">{n:d}</span><span class="st">.'</span>.<span class="bu">format</span>(n<span class="op">=</span><span class="dv">23</span>))</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'π is approximately </span><span class="sc">{pi:f}</span><span class="st">.'</span>.<span class="bu">format</span>(pi<span class="op">=</span><span class="fl">3.14</span>))</span>
@@ -1075,7 +1069,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="f-strings" class="level2">
 <h2 class="anchored" data-anchor-id="f-strings">f-strings</h2>
 <p><strong>f-strings</strong> are strings that are prefixed with an <code>f</code> or <code>F</code> that allow convenient insertion of entries into strings. Here are some examples.</p>
-<div id="e56b8257" class="cell" data-execution_count="20">
+<div id="203ab327" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>n_states <span class="op">=</span> <span class="dv">50</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>file_number <span class="op">=</span> <span class="dv">23</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14</span></span>
@@ -1099,7 +1093,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="0025c936" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="21">
+<div id="36d2b599" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

@@ -720,20 +720,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../exercises/coupled_delay_oscillators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.1: Coupled delay oscillators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../exercises/delay_oscillator_positive_feedback.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.2: Tuning delay oscillators with positive feedback</span></a>
+ <span class="menu-text">Exercise 11.1: Tuning delay oscillators with positive feedback</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../exercises/controlling_p53_levels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.3: Controlling p53 levels</span></a>
+ <span class="menu-text">Exercise 11.2: Controlling p53 levels</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -958,7 +952,7 @@ window.Quarto = {
 <li><a href="https://doi.org/10.1371/journal.pcbi.1002069">Sprinzak et al.&nbsp;2011, Mutual Inactivation of Notch Receptors and Ligands Facilitates Developmental Patterning</a></li>
 </ul>
 <hr>
-<div id="467649b0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:06.213619Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:06.190940Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
+<div id="ffa8ad78" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:06.213619Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:06.190940Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys, subprocess</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -1003,7 +997,7 @@ window.Quarto = {
     </style>
     <div>
         <a href="https://bokeh.org" target="_blank" class="bk-notebook-logo"></a>
-        <span id="ac3ff7bc-0e15-4944-acfc-4e6148faf689">Loading BokehJS ...</span>
+        <span id="e0161a81-6e85-422c-9f56-bbe15676c88f">Loading BokehJS ...</span>
     </div>
 </div>
 <div class="cell-output cell-output-display">
@@ -1171,7 +1165,7 @@ const JS_MIME_TYPE = 'application/javascript';
      "</div>"}};
 
   function display_loaded(error = null) {
-    const el = document.getElementById("ac3ff7bc-0e15-4944-acfc-4e6148faf689");
+    const el = document.getElementById("e0161a81-6e85-422c-9f56-bbe15676c88f");
     if (el != null) {
       const html = (() => {
         if (typeof root.Bokeh === "undefined") {
@@ -1305,7 +1299,7 @@ function(Bokeh) {
       console.log("Bokeh: BokehJS failed to load within specified timeout.");
       root._bokeh_failed_load = true;
     } else if (force !== true) {
-      const cell = $(document.getElementById("ac3ff7bc-0e15-4944-acfc-4e6148faf689")).parents('.cell').data().cell;
+      const cell = $(document.getElementById("e0161a81-6e85-422c-9f56-bbe15676c88f")).parents('.cell').data().cell;
       cell.output_area.append_execute_result(NB_LOAD_WARNING)
     }
   }
@@ -1460,7 +1454,7 @@ where we have used the notation $\langle D_j\rangle_i$ as shorthand to denote th
 <section id="simulating-the-2-cell-system" class="level3">
 <h3 class="anchored" data-anchor-id="simulating-the-2-cell-system">Simulating the 2-cell system:</h3>
 <p>Now that we have have written down our model, let’s solve it to see how it performs. Since we can write down all the equations manually, we can use the standard techniques for numerical solution of a system of ODEs that we have covered previously in the course.</p>
-<div id="afb52c05" class="cell" data-tags="[]" data-execution_count="2">
+<div id="a3b9fe0b" class="cell" data-tags="[]" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> LI_2cell_rhs(x, t, betaN, betaD, betaR, nD, nR, kRS, tau):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    Ni, Di, Ri, Nj, Dj, Rj <span class="op">=</span> x</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -1609,11 +1603,11 @@ where we have used the notation $\langle D_j\rangle_i$ as shorthand to denote th
 <span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(LI_2cell_layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<script id="c8952a47-2c99-4a03-81a6-7c3fc7871afe">
+<script id="de7bbdaf-a2bc-4023-acb1-a6bd5e7f1106">
   (function() {
     const xhr = new XMLHttpRequest()
     xhr.responseType = 'blob';
-    xhr.open('GET', "http://localhost:52256/autoload.js?bokeh-autoload-element=c8952a47-2c99-4a03-81a6-7c3fc7871afe&bokeh-absolute-url=http://localhost:52256&resources=none", true);
+    xhr.open('GET', "http://localhost:50109/autoload.js?bokeh-autoload-element=de7bbdaf-a2bc-4023-acb1-a6bd5e7f1106&bokeh-absolute-url=http://localhost:50109&resources=none", true);
     xhr.withCredentials = false;
     xhr.onload = function (event) {
       const script = document.createElement('script');
@@ -1720,7 +1714,7 @@ Sprinzak et al. solved the above model from an initial condition where cells had
 
 
 **NOTE THAT THIS GRAPH WILL BE REPLACED BY A NATIVE SIMULATION PLOT THAT ALSO SHOWS THE ACTUAL PATTERN (AND A KYMOGRAPH TOO)**. -->
-<div id="36fc9cb2" class="cell" data-execution_count="3">
+<div id="70227cbb" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write helper functions</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_Djs_hex_periodic(x3, i, j):</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> x3.shape[<span class="dv">0</span>]</span>
@@ -1803,7 +1797,7 @@ Sprinzak et al. solved the above model from an initial condition where cells had
 <span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape output array to convenient shape</span></span>
 <span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>x4 <span class="op">=</span> x.reshape((numrows,numrows,<span class="dv">3</span>,<span class="dv">1000</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="3bc826a2" class="cell" data-execution_count="4">
+<div id="ae54bde9" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up plots</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>pT <span class="op">=</span> bokeh.plotting.figure(</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">375</span>, frame_height<span class="op">=</span><span class="dv">200</span>,</span>
@@ -1909,11 +1903,11 @@ Sprinzak et al. solved the above model from an initial condition where cells had
 <span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(LI_hex_tcourse_layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<script id="cb5c3b01-8171-4471-8547-7bc9b3a39388">
+<script id="a8c633e6-334a-47df-b52e-e3b2ca84e10f">
   (function() {
     const xhr = new XMLHttpRequest()
     xhr.responseType = 'blob';
-    xhr.open('GET', "http://localhost:52257/autoload.js?bokeh-autoload-element=cb5c3b01-8171-4471-8547-7bc9b3a39388&bokeh-absolute-url=http://localhost:52257&resources=none", true);
+    xhr.open('GET', "http://localhost:50111/autoload.js?bokeh-autoload-element=a8c633e6-334a-47df-b52e-e3b2ca84e10f&bokeh-absolute-url=http://localhost:50111&resources=none", true);
     xhr.withCredentials = false;
     xhr.onload = function (event) {
       const script = document.createElement('script');
@@ -1932,7 +1926,7 @@ From the above plot we can see that the intially nearly-homogeneous population o
 
 How can we visualize the spatial arrangement of the cells? We will use Bokeh's `HexTile` attribute to plot out a $12\times 12$ grid of hexagonal tiles, and then map the $R_i$ values that we obtained from our above simulation onto a color value for each tile. We can then add in a slider to let us view how the pattern changes over time.
 
-::: {#51411235 .cell execution_count=5}
+::: {#b383ebb0 .cell execution_count=5}
 ``` {.python .cell-code}
 # Widgets for controlling time
 time_slider = bokeh.models.Slider(title="time index", start=0, end=numpoints-1, step=1, value=numpoints-1)
@@ -2023,11 +2017,11 @@ else:
 
 ::: {.cell-output .cell-output-display}
 ```{=html}
-<script id="e91c863d-3e62-43fd-aa5e-a580f3ff30ec">
+<script id="cf86e069-554e-422a-9181-425547c17bae">
   (function() {
     const xhr = new XMLHttpRequest()
     xhr.responseType = 'blob';
-    xhr.open('GET', "http://localhost:52258/autoload.js?bokeh-autoload-element=e91c863d-3e62-43fd-aa5e-a580f3ff30ec&bokeh-absolute-url=http://localhost:52258&resources=none", true);
+    xhr.open('GET', "http://localhost:50112/autoload.js?bokeh-autoload-element=cf86e069-554e-422a-9181-425547c17bae&bokeh-absolute-url=http://localhost:50112&resources=none", true);
     xhr.withCredentials = false;
     xhr.onload = function (event) {
       const script = document.createElement('script');
@@ -2095,7 +2089,7 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 <section id="cis-inhibition-speeds-up-lateral-inhibition-pattern-formation" class="level3">
 <h3 class="anchored" data-anchor-id="cis-inhibition-speeds-up-lateral-inhibition-pattern-formation"><em>cis</em>-inhibition speeds up lateral inhibition pattern formation</h3>
 <p>This new model formulation allows us to take our existing lateral inhibition model and study the impact of adding <em>cis</em>-inhibition using only a single new parameter, <span class="math inline">\(\kappa_C\)</span>. Sprinzak et al simulated this additional model and found that the speed with which the lateral inhibition pattern formed was greatly increased by the addition of the <em>cis</em>-inhibition reactions.</p>
-<div id="6f69bbd5" class="cell" data-execution_count="6">
+<div id="c6fda09b" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> LIMI_hex_periodic_rhs(x, t, betaN, betaD, betaR, nD, nR, kRS, tau, kappaC):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Assumes a square NxN grid of cells</span></span>
@@ -2168,7 +2162,7 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 <span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>x4 <span class="op">=</span> x.reshape((numrows,numrows,<span class="dv">3</span>,<span class="dv">1000</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="a60ba032" class="cell" data-execution_count="7">
+<div id="be97e2d3" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up plots</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pT <span class="op">=</span> bokeh.plotting.figure(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">375</span>, frame_height<span class="op">=</span><span class="dv">200</span>,</span>
@@ -2272,11 +2266,11 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 <span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(LIMI_hex_tcourse_layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<script id="e5d9a12a-6f86-47c3-8a10-d468432472ea">
+<script id="ec17fef4-ed37-4f55-96e2-00a6edcbd859">
   (function() {
     const xhr = new XMLHttpRequest()
     xhr.responseType = 'blob';
-    xhr.open('GET', "http://localhost:52259/autoload.js?bokeh-autoload-element=e5d9a12a-6f86-47c3-8a10-d468432472ea&bokeh-absolute-url=http://localhost:52259&resources=none", true);
+    xhr.open('GET', "http://localhost:50113/autoload.js?bokeh-autoload-element=ec17fef4-ed37-4f55-96e2-00a6edcbd859&bokeh-absolute-url=http://localhost:50113&resources=none", true);
     xhr.withCredentials = false;
     xhr.onload = function (event) {
       const script = document.createElement('script');
@@ -2291,7 +2285,7 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 </div>
 <p>While in the model without <em>cis</em>-inhibition we saw that most cells had converged to their respective steady-state <span class="math inline">\((N_i,D_i)\)</span> states by around 15 dimensionless time units, in this model most cells have converged to their <span class="math inline">\((N_i,D_i)\)</span> states within about 7 dimensionless time units, essentially doubling the speed of the pattern formation! Interestingly, we also see from our plot in the <span class="math inline">\((N_i,D_i)\)</span> plane that the shape of the trajectories the cells take toward their final states is also quite different compared to the model without <em>cis</em>-inhibition.</p>
 <p>We can also plot out the spatial grid for the simulation, as before, to see if the <em>cis</em>-inhibition model was able to successfully generate a lateral inhibition pattern.</p>
-<div id="0bc7ec29" class="cell" data-execution_count="8">
+<div id="b9427164" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Widgets for controlling time</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>time_slider <span class="op">=</span> bokeh.models.Slider(title<span class="op">=</span><span class="st">"time index"</span>, start<span class="op">=</span><span class="dv">0</span>, end<span class="op">=</span>numpoints<span class="op">-</span><span class="dv">1</span>, step<span class="op">=</span><span class="dv">1</span>, value<span class="op">=</span>numpoints<span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2378,11 +2372,11 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 <span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(hex_layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<script id="aa355e4e-a9e6-4528-b97a-3f08a4652eba">
+<script id="f56e56a0-6a73-4fe9-a775-eea1a6692675">
   (function() {
     const xhr = new XMLHttpRequest()
     xhr.responseType = 'blob';
-    xhr.open('GET', "http://localhost:52260/autoload.js?bokeh-autoload-element=aa355e4e-a9e6-4528-b97a-3f08a4652eba&bokeh-absolute-url=http://localhost:52260&resources=none", true);
+    xhr.open('GET', "http://localhost:50114/autoload.js?bokeh-autoload-element=f56e56a0-6a73-4fe9-a775-eea1a6692675&bokeh-absolute-url=http://localhost:50114&resources=none", true);
     xhr.withCredentials = false;
     xhr.onload = function (event) {
       const script = document.createElement('script');
@@ -2413,7 +2407,7 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 </figure>
 </div>
 <p>As we stated above, the presence of a positive eigenvalue in this region of parameter space is not a guarantee of pattern formation. However, once we have identified this potential patterning region, we can simulate our model with the appropriate parameter values and determine whether it is able to perform pattern formation. We do so below:</p>
-<div id="ae28e4c8" class="cell" data-execution_count="9">
+<div id="362dc3e6" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>betaN <span class="op">=</span> <span class="dv">30</span> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>betaD <span class="op">=</span> <span class="dv">1000</span></span>
@@ -2460,7 +2454,7 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 <span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>x4 <span class="op">=</span> x.reshape((numrows,numrows,<span class="dv">3</span>,numpoints))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="9cec4549" class="cell" data-execution_count="10">
+<div id="615973cd" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up plots</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pT <span class="op">=</span> bokeh.plotting.figure(</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    frame_width<span class="op">=</span><span class="dv">375</span>, frame_height<span class="op">=</span><span class="dv">200</span>,</span>
@@ -2564,11 +2558,11 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 <span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(LIMI_hex_tcourse_layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<script id="e7565d22-75c0-41b5-b6de-5857b4e1e8f7">
+<script id="f1b45a82-fd8b-4274-a914-f102f3cc266d">
   (function() {
     const xhr = new XMLHttpRequest()
     xhr.responseType = 'blob';
-    xhr.open('GET', "http://localhost:52262/autoload.js?bokeh-autoload-element=e7565d22-75c0-41b5-b6de-5857b4e1e8f7&bokeh-absolute-url=http://localhost:52262&resources=none", true);
+    xhr.open('GET', "http://localhost:50115/autoload.js?bokeh-autoload-element=f1b45a82-fd8b-4274-a914-f102f3cc266d&bokeh-absolute-url=http://localhost:50115&resources=none", true);
     xhr.withCredentials = false;
     xhr.onload = function (event) {
       const script = document.createElement('script');
@@ -2582,7 +2576,7 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 </div>
 </div>
 <p>We see a different type of timecourse trajectory from what we have seen before in our models— first of all, we notice that the dynamics are much slower than we have seen before. But also we can see, particularly in the <span class="math inline">\((N_i, D_i)\)</span> plot, that the system takes a less direct path to its final steady state, sometimes doubling back on itself before getting there. We also see that some outlier cells take a very long time to eventually converge to their steady state. But are the cells really forming a lateral inhibition pattern? We must plot out the spatial grid to know for sure.</p>
-<div id="4a57f305" class="cell" data-execution_count="11">
+<div id="118d4eeb" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Widgets for controlling time</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>time_slider <span class="op">=</span> bokeh.models.Slider(title<span class="op">=</span><span class="st">"time index"</span>, start<span class="op">=</span><span class="dv">0</span>, end<span class="op">=</span>numpoints<span class="op">-</span><span class="dv">1</span>, step<span class="op">=</span><span class="dv">1</span>, value<span class="op">=</span>numpoints<span class="op">-</span><span class="dv">1</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2665,11 +2659,11 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 <span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>    bokeh.io.show(hex_layout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<script id="d05a2298-246a-43e8-89b0-85ca420c9b79">
+<script id="d03648d8-fa64-4633-83f3-733cd3c03b3c">
   (function() {
     const xhr = new XMLHttpRequest()
     xhr.responseType = 'blob';
-    xhr.open('GET', "http://localhost:52263/autoload.js?bokeh-autoload-element=d05a2298-246a-43e8-89b0-85ca420c9b79&bokeh-absolute-url=http://localhost:52263&resources=none", true);
+    xhr.open('GET', "http://localhost:50116/autoload.js?bokeh-autoload-element=d03648d8-fa64-4633-83f3-733cd3c03b3c&bokeh-absolute-url=http://localhost:50116&resources=none", true);
     xhr.withCredentials = false;
     xhr.onload = function (event) {
       const script = document.createElement('script');
@@ -2687,7 +2681,7 @@ $$ {#eq-dummy_label_5Ws14ngtDvG543Wo}
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="0d2d2e3c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:08.101915Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:08.094114Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="12">
+<div id="bf8203da" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;ExecuteTime&quot;,&quot;value&quot;:{&quot;end_time&quot;:&quot;2019-06-05T00:52:08.101915Z&quot;,&quot;start_time&quot;:&quot;2019-06-05T00:52:08.094114Z&quot;}}" data-tags="[&quot;hide-input&quot;]" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,scipy,bokeh,matplotlib,colorcet,biocircuits,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">

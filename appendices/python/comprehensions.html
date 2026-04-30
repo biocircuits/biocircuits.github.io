@@ -669,20 +669,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercises/coupled_delay_oscillators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.1: Coupled delay oscillators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../exercises/delay_oscillator_positive_feedback.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.2: Tuning delay oscillators with positive feedback</span></a>
+ <span class="menu-text">Exercise 11.1: Tuning delay oscillators with positive feedback</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../exercises/controlling_p53_levels.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exercise 11.3: Controlling p53 levels</span></a>
+ <span class="menu-text">Exercise 11.2: Controlling p53 levels</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -889,12 +883,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/comprehensions.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/comprehensions.ipynb">Download notebook</a></p>
 <hr>
-<div id="d11a7f8a" class="cell" data-execution_count="1">
+<div id="31a9a5c4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 <p>We have learned how to build lists, tuples, arrays, etc. by constructing them directly. E.g., <code>list(range(10))</code> gives us a list of all integers between 0 and 9 inclusive. But what if we want to build a list or array by iterating the contains something a bit more complicated. For example, let’s say we want to get a list of all prime numbers less than 1000. This could be a bit cumbersome, even with <code>sympy</code>’s lovely <code>isprime()</code> function. (We <strong>imported</strong> <a href="https://www.sympy.org/">sympy</a> in the first cell; we will learn about importing packages in the next section, but for now we will simply use it without explaining exactly how importing works.)</p>
-<div id="ded79abc" class="cell" data-execution_count="2">
+<div id="875b721a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Largest number to consider</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n_max <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -914,7 +908,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="list-comprehensions" class="level2">
 <h2 class="anchored" data-anchor-id="list-comprehensions">List comprehensions</h2>
 <p>As is often the case, this is best seen by example. We will create the same Numpy array of primes using a list comprehension.</p>
-<div id="493e2fd6" class="cell" data-execution_count="3">
+<div id="1b0518a3" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>primes <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(n_max) <span class="cf">if</span> sympy.isprime(x)]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look</span></span>
@@ -922,7 +916,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>In one line, we have made our list of primes! The list comprehension is enclosed in brackets. The first part, <code>x</code>, is an expression that will be inserted into the list. Next comes a <code>for</code> statement to produce the iterator. Finally, there is a conditional; if the conditional evaluates True, then the expression expression is included in the list.</p>
 <p>If a condition is absent, all entries are put in the list. For example, if we didn’t want to just do <code>list(range(100))</code> to get integers, we could use a list comprehension without a conditional.</p>
-<div id="0d2bcced" class="cell" data-execution_count="4">
+<div id="686c9f6e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Give same result as list(range(100))</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_list_of_ints <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -931,7 +925,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="another-example-list-comprehension" class="level3">
 <h3 class="anchored" data-anchor-id="another-example-list-comprehension">Another example list comprehension</h3>
 <p>Let’s say we wanted to build a list containing the information about the 2018 Nobel laureates. We have, in three separate arrays, their names, nationalities, and category for the prize.</p>
-<div id="4b2f1785" class="cell" data-execution_count="5">
+<div id="eb28a3fa" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> (</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Frances Arnold"</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"George Smith"</span>,</span>
@@ -981,12 +975,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>With these tuples in hand, we can use a list comprehension to build a nice list of tuples containing the information about the laureates.</p>
-<div id="0a863ac1" class="cell" data-execution_count="6">
+<div id="2ce1ca19" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>[(cat, name, nat) <span class="cf">for</span> name, nat, cat <span class="kw">in</span> <span class="bu">zip</span>(names, nationalities, categories)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Notice that we do not have to use <code>range()</code>; we can use any iterator, including one that puts out multiple values using <code>zip()</code>.</p>
 <p>Now, let’s say we are really interested in the prize in chemistry. We can add an <code>if</code> statement to the comprehension like we did in the prime number example.</p>
-<div id="f686d314" class="cell" data-execution_count="7">
+<div id="0c0c098c" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    (cat, name, nat)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, nat, cat <span class="kw">in</span> <span class="bu">zip</span>(names, nationalities, categories)</span>
@@ -994,7 +988,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>(Note here that we split the list comprehension over many lines for readability, which is perfectly legal.) We can also nest iterators. For example, let’s say the the chemistry and medicine prize winners got together in Sweden and wanted to play against each other in basketball. There are three chemistry winners, but only two medicine winners. So, to play 2-on-2, we would have to choose only two chemistry laureates. So, let’s make a list of all possible pairs of chemistry winners.</p>
-<div id="3c2279e1" class="cell" data-execution_count="8">
+<div id="8d24c739" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First get list of chemistry laureates</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>chem_names <span class="op">=</span> [name <span class="cf">for</span> name, cat <span class="kw">in</span> <span class="bu">zip</span>(names, categories) <span class="cf">if</span> cat <span class="op">==</span> <span class="st">"Chemistry"</span>]</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1025,7 +1019,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="what-if-you-want-an-else-statement-in-a-list-comprehension" class="level3">
 <h3 class="anchored" data-anchor-id="what-if-you-want-an-else-statement-in-a-list-comprehension">What if you want an else statement in a list comprehension?</h3>
 <p>Now, let’s say that we deem “Physiology or Medicine” to be too long of a title for the category of the prize. We instead want to substitute that phrase with “Medicine” for brevity. We might construct the list like this:</p>
-<div id="81dc7298" class="cell" data-execution_count="9">
+<div id="823731d9" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>[</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Medicine"</span>, name, nat)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, nat, cat <span class="kw">in</span> <span class="bu">zip</span>(names, nationalities, categories)</span>
@@ -1033,7 +1027,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This leaves out all of the other prizes. So, we need an <code>else</code> statement. To include all prizes, we might try it like this.</p>
-<div id="e96050a7" class="cell" data-execution_count="10">
+<div id="eabe3f65" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>[</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Medicine"</span>, name, nat)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, nat, cat <span class="kw">in</span> <span class="bu">zip</span>(names, nationalities, categories)</span>
@@ -1044,7 +1038,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>However, the <code>expression_to_put_in_list</code> can be any valid Python expression. The following is a valid Python expression:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(<span class="st">"Medicine"</span>, name, nat) <span class="cf">if</span> cat <span class="op">==</span> <span class="st">"Physiology or Medicine"</span> <span class="cf">else</span> (cat, name, nat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>So, we can still use a list comprehension to build the list.</p>
-<div id="b5819cfb" class="cell" data-execution_count="11">
+<div id="0c679ba1" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>[</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"Medicine"</span>, name, nat) <span class="cf">if</span> cat <span class="op">==</span> <span class="st">"Physiology or Medicine"</span> <span class="cf">else</span> (cat, name, nat)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, nat, cat <span class="kw">in</span> <span class="bu">zip</span>(names, nationalities, categories)</span>
@@ -1057,7 +1051,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dictionary-comprehensions" class="level2">
 <h2 class="anchored" data-anchor-id="dictionary-comprehensions">Dictionary comprehensions</h2>
 <p>In addition to list comprehensions, Python also allows for dictionary comprehensions (and set comprehensions, but we will not discuss sets). To demonstrate a dictionary comprehension, let’s use the name of the laureate as a key and the values in the dictionary are their nationality and category.</p>
-<div id="f3d4018d" class="cell" data-execution_count="12">
+<div id="9ddc1a3f" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>{name: (cat, nat) <span class="cf">for</span> name, nat, cat <span class="kw">in</span> <span class="bu">zip</span>(names, nationalities, categories)}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Aaaand we have our dictionary! This is quite a powerful way to construct this, and you may find dictionary comprehensions quite useful, in particular in specifying <code>**kwargs</code>.</p>
@@ -1072,7 +1066,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="aefde696" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="13">
+<div id="e5e65fd9" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
