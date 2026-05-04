@@ -883,7 +883,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/intro_to_pandas.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/intro_to_pandas.ipynb">Download notebook</a></p>
 <hr>
-<div id="f49e1365" class="cell" data-execution_count="1">
+<div id="22cf76b1" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -905,13 +905,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We will explore using Pandas the data set from <a href="../../chapters/noise.html">the chapter on noise</a>, acquired by Elowitz and coworkers (<a href="https://doi.org/10.1126/science.1070919">Elowitz, et al., 2000</a>). The data are available in <a href="../chapters/data/elowitz_et_al_2002_fig_3a.csv">this CSV file</a>.</p>
 <p>You will notice in the first cell of this notebook that we set a different path to where data sets are located, stored in the <code>data_path</code> variable. If you running this notebook on Colab, the path to the data set goes directly to the URL where it is hosted. If you are running locally on your own machine, be sure to download the CSV file and move it to a <code>data</code> directory in your current directory.</p>
 <p>To access the directory, we can use the convenient <code>os.path.join()</code> function to give the full path.</p>
-<div id="1b75aeb7" class="cell" data-execution_count="2">
+<div id="b81cdcce" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>os.path.join(data_path, <span class="st">"elowitz_et_al_2002_fig_3a.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We will use this convenient way of specifying paths when we load in data files.</p>
 <p>The data set contains normalized fluorescence levels and measured noise for collections of bacterial cells in separate experiments featuring varying levels of inducer.</p>
 <p>Let’s look at the first few lines of the file.</p>
-<div id="bc9244d0" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="3">
+<div id="92d7f714" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(os.path.join(data_path, <span class="st">"elowitz_et_al_2002_fig_3a.csv"</span>), <span class="st">"r"</span>) <span class="im">as</span> f:</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, line <span class="kw">in</span> <span class="bu">enumerate</span>(f):</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:</span>
@@ -923,18 +923,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="reading-in-data" class="level2">
 <h2 class="anchored" data-anchor-id="reading-in-data">Reading in data</h2>
 <p>Take a look at the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">doc string of pd.read_csv()</a>. Holy cow! There are so many options we can specify for reading in a CSV file. You will likely find reasons to use many of these throughout your research. We do not really need to specify keyword arguments for this data set, fortunately. So, let’s proceed to load in the data set.</p>
-<div id="9e11c9ab" class="cell" data-execution_count="4">
+<div id="609e3f1c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(os.path.join(data_path, <span class="st">"elowitz_et_al_2002_fig_3a.csv"</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the type</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We now have the data stored in a data frame. We can look at it in the Jupyter notebook, since Jupyter will display it in a well-organized, pretty way.</p>
-<div id="c6842add" class="cell" data-execution_count="5">
+<div id="7cbcb5b9" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This is a nice representation of the data, but we really do not need to display that many rows of the data frame in order to understand its structure. Instead, we can use the <code>head()</code> method of data frames to look at the first few rows.</p>
-<div id="39c3fcb5" class="cell" data-execution_count="6">
+<div id="2d78f137" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This is more manageable and gives us an overview of what the columns are.</p>
@@ -942,19 +942,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="indexing-data-frames" class="level2">
 <h2 class="anchored" data-anchor-id="indexing-data-frames">Indexing data frames</h2>
 <p>The data frame is a convenient data structure for many reasons that will become clear as we start exploring. Let’s start by looking at how data frames are indexed. Let’s try to look at the first row.</p>
-<div id="2d502c80" class="cell" data-execution_count="7">
+<div id="9ba759c6" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Yikes! Lots of errors. The problem is that we tried to index numerically by row. <strong>We index DataFrames by columns.</strong> And there is no column that has the name <code>0</code> in this data frame, though there could be. Instead, a might want to look at the column with the CFP intensity.</p>
-<div id="633fc035" class="cell" data-execution_count="8">
+<div id="227b4360" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"CFP"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This gave us the numbers we were after. Notice that when it was printed, the index of the rows came along with it. If we wanted to pull out a fluorescence value, say corresponding to index <code>4</code>, we can do that.</p>
-<div id="15b98685" class="cell" data-execution_count="9">
+<div id="b30ed959" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"CFP"</span>][<span class="dv">4</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>However, this is <strong>not</strong> the preferred way to do this. It is better to use <code>.loc</code>. This give the location in the data frame we want.</p>
-<div id="098d13f5" class="cell" data-execution_count="10">
+<div id="660c904c" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">4</span>, <span class="st">"CFP"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note that following <code>.loc</code>, we have the index by row then column, separated by a comma, in brackets. It is also important to note that <strong>row indices need not be integers</strong>. And you should not count on them being integers. In practice you will almost never use row indices, but rather use <strong>Boolean indexing</strong>.</p>
@@ -962,18 +962,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="boolean-indexing-of-data-frames" class="level2">
 <h2 class="anchored" data-anchor-id="boolean-indexing-of-data-frames">Boolean indexing of data frames</h2>
 <p>Let’s say I wanted the CFP fluorescent intensity only for the m22 strain. I can use Boolean indexing to specify the rows of interest. Specifically, I want the row for which <code>df['strain'] == 'm22'</code>. You can essentially plop this syntax directly when using <code>.loc</code>.</p>
-<div id="15fd76bf" class="cell" data-execution_count="11">
+<div id="ab9f1af4" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">"strain"</span>] <span class="op">==</span> <span class="st">"m22"</span>, <span class="st">"CFP"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can extend this to ask for even more specific records, like the record for each bacterium from the m22 strain with CFP fluorescence above 2500 and YFP fluorescence below 1200. We can again use Boolean indexing, but we need to use an <code>&amp;</code> operator. We did not cover this bitwise operator before, but the syntax is self-explanatory in the example below. Note that it is important that each Boolean operation you are doing is in parentheses because of the precedence of the operators involved.</p>
-<div id="8ec58803" class="cell" data-execution_count="12">
+<div id="39249125" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.loc[</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    (df[<span class="st">"strain"</span>] <span class="op">==</span> <span class="st">"m22"</span>) <span class="op">&amp;</span> (df[<span class="st">"CFP"</span>] <span class="op">&gt;</span> <span class="dv">2500</span>) <span class="op">&amp;</span> (df[<span class="st">"YFP"</span>] <span class="op">&lt;</span> <span class="dv">1200</span>),</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    :,</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>There were only two records. The syntax to accomplish this is a bit cumbersome. The code is clearer if we set up our Boolean indexing first, as follows.</p>
-<div id="cc58aa38" class="cell" data-execution_count="13">
+<div id="19729394" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>inds <span class="op">=</span> (df[<span class="st">"strain"</span>] <span class="op">==</span> <span class="st">"m22"</span>) <span class="op">&amp;</span> (df[<span class="st">"CFP"</span>] <span class="op">&gt;</span> <span class="dv">2500</span>) <span class="op">&amp;</span> (df[<span class="st">"YFP"</span>] <span class="op">&lt;</span> <span class="dv">1200</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>df.loc[inds, :]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -981,7 +981,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note that if we want all columns, we can use <code>:</code> for the column index. Similarly, if we want all rows, we use <code>:</code> for the row index.</p>
 <p>Notice also that <code>inds</code> is an array (actually a Pandas <code>Series</code>, essentially a <code>DataFrame</code> with one column) of <code>True</code>s and <code>False</code>s. When we index with it using <code>.loc</code>, we get back rows where <code>inds</code> is <code>True</code>.</p>
 <p>Of interest in this exercise in Boolean indexing is that we never had to write a loop. To produce our indices, we could have done the following.</p>
-<div id="0bb44e04" class="cell" data-execution_count="14">
+<div id="69eb84ba" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize array of Boolean indices</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>inds <span class="op">=</span> [<span class="va">False</span>] <span class="op">*</span> <span class="bu">len</span>(df)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -998,7 +998,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="calculating-with-data-frames" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-with-data-frames">Calculating with data frames</h2>
 <p>We can do elementwise calculations on elements of a data frame just like we could with NumPy arrays.</p>
-<div id="063e6de3" class="cell" data-execution_count="15">
+<div id="2d1c02e7" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do silly, arbitrary calculations</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"CFP divided by 1000"</span>] <span class="op">=</span> df[<span class="st">"CFP"</span>] <span class="op">/</span> <span class="dv">1000</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"CFP + YPF"</span>] <span class="op">=</span> df[<span class="st">"CFP"</span>] <span class="op">+</span> df[<span class="st">"YFP"</span>]</span>
@@ -1007,20 +1007,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can also apply NumPy functions, e.g.&nbsp;to compute the mean CFP fluorescence (irrespective of strain).</p>
-<div id="126270cd" class="cell" data-execution_count="16">
+<div id="236e10f9" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>np.mean(df[<span class="st">"CFP"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="extracting-data-as-numpy-arrays" class="level2">
 <h2 class="anchored" data-anchor-id="extracting-data-as-numpy-arrays">Extracting data as NumPy arrays</h2>
 <p>We sometimes want to take a column or other subset of a data frame and have it available as a NumPy array (usually for performance reasons). The <code>values</code> attribute of a data frame allows for this. As an example, if we want to take out all of the CFP fluorescence values for the d22 strain as a NumPy array, we can do the following.</p>
-<div id="2d7df3d7" class="cell" data-execution_count="17">
+<div id="2912bc7b" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">"strain"</span>]<span class="op">==</span><span class="st">"d22"</span>, <span class="st">"CFP"</span>].values</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="87d92c12" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="18">
+<div id="4193069b" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,pandas,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

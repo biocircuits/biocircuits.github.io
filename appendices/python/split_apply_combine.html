@@ -883,7 +883,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/split_apply_combine.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/split_apply_combine.ipynb">Download notebook</a></p>
 <hr>
-<div id="7f3796f4" class="cell" data-execution_count="1">
+<div id="77741cb7" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Colab setup ------------------</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, sys</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">"google.colab"</span> <span class="kw">in</span> sys.modules:</span>
@@ -928,7 +928,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-data-set" class="level2">
 <h2 class="anchored" data-anchor-id="the-data-set">The data set</h2>
 <p>We will use the same data set as in the <a href="../../appendices/python/intro_to_pandas.html">previous section</a>.</p>
-<div id="5f2097a6" class="cell" data-execution_count="2">
+<div id="5b72df7e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(os.path.join(data_path, <span class="st">"elowitz_et_al_2002_fig_3a.csv"</span>))</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look</span></span>
@@ -950,25 +950,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="aggregation-median-percent-correct" class="level3">
 <h3 class="anchored" data-anchor-id="aggregation-median-percent-correct">Aggregation: Median percent correct</h3>
 <p>Let’s go ahead and do our first split-apply-combine on this tidy data set. First, we will split the data set up by strain.</p>
-<div id="0e49908a" class="cell" data-execution_count="3">
+<div id="d473d398" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">"strain"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>grouped</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>There is not much to see in the <code>DataFrameGroupBy</code> object that resulted. But there is a lot we can do with this object. Typing <code>grouped.</code> and hitting tab will show you the many possibilities. For most of these possibilities, the apply and combine steps happen together and a new data frame is returned. The <code>grouped.median()</code> method is exactly what we want.</p>
-<div id="c427f6a1" class="cell" data-execution_count="4">
+<div id="37c65c5e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_median <span class="op">=</span> grouped.median()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df_median</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The outputted data frame has the medians of all quantities, including the CFP intensity that we wanted. Note that this data frame has <code>strain</code> as the name of the row index. If we want to instead keep <code>strain</code> (which, remember, is what we used to split up the data set before we computed the summary statistics) as a column, we can use the <code>reset_index()</code> method.</p>
-<div id="664d04de" class="cell" data-execution_count="5">
+<div id="9c1763a0" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_median.reset_index()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note, though, that this was not done in-place. <code>df_median</code> still has an index labeled <code>'strain'</code>. If you want to update your data frame, you have to explicitly do so with an assignment operator.</p>
-<div id="96db1544" class="cell" data-execution_count="6">
+<div id="292c78ba" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_median <span class="op">=</span> df_median.reset_index()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This type of operation is called an <strong>aggregation</strong>. That is, we split the data set up into groups, and then computed a summary statistic for each group, in this case the median.</p>
@@ -977,18 +977,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="transformation" class="level2">
 <h2 class="anchored" data-anchor-id="transformation">Transformation</h2>
 <p>Instead of summarizing data in a group with single summary statistics by aggregation, we can also do a <strong>transformation</strong> in which each row gets a new entry within a given group. As a simple example, we could generate a column that gives the rank of each cell in terms of CFP intensity for each strain. That is, we perform a rank ordering within the m22 strain and within the d22 strain.</p>
-<div id="f865e1e7" class="cell" data-execution_count="7">
+<div id="2b88d7fc" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>grouped[<span class="st">'CFP'</span>].rank()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This gave us a column of ranks with the indexing of the original data frame preserved. We can put this column into the data frame.</p>
-<div id="e7097197" class="cell" data-execution_count="8">
+<div id="60d64bdd" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'rank grouped by strain'</span>] <span class="op">=</span> grouped[<span class="st">'CFP'</span>].rank(method<span class="op">=</span><span class="st">'first'</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To verify that this worked correctly, and also to show some nice sorting properties of data frames, we will sort the data frame by <code>strain</code> and then by <code>CFP</code> and make sure the ranks worked accordingly.</p>
-<div id="5147376f" class="cell" data-execution_count="9">
+<div id="f1db85bc" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">"strain"</span>, <span class="st">"CFP"</span>])</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look</span></span>
@@ -1000,13 +1000,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="aggregating-and-transforming-with-custom-functions">Aggregating and transforming with custom functions</h2>
 <p>Let’s say we want to compute the coefficient of variation (CoV, the standard deviation divided by the mean) of data in columns of groups in the data frame. There is no built-in function to do this. We have to write our own function to compute the CoV and then use it with the <code>agg()</code> method of a <code>DataFrameGroupBy</code> object. In the function below, the values of each column are denoted by <code>data</code>.</p>
 <p>To compute the coefficient of variation, we will use one more Numpy function beyond <code>np.mean()</code> that you have already seen, <code>np.std()</code>.</p>
-<div id="637996c6" class="cell" data-execution_count="10">
+<div id="c5e9bc62" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> coeff_of_var(data):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Compute coefficient of variation from an array of data."""</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.std(data) <span class="op">/</span> np.mean(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we can apply it as an aggregating function, omitting the <code>'strain'</code> column because it is categorical and we cannot compute aggregate statistics.</p>
-<div id="96158cb1" class="cell" data-execution_count="11">
+<div id="dc2a5193" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> df.columns[(df.columns <span class="op">!=</span> <span class="st">"strain"</span>) <span class="op">&amp;</span> (df.columns <span class="op">!=</span> <span class="st">"rank grouped by strain"</span>)]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>grouped[cols].agg(coeff_of_var)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1014,7 +1014,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="looping-over-a-groupby-object" class="level2">
 <h2 class="anchored" data-anchor-id="looping-over-a-groupby-object">Looping over a GroupBy object</h2>
 <p>While the <code>GroupBy</code> methods we have learned so far (like <code>transform()</code> and <code>agg()</code>) are useful and lead to concise code, we sometimes want to loop over the groups of a <code>GroupBy</code> object. This often comes up in plotting applications. As an example, I will compute the mean CFP fluorescent intensity for each strain.</p>
-<div id="e0a6913c" class="cell" data-execution_count="12">
+<div id="07a8b76a" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> strain, group <span class="kw">in</span> df.groupby(<span class="st">"strain"</span>):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(strain, <span class="st">': '</span>, group[<span class="st">"CFP"</span>].median())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1023,7 +1023,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="normalizing-the-intensities" class="level2">
 <h2 class="anchored" data-anchor-id="normalizing-the-intensities">Normalizing the intensities</h2>
 <p>With all of these skills in place, let us now do a useful calculation and normalize the fluorescent intensities for each fluorophore in each strain.</p>
-<div id="60ea7f96" class="cell" data-execution_count="13">
+<div id="5956bec4" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group_keys = False necessary keep index of original df</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">"norm CFP"</span>, <span class="st">"norm YFP"</span>]] <span class="op">=</span> df.groupby(<span class="st">"strain"</span>, group_keys<span class="op">=</span><span class="va">False</span>)[</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"CFP"</span>, <span class="st">"YFP"</span>]</span>
@@ -1034,7 +1034,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="420eb177" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="14">
+<div id="9e69014e" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p numpy,pandas,jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

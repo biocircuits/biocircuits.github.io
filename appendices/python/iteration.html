@@ -887,7 +887,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introducing-the-for-loop" class="level2">
 <h2 class="anchored" data-anchor-id="introducing-the-for-loop">Introducing the for loop</h2>
 <p>The first method of iteration we will discuss is the <strong>for loop</strong>. As an example of its use, we compute the GC content of an RNA sequence.</p>
-<div id="d5237e3d" class="cell" data-execution_count="1">
+<div id="3adfaa56" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The sequence we want to analyze</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>seq <span class="op">=</span> <span class="st">'GACAGACUCCAUGCACGUGGGUAUCUGUC'</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -917,14 +917,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="aside-the-len-function" class="level3">
 <h3 class="anchored" data-anchor-id="aside-the-len-function">Aside: the len() function</h3>
 <p>Note in the last example that we determined the length of the RNA sequence by iterating the <code>len_seq</code> counter within the <code>for</code> loop. This works, but Python has a built-in function (like <code>print()</code> is a built-in function) to compute the length of a string (or list, tuple, or other <em>sequence</em>). To find out the length of a <em>sequence</em>, simply use it as an argument to the <code>len()</code> function.</p>
-<div id="eb89ecb8" class="cell" data-execution_count="2">
+<div id="97b9f374" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(seq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="example-and-watchout-modifying-a-list" class="level3">
 <h3 class="anchored" data-anchor-id="example-and-watchout-modifying-a-list">Example and watchout: modifying a list</h3>
 <p>Let’s look at another example of iterating through a list. Say we have a list of integers, and we want to change it by doubling each one. Let’s just do it.</p>
-<div id="9a788499" class="cell" data-execution_count="3">
+<div id="a28071b0" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll do one through 5</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_integers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -937,7 +937,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Whoa! It didn’t seem to double any of the integers! This is because <code>my_integers</code> was converted to an <strong>iterator</strong> in the <code>for</code> clause, and the iterator returns a <em>copy</em> of the item in a list, not a reference to it. Therefore, the <code>n</code> inside the <code>for</code> block is not a view into the original list, and doubling it does nothing meaningful.</p>
 <p>We’ve seen how to change individual list elements with indexing:</p>
-<div id="9041cf86" class="cell" data-execution_count="4">
+<div id="13146d02" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Don't do things this way</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_integers[<span class="dv">0</span>] <span class="op">*=</span> <span class="dv">2</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>my_integers[<span class="dv">1</span>] <span class="op">*=</span> <span class="dv">2</span></span>
@@ -958,13 +958,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-range-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-range-function">The range() function</h3>
 <p>The <code>range()</code> function gives an iterable that enables counting. Let’s look at an example.</p>
-<div id="ee1a0ae9" class="cell" data-execution_count="5">
+<div id="07129fb1" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">'  '</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We see that <code>range(10)</code> gives us ten numbers, from <code>0</code> to <code>9</code>. As with indexing, <code>range()</code> inclusively starts at zero by default, and the ending is exclusive.</p>
 <p>It turns out that the arguments of the <code>range()</code> function work much like indexing. If you have a single argument, you get that many integers, starting at 0 and incrementing by one. If you give two arguments, you start inclusively at the first and increment by one ending exclusively at the second argument. Finally, you can specify a stride with the third argument.</p>
-<div id="b5fcf389" class="cell" data-execution_count="6">
+<div id="447cb2d1" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print numbers 2 through 9</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">10</span>):</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">'  '</span>)</span>
@@ -977,11 +977,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">'     '</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>It is often useful to make a list or tuple that has the same entries that a corresponding <code>range</code> object would have. We can do this with type conversion.</p>
-<div id="7ea8a7a7" class="cell" data-execution_count="7">
+<div id="3a43b96a" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can use the <code>range()</code> function along with the <code>len()</code> function on lists to double the elements of our list from a bit ago:</p>
-<div id="0c8d4346" class="cell" data-execution_count="8">
+<div id="118d4ebb" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_integers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Since len(my_integers) = 5, this takes i from 0 to 4, </span></span>
@@ -996,7 +996,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-enumerate-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-enumerate-function">The enumerate() function</h3>
 <p>Let’s say we want to print the indices of all <code>G</code> bases in a DNA sequence. We could do this by modifying our previous program.</p>
-<div id="6e7a1510" class="cell" data-execution_count="9">
+<div id="af351098" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize GC counter</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n_gc <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1010,21 +1010,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    len_seq <span class="op">+=</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This is not so bad, but there is an easier way to do this. The <code>enumerate()</code> function gives an iterator that provides <em>both</em> the index and the item of a <em>sequence</em>. Again, this is best demonstrated in practice.</p>
-<div id="40bf3ea1" class="cell" data-execution_count="10">
+<div id="ffde5bdf" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop through sequence and print index of G's</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, base <span class="kw">in</span> <span class="bu">enumerate</span>(seq):</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> base <span class="kw">in</span> <span class="st">'Gg'</span>:</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(i, end<span class="op">=</span><span class="st">'  '</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <code>enumerate()</code> function allowed us to use an index and a base at the same time. To make it more clear, we can print the index and base type for each base in the sequence.</p>
-<div id="9f0b35f4" class="cell" data-execution_count="11">
+<div id="6f1f7eb9" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print index and identity of bases</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, base <span class="kw">in</span> <span class="bu">enumerate</span>(seq):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i, base)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <code>enumerate()</code> function is really useful and should be used in favor of just doing indexing. For example, many programmers, especially those first trained in lower-level languages, would write the above code similar to how we did the list doubling, with the <code>range()</code> and <code>len()</code> functions, but this is not good practice in Python.</p>
 <p>Using <code>enumerate()</code>, the list doubling code looks like this:</p>
-<div id="85892c18" class="cell" data-execution_count="12">
+<div id="2093b037" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>my_integers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Double each one</span></span>
@@ -1037,7 +1037,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>enumerate()</code> is more generic and the overhead for returning a reference to an object isn’t an issue. The <code>range(len())</code> construct will break on an object without support for <code>len()</code>. In addition, you are more likely to introduce bugs by imposing indexing on objects that are iterable but not unambiguously indexable. It is better to use the <code>enumerate()</code> function.</p>
 <p>Note that we used the underscore, <code>_</code>, as a throwaway variable that we do not use. There is no rule for this, but this is generally accepted Python syntax and helps signal that you are not going to use the variable.</p>
 <p>One last gotcha: if we tried to do a similar technique with a string, we get a <code>TypeError</code> because a string is immutable. We’ll revisit examples like this in <a href="../../appendices/python/string_methods.html">a lesson on string methods</a>.</p>
-<div id="87cbc00d" class="cell" data-execution_count="13">
+<div id="c9d7c7b1" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try to convert capital G to lower g</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, base <span class="kw">in</span> <span class="bu">enumerate</span>(seq):</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> base <span class="op">==</span> <span class="st">'G'</span>:</span>
@@ -1047,7 +1047,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-zip-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-zip-function">The zip() function</h3>
 <p>The <code>zip()</code> function enables us to iterate over several iterables at once. In the example below we iterate over the jersey numbers, names, and positions of the players on the US women’s national soccer team who were named to the best eleven of the 2019 World Cup in France.</p>
-<div id="98e70336" class="cell" data-execution_count="14">
+<div id="439d4ac5" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> (<span class="st">'Dunn'</span>, <span class="st">'Ertz'</span>, <span class="st">'Lavelle'</span>, <span class="st">'Rapinoe'</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> (<span class="st">'D'</span>, <span class="st">'MF'</span>, <span class="st">'MF'</span>, <span class="st">'F'</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> (<span class="dv">19</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="dv">15</span>)</span>
@@ -1059,7 +1059,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-reversed-function" class="level3">
 <h3 class="anchored" data-anchor-id="the-reversed-function">The reversed() function</h3>
 <p>This function is useful for giving an iterator that goes in the reverse direction. We’ll see that this can be convenient in the next lesson. For now, let’s pretend we’re NASA and need to count down.</p>
-<div id="f7e38af5" class="cell" data-execution_count="15">
+<div id="e2ff801b" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>count_up <span class="op">=</span> (<span class="st">'ignition'</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span> ,<span class="dv">9</span>, <span class="dv">10</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> count <span class="kw">in</span> <span class="bu">reversed</span>(count_up):</span>
@@ -1071,7 +1071,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="the-while-loop">The while loop</h2>
 <p>The <code>for</code> loop is very powerful and allows us to construct iterative calculations. When we use a <code>for</code> loop, we need to set up an iterator. A <code>while</code> loop, on the other hand, allows iteration until a conditional expression evaluates <code>False</code>.</p>
 <p>As an example of a <code>while</code> loop, we will calculate the length of a sequence before hitting a start codon.</p>
-<div id="94aaed2a" class="cell" data-execution_count="16">
+<div id="911a8cba" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define start codon</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>start_codon <span class="op">=</span> <span class="st">'AUG'</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1101,11 +1101,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the result</span></span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The codon starts at index'</span>, i)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The reason this runs forever is that the conditional expression in the <code>while</code> statement never returns <code>False</code>. If we slice a string beyond the length of the string we get an empty string result.</p>
-<div id="d220e53b" class="cell" data-execution_count="17">
+<div id="2d7e0cea" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>seq[<span class="dv">100</span>:<span class="dv">103</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This does not equal the codon we’re interested in, so the <strong><code>while</code></strong> loop keeps going. Forever. This is called an <strong>infinite loop</strong>, and you definitely to not want these in your code! We can fix it by making a conditional that will evaluate to <code>False</code> if we reach the end of the string.</p>
-<div id="4e4a8174" class="cell" data-execution_count="18">
+<div id="14f4ff6c" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define codon of interest</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>codon <span class="op">=</span> <span class="st">'GCC'</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1130,7 +1130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-break-and-else-keywords" class="level2">
 <h2 class="anchored" data-anchor-id="the-break-and-else-keywords">The <strong>break</strong> and <strong>else</strong> keywords</h2>
 <p>Iteration stops in a <code>for</code> loop when the iterator is exhausted. It stops in a <code>while</code> loop when the conditional evaluates to <code>False</code>. These is another way to stop iteration: the <code>break</code> keyword. Whenever <code>break</code> is encountered in a <code>for</code> or <code>while</code> loop, the iteration halts and execution continues outside the loop. As an example, we’ll do the calculation above with a <code>for</code> loop with a <code>break</code> instead of a <code>while</code> loop.</p>
-<div id="566c6f3b" class="cell" data-execution_count="19">
+<div id="baaaf7fc" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define start codon</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>start_codon <span class="op">=</span> <span class="st">'AUG'</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1150,7 +1150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="9b228055" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="20">
+<div id="92c8aa28" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

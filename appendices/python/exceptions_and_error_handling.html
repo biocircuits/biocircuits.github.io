@@ -883,13 +883,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/exceptions_and_error_handling.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/exceptions_and_error_handling.ipynb">Download notebook</a></p>
 <hr>
-<div id="385df108" class="cell" data-execution_count="1">
+<div id="5f15e29e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 <p>And now we’ll proceed to discussing errors and exception handling.</p>
 <p>So far, we have encountered errors when we did something wrong. For example, when we tried to change a character in a string, we got a <code>TypeError</code>.</p>
-<div id="0ba6ea9b" class="cell" data-execution_count="2">
+<div id="f0758b64" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_str <span class="op">=</span> <span class="st">'AGCTATC'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>my_str[<span class="dv">3</span>] <span class="op">=</span> <span class="st">'G'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -911,7 +911,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This has a syntax error (“Boootcamp” is not in the English language), but we understand what it means. A syntax error in Python would be this:</p>
 <pre><code>my_list = [1, 2, 3</code></pre>
 <p>We know what this means. We are trying to create a list with three items, <code>1</code>, <code>2</code>, and <code>3</code>. However, we forgot the closing bracket. Unlike users of the English language, the Python interpreter is not forgiving; it will raise a <code>SyntaxError</code> exception.</p>
-<div id="137ed996" class="cell" data-execution_count="3">
+<div id="65c5ab2b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Syntax errors are often the easiest to deal with, since the program will not run at all if any are present.</p>
@@ -920,21 +920,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="runtime-errors">Runtime errors</h3>
 <p><strong>Runtime errors</strong> occur when a program is syntactically correct, so it can run, but the interpreter encountered something wrong. The example at the start of the tutorial, trying to change a character in a string, is an example of a runtime error. This particular one was a <code>TypeError</code>, which is a more specific type of runtime error. Python does have a <code>RuntimeError</code>, which just indicates a generic runtime (non-syntax) error.</p>
 <p>Runtime errors are more difficult to spot than syntax errors because it is possible that a program could run all the way through without encountering the error for some inputs, but for other inputs, you get an error. Let’s consider the example of a simple function meant to add two numbers.</p>
-<div id="3c7d4500" class="cell" data-execution_count="4">
+<div id="9ea59f6e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_two_things(a, b):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Add two numbers."""</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Syntactically, this function is just fine. We can use it and it works.</p>
-<div id="b278a2bd" class="cell" data-execution_count="5">
+<div id="3a13a671" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>add_two_things(<span class="dv">6</span>, <span class="dv">7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can even add strings, even though it was meant to add two numbers.</p>
-<div id="685e0d4a" class="cell" data-execution_count="6">
+<div id="f3675d10" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>add_two_things(<span class="st">'Hello, '</span>, <span class="st">'world.'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>However, when we try to add a string and a number, we get a <code>TypeError</code>, the kind of runtime error we saw before.</p>
-<div id="4cf1e6a9" class="cell" data-execution_count="7">
+<div id="127f6883" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>add_two_things(<span class="st">'a string'</span>, <span class="fl">5.7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -942,7 +942,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="semantic-errors">Semantic errors</h3>
 <p>Semantic errors are perhaps the most nefarious. They occur when your program is syntactically correct, executes without runtime errors, and then produces the wrong result. These errors are the hardest to find and can do the most damage. After all, when your program does not do what you designed it to do, you want it to scream out with an exception!</p>
 <p>Following is a common example of a semantic error in which we change a mutable object within a function and then try to reuse it.</p>
-<div id="6f9c87ad" class="cell" data-execution_count="8">
+<div id="13a3ac99" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A function to append a list onto itself, with the intention of </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># returning a new list, but leaving the input unaltered</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> double_list(in_list):</span>
@@ -970,11 +970,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="handling-errors-in-your-code">Handling errors in your code</h2>
 <p>If you have a syntax error, your code will not even run. So, we will assume we are without syntax errors in this discussion on how to handle errors. So, how can we handle runtime errors? In most use cases, we just write our code and let the Python interpreter tell us about these exceptions. However, sometimes we want to use the fact that we <em>know</em> we might encounter a runtime error within our code. A common example of this is when importing modules that are convenient, but not essential, for your code to run. Errors are handled in your code using a <strong>try statement</strong>.</p>
 <p>Let’s try importing a module that computes GC content. This doesn’t exist, so we will get an <code>ImportError</code>.</p>
-<div id="3345bf8b" class="cell" data-execution_count="9">
+<div id="ac098df9" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gc_content</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now, if we had the <code>gc_content</code> module, we would like to use it. But if not, we will just hand-code a calculation of the GC content of a sequence. We use a <code>try</code> statement.</p>
-<div id="bef781e7" class="cell" data-execution_count="10">
+<div id="4751a554" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try to get the gc_content module</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> gc_content</span>
@@ -998,7 +998,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="issuing-warnings" class="level2">
 <h2 class="anchored" data-anchor-id="issuing-warnings">Issuing warnings</h2>
 <p>We may want to issue a warning instead of silently continuing. For this, the <code>warnings</code> module from the standard library is useful. We use the <code>warnings.warn()</code> method to issue the warning.</p>
-<div id="328609dc" class="cell" data-execution_count="11">
+<div id="99fe304c" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try to get the gc_content module</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> gc_content</span>
@@ -1023,7 +1023,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="computing-environment" class="level2">
 <h2 class="anchored" data-anchor-id="computing-environment">Computing environment</h2>
-<div id="13f76076" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="12">
+<div id="0e1c562e" class="cell" data-tags="[&quot;hide-input&quot;]" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext watermark</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>watermark <span class="op">-</span>v <span class="op">-</span>p jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>

@@ -913,7 +913,7 @@ window.Quarto = {
 
 <p><a href="https://colab.research.google.com/github/justinbois/biological-circuit-design-colab/blob/master/controlling_p53_levels.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Google Colab" title="Open in Google Colab"></a> | <a href="https://raw.githubusercontent.com/biological-circuit-design-colab/refs/heads/master/controlling_p53_levels.ipynb">Download notebook</a></p>
 <hr>
-<div id="382f7cf6" class="cell" data-execution_count="1">
+<div id="d72b2163" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> collections</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -943,7 +943,7 @@ window.Quarto = {
 \right.
 \end{align}\]</span></p>
 <p>The parameters for the model are given in the code cell below as a named tuple for convenience. The units of all parameters are such that time is in hours and concentrations in micromolar. Before proceeding, take a moment and make sure you understand the physical meaning of each term in the equations.</p>
-<div id="766fa71e" class="cell" data-execution_count="2">
+<div id="9c64b558" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Params <span class="op">=</span> collections.namedtuple(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Params"</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    [</span>
@@ -1000,7 +1000,7 @@ window.Quarto = {
 <span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>a)</strong> Solve the equations numerically with <span class="math inline">\(n = 0\)</span>. Plot the solution along with the experimental measurements from the <a href="https://doi.org/10.1126/science.1218351">Purvis, et al.&nbsp;paper</a>, given in the Numpy arrays below. This helps verify that the model gives results similar to what you would observe experimentally.</p>
-<div id="37153929" class="cell" data-execution_count="3">
+<div id="420e878b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time points (in units of hours)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>time <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">12</span>])</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
